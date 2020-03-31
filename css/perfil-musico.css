@@ -43,7 +43,7 @@ header {
     width: 100%;
     max-width: 1170px;
     height: auto;
-    margin: 90px auto 0 auto;
+    margin: 90px auto 40px auto;
 
     display: flex;
     flex-wrap: wrap;
@@ -81,7 +81,6 @@ header {
     width: 100%;
     background-color: #fff;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 4px #999999;
     margin-top: 300px;
 }
 
@@ -117,3 +116,18 @@ header {
     right: 20px;
 }
 
+/*-----------------------
+ Grupo Bio
+ ------------------------*/
+ #bio {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+#bio p {
+    margin: 20px auto 0;
+}
