@@ -13,123 +13,130 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed-top">
         Navegação
     </header>
 
-    <section id="head">
-        <img src="img/teste/jane.jpg" alt="Foto de Perfil">
-        <div class="info-user">
-            <h3>Jane Doe</h3>
-            <div class="info-seguidor">
-                <img src="img/teste/icon_star.svg">
-                <p>Seguidores: 12M</p>
-            </div>
-            <div class="info-seguidor">
-                <img src="img/teste/icon_headset.svg">
-                <p>Seguindo: 250</p>
-            </div>
-            <a href=""><img src="img/icones/config_cinza.png" alt="Configurações"></a>
-        </div>        
-    </section>
-
-    <section id="bio">
-        <h4>Sobre mim</h4>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam.</p>
-    </section>
-
-    <section id="habilidades">
-        <h4>Habilidades</h4>
-        <div class="habilidades-item">
-            <img src="img/icones/cantar-01.png" alt="Canto">
-            <p>Canto</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/tocar-01.png" alt="Toco">
-            <p>Violão</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/tocar-01.png" alt="Toco">
-            <p>Teclado</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/som-01.png" alt="Técnico">
-            <p>Iluminação de palco</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/som-01.png" alt="Técnico">
-            <p>Equipamentos de som</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/som-01.png" alt="Técnico">
-            <p>Edição de vídeo</p>
-        </div>
-        <div class="habilidades-item">
-            <img src="img/icones/som-01.png" alt="Técnico">
-            <p>Gravação</p>
-        </div>
-    </section>
-
-    <section id="infos">
-        <h4>+ Infos</h4>
-        <div class="infos-item">
-            <img src="img/icones/pin-01.png" alt="Local">
-            <p>São Paulo / SP</p>
-        </div>
-        <div class="infos-item">
-            <img src="img/icones/site-01.png" alt="Site">
-            <p>https://lorem.ipsum</p>
-        </div>
-        <div class="infos-item">
-            <img src="img/icones/canal-01.png" alt="Canal">
-            <p>JaneeeeD</p>
-        </div>
-        <div class="infos-item">
-            <img src="img/icones/email-01.png" alt="Email">
-            <p>jane.doe@email.com</p>
-        </div>        
-    </section>
-
-    <section id="minha-musica">
-        <h4>Minha música</h4>
-        <div class="video-container">
-            <div class="video">
-                <video controls autoplay>
-                    <source src="video/video1.mp4">
-                </video>
-                <p>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</p>
-            </div>
-            <div class="video">
-                <iframe src="https://player.vimeo.com/video/119695124" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                <p>Classical Guitar</p>
-            </div>
-        </div>
+    <div class="perfil-container">
         
-        <div class="audio-container">
-            <div class="audio">
-                <audio autoplay="autoplay" controls="controls">
-                    <source src="video/audio1.mp3">
-                </audio>
-                <p>Canon Rock - Jerry C cover by Laura</p>
+        <section id="head">
+            <div class="info-user">
+                <h3><strong>Jane Doe</strong></h3>
+                <div class="row">
+                    <div class="info-seguidor col-2 offset-3">
+                        <img src="img/teste/icon_star.svg">
+                        <p class="d-inline">Seguidores: 12M</p>
+                    </div>
+                    <div class="info-seguidor col-2">
+                        <img src="img/teste/icon_headset.svg">
+                        <p class="d-inline">Seguindo: 250</p>
+                   </div>
+                </div>
+                <a href=""><img src="img/icones/config_cinza.png" alt="Configurações"></a>
+            </div>        
+            <div class="img-content">
+                <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
             </div>
-            <div class="audio">
-                <audio autoplay="autoplay" controls="controls">
-                    <source src="video/audio2.mp3">
-                </audio>
-                <p>Always - Bon Jovi - piano cover</p>
+        </section>
+<!--     
+        <section id="bio">
+            <h4>Sobre mim</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam.</p>
+        </section>
+     
+        <section id="habilidades">
+            <h4>Habilidades</h4>
+            <div class="habilidades-item">
+                <img src="img/icones/cantar-01.png" alt="Canto">
+                <p>Canto</p>
             </div>
-        </div>       
-    </section>
+            <div class="habilidades-item">
+                <img src="img/icones/tocar-01.png" alt="Toco">
+                <p>Violão</p>
+            </div>
+            <div class="habilidades-item">
+                <img src="img/icones/tocar-01.png" alt="Toco">
+                <p>Teclado</p>
+            </div>
+            <div class="habilidades-item">
+                <img src="img/icones/som-01.png" alt="Técnico">
+                <p>Iluminação de palco</p>
+            </div>
+            <div class="habilidades-item">
+                <img src="img/icones/som-01.png" alt="Técnico">
+                <p>Equipamentos de som</p>
+            </div>
+            <div class="habilidades-item">
+                <img src="img/icones/som-01.png" alt="Técnico">
+                <p>Edição de vídeo</p>
+            </div>
+            <div class="habilidades-item">
+                <img src="img/icones/som-01.png" alt="Técnico">
+                <p>Gravação</p>
+            </div>
+        </section>
+    
+        <section id="infos">
+            <h4>+ Infos</h4>
+            <div class="infos-item">
+                <img src="img/icones/pin-01.png" alt="Local">
+                <p>São Paulo / SP</p>
+            </div>
+            <div class="infos-item">
+                <img src="img/icones/site-01.png" alt="Site">
+                <p>https://lorem.ipsum</p>
+            </div>
+            <div class="infos-item">
+                <img src="img/icones/canal-01.png" alt="Canal">
+                <p>JaneeeeD</p>
+            </div>
+            <div class="infos-item">
+                <img src="img/icones/email-01.png" alt="Email">
+                <p>jane.doe@email.com</p>
+            </div>        
+        </section>
+    
+        <section id="minha-musica">
+            <h4>Minha música</h4>
+            <div class="video-container">
+                <div class="video">
+                    <video controls autoplay>
+                        <source src="video/video1.mp4">
+                    </video>
+                    <p>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</p>
+                </div>
+                <div class="video">
+                    <iframe src="https://player.vimeo.com/video/119695124" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <p>Classical Guitar</p>
+                </div>
+            </div>
+            
+            <div class="audio-container">
+                <div class="audio">
+                    <audio autoplay="autoplay" controls="controls">
+                        <source src="video/audio1.mp3">
+                    </audio>
+                    <p>Canon Rock - Jerry C cover by Laura</p>
+                </div>
+                <div class="audio">
+                    <audio autoplay="autoplay" controls="controls">
+                        <source src="video/audio2.mp3">
+                    </audio>
+                    <p>Always - Bon Jovi - piano cover</p>
+                </div>
+            </div>        
+        </section> -->
+    </div>
 
-    <footer>
+    <!-- <footer>
         <a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a>
         <span class="copyright">Copyright &copy;
             2020 -
             <img src="img/icone.png" width="20">
             Band+ by Group 1
         </span>
-    </footer>
+    </footer> -->
 
 
 

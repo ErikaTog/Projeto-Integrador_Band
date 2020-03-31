@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 16px 'Open Sans', sans-serif;
+    background: #F7F7F7;
+}
+
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+header {
+    background: #fff;
+    height: 60px;
+    border-bottom: 0.5px solid #4C4F66;
+}
+
+.perfil-container {
+    background-color: #4C4F66;
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*-----------------------
+ Grupo Head 
+ ------------------------*/
+#head {
+    width: 100%;
+    background: #fb754b url('../img/teste/fundo.png');
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Img - User */
+.img-content {
+    position: absolute;
+    top: 140px;
+    left: 64px;
+}
+
+#head img.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+/* Info - User */
+.info-user {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px #999999;
+    margin-top: 300px;
+}
+
+.info-user h3 {
+    margin-top: 10px;
+    margin-left: 345px;
+    display: inline-block;
+}
+
+.info-user .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+}
+
+.info-seguidor p {
+    margin-left: 5px;
+}
+
+.info-user a {
+    transition: filter 0.5s;
+}
+
+.info-user a:hover {
+    opacity: 80%;
+}
+
+.info-user a img {
+    width: 40px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
