@@ -163,7 +163,7 @@ header {
     width: 40px;
 }
 
-p.d-inline {
+#habilidades p.d-inline {
     margin: 0 0 0 45px;
 }
 
@@ -186,4 +186,8 @@ p.d-inline {
 
 .infos-item img {
     width: 40px;
+}
+
+#infos p.d-inline {
+    margin: 0 0 0 45px;
 }
