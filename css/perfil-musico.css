@@ -51,6 +51,11 @@ header {
     justify-content: center;
 }
 
+.container {
+    padding: 0;
+    margin: 0;
+}
+
 /*-----------------------
  Grupo Head 
  ------------------------*/
@@ -130,4 +135,34 @@ header {
 
 #bio p {
     margin: 20px auto 0;
+}
+
+/*-----------------------
+ Grupo Habilidades
+ ------------------------*/
+ #habilidades {
+    width: 100%;
+    max-width: 550px;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+.item.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.habilidades-item {
+    margin-top: 20px;
+}
+
+.habilidades-item img {
+    width: 40px;
+}
+
+p.d-inline {
+    margin: 0 0 0 45px;
 }
