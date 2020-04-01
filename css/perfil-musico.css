@@ -8,6 +8,7 @@
 }
 
 body {
+    color: #282a36;
     font: 400 16px 'Open Sans', sans-serif;
     background: #F7F7F7;
 }
@@ -39,7 +40,6 @@ header {
 }
 
 .perfil-container {
-    background-color: #4C4F66;
     width: 100%;
     max-width: 1170px;
     height: auto;
@@ -111,7 +111,7 @@ header {
 }
 
 .info-user a:hover {
-    opacity: 80%;
+    opacity: 0.8;
 }
 
 .info-user a img {
@@ -245,4 +245,30 @@ header {
 
 audio::-webkit-media-controls-panel {
     background-color: #f7f7f7;
+}
+
+/*-----------------------
+  Footer
+ ------------------------*/
+
+footer {
+    background: #fff;
+    color: #fb3c00;
+    height: 70px;
+    border-top: 0.5px solid #4C4F66;
+    text-align: center;
+}
+
+footer ul li {
+    margin-top: 10px;
+}
+
+footer ul li a {
+    color: #fb3c00;
+    transition: filter 0.5s;
+}
+
+footer ul li a:hover {
+    color: #fb3c00;
+    opacity: 0.8;
 }
