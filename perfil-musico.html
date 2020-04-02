@@ -15,7 +15,63 @@
 
 <body>
     <header class="fixed-top">
-        Navegação
+        <!-- <div class="nav-container"> -->
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>            
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/home_cinza.png" alt="Início" width="35">
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/vagas_cinza.png" alt="Início" width="35">
+                                <p>Vagas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/minharede_cinza.png" alt="Início" width="35">
+                                <p>Minha rede</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/papo_cinza.png" alt="Início" width="35">
+                                <p>Bate papo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/anuncie_cinza.png" alt="Início" width="35">
+                                <p>Anuncie</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/perfil_laranja.png" alt="Início" width="35">
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="sair">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/sair_cinza.png" alt="Início" width="35">
+                                <p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        <!-- </div> -->
     </header>
 
     <div class="perfil-container">
@@ -203,7 +259,8 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="senhaAtual">Senha atual</label>
-                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp" placeholder="Senha">
+                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
+                            placeholder="Senha">
                         <small id="passwordHelp" class="form-text text-muted">Esqueceu a senha?</small>
                     </div>
                     <div class="form-group">
@@ -224,55 +281,57 @@
     </div>
 
     <!-- Excluir conta -->
-    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Olá, <strong>Jane Doe</strong>.</p>
-                    <p>É uma pena que você queira excluir a sua conta.</p>
-                    <div class="form-group">
-                        <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
-                        <select class="form-control" id="motivoExcluir">
-                            <option class=" selected" selected disabled>Escolha...</option>
-                            <option>Uma segunda conta foi criada</option>
-                            <option>Problemas para começar</option>
-                            <option>Questões de privacidade</option>
-                            <option>Quero remover algo</option>
-                            <option>Não consigo achar pessoas para seguir</option>
-                            <option>Ocupa muito do meu tempo</option>
-                            <option>Outro motivo</option>
-                        </select>
+            <div class="modal-content" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
-                        <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    <div class="modal-body">
+                        <p>Olá, <strong>Jane Doe</strong>.</p>
+                        <p>É uma pena que você queira excluir a sua conta.</p>
+                        <div class="form-group">
+                            <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
+                            <select class="form-control" id="motivoExcluir">
+                                <option class=" selected" selected disabled>Escolha...</option>
+                                <option>Uma segunda conta foi criada</option>
+                                <option>Problemas para começar</option>
+                                <option>Questões de privacidade</option>
+                                <option>Quero remover algo</option>
+                                <option>Não consigo achar pessoas para seguir</option>
+                                <option>Ocupa muito do meu tempo</option>
+                                <option>Outro motivo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
+                            <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary"
+                                data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger">Confirmar</button>
+                        </div>
                     </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Confirmar</button>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
