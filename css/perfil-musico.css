@@ -302,3 +302,43 @@ footer ul li a:hover {
     color: #fb3c00;
     opacity: 0.8;
 }
+
+/*-----------------------
+  Modal
+ ------------------------*/
+.form-group {
+     margin: 0 0 20px;
+ }
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input {
+    border: 2px solid #999999;
+    border-radius: 10px;
+}
+
+.modal-footer button.btn.btn-outline-secondary {
+    border: 1px solid #999999;
+    color: #999999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: filter 0.2s;
+}
+
+.modal-footer button.btn.btn-outline-secondary:hover {
+    background-color: #999999;
+    color: #fff;
+}
+
+.modal-footer button.btn.btn-secondary {
+    border: #999999;
+    background-color: #999999;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: filter 0.2s;
+}
+
+.modal-footer button.btn.btn-secondary:hover {
+    text-decoration: underline;
+}

@@ -8,7 +8,8 @@
     <title>Perfil</title>
     <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
     <!-- estilo -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil-musico.css">
 </head>
 
@@ -31,7 +32,7 @@
                         <div class="info-seguidor col-2">
                             <img src="img/teste/icon_headset.svg">
                             <p class="d-inline">Seguindo: 250</p>
-                       </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,30 +42,44 @@
             </div>
 
             <div id="config" class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#"><h5>Editar Perfil</h5></a>
-                  <a class="dropdown-item" href="#"><h5>Alterar Senha</h5></a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><p>Excluir a conta</p></a>
+                    <a class="dropdown-item" href="#">
+                        <h5>Editar Perfil</h5>
+                    </a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                        <h5>Alterar Senha</h5>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                        <p>Excluir a conta</p>
+                    </a>
                 </div>
-              </div>
+            </div>
 
         </section>
-        
+
         <!-- Grupo Bio -->
         <section id="bio">
             <h4><strong>Sobre mim</strong></h4>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!<br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam.</p>
-            
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis
+                optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore
+                tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae,
+                placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut
+                unde!<br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto
+                eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur
+                deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor
+                consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis,
+                voluptatem commodi, eveniet corrupti temporibus ea quibusdam.</p>
+
         </section>
-    
+
         <div class="container">
             <div class="row justify-content-between">
-                
+
                 <!-- Grupo Habilidades -->
                 <section id="habilidades" class="col-6">
                     <h4 class="mb-0"><strong>Habilidades</strong></h4>
@@ -99,7 +114,7 @@
                         </div>
                     </div>
                 </section>
-                
+
                 <!-- Grupo Infos -->
                 <section id="infos" class="col-6">
                     <h4><strong>+ Infos</strong></h4>
@@ -118,40 +133,43 @@
                     <div class="infos-item media">
                         <img src="img/icones/email-01.png" alt="Email">
                         <p class="d-inline align-self-center">jane.doe@email.com</p>
-                    </div>        
+                    </div>
                 </section>
             </div>
         </div>
-        
+
         <!-- Grupo Minha Música -->
         <section id="minha-musica">
             <h4><strong>Minha música</strong></h4>
-                <div class="container">
-                    <div class="row justify-content-between ">
-                        <div class="musica-item col-6">
-                            <video controls>
-                                <source src="video/video1.mp4">
-                            </video>
-                            <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                        </div>
-                        <div class="musica-item col-6">
-                            <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5>Metalica</h5>
-                        </div>                
-                        <div class="musica-item col-6">
-                            <div class="player">
-                                <audio controls>
-                                    <source src="video/audio1.mp3">
-                                </audio>
-                            </div>
-                            <h5>Canon Rock - Jerry C cover by Laura</h5>
-                        </div>                                
-                        <div class="musica-item col-6">
-                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <h5>Always - Bon Jovi - piano cover</h5>
-                        </div>
+            <div class="container">
+                <div class="row justify-content-between ">
+                    <div class="musica-item col-6">
+                        <video controls>
+                            <source src="video/video1.mp4">
+                        </video>
+                        <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
                     </div>
-                </div>        
+                    <div class="musica-item col-6">
+                        <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <h5>Metalica</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="player">
+                            <audio controls>
+                                <source src="video/audio1.mp3">
+                            </audio>
+                        </div>
+                        <h5>Canon Rock - Jerry C cover by Laura</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <iframe scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <h5>Always - Bon Jovi - piano cover</h5>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -170,10 +188,50 @@
     </footer>
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Alterar a senha</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="senhaAtual">Senha atual</label>
+                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp" placeholder="Senha">
+                        <small id="passwordHelp" class="form-text text-muted">Esqueceu a senha?</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="novaSenha">Nova senha</label>
+                        <input type="password" class="form-control" id="novaSenha" placeholder="Senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmarSenha">Confirme a nova senha</label>
+                        <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary">Alterar senha</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
