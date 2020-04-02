@@ -54,7 +54,7 @@
                         <h5>Alterar Senha</h5>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" data-toggle="modal" data-target=".excluirConta" href="#">
                         <p>Excluir a conta</p>
                     </a>
                 </div>
@@ -189,6 +189,7 @@
 
 
     <!-- Modal -->
+    <!-- Aterar Senha -->
     <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -221,6 +222,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Excluir conta -->
+    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Olá, <strong>Jane Doe</strong>.</p>
+                    <p>É uma pena que você queira excluir a sua conta.</p>
+                    <div class="form-group">
+                        <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
+                        <select class="form-control" id="motivoExcluir">
+                            <option class=" selected" selected disabled>Escolha...</option>
+                            <option>Uma segunda conta foi criada</option>
+                            <option>Problemas para começar</option>
+                            <option>Questões de privacidade</option>
+                            <option>Quero remover algo</option>
+                            <option>Não consigo achar pessoas para seguir</option>
+                            <option>Ocupa muito do meu tempo</option>
+                            <option>Outro motivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
+                        <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Confirmar</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
