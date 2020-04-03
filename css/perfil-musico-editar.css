@@ -201,7 +201,7 @@ div.icon i:hover {
     margin-top: 30px;
 }
 
-#bio p {
+#bio .form-group {
     margin: 20px auto 0;
 }
 
@@ -364,7 +364,8 @@ footer ul li a:hover {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
     border: 2px solid #999999;
     border-radius: 10px;
 }
