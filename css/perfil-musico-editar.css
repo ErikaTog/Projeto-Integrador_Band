@@ -124,12 +124,19 @@ button.btn.btn-outline-cancelar:hover {
     left: 64px;
 }
 
+.img-content i {
+    position: absolute;
+    top: 140px;
+    left: 64px;
+}
+
 #head img.avatar {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 5px solid #fff;
 }
+
 
 /* Info - User */
 .info-user {
@@ -138,7 +145,8 @@ button.btn.btn-outline-cancelar:hover {
     margin-top: 300px;
 }
 
-.info-user h3 {
+.info-user input {
+    width: 20%;
     margin-top: 10px;
     margin-left: 345px;
     display: inline-block;
@@ -408,4 +416,34 @@ footer ul li a:hover {
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     transition: filter 0.2s;
+}
+
+button.btn.btn-salvar-modal {
+    background-color: #999999;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: filter 0.2s;
+}
+
+button.btn.btn-salvar-modal:hover {
+    border: 2px solid #4c4f66;
+    text-decoration: underline;
+}
+
+button.btn.btn-cancelar-modal {
+    background-color: #fff;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    color: #999999;
+    font-weight: 700;
+    transition: filter 0.2s;
+}
+
+button.btn.btn-cancelar-modal:hover {
+    background-color: #999999;
+    color: #fff;
+    border: 2px solid #4c4f66;
+    text-decoration: underline;
 }

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil-musico-editar.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,11 +21,6 @@
                 <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
                     
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>            
-                    </button>
-        
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
@@ -46,7 +43,9 @@
         <!-- Grupo Head -->
         <section id="head">
             <div class="info-user">
-                <h3><strong>Jane Doe</strong></h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="userName" placeholder="Jane Doe">
+                </div>
                 <div class="container">
                     <div class="row">
                         <div class="info-seguidor col-2 offset-3">
@@ -62,7 +61,10 @@
             </div>
 
             <div class="img-content">
-                <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+                <a data-toggle="modal" data-target="#alterarAvatar" href="">
+                    <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+                    <i class="fas fa-camera"></i>
+                </a>
             </div>
 
             <div id="config" class="btn-group">
@@ -214,6 +216,33 @@
 
 
     <!-- Modal -->
+    <!-- Aterar Avatar -->
+    <div class="modal fade" id="alterarAvatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Atualizar a imagem</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="form-group">
+                        <label for="formControlFileImg">Escolha uma imagem</label>
+                        <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Aterar Senha -->
     <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
