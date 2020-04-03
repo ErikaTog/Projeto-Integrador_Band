@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+
+body{
+    margin: 0; /*tirando o margin padrão  */
+    padding: 0; /*tirando o padding padrão  */
+    background-color:orangered; /*caso o background-image não carregue*/
+    font-family:'Patua One', cursive; 
+    font-style: normal;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+#container-all{
+    height: 100vh;
+    background-image:url("../img/pre-cadastro-bg.jpg");
+    background-size: cover;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* início_header */
+#header-img{  
+    padding-right: 14px;  
+}
+
+.box-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+    height: 305px;
+    width: 100%;
+    font-size: 50px;
+ }
+/* fim_header */
+
+
+ /* início_conteúdo principal - 3 círculos */
+#container-main{
+    display: flex;
+    align-items: flex-start; 
+    justify-content:space-around;
+    height: 555px;
+}
+
+.single-box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 355px;
+    height: 429px;
+}
+
+.single-box:nth-child(1) .img-area{
+    background-image:url("../img/pre-cadastro-banda.png");
+    background-size: 355px;
+    width: 355px;
+    height: 355px;
+}
+
+
+.single-box:nth-child(2) .img-area{
+    background-image:url("../img/pre-cadastro-musicos.png");
+    background-size: 355px;
+    width: 355px;
+    height: 355px;
+}
+
+
+.single-box:nth-child(3) .img-area{
+    background-image:url("../img/pre-cadastro-estabelecimento.png");
+    background-size: 355px;
+    width: 355px;
+    height: 355px;
+}
+
+.img-text{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.img-text:hover{
+    opacity: 0.8;
+    text-decoration: underline;
+}
+ /* fim_conteúdo principal - 3 círculos */
+
+
+/* início_footer */
+footer {
+    color: #ffffff;
+    height: 70px;
+    text-align: center;
+}
+
+footer ul li {
+    padding-top: 10px;
+}
+
+footer ul li a {
+    color: #ffffff;
+    transition: filter 0.5s;
+}
+
+footer ul li a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    text-decoration: underline;
+/*fim_início_footer */    
