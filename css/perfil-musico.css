@@ -59,6 +59,11 @@ h5 {
 /*-----------------------
  Header 
  ------------------------*/
+.nav-container {
+    width: 100%;
+    max-width: 1170px;
+}
+
 
 header {
     background: #fff;
@@ -67,7 +72,7 @@ header {
 }
 
 nav.navbar {
-    padding: 5px 40px;
+    padding: 5px 0px;
 } 
 
 a.nav-link {
