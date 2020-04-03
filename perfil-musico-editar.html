@@ -5,17 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Perfil-Edição</title>
+    <title>Perfil-Editar</title>
     <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
     <!-- estilo -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/perfil-musico.css">
+    <link rel="stylesheet" href="css/perfil-musico-editar.css">
 </head>
 
 <body>
-    <header class="fixed-top">
-        Navegação
+    <header class="fixed-top d-flex justify-content-center">
+            <div class="nav-container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>            
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="feedback-editar.html">
+                                    <button type="button" class="btn btn-salvar">Salvar</button>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="perfil-musico.html">
+                                    <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
     </header>
 
     <div class="perfil-container">
@@ -47,9 +71,6 @@
                     <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">
-                        <h5>Editar Perfil</h5>
-                    </a>
                     <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
                         <h5>Alterar Senha</h5>
                     </a>
@@ -145,7 +166,9 @@
                 <div class="row justify-content-between ">
                     <div class="musica-item col-6">
                         <video controls>
-                            <source src="video/video1.mp4">
+                            <source src="video/video1.mp4" type="video/mp4">
+                            <source src="video/video1.ogg" type="video/ogg">
+                            <p>Seu browser não suporta este recurso</p>
                         </video>
                         <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
                     </div>
@@ -158,7 +181,9 @@
                     <div class="musica-item col-6">
                         <div class="player">
                             <audio controls>
-                                <source src="video/audio1.mp3">
+                                <source src="video/audio1.mp3" type="audio/mpeg">
+                                <source src="video/audio1.ogg" type="audio/ogg">
+                                <p>Seu browser não suporta este recurso</p>
                             </audio>
                         </div>
                         <h5>Canon Rock - Jerry C cover by Laura</h5>
@@ -203,7 +228,8 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="senhaAtual">Senha atual</label>
-                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp" placeholder="Senha">
+                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
+                            placeholder="Senha">
                         <small id="passwordHelp" class="form-text text-muted">Esqueceu a senha?</small>
                     </div>
                     <div class="form-group">
@@ -224,55 +250,57 @@
     </div>
 
     <!-- Excluir conta -->
-    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Olá, <strong>Jane Doe</strong>.</p>
-                    <p>É uma pena que você queira excluir a sua conta.</p>
-                    <div class="form-group">
-                        <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
-                        <select class="form-control" id="motivoExcluir">
-                            <option class=" selected" selected disabled>Escolha...</option>
-                            <option>Uma segunda conta foi criada</option>
-                            <option>Problemas para começar</option>
-                            <option>Questões de privacidade</option>
-                            <option>Quero remover algo</option>
-                            <option>Não consigo achar pessoas para seguir</option>
-                            <option>Ocupa muito do meu tempo</option>
-                            <option>Outro motivo</option>
-                        </select>
+            <div class="modal-content" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
-                        <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    <div class="modal-body">
+                        <p>Olá, <strong>Jane Doe</strong>.</p>
+                        <p>É uma pena que você queira excluir a sua conta.</p>
+                        <div class="form-group">
+                            <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
+                            <select class="form-control" id="motivoExcluir">
+                                <option class=" selected" selected disabled>Escolha...</option>
+                                <option>Uma segunda conta foi criada</option>
+                                <option>Problemas para começar</option>
+                                <option>Questões de privacidade</option>
+                                <option>Quero remover algo</option>
+                                <option>Não consigo achar pessoas para seguir</option>
+                                <option>Ocupa muito do meu tempo</option>
+                                <option>Outro motivo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
+                            <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary"
+                                data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger">Confirmar</button>
+                        </div>
                     </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Confirmar</button>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #282a36;
+    font: 400 16px 'Open Sans', sans-serif;
+    background: #F7F7F7;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Container - Bootstrap */
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+/*-----------------------
+ Header 
+ ------------------------*/
+.nav-container {
+    width: 100%;
+    max-width: 1170px;
+}
+
+
+header {
+    background: #fff;
+    height: 60px;
+    box-shadow: 0 2px 4px #999999;
+}
+
+nav.navbar {
+    padding: 5px 0px;
+} 
+
+button.btn.btn-salvar {
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: filter 0.2s;
+}
+
+button.btn.btn-salvar:hover {
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+}
+
+button.btn.btn-outline-cancelar {
+    background-color: #fff;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+    color: #fb3c00;
+    font-weight: 700;
+    transition: filter 0.2s;
+}
+
+button.btn.btn-outline-cancelar:hover {
+    background-color: #fb3c00;
+    color: #fff;
+}
+
+.perfil-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*-----------------------
+ Grupo Head 
+ ------------------------*/
+#head {
+    width: 100%;
+    background-color: #fff; 
+    background-image: url('../img/teste/fundo.png');
+    background-repeat: no-repeat;
+    background-size: 1170px 300px;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Img - User */
+.img-content {
+    position: absolute;
+    top: 140px;
+    left: 64px;
+}
+
+#head img.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+/* Info - User */
+.info-user {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    margin-top: 300px;
+}
+
+.info-user h3 {
+    margin-top: 10px;
+    margin-left: 345px;
+    display: inline-block;
+}
+
+.info-user .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+}
+
+.info-seguidor p {
+    margin-left: 5px;
+}
+
+/* Configuração */
+#head #config {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+#head #config button {
+    background-color: #999999;
+    border: 0;
+    box-shadow: 0 2px 4px #999999;
+    transition: 0.2s;
+
+}
+#head #config button:hover {
+    opacity: 0.8;
+}
+
+#head #config h5,
+#head #config p {
+    margin: 0;
+}
+
+#head #config a {
+    text-align: center;
+    transition: 0.2s;
+}
+#head #config a:focus {
+    background-color: #fff;
+    color: #fb3c00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#head #config a.dropdown-item {
+    padding: 10px 25px;
+}
+
+/*-----------------------
+ Grupo Bio
+ ------------------------*/
+ #bio {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+#bio p {
+    margin: 20px auto 0;
+}
+
+/*-----------------------
+ Grupo Habilidades
+ ------------------------*/
+ #habilidades {
+    width: 100%;
+    max-width: 550px;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+.item.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.habilidades-item {
+    margin-top: 20px;
+}
+
+.habilidades-item img {
+    width: 40px;
+}
+
+#habilidades p.d-inline {
+    margin: 0 0 0 45px;
+}
+
+/*-----------------------
+ Grupo Infos
+ ------------------------*/
+#infos {
+    width: 100%;
+    max-width: 550px;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+.infos-item {
+    margin-top: 20px;
+}
+
+.infos-item img {
+    width: 40px;
+}
+
+#infos p.d-inline {
+    margin: 0 0 0 45px;
+}
+
+/*-----------------------
+ Minha Música
+ ------------------------*/
+#minha-musica {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+.musica-item {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 40px;
+}
+
+.musica-item h5 {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.musica-item video {
+    width: 500px;
+    height: 300px;
+    background-color: #282a36;
+}
+
+.musica-item iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* Audio player */
+ .player {
+    background: #fb754b ;
+    background-image: url(../img/teste/icone_bg.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 10%;
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+
+.player audio {
+    width: 500px;
+    position: absolute;
+    margin-top: 246px;
+}
+
+audio {
+    border: 2px solid #fb754b;
+    background-color: #f7f7f7;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #f7f7f7;
+}
+
+/*-----------------------
+  Footer
+ ------------------------*/
+
+footer {
+    background: #fff;
+    color: #fb3c00;
+    height: 70px;
+    /* border-top: 0.5px solid #4C4F66; */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+footer ul li {
+    padding-top: 10px;
+}
+
+footer ul li a {
+    color: #fb3c00;
+    transition: filter 0.5s;
+}
+
+footer ul li a:hover {
+    color: #fb3c00;
+    opacity: 0.8;
+}
+
+/*-----------------------
+  Modal
+ ------------------------*/
+.form-group {
+     margin: 0 0 20px;
+ }
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group label.danger {
+    color: #fe0000;
+}
+
+.form-group input,
+.form-group select {
+    border: 2px solid #999999;
+    border-radius: 10px;
+}
+
+.form-group input#dangerSenha {
+    border-color: #fe0000;
+}
+
+.modal-footer button.btn.btn-outline-secondary {
+    border: 1px solid #999999;
+    color: #999999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: filter 0.2s;
+}
+
+.modal-footer button.btn.btn-outline-secondary:hover {
+    background-color: #999999;
+    color: #fff;
+}
+
+.modal-footer button.btn.btn-secondary {
+    border: #999999;
+    background-color: #999999;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: filter 0.2s;
+}
+
+.modal-footer button.btn.btn-secondary:hover,
+.modal-footer button.btn.btn-danger:hover {
+    text-decoration: underline;
+}
+
+.modal-footer button.btn.btn-danger {
+    border: #fe0000;
+    background-color: #fe0000;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: filter 0.2s;
+}
