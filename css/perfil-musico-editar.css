@@ -171,11 +171,12 @@ div.icon i:hover {
     border-radius: 0 0 10px 10px;
 }
 
-.info-user input {
+.info-user textarea {
     width: 20%;
     margin-top: 10px;
     margin-left: 345px;
     display: inline-block;
+    resize: none;
 }
 
 .info-user .row {
