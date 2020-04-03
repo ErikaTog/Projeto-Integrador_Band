@@ -108,23 +108,27 @@ button.btn.btn-outline-cancelar:hover {
  ------------------------*/
 #head {
     width: 100%;
-    background-color: #fff; 
-    background-image: url('../img/teste/fundo.png');
-    background-repeat: no-repeat;
-    background-size: 1170px 300px;
+    background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
     position: relative;
 }
 
-/* Img - User */
-.img-content {
-    position: absolute;
-    top: 140px;
-    left: 64px;
+/* Fundo - User */
+.fundo-user {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0px 0px;
 }
 
-.img-content i {
+.fundo-content div.icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/* Avatar - User */
+.avatar-content {
     position: absolute;
     top: 140px;
     left: 64px;
@@ -137,12 +141,34 @@ button.btn.btn-outline-cancelar:hover {
     border: 5px solid #fff;
 }
 
+.avatar-content div.icon {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+div.icon i {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #fb3c00;
+    border-radius: 100%;
+    color: #fb3c00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.icon i:hover {
+    background-color: #fb3c00;
+    color: #fff;
+}
+
 
 /* Info - User */
 .info-user {
     width: 100%;
     border-radius: 0 0 10px 10px;
-    margin-top: 300px;
 }
 
 .info-user input {
@@ -161,44 +187,6 @@ button.btn.btn-outline-cancelar:hover {
 
 .info-seguidor p {
     margin-left: 5px;
-}
-
-/* Configuração */
-#head #config {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-}
-
-#head #config button {
-    background-color: #999999;
-    border: 0;
-    box-shadow: 0 2px 4px #999999;
-    transition: 0.2s;
-
-}
-#head #config button:hover {
-    opacity: 0.8;
-}
-
-#head #config h5,
-#head #config p {
-    margin: 0;
-}
-
-#head #config a {
-    text-align: center;
-    transition: 0.2s;
-}
-#head #config a:focus {
-    background-color: #fff;
-    color: #fb3c00;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-#head #config a.dropdown-item {
-    padding: 10px 25px;
 }
 
 /*-----------------------

@@ -42,6 +42,20 @@
     <div class="perfil-container">
         <!-- Grupo Head -->
         <section id="head">
+            <div class="fundo-content">
+                <a data-toggle="modal" data-target="#alterarFundo" href="">
+                    <img class="fundo" src="img/teste/fundo.png" alt="Foto de fundo">
+                    <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
+                </a>
+            </div>
+            
+            <div class="avatar-content">
+                <a data-toggle="modal" data-target="#alterarAvatar" href="">
+                    <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+                    <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
+                </a>
+            </div>
+
             <div class="info-user">
                 <div class="form-group">
                     <input type="text" class="form-control" id="userName" placeholder="Jane Doe">
@@ -59,30 +73,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="img-content">
-                <a data-toggle="modal" data-target="#alterarAvatar" href="">
-                    <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
-                    <i class="fas fa-camera"></i>
-                </a>
-            </div>
-
-            <div id="config" class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        <h5>Alterar Senha</h5>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" data-toggle="modal" data-target=".excluirConta" href="#">
-                        <p>Excluir a conta</p>
-                    </a>
-                </div>
-            </div>
-
         </section>
 
         <!-- Grupo Bio -->
@@ -216,6 +206,33 @@
 
 
     <!-- Modal -->
+    <!-- Aterar Fundo -->
+    <div class="modal fade" id="alterarFundo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Atualizar o plano de fundo</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="form-group">
+                        <label for="formControlFileImg">Escolha uma imagem</label>
+                        <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Aterar Avatar -->
     <div class="modal fade" id="alterarAvatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -242,83 +259,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Aterar Senha -->
-    <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Alterar a senha</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="senhaAtual">Senha atual</label>
-                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
-                            placeholder="Senha">
-                        <small id="passwordHelp" class="form-text text-muted">Esqueceu a senha?</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="novaSenha">Nova senha</label>
-                        <input type="password" class="form-control" id="novaSenha" placeholder="Senha">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmarSenha">Confirme a nova senha</label>
-                        <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-secondary">Alterar senha</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Excluir conta -->
-    <div class="modal fade excluirConta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Excluir sua conta</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Olá, <strong>Jane Doe</strong>.</p>
-                        <p>É uma pena que você queira excluir a sua conta.</p>
-                        <div class="form-group">
-                            <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
-                            <select class="form-control" id="motivoExcluir">
-                                <option class=" selected" selected disabled>Escolha...</option>
-                                <option>Uma segunda conta foi criada</option>
-                                <option>Problemas para começar</option>
-                                <option>Questões de privacidade</option>
-                                <option>Quero remover algo</option>
-                                <option>Não consigo achar pessoas para seguir</option>
-                                <option>Ocupa muito do meu tempo</option>
-                                <option>Outro motivo</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
-                            <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-secondary"
-                                data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-danger">Confirmar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
