@@ -11,37 +11,122 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="imgHeader">
-            <img src="img/logo_5000x1500.png" alt="logo" width=150 height=45>
-        </div>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+    <header class="fixed-top">
+        <!-- <div class="nav-container"> -->
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>            
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/home_cinza.png" alt="Início" width="35">
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/vagas_cinza.png" alt="Início" width="35">
+                                <p>Vagas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/minharede_cinza.png" alt="Início" width="35">
+                                <p>Minha rede</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/papo_cinza.png" alt="Início" width="35">
+                                <p>Bate papo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/anuncie_cinza.png" alt="Início" width="35">
+                                <p>Anuncie</p>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/perfil_laranja.png" alt="Início" width="35">
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="sair">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/sair_cinza.png" alt="Início" width="35">
+                                <p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        <!-- </div> -->
     </header>
+<!-- ----------------------------------------------------------------------------------------------------- -->
 
     <main class="container-vagas">
         <section class="publicarVagas"> 
-            <div>
-                <p>publicar</p>
+            <div class="formulario-nova-vaga">
+                <h5><strong>Publicar vaga</strong></h5>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
+                    </div>
+                    <div class="form-group">
+                        <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                    </div>
+                    <div class="form-group">
+                        <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
+                    </div>
+                </form>
             </div>
         </section>
+
         <section class="pesquisarVagas"> 
-            <div>
-                <p>pesquisar</p>
+            <div class="formulario-pesquisar-vaga">
+                <h5><strong>Pesquisar vagas</strong></h5>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
+                    </div>
+                    <div class="form-group">
+                        <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                    </div>
+                </form>
             </div>
         </section>
+
         <section class="feedVagas"> 
             <div>
-                <p>feed</p>
+                <h5><strong>Feed de vagas</strong></h5>
             </div>
         </section>
     </main>
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
     <footer>
-        <section class="container-footer">   
-            <p class="item"> Políticas  | <a class="active" href="">Fale Conosco</a> </p>  
-            <p class="item"> Copyright© 2020 - by Grupo 1 </p>  
-        </section>
+        <ul class="list-unstyled mb-0">
+            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
     </footer>
-    
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
