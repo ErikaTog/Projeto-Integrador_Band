@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #282a36;
+    font: 400 16px 'Open Sans', sans-serif;
+    background: #F7F7F7;
+}
+
+h1 {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/*-----------------------
+ Header 
+ ------------------------*/
+ .nav-container {
+    width: 100%;
+    max-width: 1170px;
+}
+
+
+header {
+    background: #fff;
+    height: 60px;
+    box-shadow: 0 2px 4px #999999;
+}
+
+nav.navbar {
+    padding: 5px 0px;
+} 
+
+/*-----------------------
+ Alerta 
+ ------------------------*/
+#msg-feedback {
+    margin: 150px auto;
+}
+
+.alert {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+
+button.btn.btn-seguir {
+    background-color: #999999;
+    border: 2px solid #999999;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: filter 0.2s;
+}
+
+button.btn.btn-seguir:hover {
+    border: 2px solid #4c4f66;
+    text-decoration: underline;
+}
+
+/*-----------------------
+  Footer
+ ------------------------*/
+
+ footer {
+    background: #fff;
+    color: #fb3c00;
+    height: 70px;
+    /* border-top: 0.5px solid #4C4F66; */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+footer ul li {
+    padding-top: 10px;
+}
+
+footer ul li a {
+    color: #fb3c00;
+    transition: filter 0.5s;
+}
+
+footer ul li a:hover {
+    color: #fb3c00;
+    opacity: 0.8;
+}
