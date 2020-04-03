@@ -38,14 +38,6 @@ h5 {
     font-weight: 700;
 }
 
-header {
-    background: #fff;
-    height: 60px;
-    box-shadow: 0 2px 4px #999999;
-    /* display: flex;
-    justify-content: center; */
-}
-
 .perfil-container {
     width: 100%;
     max-width: 1170px;
@@ -57,55 +49,47 @@ header {
     align-items: center;
     justify-content: center;
 }
-/* 
-.nav-container {
-    width: 1170px;
-    max-width: 1170px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-*/
-
-nav.navbar {
-    padding: 0 40px;
-} 
-
-a.nav-link {
-    padding: 0;
-    text-align: center;
-    margin: 0 6px;
-}
-
-a.nav-link p {
-    margin: 0;
-    color: #999999;
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.active a.nav-link p {
-    color: #fb3c00;
-}
-
-.nav-item a {
-    transition: filter 0.2s;
-}
-
-/* .nav-item a:hover {
-    opacity: 0.8;
-} */
-
-#sair a img:hover {
-    background-image: url(../img/icones/sair_laranja.png);
-    width: 35px;
-}
-
 
 /* Container - Bootstrap */
 .container {
     padding: 0;
     margin: 0;
+}
+
+/*-----------------------
+ Header 
+ ------------------------*/
+
+header {
+    background: #fff;
+    height: 60px;
+    box-shadow: 0 2px 4px #999999;
+}
+
+nav.navbar {
+    padding: 5px 40px;
+} 
+
+a.nav-link {
+    padding: 0;
+    color: #999999;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 6px;
+    transition: filter 0.2s;
+}
+
+a.nav-link p {
+    margin: 0;
+}
+
+.nav-item.active a {
+    color: #fb3c00;
+}
+
+.nav-item a:hover {
+    opacity: 0.8;
 }
 
 /*-----------------------
@@ -295,6 +279,7 @@ a.nav-link p {
 .musica-item video {
     width: 500px;
     height: 300px;
+    background-color: #282a36;
 }
 
 .musica-item iframe {
@@ -318,6 +303,11 @@ a.nav-link p {
     width: 500px;
     position: absolute;
     margin-top: 246px;
+}
+
+audio {
+    border: 2px solid #fb754b;
+    background-color: #f7f7f7;
 }
 
 audio::-webkit-media-controls-panel {
