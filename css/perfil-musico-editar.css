@@ -475,3 +475,20 @@ button.btn.btn-alerta:hover {
     font-weight: 700;
     color: #fe0000;
 }
+
+.custom-control.custom-checkbox {
+    margin-bottom: 20px;
+}
+
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    border: 1px solid #999999;
+}
+  
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:#fb3c00;
+}
+
+.collapse .form-group {
+    margin-top: 20px;
+}

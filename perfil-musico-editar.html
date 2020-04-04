@@ -293,8 +293,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                     <i class="fas fa-trash fa-lg"></i>
                                 </a>
                             </div>
-                            <iframe scrolling="no" frameborder="no" allow="autoplay"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                             <h5>Magic! - Rude</h5>
                         </div>
                     </div>
@@ -401,17 +400,48 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Adicionar habilidade</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Adicionar música</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="formControlFileImg">Escolha um arquivo</label>
-                        <input type="file" class="form-control-file" id="formControlFileImg" accept="audio/*">
-                        <label for="formControlFileImg">Escolha um arquivo</label>
-                        <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
+                        <label class="custom-control-label" for="checkVideo">
+                          Quero enviar um vídeo
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseVideo">
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha um arquivo</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkVideo">Link</label>
+                            <input type="text" class="form-control" id="linkVideo" aria-describedby="linkHelp">
+                            <small id="linkHelp" class="form-text text-muted">Coloque o link do vídeo.</small>
+                        </div>
+                        ou
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
+                        <label class="custom-control-label" for="checkAudio">
+                          Quero enviar um áudio
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseAudio'">
+                        <div class="form-group">
+                            <label for="linkAudio">Link</label>
+                            <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp">
+                            <small id="linkHelp" class="form-text text-muted">Coloque o link do áudio.</small>
+                        </div>
+                        ou
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha um arquivo</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="audio/*">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
