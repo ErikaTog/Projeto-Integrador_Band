@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Band+</title>
-    <link rel="stylesheet" href="css/vagas.css">
     <link rel="shortcut icon" href="img/icone.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/vagas.css">
 </head>
 <body>
 
 <!-- ----------------------------------------------------------------------------------------------------- -->
-    <header class="fixed-top">
-        <!-- <div class="nav-container"> -->
+    <header class="fixed-top d-flex justify-content-center">
+        <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
                 
@@ -21,7 +22,7 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>            
                 </button>
-    
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -69,14 +70,28 @@
                     </ul>
                 </div>
             </nav>
-        <!-- </div> -->
+        </div>
     </header>
 <!-- ----------------------------------------------------------------------------------------------------- -->
 
     <main class="container-vagas">
         <section class="publicarVagas"> 
             <div class="formulario-nova-vaga">
-                <h5><strong>Publicar vaga</strong></h5>
+                <h4><strong>Publicar vaga</strong></h4>
+                <div class="checkbox">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Banda</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Professor</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio2">Estabecimento</label>
+                      </div>
+                </div>
                 <form action="" method="POST">
                     <div class="form-group">
                         <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
@@ -88,12 +103,31 @@
                         <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
                     </div>
                 </form>
+                <div class="botao">
+                    <button type="button" class="btn btn-Publicar">Publicar</button>
+                </div>
             </div>
         </section>
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
         <section class="pesquisarVagas"> 
             <div class="formulario-pesquisar-vaga">
-                <h5><strong>Pesquisar vagas</strong></h5>
+                <h4><strong>Pesquisar vagas</strong></h4>
+                <div class="checkbox">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Banda</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Professor</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio2">Estabecimento</label>
+                      </div>
+                </div>
                 <form action="" method="POST">
                     <div class="form-group">
                         <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
@@ -102,12 +136,17 @@
                         <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
                     </div>
                 </form>
+                <div class="botao">
+                    <button type="button" class="btn btn-Pesquisar">Pesquisar</button>
+                </div>
             </div>
         </section>
 
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
         <section class="feedVagas"> 
-            <div>
-                <h5><strong>Feed de vagas</strong></h5>
+            <div class="feedVagas-conteudo">
+                <h4><strong>Feed de vagas</strong></h4>
             </div>
         </section>
     </main>
