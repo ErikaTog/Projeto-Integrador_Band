@@ -384,7 +384,37 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Habilidades...</p>
+                    <!-- Opção Canto -->
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="checkCanto">
+                        <label class="custom-control-label" for="checkCanto">
+                          Canto
+                        </label>
+                    </div>
+                    <!-- Opção Intrumento -->
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
+                        <label class="custom-control-label" for="checkInstrumento">
+                          Instrumento
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseInstrumento">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="addInstrumento" placeholder="Digite o instrumento">
+                        </div>
+                    </div>
+                    <!-- Opção Técnico -->
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
+                        <label class="custom-control-label" for="checkTecnico">
+                          Técnico
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseTecnico">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="addTecnico" placeholder="Digite a habilidade técnica">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
