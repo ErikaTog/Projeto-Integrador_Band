@@ -157,6 +157,7 @@ div.icon i {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 }
 
 div.icon i:hover {
@@ -215,8 +216,23 @@ div.icon i:hover {
     background: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
+}
+
+a.modalLink {
+    display: inline-block;
+    color: #282a36;
+    margin: 20px 0;
+}
+
+a.modalLink:hover {
+    font-weight: 700;
+}
+
+.scroll .item.row {
+    height: 200px;
+    overflow-y: scroll;
 }
 
 .item.row {
@@ -232,8 +248,30 @@ div.icon i:hover {
     width: 40px;
 }
 
-#habilidades p.d-inline {
-    margin: 0 0 0 45px;
+#habilidades .form-group {
+    width: 80%;
+    margin: 0;
+}
+
+.habilidades-item  textarea {
+    width: 100%;
+    margin-left: 20px;
+    resize: none;
+}
+
+div.icon-border-none i {
+    color: #999999;
+    transition: 0.2s;
+}
+
+div.icon-border-none i:hover {
+    color: #4c4f66;
+}
+
+.habilidades-item div.icon-border-none {
+    margin-left: 30px;
+    display: flex;
+    align-self: center;
 }
 
 /*-----------------------
@@ -360,52 +398,11 @@ footer ul li a:hover {
     font-weight: 600;
 }
 
-.form-group label.danger {
-    color: #fe0000;
-}
-
 .form-group input,
 .form-group select,
 .form-group textarea {
     border: 2px solid #999999;
     border-radius: 10px;
-}
-
-.form-group input#dangerSenha {
-    border-color: #fe0000;
-}
-
-.modal-footer button.btn.btn-outline-secondary {
-    border: 1px solid #999999;
-    color: #999999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
-}
-
-.modal-footer button.btn.btn-outline-secondary:hover {
-    background-color: #999999;
-    color: #fff;
-}
-
-.modal-footer button.btn.btn-secondary {
-    border: #999999;
-    background-color: #999999;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
-}
-
-.modal-footer button.btn.btn-secondary:hover,
-.modal-footer button.btn.btn-danger:hover {
-    text-decoration: underline;
-}
-
-.modal-footer button.btn.btn-danger {
-    border: #fe0000;
-    background-color: #fe0000;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
 }
 
 button.btn.btn-salvar-modal {
@@ -436,4 +433,24 @@ button.btn.btn-cancelar-modal:hover {
     color: #fff;
     border: 2px solid #4c4f66;
     text-decoration: underline;
+}
+
+button.btn.btn-alerta {
+    background-color: #fff;
+    border: 2px solid #fe0000;
+    border-radius: 10px;
+    color: #fe0000;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+button.btn.btn-alerta:hover {
+    background-color: #fe0000;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.danger {
+    font-weight: 700;
+    color: #fe0000;
 }
