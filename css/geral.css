@@ -1,11 +1,25 @@
+/* --------------------------------
+            Fontes
+-------------------------------- */
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
+
+
+/* --------------------------------
+        Reset da página
+-------------------------------- */
 * {
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
 }
+
+
+/* --------------------------------
+            Body
+-------------------------------- */
 
 body {
     color: #282a36;
@@ -14,6 +28,10 @@ body {
 }
 
 
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
 h1 { font-size: 46px; font-weight: 700; }
 h2 { font-size: 38px; font-weight: 700; }
 h3 { font-size: 30px; font-weight: 700; }
@@ -21,14 +39,14 @@ h4 { font-size: 24px; font-weight: 700; }
 h5 { font-size: 18px; font-weight: 700; }
 
 
-/*-----------------------
- Header 
- ------------------------*/
+/* --------------------------------
+            Header
+-------------------------------- */
+
  .nav-container {
     width: 100%;
     max-width: 1170px;
 }
-
 
 header {
     background: #fff;
@@ -63,9 +81,9 @@ a.nav-link p {
 }
 
 
-/*-----------------------
-  Footer
- ------------------------*/
+/* --------------------------------
+            footer
+-------------------------------- */
 
  footer {
     background: #fff;
@@ -90,6 +108,10 @@ footer ul li a:hover {
     opacity: 0.8;
 }
 
+
+/* --------------------------------
+            Button
+-------------------------------- */
 
 button.btn.btn-salvar {
     background-color: #fb3c00;
@@ -150,8 +172,28 @@ button.btn.btn-cancelar-modal:hover {
     text-decoration: underline;
 }
 
+
+/* --------------------------------
+        campos do form
+-------------------------------- */
 .form-group input,
-.form-group select {
+.form-group select,
+.radio-group,
+.form-control{
     border: 2px solid #999999;
     border-radius: 10px;
+}
+
+
+/* --------------------------------
+         Cor do radio
+-------------------------------- */
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    border: 1px solid #999999;
+}
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    background-color:#fb3c00;
+    border: 1px solid #999999;
 }
