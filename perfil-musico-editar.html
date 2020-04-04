@@ -214,36 +214,89 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
         <!-- Grupo Minha Música -->
         <section id="minha-musica">
             <h4><strong>Minha música</strong></h4>
+
+            <a class="modalLink" data-toggle="modal" data-target="#adicionarMusica" href="">
+                Adicionar música...
+            </a>
+
             <div class="container">
-                <div class="row justify-content-between ">
-                    <div class="musica-item col-6">
-                        <video controls>
-                            <source src="video/video1.mp4" type="video/mp4">
-                            <source src="video/video1.ogg" type="video/ogg">
-                            <p>Seu browser não suporta este recurso</p>
-                        </video>
-                        <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                    </div>
-                    <div class="musica-item col-6">
-                        <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                        <h5>Metalica</h5>
-                    </div>
-                    <div class="musica-item col-6">
-                        <div class="player">
-                            <audio controls>
-                                <source src="video/audio1.mp3" type="audio/mpeg">
-                                <source src="video/audio1.ogg" type="audio/ogg">
+                <div class="scroll">
+                    <div class="row justify-content-around">
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <video controls>
+                                <source src="video/video1.mp4" type="video/mp4">
+                                <source src="video/video1.ogg" type="video/ogg">
                                 <p>Seu browser não suporta este recurso</p>
-                            </audio>
+                            </video>
+                            <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
+                            
                         </div>
-                        <h5>Canon Rock - Jerry C cover by Laura</h5>
-                    </div>
-                    <div class="musica-item col-6">
-                        <iframe scrolling="no" frameborder="no" allow="autoplay"
-                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                        <h5>Always - Bon Jovi - piano cover</h5>
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h5>Metalica</h5>
+                        </div>
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="player">
+                                <audio controls>
+                                    <source src="video/audio1.mp3" type="audio/mpeg">
+                                    <source src="video/audio1.ogg" type="audio/ogg">
+                                    <p>Seu browser não suporta este recurso</p>
+                                </audio>
+                            </div>
+                            <h5>Canon Rock - Jerry C cover by Laura</h5>
+                        </div>
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <iframe scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <h5>Magic! - Rude</h5>
+                        </div>
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <div class="player">
+                                <audio controls>
+                                    <source src="video/audio2.mp3" type="audio/mpeg">
+                                    <source src="video/audio2.ogg" type="audio/ogg">
+                                    <p>Seu browser não suporta este recurso</p>
+                                </audio>
+                            </div>
+                            <h5>Always - Bon Jovi - piano cover</h5>
+                        </div>
+                        <div class="musica-item col-6">
+                            <div class="icon-border-none">
+                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                    <i class="fas fa-trash fa-lg"></i>
+                                </a>
+                            </div>
+                            <iframe scrolling="no" frameborder="no" allow="autoplay"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            <h5>Magic! - Rude</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -342,6 +395,33 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
         </div>
     </div>
 
+    <!-- Adicionar Musica -->
+    <div class="modal fade" id="adicionarMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Adicionar habilidade</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="formControlFileImg">Escolha um arquivo</label>
+                        <input type="file" class="form-control-file" id="formControlFileImg" accept="audio/*">
+                        <label for="formControlFileImg">Escolha um arquivo</label>
+                        <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Confirmar Exclusão -->
     <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -354,17 +434,39 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p class="danger">Tem certeza que quer apagar esta habilidade?</p>
-                    <p>Depois de apagar, você não poderá desfazer esta ação.</p>
+                    <p class="danger">Tem certeza que quer excluir esta habilidade?</p>
+                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-alerta">Apagar</button>
+                    <button type="button" class="btn btn-alerta">Excluir</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Confirmar Exclusão - Música -->
+    <div class="modal fade" id="confirmarExclusaoMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="danger">Tem certeza que quer excluir a sua música?</p>
+                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-alerta">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

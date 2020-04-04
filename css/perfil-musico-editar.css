@@ -230,7 +230,7 @@ a.modalLink:hover {
     font-weight: 700;
 }
 
-.scroll .item.row {
+#habilidades .scroll .item.row {
     height: 200px;
     overflow-y: scroll;
 }
@@ -314,19 +314,33 @@ div.icon-border-none i:hover {
     background: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
+}
+
+#minha-musica .scroll .row {
+    height: 850px;
+    overflow-y: scroll;
 }
 
 .musica-item {
     width: 100%;
     max-width: 500px;
-    margin-top: 40px;
+    padding: 0;
+    margin-top: 30px;
 }
 
 .musica-item h5 {
-    font-weight: 700;
     margin-top: 10px;
+}
+
+a.modalLink {
+    margin: 20px 0 0 0;
+}
+
+.musica-item div.icon-border-none {
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 .musica-item video {
