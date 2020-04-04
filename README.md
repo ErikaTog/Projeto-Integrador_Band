@@ -1,2 +1,6 @@
-## Projeto Integrador Band+
-Repositório do projeto integrador do Grupo 1 - Turma 01 - Santander Coders - Digital House 
+### Projeto Integrador
+
+![GitHub Home](/img/logo_200x60.png)
+
+###### Grupo 1 - Turma 01
+###### Santander Coders - Digital House
