@@ -287,6 +287,11 @@ div.icon-border-none i:hover {
     margin-top: 30px;
 }
 
+#infos .form-group {
+    width: 100%;
+    margin: 0;
+}
+
 .infos-item {
     margin-top: 20px;
 }
@@ -295,8 +300,10 @@ div.icon-border-none i:hover {
     width: 40px;
 }
 
-#infos p.d-inline {
-    margin: 0 0 0 45px;
+.infos-item  textarea {
+    width: 100%;
+    margin-left: 20px;
+    resize: none;
 }
 
 /*-----------------------
