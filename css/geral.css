@@ -32,11 +32,12 @@ body {
             Títulos - H
 -------------------------------- */
 
-h1 { font-size: 46px; font-weight: 700; }
-h2 { font-size: 38px; font-weight: 700; }
-h3 { font-size: 30px; font-weight: 700; }
-h4 { font-size: 24px; font-weight: 700; }
-h5 { font-size: 18px; font-weight: 700; }
+h1 { font-size: 46px; font-weight: 700; margin: 0; }
+h2 { font-size: 38px; font-weight: 700; margin: 0; }
+h3 { font-size: 30px; font-weight: 700; margin: 0; }
+h4 { font-size: 24px; font-weight: 700; margin: 0; }
+h5 { font-size: 18px; font-weight: 700; margin: 0; }
+p { margin: 0; }
 
 
 /* --------------------------------
