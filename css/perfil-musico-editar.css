@@ -1,95 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-body {
-    color: #282a36;
-    font: 400 16px 'Open Sans', sans-serif;
-    background: #F7F7F7;
-}
-
-h1 {
-    font-size: 46px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 38px;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 30px;
-    font-weight: 700;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-h5 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-/* Container - Bootstrap */
-.container {
-    padding: 0;
-    margin: 0;
-}
-
-/*-----------------------
- Header 
- ------------------------*/
-.nav-container {
-    width: 100%;
-    max-width: 1170px;
-}
-
-
-header {
-    background: #fff;
-    height: 60px;
-    box-shadow: 0 2px 4px #999999;
-}
-
-nav.navbar {
-    padding: 5px 0px;
-} 
-
-button.btn.btn-salvar {
-    background-color: #fb3c00;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-salvar:hover {
-    background-color: #fb754b;
-    border: 2px solid #fb3c00;
-}
-
-button.btn.btn-outline-cancelar {
-    background-color: #fff;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fb3c00;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-outline-cancelar:hover {
-    background-color: #fb3c00;
-    color: #fff;
-}
+/* --------------------------------
+    Geral - Perfil músico editar
+-------------------------------- */
 
 .perfil-container {
     width: 100%;
@@ -101,6 +12,12 @@ button.btn.btn-outline-cancelar:hover {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+/* ------------------------------*/ 
+/* Container - Bootstrap */
+.container {
+    padding: 0;
+    margin: 0;
 }
 
 /*-----------------------

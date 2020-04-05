@@ -43,15 +43,15 @@ h5 { font-size: 18px; font-weight: 700; }
             Header
 -------------------------------- */
 
- .nav-container {
-    width: 100%;
-    max-width: 1170px;
-}
-
 header {
     background: #fff;
     height: 60px;
     box-shadow: 0 2px 4px #999999;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1170px;
 }
 
 nav.navbar {
@@ -82,10 +82,10 @@ a.nav-link p {
 
 
 /* --------------------------------
-            footer
+            Footer
 -------------------------------- */
 
- footer {
+footer {
     background: #fff;
     color: #fb3c00;
     height: 70px;
@@ -174,7 +174,7 @@ button.btn.btn-cancelar-modal:hover {
 
 
 /* --------------------------------
-        campos do form
+        Campos do Form
 -------------------------------- */
 .form-group input,
 .form-group select,
