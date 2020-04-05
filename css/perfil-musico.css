@@ -1,5 +1,5 @@
 /* --------------------------------
-    Geral - Perfil músico editar
+        Geral - Perfil músico
 -------------------------------- */
 
 .perfil-container {
@@ -85,6 +85,7 @@
 
 .info-seguidor p {
     margin-left: 5px;
+    align-self: center;
 }
 
 /* --------------------------------
