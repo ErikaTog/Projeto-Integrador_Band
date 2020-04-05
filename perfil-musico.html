@@ -10,6 +10,7 @@
     <!-- estilo -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/perfil-musico.css">
 </head>
 
@@ -75,26 +76,36 @@
     </header>
 
     <div class="perfil-container">
-        <!-- Grupo Head -->
+        
+    <!-- Grupo Head -->
         <section id="head">
+
+            <div class="fundo-content">
+                <img class="fundo" src="img/teste/fundo.png" alt="Foto de fundo">    
+            </div>
+
+            <div class="avatar-content">
+                <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+            </div>
+
             <div class="info-user">
                 <h3><strong>Jane Doe</strong></h3>
                 <div class="container">
                     <div class="row">
                         <div class="info-seguidor col-2 offset-3">
-                            <img src="img/teste/icon_star.svg">
-                            <p class="d-inline">Seguidores: 12M</p>
+                            <div class="media">
+                                <img src="img/teste/icon_star.svg">
+                                <p class="align-self-center">Seguidores: 12M</p>
+                            </div>
                         </div>
                         <div class="info-seguidor col-2">
-                            <img src="img/teste/icon_headset.svg">
-                            <p class="d-inline">Seguindo: 250</p>
+                            <div class="media">
+                                <img src="img/teste/icon_headset.svg">
+                                <p class="align-self-center">Seguindo: 250</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="img-content">
-                <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
             </div>
 
             <div id="config" class="btn-group">
@@ -118,7 +129,7 @@
 
         </section>
 
-        <!-- Grupo Bio -->
+    <!-- Grupo Bio -->
         <section id="bio">
             <h4><strong>Sobre mim</strong></h4>
             <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis

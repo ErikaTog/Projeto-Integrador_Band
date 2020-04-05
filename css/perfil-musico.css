@@ -1,42 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-body {
-    color: #282a36;
-    font: 400 16px 'Open Sans', sans-serif;
-    background: #F7F7F7;
-}
-
-h1 {
-    font-size: 46px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 38px;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 30px;
-    font-weight: 700;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-h5 {
-    font-size: 18px;
-    font-weight: 700;
-}
+/* --------------------------------
+    Geral - Perfil músico editar
+-------------------------------- */
 
 .perfil-container {
     width: 100%;
@@ -56,63 +20,32 @@ h5 {
     margin: 0;
 }
 
-/*-----------------------
- Header 
- ------------------------*/
-.nav-container {
-    width: 100%;
-    max-width: 1170px;
-}
 
+/* --------------------início_do_Grupo_Head--------------------- */
 
-header {
-    background: #fff;
-    height: 60px;
-    box-shadow: 0 2px 4px #999999;
-}
-
-nav.navbar {
-    padding: 5px 0px;
-} 
-
-a.nav-link {
-    padding: 0;
-    color: #999999;
-    font-size: 10px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 6px;
-    transition: filter 0.2s;
-}
-
-a.nav-link p {
-    margin: 0;
-}
-
-.nav-item.active a {
-    color: #fb3c00;
-}
-
-.nav-item a:hover {
-    opacity: 0.8;
-}
-
-/*-----------------------
- Grupo Head 
- ------------------------*/
 #head {
     width: 100%;
-    background-color: #fff; 
-    background-image: url('../img/teste/fundo.png');
-    background-repeat: no-repeat;
-    background-size: 1170px 300px;
+    background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
     position: relative;
 }
 
-/* Img - User */
-.img-content {
+/* --------------------------------
+             Imagem
+-------------------------------- */
+
+/* ------------------------------*/ 
+/* Fundo */
+.fundo-content {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* ------------------------------*/ 
+/* Avatar */
+.avatar-content {
     position: absolute;
     top: 140px;
     left: 64px;
@@ -125,16 +58,18 @@ a.nav-link p {
     border: 5px solid #fff;
 }
 
-/* Info - User */
+/* --------------------------------
+            Info - User
+-------------------------------- */
+
 .info-user {
     width: 100%;
     border-radius: 0 0 10px 10px;
-    margin-top: 300px;
 }
 
 .info-user h3 {
     margin-top: 10px;
-    margin-left: 345px;
+    margin-left: 30%;
     display: inline-block;
 }
 
@@ -146,46 +81,52 @@ a.nav-link p {
 }
 
 .info-seguidor p {
-    margin-left: 5px;
+    margin: 0 0 0 5px;
 }
 
-/* Configuração */
-#head #config {
+/* --------------------------------
+            Configuração
+-------------------------------- */
+
+#config {
     position: absolute;
     bottom: 10px;
     right: 20px;
 }
 
-#head #config button {
+#config button {
     background-color: #999999;
     border: 0;
     box-shadow: 0 2px 4px #999999;
     transition: 0.2s;
-
 }
-#head #config button:hover {
+
+#config button:hover {
     opacity: 0.8;
 }
 
-#head #config h5,
-#head #config p {
+#config h5,
+#config p {
     margin: 0;
 }
 
-#head #config a {
+#config a {
     text-align: center;
     transition: 0.2s;
 }
-#head #config a:focus {
+#config a:focus {
     background-color: #fff;
     color: #fb3c00;
     font-weight: bold;
     text-decoration: underline;
 }
 
-#head #config a.dropdown-item {
+#config a.dropdown-item {
     padding: 10px 25px;
 }
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
 
 /*-----------------------
  Grupo Bio
