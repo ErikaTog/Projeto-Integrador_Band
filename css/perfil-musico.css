@@ -14,6 +14,13 @@
     justify-content: center;
 }
 
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
 /* Container - Bootstrap */
 .container {
     padding: 0;
@@ -24,10 +31,6 @@
 /* --------------------início_do_Grupo_Head--------------------- */
 
 #head {
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
     position: relative;
 }
 
@@ -81,7 +84,7 @@
 }
 
 .info-seguidor p {
-    margin: 0 0 0 5px;
+    margin-left: 5px;
 }
 
 /* --------------------------------
@@ -97,17 +100,11 @@
 #config button {
     background-color: #999999;
     border: 0;
-    box-shadow: 0 2px 4px #999999;
-    transition: 0.2s;
 }
 
 #config button:hover {
+    text-decoration: none;
     opacity: 0.8;
-}
-
-#config h5,
-#config p {
-    margin: 0;
 }
 
 #config a {
@@ -127,34 +124,30 @@
 
 /* --------------------fim_do_Grupo_Head--------------------- */
 
+/* --------------------início_do_Grupo_Bio--------------------- */
 
-/*-----------------------
- Grupo Bio
- ------------------------*/
- #bio {
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
+#bio {
     padding: 25px 50px;
     margin-top: 30px;
 }
 
 #bio p {
-    margin: 20px auto 0;
+    margin-top: 20px;
 }
 
-/*-----------------------
- Grupo Habilidades
- ------------------------*/
- #habilidades {
-    width: 100%;
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Habilidades--------------------- */
+
+#habilidades {
     max-width: 550px;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
+}
+
+#habilidades .scroll .item.row {
+    height: 250px;
+    overflow-y: scroll;
 }
 
 .item.row {
@@ -164,25 +157,24 @@
 
 .habilidades-item {
     margin-top: 20px;
+    padding-left: 0px;
 }
 
 .habilidades-item img {
     width: 40px;
 }
 
-#habilidades p.d-inline {
-    margin: 0 0 0 45px;
+#habilidades p {
+    margin-left: 45px;
+    align-self: center;
 }
 
-/*-----------------------
- Grupo Infos
- ------------------------*/
+/* --------------------fim_do_Grupo_Habilidades--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
 #infos {
-    width: 100%;
     max-width: 550px;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
     padding: 25px 50px;
     margin-top: 30px;
 }
@@ -195,20 +187,23 @@
     width: 40px;
 }
 
-#infos p.d-inline {
-    margin: 0 0 0 45px;
+#infos p {
+    margin-left: 45px;
+    align-self: center;
 }
 
-/*-----------------------
- Minha Música
- ------------------------*/
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Minha_Musica--------------------- */
+
 #minha-musica {
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
+}
+
+#minha-musica .scroll .row {
+    height: 775px;
+    overflow-y: scroll;
 }
 
 .musica-item {
@@ -218,7 +213,6 @@
 }
 
 .musica-item h5 {
-    font-weight: 700;
     margin-top: 10px;
 }
 
@@ -233,6 +227,7 @@
     height: 300px;
 }
 
+/* ------------------------------*/ 
 /* Audio player */
  .player {
     background: #fb754b ;
@@ -260,87 +255,45 @@ audio::-webkit-media-controls-panel {
     background-color: #f7f7f7;
 }
 
-/*-----------------------
-  Footer
- ------------------------*/
+/* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
-footer {
-    background: #fff;
-    color: #fb3c00;
-    height: 70px;
-    /* border-top: 0.5px solid #4C4F66; */
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-}
+/* --------------------------------
+              Modal
+-------------------------------- */
 
-footer ul li {
-    padding-top: 10px;
-}
-
-footer ul li a {
-    color: #fb3c00;
-    transition: filter 0.5s;
-}
-
-footer ul li a:hover {
-    color: #fb3c00;
-    opacity: 0.8;
-}
-
-/*-----------------------
-  Modal
- ------------------------*/
 .form-group {
-     margin: 0 0 20px;
- }
+    margin: 0 0 20px;
+}
 
 .form-group label {
     font-weight: 600;
 }
 
-.form-group label.danger {
-    color: #fe0000;
+.form-control {
+    color: #282a36;
 }
 
-.form-group input,
-.form-group select {
-    border: 2px solid #999999;
-    border-radius: 10px;
+/* ------------------------------*/ 
+/* Alterar Senha */
+
+.form-group small a {
+    color: #999999;
+    font-weight: 600;
+}
+
+/* ------------------------------*/ 
+/* Excluir Conta */
+
+.form-group label.danger {
+    color: #fe0000;
 }
 
 .form-group input#dangerSenha {
     border-color: #fe0000;
 }
 
-.modal-footer button.btn.btn-outline-secondary {
-    border: 1px solid #999999;
-    color: #999999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
-}
-
-.modal-footer button.btn.btn-outline-secondary:hover {
-    background-color: #999999;
+button.btn.btn-danger {
     color: #fff;
-}
-
-.modal-footer button.btn.btn-secondary {
-    border: #999999;
-    background-color: #999999;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
-}
-
-.modal-footer button.btn.btn-secondary:hover,
-.modal-footer button.btn.btn-danger:hover {
-    text-decoration: underline;
-}
-
-.modal-footer button.btn.btn-danger {
-    border: #fe0000;
+    border: 2px solid #fe0000;
     background-color: #fe0000;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: filter 0.2s;
 }

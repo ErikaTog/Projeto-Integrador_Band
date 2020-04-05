@@ -66,11 +66,11 @@ a.nav-link {
     font-weight: 700;
     text-align: center;
     margin: 0 6px;
-    transition: filter 0.2s;
+    transition: 0.2s;
 }
 
-a.nav-link p {
-    margin: 0;
+a.nav-link img {
+    width: 35px;
 }
 
 .nav-item.active a {
@@ -90,7 +90,6 @@ footer {
     background: #fff;
     color: #fb3c00;
     height: 70px;
-    /* border-top: 0.5px solid #4C4F66; */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
@@ -101,7 +100,7 @@ footer ul li {
 
 footer ul li a {
     color: #fb3c00;
-    transition: filter 0.5s;
+    transition: 0.5s;
 }
 
 footer ul li a:hover {
@@ -114,13 +113,21 @@ footer ul li a:hover {
             Button
 -------------------------------- */
 
+button.btn {
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    transition: 0.2s;
+}
+
+button.btn:hover {
+    text-decoration: underline;
+}
+
 button.btn.btn-salvar {
+    color: #fff;
     background-color: #fb3c00;
     border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-salvar:hover {
@@ -129,48 +136,37 @@ button.btn.btn-salvar:hover {
 }
 
 button.btn.btn-outline-cancelar {
+    color: #fb3c00;
     background-color: #fff;
     border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fb3c00;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-outline-cancelar:hover {
-    background-color: #fb3c00;
     color: #fff;
+    background-color: #fb3c00;
 }
 
 
 button.btn.btn-salvar-modal {
+    color: #fff;
     background-color: #999999;
     border: 2px solid #999999;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-salvar-modal:hover {
     border: 2px solid #4c4f66;
-    text-decoration: underline;
 }
 
 button.btn.btn-cancelar-modal {
+    color: #999999;
     background-color: #fff;
     border: 2px solid #999999;
-    border-radius: 10px;
-    color: #999999;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-cancelar-modal:hover {
-    background-color: #999999;
     color: #fff;
+    background-color: #999999;
     border: 2px solid #4c4f66;
-    text-decoration: underline;
 }
 
 
