@@ -180,22 +180,36 @@ button.btn.btn-cancelar-modal:hover {
 .form-group select,
 .radio-group,
 .form-control{
-    border: 2px solid #999999;
+    border: 0.5px solid #999999;
     border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
 }
+
+::-webkit-input-placeholder{
+    font-size: 12px;
+    color: #999999;
 
 
 /* --------------------------------
-         Cor do radio
+         Cor e tamanho do radio
 -------------------------------- */
 .custom-control-label:before{
     background-color:#F7F7F7;
     border: 1px solid #999999;
-}
+    width: 20px;
+    height: 20px;
+} 
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
     background-color:#fb3c00;
     border: 1px solid #999999;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
 }
 
 
