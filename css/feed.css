@@ -21,6 +21,11 @@
     padding: 0;
 }
 
+.col-3 {
+    max-width: 280px;
+    position: fixed;
+}
+
 /* --------------------início_do_Grupo_User_Card--------------------- */
 
 #user-card {
@@ -99,3 +104,25 @@
 #new-user .media-body img {
     padding: 0 10px;
 }
+
+/* --------------------fim_do_Grupo_New_User--------------------- */
+
+/* --------------------início_do_Rodapé--------------------- */
+
+#rodape {
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#rodape ul li a {
+    color: #999999;
+    transition: 0.2s;
+}
+
+#rodape ul li a:hover {
+    color: #4c4f66;
+}
+
+/* --------------------fim_do_Rodapé--------------------- */
