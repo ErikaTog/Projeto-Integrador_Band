@@ -144,4 +144,9 @@
 
 #publicar .add a {
     margin-right: 10px;
+    transform: 0.2s;
+}
+
+#publicar .add a:hover {
+    opacity: 0.8;
 }
