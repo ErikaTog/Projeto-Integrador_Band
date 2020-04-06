@@ -126,3 +126,22 @@
 }
 
 /* --------------------fim_do_Rodapé--------------------- */
+
+/* --------------------fim_do_Grupo_Publicar--------------------- */
+
+#publicar {
+    padding: 10px 45px;
+}
+
+#publicar h4 {
+    color: #4c4f66;
+    margin-bottom: 25px;
+}
+
+#publicar .form-control {
+    color: #4c4f66;
+}
+
+#publicar .add a {
+    margin-right: 10px;
+}
