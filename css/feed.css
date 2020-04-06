@@ -15,3 +15,48 @@
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
 }
+
+.col-3,
+.col-6 {
+    padding: 0;
+}
+
+/* --------------------início_do_Grupo_User_Card--------------------- */
+
+#userCard {
+    padding: 10px;
+}
+
+#userCard .avatar-content {
+    display: flex;
+    justify-content: center;
+}
+
+#userCard img.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#userCard h5 {
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fb754b;
+}
+
+#userCard .col-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#userCard .media {
+    width: 100%;
+    padding: 10px 15px 0 15px;
+    text-align: center;
+}
+
+#userCard .media.divisoria {
+    border-right: 1px solid #fb754b;
+}
