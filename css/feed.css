@@ -1,0 +1,17 @@
+/* --------------------------------
+        Geral - Feed
+-------------------------------- */
+
+.feed-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}

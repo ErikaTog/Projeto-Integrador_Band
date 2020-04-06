@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perfil-Editar</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-center">
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/home_laranja.png" alt="Início">
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/vagas_cinza.png" alt="Vagas">
+                                <p>Vagas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/minharede_cinza.png" alt="Minha rede">
+                                <p>Minha rede</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/papo_cinza.png" alt="Bate papo">
+                                <p>Bate papo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
+                                <p>Anuncie</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/perfil_cinza.png" alt="Perfil">
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="sair">
+                            <a class="nav-link" href="#">
+                                <img src="img/icones/sair_cinza.png" alt="Sair">
+                                <p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="feed-container container">
+        <div class="row">
+            <div class="col-3">
+                <div class="user-card">
+                    <img src="img/teste/jane.jpg" alt="Avatar">
+                    <h5>Jane Doe</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="img/teste/icon_star.svg" alt="Seguidores">
+                            <p>12 M</p> Seguidores
+                        </div>
+                        <div class="col-6">
+                            <img src="img/teste/icon_star.svg" alt="Seguidores">
+                            <p>250</p> Seguindo
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="new-user">
+                    <h5>Novos Usuários</h5>
+                    <img src="img/teste/jane.jpg" alt="Novo usuário">
+                    <h5>John Doe</h5>
+                    <a href=""><img src="img/teste/icon_headset.svg" alt="Seguir"></a>
+                </div>
+
+                <div class="rodape">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+                        <li>
+                            <span class="copyright">Copyright &copy;
+                                2020 - Band+ by Group 1
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="publicacao">
+                    <h4>O que está rolando?</h4>
+                    <div class="form-group">
+                        <label for="textareaPublicacao">Publique o que está acontecendo por aí!!</label>
+                        <textarea class="form-control" id="textareaPublicacao" rows="5"></textarea>
+                    </div>
+                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                    <i class="fas fa-camera fa-lg"></i>
+                    <i class="far fa-image fa-lg"></i>
+                    <i class="far fa-smile fa-lg"></i>
+                    <button type="button" class="btn btn-salvar">Publicar</button>
+                </div>
+                <div class="feed">
+                    <div class="card">
+                        <div class="media">
+                            <img src="img/teste/new_user1.png" alt="Jane Doe">
+                            <h5>Jane Doe</h5>
+                        </div>
+                        <img src="img/teste/feed_img1.jpg" alt="Publicação">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                    </div>
+                    <i class="far fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-comment-alt"></i>
+                    <i class="fas fa-share"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
