@@ -23,40 +23,79 @@
 
 /* --------------------início_do_Grupo_User_Card--------------------- */
 
-#userCard {
+#user-card {
     padding: 10px;
 }
 
-#userCard .avatar-content {
+#user-card .avatar-content {
     display: flex;
     justify-content: center;
 }
 
-#userCard img.avatar {
+#user-card img.avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
 
-#userCard h5 {
+#user-card h5 {
     text-align: center;
     margin-top: 5px;
     padding-bottom: 10px;
     border-bottom: 1px solid #fb754b;
 }
 
-#userCard .col-6 {
+#user-card .col-6 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#userCard .media {
+#user-card .media {
     width: 100%;
     padding: 10px 15px 0 15px;
     text-align: center;
 }
 
-#userCard .media.divisoria {
+#user-card .media.divisoria {
     border-right: 1px solid #fb754b;
+}
+
+/* --------------------fim_do_Grupo_User_Card--------------------- */
+
+/* --------------------início_do_Grupo_New_User--------------------- */
+
+#new-user {
+    margin-top: 30px;
+    padding: 15px 5px 15px 15px;
+}
+
+#new-user h5 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#new-user .scroll {
+    height: 130px;
+    overflow-y: scroll;
+}
+
+#new-user .media {
+    margin: 10px 0;
+}
+
+#new-user img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#new-user .media-body {
+    font-weight: 700;
+    margin: 0 0 0 15px;
+    display: flex;
+    align-self: center;
+}
+#new-user .media-body img {
+    padding: 0 10px;
 }
