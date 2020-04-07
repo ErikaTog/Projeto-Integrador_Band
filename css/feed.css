@@ -1,0 +1,152 @@
+/* --------------------------------
+        Geral - Feed
+-------------------------------- */
+
+.feed-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.col-3,
+.col-6 {
+    padding: 0;
+}
+
+.col-3 {
+    max-width: 280px;
+    position: fixed;
+}
+
+/* --------------------início_do_Grupo_User_Card--------------------- */
+
+#user-card {
+    padding: 10px;
+}
+
+#user-card .avatar-content {
+    display: flex;
+    justify-content: center;
+}
+
+#user-card img.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#user-card h5 {
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fb754b;
+}
+
+#user-card .col-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#user-card .media {
+    width: 100%;
+    padding: 10px 15px 0 15px;
+    text-align: center;
+}
+
+#user-card .media.divisoria {
+    border-right: 1px solid #fb754b;
+}
+
+/* --------------------fim_do_Grupo_User_Card--------------------- */
+
+/* --------------------início_do_Grupo_New_User--------------------- */
+
+#new-user {
+    margin-top: 30px;
+    padding: 15px 5px 15px 15px;
+}
+
+#new-user h5 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#new-user .scroll {
+    height: 130px;
+    overflow-y: scroll;
+}
+
+#new-user .media {
+    margin: 10px 0;
+}
+
+#new-user img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#new-user .media-body {
+    font-weight: 700;
+    margin: 0 0 0 15px;
+    display: flex;
+    align-self: center;
+}
+#new-user .media-body img {
+    padding: 0 10px;
+}
+
+/* --------------------fim_do_Grupo_New_User--------------------- */
+
+/* --------------------início_do_Rodapé--------------------- */
+
+#rodape {
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#rodape ul li a {
+    color: #999999;
+    transition: 0.2s;
+}
+
+#rodape ul li a:hover {
+    color: #4c4f66;
+}
+
+/* --------------------fim_do_Rodapé--------------------- */
+
+/* --------------------fim_do_Grupo_Publicar--------------------- */
+
+#publicar {
+    padding: 10px 45px;
+}
+
+#publicar h4 {
+    color: #4c4f66;
+    margin-bottom: 25px;
+}
+
+#publicar .form-control {
+    color: #4c4f66;
+}
+
+#publicar .add a {
+    margin-right: 10px;
+    transform: 0.2s;
+}
+
+#publicar .add a:hover {
+    opacity: 0.8;
+}

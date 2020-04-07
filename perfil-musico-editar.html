@@ -10,6 +10,8 @@
     <!-- estilo -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/perfil-musico.css">
     <link rel="stylesheet" href="css/perfil-musico-editar.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
@@ -18,30 +20,29 @@
 <body>
     <header class="fixed-top d-flex justify-content-center">
             <div class="nav-container">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
-                    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="feedback-editar.html">
-                                    <button type="button" class="btn btn-salvar">Salvar</button>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="perfil-musico.html">
-                                    <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <nav class="navbar navbar-expand-md">                    
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback-editar.html">
+                                <button type="button" class="btn btn-salvar">Salvar</button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil-musico.html">
+                                <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
     </header>
 
     <div class="perfil-container">
-        <!-- Grupo Head -->
-        <section id="head">
+    
+    <!-- Grupo Head -->
+        <section id="head" class="card">
+            
             <div class="fundo-content">
                 <a data-toggle="modal" data-target="#alterarFundo" href="">
                     <img class="fundo" src="img/teste/fundo.png" alt="Foto de fundo">
@@ -63,20 +64,26 @@
                 <div class="container">
                     <div class="row">
                         <div class="info-seguidor col-2 offset-3">
-                            <img src="img/teste/icon_star.svg">
-                            <p class="d-inline">Seguidores: 12M</p>
+                            <div class="media">
+                                <img src="img/teste/icon_star.svg">
+                                <p>Seguidores: 12M</p>
+                            </div>
                         </div>
                         <div class="info-seguidor col-2">
-                            <img src="img/teste/icon_headset.svg">
-                            <p class="d-inline">Seguindo: 250</p>
+                            <div class="media">
+                                <img src="img/teste/icon_headset.svg">
+                                <p>Seguindo: 250</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <!-- Grupo Bio -->
-        <section id="bio">
+    <!-- Grupo Bio -->
+        <section id="bio" class="card">
+
             <h4><strong>Sobre mim</strong></h4>
             <div class="form-group">
                 <textarea class="form-control" id="textareaBio" rows="5">
@@ -84,22 +91,22 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
                 </textarea>
             </div>
+
         </section>
 
         <div class="container">
             <div class="row justify-content-between">
 
-                <!-- Grupo Habilidades -->
-                <section id="habilidades" class="col-6">
-                    <h4 class="mb-0"><strong>Habilidades</strong></h4>
+    <!-- Grupo Habilidades -->
+                <section id="habilidades" class="card col-6">
+                    <h4><strong>Habilidades</strong></h4>
                     
                     <a class="modalLink" data-toggle="modal" data-target="#adicionarHabilidade" href="">
                         Adicionar habilidades...
                     </a>
-
+                    
                     <div class="scroll">
-                        <div class="item row">
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/cantar-01.png" alt="Canto">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Canto</textarea>
@@ -110,7 +117,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/tocar-01.png" alt="Toco">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Violão</textarea>
@@ -121,7 +128,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/tocar-01.png" alt="Toco">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Teclado</textarea>
@@ -132,7 +139,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/palco-01.png" alt="Técnico">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Iluminação de palco</textarea>
@@ -143,7 +150,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/palco-01.png" alt="Técnico">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Equipamentos de som</textarea>
@@ -154,7 +161,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/palco-01.png" alt="Técnico">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Edição de vídeo</textarea>
@@ -165,7 +172,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                                 </a>
                             </div>
                         </div>
-                        <div class="habilidades-item media col-12 pl-0">
+                        <div class="habilidades-item media">
                             <img src="img/icones/palco-01.png" alt="Técnico">
                             <div class="form-group">
                                 <textarea class="form-control" id="textareaHabilidade" rows="1">Gravação</textarea>
@@ -177,11 +184,10 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                             </div>
                         </div>
                     </div>
-                    </div>
                 </section>
 
-                <!-- Grupo Infos -->
-                <section id="infos" class="col-6">
+    <!-- Grupo Infos -->
+                <section id="infos" class="card col-6">
                     <h4><strong>+ Infos</strong></h4>
                     <div class="infos-item media">
                         <img src="img/icones/pin-01.png" alt="Local">
@@ -211,91 +217,86 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
             </div>
         </div>
 
-        <!-- Grupo Minha Música -->
-        <section id="minha-musica">
+    <!-- Grupo Minha Música -->
+        <section id="minha-musica" class="card">
             <h4><strong>Minha música</strong></h4>
 
             <a class="modalLink" data-toggle="modal" data-target="#adicionarMusica" href="">
                 Adicionar música...
             </a>
 
-            <div class="container">
-                <div class="scroll">
-                    <div class="row justify-content-around">
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <video controls>
-                                <source src="video/video1.mp4" type="video/mp4">
-                                <source src="video/video1.ogg" type="video/ogg">
-                                <p>Seu browser não suporta este recurso</p>
-                            </video>
-                            <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                            
+            <div class="container scroll">
+                <div class="row justify-content-between">
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
                         </div>
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                        <video controls>
+                            <source src="video/video1.mp4" type="video/mp4">
+                            <source src="video/video1.ogg" type="video/ogg">
+                            <p>Seu browser não suporta este recurso</p>
+                        </video>
+                        <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
+                        
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <h5>Metalica</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
                         </div>
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="player">
-                                <audio controls>
-                                    <source src="video/audio1.mp3" type="audio/mpeg">
-                                    <source src="video/audio1.ogg" type="audio/ogg">
-                                    <p>Seu browser não suporta este recurso</p>
-                                </audio>
-                            </div>
-                            <h5>Canon Rock - Jerry C cover by Laura</h5>
+                        <div class="player">
+                            <audio controls>
+                                <source src="video/audio1.mp3" type="audio/mpeg">
+                                <source src="video/audio1.ogg" type="audio/ogg">
+                                <p>Seu browser não suporta este recurso</p>
+                            </audio>
                         </div>
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe scrolling="no" frameborder="no" allow="autoplay"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <h5>Magic! - Rude</h5>
+                        <h5>Canon Rock - Jerry C cover by Laura</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
                         </div>
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="player">
-                                <audio controls>
-                                    <source src="video/audio2.mp3" type="audio/mpeg">
-                                    <source src="video/audio2.ogg" type="audio/ogg">
-                                    <p>Seu browser não suporta este recurso</p>
-                                </audio>
-                            </div>
-                            <h5>Always - Bon Jovi - piano cover</h5>
+                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <h5>Magic! - Rude</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
                         </div>
-                        <div class="musica-item col-6">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <h5>Magic! - Rude</h5>
+                        <div class="player">
+                            <audio controls>
+                                <source src="video/audio2.mp3" type="audio/mpeg">
+                                <source src="video/audio2.ogg" type="audio/ogg">
+                                <p>Seu browser não suporta este recurso</p>
+                            </audio>
                         </div>
+                        <h5>Always - Bon Jovi - piano cover</h5>
+                    </div>
+                    <div class="musica-item col-6">
+                        <div class="icon-border-none">
+                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                <i class="fas fa-trash fa-lg"></i>
+                            </a>
+                        </div>
+                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <h5>Gucci Mane</h5>
                     </div>
                 </div>
             </div>
@@ -500,7 +501,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-alerta">Excluir</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
                 </div>
             </div>
         </div>
@@ -523,7 +524,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaec
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-alerta">Excluir</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
                 </div>
             </div>
         </div>

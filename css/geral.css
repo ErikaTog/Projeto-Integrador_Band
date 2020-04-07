@@ -1,3 +1,4 @@
+
 /* --------------------------------
             Fontes
 -------------------------------- */
@@ -32,26 +33,27 @@ body {
             Títulos - H
 -------------------------------- */
 
-h1 { font-size: 46px; font-weight: 700; }
-h2 { font-size: 38px; font-weight: 700; }
-h3 { font-size: 30px; font-weight: 700; }
-h4 { font-size: 24px; font-weight: 700; }
-h5 { font-size: 18px; font-weight: 700; }
+h1 { font-size: 46px; font-weight: 700; margin: 0; }
+h2 { font-size: 38px; font-weight: 700; margin: 0; }
+h3 { font-size: 30px; font-weight: 700; margin: 0; }
+h4 { font-size: 24px; font-weight: 700; margin: 0; }
+h5 { font-size: 18px; font-weight: 700; margin: 0; }
+p { margin: 0; }
 
 
 /* --------------------------------
             Header
 -------------------------------- */
 
- .nav-container {
-    width: 100%;
-    max-width: 1170px;
-}
-
 header {
     background: #fff;
     height: 60px;
     box-shadow: 0 2px 4px #999999;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1170px;
 }
 
 nav.navbar {
@@ -65,11 +67,11 @@ a.nav-link {
     font-weight: 700;
     text-align: center;
     margin: 0 6px;
-    transition: filter 0.2s;
+    transition: 0.2s;
 }
 
-a.nav-link p {
-    margin: 0;
+a.nav-link img {
+    width: 35px;
 }
 
 .nav-item.active a {
@@ -82,14 +84,13 @@ a.nav-link p {
 
 
 /* --------------------------------
-            footer
+            Footer
 -------------------------------- */
 
- footer {
+footer {
     background: #fff;
     color: #fb3c00;
     height: 70px;
-    /* border-top: 0.5px solid #4C4F66; */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
@@ -100,7 +101,7 @@ footer ul li {
 
 footer ul li a {
     color: #fb3c00;
-    transition: filter 0.5s;
+    transition: 0.5s;
 }
 
 footer ul li a:hover {
@@ -113,13 +114,21 @@ footer ul li a:hover {
             Button
 -------------------------------- */
 
+button.btn {
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    transition: 0.2s;
+}
+
+button.btn:hover {
+    text-decoration: underline;
+}
+
 button.btn.btn-salvar {
+    color: #fff;
     background-color: #fb3c00;
     border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-salvar:hover {
@@ -128,90 +137,78 @@ button.btn.btn-salvar:hover {
 }
 
 button.btn.btn-outline-cancelar {
+    color: #fb3c00;
     background-color: #fff;
     border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fb3c00;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-outline-cancelar:hover {
-    background-color: #fb3c00;
     color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
 }
 
 
 button.btn.btn-salvar-modal {
+    color: #fff;
     background-color: #999999;
     border: 2px solid #999999;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-salvar-modal:hover {
     border: 2px solid #4c4f66;
-    text-decoration: underline;
 }
 
 button.btn.btn-cancelar-modal {
+    color: #999999;
     background-color: #fff;
     border: 2px solid #999999;
-    border-radius: 10px;
-    color: #999999;
-    font-weight: 700;
-    transition: filter 0.2s;
 }
 
 button.btn.btn-cancelar-modal:hover {
-    background-color: #999999;
     color: #fff;
+    background-color: #999999;
     border: 2px solid #4c4f66;
-    text-decoration: underline;
 }
 
 
 /* --------------------------------
-        campos do form
+        Campos do Form
 -------------------------------- */
 .form-group input,
 .form-group select,
+.form-group textarea,
 .radio-group,
-.form-control{
-    border: 0.5px solid #999999;
+.form-control {
+    border: 2px solid #999999;
     border-radius: 10px;
-    box-shadow: 0px 2px 4px #999999;
 }
 
-::-webkit-input-placeholder{
-    font-size: 12px;
-    color: #999999;
-
+.form-group textarea {
+    resize: none;
+    overflow-y: auto;
+}
 
 /* --------------------------------
-         Cor e tamanho do radio
+         Cor do radio
 -------------------------------- */
 .custom-control-label:before{
     background-color:#F7F7F7;
     border: 1px solid #999999;
-    width: 20px;
-    height: 20px;
-} 
+}
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
     background-color:#fb3c00;
     border: 1px solid #999999;
-    width: 20px;
-    height: 20px;
 }
 
-.custom-control-label::after{
-    width: 20px;
-    height: 20px;
-}
+/* --------------------------------
+         Cor do checkbox
+-------------------------------- */
 
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:#fb3c00;
+}
 
 
 /* --------------------início_do_xxxxxxxxxxx -------------------- */
@@ -225,3 +222,4 @@ button.btn.btn-cancelar-modal:hover {
  /* ------------------------------*/ 
 /* grupo dentro do grupo*/
 
+/* fazendo um teste de resolução de conflito */

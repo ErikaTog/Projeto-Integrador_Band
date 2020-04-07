@@ -1,10 +1,6 @@
-/* -------------------------------------- */
-/* --------- Css - Página Vagas --------- */
-/* -------------------------------------- */
-
-h4{ 
-    margin-bottom: 0px; 
-}
+/* --------------------------------
+         Css - Página Vagas
+-------------------------------- */
 
 .container-vagas{
     width: 100%;
@@ -16,6 +12,20 @@ h4{
     background-color: #E5E5E5;
 }
 
+.publicarVagas, 
+.pesquisarVagas,
+.feedVagas{
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 30px 10px 0px 10px;
+    background-color: #fff; 
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 .form-group{
     margin-top: 20px;
     margin-bottom: 0px;
@@ -24,9 +34,6 @@ h4{
 .form-control{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     height: 50px;
-}
-
-.form-control{
     font-size: 16px; 
     font-weight: normal;
 }
@@ -44,20 +51,10 @@ h4{
     padding: 0px 13px 0px 13px;
     display: flex;
 }
-/* ------------------------------------------------------- */
-/* publicar-vaga start */
-.publicarVagas{
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    margin-top: 30px;
-    background-color: #fff; 
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-}
 
+/* --------------------------------
+         Publicar vaga
+-------------------------------- */
 .formulario-nova-vaga{
     width: 100%;
     max-width: 1048px;
@@ -65,21 +62,10 @@ h4{
     flex-direction: column;
     padding: 20px 10px 20px 10px;
 }
-/* publicar-vaga end */
-/* ------------------------------------------------------- */
-/* pesquisar vaga start */
-.pesquisarVagas{
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    background-color: #fff; 
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}
 
+/* --------------------------------
+         Pesquisar vaga
+-------------------------------- */
 .formulario-pesquisar-vaga{
     width: 100%;
     max-width: 1048px;
@@ -87,20 +73,12 @@ h4{
     flex-direction: column;
     padding: 20px 10px 20px 10px;
 }
-/* pesquisar vaga end */
-/* ------------------------------------------------------- */
-/* feed vagas start */
+
+/* --------------------------------
+         Feed vagas
+-------------------------------- */
 .feedVagas{
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    background-color: #fff; 
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    margin-top: 30px;
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
 }
 
 .feedVagas-conteudo{
@@ -110,9 +88,10 @@ h4{
     /* flex-direction: column; */
     padding: 20px 10px 20px 10px;
 }
-/* feed vagas end */
-/* ------------------------------------------------------- */
-/* Botões start*/
+
+/* --------------------------------
+         Botões
+-------------------------------- */
 .botao{
     display: flex;
     justify-content: flex-end;
@@ -136,4 +115,3 @@ button.btn:hover {
     background-color: #fb754b;
     border: 2px solid #fb3c00;
 }
-/* Botões end*/

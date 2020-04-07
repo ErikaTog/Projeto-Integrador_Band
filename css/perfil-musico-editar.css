@@ -1,151 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+/* --------------------------------
+    Geral - Perfil músico editar
+-------------------------------- */
 
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+
+/* --------------------início_do_Grupo_Head--------------------- */
+
+/* --------------------------------
+             Imagem
+-------------------------------- */
+
+.fundo-content a img,
+.avatar-content a img {
+    transition: 0.2s;
 }
 
-body {
-    color: #282a36;
-    font: 400 16px 'Open Sans', sans-serif;
-    background: #F7F7F7;
+.fundo-content a img:hover,
+.avatar-content a img:hover {
+    filter: brightness(0.9);
 }
 
-h1 {
-    font-size: 46px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 38px;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 30px;
-    font-weight: 700;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-h5 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-/* Container - Bootstrap */
-.container {
-    padding: 0;
-    margin: 0;
-}
-
-/*-----------------------
- Header 
- ------------------------*/
-.nav-container {
-    width: 100%;
-    max-width: 1170px;
-}
-
-
-header {
-    background: #fff;
-    height: 60px;
-    box-shadow: 0 2px 4px #999999;
-}
-
-nav.navbar {
-    padding: 5px 0px;
-} 
-
-button.btn.btn-salvar {
-    background-color: #fb3c00;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-salvar:hover {
-    background-color: #fb754b;
-    border: 2px solid #fb3c00;
-}
-
-button.btn.btn-outline-cancelar {
-    background-color: #fff;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fb3c00;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-outline-cancelar:hover {
-    background-color: #fb3c00;
-    color: #fff;
-}
-
-.perfil-container {
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    margin: 90px auto 40px auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-/*-----------------------
- Grupo Head 
- ------------------------*/
-#head {
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    position: relative;
-}
-
-/* Fundo - User */
-.fundo-user {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.fundo-content div.icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-/* Avatar - User */
-.avatar-content {
-    position: absolute;
-    top: 140px;
-    left: 64px;
-}
-
-#head img.avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-}
-
-.avatar-content div.icon {
-    position: absolute;
-    top: 140px;
-    left: 150px;
-}
+/* --------------------------------
+             Icon
+-------------------------------- */
 
 div.icon i {
     background-color: #fff;
@@ -165,63 +41,42 @@ div.icon i:hover {
     color: #fff;
 }
 
-
-/* Info - User */
-.info-user {
-    width: 100%;
-    border-radius: 0 0 10px 10px;
+.fundo-content div.icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
+
+.avatar-content div.icon {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
 
 .info-user textarea {
     width: 20%;
     margin-top: 10px;
     margin-left: 345px;
-    display: inline-block;
-    resize: none;
 }
 
-.info-user .row {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 20px;
-    padding-bottom: 15px;
-}
+/* --------------------fim_do_Grupo_Head--------------------- */
 
-.info-seguidor p {
-    margin-left: 5px;
-}
-
-/*-----------------------
- Grupo Bio
- ------------------------*/
- #bio {
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 50px;
-    margin-top: 30px;
-}
+/* --------------------início_do_Grupo_Bio--------------------- */
 
 #bio .form-group {
+    width: 100%;
     margin: 20px auto 0;
 }
 
-/*-----------------------
- Grupo Habilidades
- ------------------------*/
- #habilidades {
-    width: 100%;
-    max-width: 550px;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 25px 25px 50px;
-    margin-top: 30px;
-}
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Habilidades--------------------- */
 
 a.modalLink {
-    display: inline-block;
     color: #282a36;
     margin: 20px 0;
 }
@@ -230,22 +85,14 @@ a.modalLink:hover {
     font-weight: 700;
 }
 
-#habilidades .scroll .item.row {
+/* --------------------------------
+            Scroll
+-------------------------------- */
+
+#habilidades .scroll {
+    margin-top: 15px;
     height: 200px;
     overflow-y: scroll;
-}
-
-.item.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.habilidades-item {
-    margin-top: 20px;
-}
-
-.habilidades-item img {
-    width: 40px;
 }
 
 #habilidades .form-group {
@@ -255,9 +102,11 @@ a.modalLink:hover {
 
 .habilidades-item  textarea {
     width: 100%;
-    margin-left: 20px;
-    resize: none;
+    margin-left: 15px;
 }
+
+/* ------------------------------*/ 
+/* Ícone - lixo */
 
 div.icon-border-none i {
     color: #999999;
@@ -269,73 +118,37 @@ div.icon-border-none i:hover {
 }
 
 .habilidades-item div.icon-border-none {
-    margin-left: 30px;
+    margin-left: 20px;
     display: flex;
     align-self: center;
 }
 
-/*-----------------------
- Grupo Infos
- ------------------------*/
-#infos {
-    width: 100%;
-    max-width: 550px;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 50px;
-    margin-top: 30px;
-}
+/* --------------------fim_do_Grupo_Habilidades--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
 
 #infos .form-group {
     width: 100%;
     margin: 0;
 }
 
-.infos-item {
-    margin-top: 20px;
-}
-
-.infos-item img {
-    width: 40px;
-}
-
 .infos-item  textarea {
     width: 100%;
     margin-left: 20px;
-    resize: none;
 }
 
-/*-----------------------
- Minha Música
- ------------------------*/
-#minha-musica {
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 25px 25px 25px 50px;
-    margin-top: 30px;
-}
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Minha_Musica--------------------- */
 
 #minha-musica .scroll .row {
+    margin: 0;
     height: 850px;
-    overflow-y: scroll;
 }
 
 .musica-item {
-    width: 100%;
-    max-width: 500px;
-    padding: 0;
-    margin-top: 30px;
-}
-
-.musica-item h5 {
-    margin-top: 10px;
-}
-
-a.modalLink {
-    margin: 20px 0 0 0;
+    padding-left: 0;
+    padding-right: 10px;
 }
 
 .musica-item div.icon-border-none {
@@ -343,152 +156,26 @@ a.modalLink {
     margin-bottom: 10px;
 }
 
-.musica-item video {
-    width: 500px;
-    height: 300px;
-    background-color: #282a36;
-}
+/* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
-.musica-item iframe {
-    width: 100%;
-    height: 300px;
-}
+/* --------------------------------
+              Modal
+-------------------------------- */
 
-/* Audio player */
- .player {
-    background: #fb754b ;
-    background-image: url(../img/teste/icone_bg.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50% 10%;
-    width: 500px;
-    height: 300px;
-    position: relative;
-}
-
-.player audio {
-    width: 500px;
-    position: absolute;
-    margin-top: 246px;
-}
-
-audio {
-    border: 2px solid #fb754b;
-    background-color: #f7f7f7;
-}
-
-audio::-webkit-media-controls-panel {
-    background-color: #f7f7f7;
-}
-
-/*-----------------------
-  Footer
- ------------------------*/
-
-footer {
-    background: #fff;
-    color: #fb3c00;
-    height: 70px;
-    /* border-top: 0.5px solid #4C4F66; */
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-}
-
-footer ul li {
-    padding-top: 10px;
-}
-
-footer ul li a {
-    color: #fb3c00;
-    transition: filter 0.5s;
-}
-
-footer ul li a:hover {
-    color: #fb3c00;
-    opacity: 0.8;
-}
-
-/*-----------------------
-  Modal
- ------------------------*/
-.form-group {
-     margin: 0 0 20px;
- }
-
-.form-group label {
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    border: 2px solid #999999;
-    border-radius: 10px;
-}
-
-button.btn.btn-salvar-modal {
-    background-color: #999999;
-    border: 2px solid #999999;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-salvar-modal:hover {
-    border: 2px solid #4c4f66;
-    text-decoration: underline;
-}
-
-button.btn.btn-cancelar-modal {
-    background-color: #fff;
-    border: 2px solid #999999;
-    border-radius: 10px;
-    color: #999999;
-    font-weight: 700;
-    transition: filter 0.2s;
-}
-
-button.btn.btn-cancelar-modal:hover {
-    background-color: #999999;
-    color: #fff;
-    border: 2px solid #4c4f66;
-    text-decoration: underline;
-}
-
-button.btn.btn-alerta {
-    background-color: #fff;
-    border: 2px solid #fe0000;
-    border-radius: 10px;
-    color: #fe0000;
-    font-weight: 700;
-    transition: 0.2s;
-}
-
-button.btn.btn-alerta:hover {
-    background-color: #fe0000;
-    color: #fff;
-    text-decoration: underline;
-}
-
-.danger {
-    font-weight: 700;
-    color: #fe0000;
+.collapse .form-group {
+    margin-top: 20px;
 }
 
 .custom-control.custom-checkbox {
     margin-bottom: 20px;
 }
 
-.custom-control-label:before{
-    background-color:#F7F7F7;
-    border: 1px solid #999999;
-}
-  
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
-    background-color:#fb3c00;
-}
 
-.collapse .form-group {
-    margin-top: 20px;
+/* ------------------------------*/ 
+/* Confirmar Exclusão */
+
+.danger {
+    font-weight: 700;
+    color: #fe0000;
+    margin-bottom: 10px;
 }
