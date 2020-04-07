@@ -2,3 +2,44 @@
         Geral - Bate-papo
 -------------------------------- */
 
+.papo-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 30px;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.col-4,
+.col-8 {
+    padding: 0;
+}
+
+img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* --------------------início_do_Grupo_Pesquisar--------------------- */
+
+#pesquisar {
+    width: 100%;
+    max-width: 370px;
+    padding: 10px 20px;
+}
+
+#pesquisar .media {
+    margin-bottom: 10px;
+}
+
+#pesquisar .media h4 {
+    align-self: center;
+    margin-left: 10px;
+}
