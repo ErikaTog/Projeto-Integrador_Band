@@ -26,30 +26,24 @@
     justify-content: center;
 }
 
+/* --------------------------------
+         Form
+-------------------------------- */
 .form-group{
     margin-top: 20px;
     margin-bottom: 0px;
 }
 
 .form-control{
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
     height: 50px;
     font-size: 16px; 
     font-weight: normal;
 }
 
-.checkbox{
-    color: #5E6380;
-    font-size: 16px; 
-    font-weight: normal;
-    max-width: 338px;
-    height: 50px;
-    margin-top: 20px;
-    border: 2px solid #999999;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 0px 13px 0px 13px;
-    display: flex;
+::-webkit-input-placeholder{
+    font-size: 16px;
+    color: #999999;
 }
 
 /* --------------------------------
@@ -87,6 +81,28 @@
     display: flex;
     /* flex-direction: column; */
     padding: 20px 10px 20px 10px;
+}
+
+/* --------------------------------
+         Radio
+-------------------------------- */
+.radio{
+    color: #5E6380;
+    font-size: 16px; 
+    font-weight: normal;
+    max-width: 370px;
+    height: 50px;
+    margin-top: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    padding: 0px 13px 0px 13px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-control{
+    padding-right: 20px;
 }
 
 /* --------------------------------
