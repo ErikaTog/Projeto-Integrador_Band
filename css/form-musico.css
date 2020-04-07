@@ -35,7 +35,7 @@ a.nav-link {
     height: 50px;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow:    0 4px 6px -6px #999999;
-    box-shadow:         0 4px 6px -6px #99999;
+    box-shadow:         0 4px 6px -6px #999999;
 }
 
 .form-group.col-md-6,
