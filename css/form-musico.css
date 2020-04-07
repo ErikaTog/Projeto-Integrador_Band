@@ -10,7 +10,6 @@ a.nav-link {
 }
 
 
-
 /* --------------------início_do_container_geral -------------------- */
 #container-form-all {
     width: 100%;
@@ -234,39 +233,21 @@ label.col-sm-4.col-form-label{
     cursor: hand; /* para o IE 5.x */
 }
 
- .btn-danger.focus {
-    background-color: chartreuse;
-    border-color: chartreuse;
+ 
+.btn-danger.focus, .btn-danger:focus {
+    box-shadow: none;
+}    
+
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
 }
 
-/* .btn-danger:focus {
-    color: #fff; */
-    /* background-color: #c82333;
-    border-color: #bd2130; */
-    /* box-shadow: 0 0 0 0.2rem rgba(225,83,97,.5);
-
-.btn-danger:hover {   
-    background-color:  #fb3c00;
+.btn-danger:hover {
+    background-color: #fb3c00;
     border-color: #fb3c00;
 }
-
-
-.btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
-
-/* .btn.focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(251,60,6,.25);
-} */
-
-
-/* .btn:hover {
-    color: #999999;
-    text-decoration: none;
-} */
-
 
 
 /* --------------------------------
