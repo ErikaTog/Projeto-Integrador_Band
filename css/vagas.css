@@ -85,10 +85,6 @@
     padding: 20px 10px 20px 10px;
 }
 
-.tituloConteudoVaga{
-    width: 100%;    
-}
-
 .conteudoVaga{
     display: flex;
     flex-direction: column;
@@ -98,6 +94,7 @@
     height: 160px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
 }
 
 .feedVagas-conteudo .botao{
@@ -105,7 +102,7 @@
 }
 
 /* --------------------------------
-         Radio
+         Radio e Radio-group
 -------------------------------- */
 .radio{
     color: #5E6380;
@@ -117,13 +114,49 @@
     border: 1px solid #ced4da;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
-    padding: 0px 13px 0px 13px;
+    padding: 0px 13px;
     display: flex;
     align-items: center;
 }
 
+.radio label.custom-control-label{
+    padding: 3px 3px;
+}
+
+.radio-group{
+    font-size: 22px; 
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: none;
+    box-shadow: none;
+}
+
+.radio-group label.custom-control-label{
+    padding: 0px 3px;
+}
+
 .custom-control{
-    padding-right: 20px;
+    margin-right: 10px;
+}
+
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    width: 20px;
+    height: 20px;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
 }
 
 /* --------------------------------
