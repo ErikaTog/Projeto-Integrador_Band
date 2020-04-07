@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/form-musico.css">
+
+    <title>Formulário Músico</title>
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-center">
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <button type="button" class="btn btn-salvar">Cadastrar</button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="container-form-all">
+
+        <section id="container-form-group1">
+
+            <div class="header-form">
+                <!--Header do form -->
+                <h4 class="hForm">Identificação</h4>
+            </div>
+
+            <form action="" method="POST" class="form-area">
+                <div class="form-row">
+                    <!--Primeira linha do form -->
+
+                    <div class="form-group col-md-6">
+                        <!--Lado direito da primeira linha do form -->
+                        <label for="iNome">Usuário</label>
+                        <input type="text" class="form-control" name="nome" id="iNome" maxlength="30"
+                            placeholder="Digite o usuário" required="required">
+                    </div>
+                    <div class="form-group col-md-6-d">
+                        <!--Lado esquerdo da primeira linha do form -->
+                        <label for="iEmail">Email</label>
+                        <input type="emal" class="form-control" name="senha" id="iEmail" maxlength="50"
+                            placeholder="Digite um e-mail válido" required="required">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!--Segunda linha do form -->
+
+                    <div class="form-group col-md-6">
+                        <!--Lado direito da segunda linha do form -->
+                        <label for="iSenha">Senha</label>
+                        <input type="password" class="form-control" name="senha" id="iSenha" maxlength="6"
+                            placeholder="Digite a senha com 6 dígitos" required="required">
+                    </div>
+
+                    <div class="form-group col-md-6-d">
+                        <!--Lado esquerdo da segunda linha do form -->
+                        <label for="iSexo">Sexo</label>
+                        <div class="radio-group">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="sexo" id="iFem" value="Feminino"
+                                    checked="checked">
+                                <label class="custom-control-label" for="iFem">Feminino</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="sexo" id="iMasc"
+                                    value="Masculino">
+                                <label class="custom-control-label" for="iMasc">Masculino</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" name="sexo" id="iOutro" value="Outro">
+                                <label class="custom-control-label" for="iOutro">Outro</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="container-form-group2">
+
+            <div class="header-form">
+                <h4 class="hForm">Informações do Usuário</h4>
+            </div>
+
+            <form action="" method="POST" class="form-area">
+                <div class="form-row">
+                    <!--1ª linha do form -->
+                    <div class="form-group col-md-8">
+                        <!--Primeira linha do form - Lado esquerdo -->
+                        <label for="iSobre">Sobre mim</label>
+                        <textarea class="form-control" name="sobre" id="iSobre" rows="10"
+                            placeholder="Conte mais sobre você!"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <!-- 1ª linha do form - Lado direito -->
+                        <label for="group">Localização</label>
+
+                        <div class="local-group">
+                            <form action="" method="POST" class="form-area">
+                                <div class="form-group row">
+
+                                    <label for="iEstado" class="col-sm-3 col-form-label">Estado</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="estado" id="iEstado" size="30"
+                                            maxlength="30" placeholder="Digite seu estado" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="iCidade" class="col-sm-3 col-form-label">Cidade</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="cidade" id="iCidade" size="30"
+                                            maxlength="30" placeholder="Digite sua cidade" required="required">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <!--2ª linha do form - Lado esquerdo -->
+                            <label for="group">Contatos</label>
+
+                            <div class="contato-group">
+                                <form action="" method="POST" class="form-area">
+                                    <div class="form-group row">
+                                        <!--Lado esquerdo da primeira linha do form -->
+
+                                        <label for="iSite" class="col-sm-3 col-form-label">Site</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="site" id="iSite" size="30"
+                                                maxlength="30" placeholder="Digite seu site">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="iCanal" class="col-sm-3 col-form-label">Canal</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="canal" id="iCanal" size="30"
+                                                maxlength="30" placeholder="Digite seu canal">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <!--2ª linha do form - Lado esquerdo -->
+                            <div id="hability-box">
+                                <label id="hability-label " for="group">Habilidades </label>
+                                <button type="button" class="btn btn-lg btn-danger" data-toggle="popover"
+                                    title="Acesse seu perfil"
+                                    data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você encontra também opções para deixar seu perfil ainda mais atrativo!"></button>
+                            </div>
+                            <div class="habilidades-group">
+
+                                <div class="header-habilidades">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
+                                            value="option1">
+                                        <label class="form-check-label" for="iCanto"><span></span>Canto</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="toco" id="iToco"
+                                            value="option2">
+                                        <label class="form-check-label" for="iToco"><span></span>Toco</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
+                                            value="option3">
+                                        <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
+                                    </div>
+
+                                </div>
+
+                                <form action="" method="POST" class="form-area">
+                                    <div class="form-group row">
+                                        <!--Lado esquerdo da primeira linha do form -->
+
+                                        <label for="iInstrumento" class="col-sm-4 col-form-label">Instrumento</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="instrumento" id="iInstrumento"
+                                                size="30" maxlength="30" placeholder="Digite o instrumento">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="iTecnico" class="col-sm-4 col-form-label">Técnico</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="tecnico" id="iTecnico"
+                                                size="30" maxlength="30" placeholder="Digite a habilidade">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </section>
+    </div>
+    <!--Fechamento da div container all -->
+   
+    <footer>
+        <ul class="list-unstyled mb-0">
+            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+                container: 'body'
+            })
+    </script>
+</body>
+
+</html>
