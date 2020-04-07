@@ -16,6 +16,12 @@
     border-radius: 10px;
 }
 
+img.mini-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 .col-3,
 .col-6 {
     padding: 0;
@@ -89,12 +95,6 @@
     margin: 10px 0;
 }
 
-#new-user img.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
 #new-user .media-body {
     font-weight: 700;
     margin: 0 0 0 15px;
@@ -127,7 +127,7 @@
 
 /* --------------------fim_do_Rodapé--------------------- */
 
-/* --------------------fim_do_Grupo_Publicar--------------------- */
+/* --------------------início_do_Grupo_Publicar--------------------- */
 
 #publicar {
     padding: 10px 45px;
@@ -150,3 +150,43 @@
 #publicar .add a:hover {
     opacity: 0.8;
 }
+
+/* --------------------fim_do_Grupo_Publicar--------------------- */
+
+/* --------------------início_do_Grupo_Publicacao--------------------- */
+
+#publicacao .card {
+    padding: 15px 0px;
+    margin-top: 30px;
+}
+
+#publicacao .media {
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+#publicacao .media h5 {
+    align-self: center;
+    margin-left: 20px;
+}
+
+#publicacao .img-public {
+    width: 100%;
+}
+
+#publicacao p {
+    padding: 30px 25px;
+    border-bottom: 0.5px solid #999999;
+}
+
+#publicacao .curtir {
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+#publicacao a img {
+    width: 35px;
+    margin-right: 20px;
+}
+
+/* --------------------fim_do_Grupo_Publicacao--------------------- */
