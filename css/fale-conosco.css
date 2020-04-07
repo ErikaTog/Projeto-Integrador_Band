@@ -17,8 +17,17 @@
     padding: 20px 70px;
 }
 
+.fale-container-header {
+    padding-bottom: 10px;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
 .fale-container .form-group {
     margin-top: 15px;
+}
+
+.fale-container .form-group #nome-contato {
+    margin-top: 10px;
 }
 
 .fale-container .container {
