@@ -121,14 +121,16 @@ label.custom-control-label{
 /* estilo do radio*/
 .custom-control-label:before{
     background-color:#F7F7F7;
-    border: 1px solid #999999;
+    /* border:0.5px solid #999999; */
+    box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
 } 
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
     background-color:#fb3c00;
-    border: 1px solid #999999;
+    /* border: 0.5px solid #999999; */
+    box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
 }
@@ -157,7 +159,6 @@ label.custom-control-label{
     width: 600px;
     height: 420px;
     resize: none;
-
 }
 
 .local-group,
@@ -285,5 +286,32 @@ label.form-check-label{
     box-shadow: 0px 0px 0px 0px;
 }
 
+ input[type=checkbox]{
+    display: none;
+ }
 
+  
+input[type=checkbox] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background-color:#F7F7F7;
+    margin-right: 10px;
+    box-shadow: 0px 2px 4px #999999;
+  }
+
+input[type=checkbox]:checked + label:before {
+    width: 18px;
+    height: 18px;
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-right: 10px;
+
+  }
+  
 /* --------------------fim_do_formulário_2 -------------------- */
