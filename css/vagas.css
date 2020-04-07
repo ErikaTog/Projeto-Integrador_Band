@@ -73,14 +73,35 @@
 -------------------------------- */
 .feedVagas{
     margin-bottom: 30px;
+    font-size: 16px;
 }
 
 .feedVagas-conteudo{
     width: 100%;
     max-width: 1048px;
     display: flex;
-    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px 10px 20px 10px;
+}
+
+.tituloConteudoVaga{
+    width: 100%;    
+}
+
+.conteudoVaga{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 15px;
+    max-width: 500px;
+    height: 160px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.feedVagas-conteudo .botao{
+    width: 100%;
 }
 
 /* --------------------------------
@@ -130,4 +151,5 @@ button.btn:hover {
     color: #fff;
     background-color: #fb754b;
     border: 2px solid #fb3c00;
+    text-decoration: none;
 }
