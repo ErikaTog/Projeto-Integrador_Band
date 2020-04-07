@@ -102,6 +102,7 @@ img.mini-avatar {
     align-self: center;
 }
 #new-user .media-body img {
+    width: 45px;
     padding: 0 10px;
 }
 
