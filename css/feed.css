@@ -187,6 +187,11 @@ img.mini-avatar {
 #publicacao a img {
     width: 35px;
     margin-right: 20px;
+    transition: 0.2s;
+}
+
+#publicacao a img:hover {
+    filter: brightness(0.8);
 }
 
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
