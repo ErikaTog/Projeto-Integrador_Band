@@ -1,0 +1,43 @@
+/* --------------------------------
+        Geral - Fale Conosco
+-------------------------------- */
+
+.fale-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px auto;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 20px 70px;
+}
+
+.fale-container .form-group {
+    margin-top: 15px;
+}
+
+.fale-container .container {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.fale-container .row {
+    margin: 0;
+}
+
+.fale-container .col-6,
+.fale-container .col-2 {
+    margin: 0;
+    padding: 0;
+}
+
+.fale-container .col-2 {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
