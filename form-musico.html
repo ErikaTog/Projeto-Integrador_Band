@@ -39,7 +39,7 @@
                 <!--Header do form -->
                 <h4 class="hForm">Identificação</h4>
             </div>
-
+            <!-- Grupo Form Identificação -->
             <form action="" method="POST" class="form-area">
                 <div class="form-row">
                     <!--Primeira linha do form -->
@@ -98,7 +98,7 @@
             <div class="header-form">
                 <h4 class="hForm">Informações do Usuário</h4>
             </div>
-
+            <!-- Grupo Form Informações do usuário -->
             <form action="" method="POST" class="form-area">
                 <div class="form-row">
                     <!--1ª linha do form -->
@@ -167,29 +167,29 @@
                                 <label id="hability-label " for="group">Habilidades </label>
                                 <button type="button" class="btn btn-lg btn-danger" data-toggle="popover"
                                     title="Acesse seu perfil"
-                                    data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você encontra também opções para deixar seu perfil ainda mais atrativo!"></button>
+                                    data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você também encontra opções para deixar seu perfil ainda mais atrativo!"></button>
                             </div>
                             <div class="habilidades-group">
+                                <form action="" method="POST" class="form-area">
+                                    <div class="header-habilidades">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
+                                                value="option1">
+                                            <label class="form-check-label" for="iCanto"><span></span>Canto</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="toco" id="iToco"
+                                                value="option2">
+                                            <label class="form-check-label" for="iToco"><span></span>Toco</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
+                                                value="option3">
+                                            <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
+                                        </div>
 
-                                <div class="header-habilidades">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
-                                            value="option1">
-                                        <label class="form-check-label" for="iCanto"><span></span>Canto</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="toco" id="iToco"
-                                            value="option2">
-                                        <label class="form-check-label" for="iToco"><span></span>Toco</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
-                                            value="option3">
-                                        <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
-                                    </div>
-
-                                </div>
-
+                                </form>
                                 <form action="" method="POST" class="form-area">
                                     <div class="form-group row">
                                         <!--Lado esquerdo da primeira linha do form -->
@@ -216,7 +216,7 @@
         </section>
     </div>
     <!--Fechamento da div container all -->
-   
+
     <footer>
         <ul class="list-unstyled mb-0">
             <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
@@ -243,8 +243,8 @@
     <script>
         $(function () {
             $('[data-toggle="popover"]').popover()
-                container: 'body'
-            })
+            container: 'body'
+        })
     </script>
 </body>
 
