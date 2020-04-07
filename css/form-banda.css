@@ -1,0 +1,60 @@
+/* --------------------------------
+        Geral - Form Banda
+-------------------------------- */
+
+.cadastro-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.form-header {
+    padding-bottom: 10px;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+.col-6 {
+    padding: 0;
+}
+
+.campo-form {
+    padding: 10px 20px 0px;
+}
+
+.form-group.row {
+    width: 100%;
+    margin: 0 0 10px;
+}
+
+/* --------------------início_do_Grupo_Form_Identificação--------------------- */
+
+#form-identificacao {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 30px 25px;
+}
+
+#form-identificacao h5 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#form-identificacao label {
+    align-self: center;
+}
+
+#form-identificacao .col-sm-2,
+#form-identificacao .col-sm-6,
+#form-identificacao .col-sm-8 {
+    padding: 0;
+}
+
+/* --------------------fim_do_Grupo_Form_Identificação--------------------- */
