@@ -1,0 +1,289 @@
+/*Header e Footer está no geral.css*/
+
+.nav-container {
+    width: 100%;
+    max-width: 1030px;
+}
+
+a.nav-link {
+    padding: 0px 0px 0px 0px;
+}
+
+/* --------------------início_do_container_geral -------------------- */
+#container-form-all {
+    width: 100%;
+    max-width: 1030px;
+    height: auto;
+    margin: 60px auto 40px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*-----------------------
+  Estilo dos Formulários
+ ------------------------*/
+
+.header-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow:    0 4px 6px -6px #999999;
+    box-shadow:         0 4px 6px -6px #99999;
+}
+
+.form-group.col-md-6,
+.form-group.col-md-8,
+.form-group.col-md-4{
+    padding: 0px;
+    margin: 21px 0px 0px;
+   }
+
+.form-group.col-md-6-d{
+    padding: 0px;
+    margin: 21px 0px 0px 10px;
+}
+
+.form-row{
+    margin: 0px;
+}
+
+.form-group label{
+    font-size: 16px;
+    color: #282A36;
+    font-weight: 700;
+    margin: 0px 0px 12px;
+}
+
+::-webkit-input-placeholder{
+    font-size: 12px;
+    color: #999999;
+}
+/* --------------------fim_do_container_geral -------------------- */
+
+
+/* --------------------início_do_formulário_1 -------------------- */
+#container-form-group1{
+    height: 300px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 12px 30px;
+    margin-top: 30px;
+}
+
+#iNome, #iSenha{
+    width: 300px;
+    height: 50px;
+}
+
+#iEmail{
+    width: 470px;
+    height: 50px;
+    margin: 0px;
+    }
+
+input#iEmail.form-control{
+    margin: 0px;
+}
+
+/* --------------------------------
+ grupo do radio-box de 3 opções
+-------------------------------- */
+.radio-group{
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 470px;
+    height: 50px;
+    padding: 6px 12px;
+    box-shadow: 0px 2px 4px #999999;
+}
+
+label.custom-control-label{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color:#495057;
+    margin: 0px;
+    padding: 0px 0px 0px 5px;
+}
+
+ /* ------------------------------*/ 
+/* estilo do radio*/
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    border: 1px solid #999999;
+    width: 20px;
+    height: 20px;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    background-color:#fb3c00;
+    border: 1px solid #999999;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+}
+
+/* --------------------fim_do_formulário_1 -------------------- */
+
+
+
+/* --------------------início_do_formulário_2 -------------------- */
+#container-form-group2{
+    min-height: 570px; /*640*/
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    }
+
+#iSobre{
+    width: 600px;
+    height: 420px;
+    resize: none;
+
+}
+
+.local-group,
+.contato-group{
+    border-radius: 10px; 
+    width: 316px;
+    height: 90px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px #999999;
+}
+
+#iEstado, #iCidade, #iSite, #iCanal{
+    width: 210px;
+    height: 28px;
+}
+
+#iInstrumento, #iTecnico{
+    width: 180px;
+    height: 28px;
+}
+
+label.col-sm-3.col-form-label,
+label.col-sm-4.col-form-label{
+    color: #393C4D;  
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;  /* no Figma estava 16, mas 14 ficou esteticamente melhor*/
+    line-height: 22px;
+    margin: 0px; 
+    padding: 5px 5px 0px 20px;  /* 7 15 7 19*/
+}
+
+.form-group.row{
+    margin: 0px -15px 0px;
+    height: 40px;
+}
+
+.habilidades-group{
+    border-radius: 10px; 
+    width: 316px;
+    height: 130px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px #999999;
+}
+
+#hability-box{
+    width: 130px;
+}
+
+/* --------------------------------
+   grupo do botão com popover - estou mexendo nesta parte
+-------------------------------- */
+
+.popover-header{
+    text-align: center;
+}
+
+.popover-body{
+    text-align: justify;
+}
+
+.btn-lg.btn-danger {
+    width: 16px;
+    height: 16px;
+    padding: 0px 0px 0px;
+    margin: 0px 0px 5px;
+    border: 0px;
+    background: transparent url("../img/icones/mdi_info.png") no-repeat;
+    overflow: hidden;
+    cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
+    cursor: hand; /* para o IE 5.x */
+    /* box-shadow: 0px 0px 0px 0px; */
+ }
+
+ .btn-danger.focus {
+    background-color: #fb3c00;
+    border-color: #fb3c00;
+}
+
+.btn-danger:hover {
+    background-color:  #fb3c00;
+    border-color: #fb3c00;
+}
+.btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(251,60,6,.25);
+}
+.btn:hover {
+    color: #999999;
+    text-decoration: none;
+}
+
+/* --------------------------------
+ grupo do ckeck-box de 3 opções
+-------------------------------- */
+
+.header-habilidades{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow:    0 4px 6px -6px #999999;
+    box-shadow:         0 4px 6px -6px #999999;
+} 
+
+label.form-check-label{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 900;
+    color:#495057;
+    margin: 0px;
+    padding: 0px 0px 0px 5px;
+}
+
+
+#iCanto.form-check-input,
+#iToco.form-check-input,
+#iTecnico.form-check-input{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+
+/* --------------------fim_do_formulário_2 -------------------- */
