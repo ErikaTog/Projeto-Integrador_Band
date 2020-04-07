@@ -84,3 +84,47 @@
 
 /* --------------------fim_do_Grupo_Form_Informação--------------------- */
 
+/* --------------------início_do_Grupo_Form_Dados--------------------- */
+
+#form-dados {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 30px 25px;
+}
+
+#form-dados h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#form-dados label {
+    align-self: center;
+}
+
+#form-dados .col-sm-1,
+#form-dados .col-sm-2,
+#form-dados .col-sm-6,
+#form-dados .col-sm-8,
+#form-dados .col-sm-11 {
+    padding: 0;
+}
+
+#membros.row {
+    width: 100%;
+    margin: 0;
+}
+
+#membros .col-sm-1 {
+    align-self: center;
+}
+
+#membros img {
+    transition: 0.2s;
+}
+
+#membros img:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+
+/* --------------------fim_do_Grupo_Form_Dados--------------------- */
