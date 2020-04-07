@@ -9,6 +9,8 @@ a.nav-link {
     padding: 0px 0px 0px 0px;
 }
 
+
+
 /* --------------------início_do_container_geral -------------------- */
 #container-form-all {
     width: 100%;
@@ -33,9 +35,9 @@ a.nav-link {
     align-items: center;
     width: 100%;
     height: 50px;
-    -webkit-box-shadow: 0 4px 6px -6px #222;
-    -moz-box-shadow:    0 4px 6px -6px #999999;
-    box-shadow:         0 4px 6px -6px #99999;
+    -webkit-box-shadow: 0 4px 5px -7px #222;
+    -moz-box-shadow:    0 4px 5px -7px #999999;
+    box-shadow:         0 4px 5px -7px #99999;
 }
 
 .form-group.col-md-6,
@@ -121,7 +123,7 @@ label.custom-control-label{
 /* estilo do radio*/
 .custom-control-label:before{
     background-color:#F7F7F7;
-    /* border:0.5px solid #999999; */
+    border: none;
     box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
@@ -129,7 +131,7 @@ label.custom-control-label{
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
     background-color:#fb3c00;
-    /* border: 0.5px solid #999999; */
+    border: none;
     box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
@@ -230,26 +232,42 @@ label.col-sm-4.col-form-label{
     overflow: hidden;
     cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
     cursor: hand; /* para o IE 5.x */
-    /* box-shadow: 0px 0px 0px 0px; */
- }
-
- .btn-danger.focus {
-    background-color: #fb3c00;
-    border-color: #fb3c00;
 }
 
-.btn-danger:hover {
+ .btn-danger.focus {
+    background-color: chartreuse;
+    border-color: chartreuse;
+}
+
+/* .btn-danger:focus {
+    color: #fff; */
+    /* background-color: #c82333;
+    border-color: #bd2130; */
+    /* box-shadow: 0 0 0 0.2rem rgba(225,83,97,.5);
+
+.btn-danger:hover {   
     background-color:  #fb3c00;
     border-color: #fb3c00;
 }
-.btn.focus {
+
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* .btn.focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(251,60,6,.25);
-}
-.btn:hover {
+} */
+
+
+/* .btn:hover {
     color: #999999;
     text-decoration: none;
-}
+} */
+
+
 
 /* --------------------------------
  grupo do ckeck-box de 3 opções
@@ -290,7 +308,7 @@ label.form-check-label{
     display: none;
  }
 
-  
+ 
 input[type=checkbox] + label:before {
     content: "";
     display: inline-block;
