@@ -71,7 +71,7 @@ small {
 }
 
 #msg-antigas .scroll {
-    height: 420px;
+    height: 630px;
     overflow-y: scroll;
 }
 
@@ -138,7 +138,7 @@ small {
 -------------------------------- */
 
 .mensagem.row {
-    margin: 0px;
+    margin: 15px 0 0;
 }
 
 .mensagem .icon {
@@ -157,7 +157,10 @@ small {
 
 .mensagem .form-group {
     width: 530px;
-    margin: 15px 15px 15px 5px;
+    margin: 0;
+}
+.mensagem .form-group input {
+    width: 100%;
 }
 
 .mensagem .btn {
@@ -165,6 +168,7 @@ small {
     height: 30px;
     border-radius: 50%;
     background-color: #fb3c00;
+    margin-left: 15px;
     display: flex;
     align-self: center;
     justify-content: center;
