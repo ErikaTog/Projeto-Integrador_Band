@@ -1,0 +1,142 @@
+/* --------------------------------
+         Css - Minha Rede
+-------------------------------- */
+
+.container-minhaRede{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #E5E5E5;
+}
+
+.pesquisarContatos,
+.feedContatos{
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 30px 10px 0px 10px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    display: flex;
+    justify-content: center;
+}
+ 
+/* --------------------------------
+         Form
+-------------------------------- */
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.form-control{
+    font-family: sans-serif;
+    height: 50px;
+    font-size: 16px; 
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder{
+    font-size: 16px;
+    color: #999999;
+}
+
+/* --------------------------------
+         Feed contatos
+-------------------------------- */
+.feedContatos{
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.feedContatos-conteudo{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 10px 20px 10px;
+}
+
+/* --------------------------------
+         Pesquisar contatos
+-------------------------------- */
+.pesquisarContatos-conteudo{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 10px 20px 10px;
+}
+
+.pesquisarContatos-conteudo button{
+    align-self: flex-end;
+}
+
+/* --------------------------------
+         Radio e Radio-group
+-------------------------------- */
+.radio-group{
+    font-size: 22px; 
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: none;
+    box-shadow: none;
+}
+
+.radio-group label.custom-control-label{
+    padding: 0px 3px;
+}
+
+.custom-control{
+    margin-right: 10px;
+}
+
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    width: 20px;
+    height: 20px;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+}
+
+/* --------------------------------
+         Botões
+-------------------------------- */
+button.btn {
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: filter 0.2s;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+button.btn:hover {
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+    text-decoration: none;
+}
