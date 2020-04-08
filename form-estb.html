@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Estabelecimento</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/form-estab.css">
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-center">
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button type="button" class="btn btn-salvar">Cadastrar</button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cadastro-container container">
+        <div class="row">
+            <div class="col-6">
+                <!-- Grupo Form Identificação -->
+                <section id="form-identificacao" class="card">
+                    <div class="form-header">
+                        <h4>Identificação</h4>
+                    </div>
+                    <h5>Dados do usuário</h5>
+                    <form action="" method="POST">
+                        <div class="campo-form card">
+                            <div class="form-group row">
+                                <label for="inputUser" class="col-sm-2 col-form-label">Usuário</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputUser"
+                                        placeholder="Digite o usuário" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Senha de 6 dígitos" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-2 col-form-label">E-mail</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="inputEmail"
+                                        placeholder="Digite um e-mail válido" required>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Grupo Form Informação -->
+                <section id="form-informacao" class="card">
+                    <div class="form-header">
+                        <h4>Informações do seu local</h4>
+                    </div>
+                    <h5>Categoria do local</h5>
+                        
+                        <form action="" method="POST">
+                            <div class="campo-form card">
+
+                                <div class="form-group row">
+                                    <label for="inputTipo" class="col-sm-2 col-form-label">Tipo</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="serviço" id="inputServico">
+                                            <option>Bar/Pub</option>
+                                            <option>Escola de música</option>
+                                            <option>Estúdio</option>
+                                            <option>Gravadora</option>
+                                            <option>Loja</option>
+                                            <option>Produtora</option>
+                                            <option>Restaurante</option>
+                                            <option selected>Outro</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-group row">
+                                    <label for="inputServico" class="col-sm-2 col-form-label">Serviço</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputTipo"
+                                            placeholder="Digite o tipo do local">
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        
+
+                        <div class="form-group">
+                            <label for="inputBio">
+                                <h5>Sobre o local</h5>
+                            </label>
+                            <textarea class="form-control" id="inputBio" rows="12"
+                                placeholder="Conte sobre o seu local!"></textarea>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-6">
+
+                <!-- Grupo Form Dados -->
+                <section id="form-dados" class="card ml-auto">
+                    <div class="form-header">
+                        <h4>Dados do seu local</h4>
+                    </div>
+                    <h5>Localização</h5>
+                    <div class="campo-form card">
+                        <div class="form-group row">
+                            <label for="inputEstado" class="col-sm-2 col-form-label">Estado</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="inputEstado"
+                                    placeholder="Digite o Estado do seu local">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputCidade" class="col-sm-2 col-form-label">Cidade</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="inputCidade"
+                                    placeholder="Digite a cidade do seu local">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5>Contatos</h5>
+                    <div class="campo-form card">
+                        <div class="form-group row">
+                            <label for="inputSite" class="col-sm-2 col-form-label">Site</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputSite"
+                                    placeholder="Digite o site do seu local">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-2 col-form-label">E-mail</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail"
+                                    placeholder="Digite o e-mail do seu local">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputTelefone" class="col-sm-2 col-form-label">Telefone</label>
+                            <div class="col-sm-8">
+                                <input type="tel" class="form-control" id="inputTelefone"
+                                    placeholder="Digite o telefone do seu local">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h5>Funcionamento</h5>
+                    
+                    <div class="campo-form card">
+                        <div id="funcionamento col-sm-12" class="row">
+                            <!-- <div class="col-sm-12"> -->
+                            <div class="form-group row">
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" id="inputDia"
+                                        placeholder="Dia da semana" list="iDia">
+                                        <datalist id="iDia">
+                                            <option value="Segunda"></option>
+                                            <option value="Terça"></option>
+                                            <option value="Quarta"></option>
+                                            <option value="Quinta"></option>
+                                            <option value="Sexta"></option>
+                                            <option value="Sábado"></option>
+                                            <option value="Domingo"></option>
+                                            <option value="Feriado"></option>
+                                        </datalist>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="time" class="form-control" id="inputAbertura" placeholder="Abertura">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="time" class="form-control" id="inputFechamento" placeholder="Fechamento">
+                                </div>
+
+                                <div class="col-sm-1">
+                                    <img src="img/teste/icon_plus.png" alt="Mais" width="25">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </section>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <ul class="list-unstyled mb-0">
+            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+            container: 'body'
+        })
+    </script>
+</body>
+
+</html>
