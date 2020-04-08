@@ -20,8 +20,9 @@
     height: auto;
     margin: 30px 10px 0px 10px;
     background-color: #fff; 
-    box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
     display: flex;
     justify-content: center;
 }
@@ -53,8 +54,12 @@
     width: 100%;
     max-width: 1048px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     padding: 20px 10px 20px 10px;
+}
+
+.publicarVagas:focus{
+    outline: none;
 }
 
 /* --------------------------------
@@ -64,7 +69,7 @@
     width: 100%;
     max-width: 1048px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     padding: 20px 10px 20px 10px;
 }
 
@@ -185,4 +190,8 @@ button.btn:hover {
     background-color: #fb754b;
     border: 2px solid #fb3c00;
     text-decoration: none;
+}
+
+button.btn:focus{
+    box-shadow: none;
 }
