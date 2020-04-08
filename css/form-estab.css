@@ -1,0 +1,150 @@
+/* --------------------------------
+        Geral - Form Banda
+-------------------------------- */
+
+.cadastro-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.form-header {
+    padding-bottom: 10px;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+.col-6 {
+    padding: 0;
+}
+
+.campo-form {
+    padding: 10px 20px 0px;
+}
+
+.form-group.row {
+    width: 100%;
+    margin: 0 0 10px;
+}
+
+/* --------------------início_do_Grupo_Form_Identificação--------------------- */
+
+#form-identificacao {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 30px 25px;
+}
+
+#form-identificacao h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#form-identificacao label {
+    align-self: center;
+}
+
+#form-identificacao .col-sm-2,
+#form-identificacao .col-sm-6,
+#form-identificacao .col-sm-8 {
+    padding: 0;
+}
+
+/* --------------------fim_do_Grupo_Form_Identificação--------------------- */
+
+/* --------------------início_do_Grupo_Form_Informação--------------------- */
+
+#form-informacao {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 30px 35px;
+    margin-top: 30px;
+}
+
+#form-informacao h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#form-informacao label {
+    align-self: center;
+}
+
+
+#form-informacao .col-sm-2,
+#form-informacao .col-sm-12,
+#form-informacao .col-sm-8 {
+    padding: 0;
+}
+
+/* --------------------fim_do_Grupo_Form_Informação--------------------- */
+
+
+/* --------------------início_do_Grupo_Form_Dados--------------------- */
+
+#form-dados {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 30px 25px;
+}
+
+#form-dados h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#form-dados label {
+    align-self: center;
+}
+
+#form-dados .col-sm-1,
+#form-dados .col-sm-2,
+#form-dados .col-sm-3,
+#form-dados .col-sm-5,
+#form-dados .col-sm-6,
+#form-dados .col-sm-8,
+#form-dados .col-sm-11 {
+    padding: 0;
+}
+
+#funcionamento.row {
+    width: 100%;
+    margin: 0;
+}
+
+#funcionamento .col-sm-1 {
+    align-self: center;
+}
+
+#funcionamento img {
+    transition: 0.2s;
+}
+
+#funcionamento img:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+
+div.col-sm-1{
+    margin-top: 8px;
+}
+
+#form-dados .col-sm-3,
+#form-dados .col-sm-5{
+    padding: 0px 0px 0px 10px;
+}
+
+#inputDia,
+#inputAbertura,
+#inputFechamento{
+    text-align: center;
+}
+
+/* --------------------fim_do_Grupo_Form_Dados--------------------- */
