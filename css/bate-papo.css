@@ -27,6 +27,11 @@ img.avatar {
     border-radius: 50%;
 }
 
+small {
+    font-size: 12px;
+    color: #4c4f66;
+}
+
 /* --------------------início_do_Grupo_Pesquisar--------------------- */
 
 #pesquisar {
@@ -43,3 +48,33 @@ img.avatar {
     align-self: center;
     margin-left: 10px;
 }
+
+/* --------------------fim_do_Grupo_Pesquisar--------------------- */
+
+/* --------------------início_do_Grupo_Msg_Antigas--------------------- */
+
+#msg-antigas {
+    width: 100%;
+    max-width: 370px;
+    padding: 10px 10px 10px 20px;
+    margin-top: 30px;
+}
+
+#msg-antigas .media {
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#msg-antigas .media-body {
+    align-self: center;
+    margin-left: 10px;
+}
+
+#msg-antigas .scroll {
+    height: 420px;
+    overflow-y: scroll;
+}
+
+/* --------------------fim_do_Grupo_Msg_Antigas--------------------- */
+
+/* --------------------início_do_Grupo_Msg_Antigas--------------------- */
