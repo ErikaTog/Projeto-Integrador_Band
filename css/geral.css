@@ -61,12 +61,12 @@ nav.navbar {
 } 
 
 a.nav-link {
-    padding: 0;
+    padding: 0 !important;
     color: #999999;
     font-size: 10px;
     font-weight: 700;
     text-align: center;
-    margin: 0 6px;
+    margin: 0 0 0 24px;
     transition: 0.2s;
 }
 
@@ -81,7 +81,6 @@ a.nav-link img {
 .nav-item a:hover {
     opacity: 0.8;
 }
-
 
 /* --------------------------------
             Footer
