@@ -2,3 +2,177 @@
         Geral - Bate-papo
 -------------------------------- */
 
+.papo-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 30px;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.col-4,
+.col-8 {
+    padding: 0;
+}
+
+img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+small {
+    font-size: 12px;
+    color: #4c4f66;
+}
+
+/* --------------------início_do_Grupo_Pesquisar--------------------- */
+
+#pesquisar {
+    width: 100%;
+    max-width: 370px;
+    padding: 10px 20px;
+}
+
+#pesquisar .media {
+    margin-bottom: 10px;
+}
+
+#pesquisar .media h4 {
+    align-self: center;
+    margin-left: 10px;
+}
+
+/* --------------------fim_do_Grupo_Pesquisar--------------------- */
+
+/* --------------------início_do_Grupo_Msg_Antigas--------------------- */
+
+#msg-antigas {
+    width: 100%;
+    max-width: 370px;
+    padding: 10px 10px 10px 20px;
+    margin-top: 30px;
+}
+
+#msg-antigas .media {
+    padding: 10px 0;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#msg-antigas .media-body {
+    align-self: center;
+    margin-left: 10px;
+}
+
+#msg-antigas .scroll {
+    height: 420px;
+    overflow-y: scroll;
+}
+
+/* --------------------fim_do_Grupo_Msg_Antigas--------------------- */
+
+/* --------------------início_do_Grupo_Conversa--------------------- */
+
+#conversa {
+    width: 100%;
+    max-width: 770px;
+    padding: 15px 15px 15px 25px;
+}
+
+#conversa .media.header {
+    padding-bottom: 10px;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#conversa .media.header h5 {
+    align-self: center;
+    margin-left: 20px;
+}
+
+/* --------------------------------
+        Card - Conversas
+-------------------------------- */
+
+#conversa .scroll {
+    padding-right: 10px;
+    margin-top: 10px;
+    height: 700px;
+    overflow-y: scroll;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#conversa small {
+    color: #999999;
+    display: flex;
+    justify-content: center;
+}
+
+#conversa .user.card {
+    max-width: 500px;
+    padding: 10px 20px;
+    margin: 30px 0;
+}
+
+#conversa .media img {
+    align-self: center;
+}
+
+#conversa .card {
+    max-width: 500px;
+    margin-left: 15px;
+    padding: 10px 20px;
+}
+
+#conversa .media.friend {
+    margin: 30px 0;
+}
+
+/* --------------------------------
+        Card - Mensagem
+-------------------------------- */
+
+.mensagem.row {
+    margin: 0px;
+}
+
+.mensagem .icon {
+    display: flex;
+    align-items: center;
+}
+
+.mensagem .icon img {
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.mensagem .icon img:hover {
+    opacity: 0.8;
+}
+
+.mensagem .form-group {
+    width: 530px;
+    margin: 15px 15px 15px 5px;
+}
+
+.mensagem .btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fb3c00;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.mensagem .btn:hover {
+    opacity: 0.8;
+}
+
+/* --------------------fim_do_Grupo_Conversa--------------------- */
