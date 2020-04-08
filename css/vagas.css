@@ -94,20 +94,51 @@
     padding: 20px 10px 20px 10px;
 }
 
+.conteudoMinhaVaga,
 .conteudoVaga{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-top: 20px;
     padding: 15px;
     max-width: 500px;
-    height: 160px;
+    height: 190px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
     border: 1px solid #ced4da;
+    background-color: #ffffff;
+}
+
+.conteudoMinhaVaga:focus{
+    outline: none;
+}
+
+.conteudoVaga a{
+    color: #fb3c00;
+}
+
+.conteudoVaga a:hover{
+    color: #282a36;
+    text-decoration: none;
 }
 
 .feedVagas-conteudo .botao{
     width: 100%;
+}
+
+#textareaTituloVagaDiv{
+    margin-top: 0px;
+}
+
+#textareaTituloVaga,
+#textareaLocalVaga{
+    min-height: 40px;
+}
+
+.form-control:focus{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
 }
 
 /* --------------------------------
@@ -119,7 +150,6 @@
     font-weight: normal;
     max-width: 370px;
     height: 50px;
-    margin-top: 20px;
     border: 1px solid #ced4da;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
@@ -198,4 +228,8 @@ button.btn:hover {
 
 button.btn:focus{
     box-shadow: none;
+}
+
+.modal-footer .btn{
+    margin-top: 0px;
 }
