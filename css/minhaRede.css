@@ -1,8 +1,8 @@
 /* --------------------------------
-         Css - Página Vagas
+         Css - Minha Rede
 -------------------------------- */
 
-.container-vagas{
+.container-minhaRede{
     width: 100%;
     height: auto;
     margin-top: 60px;
@@ -12,9 +12,8 @@
     background-color: #E5E5E5;
 }
 
-.publicarVaga, 
-.pesquisarVagas,
-.feedVagas{
+.pesquisarContatos,
+.feedContatos{
     width: 100%;
     max-width: 1170px;
     height: auto;
@@ -26,12 +25,12 @@
     display: flex;
     justify-content: center;
 }
-
+ 
 /* --------------------------------
          Form
 -------------------------------- */
 .form-group{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 0px;
 }
 
@@ -48,44 +47,14 @@
 }
 
 /* --------------------------------
-         Publicar vaga
+         Feed contatos
 -------------------------------- */
-.formulario-nova-vaga{
-    width: 100%;
-    max-width: 1048px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
-}
-
-.publicarVaga:focus{
-    outline: none;
-}
-
-/* --------------------------------
-         Pesquisar vaga
--------------------------------- */
-.formulario-pesquisar-vaga{
-    width: 100%;
-    max-width: 1048px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
-}
-
-.pesquisarVagas:focus{
-    outline: none;
-}
-
-/* --------------------------------
-         Feed vagas
--------------------------------- */
-.feedVagas{
+.feedContatos{
     margin-bottom: 30px;
     font-size: 16px;
 }
 
-.feedVagas-conteudo{
+.feedContatos-conteudo{
     width: 100%;
     max-width: 1048px;
     display: flex;
@@ -94,74 +63,25 @@
     padding: 20px 10px 20px 10px;
 }
 
-.conteudoMinhaVaga,
-.conteudoVaga{
+/* --------------------------------
+         Pesquisar contatos
+-------------------------------- */
+.pesquisarContatos-conteudo{
+    width: 100%;
+    max-width: 1048px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 20px;
-    padding: 15px;
-    max-width: 500px;
-    height: 190px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px #999999;
-    border: 1px solid #ced4da;
-    background-color: #ffffff;
+    padding: 20px 10px 20px 10px;
 }
 
-.conteudoMinhaVaga:focus{
-    outline: none;
-}
-
-.conteudoVaga a{
-    color: #fb3c00;
-}
-
-.conteudoVaga a:hover{
-    color: #282a36;
-    text-decoration: none;
-}
-
-.feedVagas-conteudo .botao{
-    width: 100%;
-}
-
-#textareaTituloVagaDiv{
-    margin-top: 0px;
-}
-
-#textareaTituloVaga,
-#textareaLocalVaga{
-    min-height: 40px;
-}
-
-.form-control:focus{
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px #999999;
-    border: 1px solid #ced4da;
+.pesquisarContatos-conteudo button{
+    align-self: flex-end;
 }
 
 /* --------------------------------
          Radio e Radio-group
 -------------------------------- */
-.radio{
-    color: #5E6380;
-    font-size: 16px; 
-    font-weight: normal;
-    max-width: 370px;
-    height: 50px;
-    border: 1px solid #ced4da;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px #999999;
-    padding: 0px 13px;
-    display: flex;
-    align-items: center;
-}
-
-.radio label.custom-control-label{
-    padding: 3px 3px;
-}
-
 .radio-group{
     font-size: 22px; 
     font-weight: 700;
@@ -201,11 +121,6 @@
 /* --------------------------------
          Botões
 -------------------------------- */
-.botao{
-    display: flex;
-    justify-content: flex-end;
-}
-
 button.btn {
     background-color: #fb3c00;
     border: 2px solid #fb3c00;
@@ -224,12 +139,4 @@ button.btn:hover {
     background-color: #fb754b;
     border: 2px solid #fb3c00;
     text-decoration: none;
-}
-
-button.btn:focus{
-    box-shadow: none;
-}
-
-.modal-footer .btn{
-    margin-top: 0px;
 }
