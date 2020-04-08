@@ -74,7 +74,7 @@
 
     <main class="container-vagas">
         <!-- Publicar Vagas -->
-        <button type="button" class="publicarVagas" data-toggle="modal" data-target="#publicarNovaVaga"> 
+        <button type="button" class="publicarVaga" data-toggle="modal" data-target="#publicarNovaVaga"> 
             <div class="formulario-nova-vaga">
                 <h4><strong>Publicar nova vaga</strong></h4>
                 <img src="img/icones/menu-999999.png" alt="menu" width="35">
@@ -82,7 +82,7 @@
         </button>
 <!-- ----------------------------------------------------------------------------------------------------- -->
         <!-- Pesquisar Vagas -->
-        <button type="button" class="pesquisarVagas" data-toggle="modal" data-target="#publicarNovaVaga"> 
+        <button type="button" class="pesquisarVagas" data-toggle="modal" data-target="#pesquisarVagas"> 
             <div class="formulario-pesquisar-vaga">
                 <h4><strong>Pesquisar vagas</strong></h4>
                 <img src="img/icones/menu-999999.png" alt="menu" width="35">
@@ -94,9 +94,6 @@
         <!-- Feed de Vagas -->
         <section class="feedVagas"> 
             <div class="feedVagas-conteudo">
-                <!-- <div class="tituloConteudoVaga">
-                    <h4><strong>Feed de vagas</strong></h4>
-                </div> -->
                 <div class="radio-group">
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadio7" name="customRadio3" class="custom-control-input" checked>
@@ -163,7 +160,7 @@
     </main>
     
 <!-- ----------------------------------------------------------------------------------------------------- -->
-    <!-- Modal - Publicar Vaga-->
+    <!-- Modal - Publicar Vaga -->
     <div class="modal fade" id="publicarNovaVaga" tabindex="-1" role="dialog" aria-labelledby="modalPublicarNovaVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -174,11 +171,31 @@
             </button>
             </div>
             <div class="modal-body" id="novaVaga">
-
-                <!-- ----------------------------------------------------------------------------------------------------- -->
-
-                <!-- ----------------------------------------------------------------------------------------------------- -->
-
+                    <div class="radio">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadio1">Banda</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Professor</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio3">Estabecimento</label>
+                        </div>
+                    </div>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
+                        </div>
+                        <div class="form-group">
+                            <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                        </div>
+                        <div class="form-group">
+                            <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
+                        </div>
+                    </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-Publicar">Publicar</button>
@@ -186,9 +203,8 @@
         </div>
         </div>
     </div>
-
-    <!-- ----------------------------------------------------------------------------------------------------- -->
-    <!-- Modal - Pesquisar vagas-->
+    
+    <!-- Modal - Pesquisar vagas -->
     <div class="modal fade" id="pesquisarVagas" tabindex="-1" role="dialog" aria-labelledby="modalPesquisarVagas" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -198,15 +214,32 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <div class="modal-body" id="novaVaga">
-
-                <!-- ----------------------------------------------------------------------------------------------------- -->
-                
-                <!-- ----------------------------------------------------------------------------------------------------- -->
-
+            <div class="modal-body" id="pesquisaVaga">
+                <div class="radio">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadio4">Banda</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio5">Professor</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio6" name="customRadio2" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio6">Estabecimento</label>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
+                    </div>
+                    <div class="form-group">
+                        <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-Publicar">Publicar</button>
+                <button type="button" class="btn btn-Publicar">Pesquisar</button>
             </div>
         </div>
         </div>

@@ -12,7 +12,7 @@
     background-color: #E5E5E5;
 }
 
-.publicarVagas, 
+.publicarVaga, 
 .pesquisarVagas,
 .feedVagas{
     width: 100%;
@@ -58,7 +58,7 @@
     padding: 20px 10px 20px 10px;
 }
 
-.publicarVagas:focus{
+.publicarVaga:focus{
     outline: none;
 }
 
@@ -71,6 +71,10 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 10px 20px 10px;
+}
+
+.pesquisarVagas:focus{
+    outline: none;
 }
 
 /* --------------------------------
