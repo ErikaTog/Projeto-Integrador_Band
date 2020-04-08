@@ -12,9 +12,6 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/bate-papo.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
@@ -43,7 +40,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="minhaRede.html">
                                 <img src="img/icones/minharede_cinza.png" alt="Minha rede">
                                 <p>Minha rede</p>
                             </a>
@@ -55,7 +52,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="">
                                 <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
                                 <p>Anuncie</p>
                             </a>
@@ -82,15 +79,17 @@
         <div class="row">
             <div class="col-4">
     
-                <!-- Grupo Pesquisar -->
+    <!-- Grupo Pesquisar -->
                 <section id="pesquisar" class="card">
                     <div class="media">
                         <img src="img/teste/jane.jpg" alt="Jane Doe" class="avatar">
                         <h4>Bate-papo</h4>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inputPesquisar" placeholder="Pesquisar">
-                    </div>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputPesquisar" placeholder="Pesquisar">
+                        </div>
+                    </form>
                 </section>
 
     <!-- Grupo Msg Antigas -->
@@ -220,10 +219,10 @@
 
             </div>
 
-            <div class="col-8 ml-auto">
+            <div class="col-8">
 
     <!-- Grupo Conversa -->
-                <section id="conversa" class="card">
+                <section id="conversa" class="card ml-auto">
                     <div class="media header">
                         <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
                         <h5>Mari Moreira</h5>
@@ -304,11 +303,13 @@
                             <a href=""><img src="img/teste/icon_emoji.svg" alt="Emoji"></a>
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="inputConversa" placeholder="Digite uma mensagem...">
-                        </div>
+                        <form action="" method="POST" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="inputConversa" placeholder="Digite uma mensagem...">
+                            </div>
+                            <button class="btn"><img src="img/teste/icon_send.svg" alt="Enviar"></button>                            
+                        </form>
 
-                        <button class="btn"><img src="img/teste/icon_send.svg" alt="Enviar"></button>
                     </div>
                 </section>
 
