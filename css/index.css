@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+
+/* --------------------------------
+            Body
+-------------------------------- */
+
+body {
+    color: #282a36;
+    font: 'Patua One', cursive;
+    background: #F7F7F7;
+}
+
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
+h1 { font-size: 45px; font-weight: bold; margin: 0; }
+h4 { font-size: 24px; font-weight: bold; margin: 0; }
+p { font-size: 20px; margin: 0; font-weight: bold;}
+
+/* --------------------------------
+            Header
+-------------------------------- */
+
+header{
+    height: 80px;
+}
+
+.form-group input{
+    height: 40px;
+    border: 2px solid #fb3c00;
+    margin-right: 10px;
+}
+
+::-webkit-input-placeholder{
+    font-size: 14px;
+}
+
+.nav-item a{
+    color: #fb3c00;
+    font-size: 12px;
+    margin-left: 305px;
+}
+
+.nav-item a:hover{
+    text-decoration: none;
+}
+
+.form-inline .form-control{
+    width: 200px;
+}
+
+nav.navbar{
+    padding: 8px 0px;
+}
+
+ul.navbar-nav{
+    padding-top: 4px;
+}
