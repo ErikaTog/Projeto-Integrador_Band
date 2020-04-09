@@ -135,11 +135,11 @@
 #bio .scroll {
     height: 200px;
     overflow-y: scroll;
+    margin-top: 20px;
 }
 
 #bio p {
     padding-right: 20px;
-    margin-top: 20px;
 }
 
 /* --------------------fim_do_Grupo_Bio--------------------- */
@@ -209,8 +209,14 @@
 }
 
 #minha-musica .scroll .row {
+    margin: 20px 0 0;
+    padding-right: 20px;
     height: 775px;
     overflow-y: scroll;
+}
+
+.musica-item.col-6 {
+    padding: 0;
 }
 
 .musica-item {
