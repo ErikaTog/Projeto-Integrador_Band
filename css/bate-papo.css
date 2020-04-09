@@ -102,7 +102,7 @@ small {
 #conversa .scroll {
     padding-right: 10px;
     margin-top: 10px;
-    height: 700px;
+    height: 660px;
     overflow-y: scroll;
     box-shadow: 0 4px 6px -6px #999999;
 }

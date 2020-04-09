@@ -128,11 +128,17 @@
 /* --------------------início_do_Grupo_Bio--------------------- */
 
 #bio {
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
 }
 
+#bio .scroll {
+    height: 200px;
+    overflow-y: scroll;
+}
+
 #bio p {
+    padding-right: 20px;
     margin-top: 20px;
 }
 

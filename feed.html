@@ -12,9 +12,6 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/feed.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,13 +28,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="">
                                 <img src="img/icones/home_laranja.png" alt="Início">
                                 <p>Início</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="vagas.html">
                                 <img src="img/icones/vagas_cinza.png" alt="Vagas">
                                 <p>Vagas</p>
                             </a>
@@ -49,7 +46,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="bate-papo.html">
                                 <img src="img/icones/papo_cinza.png" alt="Bate papo">
                                 <p>Bate papo</p>
                             </a>
@@ -67,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item" id="sair">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="index.html">
                                 <img src="img/icones/sair_cinza.png" alt="Sair">
                                 <p>Sair</p>
                             </a>
@@ -148,7 +145,7 @@
     <!-- Rodapé -->          
                 <div id="rodape">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+                        <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
                         <li>
                             <span class="copyright">Copyright &copy;
                                 2020 - Band+ by Group 1
@@ -163,16 +160,18 @@
     <!-- Grupo Publicar --> 
                 <section id="publicar" class="card">
                     <h4><strong>O que está rolando?</strong></h4>
-                    <div class="form-group">
-                        <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
-                    </div>
-                    <div class="add ml-auto">
-                        <a href=""><img src="img/teste/icon_map.svg" alt="Mapa"></a>
-                        <a href=""><img src="img/teste/icon_camera.svg" alt="Foto"></a>
-                        <a href=""><img src="img/teste/icon_image.svg" alt="Imagem"></a>
-                        <a href=""><img src="img/teste/icon_emoji.svg" alt="Emoji"></a>
-                        <button type="button" class="btn btn-salvar">Publicar</button>
-                    </div>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
+                        </div>
+                        <div class="add">
+                            <a href=""><img src="img/teste/icon_map.svg" alt="Mapa"></a>
+                            <a href=""><img src="img/teste/icon_camera.svg" alt="Foto"></a>
+                            <a href=""><img src="img/teste/icon_image.svg" alt="Imagem"></a>
+                            <a href=""><img src="img/teste/icon_emoji.svg" alt="Emoji"></a>
+                            <button type="button" class="btn btn-salvar">Publicar</button>
+                        </div>
+                    </form>
                 </section>
     
      <!-- Grupo Publicacao --> 
@@ -183,7 +182,7 @@
                             <h5>Jane Doe</h5>
                         </div>
                         <img class="img-public" src="img/teste/feed_img1.jpg" alt="Publicação">
-                        <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
@@ -196,7 +195,7 @@
                             <h5>Jane Doe</h5>
                         </div>
                         <img class="img-public" src="img/teste/feed_img2.jpg" alt="Publicação">
-                        <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
@@ -209,7 +208,7 @@
                             <h5>Jane Doe</h5>
                         </div>
                         <img class="img-public" src="img/teste/feed_img3.jpg" alt="Publicação">
-                        <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
@@ -222,7 +221,7 @@
                             <h5>Jane Doe</h5>
                         </div>
                         <img class="img-public" src="img/teste/feed_img4.jpg" alt="Publicação">
-                        <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>

@@ -23,7 +23,8 @@ img.mini-avatar {
 }
 
 .col-3,
-.col-6 {
+.col-6,
+.col-8 {
     padding: 0;
 }
 
@@ -143,6 +144,12 @@ img.mini-avatar {
     color: #4c4f66;
 }
 
+#publicar .add {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 #publicar .add a {
     margin-right: 10px;
     transform: 0.2s;
@@ -176,8 +183,9 @@ img.mini-avatar {
 }
 
 #publicacao p {
+    text-align: justify;
     padding: 30px 25px;
-    border-bottom: 0.5px solid #999999;
+    box-shadow: 0 4px 6px -6px #999999;
 }
 
 #publicacao .curtir {

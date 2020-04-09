@@ -90,7 +90,6 @@ a.modalLink:hover {
 -------------------------------- */
 
 #habilidades .scroll {
-    margin-top: 15px;
     height: 200px;
     overflow-y: scroll;
 }
@@ -127,8 +126,9 @@ div.icon-border-none i:hover {
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
-#infos .form-group {
+#infos form {
     width: 100%;
+    height: 38px;
     margin: 0;
 }
 
