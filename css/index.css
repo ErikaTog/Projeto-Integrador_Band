@@ -59,17 +59,29 @@ ul.navbar-nav{
 /* --------------------fim_do_Header -------------------- */
 
 /* --------------------começo_do_Carousel -------------------- */
+
+.container-carousel{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 0px;
+    width: 100%;
+}
 div#carousel{
     margin-top: 80px;
 }
 
 .carousel-item img{
-    height: 600px;
+    height: 500px;
 }
 
-/* .carousel-inner{
-    margin-left: auto;
-    margin-right: auto;
-   
-} */
+#botaoCarousel{
+    display: flex;
+    justify-content: center;
+    margin: 3px 0px;
+}
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
 /* --------------------fim_do_Carousel -------------------- */
