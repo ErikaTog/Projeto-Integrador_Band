@@ -18,9 +18,7 @@ h1 { font-size: 45px; font-weight: bold; margin: 0; }
 h4 { font-size: 24px; font-weight: bold; margin: 0; }
 p { font-size: 20px; margin: 0; font-weight: bold;}
 
-/* --------------------------------
-            Header
--------------------------------- */
+/* --------------------começo_do_Header -------------------- */
 
 header{
     height: 80px;
@@ -57,3 +55,21 @@ nav.navbar{
 ul.navbar-nav{
     padding-top: 4px;
 }
+
+/* --------------------fim_do_Header -------------------- */
+
+/* --------------------começo_do_Carousel -------------------- */
+div#carousel{
+    margin-top: 80px;
+}
+
+.carousel-item img{
+    height: 600px;
+}
+
+/* .carousel-inner{
+    margin-left: auto;
+    margin-right: auto;
+   
+} */
+/* --------------------fim_do_Carousel -------------------- */
