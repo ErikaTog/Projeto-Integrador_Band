@@ -1,0 +1,324 @@
+/* --------------------------------
+        Geral - Perfil banda OK
+-------------------------------- */
+
+.perfil-container {
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+/* Container - Bootstrap */
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* --------------------início_do_Grupo_Head--------------------- */
+
+#head {
+    position: relative;
+}
+
+/* --------------------------------
+             Imagem OK
+-------------------------------- */
+
+/* ------------------------------*/ 
+/* Fundo */
+.fundo-content,
+.fundo{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* ------------------------------*/ 
+/* Avatar */
+.avatar-content {
+    position: absolute;
+    top: 140px;
+    left: 64px;
+}
+
+#head img.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+
+.info-user {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+.info-user h3 {
+    margin-top: 10px;
+    margin-left: 30%;
+    display: inline-block;
+}
+
+.info-user .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    padding-bottom: 15px;
+}
+
+.info-seguidor p {
+    margin-left: 5px;
+    align-self: center;
+}
+
+/* --------------------------------
+            Configuração
+-------------------------------- */
+
+#config {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+#config button {
+    background-color: #999999;
+    border: 0;
+}
+
+#config button:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+#config a {
+    text-align: center;
+    transition: 0.2s;
+}
+#config a:focus {
+    background-color: #fff;
+    color: #fb3c00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#config a.dropdown-item {
+    padding: 10px 25px;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------início_do_Grupo_Bio--------------------- */
+
+#bio {
+    height: 320px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+/* #bio p {
+    margin-top: 20px;
+} */
+
+#bio .scroll {
+    margin-top: 21px;
+    padding-right: 10px;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Habilidades--------------------- */
+
+#integrantes {
+    max-width: 550px;
+    padding: 25px 25px 25px 50px;
+    margin-top: 30px;
+}
+
+#integrantes .scroll .item.row {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.item.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.integrantes-item {
+    margin-top: 20px;
+    padding-left: 0px;
+}
+
+.media-body{
+    width: 100%;
+}
+
+.container-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    margin-right: 16px;
+}
+
+.mr-3{
+    width: 100%;
+    border-radius: 20px;
+}
+
+ #integrantes p {
+    font-size: 12px;
+    margin-top: 2px;
+    align-self: center;
+}
+
+
+/* --------------------fim_do_Grupo_Habilidades--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
+#infos {
+    max-width: 550px;
+    padding: 25px 50px;
+    margin-top: 30px;
+}
+
+.infos-item {
+    margin-top: 20px;
+}
+
+.infos-item img {
+    width: 40px;
+}
+
+#infos p {
+    margin-left: 45px;
+    align-self: center;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Minha_Musica--------------------- */
+
+#minha-musica {
+    padding: 25px 25px 25px 50px;
+    margin-top: 30px;
+}
+
+#minha-musica .scroll .row {
+    height: 775px;
+    overflow-y: scroll;
+}
+
+.musica-item {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 40px;
+}
+
+.musica-item h5 {
+    margin-top: 10px;
+}
+
+.musica-item video {
+    width: 500px;
+    height: 300px;
+    background-color: #282a36;
+}
+
+.musica-item iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* ------------------------------*/ 
+/* Audio player */
+ .player {
+    background: #fb754b ;
+    background-image: url(../img/teste/icone_bg.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 10%;
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+
+.player audio {
+    width: 500px;
+    position: absolute;
+    margin-top: 246px;
+}
+
+audio {
+    border: 2px solid #fb754b;
+    background-color: #f7f7f7;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #f7f7f7;
+}
+
+/* --------------------fim_do_Grupo_Minha_Musica--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+
+.form-group {
+    margin: 0 0 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-control {
+    color: #282a36;
+}
+
+/* ------------------------------*/ 
+/* Alterar Senha */
+
+.form-group small a {
+    color: #999999;
+    font-weight: 600;
+}
+
+/* ------------------------------*/ 
+/* Excluir Conta */
+
+.form-group label.danger {
+    color: #fe0000;
+}
+
+.form-group input#dangerSenha {
+    border-color: #fe0000;
+}
+
+button.btn.btn-danger {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: #fe0000;
+}
