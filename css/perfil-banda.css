@@ -129,25 +129,23 @@
 /* --------------------início_do_Grupo_Bio--------------------- */
 
 #bio {
-    height: 320px;
-    padding: 25px 50px;
+    padding: 25px 25px 25px 50px;
     margin-top: 30px;
 }
 
-/* #bio p {
-    margin-top: 20px;
-} */
+#bio p {
+    padding-right: 20px;
+}
 
 #bio .scroll {
-    margin-top: 21px;
-    padding-right: 10px;
-    height: 250px;
+    margin-top: 20px;
+    height: 200px;
     overflow-y: scroll;
 }
 
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
-/* --------------------início_do_Grupo_Habilidades--------------------- */
+/* --------------------início_do_Grupo_Integrantes--------------------- */
 
 #integrantes {
     max-width: 550px;
@@ -194,7 +192,7 @@
 }
 
 
-/* --------------------fim_do_Grupo_Habilidades--------------------- */
+/* --------------------fim_do_Grupo_Integrantes--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
@@ -227,8 +225,14 @@
 }
 
 #minha-musica .scroll .row {
+    margin: 20px 0 0;
+    padding-right: 20px;
     height: 775px;
     overflow-y: scroll;
+}
+
+.musica-item.col-6 {
+    padding: 0;
 }
 
 .musica-item {
