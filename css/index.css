@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 /* --------------------------------
             Body
@@ -6,20 +6,18 @@
 
 body {
     color: #282a36;
-    font: 'Patua One', cursive;
+    font-family: 'Poppins', sans-serif;
     background: #F7F7F7;
 }
 
 /* --------------------------------
             Títulos - H
 -------------------------------- */
-
 h1 { font-size: 45px; font-weight: bold; margin: 0; }
-h4 { font-size: 24px; font-weight: bold; margin: 0; }
+h4 { font-size: 22px; font-weight: bold; margin: 0; }
 p { font-size: 20px; margin: 0; font-weight: bold;}
 
 /* --------------------começo_do_Header -------------------- */
-
 header{
     height: 80px;
 }
@@ -59,7 +57,6 @@ ul.navbar-nav{
 /* --------------------fim_do_Header -------------------- */
 
 /* --------------------começo_do_Carousel -------------------- */
-
 .container-carousel{
     display: flex;
     justify-content: center;
@@ -118,13 +115,41 @@ div#carousel{
 
 /* --------------------início_do_Para quem -------------------- */
 #para-quem{
-    background-image: url(../img/pre-cadastro-bg.jpg);
+    background-image: url(../img/paraquem-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    color: white;
+    padding: 50px 0px;
 }
 
 #para-quem img{
     width: 250px;
+    align-self: center;
+}
+
+#para-quem h1,
+#para-quem h4{
+    text-align: center;
+}
+
+#para-quem h4{
+    color: #282A36;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+#para-quem p{
+    text-align: center;
+    padding-top: 10px;
+    color:white;
+}
+
+#para-quem a:hover{
+    text-decoration: none;
+}
+
+#para-quem .row{
+    padding: 10px 0px;
 }
 /* --------------------fim_do_Para quem -------------------- */
