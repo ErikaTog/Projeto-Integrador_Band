@@ -1,0 +1,231 @@
+/* --------------------------------
+    Geral - Perfil músico editar
+-------------------------------- */
+
+
+/* --------------------início_do_Grupo_Head--------------------- */
+
+/* --------------------------------
+             Imagem
+-------------------------------- */
+
+.fundo-content a img,
+.avatar-content a img {
+    transition: 0.2s;
+}
+
+.fundo-content a img:hover,
+.avatar-content a img:hover {
+    filter: brightness(0.9);
+}
+
+/* --------------------------------
+             Icon
+-------------------------------- */
+
+div.icon i {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #fb3c00;
+    border-radius: 100%;
+    color: #fb3c00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+div.icon i:hover {
+    background-color: #fb3c00;
+    color: #fff;
+}
+
+.fundo-content div.icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.avatar-content div.icon {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+
+.info-user textarea {
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 345px;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------início_do_Grupo_Bio--------------------- */
+
+#bio .form-group {
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+#bio {
+    height: 232px;
+    padding: 25px 25px 25px 50px;
+    margin-top: 30px;
+}
+
+#bio .scroll {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#bio p {
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Integrantes--------------------- */
+
+a.modalLink {
+    color: #282a36;
+    margin: 20px 0;
+}
+
+a.modalLink:hover {
+    font-weight: 700;
+}
+
+/* --------------------------------
+            Scroll
+-------------------------------- */
+
+#integrantes .scroll {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+/* #integrantes .form-group {
+    width: 80%;
+    margin: 0;
+} */
+
+.integrantes-item.media{
+    display: flex;
+    align-items: center;
+} 
+
+div.form-group.col-5{
+    padding-right: 0px;
+    padding-left: 10px;
+} 
+
+/* .integrantes-item  textarea {
+    width: 100%;
+    margin: 15px;
+} */
+
+/* ------------------------------*/ 
+/* Ícone - lixo */
+
+div.icon-border-none i {
+    color: #999999;
+    transition: 0.2s;
+}
+
+div.icon-border-none i:hover {
+    color: #4c4f66;
+}
+
+/* .habilidades-item div.icon-border-none {
+    margin-left: 20px;
+    display: flex;
+    align-self: center;
+} */
+
+div.icon-border-none.form-group.col-1{
+   padding: 0px 15px 0px 10px;
+}
+
+
+/* --------------------fim_do_Grupo_Integrantes--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
+#infos form {
+    width: 100%;
+    height: 38px;
+    margin: 0;
+}
+
+.infos-item  textarea {
+    width: 100%;
+    margin-left: 20px;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Minha_Musica--------------------- */
+
+#minha-musica .scroll .row {
+    margin: 0;
+    height: 850px;
+}
+
+.musica-item {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.musica-item div.icon-border-none {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* --------------------fim_do_Grupo_Minha_Musica--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+
+.collapse .form-group {
+    margin-top: 20px;
+}
+
+.custom-control.custom-checkbox {
+    margin-bottom: 20px;
+}
+
+label.col-sm-2.col-form-label{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* input#formControlFileImg.form-control-file{
+    height: 38px;
+} */
+
+div.col-sm-8, 
+div.col-sm-12{
+    padding: 0px;
+   
+}
+
+::-webkit-input-placeholder{
+    font-size: 14px;
+    color: orangered;
+}
+
+/* ------------------------------*/ 
+/* Confirmar Exclusão */
+
+.danger {
+    font-weight: 700;
+    color: #fe0000;
+    margin-bottom: 10px;
+}
