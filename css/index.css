@@ -80,8 +80,51 @@ div#carousel{
     justify-content: center;
     margin: 3px 0px;
 }
-/* --------------------------------
-            Títulos - H
--------------------------------- */
 
 /* --------------------fim_do_Carousel -------------------- */
+
+/* --------------------início_do_Conecte-se -------------------- */
+#conexao{
+    margin: 40px 0px;
+}
+
+#conexao img{
+    width: 350px;
+}
+
+#conexao div.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#conexao .col-5{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#conexao h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* --------------------fim_do_Conecte-se -------------------- */
+
+/* --------------------início_do_Anuncie -------------------- */
+#anuncie img{
+    width: 100%;
+}
+/* --------------------fim_do_Anuncie -------------------- */
+
+/* --------------------início_do_Para quem -------------------- */
+#para-quem{
+    background-image: url(../img/pre-cadastro-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#para-quem img{
+    width: 250px;
+}
+/* --------------------fim_do_Para quem -------------------- */
