@@ -47,6 +47,21 @@
 }
 
 /* --------------------------------
+         Pesquisar contatos
+-------------------------------- */
+.pesquisarContatos form{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 20px 10px;
+}
+
+.form-groupBtn{
+    align-self: flex-end;
+}
+
+/* --------------------------------
          Feed contatos
 -------------------------------- */
 .feedContatos{
@@ -63,20 +78,41 @@
     padding: 20px 10px 20px 10px;
 }
 
-/* --------------------------------
-         Pesquisar contatos
--------------------------------- */
-.pesquisarContatos-conteudo{
-    width: 100%;
-    max-width: 1048px;
+.contatoimg-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
 }
 
-.pesquisarContatos-conteudo button{
+.contatoimg-content a{
     align-self: flex-end;
+}
+
+.listaContatos a{
+    margin-top: 20px;
+    font-size: 16px; 
+    font-weight: 700;
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    color: #282a36;
+    /* align-self: center; */
+}
+
+.listaContatos a:hover{
+    color: #fb3c00;
+    text-decoration: none;
+}
+
+/* --------------------------------
+         Img contato
+-------------------------------- */
+.contatoimg-content img.contatoimg {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    /* border: 5px solid #fff; */
 }
 
 /* --------------------------------
@@ -87,7 +123,6 @@
     font-weight: 700;
     width: 100%;
     display: flex;
-    align-items: flex-end;
     height: 50px;
     padding: 6px 0px;
     border-radius: none;
