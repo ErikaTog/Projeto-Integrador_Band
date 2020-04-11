@@ -1,0 +1,341 @@
+/* --------------------------------
+         Css - Anuncie
+-------------------------------- */ 
+
+.container-anuncie{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #E5E5E5;
+}
+
+.publicarProduto, 
+.pesquisarProduto,
+.feedProduto{
+    width: 100%;
+    max-width: 1170px;
+    height: auto;
+    margin: 30px 10px 0px 10px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-novo-produto,
+.feedProduto-conteudo{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px 20px 10px;
+}
+
+.formulario-pesquisar-produto{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.mesmaLinha{
+    display: flex;
+    margin-top: 0px;
+}
+
+.publicarProduto:focus, 
+.pesquisarProduto:focus,
+.conteudoProduto:focus,
+.conteudoMeuProduto:focus{
+    outline: none;
+}
+
+/* --------------------------------
+         Pesquisar produtos
+-------------------------------- */
+.pesquisarProduto form{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 20px 10px;
+}
+
+.form-groupBtn{
+    align-self: flex-end;
+}
+
+/* --------------------------------
+         Feed vagas
+-------------------------------- */
+.feedProduto{
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.feedProduto-conteudo{
+    flex-wrap: wrap;
+}
+
+.feedProduto-conteudo .botao{
+    width: 100%;
+}
+
+#textareaTituloProdutoDiv{
+    margin-top: 0px;
+}
+
+#textareaTituloProduto{
+    min-height: 40px;
+}
+
+.container textarea{
+    height: 50px;
+}
+
+.container textarea#descriçãoNovoProduto,
+.container textarea#descriçãoNovoProdutoEditar{
+    height: auto;
+}
+
+#dadosProdutoEditar div textarea,
+#descriçãoNovoProdutoDiv textarea{
+    padding-top: 12px;
+}
+
+/* Conteudo das Vagas */
+.conteudoMeuProduto,
+.conteudoProduto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 15px;
+    max-width: 500px;
+    height: 191px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+    background-color: #ffffff;
+}
+
+.conteudoProduto,
+.conteudoMeuProduto{
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.conteudoProduto img,
+.conteudoMeuProduto img{
+    box-shadow: none;
+    border: none;
+    background-color: #E5E5E5;
+}
+
+.conteudoProduto h5,
+.conteudoMeuProduto h5{
+    margin-bottom: 5px;
+}
+
+.conteudoProdutoDiv,
+.conteudoMeuProdutoDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.conteudoProdutoInfo,
+.conteudoMeuProdutoInfo{
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.conteudoProdutoInfo2,
+.conteudoMeuProdutoInfo2{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* --------------------------------
+         Modal - Publicar
+-------------------------------- */
+#modalPublicar,
+#modalPublicarEditar{
+    max-width: 70%;
+}
+
+/* --------------------------------
+         Form
+-------------------------------- */
+.form-group{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.form-control{
+    font-family: sans-serif;
+    height: 50px;
+    font-size: 16px; 
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder{
+    font-size: 16px;
+    color: #999999;
+}
+
+.form-control:focus{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+.form-group:first-child{
+    margin-top: 0px;
+}
+
+.form-group:nth-child(2){
+    max-width: 58%;
+    margin-right: 2%;
+}
+
+/* --------------------------------
+         Form - Publicar Produto
+-------------------------------- */
+#dinheiro,
+#dinheiroEditar{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    max-width: 40%;
+}
+
+.avatar{
+    align-self: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+#escolherImg,
+#escolherImgEditar{
+    padding: 20px 0px 0px 0px;
+}
+
+form#dadosProduto,
+form#dadosProdutoEditar{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-right: 0px;
+}
+
+#imgProduto,
+#imgProdutoEditar{
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* --------------------------------
+         Radio e Radio-group
+-------------------------------- */
+.radio-group{
+    font-size: 22px; 
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: none;
+    box-shadow: none;
+}
+
+.radio-group label.custom-control-label{
+    padding: 0px 3px;
+}
+
+.custom-control{
+    margin-right: 10px;
+}
+
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    width: 20px;
+    height: 20px;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+}
+
+/* --------------------------------
+         Botões
+-------------------------------- */
+.botao{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btn {
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: filter 0.2s;
+    /* width: 100px; */
+    height: 40px;
+    margin-top: 20px;
+}
+
+button.btn:hover {
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+    text-decoration: none;
+}
+
+button.btn:focus{
+    box-shadow: none;
+}
+
+.modal-footer .btn{
+    margin-top: 0px;
+}
+
+.mesmaLinha button{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* --------------------------------
+         Links
+-------------------------------- */
+a{
+    color: #fb3c00;
+}
+
+a:hover{
+    color: #282a36;
+    text-decoration: none;
+}
