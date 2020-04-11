@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Band+</title>
+    <title>Vagas</title>
     <link rel="shortcut icon" href="img/icone.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -24,44 +24,44 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/home_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="feed.html">
+                                <img src="img/icones/home_cinza.png" alt="Início">
                                 <p>Início</p>
                             </a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/vagas_laranja.png" alt="Início" width="35">
+                        <li class="nav-item  active">
+                            <a class="nav-link" href="vagas.html">
+                                <img src="img/icones/vagas_laranja.png" alt="Vagas">
                                 <p>Vagas</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/minharede_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="minhaRede.html">
+                                <img src="img/icones/minharede_cinza.png" alt="Minha rede">
                                 <p>Minha rede</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/papo_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="bate-papo.html">
+                                <img src="img/icones/papo_cinza.png" alt="Bate papo">
                                 <p>Bate papo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/anuncie_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="anuncie.html">
+                                <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
                                 <p>Anuncie</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/perfil_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="">
+                                <img src="img/icones/perfil_cinza.png" alt="Perfil">
                                 <p>Perfil</p>
                             </a>
                         </li>
                         <li class="nav-item" id="sair">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/sair_cinza.png" alt="Início" width="35">
+                            <a class="nav-link" href="index.html">
+                                <img src="img/icones/sair_cinza.png" alt="Sair">
                                 <p>Sair</p>
                             </a>
                         </li>
@@ -76,18 +76,50 @@
         <!-- Publicar Vagas -->
         <button type="button" class="publicarVaga" data-toggle="modal" data-target="#publicarNovaVaga"> 
             <div class="formulario-nova-vaga">
-                <h4><strong>Publicar nova vaga</strong></h4>
+                <h4>Publicar nova vaga</h4>
                 <img src="img/icones/menu-999999.png" alt="menu" width="35">
             </div>
         </button>
 
         <!-- Pesquisar Vagas -->
-        <button type="button" class="pesquisarVagas" data-toggle="modal" data-target="#pesquisarVagas"> 
+        <!-- <button type="button" class="pesquisarVagas" data-toggle="modal" data-target="#pesquisarVagas"> 
             <div class="formulario-pesquisar-vaga">
-                <h4><strong>Pesquisar vagas</strong></h4>
+                <h4>Pesquisar vagas</h4>
                 <img src="img/icones/menu-999999.png" alt="menu" width="35">
             </div>
-        </button>
+        </button> -->
+        <section class="pesquisarVaga">
+            <div class="formulario-pesquisar-vaga">
+                <div class="radio">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadio4">Banda</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio5">Professor</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio6" name="customRadio2" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio6">Estabecimento</label>
+                    </div>
+                </div>
+                <form action="" method="POST">
+                    <!-- <div class="form-group">
+                        <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
+                    </div> -->
+                    <div class="mesmaLinha" class="form-group">
+                        <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
+                        <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                        <button type="button" class="btn btn-Publicar">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        
+
 
         <!-- Feed de Vagas -->
         <section class="feedVagas"> 
@@ -138,7 +170,7 @@
                 </button>
 
                 <div class="botao">
-                    <button type="button" class="btn btn-Publicar">+ Vagas</button>
+                    <button type="button" class="btn btn-mais">+ Vagas</button>
                 </div>
             </div>
         </section>
@@ -174,7 +206,7 @@
                             <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
                         </div>
                         <div class="form-group">
-                            <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                            <input type="localNovaVaga" class="form-control" id="localNovaVaga2" placeholder="Local">
                         </div>
                         <div class="form-group">
                             <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
@@ -189,7 +221,7 @@
     </div>
     
     <!-- Modal - Pesquisar vagas -->
-    <div class="modal fade" id="pesquisarVagas" tabindex="-1" role="dialog" aria-labelledby="modalPesquisarVagas" aria-hidden="true">
+    <!-- <div class="modal fade" id="pesquisarVagas" tabindex="-1" role="dialog" aria-labelledby="modalPesquisarVagas" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -227,7 +259,7 @@
             </div>
         </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Modal - Editar vaga -->
     <div class="modal fade" id="editarVaga" tabindex="-1" role="dialog" aria-labelledby="modalEditarVaga" aria-hidden="true">
@@ -252,9 +284,11 @@
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-Publicar">Salvar</button>
-            </div>
+            <form action="" method="POST">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-Salvar">Salvar</button>
+                </div>
+            </form>
         </div>
         </div>
     </div>

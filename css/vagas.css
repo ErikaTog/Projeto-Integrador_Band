@@ -13,7 +13,7 @@
 }
 
 .publicarVaga, 
-.pesquisarVagas,
+.pesquisarVaga,
 .feedVagas{
     width: 100%;
     max-width: 1170px;
@@ -27,30 +27,8 @@
     justify-content: center;
 }
 
-/* --------------------------------
-         Form
--------------------------------- */
-.form-group{
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-
-.form-control{
-    font-family: sans-serif;
-    height: 50px;
-    font-size: 16px; 
-    font-weight: normal;
-}
-
-::-webkit-input-placeholder{
-    font-size: 16px;
-    color: #999999;
-}
-
-/* --------------------------------
-         Publicar vaga
--------------------------------- */
-.formulario-nova-vaga{
+.formulario-nova-vaga,
+.feedVagas-conteudo{
     width: 100%;
     max-width: 1048px;
     display: flex;
@@ -58,22 +36,27 @@
     padding: 20px 10px 20px 10px;
 }
 
-.publicarVaga:focus{
-    outline: none;
-}
-
-/* --------------------------------
-         Pesquisar vaga
--------------------------------- */
 .formulario-pesquisar-vaga{
     width: 100%;
     max-width: 1048px;
     display: flex;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
+    flex-direction: column;
+    padding: 25px 10px 25px 10px;
 }
 
-.pesquisarVagas:focus{
+.mesmaLinha{
+    display: flex;
+    margin: 20px 0px 0px 0px;
+}
+
+#localNovaVaga{
+    margin-left: 10px;
+    width: 50%;
+}
+
+.publicarVaga:focus,
+.pesquisarVaga:focus,
+.conteudoMinhaVaga:focus{
     outline: none;
 }
 
@@ -86,12 +69,7 @@
 }
 
 .feedVagas-conteudo{
-    width: 100%;
-    max-width: 1048px;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 10px 20px 10px;
 }
 
 .conteudoMinhaVaga,
@@ -107,10 +85,6 @@
     box-shadow: 0px 2px 4px #999999;
     border: 1px solid #ced4da;
     background-color: #ffffff;
-}
-
-.conteudoMinhaVaga:focus{
-    outline: none;
 }
 
 .conteudoVaga a{
@@ -133,6 +107,26 @@
 #textareaTituloVaga,
 #textareaLocalVaga{
     min-height: 40px;
+}
+
+/* --------------------------------
+         Form
+-------------------------------- */
+.form-group{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.form-control{
+    font-family: sans-serif;
+    height: 50px;
+    font-size: 16px; 
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder{
+    font-size: 16px;
+    color: #999999;
 }
 
 .form-control:focus{
@@ -232,4 +226,9 @@ button.btn:focus{
 
 .modal-footer .btn{
     margin-top: 0px;
+}
+
+.mesmaLinha button{
+    margin-top: 10px;
+    margin-left: 10px
 }
