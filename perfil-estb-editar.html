@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perfil-Editar</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/perfil-estb.css">
+    <link rel="stylesheet" href="css/perfil-estb-editar.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-center">
+            <div class="nav-container">
+                <nav class="navbar navbar-expand-md">                    
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback-editar.html">
+                                <button type="button" class="btn btn-salvar">Salvar</button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil-musico.html">
+                                <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <main class="perfil-container">
+    
+        <!-- Grupo Head -->
+        <section id="head" class="card">
+            <div class="fundo-content">
+                <a data-toggle="modal" data-target="#alterarFundo" href="">
+                    <img class="fundo" src="img/teste/fundo-estb.png" alt="Foto de fundo">
+                    <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
+                </a>
+            </div>
+            <div class="avatar-content">
+                <a data-toggle="modal" data-target="#alterarAvatar" href="">
+                    <img class="avatar" src="img/teste/jane-estb.png" alt="Foto de Perfil">
+                    <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
+                </a>
+            </div>
+            <div class="info-user">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" id="textareaUserName" rows="1">Estabelecimento</textarea>
+                    </div>
+                </form>
+                <div class="container">
+                    <div class="row">
+                        <div class="info-seguidor col-2 offset-3">
+                            <div class="media">
+                                <img src="img/teste/icon_star.svg">
+                                <p>Seguidores: 12M</p>
+                            </div>
+                        </div>
+                        <div class="info-seguidor col-2">
+                            <div class="media">
+                                <img src="img/teste/icon_headset.svg">
+                                <p>Seguindo: 250</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grupo Contatos -->
+        <section id="infoContato" class="card">
+            <h4><strong>Contatos</strong></h4>
+            <div class="infoContatoItens"> 
+                <div class="infos-item">
+                    <img src="img/icones/pin-01.png" alt="Local">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaInfos1" rows="1">São Paulo / SP</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/site-01.png" alt="Site">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaInfos2" rows="1">https://lorem.ipsum</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/canal-01.png" alt="Canal">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaInfos3" rows="1">JaneeeeD</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/email-01.png" alt="Email">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaInfos4" rows="1">jane.doe@email.com</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grupo Serviços -->
+        <section id="servico" class="card">
+            <h4><strong>Serviços</strong></h4>
+            <form action="" method="post">
+                <div class="form-group">
+                    <textarea class="form-control" id="" rows="5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </textarea>
+                </div>
+            </form>
+        </section>
+
+        <!-- Grupo Funcionamento -->
+        <section id="funcionamento" class="card">
+            <h4><strong>Funcionamento</strong></h4>
+            <div class="dias">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" id="" rows="1">Seg 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Ter 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Qua 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Qui 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Sex 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Sab 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Dom 20:00 - 2:00</textarea>
+                        <textarea class="form-control" id="" rows="1">Feriados 20:00 - 2:00</textarea>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Grupo Sobre o estabelecimento -->
+        <section id="sobre" class="card">
+            <h4><strong>Sobre o estabelecimento</strong></h4>
+            <form action="" method="post">
+                <div class="form-group">
+                    <textarea class="form-control" id="" rows="5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal - Aterar Fundo -->
+    <div class="modal fade" id="alterarFundo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Atualizar o plano de fundo</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha uma imagem</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Aterar Avatar -->
+    <div class="modal fade" id="alterarAvatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Atualizar a imagem</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha uma imagem</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Confirmar Exclusão -->
+    <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="danger">Tem certeza que quer excluir esta habilidade?</p>
+                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="list-unstyled mb-0">
+            <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

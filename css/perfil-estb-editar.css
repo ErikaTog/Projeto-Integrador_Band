@@ -1,0 +1,172 @@
+/* --------------------------------
+    Geral - Perfil músico editar
+-------------------------------- */
+
+
+/* --------------------início_do_Grupo_Head--------------------- */
+
+/* --------------------------------
+             Imagem
+-------------------------------- */
+
+.fundo-content a img,
+.avatar-content a img {
+    transition: 0.2s;
+}
+
+.fundo-content a img:hover,
+.avatar-content a img:hover {
+    filter: brightness(0.9);
+}
+
+/* --------------------------------
+             Icon
+-------------------------------- */
+
+div.icon i {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #fb3c00;
+    border-radius: 100%;
+    color: #fb3c00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+div.icon i:hover {
+    background-color: #fb3c00;
+    color: #fff;
+}
+
+.fundo-content div.icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.avatar-content div.icon {
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+
+.info-user textarea {
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 345px;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------------------
+            form-group padrão
+-------------------------------- */
+#servico .form-group,
+#funcionamento .form-group,
+#sobre .form-group{
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+/* --------------------------------
+        Conteudo do Funcionamento
+-------------------------------- */
+.dias{
+    padding: 0px;
+}
+
+.dias form div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.dias form div textarea{
+    margin-bottom: 10px;
+    width: 24%;
+    padding-left: 20px;
+}
+
+/* --------------------------------
+            Scroll
+-------------------------------- */
+
+#habilidades .scroll {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#habilidades .form-group {
+    width: 80%;
+    margin: 0;
+}
+
+.habilidades-item  textarea {
+    width: 100%;
+    margin-left: 15px;
+}
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
+#infos form {
+    width: 100%;
+    height: 38px;
+    margin: 0;
+}
+
+.infos-item  textarea {
+    width: 100%;
+    margin-left: 20px;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------------------
+        Conteudo do info Contatos
+-------------------------------- */
+.infos-item{
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.infoContatoItens img{
+    height: 40px;
+}
+
+.infoContatoItens div form div{
+    margin-bottom: 0px;
+}
+
+.infoContatoItens div form div textarea{
+    margin-left: 0px;
+    width: 95%;
+}
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+
+.collapse .form-group {
+    margin-top: 20px;
+}
+
+.custom-control.custom-checkbox {
+    margin-bottom: 20px;
+}
+
+
+/* ------------------------------*/ 
+/* Confirmar Exclusão */
+
+.danger {
+    font-weight: 700;
+    color: #fe0000;
+    margin-bottom: 10px;
+}
