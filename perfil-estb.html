@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perfil</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/perfil-estb.css">
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-center">
+            <div class="nav-container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>            
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="feed.html">
+                                    <img src="img/icones/home_cinza.png" alt="Início">
+                                    <p>Início</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="vagas.html">
+                                    <img src="img/icones/vagas_cinza.png" alt="Vagas">
+                                    <p>Vagas</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="minhaRede.html">
+                                    <img src="img/icones/minharede_cinza.png" alt="Minha rede">
+                                    <p>Minha rede</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="bate-papo.html">
+                                    <img src="img/icones/papo_cinza.png" alt="Bate papo">
+                                    <p>Bate papo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="anuncie.html">
+                                    <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
+                                    <p>Anuncie</p>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="">
+                                    <img src="img/icones/perfil_laranja.png" alt="Perfil">
+                                    <p>Perfil</p>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="sair">
+                                <a class="nav-link" href="index.html">
+                                    <img src="img/icones/sair_cinza.png" alt="Sair">
+                                    <p>Sair</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+    </header>
+
+    <main class="perfil-container">
+
+        <!-- Grupo Head -->
+        <section id="head" class="card">
+            <div class="fundo-content">
+                <img class="fundo" src="img/teste/fundo-estb.png" alt="Foto de fundo">    
+            </div>
+            <div class="avatar-content">
+                <img class="avatar" src="img/teste/jane-estb.png" alt="Foto de Perfil">
+            </div>
+            <div class="info-user">
+                <h3><strong>Estabelecimento</strong></h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="info-seguidor col-2 offset-3">
+                            <div class="media">
+                                <img src="img/teste/icon_star.svg">
+                                <p>Seguidores: 12M</p>
+                            </div>
+                        </div>
+                        <div class="info-seguidor col-2">
+                            <div class="media">
+                                <img src="img/teste/icon_headset.svg">
+                                <p>Seguindo: 250</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="config" class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="perfil-estb-editar.html">
+                        <h5>Editar Perfil</h5>
+                    </a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                        <h5>Alterar Senha</h5>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#excluirConta" href="#">
+                        <p>Excluir a conta</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grupo Contatos -->
+        <section id="infoContato" class="card">
+            <h4><strong>Contatos</strong></h4>
+            <div class="infoContatoItens">
+                <div class="infos-item">
+                    <img src="img/icones/pin-01.png" alt="Local">
+                    <p>São Paulo / SP</p>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/site-01.png" alt="Site">
+                    <p>https://lorem.ipsum</p>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/canal-01.png" alt="Canal">
+                    <p>JaneeeeD</p>
+                </div>
+                <div class="infos-item">
+                    <img src="img/icones/email-01.png" alt="Email">
+                    <p>jane.doe@email.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grupo Serviços -->
+        <section id="servico" class="card">
+            <h4><strong>Serviços</strong></h4>
+            <div class="scroll">
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
+                    <br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </section>
+
+        <!-- Grupo Funcionamento -->
+        <section id="funcionamento" class="card">
+            <h4><strong>Funcionamento</strong></h4>
+            <div class="dias">
+                <p class="">Seg 20:00 - 2:00</p>
+                <p class="">Ter 20:00 - 2:00</p>
+                <p class="">Qua 20:00 - 2:00</p>
+                <p class="">Qui 20:00 - 2:00</p>
+                <p class="">Sex 20:00 - 2:00</p>
+                <p class="">Sab 20:00 - 2:00</p>
+                <p class="">Dom 20:00 - 2:00</p>
+                <p class="">Feriados 20:00 - 2:00</p>
+            </div>
+        </section>
+
+        <!-- Grupo Sobre o estabelecimento -->
+        <section id="sobre" class="card">
+            <h4><strong>Sobre o estabelecimento</strong></h4>
+            <div class="scroll">
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae, placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
+                    <br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis, voluptatem commodi, eveniet corrupti temporibus ea quibusdam. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal - Aterar Senha -->
+    <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="modalAlterarSenha" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalAlterarSenha">Alterar a senha</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="senhaAtual">Senha atual</label>
+                        <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
+                            placeholder="Senha">
+                        <small id="passwordHelp" class="form-text text-muted"><a href="">Esqueceu a senha?</a></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="novaSenha">Nova senha</label>
+                        <input type="password" class="form-control" id="novaSenha" placeholder="Senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmarSenha">Confirme a nova senha</label>
+                        <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-salvar-modal">Alterar senha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Excluir conta -->
+    <div class="modal fade" id="excluirConta" tabindex="-1" role="dialog" aria-labelledby="modalExcluiConta" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalExcluiConta">Excluir sua conta</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>    
+                <div class="modal-body">
+                    <p>Olá, <strong>Jane Doe</strong>.</p>
+                    <p>É uma pena que você queira excluir a sua conta.</p>
+                    <div class="form-group">
+                        <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
+                        <select class="form-control" id="motivoExcluir">
+                            <option class=" selected" selected disabled>Escolha...</option>                                
+                            <option>Uma segunda conta foi criada</option>
+                            <option>Problemas para começar</option>
+                            <option>Questões de privacidade</option>
+                            <option>Quero remover algo</option>
+                            <option>Não consigo achar pessoas para seguir</option>
+                            <option>Ocupa muito do meu tempo</option>
+                            <option>Outro motivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
+                        <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    </div>
+                        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="list-unstyled mb-0">
+            <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
