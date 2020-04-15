@@ -5,53 +5,54 @@
 .container-vagas{
     width: 100%;
     height: auto;
+    background-color: #E5E5E5;
     margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #E5E5E5;
+    
 }
 
 .publicarVaga, 
 .pesquisarVaga,
 .feedVagas{
-    width: 100%;
-    max-width: 1170px;
+    width: 90%;
     height: auto;
-    margin: 30px 10px 0px 10px;
+    max-width: 1170px;
     background-color: #fff; 
     border-radius: 10px;
     box-shadow: 0 2px 4px #999999;
     border: 1px solid #ced4da;
+    margin: 30px 10px 0px 10px;
     display: flex;
     justify-content: center;
 }
 
 .formulario-nova-vaga,
 .feedVagas-conteudo{
-    width: 100%;
-    max-width: 1048px;
+    width: 90%;
+    max-width: 1028px;
+    padding: 20px 0px 20px 0px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px 20px 10px;
 }
 
 .formulario-pesquisar-vaga{
-    width: 100%;
-    max-width: 1048px;
+    width: 90%;
+    max-width: 1028px;
+    padding: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
-    padding: 25px 10px 25px 10px;
 }
 
 .mesmaLinha{
-    display: flex;
     margin: 20px 0px 0px 0px;
+    display: flex;
 }
 
 #localNovaVaga{
-    margin-left: 10px;
     width: 50%;
+    margin-left: 10px;
 }
 
 .publicarVaga:focus,
@@ -64,8 +65,8 @@
          Feed vagas
 -------------------------------- */
 .feedVagas{
-    margin-bottom: 30px;
     font-size: 16px;
+    margin-bottom: 30px;
 }
 
 .feedVagas-conteudo{
@@ -74,17 +75,18 @@
 
 .conteudoMinhaVaga,
 .conteudoVaga{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 15px;
-    max-width: 500px;
-    height: 190px;
+    /* max-width: 500px; */
+    max-width: 48.64%;
+    min-height: 190px;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
     border: 1px solid #ced4da;
-    background-color: #ffffff;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .conteudoVaga a{
@@ -118,10 +120,10 @@
 }
 
 .form-control{
-    font-family: sans-serif;
     height: 50px;
     font-size: 16px; 
     font-weight: normal;
+    font-family: sans-serif;
 }
 
 ::-webkit-input-placeholder{
@@ -139,11 +141,11 @@
          Radio e Radio-group
 -------------------------------- */
 .radio{
-    color: #5E6380;
+    height: 50px;
+    max-width: 370px;
     font-size: 16px; 
     font-weight: normal;
-    max-width: 370px;
-    height: 50px;
+    color: #5E6380;
     border: 1px solid #ced4da;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
@@ -157,15 +159,15 @@
 }
 
 .radio-group{
+    width: 100%;
+    height: 50px;
     font-size: 22px; 
     font-weight: 700;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    padding: 6px 0px;
     border-radius: none;
     box-shadow: none;
+    padding: 6px 0px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .radio-group label.custom-control-label{
@@ -177,10 +179,10 @@
 }
 
 .custom-control-label:before{
-    background-color:#F7F7F7;
-    box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
 } 
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
@@ -201,23 +203,23 @@
 }
 
 button.btn {
-    background-color: #fb3c00;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
+    width: 100px;
+    height: 40px;
     font-size: 16px;
     font-weight: 700;
     transition: filter 0.2s;
-    width: 100px;
-    height: 40px;
+    color: #fff;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
     margin-top: 20px;
 }
 
 button.btn:hover {
+    text-decoration: none;
     color: #fff;
     background-color: #fb754b;
     border: 2px solid #fb3c00;
-    text-decoration: none;
 }
 
 button.btn:focus{

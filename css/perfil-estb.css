@@ -4,10 +4,9 @@
 
 .perfil-container {
     width: 100%;
-    max-width: 1170px;
     height: auto;
+    max-width: 1170px;
     margin: 90px auto 40px auto;
-
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -94,8 +93,8 @@
 
 #config {
     position: absolute;
-    bottom: 10px;
     right: 20px;
+    bottom: 10px;
 }
 
 #config button {
@@ -113,10 +112,10 @@
     transition: 0.2s;
 }
 #config a:focus {
-    background-color: #fff;
     color: #fb3c00;
     font-weight: bold;
     text-decoration: underline;
+    background-color: #fff;
 }
 
 #config a.dropdown-item {
@@ -157,8 +156,8 @@
 
 .dias p{
     width: 25%;
-    margin-top: 10px;
     padding-left: 20px;
+    margin-top: 10px;
 }
 
 /* --------------------fim_do_Grupo_Bio--------------------- */
@@ -172,9 +171,9 @@
 }
 
 .infos-item {
-    display: flex;
-    margin-top: 20px;
     padding: 0px 20px;
+    margin-top: 20px;
+    display: flex;
 }
 
 .infos-item img {
@@ -208,8 +207,8 @@
 /* Alterar Senha */
 
 .form-group small a {
-    color: #999999;
     font-weight: 600;
+    color: #999999;
 }
 
 /* ------------------------------*/ 
@@ -225,8 +224,8 @@
 
 button.btn.btn-danger {
     color: #fff;
-    border: 2px solid #fe0000;
     background-color: #fe0000;
+    border: 2px solid #fe0000;
 }
 
 button.btn:focus{

@@ -5,24 +5,24 @@
 .container-anuncie{
     width: 100%;
     height: auto;
+    background-color: #E5E5E5;
     margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #E5E5E5;
 }
 
 .publicarProduto, 
 .pesquisarProduto,
 .feedProduto{
     width: 100%;
-    max-width: 1170px;
     height: auto;
-    margin: 30px 10px 0px 10px;
+    max-width: 1170px;
     background-color: #fff; 
     border-radius: 10px;
     box-shadow: 0 2px 4px #999999;
     border: 1px solid #ced4da;
+    margin: 30px 10px 0px 10px;
     display: flex;
     justify-content: center;
 }
@@ -31,22 +31,22 @@
 .feedProduto-conteudo{
     width: 100%;
     max-width: 1048px;
+    padding: 20px 10px 20px 10px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px 20px 10px;
 }
 
 .formulario-pesquisar-produto{
     width: 100%;
     max-width: 1048px;
+    padding: 5px 0px;
     display: flex;
     flex-direction: column;
-    padding: 5px 0px;
 }
 
 .mesmaLinha{
-    display: flex;
     margin-top: 0px;
+    display: flex;
 }
 
 .publicarProduto:focus, 
@@ -62,9 +62,9 @@
 .pesquisarProduto form{
     width: 100%;
     max-width: 1048px;
+    padding: 20px 10px 20px 10px;
     display: flex;
     flex-direction: column;
-    padding: 20px 10px 20px 10px;
 }
 
 .form-groupBtn{
@@ -75,8 +75,8 @@
          Feed Produtos
 -------------------------------- */
 .feedProduto{
-    margin-bottom: 30px;
     font-size: 16px;
+    margin-bottom: 30px;
 }
 
 .feedProduto-conteudo{
@@ -112,17 +112,17 @@
 /* Conteudo das Vagas */
 .conteudoMeuProduto,
 .conteudoProduto{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 15px;
-    max-width: 500px;
     height: 191px;
+    max-width: 500px;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
     border: 1px solid #ced4da;
-    background-color: #ffffff;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .conteudoProduto,
@@ -134,9 +134,9 @@
 
 .conteudoProduto img,
 .conteudoMeuProduto img{
+    background-color: #E5E5E5;
     box-shadow: none;
     border: none;
-    background-color: #E5E5E5;
 }
 
 .conteudoProduto h5,
@@ -177,14 +177,14 @@
          Form
 -------------------------------- */
 .form-group{
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 0px;
-    width: 100%;
 }
 
 .form-control{
-    font-family: sans-serif;
     height: 50px;
+    font-family: sans-serif;
     font-size: 16px; 
     font-weight: normal;
 }
@@ -214,19 +214,19 @@
 -------------------------------- */
 #dinheiro,
 #dinheiroEditar{
-    margin-top: 20px;
-    margin-bottom: 0px;
+    max-width: 40%;
     border-radius: 10px;
     box-shadow: 0 2px 4px #999999;
     border: 1px solid #ced4da;
-    max-width: 40%;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 .avatar{
-    align-self: center;
     border-radius: 10px;
     box-shadow: 0 2px 4px #999999;
     border: 1px solid #ced4da;
+    align-self: center;
 }
 
 #escolherImg,
@@ -236,31 +236,31 @@
 
 form#dadosProduto,
 form#dadosProdutoEditar{
+    padding-right: 0px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    padding-right: 0px;
 }
 
 #imgProduto,
 #imgProdutoEditar{
-    padding: 20px;
     border-radius: 10px;
+    padding: 20px;
 }
 
 /* --------------------------------
          Radio e Radio-group
 -------------------------------- */
 .radio-group{
+    width: 100%;
+    height: 50px;
     font-size: 22px; 
     font-weight: 700;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    padding: 6px 0px;
     border-radius: none;
     box-shadow: none;
+    padding: 6px 0px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .radio-group label.custom-control-label{
@@ -272,10 +272,10 @@ form#dadosProdutoEditar{
 }
 
 .custom-control-label:before{
-    background-color:#F7F7F7;
-    box-shadow: 0px 2px 4px #999999;
     width: 20px;
     height: 20px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
 } 
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
@@ -296,23 +296,23 @@ form#dadosProdutoEditar{
 }
 
 button.btn {
-    background-color: #fb3c00;
-    border: 2px solid #fb3c00;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    transition: filter 0.2s;
     /* width: 100px; */
     height: 40px;
     margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: filter 0.2s;
+    color: #fff;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
 }
 
 button.btn:hover {
+    text-decoration: none;
     color: #fff;
     background-color: #fb754b;
     border: 2px solid #fb3c00;
-    text-decoration: none;
 }
 
 button.btn:focus{
@@ -336,6 +336,6 @@ a{
 }
 
 a:hover{
-    color: #282a36;
     text-decoration: none;
+    color: #282a36;
 }
