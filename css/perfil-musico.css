@@ -343,7 +343,6 @@ img.head-fundo {
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
-
 #minha-musica {
     padding: 2.5rem 2.5rem 2.5rem 5rem;
     margin-top: 30px;
@@ -508,4 +507,67 @@ button.btn.btn-danger:hover {
     color: #fff;
     border: 2px solid #fe0000;
     background-color: rgba(254, 0, 0, 0.8);
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    img.head-fundo {
+        height: 250px;
+    }
+    
+    #head img.avatar {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* ------------------------------*/ 
+    /* Minha Música */
+    #minha-musica {
+        padding: 2.5rem 5rem;
+        margin-top: 30px;
+    }
+
+    #minha-musica .row {
+        padding-top: 4rem;
+        justify-content: center;
+    }
+
+    .col-sm-12 {
+        padding: 0;
+    }
+    
+    .musica-item {
+        max-width: 600px;
+        padding-bottom: 2.5rem;
+    }
+
+    .musica-item:last-child {
+        padding-bottom: 0;
+    }
+    
+    .musica-item h5 {
+        text-align: center;
+        padding: 1rem 0 0;
+    }
+    
+    .musica-item video {
+        height: 400px;
+    }
+    
+    .musica-item iframe {
+        height: 400px;
+    }
+
+     .player {
+        height: 400px;
+        background-size: 55%;
+        background-position: 50% 20%;
+    }
+    
+    .player audio {
+        margin-top: 346px;
+    }
 }
