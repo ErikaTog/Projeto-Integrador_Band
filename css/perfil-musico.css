@@ -49,6 +49,10 @@ header {
     padding: 5px 0px;
 }
 
+.topbar-mobile {
+    display: flex;
+}
+
 .navbar-brand img {
     width: 150px;
 }
@@ -101,7 +105,6 @@ header {
 
 .navbar-toggler {
     background-color: #fb3c00;
-    padding: 0;
 }
 
 .navbar-toggler-icon {
@@ -153,9 +156,19 @@ Imagem
 
 /* ------------------------------*/ 
 /* Fundo */
-img.head-fundo {
-    width: 100%;
+.head-fundo {
+    width: auto;
     height: 300px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* ------------------------------*/ 
@@ -412,7 +425,7 @@ audio::-webkit-media-controls-panel {
 /* Button */
 .carregar {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn-carregar {
@@ -514,13 +527,17 @@ button.btn.btn-danger:hover {
 -------------------------------- */
 
 @media screen and (max-width: 1199px) {
-    img.head-fundo {
+    .head-fundo {
         height: 250px;
     }
     
     #head img.avatar {
         width: 180px;
         height: 180px;
+    }
+
+    #habilidades .scroll .item.row {
+        height: 230px;
     }
     
     /* ------------------------------*/ 
@@ -571,3 +588,77 @@ button.btn.btn-danger:hover {
         margin-top: 346px;
     }
 }
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    /* ------------------------------*/ 
+    /* Header */
+    .nav-container {
+        width: 100%;
+    }
+
+    .topbar-mobile {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .navbar-icon {
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 3px 3px #999999;
+    }
+
+    .navbar-nav {
+        width: 70%;
+        padding: 1rem 0;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav-link {
+        margin: 0;
+    }
+
+    .nav-link p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 2.5rem;
+    }
+
+    /* ------------------------------*/ 
+    /* Head */
+    .head-fundo {
+        height: 200px;
+    }
+    
+    #head img.avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-user {
+        padding-left: 20rem;
+    }
+    
+    /* ------------------------------*/ 
+    /* Habilidades */
+    #habilidades {
+        max-width: 100%;
+    }
+
+    #infos {
+        max-width: 100%;
+    }
+} 
