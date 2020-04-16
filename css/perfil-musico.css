@@ -3,9 +3,30 @@ html {
 }
 
 /* --------------------------------
-            Header
+            Body
 -------------------------------- */
 
+body {
+    color: #282a36;
+    font: 400 1.6rem 'Open Sans', sans-serif;
+    background: #F7F7F7;
+}
+
+
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
+h1 { font-size: 4.6rem; font-weight: 700; margin: 0; }
+h2 { font-size: 3.8rem; font-weight: 700; margin: 0; }
+h3 { font-size: 3.0rem; font-weight: 700; margin: 0; }
+h4 { font-size: 2.2rem; font-weight: 700; margin: 0; }
+h5 { font-size: 1.8rem; font-weight: 700; margin: 0; }
+p { margin: 0; }
+
+/* --------------------------------
+            Header
+-------------------------------- */
 header {
     width: 100%;
     height: 60px;
@@ -82,20 +103,17 @@ a.nav-link img {
 /* --------------------------------
         Geral - Perfil músico
 -------------------------------- */
-
 .perfil-container {
-    width: 100%;
+    width: 80%;
     max-width: 1170px;
     height: auto;
-    margin: 90px auto 40px auto;
-
+    margin: 90px auto 40px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
 }
 
-.card {
+.card-perfil {
     width: 100%;
     background-color: #fff;
     box-shadow: 0 2px 4px #999999;
@@ -110,98 +128,118 @@ a.nav-link img {
 
 
 /* --------------------início_do_Grupo_Head--------------------- */
-
 #head {
     position: relative;
 }
 
 /* --------------------------------
-             Imagem
+Imagem
 -------------------------------- */
 
 /* ------------------------------*/ 
 /* Fundo */
-.fundo-content {
+img.head-fundo {
     width: 100%;
     height: 300px;
-    border-radius: 10px 10px 0px 0px;
 }
 
 /* ------------------------------*/ 
 /* Avatar */
 .avatar-content {
     position: absolute;
-    top: 140px;
-    left: 64px;
+    top: 35%;
+    left: 5%;
 }
 
 #head img.avatar {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
     border: 5px solid #fff;
+    border-radius: 50%;
 }
 
 /* --------------------------------
             Info - User
 -------------------------------- */
-
 .info-user {
-    width: 100%;
-    border-radius: 0 0 10px 10px;
+    padding-left: 27rem;
 }
 
 .info-user h3 {
-    margin-top: 10px;
-    margin-left: 30%;
-    display: inline-block;
+    padding: 1rem 3rem;
 }
 
-.info-user .row {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 20px;
-    padding-bottom: 15px;
+.info-user-status {
+    padding: 1rem 0 1.5rem;
+    display: flex;
 }
 
-.info-seguidor p {
-    margin-left: 5px;
+.info-user .media p {
+    margin-left: 0.5rem;
     align-self: center;
+}
+
+.info-user .media:last-child {
+    margin-left: 3.5rem;
 }
 
 /* --------------------------------
             Configuração
 -------------------------------- */
-
-#config {
+.config {
     position: absolute;
-    bottom: 10px;
-    right: 20px;
+    bottom: 1rem;
+    right: 2rem;
 }
 
-#config button {
+.config .dropdown-toggle::after {
+    content: none;
+}
+
+.config button {
+    width: 40px;
+    height: 40px;
     background-color: #999999;
     border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#config button:hover {
+.config button i {
+    font-size: 2.3rem;
+}
+
+.config button:hover {
     text-decoration: none;
     opacity: 0.8;
 }
 
-#config a {
-    text-align: center;
-    transition: 0.2s;
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
 }
-#config a:focus {
+
+.config a {
+    padding: 2.5rem 4rem;
+    text-align: center;
+    transition-duration: 0.25s;
+}
+
+.config a:hover {
+    background-color: #F7F7F7;
+}
+
+.config a:focus {
     background-color: #fff;
     color: #fb3c00;
     font-weight: bold;
     text-decoration: underline;
 }
 
-#config a.dropdown-item {
-    padding: 10px 25px;
+.config p {
+    font-size: 1.6rem;
 }
 
 /* --------------------fim_do_Grupo_Head--------------------- */

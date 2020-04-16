@@ -82,47 +82,36 @@
     <div class="perfil-container">
         
     <!-- Grupo Head -->
-        <section id="head" class="card">
-
-            <div class="fundo-content">
-                <!-- <img class="fundo" src="img/teste/fundo.png" alt="Foto de fundo">     -->
-            </div>
+        <section id="head" class="card-perfil">
+            <img src="img/teste/fundo.png" alt="Foto de fundo" class="head-fundo">    
 
             <div class="avatar-content">
-                <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+                <img src="img/teste/jane.jpg" alt="Foto de Perfil" class="avatar">
             </div>
-
             <div class="info-user">
                 <h3><strong>Jane Doe</strong></h3>
-                <div class="container">
-                    <div class="row">
-                        <div class="info-seguidor col-2 offset-3">
-                            <div class="media">
-                                <img src="img/teste/icon_star.svg">
-                                <p>Seguidores: 12M</p>
-                            </div>
-                        </div>
-                        <div class="info-seguidor col-2">
-                            <div class="media">
-                                <img src="img/teste/icon_headset.svg">
-                                <p>Seguindo: 250</p>
-                            </div>
-                        </div>
+                <div class="info-user-status">
+                    <div class="media">
+                        <img src="img/teste/icon_star.svg">
+                        <p>Seguidores: 12M</p>
+                    </div>
+                    <div class="media">
+                        <img src="img/teste/icon_headset.svg">
+                        <p>Seguindo: 250</p>
                     </div>
                 </div>
             </div>
-
-            <div id="config" class="btn-group">
+            <div class="config">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <img src="img/icones/config_cinza.png" alt="Configurações" width="30px">
+                    <i class="fas fa-cog"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="perfil-musico-editar.html">
-                        <h5>Editar Perfil</h5>
+                        <h4>Editar Perfil</h4>
                     </a>
                     <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        <h5>Alterar Senha</h5>
+                        <h4>Alterar Senha</h4>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" data-toggle="modal" data-target="#excluirConta" href="#">
@@ -130,7 +119,6 @@
                     </a>
                 </div>
             </div>
-
         </section>
 
     <!-- Grupo Bio -->
