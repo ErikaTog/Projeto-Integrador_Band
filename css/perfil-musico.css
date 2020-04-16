@@ -434,6 +434,21 @@ audio::-webkit-media-controls-panel {
 /* --------------------------------
               Modal
 -------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
 
 .form-group {
     margin: 0 0 20px;
@@ -443,13 +458,27 @@ audio::-webkit-media-controls-panel {
     font-weight: 600;
 }
 
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+.form-group input,
+.form-group select {
+    height: 3rem;
+}
+
+
 .form-control {
     color: #282a36;
+    font-size: 1.4rem;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.4rem;
 }
 
 /* ------------------------------*/ 
 /* Alterar Senha */
-
 .form-group small a {
     color: #999999;
     font-weight: 600;
@@ -457,6 +486,9 @@ audio::-webkit-media-controls-panel {
 
 /* ------------------------------*/ 
 /* Excluir Conta */
+.modal-body p {
+    margin-bottom: 1rem;
+}
 
 .form-group label.danger {
     color: #fe0000;
@@ -470,4 +502,10 @@ button.btn.btn-danger {
     color: #fff;
     border: 2px solid #fe0000;
     background-color: #fe0000;
+}
+
+button.btn.btn-danger:hover {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: rgba(254, 0, 0, 0.8);
 }
