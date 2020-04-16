@@ -206,6 +206,7 @@ img.head-fundo {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     transition-duration: 0.25s;
 }
 
