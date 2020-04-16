@@ -121,10 +121,6 @@ button.btn {
     transition: 0.2s;
 }
 
-button.btn:hover {
-    text-decoration: underline;
-}
-
 button.btn.btn-salvar {
     color: #fff;
     background-color: #fb3c00;

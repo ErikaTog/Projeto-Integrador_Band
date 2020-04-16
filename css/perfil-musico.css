@@ -142,7 +142,6 @@ header {
     margin: 0;
 }
 
-
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
@@ -237,6 +236,9 @@ img.head-fundo {
 }
 
 .dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
     padding: 0;
     margin: 0;
 }
@@ -278,6 +280,14 @@ img.head-fundo {
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Habilidades--------------------- */
+.container.habil-info {
+    max-width: 1170px;
+}
+
+.habil-info .row {
+    display: flex;
+    justify-content: space-between;
+}
 
 #habilidades {
     max-width: 500px;
@@ -335,33 +345,33 @@ img.head-fundo {
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
 
 #minha-musica {
-    padding: 25px 25px 25px 50px;
+    padding: 2.5rem 2.5rem 2.5rem 5rem;
     margin-top: 30px;
 }
 
-#minha-musica .scroll .row {
-    margin: 20px 0 0;
-    padding-right: 20px;
-    height: 775px;
-    overflow-y: scroll;
+#minha-musica .row {
+    height: auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-.musica-item.col-6 {
-    padding: 0;
+.col-xl-6 {
+    padding-left: 0;
 }
 
 .musica-item {
     width: 100%;
     max-width: 500px;
-    margin-top: 40px;
+    margin-bottom: 3rem;
 }
 
 .musica-item h5 {
-    margin-top: 10px;
+    padding: 1rem 0.5rem 0;
 }
 
 .musica-item video {
-    width: 500px;
+    width: 100%;
     height: 300px;
     background-color: #282a36;
 }
@@ -374,29 +384,49 @@ img.head-fundo {
 /* ------------------------------*/ 
 /* Audio player */
  .player {
+    width: 100%;
+    height: 300px;
     background: #fb754b ;
     background-image: url(../img/teste/icone_bg.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 50% 10%;
-    width: 500px;
-    height: 300px;
     position: relative;
 }
 
 .player audio {
-    width: 500px;
+    width: 100%;
     position: absolute;
     margin-top: 246px;
 }
 
 audio {
-    border: 2px solid #fb754b;
     background-color: #f7f7f7;
+    border: 2px solid #fb754b;
 }
 
 audio::-webkit-media-controls-panel {
     background-color: #f7f7f7;
+}
+
+/* ------------------------------*/ 
+/* Button */
+.carregar {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-carregar {
+    color: #fff;
+    font-size: 1.8rem;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+}
+
+.btn-carregar:hover {
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
 }
 
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
