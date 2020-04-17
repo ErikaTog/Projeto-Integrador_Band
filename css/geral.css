@@ -1,3 +1,6 @@
+html {
+    font-size: 62.5%;
+}
 
 /* --------------------------------
             Fontes
@@ -24,7 +27,7 @@
 
 body {
     color: #282a36;
-    font: 400 16px 'Open Sans', sans-serif;
+    font: 400 1.6rem 'Open Sans', sans-serif;
     background: #F7F7F7;
 }
 
@@ -33,11 +36,11 @@ body {
             Títulos - H
 -------------------------------- */
 
-h1 { font-size: 46px; font-weight: 700; margin: 0; }
-h2 { font-size: 38px; font-weight: 700; margin: 0; }
-h3 { font-size: 30px; font-weight: 700; margin: 0; }
-h4 { font-size: 22px; font-weight: 700; margin: 0; }
-h5 { font-size: 18px; font-weight: 700; margin: 0; }
+h1 { font-size: 4.6rem; font-weight: 700; margin: 0; }
+h2 { font-size: 3.8rem; font-weight: 700; margin: 0; }
+h3 { font-size: 3.0rem; font-weight: 700; margin: 0; }
+h4 { font-size: 2.2rem; font-weight: 700; margin: 0; }
+h5 { font-size: 1.8rem; font-weight: 700; margin: 0; }
 p { margin: 0; }
 
 
@@ -46,41 +49,91 @@ p { margin: 0; }
 -------------------------------- */
 
 header {
-    background: #fff;
+    width: 100%;
     height: 60px;
+    background: #fff;
     box-shadow: 0 2px 4px #999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
 }
 
 .nav-container {
-    width: 100%;
+    width: 80%;
     max-width: 1170px;
 }
 
-nav.navbar {
+.navbar {
     padding: 5px 0px;
-} 
+}
 
-a.nav-link {
-    width: 57px;
-    padding: 0 !important;
+.topbar-mobile {
+    display: flex;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-link {
     color: #999999;
-    font-size: 10px;
+    font-size: 1rem;
     font-weight: 700;
-    text-align: center;
-    margin: 0 4px 0 4px;
-    transition: 0.2s;
+    padding: 0 !important;
+    margin: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 0.2s;
 }
 
-a.nav-link img {
+.nav-icon {
     width: 35px;
+    height: 35px;
+    color: #fff;
+    font-size: 2.3rem;
+    background-color: #999999;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.nav-link:hover,
 .nav-item.active a {
     color: #fb3c00;
 }
 
-.nav-item a:hover {
-    opacity: 0.8;
+.nav-icon:hover,
+.nav-item.active .nav-icon {
+    background-color: #fb3c00;
+}
+
+/* ------------------------------*/ 
+/* Hamburger */
+.navbar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.navbar-toggler {
+    background-color: #fb3c00;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --------------------------------
@@ -88,9 +141,9 @@ a.nav-link img {
 -------------------------------- */
 
 footer {
-    background: #fff;
-    color: #fb3c00;
     height: 70px;
+    color: #fb3c00;
+    background: #fff;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
@@ -182,7 +235,7 @@ button.btn.btn-cancelar-modal:hover {
 }
 
 ::-webkit-input-placeholder{
-    font-size: 12px;
+    font-size: 1.2rem;
     color: #999999;
 }
 
