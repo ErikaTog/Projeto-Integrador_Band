@@ -33,6 +33,7 @@ div.icon i {
     width: 40px;
     height: 40px;
     color: #fb3c00;
+    font-size: 2rem;
     background-color: #fff;
     border: 1.5px solid #fb3c00;
     border-radius: 100%;
@@ -259,5 +260,37 @@ hr.divisor {
     .info-user textarea {
         width: 35%;
     }
-    
+}
+
+@media screen and (max-width: 991px) {
+    .nav-container {
+        width: 80%;
+        display: flex;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .navbar-nav {
+        width: 100%;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .nav-item {
+        margin-left: 10px;
+    }
+
+    div.icon i {
+        width: 35px;
+        height: 35px;
+    }
+    .info-user {
+        padding-left: 25rem;
+    }
+    .info-user textarea {
+        width: 40%;
+    }
+
+    #habilidades .scroll {
+        height: 240px;
+    }
 }
