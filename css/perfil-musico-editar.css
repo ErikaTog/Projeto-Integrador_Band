@@ -297,3 +297,25 @@ hr.divisor {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .nav-container .btn {
+        height: 30px;
+    }
+
+    div.icon i {
+        width: 30px;
+        height: 30px;
+    }
+
+    .info-user {
+        padding-left: 20rem;
+    }
+    .info-user textarea {
+        width: 45%;
+    }
+
+    #bio {
+        padding: 2.5rem 5rem;
+    }
+}
