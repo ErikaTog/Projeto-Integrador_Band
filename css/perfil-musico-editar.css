@@ -249,3 +249,15 @@ hr.divisor {
 /* --------------------------------
             MEDIA QUERY
 -------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .avatar-content div.icon {
+        position: absolute;
+        top: 60%;
+        left: 85%;
+    }
+    .info-user textarea {
+        width: 35%;
+    }
+    
+}
