@@ -21,16 +21,16 @@
     <header class="fixed-top d-flex justify-content-center">
             <div class="nav-container">
                 <nav class="navbar navbar-expand-md">                    
-                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="feedback-editar.html">
-                                <button type="button" class="btn btn-salvar">Salvar</button>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="perfil-musico.html">
                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="feedback-editar.html">
+                                <button type="button" class="btn btn-salvar">Salvar</button>
                             </a>
                         </li>
                     </ul>
@@ -41,18 +41,18 @@
     <div class="perfil-container">
     
     <!-- Grupo Head -->
-        <section id="head" class="card">
+        <section id="head" class="card-perfil">
             
-            <div class="fundo-content">
+            <div class="head-fundo fundo-content">
                 <a data-toggle="modal" data-target="#alterarFundo" href="">
-                    <img class="fundo" src="img/teste/fundo.png" alt="Foto de fundo">
+                    <img src="img/teste/fundo.png" alt="Foto de fundo" class="wallpaper">
                     <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
                 </a>
             </div>
             
             <div class="avatar-content">
                 <a data-toggle="modal" data-target="#alterarAvatar" href="">
-                    <img class="avatar" src="img/teste/jane.jpg" alt="Foto de Perfil">
+                    <img src="img/teste/jane.jpg" alt="Foto de Perfil" class="avatar">
                     <div class="icon"><i class="fas fa-camera fa-lg"></i></div>
                 </a>
             </div>
@@ -63,20 +63,14 @@
                         <textarea class="form-control" id="textareaUserName" rows="1">Jane Doe</textarea>
                     </div>
                 </form>
-                <div class="container">
-                    <div class="row">
-                        <div class="info-seguidor col-2 offset-3">
-                            <div class="media">
-                                <img src="img/teste/icon_star.svg">
-                                <p>Seguidores: 12M</p>
-                            </div>
-                        </div>
-                        <div class="info-seguidor col-2">
-                            <div class="media">
-                                <img src="img/teste/icon_headset.svg">
-                                <p>Seguindo: 250</p>
-                            </div>
-                        </div>
+                <div class="info-user-status">
+                    <div class="media">
+                        <img src="img/icones/icon_star.svg">
+                        <p>Seguidores: 12M</p>
+                    </div>
+                    <div class="media">
+                        <img src="img/icones/icon_headset.svg">
+                        <p>Seguindo: 250</p>
                     </div>
                 </div>
             </div>
@@ -84,12 +78,12 @@
         </section>
 
     <!-- Grupo Bio -->
-        <section id="bio" class="card">
+        <section id="bio" class="card-perfil">
 
             <h4><strong>Sobre mim</strong></h4>
             <form action="" method="post">
                 <div class="form-group">
-                    <textarea class="form-control" id="textareaBio" rows="5">
+                    <textarea class="form-control" id="textareaBio" rows="10">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
                     </textarea>
@@ -98,15 +92,15 @@
 
         </section>
 
-        <div class="container">
-            <div class="row justify-content-between">
+        <div class="container habil-info">
+            <div class="row">
 
     <!-- Grupo Habilidades -->
-                <section id="habilidades" class="card col-6">
+                <section id="habilidades" class="card-perfil col-lg-6 col-md-12">
                     <h4><strong>Habilidades</strong></h4>
                     
-                    <a class="modalLink" data-toggle="modal" data-target="#adicionarHabilidade" href="">
-                        Adicionar habilidades...
+                    <a class="modal-link" data-toggle="modal" data-target="#adicionarHabilidade" href="">
+                        Adicionar habilidade...
                     </a>
                     
                     <div class="scroll">
@@ -191,7 +185,7 @@
                 </section>
 
     <!-- Grupo Infos -->
-                <section id="infos" class="card col-6">
+                <section id="infos" class="card-perfil col-lg-5 col-md-12">
                     <h4><strong>+ Infos</strong></h4>
                     <div class="infos-item media">
                         <img src="img/icones/pin-01.png" alt="Local">
@@ -230,16 +224,16 @@
         </div>
 
     <!-- Grupo Minha Música -->
-        <section id="minha-musica" class="card">
+        <section id="minhaMusica" class="card-perfil">
             <h4><strong>Minha música</strong></h4>
 
-            <a class="modalLink" data-toggle="modal" data-target="#adicionarMusica" href="">
+            <a class="modal-link" data-toggle="modal" data-target="#adicionarMusica" href="">
                 Adicionar música...
             </a>
 
-            <div class="container scroll">
-                <div class="row justify-content-between">
-                    <div class="musica-item col-6">
+            <div class="container">
+                <div class="row">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -253,7 +247,7 @@
                         <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
                         
                     </div>
-                    <div class="musica-item col-6">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -262,7 +256,7 @@
                         <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <h5>Metalica</h5>
                     </div>
-                    <div class="musica-item col-6">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -277,7 +271,7 @@
                         </div>
                         <h5>Canon Rock - Jerry C cover by Laura</h5>
                     </div>
-                    <div class="musica-item col-6">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -286,7 +280,7 @@
                         <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                         <h5>Magic! - Rude</h5>
                     </div>
-                    <div class="musica-item col-6">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -301,7 +295,7 @@
                         </div>
                         <h5>Always - Bon Jovi - piano cover</h5>
                     </div>
-                    <div class="musica-item col-6">
+                    <div class="musica-item col-xl-6 col-sm-12">
                         <div class="icon-border-none">
                             <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
                                 <i class="fas fa-trash fa-lg"></i>
@@ -311,6 +305,10 @@
                         <h5>Gucci Mane</h5>
                     </div>
                 </div>
+            </div>
+
+            <div class="carregar">
+                <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
             </div>
         </section>
     </div>
@@ -339,7 +337,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Atualizar o plano de fundo</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
 
@@ -369,7 +367,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Atualizar a imagem</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
 
@@ -399,23 +397,23 @@
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Adicionar habilidade</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
 
                 <form action="" method="post">
                     <div class="modal-body">
                         <!-- Opção Canto -->
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" value="" id="checkCanto">
-                            <label class="custom-control-label" for="checkCanto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="canto" value="option1" id="checkCanto">
+                            <label class="form-check-label" for="checkCanto">
                               Canto
                             </label>
                         </div>
                         <!-- Opção Intrumento -->
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" value="" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
-                            <label class="custom-control-label" for="checkInstrumento">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="instrumento" value="option2" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
+                            <label class="form-check-label" for="checkInstrumento">
                               Instrumento
                             </label>
                         </div>
@@ -425,9 +423,9 @@
                             </div>
                         </div>
                         <!-- Opção Técnico -->
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" value="" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
-                            <label class="custom-control-label" for="checkTecnico">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="tecnico" value="option3" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
+                            <label class="form-check-label" for="checkTecnico">
                               Técnico
                             </label>
                         </div>
@@ -455,20 +453,25 @@
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Adicionar música</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
 
                 <form action="" method="post">
                     <div class="modal-body">
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" value="" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
-                            <label class="custom-control-label" for="checkVideo">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
+                            <label class="form-check-label" for="checkVideo">
                               Quero enviar um vídeo
                             </label>
                         </div>
     
                         <div class="collapse" id="collapseVideo">
+                            <div class="form-group">
+                                <label for="tituloVideo">Título</label>
+                                <input type="text" class="form-control" id="tituloVideo">
+                            </div>
+                            <hr>
                             <div class="form-group">
                                 <label for="linkVideo">Link</label>
                                 <input type="text" class="form-control" id="linkVideo" aria-describedby="linkHelp">
@@ -480,14 +483,19 @@
                                 <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
                             </div>
                         </div>
-    
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" value="" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
-                            <label class="custom-control-label" for="checkAudio">
+                        <hr class="divisor">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
+                            <label class="form-check-label" for="checkAudio">
                               Quero enviar um áudio
                             </label>
                         </div>
                         <div class="collapse" id="collapseAudio'">
+                            <div class="form-group">
+                                <label for="tituloVideo">Título</label>
+                                <input type="text" class="form-control" id="tituloVideo">
+                            </div>
+                            <hr>
                             <div class="form-group">
                                 <label for="linkAudio">Link</label>
                                 <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp">
@@ -518,7 +526,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -541,7 +549,8 @@
                 <div class="modal-header">
                     <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                                                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+
                     </button>
                 </div>
                 <div class="modal-body">

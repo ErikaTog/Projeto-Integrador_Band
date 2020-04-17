@@ -1,7 +1,13 @@
 /* --------------------------------
-    Geral - Perfil músico editar
+        Geral - Perfil músico
 -------------------------------- */
+.form-group {
+    margin: 0;
+}
 
+.form-control {
+    font-size: 1.6rem;
+}
 
 /* --------------------início_do_Grupo_Head--------------------- */
 
@@ -24,12 +30,12 @@
 -------------------------------- */
 
 div.icon i {
-    background-color: #fff;
     width: 40px;
     height: 40px;
+    color: #fb3c00;
+    background-color: #fff;
     border: 1.5px solid #fb3c00;
     border-radius: 100%;
-    color: #fb3c00;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,20 +43,20 @@ div.icon i {
 }
 
 div.icon i:hover {
-    background-color: #fb3c00;
     color: #fff;
+    background-color: #fb3c00;
 }
 
 .fundo-content div.icon {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5%;
+    right: 2%;
 }
 
 .avatar-content div.icon {
     position: absolute;
-    top: 140px;
-    left: 150px;
+    top: 70%;
+    left: 80%;
 }
 
 /* --------------------------------
@@ -58,9 +64,8 @@ div.icon i:hover {
 -------------------------------- */
 
 .info-user textarea {
-    width: 20%;
-    margin-top: 10px;
-    margin-left: 345px;
+    width: 30%;
+    margin: 1rem 3rem;
 }
 
 /* --------------------fim_do_Grupo_Head--------------------- */
@@ -69,20 +74,24 @@ div.icon i:hover {
 
 #bio .form-group {
     width: 100%;
+    height: auto;
     margin: 20px auto 0;
 }
 
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Habilidades--------------------- */
-
-a.modalLink {
-    color: #282a36;
-    margin: 20px 0;
+#habilidades h4 {
+    margin-bottom: 1rem;
 }
 
-a.modalLink:hover {
-    font-weight: 700;
+a.modal-link {
+    color: #282a36;
+}
+
+a.modal-link:hover {
+    color: #4c4f66;
+    font-weight: 600;
 }
 
 /* --------------------------------
@@ -91,6 +100,7 @@ a.modalLink:hover {
 
 #habilidades .scroll {
     height: 200px;
+    margin-top: 1rem;
     overflow-y: scroll;
 }
 
@@ -99,9 +109,16 @@ a.modalLink:hover {
     margin: 0;
 }
 
+.habilidades-item.media {
+    align-items: center;
+}
+
+.habilidades-item img {
+    align-items: center;
+}
+
 .habilidades-item  textarea {
-    width: 100%;
-    margin-left: 15px;
+    margin: 0 1.5rem;
 }
 
 /* ------------------------------*/ 
@@ -117,43 +134,40 @@ div.icon-border-none i:hover {
 }
 
 .habilidades-item div.icon-border-none {
-    margin-left: 20px;
-    display: flex;
-    align-self: center;
+    padding-left: 3rem;
 }
 
 /* --------------------fim_do_Grupo_Habilidades--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
+.infos-item.media {
+    align-items: center;
+}
 
 #infos form {
     width: 100%;
-    height: 38px;
-    margin: 0;
-}
-
-.infos-item  textarea {
-    width: 100%;
-    margin-left: 20px;
+    margin-left: 1.5rem;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
+#minhaMusica h4 {
+    margin-bottom: 1rem;
+}
 
-#minha-musica .scroll .row {
-    margin: 0;
-    height: 850px;
+#minhaMusica .row {
+    padding-top: 1rem;
 }
 
 .musica-item {
     padding-left: 0;
-    padding-right: 10px;
+    padding-right: 1rem;
 }
 
 .musica-item div.icon-border-none {
     text-align: right;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
@@ -162,14 +176,66 @@ div.icon-border-none i:hover {
               Modal
 -------------------------------- */
 
-.collapse .form-group {
-    margin-top: 20px;
+input.form-control-file {
+    border-radius: 0 10px 10px 0;
+    margin: 1rem 0;
 }
 
-.custom-control.custom-checkbox {
-    margin-bottom: 20px;
+/* ------------------------------*/ 
+/* Check Box */
+
+.form-check {
+    padding: 1rem 0;
 }
 
+label.form-check-label{
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input,
+.form-check-input,
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+ input[type=checkbox]{
+    display: none;
+}
+
+ 
+input[type=checkbox] + label:before {
+    width: 18px;
+    height: 18px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    border-radius: 5px;
+    margin-right: 10px;
+    content: "";
+    display: inline-block;
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#adicionarMusica label {
+    font-weight: normal;
+}
+
+#adicionarMusica .form-group {
+    margin: 1rem 0;
+}
+
+hr.divisor {
+    border-color: #999999;
+}
 
 /* ------------------------------*/ 
 /* Confirmar Exclusão */
@@ -179,3 +245,7 @@ div.icon-border-none i:hover {
     color: #fe0000;
     margin-bottom: 10px;
 }
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
