@@ -293,4 +293,7 @@ hr.divisor {
     #habilidades .scroll {
         height: 240px;
     }
+    #habilidades .form-group {
+        width: 100%;
+    }
 }
