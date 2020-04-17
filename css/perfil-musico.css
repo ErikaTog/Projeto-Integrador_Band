@@ -566,7 +566,6 @@ button.btn.btn-danger:hover {
     }
     
     .musica-item h5 {
-        text-align: center;
         padding: 1rem 0 0;
     }
     
@@ -578,7 +577,7 @@ button.btn.btn-danger:hover {
         height: 400px;
     }
 
-     .player {
+    .player {
         height: 400px;
         background-size: 55%;
         background-position: 50% 20%;
@@ -643,6 +642,10 @@ button.btn.btn-danger:hover {
         height: 200px;
     }
     
+    .avatar-content {
+        top: 30%;
+    }
+    
     #head img.avatar {
         width: 150px;
         height: 150px;
@@ -653,7 +656,7 @@ button.btn.btn-danger:hover {
     }
     
     /* ------------------------------*/ 
-    /* Habilidades */
+    /* Habilidades-Info  */
     #habilidades {
         max-width: 100%;
     }
@@ -662,3 +665,122 @@ button.btn.btn-danger:hover {
         max-width: 100%;
     }
 } 
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+    
+    /* ------------------------------*/ 
+    /* Header */
+    .navbar-nav {
+        width: 80%;
+    }
+
+    .nav-icon {
+        font-size: 2.8rem;
+    }
+
+    /* ------------------------------*/ 
+    /* Head */
+    .head-fundo {
+        height: 125px;
+    }
+
+    .avatar-content {
+        top: 15%;
+    }
+    
+    #head img.avatar {
+        width: 125px;
+        height: 125px;
+        border: 2.5px solid #fff;
+    }
+    
+    .info-user {
+        padding-left: 15rem;
+    }
+    
+    .info-user h3 {
+        padding: 1rem 5rem;
+    }
+
+    .info-user-status {
+        padding-top: 0;
+    }
+
+    .info-user-status .media img {
+        width: 20px;
+    }
+
+    .info-user .media:last-child {
+        margin-left: 2.5rem;
+    }
+
+    .btn-config {
+        width: 30px;
+        height: 30px;
+    }
+
+    .config a {
+        padding: 1.5rem 3rem;
+        text-align: center;
+        transition-duration: 0.25s;
+    }
+
+    /* ------------------------------*/ 
+    /* Bio */
+    #bio {
+        padding: 2.5rem 2.5rem 2.5rem 5rem;
+    }
+
+    .bio-scroll {
+        height: 300px;
+        margin-top: 2rem;
+        overflow-y: scroll;
+    }
+
+    #bio p {
+        padding: 0 2.5rem 0 0;
+    }
+
+    #habilidades .scroll .item.row {
+        height: 220px;
+    }
+
+    /* ------------------------------*/ 
+    /* Minha Música */
+    #minha-musica .row {
+        padding-top: 3rem;
+    }
+    
+    .musica-item {
+        margin-bottom: 1rem;
+    }
+    
+    .musica-item video {
+        height: 300px;
+    }
+    
+    .musica-item iframe {
+        height: 300px;
+    }
+
+     .player {
+        height: 300px;
+        background-size: 250px;
+        background-position: 50% 10%;
+    }
+    
+    .player audio {
+        margin-top: 246px;
+    }
+
+    .form-group input {
+        font-size: 1.8rem;
+    }
+
+    ::-webkit-input-placeholder{
+        font-size: 1.6rem;
+    }
+}
