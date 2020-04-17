@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/pre-cadastro.css">
-    <title>Pre-Cadastro</title>
+    <title>Pre-Cadastro2</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/pre-cadastro2.css">
 </head>
 
 <body>
-    
-    <div id='container-all'>
 
-    <header class="box-header">
-        <div id="header-img"><img src="img/logocircle.png" width= "80px" ></div>
-        <div id="header-text">Para começar, escolha um perfil!</div>
-    </header>
-  
+    <div id='containerAll'>
 
-    <div id="container-main">
-        <div class="single-box">
-            <div class="img-area"></div>
-            <div class="img-text">Banda</div>
-        </div>
+        <header>
+            <div class="row">
+                <img src="img/logocircle.png">
+                <h1>Para começar, escolha um perfil!</h1>
+            </div>
+        </header>
 
-        <div class="single-box">
-            <div class="img-area"></div>
-            <div class="img-text">Músico</div>
-        </div>
+        <section id="escolhaPerfil">
 
-        <div class="single-box">
-            <div class="img-area"></div>
-            <div class="img-text">Estabelecimento</div>
-        </div>
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <a href="form-banda.html">
+                        <img src="img/pre-cadastro-banda.png" alt="Banda">
+                        <p>Banda</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="form-musico.html">
+                        <img src="img/pre-cadastro-musicos.png" alt="Músico">
+                        <p>Músico</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="form-estb.html">
+                        <img src="img/pre-cadastro-estabelecimento.png" alt="Establecimento">
+                        <p>Estabelecimento</p>
+                    </a>
+                </div>
+            </div>
 
-    </div> 
-      
-    <footer>
-        <ul class="list-unstyled mb-0">
-            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
-            <li>
-                <span class="copyright">Copyright &copy;
-                    2020 - Band+ by Group 1
-                </span>
-            </li>
-        </ul>
-    </footer>
+        </section>
+
+        <footer>
+            <ul class="list-unstyled mb-0">
+                <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+                <li>
+                    <span class="copyright">Copyright &copy;
+                        2020 - Band+ by Group 1
+                    </span>
+                </li>
+            </ul>
+        </footer>
 
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

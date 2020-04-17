@@ -1,19 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
-body{
-    margin: 0; /*tirando o margin padrão  */
-    padding: 0; /*tirando o padding padrão  */
-    background-color:orangered; /*caso o background-image não carregue*/
-    font-family:'Patua One', cursive; 
-    font-style: normal;
-    font-weight: normal;
-    color: #ffffff;
+
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
+html {
+    font-size: 62.5%;
 }
 
-#container-all{
+h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+p {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/* --------------------------------
+            Body
+-------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #fb3c00;
+    /*caso o background-image não carregue*/
+    /* background-image:url("../img/pre-cadastro-bg.jpg");
+    background-size: cover; */
+    padding: 0;
+    /*tirando o padding padrão  */
+    margin: 0;
+    /*tirando o margin padrão  */
+    outline: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+
+#containerAll {
     height: 100vh;
-    background-image:url("../img/pre-cadastro-bg.jpg");
-    background-size: cover;
+    width: 100vw;
+    max-width: 1440px;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -21,85 +56,80 @@ body{
 }
 
 
-/* início_header */
-#header-img{  
-    padding-right: 14px;  
-}
+/* --------------------início_do_header-------------------- */
 
-.box-header{
+header div.row {
+    height: 300px;
+    width: 100vw;
+    max-width: 1440px;
+    margin: 0px 0px;
     display: flex;
-    flex-direction: row;
-    align-items: center; 
     justify-content: center;
-    height: 305px;
-    width: 100%;
-    font-size: 50px;
- }
-/* fim_header */
-
-
- /* início_conteúdo principal - 3 círculos */
-#container-main{
-    display: flex;
-    align-items: flex-start; 
-    justify-content:space-around;
-    height: 555px;
-}
-
-.single-box{
-    display:flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    width: 355px;
-    height: 429px;
 }
 
-.single-box:nth-child(1) .img-area{
-    background-image:url("../img/pre-cadastro-banda.png");
-    background-size: 355px;
-    width: 355px;
-    height: 355px;
+header img {
+    width: 8rem;
+}
+
+header h1 {
+    padding-left: 1rem;
+}
+
+/* --------------------fim_do_header-------------------- */
+
+
+/* --------------------início_do_escolha-perfil-------------------- */
+#escolhaPerfil {
+    height: 55rem;
+    color: white;
+}
+
+#escolhaPerfil div.row {
+    margin: 0px 0px;
+}
+
+.col-md-4 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 
-.single-box:nth-child(2) .img-area{
-    background-image:url("../img/pre-cadastro-musicos.png");
-    background-size: 355px;
-    width: 355px;
-    height: 355px;
+#escolhaPerfil img {
+    width: 35.5rem;
+    /* max-width: 355px; */
 }
 
-
-.single-box:nth-child(3) .img-area{
-    background-image:url("../img/pre-cadastro-estabelecimento.png");
-    background-size: 355px;
-    width: 355px;
-    height: 355px;
-}
-
-.img-text{
+#escolhaPerfil p {
     text-align: center;
-    font-size: 36px;
-    margin-top: 20px;
+    padding-top: 1rem;
+    color: white;
 }
 
-.img-text:hover{
-    opacity: 0.8;
-    text-decoration: underline;
+#escolhaPerfil a:hover {
+    text-decoration: none;
 }
- /* fim_conteúdo principal - 3 círculos */
 
 
-/* início_footer */
+/* --------------------fim__do_escolha-perfil-------------------- */
+
+
+/* --------------------início_do_footer -------------------- */
+
 footer {
-    color: #ffffff;
-    height: 70px;
+    height: 7rem;
+    font: 400 1.6rem 'Open Sans', sans-serif;
     text-align: center;
+    color: #ffffff;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 footer ul li {
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 
 footer ul li a {
@@ -112,4 +142,9 @@ footer ul li a:hover {
     opacity: 0.8;
     text-decoration: underline;
 }
-/*fim_início_footer */    
+
+/* --------------------fim_do_footer -------------------- */
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
