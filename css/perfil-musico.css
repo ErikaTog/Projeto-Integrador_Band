@@ -530,59 +530,46 @@ button.btn.btn-danger:hover {
     .head-fundo {
         height: 250px;
     }
-    
     #head img.avatar {
         width: 180px;
         height: 180px;
     }
-
     #habilidades .scroll .item.row {
         height: 230px;
     }
     
-    /* ------------------------------*/ 
-    /* Minha Música */
     #minha-musica {
         padding: 2.5rem 5rem;
         margin-top: 30px;
     }
-
     #minha-musica .row {
         padding-top: 4rem;
         justify-content: center;
     }
-
     .col-sm-12 {
         padding: 0;
     }
-    
     .musica-item {
         max-width: 600px;
         padding-bottom: 2.5rem;
     }
-
     .musica-item:last-child {
         padding-bottom: 0;
     }
-    
     .musica-item h5 {
         padding: 1rem 0 0;
     }
-    
     .musica-item video {
         height: 400px;
     }
-    
     .musica-item iframe {
         height: 400px;
     }
-
     .player {
         height: 400px;
         background-size: 55%;
         background-position: 50% 20%;
     }
-    
     .player audio {
         margin-top: 346px;
     }
@@ -593,27 +580,21 @@ button.btn.btn-danger:hover {
         font-size: 55%;
     }
     
-    /* ------------------------------*/ 
-    /* Header */
     .nav-container {
         width: 100%;
     }
-
     .topbar-mobile {
         width: 80%;
         margin: 0 auto;
     }
-    
     .navbar-icon {
         margin-left: auto;
     }
-
     .navbar-collapse {
         width: 100%;
         background-color: #fff;
         box-shadow: 0px 3px 3px #999999;
     }
-
     .navbar-nav {
         width: 70%;
         padding: 1rem 0;
@@ -621,46 +602,35 @@ button.btn.btn-danger:hover {
         flex-direction: row;
         justify-content: space-between;
     }
-    
     .nav-link {
         margin: 0;
     }
-
     .nav-link p {
         font-size: 1.2rem;
     }
-    
     .nav-icon {
         width: 40px;
         height: 40px;
         font-size: 2.5rem;
     }
 
-    /* ------------------------------*/ 
-    /* Head */
     .head-fundo {
         height: 200px;
-    }
-    
+    }    
     .avatar-content {
         top: 30%;
     }
-    
     #head img.avatar {
         width: 150px;
         height: 150px;
     }
-
     .info-user {
         padding-left: 20rem;
     }
     
-    /* ------------------------------*/ 
-    /* Habilidades-Info  */
     #habilidades {
         max-width: 100%;
     }
-
     #infos {
         max-width: 100%;
     }
@@ -671,75 +641,57 @@ button.btn.btn-danger:hover {
         font-size: 50%;
     }
     
-    /* ------------------------------*/ 
-    /* Header */
     .navbar-nav {
         width: 80%;
     }
-
     .nav-icon {
         font-size: 2.8rem;
     }
 
-    /* ------------------------------*/ 
-    /* Head */
     .head-fundo {
         height: 125px;
     }
-
     .avatar-content {
         top: 15%;
     }
-    
     #head img.avatar {
         width: 125px;
         height: 125px;
         border: 2.5px solid #fff;
     }
-    
     .info-user {
         padding-left: 15rem;
     }
-    
     .info-user h3 {
         padding: 1rem 5rem;
     }
-
     .info-user-status {
         padding-top: 0;
     }
-
     .info-user-status .media img {
         width: 20px;
     }
-
     .info-user .media:last-child {
         margin-left: 2.5rem;
     }
-
     .btn-config {
         width: 30px;
         height: 30px;
     }
-
     .config a {
         padding: 1.5rem 3rem;
         text-align: center;
         transition-duration: 0.25s;
     }
 
-    /* ------------------------------*/ 
-    /* Bio */
     #bio {
         padding: 2.5rem 2.5rem 2.5rem 5rem;
     }
-
     .bio-scroll {
         height: 300px;
         margin-top: 2rem;
         overflow-y: scroll;
     }
-
     #bio p {
         padding: 0 2.5rem 0 0;
     }
@@ -748,38 +700,29 @@ button.btn.btn-danger:hover {
         height: 220px;
     }
 
-    /* ------------------------------*/ 
-    /* Minha Música */
     #minha-musica .row {
         padding-top: 3rem;
-    }
-    
+    }    
     .musica-item {
         margin-bottom: 1rem;
     }
-    
     .musica-item video {
         height: 300px;
     }
-    
     .musica-item iframe {
         height: 300px;
     }
-
      .player {
         height: 300px;
         background-size: 250px;
         background-position: 50% 10%;
     }
-    
     .player audio {
         margin-top: 246px;
     }
-
     .form-group input {
         font-size: 1.8rem;
     }
-
     ::-webkit-input-placeholder{
         font-size: 1.6rem;
     }
