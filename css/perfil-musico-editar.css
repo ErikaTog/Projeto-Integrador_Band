@@ -253,7 +253,6 @@ hr.divisor {
 
 @media screen and (max-width: 1199px) {
     .avatar-content div.icon {
-        position: absolute;
         top: 60%;
         left: 85%;
     }
@@ -296,6 +295,10 @@ hr.divisor {
     #habilidades .form-group {
         width: 100%;
     }
+
+    .col-sm-12 {
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -317,5 +320,46 @@ hr.divisor {
 
     #bio {
         padding: 2.5rem 5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .form-control {
+        font-size: 1rem;
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+    
+    div.icon i {
+        width: 18px;
+        height: 18px;
+        font-size: 1rem;
+        border: 1px solid #fb3c00;
+    }
+    .avatar-content div.icon {
+        top: 48%;
+        left: 85%;
+    }
+    .info-user {
+        padding-left: 7rem;
+    }
+    .info-user textarea {
+        width: 45%;
+        margin: 0.5rem 3rem;
+    }
+
+    #bio {
+        padding: 1rem 2rem;
+    }
+
+    #habilidades .scroll {
+        height: 170px;
     }
 }
