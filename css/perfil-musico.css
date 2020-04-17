@@ -629,6 +629,7 @@ button.btn.btn-danger:hover {
     }
     .topbar-mobile {
         width: 90%;
+        max-width: 400px;
         margin: 0 auto;
     }
     .navbar-brand img {
@@ -636,6 +637,7 @@ button.btn.btn-danger:hover {
     }
     .navbar-nav {
         width: 85%;
+        max-width: 400px;
     }
     .nav-link p {
         display: none;
@@ -656,6 +658,7 @@ button.btn.btn-danger:hover {
 
     .perfil-container {
         width: 90%;
+        max-width: 400px;
         margin: 60px auto 15px;
     }
     .head-fundo {
