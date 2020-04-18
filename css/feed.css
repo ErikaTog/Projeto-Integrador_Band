@@ -177,6 +177,29 @@ img.avatar {
     opacity: 0.8;
 }
 
+.edit {
+    display: none;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    background-color: #fb3c00;
+    border-radius: 50%;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle a {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* --------------------fim_do_Grupo_Publicar--------------------- */
 
 /* --------------------início_do_Grupo_Publicacao--------------------- */
@@ -191,8 +214,8 @@ img.avatar {
 }
 
 #publicacao .media h5 {
-    align-self: center;
     margin-left: 2rem;
+    align-self: center;
 }
 
 .img-public {
@@ -509,4 +532,45 @@ img.avatar {
         align-self: center;
     }
     
+    #publicar {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+    #publicar h4 {
+        margin-bottom: 1rem;
+    }
+    .form-control {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .add a {
+        margin-right: .5rem;
+    }
+    button.btn {
+        font-size: 1rem;
+    }
+
+    #publicacao .card-feed {
+        padding: 1rem 0;
+        margin-top: 15px;
+    }
+    #publicacao .media {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    #publicacao p {
+        padding: 2rem 1.5rem;
+    }
+    .curtir {
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+    }
+    .curtir a img {
+        width: 20px;
+        margin-right: 1rem;
+    }
+
+    .edit {
+        display: initial;
+    }
 }
