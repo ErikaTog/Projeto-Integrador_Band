@@ -73,6 +73,59 @@ textarea.form-control {
     align-self: flex-end;
 }
 
+button.btn {
+    padding: 0.5rem 3rem;
+}
+
 footer {
     width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .nav-container {
+        width: 100%;
+    }
+    .topbar-mobile {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .navbar-icon {
+        margin-left: auto;
+    }
+    .navbar-collapse {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 3px 3px #999999;
+    }
+    .navbar-nav {
+        width: 70%;
+        padding: 1rem 0;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-link {
+        width: 70px;
+        margin: 0;
+    }
+    .nav-link p {
+        width: 70px;
+        font-size: 1.2rem;
+    }
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 2.5rem;
+    }
+    input.form-control {
+        height: 40px;
+        padding: 1rem 2rem;
+    }
+    textarea.form-control {
+        padding: 1rem 2rem;
+    }
 }
