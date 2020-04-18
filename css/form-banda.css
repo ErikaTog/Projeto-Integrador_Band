@@ -104,6 +104,10 @@ h5 {
     margin-top: 30px;
 }
 
+.conte {
+    display: none;
+}
+
 label.remove{
     margin: 0;
 }
@@ -193,7 +197,7 @@ label.remove{
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     html {
         font-size: 50%;
     }
@@ -205,5 +209,101 @@ label.remove{
     }
     #dados {
         margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.8rem; }
+    h5 { font-size: 1.4rem; }
+
+    header { 
+        height: 45px; 
+    }
+    .nav-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+    .navbar { 
+        padding: 5px 0px; 
+    }
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .cadastro-container {
+        width: 90%;
+        margin: 60px auto 15px;
+    }
+
+    h5 {
+        margin: 1.5rem 0;
+    }
+    .campo-form.card-cadastro {
+        box-shadow: none;
+        padding: 0;
+    }
+    .form-group label {
+        color: #4C4F66;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .form-group input {
+        height: 35px;
+        margin-bottom: 0.5rem;
+    } 
+    .form-control {
+        color: #4C4F66;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    #identificacao {
+        padding: 1.5rem;
+    }
+
+    #informacao {
+        padding: 1.5rem;
+        margin-top: 15px;
+    }
+    #informacao .form-header {
+        margin-bottom: 15px;
+    }
+    .conte {
+        display: initial;
+    }
+    #informacao .form-group h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #dados {
+        padding: 1.5rem;
+        margin-top: 15px;
+    }
+    #dados .campo-form {
+        margin-bottom: 0.5rem;
+    }
+    .add-membro {
+        top: 0;
+        right: 0;
+    }
+    .add-membro a {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        height: 45px;
+    }
+    footer ul li {
+        padding: 2px;
+    }
+    footer img {
+        width: 15px;
     }
 }
