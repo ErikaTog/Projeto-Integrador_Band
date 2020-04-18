@@ -1,130 +1,145 @@
 /* --------------------------------
         Geral - Form Banda
 -------------------------------- */
-
-.cadastro-container {
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    margin: 90px auto;
+.form-banda {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card {
+footer {
+    width: 100%;
+}
+
+.cadastro-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 30px;
+}
+
+.container {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.col-md-6,
+.col-sm-1,
+.col-sm-2,
+.col-sm-6,
+.col-sm-8,
+.col-sm-11,
+.col-sm-12 {
+    padding: 0;
+}
+
+.card-cadastro {
     width: 100%;
     background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
 }
 
+/* ------------------------------*/ 
+/* Formulário */
 .form-header {
-    padding-bottom: 10px;
     box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 1rem;
 }
 
-.col-6 {
-    padding: 0;
+h5 {
+    margin: 2rem 0 1.5rem;
 }
 
 .campo-form {
-    padding: 10px 20px 0px;
+    padding: 1rem 2rem;
 }
 
 .form-group.row {
-    width: 100%;
-    margin: 0 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-control {
+    color: #4C4F66;
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
 }
 
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
-#form-identificacao {
-    width: 100%;
+#identificacao {
+    width: 90%;
     max-width: 550px;
-    padding: 15px 30px 25px;
-}
-
-#form-identificacao h5 {
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-#form-identificacao label {
-    align-self: center;
-}
-
-#form-identificacao .col-sm-2,
-#form-identificacao .col-sm-6,
-#form-identificacao .col-sm-8 {
-    padding: 0;
+    padding: 1.5rem 3rem 2.5rem;
 }
 
 /* --------------------fim_do_Grupo_Form_Identificação--------------------- */
 
 /* --------------------início_do_Grupo_Form_Informação--------------------- */
 
-#form-informacao {
-    width: 100%;
+#informacao {
+    width: 90%;
     max-width: 550px;
-    padding: 15px 30px 35px;
+    padding: 1.5rem 3rem 2.5rem;
     margin-top: 30px;
 }
 
-#form-informacao h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-#form-informacao label {
+label.remove{
     margin: 0;
-}
-
-#form-informacao .col-sm-12,
-#form-informacao .col-sm-8 {
-    padding: 0;
 }
 
 /* --------------------fim_do_Grupo_Form_Informação--------------------- */
 
 /* --------------------início_do_Grupo_Form_Dados--------------------- */
 
-#form-dados {
+#dados {
     width: 100%;
     max-width: 550px;
-    padding: 15px 30px 25px;
+    padding: 1.5rem 3rem 2.5rem;
 }
 
-#form-dados h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+#dados .campo-form {
+    margin-bottom: 3rem;
 }
 
-#form-dados label {
-    align-self: center;
+#dados .campo-form:last-child {
+    margin-bottom: 0;
+    position: relative;
 }
 
-#form-dados .col-sm-1,
-#form-dados .col-sm-2,
-#form-dados .col-sm-6,
-#form-dados .col-sm-8,
-#form-dados .col-sm-11 {
-    padding: 0;
+.add-membro {
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 
-#membros.row {
-    width: 100%;
-    margin: 0;
+.add-membro a {
+    color: #999999;
+    font-size: 2.5rem;
+    transition-duration: 0.25s;
 }
 
-#membros .col-sm-1 {
-    align-self: center;
-}
-
-#membros img {
-    transition: 0.2s;
-}
-
-#membros img:hover {
-    cursor: pointer;
-    filter: brightness(0.8);
+.add-membro a:hover {
+    color: #FB3C00;
 }
 
 /* --------------------fim_do_Grupo_Form_Dados--------------------- */
