@@ -31,11 +31,10 @@ footer {
 .col-xl-2,
 .col-xl-6,
 .col-xl-8,
+.col-lg-3,
+.col-lg-8,
+.col-lg-9,
 .col-md-6,
-.col-sm-1,
-.col-sm-3,
-.col-sm-9,
-.col-sm-11,
 .col-sm-12 {
     padding: 0;
 }
@@ -163,4 +162,33 @@ label.remove{
     .add-membro a {
         font-size: 2rem;
     }    
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .form-group label {
+        margin-bottom: 1rem;
+    }
+    .form-group input {
+        margin-bottom: 1rem;
+    }
+    #identificacao {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    #informacao {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    #informacao .form-group label, 
+    #informacao .form-group input {
+        margin-bottom: 0;
+    }
+    #dados {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    .add-membro {
+        top: 5px;
+        right: 10px;
+    }
 }
