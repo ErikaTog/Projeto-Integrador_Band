@@ -327,3 +327,41 @@ img.avatar {
         width: 25px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+    .navbar-nav {
+        width: 80%;
+    }
+    .nav-link {
+        width: 60px;
+    }
+    .nav-icon {
+        font-size: 2.8rem;
+    }
+    .col-md-3 {
+        position: unset;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    #rodape {
+        display: none;
+    }
+
+    #userCard {
+        max-width: 200px;
+        margin-right: 3rem;
+    }
+
+    #newUser {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    #publicar {
+        margin-top: 30px;
+    }
+}
