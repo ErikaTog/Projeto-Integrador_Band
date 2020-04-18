@@ -1,6 +1,17 @@
 /* --------------------------------
         Geral - Bate-papo
 -------------------------------- */
+.bate-papo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
 
 .papo-container {
     width: 80%;
@@ -71,24 +82,24 @@ small {
 
 /* --------------------início_do_Grupo_Msg_Antigas--------------------- */
 
-#msg-antigas {
+#msgAntigas {
     width: 90%;
     max-width: 370px;
     padding: 1rem 1rem 1rem 2rem;
     margin-top: 30px;
 }
 
-#msg-antigas .media {
+#msgAntigas .media {
     box-shadow: 0 4px 6px -6px #999999;
     padding: 1rem 0;
 }
 
-#msg-antigas .media-body {
+#msgAntigas .media-body {
     margin-left: 10px;
     align-self: center;
 }
 
-#msg-antigas .scroll {
+#msgAntigas .scroll {
     height: 630px;
     overflow-y: scroll;
 }
@@ -133,6 +144,7 @@ small {
 }
 
 #conversa .user.card-papo {
+    width: 70%;
     max-width: 500px;
     padding: 10px 20px;
     margin: 0 0 30px auto;
@@ -143,6 +155,7 @@ small {
 }
 
 #conversa .card-papo {
+    width: 70%;
     max-width: 500px;
     margin-left: 15px;
     padding: 10px 20px;
@@ -206,3 +219,9 @@ button.btn {
 } 
 
 /* --------------------fim_do_Grupo_Conversa--------------------- */
+
+@media screen and (max-width: 1200px) {
+    .mensagem .form-group {
+        width: 330px;
+    }
+}
