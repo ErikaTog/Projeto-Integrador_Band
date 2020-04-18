@@ -12,60 +12,80 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/bate-papo.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
-    <header class="fixed-top d-flex justify-content-center">
+    <header>
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                        
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
+                        </button>
+                    </div>
+                </div>
+        
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="feed.html">
-                                <img src="img/icones/home_cinza.png" alt="Início">
+                                <div class="nav-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
                                 <p>Início</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="vagas.html">
-                                <img src="img/icones/vagas_cinza.png" alt="Vagas">
+                                <div class="nav-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
                                 <p>Vagas</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="minhaRede.html">
-                                <img src="img/icones/minharede_cinza.png" alt="Minha rede">
+                                <div class="nav-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
                                 <p>Minha rede</p>
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="">
-                                <img src="img/icones/papo_laranja.png" alt="Bate papo">
+                            <a class="nav-link" href="bate-papo.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
                                 <p>Bate papo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
+                        <a class="nav-link" href="anuncie.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
                                 <p>Anuncie</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="perfil-musico.html">
-                                <img src="img/icones/perfil_cinza.png" alt="Perfil">
+                            <a class="nav-link" href="">
+                                <div class="nav-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <p>Perfil</p>
                             </a>
                         </li>
                         <li class="nav-item" id="sair">
-                            <a class="nav-link" href="#">
-                                <img src="img/icones/sair_cinza.png" alt="Sair">
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
                                 <p>Sair</p>
                             </a>
                         </li>
@@ -77,10 +97,10 @@
 
     <div class="papo-container container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4">
     
     <!-- Grupo Pesquisar -->
-                <section id="pesquisar" class="card">
+                <section id="pesquisar" class="card-papo">
                     <div class="media">
                         <img src="img/teste/jane.jpg" alt="Jane Doe" class="avatar">
                         <h4>Bate-papo</h4>
@@ -93,7 +113,7 @@
                 </section>
 
     <!-- Grupo Msg Antigas -->
-                <section id="msg-antigas" class="card">
+                <section id="msg-antigas" class="card-papo">
                     <div class="scroll">
                         <div class="media">
                             <img src="img/teste/new_user1.png" alt="John Doe" class="avatar">
@@ -219,10 +239,10 @@
 
             </div>
 
-            <div class="col-8">
+            <div class="col-md-8">
 
     <!-- Grupo Conversa -->
-                <section id="conversa" class="card ml-auto">
+                <section id="conversa" class="card-papo">
                     <div class="media header">
                         <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
                         <h5>Mari Moreira</h5>
@@ -230,23 +250,23 @@
 
                     <div class="scroll">
                         <small>14/03/2020</small>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus aperiam assumenda sed,
                             commodi fugit consectetur laudantium in velit iusto tenetur nemo possimus recusandae dolorum
                             quas sapiente, animi eaque! At, et!
                         </p>
                         <div class="friend media">
                             <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <p class="card">
+                            <p class="card-papo">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                             </p>
                         </div>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                         </p>
                         <div class="friend media">
                             <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <p class="card">
+                            <p class="card-papo">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta exercitationem
                                 necessitatibus,
                                 eius consequuntur quo debitis cum in sit. Impedit similique facilis modi aliquid illo
@@ -256,22 +276,22 @@
                                 esse quod eos. Incidunt expedita accusantium et. Placeat harum commodi possimus!
                             </p>
                         </div>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem, ipsum.
                         </p>
                         <small>18/03/2020</small>
                         <div class="friend media">
                             <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <p class="card">
+                            <p class="card-papo">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                             </p>
                         </div>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                         </p>
                         <div class="friend media">
                             <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <p class="card">
+                            <p class="card-papo">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit nulla
                                 necessitatibus,
                                 debitis itaque voluptas tempore perspiciatis consectetur fugit nostrum. Earum repellat
@@ -279,37 +299,39 @@
                             </p>
                         </div>
                         <small>hoje</small>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus aperiam assumenda sed,
                             commodi fugit consectetur laudantium in velit iusto tenetur nemo possimus recusandae dolorum
                             quas sapiente, animi eaque! At, et!
                         </p>
                         <div class="friend media">
                             <img class="avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <p class="card">
+                            <p class="card-papo">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                             </p>
                         </div>
-                        <p class="user card ml-auto">
+                        <p class="user card-papo">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, impedit.
                         </p>
                     </div>
 
-                    <div class="mensagem row">
+                    <div class="mensagem">
                         <div class="icon">
-                            <a href=""><img src="img/teste/icon_camera.svg" alt="Foto"></a>
-                            <a href=""><img src="img/teste/icon_image.svg" alt="Imagem"></a>
-                            <a href=""><img src="img/teste/icon_gif.svg" alt="Gif"></a>
-                            <a href=""><img src="img/teste/icon_emoji.svg" alt="Emoji"></a>
+                            <a href=""><img src="img/icones/icon_camera.svg" alt="Foto"></a>
+                            <a href=""><img src="img/icones/icon_image.svg" alt="Imagem"></a>
+                            <a href=""><img src="img/icones/icon_gif.svg" alt="Gif"></a>
+                            <a href=""><img src="img/icones/icon_emoji.svg" alt="Emoji"></a>
                         </div>
 
-                        <form action="" method="POST" class="form-inline">
+                        <form action="" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputConversa" placeholder="Digite uma mensagem...">
+                                <textarea class="form-control" id="inputBio" rows="1"
+                                    placeholder="Digite uma mensagem..."></textarea>
+                                <button class="btn">
+                                    <img src="img/icones/icon_send.svg" alt="Enviar">
+                                <button>                            
                             </div>
-                            <button class="btn"><img src="img/teste/icon_send.svg" alt="Enviar"></button>                            
                         </form>
-
                     </div>
                 </section>
 
