@@ -56,7 +56,7 @@ img.avatar {
     border-bottom: 1px solid #fb754b;
 }
 
-#userCard .col-md-6 {
+#userCard .col-lg-6 {
     padding: 0;
     display: flex;
     align-items: center;
@@ -164,7 +164,7 @@ img.avatar {
 }
 
 .add a {
-    margin-right: 15px;
+    margin-right: 1.5rem;
     transition-duration: 0.2s;
 }
 
@@ -216,3 +216,114 @@ img.avatar {
 }
 
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .nav-container {
+        width: 100%;
+    }
+    .topbar-mobile {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .navbar-icon {
+        margin-left: auto;
+    }
+    .navbar-collapse {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 3px 3px #999999;
+    }
+    .navbar-nav {
+        width: 70%;
+        padding: 1rem 0;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-link {
+        width: 70px;
+        margin: 0;
+    }
+    .nav-link p {
+        width: 70px;
+        font-size: 1.2rem;
+    }
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 2.5rem;
+    }
+
+    img.avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    #userCard .media.divisoria {
+        border-right: none;
+    }
+    #userCard .media img {
+        width: 20px;
+        margin: 0 1rem;
+    }
+    #userCard .media-body {
+        display: flex;
+        align-items: center;
+    }
+    #userCard small {
+        font-size: 1.6rem;
+        padding-left: .5rem;
+    }
+
+    
+    img.mini-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    #newUser .scroll {
+        height: 150px;
+    }
+    #newUser .media-body {
+        padding-left: 1rem;
+    }
+    #newUser .media-body img {
+        width: 40px;
+    }
+
+    #rodape li:last-child {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    #publicar {
+        padding: 1rem 2.5rem;
+    }
+    
+    #publicar h4 {
+        margin-bottom: 1.5rem;
+    }
+    .form-control {
+        margin-bottom: 1.5rem;
+    }
+    
+    #publicacao .media {
+        margin-left: 2.5rem;
+    }
+    #publicacao p {
+        padding: 1.5rem 2.5rem;
+    }
+    .curtir {
+        margin-left: 2.5rem;
+    }
+    .curtir a img {
+        width: 25px;
+    }
+}
