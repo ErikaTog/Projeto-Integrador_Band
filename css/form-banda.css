@@ -192,3 +192,18 @@ label.remove{
         right: 10px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+    #identificacao {
+        width: 100%;
+    }
+    #informacao {
+        width: 100%;
+    }
+    #dados {
+        margin-top: 30px;
+    }
+}
