@@ -2,51 +2,77 @@
         Geral - Fale Conosco
 -------------------------------- */
 
-.fale-container {
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    margin: 90px auto 40px auto;
+.fale-conosco {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card {
-    width: 100%;
+header {
+    position: initial;
+}
+
+.fale-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
     background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
-    padding: 20px 70px;
+    padding: 2rem 7rem;
+    margin: 30px 0;
 }
 
 .fale-container-header {
-    padding-bottom: 10px;
     box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.fale-container .form-group {
-    margin-top: 15px;
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
-.fale-container .form-group #nome-contato {
-    margin-top: 10px;
+input.form-control {
+    height: 50px;
+    font-size: 1.6rem;
+    padding: 1.5rem 3rem;
 }
 
-.fale-container .container {
+textarea.form-control {
+    font-size: 1.6rem;
+    padding: 1.5rem 3rem;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
+}
+
+.container {
     padding: 0;
-    margin-top: 15px;
 }
 
-.fale-container .row {
+.row {
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-sm-6,
+.col-sm-2 {
+    padding: 0;
     margin: 0;
 }
 
-.fale-container .col-6,
-.fale-container .col-2 {
-    margin: 0;
-    padding: 0;
-}
-
-.fale-container .col-2 {
+.col-sm-2 {
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
+}
+
+footer {
+    width: 100%;
 }
