@@ -11,28 +11,41 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/index.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
-    <header class="fixed-top d-flex justify-content-center">
+    <header>
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="180"></a>
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                        
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler btn btn-salvar" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            Entrar            
+                        </button>
+                    </div>
+                </div>
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
-                            </div>
-                            <button type="button" class="btn btn-salvar">Entrar</button>
-                        </form>
-                        <a href="">Esqueceu a senha?</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                                </div>
+                                <button type="button" class="btn btn-salvar">Entrar</button>
+                            </form>
+                            <a href="">Esqueceu a senha?</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -91,41 +104,41 @@
 
     <!-- Grupo Anuncie -->
     <section id="anuncie">
-        <a href="">
+        <a href="pre-cadastro.html">
             <img src="img/home-anuncie.png" alt="Anuncie sua vaga">
         </a>
     </section>
 
     <!-- Grupo Para quem -->
-    <section id="para-quem">
+    <section id="paraQuem">
         <h1>Para quem foi feito o Band+ ?</h1>
         <h4>Para qualquer pessoa buscando contato com músicos...</h4>
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <a href="">
+                    <a href="pre-cadastro.html" class="hvr-push">
                         <img src="img/home-banda.png" alt="Banda">
-                        <p>Encontre a sua futura banda</p>
+                        <p class="circle-banda">Encontre a sua futura banda</p>
                     </a>
                 </div>
                 <div class="col-3 offset-3">
-                    <a href="">
+                    <a href="pre-cadastro.html" class="hvr-push">
                         <img src="img/home-amigos.png" alt="Amigos">
-                        <p>Encontre os seus amigos</p>
+                        <p class="circle-amigos">Encontre os seus amigos</p>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 offset-3">
-                    <a href="">
+                    <a href="pre-cadastro.html" class="hvr-push">
                         <img src="img/home-instrumento.png" alt="Instrumento">
-                        <p>Venda o seu instrumento</p>
+                        <p class="circle-instr">Venda o seu instrumento</p>
                     </a>
                 </div>
                 <div class="col-3 offset-3">
-                    <a href="">
+                    <a href="pre-cadastro.html" class="hvr-push">
                         <img src="img/home-professor.png" alt="Professor">
-                        <p>Encontre o seu professor de músico</p>
+                        <p class="circle-prof">Encontre o seu professor de músico</p>
                     </a>
                 </div>
             </div>
@@ -134,7 +147,7 @@
     
     <footer>
         <ul class="list-unstyled mb-0">
-            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
+            <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
             <li>
                 <span class="copyright">Copyright &copy;
                     2020 -

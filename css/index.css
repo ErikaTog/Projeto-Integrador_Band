@@ -13,37 +13,17 @@ body {
 /* --------------------------------
             Títulos - H
 -------------------------------- */
-h1 { font-size: 45px; font-weight: bold; margin: 0; }
-h4 { font-size: 22px; font-weight: bold; margin: 0; }
-p { font-size: 20px; margin: 0; font-weight: bold;}
+h1 { font-size: 4.5rem; font-weight: bold; }
+h4 { font-size: 2.2rem; font-weight: bold; }
+p { font-size: 2.0rem; font-weight: bold; }
 
 /* --------------------começo_do_Header -------------------- */
 header{
     height: 80px;
 }
 
-.form-group input{
-    height: 40px;
-    border: 2px solid #fb3c00;
-    margin-right: 10px;
-}
-
-::-webkit-input-placeholder{
-    font-size: 14px;
-}
-
-.nav-item a{
-    color: #fb3c00;
-    font-size: 12px;
-    margin-left: 305px;
-}
-
-.nav-item a:hover{
-    text-decoration: none;
-}
-
-.form-inline .form-control{
-    width: 200px;
+.navbar-brand img {
+    width: 180px;
 }
 
 nav.navbar{
@@ -54,16 +34,76 @@ ul.navbar-nav{
     padding-top: 4px;
 }
 
+
+.form-inline .form-control{
+    width: 200px;
+}
+
+.form-group input{
+    height: 40px;
+    color: #282a36;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    border: 2px solid #fb3c00;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.4rem;
+}
+
+.form-control:focus {
+    border: 2px solid #fb3c00;
+}
+
+.nav-item a{
+    color: #fb3c00;
+    font-size: 1.2rem;
+    margin-left: 290px;
+}
+
+.nav-item a:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ------------------------------*/ 
+/* Hamburger */
+.navbar-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: block;
+    overflow: visible;
+}
+
+.navbar-toggler {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+.btn.btn-salvar {
+    height: 40px;
+}
+
+.btn.btn-salvar:hover,
+.btn.btn-salvar:focus {
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
 /* --------------------fim_do_Header -------------------- */
 
 /* --------------------começo_do_Carousel -------------------- */
 .container-carousel{
-    display: flex;
-    justify-content: center;
+    width: 100%;
     background-color: black;
     padding: 0px;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
 div#carousel{
     margin-top: 80px;
 }
@@ -73,9 +113,27 @@ div#carousel{
 }
 
 #botaoCarousel{
+    margin: 3px 0px;
     display: flex;
     justify-content: center;
-    margin: 3px 0px;
+}
+
+/* ------------------------------*/ 
+/* Posição - control */
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+    position: initial;
+}
+
+.container-carousel {
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    margin-top: 80px;
 }
 
 /* --------------------fim_do_Carousel -------------------- */
@@ -97,8 +155,8 @@ div#carousel{
 
 #conexao .col-5{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 #conexao h1{
@@ -111,45 +169,101 @@ div#carousel{
 #anuncie img{
     width: 100%;
 }
+
+#anuncie img:hover {
+    filter: brightness(125%);
+}
 /* --------------------fim_do_Anuncie -------------------- */
 
 /* --------------------início_do_Para quem -------------------- */
-#para-quem{
+#paraQuem{
     background-image: url(../img/paraquem-bg.jpg);
+	background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom center;
     color: white;
     padding: 50px 0px;
 }
 
-#para-quem img{
-    width: 250px;
-    align-self: center;
-}
-
-#para-quem h1,
-#para-quem h4{
+#paraQuem h1,
+#paraQuem h4{
     text-align: center;
 }
 
-#para-quem h4{
+#paraQuem h4{
     color: #282A36;
-    padding-bottom: 40px;
     padding-top: 10px;
+    padding-bottom: 40px;
 }
 
-#para-quem p{
+#paraQuem .row{
+    padding: 10px 0px;
+}
+
+#paraQuem .col-3 {
+    display: flex;
+    justify-content: center;
+}
+
+#paraQuem img{
+    width: 250px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#paraQuem p{
+    color:white;
     text-align: center;
     padding-top: 10px;
-    color:white;
+    margin: 0 auto;
 }
 
-#para-quem a:hover{
+p.circle-banda { width: 160px; }
+p.circle-amigos { width: 150px; }
+p.circle-instr { width: 150px; }
+p.circle-prof { width: 210px; }
+
+#paraQuem a:hover{
     text-decoration: none;
 }
 
-#para-quem .row{
-    padding: 10px 0px;
+/* Push */
+@-webkit-keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+@keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+.hvr-push {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
 /* --------------------fim_do_Para quem -------------------- */
