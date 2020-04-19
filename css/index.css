@@ -160,6 +160,7 @@ div#carousel{
 }
 
 #conexao h1{
+    width: 440px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -199,9 +200,11 @@ div#carousel{
 
 #paraQuem .row{
     padding: 10px 0px;
+    margin: 0;
 }
 
 #paraQuem .col-3 {
+    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -267,3 +270,21 @@ p.circle-prof { width: 210px; }
     animation-iteration-count: 1;
 }
 /* --------------------fim_do_Para quem -------------------- */
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .nav-container {
+        width: 90%;
+    }
+
+    #paraQuem .container {
+        width: 90%;
+        padding: 0;
+    }
+    #paraQuem img{
+        width: 225px;
+    }
+}
