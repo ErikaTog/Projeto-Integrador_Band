@@ -310,3 +310,45 @@ button.btn {
         height: 25px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .navbar-nav {
+        width: 80%;
+    }
+    .nav-link {
+        width: 60px;
+    }
+    .nav-icon {
+        font-size: 2.8rem;
+    }
+
+    #pesquisar {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 2rem;
+    }
+    
+    #msgAntigas {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 1rem 1rem 2rem;
+    }
+    #msgAntigas .scroll {
+        height: 35vh;
+    }
+
+    #conversa {
+        margin-top: 30px;
+    }
+    #conversa .scroll {
+        height: 65vh;
+    }
+
+    .mensagem .form-group {
+        width: 270px;
+    }
+}
