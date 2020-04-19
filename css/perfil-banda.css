@@ -261,12 +261,12 @@ h5.mt-0{
 
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
 
-#minha-musica {
+#minhaMusica {
     padding: 2.5rem 2.5rem 2.5rem 5rem;
     margin-top: 30px;
 }
 
-#minha-musica .row {
+#minhaMusica .row {
     height: auto;
     padding-top: 2rem;
     display: flex;
@@ -443,11 +443,11 @@ button.btn.btn-danger:hover {
         height: 230px;
     }
     
-    #minha-musica {
+    #minhaMusica {
         padding: 2.5rem 5rem;
         margin-top: 30px;
     }
-    #minha-musica .row {
+    #minhaMusica .row {
         padding-top: 4rem;
         justify-content: center;
     }
@@ -568,6 +568,7 @@ button.btn.btn-danger:hover {
     #infos {
         max-width: 100%;
     }
+    
 } 
 
 @media screen and (max-width: 768px) {
@@ -647,7 +648,7 @@ button.btn.btn-danger:hover {
         height: 220px;
     }
 
-    #minha-musica .row {
+    #minhaMusica .row {
         padding-top: 3rem;
     }    
     .musica-item {
@@ -837,11 +838,11 @@ button.btn.btn-danger:hover {
         padding-left: 1rem;
     }
 
-    #minha-musica {
+    #minhaMusica {
         padding: 1rem 2rem;
         margin-top: 15px;
     }
-    #minha-musica .row {
+    #minhaMusica .row {
         padding-top: 1.5rem;
     }
     .col-sm-12 {
