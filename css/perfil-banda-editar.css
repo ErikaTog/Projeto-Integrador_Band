@@ -1,7 +1,17 @@
 /* --------------------------------
-    Geral - Perfil músico editar
+    Geral - Perfil banda editar
 -------------------------------- */
+.form-group {
+    margin: 0;
+}
 
+.form-control {
+    font-size: 1.6rem;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
 
 /* --------------------início_do_Grupo_Head--------------------- */
 
@@ -24,12 +34,13 @@
 -------------------------------- */
 
 div.icon i {
-    background-color: #fff;
     width: 40px;
     height: 40px;
+    color: #fb3c00;
+    font-size: 2rem;
+    background-color: #fff;
     border: 1.5px solid #fb3c00;
     border-radius: 100%;
-    color: #fb3c00;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,31 +48,32 @@ div.icon i {
 }
 
 div.icon i:hover {
-    background-color: #fb3c00;
     color: #fff;
+    background-color: #fb3c00;
 }
 
 .fundo-content div.icon {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 5%;
+    right: 2%;
 }
 
 .avatar-content div.icon {
     position: absolute;
-    top: 140px;
-    left: 150px;
+    top: 70%;
+    left: 80%;
 }
 
 /* --------------------------------
             Info - User
 -------------------------------- */
 
+
 .info-user textarea {
-    width: 20%;
-    margin-top: 10px;
-    margin-left: 345px;
+    width: 30%;
+    margin: 1rem 3rem;
 }
+
 
 /* --------------------fim_do_Grupo_Head--------------------- */
 
@@ -69,36 +81,24 @@ div.icon i:hover {
 
 #bio .form-group {
     width: 100%;
+    height: auto;
     margin: 20px auto 0;
-}
-
-#bio {
-    height: 232px;
-    padding: 25px 25px 25px 50px;
-    margin-top: 30px;
-}
-
-#bio .scroll {
-    height: 200px;
-    overflow-y: scroll;
-}
-
-#bio p {
-    padding-right: 20px;
-    margin-top: 20px;
 }
 
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Integrantes--------------------- */
-
-a.modalLink {
-    color: #282a36;
-    margin: 20px 0;
+#integrantes h4 {
+    margin-bottom: 1rem;
 }
 
-a.modalLink:hover {
-    font-weight: 700;
+a.modal-link {
+    color: #282a36;
+}
+
+a.modal-link:hover {
+    color: #4c4f66;
+    font-weight: 600;
 }
 
 /* --------------------------------
@@ -107,28 +107,21 @@ a.modalLink:hover {
 
 #integrantes .scroll {
     height: 200px;
+    margin-top: 1rem;
     overflow-y: scroll;
 }
-
-/* #integrantes .form-group {
-    width: 80%;
-    margin: 0;
-} */
 
 .integrantes-item.media{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 } 
 
-div.form-group.col-5{
-    padding-right: 0px;
-    padding-left: 10px;
+.integrantes-item img{
+  height: 40px ;
+  width: 40px;
 } 
 
-/* .integrantes-item  textarea {
-    width: 100%;
-    margin: 15px;
-} */
 
 /* ------------------------------*/ 
 /* Ícone - lixo */
@@ -142,14 +135,8 @@ div.icon-border-none i:hover {
     color: #4c4f66;
 }
 
-/* .habilidades-item div.icon-border-none {
-    margin-left: 20px;
-    display: flex;
-    align-self: center;
-} */
-
-div.icon-border-none.form-group.col-1{
-   padding: 0px 15px 0px 10px;
+.integrantes-item div.icon-border-none {
+    padding-left: 1rem;
 }
 
 
@@ -157,34 +144,41 @@ div.icon-border-none.form-group.col-1{
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
-#infos form {
-    width: 100%;
-    height: 38px;
-    margin: 0;
+#infos {
+    max-width: 500px;
+    padding: 2.5rem  5rem  2.5rem 2.5rem;
+    margin-top: 30px;
 }
 
-.infos-item  textarea {
+.infos-item.media {
+    align-items: center;
+}
+
+#infos form {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 1.5rem;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
 
-#minha-musica .scroll .row {
-    margin: 0;
-    height: 850px;
+#minhaMusica h4 {
+    margin-bottom: 1rem;
 }
 
-.musica-item {
+#minhaMusica .row {
+    padding-top: 1rem;
+}
+
+.musica-item.col-xl-6.col-sm-12 {
     padding-left: 0;
-    padding-right: 10px;
+    padding-right: 1rem;
 }
 
 .musica-item div.icon-border-none {
     text-align: right;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
@@ -206,10 +200,6 @@ label.col-sm-2.col-form-label{
     padding-right: 0;
 }
 
-/* input#formControlFileImg.form-control-file{
-    height: 38px;
-} */
-
 div.col-sm-8, 
 div.col-sm-12{
     padding: 0px;
@@ -228,4 +218,172 @@ div.col-sm-12{
     font-weight: 700;
     color: #fe0000;
     margin-bottom: 10px;
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .avatar-content div.icon {
+        top: 60%;
+        left: 85%;
+    }
+    .info-user textarea {
+        width: 25%;
+    }
+    #textareaUserName.form-control{
+        margin: 10px 0 10px 275px;
+    }
+
+    .form-group.col-5{
+        padding: 0rem 0.3rem 0rem 1.2rem;
+    }
+    .integrantes-item div.icon-border-none {
+        padding-left: 0.2rem;
+    }
+   
+}
+
+@media screen and (max-width: 991px) {
+    .nav-container {
+        width: 80%;
+        display: flex;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .navbar-nav {
+        width: 100%;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .nav-item {
+        margin-left: 10px;
+    }
+
+    div.icon i {
+        width: 35px;
+        height: 35px;
+    }
+
+    #infos {
+        max-width: 100%;
+    }
+    .info-user {
+        padding-left: 2rem;
+    }
+    .info-user textarea {
+        width: 25%;
+    }
+    #textareaUserName.form-control{
+        margin: 10px 0px 10px 200px;
+    }
+
+
+    #integrantes .scroll {
+        height: 240px;
+    }
+    #integrantes .form-group {
+        width: 100%;
+    }
+
+    .col-sm-12 {
+        padding: 0;
+    }
+    .integrantes-item div.icon-border-none {
+        padding-left: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container .btn {
+        height: 30px;
+    }
+
+    div.icon i {
+        width: 30px;
+        height: 30px;
+    }
+
+    .info-user {
+        padding-left: 2rem;
+    }
+    .info-user textarea {
+        width: 31%;
+    }
+    #textareaUserName.form-control{
+        margin: 10px 0px 10px 160px;
+    }
+    div.info-user-status{
+      padding: 0px 0px 12px 0px;
+    }
+
+    #bio {
+        padding: 2.5rem 5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .form-control {
+        font-size: 1rem;
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+    
+    div.icon i {
+        width: 18px;
+        height: 18px;
+        font-size: 1rem;
+        border: 1px solid #fb3c00;
+    }
+    .avatar-content div.icon {
+        top: 48%;
+        left: 85%;
+    }
+
+    #infos {
+        padding: 1rem 2rem;
+    }
+    .info-user {
+        padding-left: 1rem;
+    }
+    .info-user textarea {
+        width: 45%;
+        margin: 0.5rem 3rem;
+    }
+  
+    #textareaUserName.form-control{
+        margin: 10px 0px 10px 100px;
+    }
+    div.info-user-status{
+      padding: 0rem 0.5rem 1.2rem;
+    }
+
+    #bio {
+        padding: 1rem 2rem;
+    }
+
+    #integrantes .scroll {
+        height: 170px;
+    }
+
+    .integrantes-item img {
+        width: 20px;
+        height: 20px;
+    }
+    .form-group.col-5{
+        padding: 0rem 0.3rem;
+    }
+    .integrantes-item div.icon-border-none {
+        padding-left: 0.2rem;
+    }
+
 }
