@@ -278,7 +278,7 @@ footer ul li a:hover {
     }
 
     footer ul li {
-        padding-top: .5rem;
+        padding-top: 0rem;
     }
 
     #escolhaPerfil {
@@ -287,7 +287,7 @@ footer ul li a:hover {
         transform: translate(-50%, -50%); 
     }    
     #escolhaPerfil img {
-        width: 13rem;
+        width: 12rem;
     }
     #escolhaPerfil p {
         font-size: 1.6rem;
