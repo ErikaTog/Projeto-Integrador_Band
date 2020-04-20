@@ -5,63 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vagas</title>
     <link rel="shortcut icon" href="img/icone.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/vagas.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="fixed-top d-flex justify-content-center">
+    <header>
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>            
-                </button>
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>    
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
+                        </button>
+                    </div>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="feed.html">
-                                <img src="img/icones/home_cinza.png" alt="Início">
+                                <div class="nav-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
                                 <p>Início</p>
                             </a>
                         </li>
-                        <li class="nav-item  active">
+                        <li class="nav-item">
                             <a class="nav-link" href="vagas.html">
-                                <img src="img/icones/vagas_laranja.png" alt="Vagas">
+                                <div class="nav-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
                                 <p>Vagas</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="minhaRede.html">
-                                <img src="img/icones/minharede_cinza.png" alt="Minha rede">
+                                <div class="nav-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
                                 <p>Minha rede</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="bate-papo.html">
-                                <img src="img/icones/papo_cinza.png" alt="Bate papo">
+                                <div class="nav-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
                                 <p>Bate papo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="anuncie.html">
-                                <img src="img/icones/anuncie_cinza.png" alt="Anuncie">
+                        <a class="nav-link" href="anuncie.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
                                 <p>Anuncie</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="">
-                                <img src="img/icones/perfil_cinza.png" alt="Perfil">
+                                <div class="nav-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <p>Perfil</p>
                             </a>
                         </li>
                         <li class="nav-item" id="sair">
                             <a class="nav-link" href="index.html">
-                                <img src="img/icones/sair_cinza.png" alt="Sair">
+                                <div class="nav-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
                                 <p>Sair</p>
                             </a>
                         </li>
@@ -80,6 +97,8 @@
                 <img src="img/icones/menu-999999.png" alt="menu" width="35">
             </div>
         </button>
+
+        <!-- Pesquisar Vagas -->
         <section class="pesquisarVaga">
             <div class="formulario-pesquisar-vaga">
                 <div class="radio">
@@ -104,8 +123,7 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Feed de Vagas -->
         <section class="feedVagas"> 
