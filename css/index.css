@@ -19,7 +19,9 @@ p { font-size: 2.0rem; font-weight: bold; }
 
 .col-md-4,
 .col-md-6,
-.col-sm-12 {
+.col-sm-12,
+.col-4,
+.col-6 {
     padding: 0;
 }
 
@@ -113,16 +115,16 @@ button.mobile {
 /* --------------------fim_do_Header -------------------- */
 
 /* --------------------começo_do_Carousel -------------------- */
+#carousel{
+    margin-top: 80px;
+}
+
 .container-carousel{
     width: 100%;
     background-color: black;
     padding: 0px;
     display: flex;
     justify-content: center;
-}
-
-div#carousel{
-    margin-top: 80px;
 }
 
 .carousel-item img{
@@ -426,8 +428,15 @@ p.circle-prof { width: 210px; }
         height: 35px;
     }
 
+    #carousel{
+        margin-top: 60px;
+    }
     .carousel-item img{
         height: 300px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 60px;
     }
 
     #conexao{
@@ -489,4 +498,116 @@ p.circle-prof { width: 210px; }
     p.circle-amigos { width: 100%; }
     p.circle-instr { width: 100%; }
     p.circle-prof { width: 100%; }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.4rem; }
+    h1 { font-size: 1.8rem; }
+    h4 { font-size: 1.4rem; }
+    p { font-size: 1.4rem; }
+
+
+    header { 
+        height: 45px; 
+    }
+    .topbar-mobile {
+        width: 90%;
+    }
+    .navbar-brand img {
+        width: 100px;
+    }
+    .navbar-toggler {
+        line-height: 1.5;
+    }
+    .navbar-collapse {
+        margin-top: 2px;
+    }
+    .btn.btn-salvar {
+        height: auto;
+    }
+    .navbar-collapse {
+        max-width: 200px;
+    }
+    .form-inline .form-control{
+        width: 160px;
+    }
+    .form-group input{
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.2rem;
+    }    
+    .form-inline button.btn.btn-outline-cancelar {
+        height: auto;
+        margin-top: 18px;
+    }
+    .nav-item a{
+        bottom: 38px;
+        left: 30px;
+    }
+
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    #carousel{
+        margin-top: 45px;
+    }
+    .carousel-item img{
+        height: 200px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 45px;
+    }
+    #botaoCarousel {
+        margin: 10px 0px;
+    }
+
+    #conexao{
+        margin: 30px 0px;
+    }
+    #conexao img{
+        width: 150px;
+    }
+    #conexao h1{
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    #paraQuem{
+        padding: 20px 0px;
+    }
+    #paraQuem h4{
+        width: 280px;
+        margin: 0 auto;
+    }
+    #paraQuem .container {
+        padding: 0 25px;
+    }
+    #paraQuem .col-md-3 {
+        padding-bottom: 20px;
+    }
+    #paraQuem .col-md-3 p {
+        margin-left: 20px;
+    }
+    #paraQuem .col-md-3.reverse p {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+    #paraQuem img{
+        width: 110px;
+    }
+
+    footer {
+        height: 45px;
+    }
+    footer ul li {
+        padding: 2px;
+    }
+    footer img {
+        width: 15px;
+    }
 }
