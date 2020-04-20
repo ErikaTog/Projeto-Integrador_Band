@@ -34,8 +34,6 @@ body {
     color: #ffffff;
     background-color: yellowgreen; /*caso o background-image não carregue #fb3c00*/
     background-image:url("../img/pre-cadastro-bg.jpg");
-    background-size: cover;
-    background-position: bottom center;
     padding: 0;   
     margin: 0;
     outline: 0;
@@ -54,7 +52,6 @@ header div.row {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: darkcyan; */
 }
 
 header img {
@@ -105,6 +102,44 @@ header h1 {
 #escolhaPerfil a:hover {
     text-decoration: none;
 }
+/* Push */
+@-webkit-keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+@keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+.hvr-push {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
 
 
 /* --------------------fim__do_escolha-perfil-------------------- */
@@ -151,6 +186,12 @@ footer ul li a:hover {
             MEDIA QUERY
 -------------------------------- */
 
+@media screen and (min-width: 1441px){
+    body {
+        background-image:url("../img/pre-cadastro-bg.jpg");
+        background-size: cover;
+    }
+}
 
 @media screen and (max-width: 1199px) {
     #escolhaPerfil img {
@@ -194,10 +235,68 @@ footer ul li a:hover {
     }
     header div.row{
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
     }
     h1{
         padding-top: 10px;
     }
+    .col-sm-12 {
+        padding-bottom: 15px;
+    }
+    footer {
+        font-size:2.18rem;
+        }
 }
 
+@media screen and (max-width: 567px) {
+    html {
+        font-size:62.5%;
+    }
+    h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding-top: 0px;
+    }
+    
+    header div.row {
+        height: 70px;
+        width: 100%;
+        margin: 0px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header img {
+        width: 4.2rem;
+    }
+
+    footer {
+        height: 4rem;
+        font-size: 1.2rem;
+    }
+
+    footer ul li {
+        padding-top: .5rem;
+    }
+
+    #escolhaPerfil {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }    
+    #escolhaPerfil img {
+        width: 13rem;
+    }
+    #escolhaPerfil p {
+        font-size: 1.6rem;
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+    .col-sm-12{
+        padding-bottom: .5rem;
+    } 
+
+} 
+ 
