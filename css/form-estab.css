@@ -1,150 +1,411 @@
 /* --------------------------------
-        Geral - Form Banda
+        Geral - Form Estab
 -------------------------------- */
-
-.cadastro-container {
-    width: 100%;
-    max-width: 1170px;
-    height: auto;
-    margin: 90px auto;
+.form-banda {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card {
+
+footer {
+    width: 100%;
+}
+
+.cadastro-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 30px;
+}
+
+.container {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.col-xl-2,
+.col-xl-6,
+.col-xl-8,
+.col-lg-3,
+.col-lg-5,
+.col-lg-3,
+.col-lg-9,
+.col-md-5,
+.col-md-6,
+.col-md-10,
+.col-sm-3,
+.col-sm-4,
+.col-sm-12{
+    padding: 0;
+}
+
+
+.card-cadastro {
     width: 100%;
     background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
 }
 
+
+/* ------------------------------*/ 
+/* Formulário */
 .form-header {
-    padding-bottom: 10px;
     box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 1rem;
 }
 
-.col-6 {
-    padding: 0;
+h5 {
+    margin: 2rem 0 1.5rem;
 }
 
 .campo-form {
-    padding: 10px 20px 0px;
+    padding: 1rem 2rem;
 }
 
 .form-group.row {
-    width: 100%;
-    margin: 0 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.form-group label {
+    margin-right: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-control {
+    color: #4C4F66;
+    padding: 0.5rem 1rem;
+}
+
+textarea.form-control,
+input.form-control,
+select.form-control{
+    font-size: 1.6rem;
+}
+
+input.form-control,
+select.form-control{
+    height: 35px;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
+}
+
 
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
-#form-identificacao {
-    width: 100%;
+#identificacao {
+    width: 90%;
     max-width: 550px;
-    padding: 15px 30px 25px;
+    padding: 1.5rem 3rem 2.5rem;
 }
 
-#form-identificacao h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-#form-identificacao label {
-    align-self: center;
-}
-
-#form-identificacao .col-sm-2,
-#form-identificacao .col-sm-6,
-#form-identificacao .col-sm-8 {
-    padding: 0;
-}
 
 /* --------------------fim_do_Grupo_Form_Identificação--------------------- */
 
 /* --------------------início_do_Grupo_Form_Informação--------------------- */
 
-#form-informacao {
-    width: 100%;
+#informacao {
+    width: 90%;
     max-width: 550px;
-    padding: 15px 30px 35px;
+    padding: 1.5rem 3rem 2.5rem;
     margin-top: 30px;
 }
 
-#form-informacao h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
 
-#form-informacao label {
-    align-self: center;
-}
+.remove-conte{
+    margin: 0;
+    display: none;
+    margin-bottom: 5px;
+} 
 
-
-#form-informacao .col-sm-2,
-#form-informacao .col-sm-12,
-#form-informacao .col-sm-8 {
-    padding: 0;
-}
 
 /* --------------------fim_do_Grupo_Form_Informação--------------------- */
 
 
 /* --------------------início_do_Grupo_Form_Dados--------------------- */
 
-#form-dados {
+#dados {
     width: 100%;
     max-width: 550px;
-    padding: 15px 30px 25px;
+    padding: 1.5rem 3rem 2.5rem;
 }
 
-#form-dados h5 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+#dados .campo-form {
+    margin-bottom: 3rem;
 }
 
-#form-dados label {
-    align-self: center;
+#dados .campo-form:last-child {
+    margin-bottom: 0;
+    position: relative;
 }
 
-#form-dados .col-sm-1,
-#form-dados .col-sm-2,
-#form-dados .col-sm-3,
-#form-dados .col-sm-5,
-#form-dados .col-sm-6,
-#form-dados .col-sm-8,
-#form-dados .col-sm-11 {
-    padding: 0;
+.add-funcionamento {
+    position: absolute;
+    top: 18px;
+    right: 13px;
 }
 
-#funcionamento.row {
-    width: 100%;
-    margin: 0;
+.add-funcionamento a {
+    color: #999999;
+    font-size: 2rem;
+    transition-duration: 0.25s;
 }
 
-#funcionamento .col-sm-1 {
-    align-self: center;
+.add-funcionamento a:hover {
+    color: #FB3C00;
 }
 
-#funcionamento img {
-    transition: 0.2s;
-}
-
-#funcionamento img:hover {
-    cursor: pointer;
-    filter: brightness(0.8);
-}
-
-div.col-sm-1{
-    margin-top: 8px;
-}
-
-#form-dados .col-sm-3,
-#form-dados .col-sm-5{
-    padding: 0px 0px 0px 10px;
-}
-
-#inputDia,
+#inputFuncionamento,
 #inputAbertura,
 #inputFechamento{
     text-align: center;
+    margin:0px 0px 0px;
+} 
+
+.col-lg-3{
+    margin-left: 6px;
 }
 
 /* --------------------fim_do_Grupo_Form_Dados--------------------- */
+
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .campo-form {
+        padding: 1rem;
+    }
+    .form-group label {
+        margin-right: 0;
+    }
+  
+    .col-xl-3{
+        margin-left: 6px;
+    }   
+    .add-funcionamento a {
+        font-size: 1.5rem;
+    }
+   .add-funcionamento {
+        top: 18px;
+        right: 6px;
+    }
+    .col-lg-3{
+        margin-left: 0px;
+    }
+
+    #inputFuncionamento,
+    #inputAbertura,
+    #inputFechamento{
+       padding:0px 0px 0px;
+    } 
+    .a.col-lg-3{
+        margin:0px 0px 0px 6px;
+    }
+   }
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .form-group label {
+        margin-bottom: 1rem;
+    }
+    .form-group input {
+        margin-bottom: 1rem;
+    }
+    #identificacao {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    #informacao {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    #informacao .form-group label, 
+    #informacao .form-group input {
+        margin-bottom: 0;
+    }
+    #dados {
+        padding: 1.5rem 2.5rem 2rem;
+    }
+    .add-funcionamento {
+        top: 38px;
+        right: 15px;
+    }
+    .add-funcionamento a {
+        font-size: 2.3rem;
+    }
+     #inputFuncionamento{
+        margin-bottom: 10px;
+    }
+    .a.col-lg-3{
+        margin:0px 0px 0px 0px;
+    }
+    .a.col-md-5{
+        margin:0px 3px 0px 0px;
+    } 
+     
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+    #identificacao {
+        width: 100%;
+        max-width: 100%;
+    }
+    #informacao {
+        width: 100%;
+        max-width: 100%;
+    }
+    #dados {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    #inputFuncionamento{
+        margin-bottom: 0px;
+    }
+    .a.col-sm-3{
+        margin: 0px 0px 0px 15px
+    }
+    .add-funcionamento {
+        top: 15px;
+        right: 15px;
+    }
+
+    .add-funcionamento a {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.8rem; }
+    h5 { font-size: 1.4rem; }
+
+    header { 
+        height: 45px; 
+    }
+    .nav-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+    .navbar { 
+        padding: 5px 0px; 
+    }
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .cadastro-container {
+        width: 90%;
+        margin: 60px auto 15px;
+    }
+
+    .campo-form.card-cadastro {
+        box-shadow: none;
+        padding: 0;
+    }
+    .form-group label {
+        color: #4C4F66;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .form-group input {
+        height: 35px;
+        margin-bottom: 0.5rem;
+    } 
+    #informacao .form-group label{
+        margin-bottom: 0.5rem;
+    }
+    .form-control {
+        color: #4C4F66;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    #identificacao {
+        padding: 1.5rem;
+    }
+
+    #informacao {
+        padding: 1.5rem;
+        margin-top: 15px;
+    }
+    #informacao .form-header {
+        margin-bottom: 15px;
+    }
+    h5 {
+        margin: 1.5rem 0;
+    }
+    .remove-conte {
+        display: initial;
+    } 
+    #informacao .form-group h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #dados {
+        padding: 1.5rem;
+        margin-top: 15px;
+    }
+    #dados .campo-form {
+        margin-bottom: 0.5rem;
+    }
+ 
+    .add-funcionamento a {
+        font-size: 1.5rem;
+    }
+   .add-funcionamento {
+        top: 0px;
+        right: 15px;
+    }
+     #inputFuncionamento{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #inputAbertura, 
+    #inputFechamento{
+        margin-bottom: 10px;
+    }
+    .a.col-md-5{
+        margin:0px 3px 0px 0px;
+    }
+    #h5{
+        margin-bottom: 0px;
+    }
+    footer {
+        height: 45px;
+    }
+    footer ul li {
+        padding: 2px;
+    }
+    footer img {
+        width: 15px;
+    }
+}
