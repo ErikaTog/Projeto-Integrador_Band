@@ -32,7 +32,7 @@ p {
 body {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    background-color: yellowgreen; /*caso o background-image não carregue #fb3c00*/
+    background-color: #fb3c00; /*caso o background-image não carregue*/
     background-image:url("../img/pre-cadastro-bg.jpg");
     padding: 0;   
     margin: 0;
@@ -73,7 +73,6 @@ header h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    /* background-color: grey; */
 }
 
 #escolhaPerfil .row {
@@ -160,9 +159,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: darkcyan; */
 }
-
 
 footer ul li {
     padding-top: 1rem;
@@ -282,7 +279,7 @@ footer ul li a:hover {
     }
 
     #escolhaPerfil {
-        top: 50%;
+        top: 51%;
         left: 50%;
         transform: translate(-50%, -50%); 
     }    
