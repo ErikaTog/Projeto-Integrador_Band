@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
 
+
 /* --------------------------------
             Títulos - H
 -------------------------------- */
@@ -19,6 +20,7 @@ h1 {
 p {
     font-size: 3rem;
     font-weight: 400;
+    color: white;
     margin: 0;
 }
 
@@ -30,14 +32,12 @@ p {
 body {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    background-color: #fb3c00;
-    /*caso o background-image não carregue*/
-    /* background-image:url("../img/pre-cadastro-bg.jpg");
-    background-size: cover; */
-    padding: 0;
-    /*tirando o padding padrão  */
+    background-color: yellowgreen; /*caso o background-image não carregue #fb3c00*/
+    background-image:url("../img/pre-cadastro-bg.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    padding: 0;   
     margin: 0;
-    /*tirando o margin padrão  */
     outline: 0;
     box-sizing: border-box;
     display: flex;
@@ -45,27 +45,16 @@ body {
 }
 
 
-#containerAll {
-    height: 100vh;
-    width: 100vw;
-    max-width: 1440px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
 /* --------------------início_do_header-------------------- */
 
 header div.row {
-    height: 300px;
-    width: 100vw;
-    max-width: 1440px;
+    height: 200px;
+    width: 100%;
     margin: 0px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: darkcyan; */
 }
 
 header img {
@@ -81,15 +70,23 @@ header h1 {
 
 /* --------------------início_do_escolha-perfil-------------------- */
 #escolhaPerfil {
-    height: 55rem;
-    color: white;
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    /* background-color: grey; */
 }
 
-#escolhaPerfil div.row {
-    margin: 0px 0px;
+#escolhaPerfil .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.col-md-4 {
+
+.col-lg-4 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -98,13 +95,11 @@ header h1 {
 
 #escolhaPerfil img {
     width: 35.5rem;
-    /* max-width: 355px; */
 }
 
 #escolhaPerfil p {
     text-align: center;
     padding-top: 1rem;
-    color: white;
 }
 
 #escolhaPerfil a:hover {
@@ -118,15 +113,21 @@ header h1 {
 /* --------------------início_do_footer -------------------- */
 
 footer {
-    height: 7rem;
-    font: 400 1.6rem 'Open Sans', sans-serif;
+    width: 100%;
+    height: 60px;
+    font-family: 400 'Open Sans', sans-serif;
+    font-size: 1.6rem;
     text-align: center;
     color: #ffffff;
-    padding-bottom: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    /* background-color: darkcyan; */
 }
+
 
 footer ul li {
     padding-top: 1rem;
@@ -143,8 +144,60 @@ footer ul li a:hover {
     text-decoration: underline;
 }
 
+
 /* --------------------fim_do_footer -------------------- */
 
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
 
 
-/* --------------------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 1199px) {
+    #escolhaPerfil img {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 45%;
+    }
+
+    header div.row {
+        height: 150px;
+    }
+
+    #escolhaPerfil {
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+
+    .col-sm-12 {
+        padding-bottom: 10px;
+    }
+    
+    footer {
+    font-size:1.94rem;
+    }
+}    
+
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size:40%;
+    }
+    #escolhaPerfil {
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+    header div.row{
+        display: flex;
+       flex-direction: column;
+    }
+    h1{
+        padding-top: 10px;
+    }
+}
+
