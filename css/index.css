@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
+
 /* --------------------------------
             Body
 -------------------------------- */
@@ -7,7 +19,7 @@
 body {
     color: #282a36;
     font-family: 'Poppins', sans-serif;
-    background: #FFF;
+    background: #F7F7F7;
 }
 
 /* --------------------------------
@@ -32,6 +44,10 @@ button.btn.btn-salvar {
 /* --------------------começo_do_Header -------------------- */
 header{
     height: 80px;
+}
+
+.nav-container {
+    width: 90%;
 }
 
 .navbar-brand img {
@@ -159,6 +175,7 @@ button.mobile {
 
 /* --------------------início_do_Conecte-se -------------------- */
 #conexao{
+    width: 100%;
     margin: 40px 0px;
 }
 
@@ -197,6 +214,7 @@ button.mobile {
 
 /* --------------------início_do_Para quem -------------------- */
 #paraQuem{
+    width: 100%;
     background-image: url(../img/pre-cadastro-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
