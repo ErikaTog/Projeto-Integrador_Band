@@ -568,8 +568,6 @@ button.btn.btn-danger:hover {
 @media screen and (max-width: 576px) {
     html { font-size: 62.5%; }
     body { font-size: 1.2rem; }
-    h1 { font-size: 2.4rem; }
-    h2 { font-size: 1.8rem; }
     h3 { font-size: 1.6rem; }
     h4 { font-size: 1.4rem; }
     h5 { font-size: 1.2rem; }
