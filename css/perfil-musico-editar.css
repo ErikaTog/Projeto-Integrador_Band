@@ -7,6 +7,15 @@
 
 .form-control {
     font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+}
+
+input.form-control {
+    height: 35px;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
 }
 
 .nav-item {
@@ -186,6 +195,22 @@ input.form-control-file {
     margin: 1rem 0;
 }
 
+#adicionarHabilidade input.form-control {
+    margin-bottom: 10px;
+}
+
+#adicionarMusica .form-group label {
+    color: #4c4f66;
+}
+
+#adicionarMusica label.form-check-label {
+    font-weight: 600;
+}
+
+#adicionarMusica .form-group {
+    margin: 1rem 0;
+}
+
 /* ------------------------------*/ 
 /* Check Box */
 
@@ -193,9 +218,14 @@ input.form-control-file {
     padding: 1rem 0;
 }
 
+
 label.form-check-label{
     display: flex;
     align-items: center;
+}
+
+label.form-check-label:hover {
+    cursor: pointer;
 }
 
 .form-check-input,
@@ -228,18 +258,6 @@ input[type=checkbox]:checked + label:before {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-}
-
-#adicionarMusica label {
-    font-weight: normal;
-}
-
-#adicionarMusica .form-group {
-    margin: 1rem 0;
-}
-
-hr.divisor {
-    border-color: #999999;
 }
 
 /* ------------------------------*/ 
