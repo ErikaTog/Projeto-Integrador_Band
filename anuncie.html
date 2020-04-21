@@ -5,64 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuncie</title>
     <link rel="shortcut icon" href="img/icone.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/anuncie.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="fixed-top d-flex justify-content-center">
+    <header>
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>            
-                </button>
-
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
+                        </button>
+                    </div>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="feed.html">
-                                <img src="img/icones/home_cinza.png" alt="Início">
+                                <div class="nav-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
                                 <p>Início</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="vagas.html">
-                                <img src="img/icones/vagas_cinza.png" alt="Vagas">
+                                <div class="nav-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
                                 <p>Vagas</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="minhaRede.html">
-                                <img src="img/icones/minharede_cinza.png" alt="Minha rede">
+                                <div class="nav-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
                                 <p>Minha rede</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="bate-papo.html">
-                                <img src="img/icones/papo_cinza.png" alt="Bate papo">
+                                <div class="nav-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
                                 <p>Bate papo</p>
                             </a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="anuncie.html">
-                                <img src="img/icones/anuncie_laranja.png" alt="Anuncie">
+                                <div class="nav-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
                                 <p>Anuncie</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <img src="img/icones/perfil_cinza.png" alt="Perfil">
+                            <a class="nav-link" href="perfil-musico.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <p>Perfil</p>
                             </a>
                         </li>
                         <li class="nav-item" id="sair">
                             <a class="nav-link" href="index.html">
-                                <img src="img/icones/sair_cinza.png" alt="Sair">
+                                <div class="nav-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
                                 <p>Sair</p>
                             </a>
                         </li>
@@ -108,10 +124,10 @@
                     </div>
                 </div>
 
-                <div class="conteudoProduto container">
+                <div class="conteudoProduto">
                     <div class="conteudoProdutoDiv">
-                        <div class="" id="conteudoProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                        <div class="conteudoProdutoInfoImg">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoProdutoInfo">
                             <h5>Exemplo - Feed de Produtos</h5>
@@ -127,7 +143,7 @@
                 <button type="button" class="conteudoMeuProduto" data-toggle="modal" data-target="#editarProduto">
                     <div class="conteudoMeuProdutoDiv">
                         <div class="conteudoMeuProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoMeuProdutoInfo">
                             <h5>Exemplo - Meus Produtos</h5>
@@ -140,10 +156,10 @@
                     </div>
                 </button>
 
-                <div class="conteudoProduto container">
+                <div class="conteudoProduto">
                     <div class="conteudoProdutoDiv">
-                        <div class="" id="conteudoProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                        <div class="conteudoProdutoInfoImg">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoProdutoInfo">
                             <h5>Exemplo - Feed de Produtos</h5>
@@ -159,7 +175,7 @@
                 <button type="button" class="conteudoMeuProduto" data-toggle="modal" data-target="#editarProduto">
                     <div class="conteudoMeuProdutoDiv">
                         <div class="conteudoMeuProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoMeuProdutoInfo">
                             <h5>Exemplo - Meus Produtos</h5>
@@ -172,10 +188,10 @@
                     </div>
                 </button>
 
-                <div class="conteudoProduto container">
+                <div class="conteudoProduto">
                     <div class="conteudoProdutoDiv">
-                        <div class="" id="conteudoProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                        <div class="conteudoProdutoInfoImg">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoProdutoInfo">
                             <h5>Exemplo - Feed de Produtos</h5>
@@ -191,7 +207,7 @@
                 <button type="button" class="conteudoMeuProduto" data-toggle="modal" data-target="#editarProduto">
                     <div class="conteudoMeuProdutoDiv">
                         <div class="conteudoMeuProdutoInfoImg">
-                            <img class="avatar" src="img/icones/imgEditar.png" width="190" alt="Foto do Produto">
+                            <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         </div>
                         <div class="conteudoMeuProdutoInfo">
                             <h5>Exemplo - Meus Produtos</h5>
@@ -223,8 +239,8 @@
             </div>
             <div class="container">
                 <div class="modal-body row" id="publicarNovoProduto2">
-                    <form class="card col-5" id="imgProduto" action="" method="POST">
-                        <img class="avatar" src="img/icones/imgEditar.png" width="230" alt="Foto do Produto">
+                    <form class="card col-lg-5 col-md-5 col-12" id="imgProduto" action="" method="POST">
+                        <img class="avatar" src="img/icones/imgEditar.png" alt="Foto do Produto">
                         <div id="escolherImg" class="modal-body">
                             <div class="form-group">
                                 <label for="formControlFileImg">Escolha uma imagem</label>
@@ -232,7 +248,7 @@
                             </div>
                         </div>
                     </form>
-                    <form class="col-7" id="dadosProduto" action="" method="POST">
+                    <form class="col-lg-7 col-md-7 col-12" id="dadosProduto" action="" method="POST">
                         <div class="form-group">
                             <input type="títuloNovoProduto" class="form-control" id="títuloNovoProduto" placeholder="Título do produto">
                         </div>
@@ -273,7 +289,7 @@
                 </div>
                 <div class="container">
                     <div class="modal-body row" id="publicarNovoProduto2Editar">
-                        <form class="card col-5" id="imgProdutoEditar" action="" method="POST">
+                        <form class="card col-lg-5 col-md-5 col-12" id="imgProdutoEditar" action="" method="POST">
                             <img class="avatar" src="img/icones/imgEditar.png" width="230" alt="Foto do Produto">
                             <div id="escolherImgEditar" class="modal-body">
                                 <div class="form-group">
@@ -282,12 +298,12 @@
                                 </div>
                             </div>
                         </form>
-                        <form class="col-7" id="dadosProdutoEditar" action="" method="POST">
+                        <form class="col-7 col-lg-7 col-md-7 col-12" id="dadosProdutoEditar" action="" method="POST">
                             <div class="form-group" id="títuloNovoProdutoEditarDiv">
-                                <textarea class="form-control" id="títuloNovoProdutoEditar" rows="1">Título do produto para editar</textarea>
+                                <textarea class="form-control" id="títuloNovoProdutoEditar" rows="1">Título do produto editar</textarea>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="localNovoProdutoEditar" rows="1">Local do produto para editar</textarea>
+                                <textarea class="form-control" id="localNovoProdutoEditar" rows="1">Local editar</textarea>
                             </div>
                             <div id="dinheiroEditar" class="input-group">
                                 <div class="input-group-prepend">
@@ -299,7 +315,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="descriçãoNovoProdutoEditar" rows="5">Descrição do produto para editar</textarea>
+                                <textarea class="form-control" id="descriçãoNovoProdutoEditar" rows="5">Descrição do produto editar</textarea>
                             </div>
                         </form>
                     </div>
