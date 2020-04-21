@@ -353,6 +353,7 @@ button.btn:focus{
     .publicarVaga, 
     .pesquisarVaga,
     .feedVagas{
+        width: 90%;
         margin: 15px 0px 0px 0px;
     }
 
@@ -429,13 +430,5 @@ button.btn:focus{
     }
     .radio-group label.custom-control-label{
         padding: 5px 15px;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    .publicarVaga, 
-    .pesquisarVaga,
-    .feedVagas{
-        width: 90%;
     }
 }
