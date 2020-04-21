@@ -45,6 +45,10 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
+    .nav-container {
+        width: 80%;
+    }
+
     #msgFeedback .row {
         justify-content: center;
     }
@@ -55,12 +59,6 @@ footer {
 
     .alert {
         margin-top: 2rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    html {
-        font-size: 50%;
     }
 }
 
