@@ -181,6 +181,12 @@ button.btn {
     transition: 0.2s;
 }
 
+button.btn:focus{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
 button.btn.btn-salvar {
     color: #fff;
     background-color: #fb3c00;
