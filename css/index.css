@@ -7,7 +7,7 @@
 body {
     color: #282a36;
     font-family: 'Poppins', sans-serif;
-    background: #F7F7F7;
+    background: #FFF;
 }
 
 /* --------------------------------
@@ -309,10 +309,6 @@ p.circle-prof { width: 210px; }
 }
 
 @media screen and (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-    
     .nav-container {
         width: 100%;
     }
@@ -345,7 +341,8 @@ p.circle-prof { width: 210px; }
     .navbar-nav {
         width: 100%;
         padding: 0;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 
     .form-inline {
@@ -370,7 +367,7 @@ p.circle-prof { width: 210px; }
         margin-left: 0px;
         position: absolute;
         bottom: 45px;
-        left: 15px;
+        left: 50px;
     }
     button.expand {
         display: none;
@@ -513,6 +510,7 @@ p.circle-prof { width: 210px; }
     }
     .topbar-mobile {
         width: 90%;
+        max-width: 90%;
     }
     .navbar-brand img {
         width: 100px;
@@ -545,7 +543,7 @@ p.circle-prof { width: 210px; }
     }
     .nav-item a{
         bottom: 38px;
-        left: 30px;
+        left: 25px;
     }
 
     button.btn {
@@ -595,7 +593,7 @@ p.circle-prof { width: 210px; }
     }
     #paraQuem .col-md-3.reverse p {
         margin-left: 0;
-        margin-right: 30px;
+        margin-right: 20px;
     }
     #paraQuem img{
         width: 110px;
