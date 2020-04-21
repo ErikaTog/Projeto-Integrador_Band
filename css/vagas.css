@@ -22,7 +22,7 @@
     border-radius: 10px;
     box-shadow: 0 2px 4px #999999;
     border: 1px solid #ced4da;
-    margin: 30px 10px 0px 10px;
+    margin: 30px 0px 0px 0px;
     display: flex;
     justify-content: center;
 }
@@ -242,8 +242,19 @@ button.btn:focus{
             MEDIA QUERY
 -------------------------------- */
 @media screen and (max-width: 992px) {
-    html {
+    main,
+    .modal{
         font-size: 58%;
+    }
+
+    .publicarVaga, 
+    .pesquisarVaga,
+    .feedVagas{
+        margin: 25px 0px 0px 0px;
+    }
+
+    .feedVagas{
+        margin-bottom: 25px;
     }
 
     .formulario-nova-vaga{
@@ -290,8 +301,19 @@ button.btn:focus{
 }
 
 @media screen and (max-width: 768px) {
-    html { 
+    main,
+    .modal{ 
         font-size: 53%; 
+    }
+
+    .publicarVaga, 
+    .pesquisarVaga,
+    .feedVagas{
+        margin: 20px 0px 0px 0px;
+    }
+
+    .feedVagas{
+        margin-bottom: 20px;
     }
 
     .form-control, 
@@ -307,18 +329,36 @@ button.btn:focus{
     .radio{
         width: 325px;
     }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        font-size:62.5%;
+    }
+
+    .navbar-toggler-icon {
+        font-size: 2.3rem;
+        height: 1em;
+    }
+    
+    main,
+    .modal{ 
+        font-size: 47%; 
+    }    
+
+    .container-vagas{
+        margin-top: 44.69px;
+    }
 
     .publicarVaga, 
     .pesquisarVaga,
     .feedVagas{
-        width: 90%;
+        margin: 15px 0px 0px 0px;
     }
-}
 
-@media screen and (max-width: 576px) {
-    html { 
-        font-size: 47%; 
-    }    
+    .feedVagas{
+        margin-bottom: 15px;
+    }
 
     .formulario-pesquisar-vaga{
         padding: 10px 0px;
@@ -389,5 +429,13 @@ button.btn:focus{
     }
     .radio-group label.custom-control-label{
         padding: 5px 15px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .publicarVaga, 
+    .pesquisarVaga,
+    .feedVagas{
+        width: 90%;
     }
 }
