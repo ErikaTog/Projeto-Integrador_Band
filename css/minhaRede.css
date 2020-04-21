@@ -225,6 +225,9 @@ button.btn:focus{
 }
 
 .btn.btn-Seguir{
+    height: 25px;
+    font-size: 1.4rem;
+    padding-top: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -238,10 +241,6 @@ button.btn:focus{
     width: 100%;
     display: flex;
     justify-content: flex-end;
-}
-
-.feedRecomendados-conteudo .botao{
-    visibility: hidden;
 }
 
 /* --------------------------------
@@ -287,6 +286,10 @@ button.btn:focus{
         width: 150px;
         height: 150px;
     }
+
+    .btn.btn-Seguir{
+        height: 23px;
+    }
 } 
 
 @media screen and (max-width: 768px) {
@@ -321,6 +324,10 @@ button.btn:focus{
     .cardContato img.contatoimg {
         width: 140px;
         height: 140px;
+    }
+
+    .btn.btn-Seguir{
+        height: 21px;
     }
 }
 
@@ -390,5 +397,9 @@ button.btn:focus{
     .cardContato img.contatoimg {
         width: 130px;
         height: 130px
+    }
+
+    .btn.btn-Seguir{
+        height: 19px;
     }
 }
