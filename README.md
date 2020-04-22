@@ -6,3 +6,9 @@
 ###### Santander Coders - Digital House
 
  https://erikatog.github.io/Projeto-Integrador_Band/
+ 
+ Páginas sem links 
+ 
+ https://erikatog.github.io/Projeto-Integrador_Band/perfil-banda.html
+ 
+ https://erikatog.github.io/Projeto-Integrador_Band/perfil-estab.html
