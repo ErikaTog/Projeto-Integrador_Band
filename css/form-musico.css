@@ -1,121 +1,174 @@
 /*Header e Footer está no geral.css*/
 
 .nav-container {
-    width: 100%;
+    width: 80%;
     max-width: 1030px;
 }
 
-a.nav-link {
-    padding: 0px 0px 0px 0px;
+/* --------------------------------
+        Geral - Form Músico
+-------------------------------- */
+.form-musico {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
-/* --------------------início_do_container_geral -------------------- */
-#container-form-all {
+footer {
     width: 100%;
+}
+
+.cadastro-container {
+    width: 80%;
     max-width: 1030px;
     height: auto;
-    margin: 60px auto 40px auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin: 90px auto 30px!important;
 }
 
+.container {
+    padding: 0;
+}
 
-/*-----------------------
-  Estilo dos Formulários
- ------------------------*/
+.row {
+    margin: 0;
+}
 
-.header-form{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.row.infos {
     width: 100%;
-    height: 50px;
-    -webkit-box-shadow: 0 4px 5px -7px #222;
-    -moz-box-shadow:    0 4px 5px -7px #999999;
-    box-shadow:         0 4px 5px -7px #99999;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    max-width: 1030px;
+    padding: 1.5rem 3rem 2.5rem;
+    max-width: 1030px;
+ }
+
+.card-cadastro {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+} 
+
+
+.col-xl-2,
+.col-xl-3,
+.col-xl-8,
+.col-xl-9,
+.col-lg-2,
+.col-lg-3,
+.col-lg-8,
+.col-lg-9,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-11,
+.col-sm-12{
+    padding: 0;
 }
 
-.form-group.col-md-6,
-.form-group.col-md-8,
-.form-group.col-md-4{
-    padding: 0px;
-    margin: 21px 0px 0px;
-   }
 
-.form-group.col-md-6-d{
-    padding: 0px;
-    margin: 21px 0px 0px 10px;
+/* ------------------------------*/ 
+/* Formulário */
+.form-header {
+    width: 100%;
+    box-shadow: 0 4px 6px -6px #999999;
+    padding: 0rem 0rem 1rem 2.5rem;
 }
 
-.form-row{
-    margin: 0px;
+
+h5 {
+    margin: 2rem 0 1.5rem;
 }
 
-.form-group label{
-    font-size: 16px;
-    color: #282A36;
-    font-weight: 700;
-    margin: 0px 0px 12px;
+.campo-form {
+    padding: 1rem 2rem;
+}
+
+.form-group.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* 
+.form-group:last-child {
+    margin-bottom: 0;
+} */
+
+.form-control {
+    color: #4C4F66;
+    padding: 0.5rem 1rem;
+}
+
+textarea.form-control,
+input.form-control{
+    font-size: 1.6rem;
+}
+
+input.form-control,
+select.form-control{
+    height: 40px;
 }
 
 ::-webkit-input-placeholder{
-    font-size: 12px;
-    color: #999999;
+    font-size: 1.6rem;
 }
-/* --------------------fim_do_container_geral -------------------- */
 
 
-/* --------------------início_do_formulário_1 -------------------- */
-#container-form-group1{
-    height: 300px;
+/* --------------------início_do_Grupo_Form_Identificação--------------------- */
+
+ #linha1.form-header {
     width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 12px 30px;
-    margin-top: 30px;
+    box-shadow: 0 4px 6px -6px #999999;
+    padding: 0rem 0rem 1rem 0rem;
 }
 
-#iNome, #iSenha{
-    width: 300px;
-    height: 50px;
-}
+#primeiraLinha.card-cadastro  {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 0 0;
+    padding: 10px 0px;
 
-#iEmail{
-    width: 470px;
-    height: 50px;
-    margin: 0px;
-    }
-
-input#iEmail.form-control{
-    margin: 0px;
-}
+} 
 
 /* --------------------------------
  grupo do radio-box de 3 opções
 -------------------------------- */
 .radio-group{
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 2px 4px #999999;
     border-radius: 10px;
+    padding: 5px 12px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    width: 470px;
-    height: 50px;
-    padding: 6px 12px;
-    box-shadow: 0px 2px 4px #999999;
+    align-items: flex-start;
 }
 
+
 label.custom-control-label{
-    display: flex;
-    align-items: center;
+    height: 20px;
     font-size: 12px;
+    font-weight: 900;
     color:#495057;
     margin: 0px;
-    padding: 0px 0px 0px 5px;
+    padding: 4px 0px 0px 10px;
 }
 
  /* ------------------------------*/ 
@@ -129,96 +182,57 @@ label.custom-control-label{
 } 
   
 .custom-radio .custom-control-input:checked~.custom-control-label::before{
-    background-color:#fb3c00;
+    height: 20px;
+    width: 20px;
     border: none;
     box-shadow: 0px 2px 4px #999999;
-    width: 20px;
-    height: 20px;
 }
 
 .custom-control-label::after{
     width: 20px;
     height: 20px;
+  }
+
+#semMg.form-group.row{
+    margin-bottom: 0px;
 }
+ 
 
-/* --------------------fim_do_formulário_1 -------------------- */
+/* --------------------fim_do_Grupo_Form_Identificação--------------------- */
 
+/* --------------------início_do_Grupo_Form_Informação--------------------- */
 
+#informacao {
+   margin-top: 30px;
+} 
 
-/* --------------------início_do_formulário_2 -------------------- */
-#container-form-group2{
-    min-height: 570px; /*640*/
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 4px #999999;
-    border-radius: 10px;
-    padding: 12px 30px;
-    margin-top: 30px;
-    }
-
-#iSobre{
-    width: 600px;
-    height: 420px;
-    resize: none;
-}
-
-.local-group,
-.contato-group{
-    border-radius: 10px; 
-    width: 316px;
-    height: 90px;
-    padding: 10px;
-    box-shadow: 0px 2px 4px #999999;
-}
-
-#iEstado, #iCidade, #iSite, #iCanal{
-    width: 210px;
-    height: 28px;
-}
-
-#iInstrumento, #iTecnico{
-    width: 180px;
-    height: 28px;
-}
-
-label.col-sm-3.col-form-label,
-label.col-sm-4.col-form-label{
-    color: #393C4D;  
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;  /* no Figma estava 16, mas 14 ficou esteticamente melhor*/
-    line-height: 22px;
-    margin: 0px; 
-    padding: 5px 5px 0px 20px;  /* 7 15 7 19*/
-}
-
-.form-group.row{
-    margin: 0px -15px 0px;
-    height: 40px;
-}
-
-.habilidades-group{
-    border-radius: 10px; 
-    width: 316px;
-    height: 130px;
-    padding: 10px;
-    box-shadow: 0px 2px 4px #999999;
+#inputSobre.form-control{
+   height: 54vh;
 }
 
 #hability-box{
     width: 130px;
 }
 
+label#hability-label{
+    margin: 2rem 0 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 20px 0px 15px;
+}    
+
 /* --------------------------------
-   grupo do botão com popover - estou mexendo nesta parte
+   grupo do botão com popover 
 -------------------------------- */
 
 .popover-header{
     text-align: center;
+    font-size: 14px;
 }
 
 .popover-body{
     text-align: justify;
+    font-size: 14px;
 }
 
 .btn-lg.btn-danger {
@@ -237,7 +251,6 @@ label.col-sm-4.col-form-label{
 .btn-danger.focus, .btn-danger:focus {
     box-shadow: none;
 }    
-
 
 .btn.focus, .btn:focus {
     outline: 0;
@@ -260,7 +273,7 @@ label.col-sm-4.col-form-label{
     align-items: flex-start;
     width: 100%;
     height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow:    0 4px 6px -6px #999999;
     box-shadow:         0 4px 6px -6px #999999;
@@ -313,4 +326,123 @@ input[type=checkbox]:checked + label:before {
 
   }
   
-/* --------------------fim_do_formulário_2 -------------------- */
+/* --------------------_do_Grupo_Form_Informação-------------------- */
+
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+
+    #inputSobre.form-control{
+    height: 54vh;
+    }
+} 
+
+@media screen and (max-width: 991px) {
+
+    #inputSobre.form-control{
+        height: 91%;
+     }
+
+     label.form-check-label{
+       font-size: 10px;
+    }
+    #inputSobre.form-control{
+        height: 61vh;
+     }
+}
+
+@media screen and (max-width: 767px) {
+    .nav-container .btn {
+        height: 30px;
+    }    
+    #primeiraLinha.card-cadastro  {
+    padding: 0px 0px;
+    } 
+    label.custom-control-label{
+    padding: 4px 0px 0px 15px;
+    }
+    .form-group label {
+        margin-bottom: 1rem;
+    }
+    .form-group input {
+        margin-bottom: 1rem;
+    }
+    label.form-check-label{
+        font-size: 12px;
+     }
+     #inputSobre.form-control{
+        height: auto;
+     }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.8rem; }
+    h5 { font-size: 1.4rem; }
+
+    .nav-container {
+        width: 90%;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+
+    .cadastro-container {
+        width: 90%;
+        margin: 60px auto 15px !important;
+    }
+
+    h5 {
+        margin: 1.5rem 0;
+    }
+    .campo-form.card-cadastro {
+        box-shadow: none;
+        padding: 0;
+    }
+    .form-group label {
+        color: #4C4F66;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .form-group input {
+        margin-bottom: 0.5rem;
+    } 
+    .form-control {
+        color: #4C4F66;
+        padding: 0.5rem 1rem;
+    }
+
+    .radio-group{
+        height: auto;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .custom-control.custom-radio.custom-control-inline{
+        margin: 5px 0px;
+    }
+
+    .header-habilidades{
+        height: auto;
+        padding: 12px 0px;
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        box-shadow: 0px 2px 4px #999999;
+        border-radius: 10px;
+        padding: 5px 12px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .form-check.form-check-inline{
+        margin: 10px 0px;
+    }
+  }

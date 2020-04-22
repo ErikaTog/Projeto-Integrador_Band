@@ -4,231 +4,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Músico</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/form-musico.css">
-
-    <title>Cadastro Músico</title>
-    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 
 <body>
-    <header class="fixed-top d-flex justify-content-center">
-        <div class="nav-container">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+" width="150"></a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <button type="button" class="btn btn-salvar">Cadastrar</button>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div id="container-form-all">
-
-        <section id="container-form-group1">
-
-            <div class="header-form">
-                <!--Header do form -->
-                <h4 class="hForm">Identificação</h4>
+    <div class="form-musico">
+        <header>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    <a href="feed.html">
+                        <button type="button" class="btn btn-salvar">Cadastrar</button>
+                    </a>
+                </nav>
             </div>
-            <!-- Grupo Form Identificação -->
-            <form action="" method="POST" class="form-area">
-                <div class="form-row">
-                    <!--Primeira linha do form -->
+        </header>
 
-                    <div class="form-group col-md-6">
-                        <!--Lado direito da primeira linha do form -->
-                        <label for="iNome">Usuário</label>
-                        <input type="text" class="form-control" name="nome" id="iNome" maxlength="30"
-                            placeholder="Digite o usuário" required="required">
-                    </div>
-                    <div class="form-group col-md-6-d">
-                        <!--Lado esquerdo da primeira linha do form -->
-                        <label for="iEmail">Email</label>
-                        <input type="emal" class="form-control" name="senha" id="iEmail" maxlength="50"
-                            placeholder="Digite um e-mail válido" required="required">
+        <div class="cadastro-container container">
+
+            <section class="row infos">
+                <!-- LINHA 1 -->
+
+                <div class="form-header" id="linha1">
+                    <h4>Identificação</h4>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <!-- COLUNA ESQ [LINHA 1] -->
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <h5>Usuário</h5>
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <div class="col-md-8 col-sm-12">
+                                    <input type="text" class="form-control" id="inputUser"
+                                        placeholder="Digite o usuário" required>
+                                </div>
+                            </div>
+
+                            <h5>Senha</h5>
+                            <div class="form-group">
+                                <div class="col-md-8 col-sm-12">
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Senha de 6 dígitos" required>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <!--Segunda linha do form -->
 
-                    <div class="form-group col-md-6">
-                        <!--Lado direito da segunda linha do form -->
-                        <label for="iSenha">Senha</label>
-                        <input type="password" class="form-control" name="senha" id="iSenha" maxlength="6"
-                            placeholder="Digite a senha com 6 dígitos" required="required">
-                    </div>
+                <div class="col-md-6 col-sm-12">
+                    <!-- COLUNA DIR [LINHA 1] -->
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <h5>E-mail</h5>
+                        <form action="" method="POST">
+                            <div class="form-group">
 
-                    <div class="form-group col-md-6-d">
-                        <!--Lado esquerdo da segunda linha do form -->
-                        <label for="iSexo">Sexo</label>
-                        <div class="radio-group">
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" name="sexo" id="iFem" value="Feminino"
-                                    checked="checked">
-                                <label class="custom-control-label" for="iFem">Feminino</label>
+                                <div class="col-sm-12">
+                                    <input type="emal" class="form-control" name="senha" id="iEmail" maxlength="50"
+                                        placeholder="Digite um e-mail válido" required="required">
+                                </div>
                             </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" name="sexo" id="iMasc"
-                                    value="Masculino">
-                                <label class="custom-control-label" for="iMasc">Masculino</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" name="sexo" id="iOutro" value="Outro">
-                                <label class="custom-control-label" for="iOutro">Outro</label>
-                            </div>
-                        </div>
+                            <h5>Sexo</h5>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="radio-group">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="sexo" id="iFem"
+                                                value="Feminino" checked="checked">
+                                            <label class="custom-control-label" for="iFem">Feminino</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="sexo" id="iMasc"
+                                                value="Masculino">
+                                            <label class="custom-control-label" for="iMasc">Masculino</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="sexo" id="iOutro"
+                                                value="Outro">
+                                            <label class="custom-control-label" for="iOutro">Outro</label>
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
-            </form>
-        </section>
+            </section>
 
-        <section id="container-form-group2">
+            <section class="row infos" id="informacao"><!-- LINHA 2-->
 
-            <div class="header-form">
-                <h4 class="hForm">Informações do Usuário</h4>
-            </div>
-            <!-- Grupo Form Informações do usuário -->
-            <form action="" method="POST" class="form-area">
-                <div class="form-row">
-                    <!--1ª linha do form -->
-                    <div class="form-group col-md-8">
-                        <!--Primeira linha do form - Lado esquerdo -->
-                        <label for="iSobre">Sobre mim</label>
-                        <textarea class="form-control" name="sobre" id="iSobre" rows="10"
-                            placeholder="Conte mais sobre você!"></textarea>
+                <div class="form-header" id="linha1">
+                    <h4>Informações do usuário</h4>
+                </div>
+
+                <div class="col-md-7 col-sm-12"> <!-- COLUNA ESQ [LINHA 2] -->
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <h5>Sobre mim</h5>
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <div class="col-md-11 col-sm-12">
+                                    <textarea class="form-control" name="sobre" id="inputSobre" rows="10"
+                                        placeholder="Conte mais sobre você!"></textarea>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+                </div>
 
-                    <div class="form-group col-md-4">
-                        <!-- 1ª linha do form - Lado direito -->
-                        <label for="group">Localização</label>
+                <div class="col-md-5 col-sm-12">  <!-- COLUNA DIR [LINHA 2] -->
 
-                        <div class="local-group">
-                            <form action="" method="POST" class="form-area">
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <h5>Localização</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
                                 <div class="form-group row">
-
-                                    <label for="iEstado" class="col-sm-3 col-form-label">Estado</label>
-                                    <div class="col-sm-9">
+                                    <label for="inputEstado" class="col-xl-2 col-lg-2 col-form-label">Estado</label>
+                                    <div class="col-xl-9 col-lg-9">
                                         <input type="text" class="form-control" name="estado" id="iEstado" size="30"
-                                            maxlength="30" placeholder="Digite seu estado" required="required">
+                                        maxlength="30" placeholder="Digite seu estado" required="required">
                                     </div>
                                 </div>
-
                                 <div class="form-group row">
-                                    <label for="iCidade" class="col-sm-3 col-form-label">Cidade</label>
-                                    <div class="col-sm-9">
+                                    <label for="inputCidade" class="col-xl-2 col-lg-2 col-form-label">Cidade</label>
+                                    <div class="col-xl-9 col-lg-9">
                                         <input type="text" class="form-control" name="cidade" id="iCidade" size="30"
-                                            maxlength="30" placeholder="Digite sua cidade" required="required">
+                                        maxlength="30" placeholder="Digite sua cidade" required="required">
                                     </div>
                                 </div>
                             </form>
                         </div>
+                    </div>
 
-                        <div class="form-group col-md-4">
-                            <!--2ª linha do form - Lado esquerdo -->
-                            <label for="group">Contatos</label>
 
-                            <div class="contato-group">
-                                <form action="" method="POST" class="form-area">
-                                    <div class="form-group row">
-                                        <!--Lado esquerdo da primeira linha do form -->
-
-                                        <label for="iSite" class="col-sm-3 col-form-label">Site</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="site" id="iSite" size="30"
-                                                maxlength="30" placeholder="Digite seu site">
-                                        </div>
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <h5>Contatos</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputSite" class="col-xl-2 col-lg-2 col-form-label">Site</label>
+                                    <div class="col-xl-9 col-lg-9">
+                                        <input type="text" class="form-control" id="inputSite"
+                                            placeholder="Digite seu site">
                                     </div>
-
-                                    <div class="form-group row">
-                                        <label for="iCanal" class="col-sm-3 col-form-label">Canal</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="canal" id="iCanal" size="30"
-                                                maxlength="30" placeholder="Digite seu canal">
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputCanal" class="col-xl-2 col-lg-2 col-form-label">Canal</label>
+                                    <div class="col-xl-9 col-lg-9">
+                                        <input type="text" class="form-control" name="canal" id="inputCanal" size="30"
+                                        maxlength="30" placeholder="Digite seu canal">
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <!--2ª linha do form - Lado esquerdo -->
-                            <div id="hability-box">
-                                <label id="hability-label " for="group">Habilidades </label>
-                                <button type="button" class="btn btn-lg btn-danger" data-toggle="popover"
-                                    title="Acesse seu perfil"
-                                    data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você também encontra opções para deixar seu perfil ainda mais atrativo!"></button>
-                            </div>
-                            <div class="habilidades-group">
-                                <form action="" method="POST" class="form-area">
-                                    <div class="header-habilidades">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
-                                                value="option1">
-                                            <label class="form-check-label" for="iCanto"><span></span>Canto</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="toco" id="iToco"
-                                                value="option2">
-                                            <label class="form-check-label" for="iToco"><span></span>Toco</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
-                                                value="option3">
-                                            <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
-                                        </div>
-
-                                    </div>
-                                </form>
-                                <form action="" method="POST" class="form-area">
-                                    <div class="form-group row">
-                                        <!--Lado esquerdo da primeira linha do form -->
-
-                                        <label for="iInstrumento" class="col-sm-4 col-form-label">Instrumento</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="instrumento" id="iInstrumento"
-                                                size="30" maxlength="30" placeholder="Digite o instrumento">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="iTecnico" class="col-sm-4 col-form-label">Técnico</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="tecnico" id="iTecnico"
-                                                size="30" maxlength="30" placeholder="Digite a habilidade">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                
+                            </form>
                         </div>
                     </div>
-            </form>
-        </section>
-    </div>
-    <!--Fechamento da div container all -->
 
-    <footer>
-        <ul class="list-unstyled mb-0">
-            <li><a href="">Políticas</a> | <a href=""><strong>Fale Conosco</strong></a></li>
-            <li>
-                <span class="copyright">Copyright &copy;
-                    2020 -
-                    <img src="img/icone.png" width="20">
-                    Band+ by Group 1
-                </span>
-            </li>
-        </ul>
-    </footer>
+                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                        <div id="hability-box">
+                            <label id="hability-label" for="group">Habilidades</label>
+                            <button type="button" class="btn btn-lg btn-danger" data-placement="bottom" data-toggle="popover" 
+                                title="Acesse seu perfil"
+                                data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você também encontra opções para deixar seu perfil ainda mais atrativo!"></button>
+                        </div>
+                        <div class="campo-form card-cadastro">                                                     
+                                   
+                                    <div class="habilidades-group">
+                                        <form action="" method="POST" class="form-area">
+                                            <div class="header-habilidades">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
+                                                        value="option1">
+                                                    <label class="form-check-label" for="iCanto"><span></span>Canto</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="toco" id="iToco"
+                                                        value="option2">
+                                                    <label class="form-check-label" for="iToco"><span></span>Toco</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
+                                                        value="option3">
+                                                    <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
+                                                </div>
+        
+                                            </div>
+                                        </form>
+                                        <form action="" method="POST" class="form-area">                                           
+                                            <div class="form-group row">
+                                                <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <input type="text" class="form-control" name="instrumento" id="inputInstrumento" size="30"
+                                                    maxlength="30" placeholder="Digite o instrumento">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row" id="semMg">
+                                                <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
+                                                <div class="col-xl-8 col-lg-8">
+                                                    <input type="text" class="form-control" name="tecnico" id="inputTecnico" size="30"
+                                                    maxlength="30" placeholder="Digite a habilidade">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>                               
+                                           
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            
+
+        </div>
+
+        <footer>
+            <ul class="list-unstyled mb-0">
+                <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+                <li>
+                    <span class="copyright">Copyright &copy;
+                        2020 -
+                        <img src="img/icone.png" width="20">
+                        Band+ by Group 1
+                    </span>
+                </li>
+            </ul>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
