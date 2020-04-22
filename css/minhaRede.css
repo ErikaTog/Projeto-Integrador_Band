@@ -8,8 +8,8 @@
     background-color: #E5E5E5;
     margin-top: 60px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pesquisarContatos,
@@ -46,7 +46,7 @@
 }
 
 .feedRecomendados{
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }
 
 .scroll{
@@ -112,6 +112,7 @@
 -------------------------------- */
 .cardContato {
     margin: 0 auto;
+    padding: 0px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;

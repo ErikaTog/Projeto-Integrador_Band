@@ -8,8 +8,8 @@
     background-color: #E5E5E5;
     margin-top: 60px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .publicarProduto, 
@@ -122,7 +122,7 @@
 .conteudoMeuProduto,
 .conteudoProduto{
     width: 49%;
-    height: 181px;
+    height: auto;
     max-width: 500px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -142,6 +142,13 @@
     border: none;
 }
 
+.conteudoProdutoInfoImg,
+.conteudoMeuProdutoInfoImg{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .conteudoProduto h5,
 .conteudoMeuProduto h5{
     margin-bottom: 5px;
@@ -149,8 +156,10 @@
 
 .conteudoProdutoDiv,
 .conteudoMeuProdutoDiv{
+    margin: 10px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-content: center;
 }
 
 .conteudoProdutoInfo,
@@ -310,6 +319,29 @@ form#dadosProdutoEditar{
 }
 
 /* --------------------------------
+         Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+/* --------------------------------
          Botões
 -------------------------------- */
 .botao{
@@ -364,29 +396,6 @@ a:hover{
 /* --------------------------------
             MEDIA QUERY
 -------------------------------- */
-@media screen and (max-width: 1199px) {
-    .conteudoMeuProduto,
-    .conteudoProduto{
-        width: 49%;
-        height: auto;
-    }
-
-    .conteudoProdutoDiv,
-    .conteudoMeuProdutoDiv{
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-
-    .conteudoProdutoInfoImg,
-    .conteudoMeuProdutoInfoImg{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-}
-
 @media screen and (max-width: 992px) {
     main,
     .modal{
