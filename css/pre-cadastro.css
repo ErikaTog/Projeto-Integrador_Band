@@ -237,11 +237,13 @@ footer ul li a:hover {
         display: flex;
         flex-direction: column;
     }
-    h1{
-        padding-top: 10px;
+    #escolhaPerfil p {
+        padding-top: 5px
+    }
+
     }
     .col-sm-12 {
-        padding-bottom: 15px;
+        padding-bottom: 10px;
     }
     footer {
         font-size:2.18rem;
