@@ -186,6 +186,11 @@ div.icon-border-none i:hover {
 /* --------------------------------
               Modal
 -------------------------------- */
+input.form-control-file {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 1rem 0;
+}
 
 .collapse .form-group {
     margin-top: 20px;
