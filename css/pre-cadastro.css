@@ -202,13 +202,16 @@ footer ul li a:hover {
     }
 
     header div.row {
-        height: 150px;
+        height: 200px;
     }
 
+    #escolhaPerfil img {
+        width: 25rem;
+    }
     #escolhaPerfil {
-        top: 53%;
+        top: 58%;
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -58%); 
     }
 
     .col-sm-12 {
