@@ -1,0 +1,569 @@
+/* --------------------------------
+        Geral - Perfil músico
+-------------------------------- */
+.perfil-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-perfil {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+/* Container - Bootstrap */
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+/* --------------------início_do_Grupo_Head--------------------- */
+#head {
+    position: relative;
+}
+
+/* --------------------------------
+Imagem
+-------------------------------- */
+
+/* ------------------------------*/ 
+/* Fundo */
+.head-fundo {
+    width: auto;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
+}
+
+/* ------------------------------*/ 
+/* Avatar */
+.avatar-content {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
+#head img.avatar {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+.info-user {
+    padding-left: 27rem;
+}
+
+.info-user h3 {
+    padding: 1rem 3rem;
+}
+
+.info-user-status {
+    padding: 1rem 0 1.5rem;
+    display: flex;
+}
+
+.info-user .media p {
+    margin-left: 0.5rem;
+    align-self: center;
+}
+
+.info-user .media:last-child {
+    margin-left: 3.5rem;
+}
+
+/* --------------------------------
+            Configuração
+-------------------------------- */
+.config {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+}
+
+.config .dropdown-toggle::after {
+    content: none;
+}
+
+.btn-config {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #999999;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+.btn-config i {
+    font-size: 2.3rem;
+}
+
+.btn-config:hover,
+.btn-config:focus {
+    background-color: #fb3c00;
+    outline-style: none;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.config a {
+    padding: 2.5rem 4rem;
+    text-align: center;
+    transition-duration: 0.25s;
+}
+
+.config a:hover {
+    background-color: #F7F7F7;
+}
+
+.config a:focus {
+    background-color: #fff;
+    color: #fb3c00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.config p {
+    font-size: 1.6rem;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------início_do_Grupo_Bio--------------------- */
+
+#bio {
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#bio p {
+    padding-top: 2rem;
+}
+
+#bio2 {
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#bio2 p {
+    padding-top: 2rem;
+}
+
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
+#infos {
+    width: 100%;
+    max-width: 1170px;
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#infos h4{
+    width: 100%;
+}
+
+.infos-item {
+    margin-top: 20px;
+}
+
+.infos-item img {
+    width: 40px;
+}
+
+#infos p {
+    min-width: 25%;
+    padding-left: 1.0rem;
+    align-self: center;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Funcionamento--------------------- */
+
+#infosFuncionamento {
+    max-width: 1170px;
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#infosFuncionamento .infos-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#infosFuncionamento h4{
+    width: 100%;
+}
+
+#infosFuncionamento p {
+    min-width: 25%;
+    padding-left: 1.0rem;
+    align-self: center;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+.form-group {
+    margin: 0 0 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+.form-group input,
+.form-group select {
+    height: 3rem;
+}
+
+
+.form-control {
+    color: #282a36;
+    font-size: 1.4rem;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.4rem;
+}
+
+/* ------------------------------*/ 
+/* Alterar Senha */
+.form-group small a {
+    color: #999999;
+    font-weight: 600;
+}
+
+/* ------------------------------*/ 
+/* Excluir Conta */
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+.form-group label.danger {
+    color: #fe0000;
+}
+
+.form-group input#dangerSenha {
+    border-color: #fe0000;
+}
+
+button.btn.btn-danger {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: #fe0000;
+}
+
+button.btn.btn-danger:hover {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: rgba(254, 0, 0, 0.8);
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .head-fundo {
+        height: 250px;
+    }
+    #head img.avatar {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .head-fundo {
+        height: 200px;
+    }    
+    .avatar-content {
+        top: 30%;
+    }
+    #head img.avatar {
+        width: 150px;
+        height: 150px;
+    }
+    .info-user {
+        padding-left: 20rem;
+    }
+    #bio {
+        width: 100%;
+    }
+
+    .infos-item{
+        min-width: 50%;
+    }
+
+    #infosFuncionamento p {
+        min-width: 50%;
+    }
+} 
+
+@media screen and (max-width: 768px) {
+    .head-fundo {
+        height: 125px;
+    }
+    .avatar-content {
+        top: 15%;
+    }
+    #head img.avatar {
+        width: 125px;
+        height: 125px;
+        border: 2.5px solid #fff;
+    }
+    .info-user {
+        padding-left: 15rem;
+    }
+    .info-user h3 {
+        padding: 1rem 5rem;
+    }
+    .info-user-status {
+        padding-top: 0;
+    }
+    .info-user-status .media img {
+        width: 20px;
+    }
+    .info-user .media:last-child {
+        margin-left: 2.5rem;
+    }
+    .btn-config {
+        width: 30px;
+        height: 30px;
+    }
+    .config a {
+        padding: 1.5rem 3rem;
+        text-align: center;
+        transition-duration: 0.25s;
+    }
+
+    #bio {
+        padding: 2.5rem 2.5rem 2.5rem 5rem;
+    }
+    .bio-scroll {
+        height: 300px;
+        margin-top: 2rem;
+        overflow-y: scroll;
+    }
+    #bio p {
+        padding: 0 2.5rem 0 0;
+    }
+
+    #bio2 {
+        padding: 2.5rem 2.5rem 2.5rem 5rem;
+    }
+    .bio2-scroll {
+        height: 300px;
+        margin-top: 2rem;
+        overflow-y: scroll;
+    }
+    #bio2 p {
+        padding: 0 2.5rem 0 0;
+    }
+
+    .form-group input {
+        font-size: 1.8rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+
+    .perfil-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 60px auto 15px;
+    }
+    .head-fundo {
+        height: 50px;
+    }
+    .avatar-content {
+        top: 10%;
+        left: 5%;
+    }
+    #head img.avatar {
+        width: 62px;
+        height: 62px;
+        border: 2px solid #fff;
+    }
+    .info-user {
+        padding-left: 7rem;
+    }
+    
+    .info-user h3 {
+        font-size: 1.4rem;
+        padding: 0.5rem 3rem;
+    }
+    .info-user-status {
+        padding: 0.5rem 0;
+        display: flex;
+    }
+    .info-user-status .media img {
+        width: 15px;
+    }
+    .info-user .media p {
+        font-size: 1rem;
+        margin-left: 0.3rem;
+    }
+    .info-user .media:last-child {
+        margin-left: 1.5rem;
+    }
+
+    .config {
+        position: absolute;
+        top: 5.5rem;
+        right: 1rem;
+    }
+    .btn-config {
+        width: 20px;
+        height: 20px;
+    }
+    .btn-config i {
+        font-size: 1.3rem;
+    }
+    .config a {
+        padding: 1rem 1.5rem;
+    }
+    .config p {
+        font-size: 1.2rem;
+    }
+
+    #bio {
+        padding: 1rem 1rem 1rem 2rem;
+        margin-top: 15px;
+    }
+    .bio-scroll {
+        height: 250px;
+        margin-top: 1rem;
+    }
+    #bio p {
+        padding: 0 1rem 0 0;
+    }
+
+    #bio2 {
+        padding: 1rem 1rem 1rem 2rem;
+        margin-top: 15px;
+    }
+    .bio2-scroll {
+        height: 250px;
+        margin-top: 1rem;
+    }
+    #bio2 p {
+        padding: 0 1rem 0 0;
+    }
+
+    #infos {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+    .infos-item {
+        margin-top: 10px;
+    }
+    .infos-item img {
+        width: 30px;
+    }
+    #infos p {
+        padding-left: 1rem;
+    }
+
+    .col-sm-12 {
+        padding: 0;
+        margin: 0;
+    }
+  
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        padding: 0rem 1rem;
+    }
+    .form-group {
+        margin: 0 0 15px;
+    }
+    .form-control {
+        font-size: 1.2rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.2rem;
+    }
+    #infosFuncionamento{
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .infos-item{
+        min-width: 100%;
+    }
+}

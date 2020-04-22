@@ -1,0 +1,349 @@
+/* --------------------------------
+        Geral - Perfil músico
+-------------------------------- */
+.form-group {
+    margin: 0;
+}
+
+.form-control {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+}
+
+input.form-control {
+    height: 35px;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+/* --------------------início_do_Grupo_Head--------------------- */
+
+/* --------------------------------
+             Imagem
+-------------------------------- */
+
+.fundo-content a img,
+.avatar-content a img {
+    transition: 0.2s;
+}
+
+.fundo-content a img:hover,
+.avatar-content a img:hover {
+    filter: brightness(0.9);
+}
+
+/* --------------------------------
+             Icon
+-------------------------------- */
+
+div.icon i {
+    width: 40px;
+    height: 40px;
+    color: #fb3c00;
+    font-size: 2rem;
+    background-color: #fff;
+    border: 1.5px solid #fb3c00;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+div.icon i:hover {
+    color: #fff;
+    background-color: #fb3c00;
+}
+
+.fundo-content div.icon {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+}
+
+.avatar-content div.icon {
+    position: absolute;
+    top: 70%;
+    left: 80%;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+
+.info-user textarea {
+    width: 30%;
+    margin: 1rem 3rem;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------início_do_Grupo_Bio--------------------- */
+
+#bio .form-group {
+    width: 100%;
+    height: auto;
+    margin: 20px auto 0;
+}
+
+#bio2 .form-group {
+    width: 100%;
+    height: auto;
+    margin: 20px auto 0;
+}
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+.infos-item.media {
+    align-items: center;
+}
+
+#infos form {
+    /* width: 100%; */
+    margin-left: 1.5rem;
+}
+
+.infos-item{
+    min-width: 50%;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Funcionamento--------------------- */
+
+/* #infosFuncionamento {
+    max-width: 1170px;
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+} */
+
+#infosFuncionamento .form-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* #infosFuncionamento.form-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: violet;
+}
+
+#infosFuncionamento h4{
+    width: 100%;
+}
+*/
+#infosFuncionamento textarea {
+    max-width: 23%;
+    /* min-width: 23%; */
+    margin-left: 1.0rem;
+    margin-bottom: 10px;
+    align-self: center;
+} 
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+
+input.form-control-file {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 1rem 0;
+}
+
+#adicionarHabilidade input.form-control {
+    margin-bottom: 10px;
+}
+
+#adicionarMusica .form-group label {
+    color: #4c4f66;
+}
+
+#adicionarMusica label.form-check-label {
+    font-weight: 600;
+}
+
+#adicionarMusica .form-group {
+    margin: 1rem 0;
+}
+
+/* ------------------------------*/ 
+/* Check Box */
+
+.form-check {
+    padding: 1rem 0;
+}
+
+
+label.form-check-label{
+    display: flex;
+    align-items: center;
+}
+
+label.form-check-label:hover {
+    cursor: pointer;
+}
+
+.form-check-input,
+.form-check-input,
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+ input[type=checkbox]{
+    display: none;
+}
+
+ 
+input[type=checkbox] + label:before {
+    width: 18px;
+    height: 18px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    border-radius: 5px;
+    margin-right: 10px;
+    content: "";
+    display: inline-block;
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* ------------------------------*/ 
+/* Confirmar Exclusão */
+
+.danger {
+    font-weight: 700;
+    color: #fe0000;
+    margin-bottom: 10px;
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .avatar-content div.icon {
+        top: 60%;
+        left: 85%;
+    }
+    .info-user textarea {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .nav-container {
+        width: 80%;
+        display: flex;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .navbar-nav {
+        width: 100%;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .nav-item {
+        margin-left: 10px;
+    }
+
+    div.icon i {
+        width: 35px;
+        height: 35px;
+    }
+    .info-user {
+        padding-left: 25rem;
+    }
+    .info-user textarea {
+        width: 40%;
+    }
+
+    .col-sm-12 {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container .btn {
+        height: 30px;
+    }
+
+    div.icon i {
+        width: 30px;
+        height: 30px;
+    }
+
+    .info-user {
+        padding-left: 20rem;
+    }
+    .info-user textarea {
+        width: 45%;
+    }
+
+    #bio {
+        padding: 2.5rem 5rem;
+    }
+
+    #bio2 {
+        padding: 2.5rem 5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .form-control {
+        font-size: 1rem;
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 400px;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+    
+    div.icon i {
+        width: 18px;
+        height: 18px;
+        font-size: 1rem;
+        border: 1px solid #fb3c00;
+    }
+    .avatar-content div.icon {
+        top: 48%;
+        left: 85%;
+    }
+    .info-user {
+        padding-left: 7rem;
+    }
+    .info-user textarea {
+        width: 45%;
+        margin: 0.5rem 3rem;
+    }
+
+    #bio {
+        padding: 1rem 2rem;
+    }
+
+    #bio2 {
+        padding: 1rem 2rem;
+    }
+}
