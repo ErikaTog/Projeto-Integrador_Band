@@ -175,6 +175,8 @@ select.form-control{
 #inputFuncionamento,
 #inputAbertura,
 #inputFechamento{
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin:0px 0px 0px;
 } 
@@ -223,8 +225,11 @@ select.form-control{
    }
 
 @media screen and (max-width: 991px) {
-    html {
-        font-size: 55%;
+    .nav-container .btn {
+        height: 30px;
+    }  
+    .nav-container {
+        width: 80%;
     }
     .form-group label {
         margin-bottom: 1rem;
@@ -265,10 +270,7 @@ select.form-control{
 }
 
 @media screen and (max-width: 767px) {
-    html {
-        font-size: 50%;
-    }
-    #identificacao {
+     #identificacao {
         width: 100%;
         max-width: 100%;
     }
@@ -302,22 +304,12 @@ select.form-control{
     h4 { font-size: 1.8rem; }
     h5 { font-size: 1.4rem; }
 
-    header { 
-        height: 45px; 
-    }
     .nav-container {
         width: 90%;
-        max-width: 400px;
     }
     .nav-container .btn {
         height: auto;
         font-size: 1.2rem;
-    }
-    .navbar { 
-        padding: 5px 0px; 
-    }
-    .navbar-brand img {
-        width: 100px;
     }
 
     .cadastro-container {
@@ -382,7 +374,7 @@ select.form-control{
     }
    .add-funcionamento {
         top: 0px;
-        right: 15px;
+        right: 5px;
     }
      #inputFuncionamento{
         margin-top: 20px;
@@ -392,6 +384,7 @@ select.form-control{
     #inputAbertura, 
     #inputFechamento{
         margin-bottom: 10px;
+        co
     }
     .a.col-md-5{
         margin:0px 3px 0px 0px;
