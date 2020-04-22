@@ -223,8 +223,14 @@ input[type=checkbox]:checked + label:before {
     .info-user textarea {
         width: 35%;
     }
+    #infosFuncionamento .form-group{
+        justify-content: center;
+        padding-left: 0px;
+    }
     #infosFuncionamento textarea {
-        max-width: 48%;}
+        max-width: 100%;            
+        margin-left: 0px;
+    }
 }
 
 @media screen and (max-width: 991px) {
