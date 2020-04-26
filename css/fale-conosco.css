@@ -38,17 +38,11 @@ header {
 
 input.form-control {
     height: 50px;
-    font-size: 1.6rem;
     padding: 1.5rem 3rem;
 }
 
 textarea.form-control {
-    font-size: 1.6rem;
     padding: 1.5rem 3rem;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.6rem;
 }
 
 .container {
@@ -117,18 +111,6 @@ footer {
     }
     .form-group {
         margin-top: 15px;
-    }
-    input.form-control {
-        height: 35px;
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
-    textarea.form-control {
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-    }
-    ::-webkit-input-placeholder{
-        font-size: 1.2rem;
     }
     .row {
         margin: 0;
