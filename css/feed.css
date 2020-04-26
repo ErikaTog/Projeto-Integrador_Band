@@ -173,26 +173,30 @@ img.avatar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    transition-duration: 0.25s;
 }
 
-.add a {
-    margin-right: 1.5rem;
-    transition-duration: 0.2s;
+.image-upload > input {
+    display: none;
+}
+
+.image-upload label {
+    margin: 0;
     display: flex;
 }
 
-.add a img {
-    width: 25px;
-}
-
-.add a i {
+.image-upload img,
+.image-upload i {
     color: #4c4f66;
+    width: 25px;
     font-size: 25px;
-    text-decoration: none;
+    margin-right: 1.5rem;
+    transition-duration: 0.25s;
 }
 
-.add a:hover {
-    text-decoration: none;
+.image-upload img:hover,
+.image-upload i:hover {
+    cursor: pointer;
     opacity: 0.8;
 }
 
@@ -270,36 +274,6 @@ img.avatar {
 }
 
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
-
-/* --------------------------------
-              Modal
--------------------------------- */
-.modal-content {
-    border-radius: 10px;
-    padding: 1rem 2rem;
-}
-
-.modal-header button {
-    color: #999999;
-    font-size: 2rem;
-    outline-style: none;
-    transition-duration: 0.25s;
-}
-
-.modal-header button:hover {
-    color: #fb3c00;
-}
-
-input.form-control-file {
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    cursor: pointer;
-}
-
-.modal-footer>:not(:first-child) {
-    margin-left: 1rem;
-}
 
 /* --------------------------------
             MEDIA QUERY
@@ -482,7 +456,6 @@ input.form-control-file {
     }
     #newUser .media {
         width: auto;
-        /* min-width: 100px; */
         margin: 0.5rem 0 0 1rem;
     }
     #newUser img.seguir {
@@ -504,14 +477,17 @@ input.form-control-file {
     ::-webkit-input-placeholder{
         font-size: 1.4rem;
     }
-    .add a {
+    .add .image-upload {
         margin-right: 1rem;
     }
-    .add a img {
+    .image-upload label {
         width: 20px;
     }
-    .add a i {
+    .image-upload img,
+    .image-upload i {
+        width: 20px;
         font-size: 20px;
+        margin-right: 1rem;
     }
     button.btn {
         font-size: 1.2rem;
