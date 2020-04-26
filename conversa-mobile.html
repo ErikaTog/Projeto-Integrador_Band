@@ -24,7 +24,7 @@
             <div class="nav-container">
                 <nav class="navbar navbar-expand-lg">
                     <div class="topbar-mobile">
-                        <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                        <a class="navbar-brand" href="feed.html"><img src="img/logo_5000x1500.png" alt="Band+"></a>
 
                         <div class="navbar-icon">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -184,18 +184,12 @@
 
             </section>
             <div class="mensagem">
-                <div class="dropdown show">
-                    <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-paperclip"></i>
-                    </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a href=""><img src="img/icones/icon_camera.svg" alt="Foto"></a>
-                        <a href=""><img src="img/icones/icon_image.svg" alt="Imagem"></a>
-                        <a href=""><img src="img/icones/icon_gif.svg" alt="Gif"></a>
-                        <a href=""><img src="img/icones/icon_emoji.svg" alt="Emoji"></a>
-                    </div>
-                  </div>
+                <div class="image-upload">
+                    <label for="file-input">
+                        <img src="img/icones/icon_image.svg" alt="Imagem">
+                    </label>
+                    <input type="file" id="file-input" accept="image/*">
+                </div>
 
                 <form action="" method="POST">
                     <div class="form-group">

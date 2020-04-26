@@ -242,6 +242,7 @@ button.btn.btn-cancelar-modal:hover {
 .form-group textarea,
 .radio-group,
 .form-control {
+    color: #282A36;
     font-size: 1.6rem;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;

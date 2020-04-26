@@ -12,11 +12,16 @@
     #voltar {
         padding: 0.5rem 1rem;
     }
+
+    #voltar .media {
+        align-items: center;
+    }
+
     #voltar .media-body {
         margin-left: 1rem;
         display: flex;
         justify-content: space-between;
-        align-self: center;
+        align-items: center;
     }
     
     #conversa {
@@ -54,30 +59,7 @@
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
         padding: 1rem;
     }
-    .mensagem a.btn {
-        width: 30px;
-        height: 30px;
-        color: #282A36;
-        font-size: 1.5rem;
-        border-radius: 50%;
-        outline: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .mensagem a.btn:hover,
-    .mensagem a.btn:focus {
-        opacity: 1;
-        background-color: #f7f7f7;
-        outline-style: none;
-    }
     .mensagem .form-group {
-        width: 290px;
-    }
-    .dropdown-menu {
-        width: 120px;
-        padding: 1rem;
-        border: none;
-        border-radius: 10px;
+        width: 300px;
     }
 }
