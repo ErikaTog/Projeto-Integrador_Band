@@ -188,8 +188,13 @@ Imagem
     justify-content: space-between;
 }
 
+.hab.col-lg-6 {
+    padding-left: 0;
+}
+
 #habilidades {
     max-width: 500px;
+    height: 340px;
     padding: 2.5rem 2.5rem 2.5rem 5rem;
     margin-top: 30px;
 }
@@ -220,10 +225,16 @@ Imagem
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
+.info.col-lg-6 {
+    padding-right: 0;
+}
+
 #infos {
     max-width: 500px;
+    height: 340px;
     padding: 2.5rem 5rem;
     margin-top: 30px;
+    margin-left: auto;
 }
 
 .infos-item {
@@ -356,23 +367,8 @@ audio::-webkit-media-controls-panel {
     font-weight: 600;
 }
 
-select.form-control:not([size]):not([multiple]) {
-    height: auto;
-}
-
-.form-group input,
-.form-group select {
-    height: 3rem;
-}
-
-
-.form-control {
-    color: #282a36;
-    font-size: 1.4rem;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.4rem;
+.modal-footer>:not(:first-child) {
+    margin-left: 1rem;
 }
 
 /* ------------------------------*/ 
@@ -380,10 +376,16 @@ select.form-control:not([size]):not([multiple]) {
 .form-group small a {
     color: #999999;
     font-weight: 600;
+    margin-top: 15px;
 }
 
 /* ------------------------------*/ 
 /* Excluir Conta */
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
 .modal-body p {
     margin-bottom: 1rem;
 }
@@ -476,11 +478,16 @@ button.btn.btn-danger:hover {
         padding-left: 20rem;
     }
     
+    .col-md-12 {
+        padding: 0;
+    }
     #habilidades {
         max-width: 100%;
+        height: auto;
     }
     #infos {
         max-width: 100%;
+        height: auto;
     }
 } 
 
@@ -713,9 +720,9 @@ button.btn.btn-danger:hover {
         margin: 0 0 15px;
     }
     .form-control {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     ::-webkit-input-placeholder{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }
