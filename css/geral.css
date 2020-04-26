@@ -100,7 +100,7 @@ header {
     width: 35px;
     height: 35px;
     color: #fff;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     background-color: #999999;
     border-radius: 50%;
     display: flex;
@@ -108,12 +108,12 @@ header {
     align-items: center;
 }
 
-.nav-link:hover,
+li:hover .nav-link,
 .nav-item.active a {
     color: #fb3c00;
 }
 
-.nav-icon:hover,
+li:hover .nav-icon,
 .nav-item.active .nav-icon {
     background-color: #fb3c00;
 }
@@ -242,19 +242,26 @@ button.btn.btn-cancelar-modal:hover {
 .form-group textarea,
 .radio-group,
 .form-control {
+    font-size: 1.6rem;
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
+    padding: 1rem 2rem;
+}
+
+.form-group input {
+    height: 40px;
 }
 
 ::-webkit-input-placeholder{
-    font-size: 1.2rem;
     color: #999999;
+    font-size: 1.6rem;
 }
 
 .form-group textarea {
     resize: none;
     overflow-y: auto;
 }
+
 
 /* --------------------------------
          Cor do radio
@@ -340,7 +347,7 @@ button.btn.btn-cancelar-modal:hover {
     .nav-icon {
         width: 40px;
         height: 40px;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 }
 
@@ -356,7 +363,7 @@ button.btn.btn-cancelar-modal:hover {
         width: 60px;
     }
     .nav-icon {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -389,7 +396,7 @@ button.btn.btn-cancelar-modal:hover {
     .nav-icon {
         width: 30px;
         height: 30px;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .navbar-icon {
         width: 30px;
