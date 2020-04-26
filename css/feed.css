@@ -105,21 +105,24 @@ img.avatar {
 
 #newUser .media {
     margin: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#newUser .media-body {
+#newUser .media a {
+    color: #282A36;
+    text-decoration: none;
     font-weight: 700;
-    padding-left: 1.5rem;
     display: flex;
-    align-self: center;
+    align-items: center;
 }
 
-#newUser .media-body a {
-    margin-left: auto;
+#newUser .media a p {
+    padding-left: 1.5rem;
 }
 
-#newUser .media-body img {
-    width: 45px;
+#newUser img.seguir {
+    width: 5rem;
     padding: 0 1rem;
 }
 
@@ -159,15 +162,10 @@ img.avatar {
 
 .form-control {
     color: #4c4f66;
-    font-size: 1.6rem;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.6rem;
 }
 
 .form-group textarea {
-    min-height: 85px;
+    min-height: 118px;
     resize: vertical;
 }
 
@@ -180,9 +178,21 @@ img.avatar {
 .add a {
     margin-right: 1.5rem;
     transition-duration: 0.2s;
+    display: flex;
+}
+
+.add a img {
+    width: 25px;
+}
+
+.add a i {
+    color: #4c4f66;
+    font-size: 25px;
+    text-decoration: none;
 }
 
 .add a:hover {
+    text-decoration: none;
     opacity: 0.8;
 }
 
@@ -222,6 +232,13 @@ img.avatar {
     margin-bottom: 1.5rem;
 }
 
+#publicacao .media a {
+    color: #282A36;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
 #publicacao .media h5 {
     margin-left: 2rem;
     align-self: center;
@@ -253,6 +270,36 @@ img.avatar {
 }
 
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+input.form-control-file {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.modal-footer>:not(:first-child) {
+    margin-left: 1rem;
+}
 
 /* --------------------------------
             MEDIA QUERY
@@ -434,24 +481,12 @@ img.avatar {
         overflow-x: scroll;
     }
     #newUser .media {
-        min-width: 100px;
-        margin: 0.1rem 0 0 2rem;
-        display: flex;
-        align-items: center;
+        width: auto;
+        /* min-width: 100px; */
+        margin: 0.5rem 0 0 1rem;
     }
-    #newUser .media-body {
-        padding-left: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #newUser .media-body a {
-        margin-left: 0;
-    }
-    #newUser .media-body img {
-        width: 20px;
-        padding: 0;
-        align-self: center;
+    #newUser img.seguir {
+        width: 4rem;
     }
     
     #publicar {
@@ -461,7 +496,8 @@ img.avatar {
     #publicar h4 {
         margin-bottom: 1rem;
     }
-    .form-control {
+    .form-group textarea {
+        min-height: 80px;
         font-size: 1.4rem;
         margin-bottom: 1rem;
     }
@@ -469,10 +505,16 @@ img.avatar {
         font-size: 1.4rem;
     }
     .add a {
-        margin-right: .5rem;
+        margin-right: 1rem;
+    }
+    .add a img {
+        width: 20px;
+    }
+    .add a i {
+        font-size: 20px;
     }
     button.btn {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     #publicacao .card-feed {
@@ -497,5 +539,12 @@ img.avatar {
 
     .edit {
         display: initial;
+    }
+
+    .modal-header h4 {
+        font-size: 1.8rem;
+    }
+    .modal-body label {
+        font-size: 1.4rem;
     }
 }

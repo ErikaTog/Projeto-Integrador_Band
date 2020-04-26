@@ -21,7 +21,7 @@
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
                 <div class="topbar-mobile">
-                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    <a class="navbar-brand" href="feed.html"><img src="img/logo_5000x1500.png" alt="Band+"></a>
                     
                     <div class="navbar-icon">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -133,33 +133,32 @@
                     <h5><strong>Novos Usuários</strong></h5>
                     <div class="scroll">
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user1.png" alt="Anne">
-                            <div class="media-body">
+                            <a href="perfil-musico.html">
+                                <img class="mini-avatar" src="img/teste/new_user1.png" alt="Anne">
                                 <p>Anne</p>
-                                <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir"></a>
-                                <!-- <img id="seguirUser" onclick="seguir()"  src="img/teste/icon_headset_border.svg" alt="Seguir"> -->
-                            </div>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
                         </div>
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user2.png" alt="John Doe">
-                            <div class="media-body">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user2.png" alt="John Doe">
                                 <p>John Doe</p>
-                                <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir"></a>
-                            </div>
+                            </a>    
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
                         </div>
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user3.png" alt="Maria">
-                            <div class="media-body">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user3.png" alt="Maria">
                                 <p>Maria</p>
-                                <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir"></a>
-                            </div>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
                         </div>
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user4.png" alt="Pedro">
-                            <div class="media-body">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user4.png" alt="Pedro">
                                 <p>Pedro</p>
-                                <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir"></a>
-                            </div>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
                         </div>
                     </div>
                 </section>
@@ -187,10 +186,12 @@
                             <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
                         </div>
                         <div class="add">
-                            <a href=""><img src="img/icones/icon_map.svg" alt="Mapa"></a>
-                            <a href=""><img src="img/icones/icon_camera.svg" alt="Foto"></a>
-                            <a href=""><img src="img/icones/icon_image.svg" alt="Imagem"></a>
-                            <a href=""><img src="img/icones/icon_emoji.svg" alt="Emoji"></a>
+                            <a data-toggle="modal" data-target="#addImg" href="">
+                                <img src="img/icones/icon_image.svg" alt="Imagem">
+                            </a>
+                            <a data-toggle="modal" data-target="#addVideo" href="">
+                                <i class="fas fa-film"></i>
+                            </a>
                             <button type="button" class="btn btn-salvar">Publicar</button>
                         </div>
                     </form>
@@ -200,54 +201,58 @@
                 <section id="publicacao">
                     <div class="card-feed">
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user1.png" alt="Jane Doe">
-                            <h5>Jane Doe</h5>
+                            <a href="perfil-musico.html">
+                                <img class="mini-avatar" src="img/teste/new_user1.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img1.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
-                            <a href=""><img src="img/teste/icon_share.svg" alt="Compartilhar"></a>
                         </div>
                     </div>
                     <div class="card-feed">
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user2.png" alt="Jane Doe">
-                            <h5>Jane Doe</h5>
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user2.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img2.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
-                            <a href=""><img src="img/teste/icon_share.svg" alt="Compartilhar"></a>
                         </div>
                     </div>
                     <div class="card-feed">
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user3.png" alt="Jane Doe">
-                            <h5>Jane Doe</h5>
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user3.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img3.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
-                            <a href=""><img src="img/teste/icon_share.svg" alt="Compartilhar"></a>
                         </div>
                     </div>
                     <div class="card-feed">
                         <div class="media">
-                            <img class="mini-avatar" src="img/teste/new_user4.png" alt="Jane Doe">
-                            <h5>Jane Doe</h5>
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user4.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img4.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
                             <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
-                            <a href=""><img src="img/teste/icon_share.svg" alt="Compartilhar"></a>
                         </div>
                     </div>
                 </section>
@@ -258,7 +263,69 @@
 
     <div class="edit">
         <div class="circle">
-            <a href="#publicar"><i class="fas fa-pencil-alt"></i></i></a>
+            <a href=""><i class="fas fa-pencil-alt"></i></i></a>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <!-- Adicionar imagem -->
+    <div class="modal fade" id="addImg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Adicionar imagem</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha o arquivo</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicionar video -->
+    <div class="modal fade" id="addVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Adicionar video</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form action="" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formControlFileImg">Escolha o arquivo</label>
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     </div>
 
