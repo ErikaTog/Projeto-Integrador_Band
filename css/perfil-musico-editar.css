@@ -5,19 +5,6 @@
     margin: 0;
 }
 
-.form-control {
-    font-size: 1.6rem;
-    padding: 0.5rem 1rem;
-}
-
-input.form-control {
-    height: 35px;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.6rem;
-}
-
 .nav-item {
     margin-left: 20px;
 }
@@ -30,7 +17,7 @@ input.form-control {
 
 .fundo-content a img,
 .avatar-content a img {
-    transition: 0.2s;
+    transition-duration: 0.25s;
 }
 
 .fundo-content a img:hover,
@@ -53,7 +40,7 @@ div.icon i {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.2s;
+    transition-duration: 0.25s;
 }
 
 div.icon i:hover {
@@ -186,6 +173,54 @@ div.icon-border-none i:hover {
 
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
+/* --------------------início_do_Grupo_Excluir_Conta--------------------- */
+
+#excluirConta {
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#excluirConta h4 {
+    margin-bottom: 20px;
+}
+
+#excluirConta .form-group {
+    margin-top: 10px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 40px;
+    padding: 0 2rem;
+}
+
+#excluirConta .danger {
+    margin-bottom: 5px;
+}
+
+.form-group label.danger {
+    color: #fe0000;
+}
+
+.form-group input#dangerSenha {
+    border: 2px solid #fe0000;
+}
+
+button.btn.btn-danger {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: #fe0000;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+button.btn.btn-danger:hover {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: rgba(254, 0, 0, 0.8);
+}
+
+/* --------------------fim_do_Grupo_Excluir_Conta--------------------- */
+
 /* --------------------------------
               Modal
 -------------------------------- */
@@ -193,6 +228,7 @@ div.icon-border-none i:hover {
 input.form-control-file {
     box-shadow: none;
     border-radius: 0;
+    padding: 0;
     margin: 1rem 0;
 }
 
@@ -347,8 +383,16 @@ input[type=checkbox]:checked + label:before {
 }
 
 @media screen and (max-width: 576px) {
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
     .form-control {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 1.2rem;
     }
 
     .nav-container {
@@ -379,10 +423,26 @@ input[type=checkbox]:checked + label:before {
     }
 
     #bio {
-        padding: 1rem 2rem;
+        padding: 1rem 2rem 1.5rem;
+    }
+    #bio .form-group {
+        margin-top: 10px;
     }
 
     #habilidades .scroll {
         height: 170px;
+    }
+
+    input.form-control-file {
+        padding: 0;
+    }
+
+    #excluirConta {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        padding: 0 1rem;
     }
 }

@@ -379,37 +379,6 @@ audio::-webkit-media-controls-panel {
     margin-top: 15px;
 }
 
-/* ------------------------------*/ 
-/* Excluir Conta */
-
-select.form-control:not([size]):not([multiple]) {
-    height: auto;
-}
-
-.modal-body p {
-    margin-bottom: 1rem;
-}
-
-.form-group label.danger {
-    color: #fe0000;
-}
-
-.form-group input#dangerSenha {
-    border-color: #fe0000;
-}
-
-button.btn.btn-danger {
-    color: #fff;
-    border: 2px solid #fe0000;
-    background-color: #fe0000;
-}
-
-button.btn.btn-danger:hover {
-    color: #fff;
-    border: 2px solid #fe0000;
-    background-color: rgba(254, 0, 0, 0.8);
-}
-
 /* --------------------------------
             MEDIA QUERY
 -------------------------------- */
@@ -564,12 +533,6 @@ button.btn.btn-danger:hover {
     .player audio {
         margin-top: 246px;
     }
-    .form-group input {
-        font-size: 1.8rem;
-    }
-    ::-webkit-input-placeholder{
-        font-size: 1.6rem;
-    }
 }
 
 @media screen and (max-width: 576px) {
@@ -716,10 +679,17 @@ button.btn.btn-danger:hover {
     .modal-content {
         padding: 0rem 1rem;
     }
+    .modal-header h4 {
+        font-size: 1.8rem;
+    }
+    .modal-body label {
+        font-size: 1.4rem;
+    }
+
     .form-group {
         margin: 0 0 15px;
     }
-    .form-control {
+    .form-group input {
         font-size: 1.4rem;
     }
     ::-webkit-input-placeholder{
