@@ -82,6 +82,21 @@ img.avatar {
     font-size: 1.2rem;
 }
 
+#userCard a {
+    color: #4c4f66;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    display: block;
+    transition-duration: 0.25s;
+}
+
+#userCard a:hover {
+    color: #fb3c00;
+    text-decoration: none;
+}
+
 /* --------------------fim_do_Grupo_User_Card--------------------- */
 
 /* --------------------início_do_Grupo_New_User--------------------- */
@@ -99,7 +114,7 @@ img.avatar {
 }
 
 #newUser .scroll {
-    height: 130px;
+    height: 120px;
     overflow-y: scroll;
 }
 
@@ -359,14 +374,17 @@ img.avatar {
 
     #userCard {
         max-width: 200px;
-        height: 205px;
+        height: 230px;
         margin-right: 3rem;
     }
 
     #newUser {
         max-width: 100%;
-        height: 205px;
+        height: 230px;
         margin-top: 0;
+    }
+    #newUser .scroll {
+        height: 190px;
     }
 
     #publicar {
@@ -392,13 +410,15 @@ img.avatar {
 
     #userCard {
         max-width: 180px;
-        height: 70px;
+        height: 85px;
         padding: 0.5rem 0.5rem 0.5rem 1rem;
         margin-right: 0.5rem;
         position: relative;
+        overflow: hidden;
+    }
+    #userCard .user-info {
         display: flex;
         align-self: center;
-        overflow: hidden;
     }
     .avatar-content {
         align-self: center;
@@ -434,15 +454,19 @@ img.avatar {
     #userCard small {
         font-size: 1rem;
     }
+    #userCard a {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
 
     img.mini-avatar {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
 
     #newUser {
         width: 135px;
-        height: 70px;
+        height: 85px;
         padding: 0.5rem;
     }
     #newUser h5 {
@@ -450,6 +474,7 @@ img.avatar {
     }
     #newUser .scroll {
         height: auto;
+        margin-top: 0.5rem;
         display: flex;
         overflow-y: unset;
         overflow-x: scroll;
@@ -457,6 +482,9 @@ img.avatar {
     #newUser .media {
         width: auto;
         margin: 0.5rem 0 0 1rem;
+    }
+    #newUser .media a p {
+        padding-left: 1rem;
     }
     #newUser img.seguir {
         width: 4rem;
@@ -515,12 +543,5 @@ img.avatar {
 
     .edit {
         display: initial;
-    }
-
-    .modal-header h4 {
-        font-size: 1.8rem;
-    }
-    .modal-body label {
-        font-size: 1.4rem;
     }
 }

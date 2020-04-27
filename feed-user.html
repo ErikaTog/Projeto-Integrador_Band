@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Band+</title>
+    <title>Minhas publicações</title>
     <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
     <!-- estilo -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/feed-user.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
@@ -100,35 +101,32 @@
             <div class="col-md-3">
     <!-- Grupo User Card -->
                 <section id="userCard" class="card-feed">
-                    <div class="user-info">
-                        <div class="avatar-content">
-                            <a href="perfil-musico.html">
-                                <img class="avatar" src="img/teste/jane.jpg" alt="Avatar">
-                            </a>
-                        </div>
-                        <h5>Jane Doe</h5>
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="media divisoria">
-                                    <img src="img/icones/icon_star.svg" alt="Seguidores">
-                                    <div class="media-body">
-                                        <p>12 M</p>
-                                        <small>Seguidores</small>
-                                    </div>
+                    <div class="avatar-content">
+                        <a href="perfil-musico.html">
+                            <img class="avatar" src="img/teste/jane.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                    <h5>Jane Doe</h5>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="media divisoria">
+                                <img src="img/icones/icon_star.svg" alt="Seguidores">
+                                <div class="media-body">
+                                    <p>12 M</p>
+                                    <small>Seguidores</small>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-sm-12">
-                                <div class="media">
-                                    <img src="img/icones/icon_headset.svg" alt="Seguindo">
-                                    <div class="media-body">
-                                        <p>250</p>
-                                        <small>Seguindo</small>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="media">
+                                <img src="img/icones/icon_headset.svg" alt="Seguindo">
+                                <div class="media-body">
+                                    <p>250</p>
+                                    <small>Seguindo</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="feed-user.html">Minhas publicações</a>
                 </section>
 
     <!-- Grupo New User -->            
@@ -180,31 +178,6 @@
             </div>
 
             <div class="col-md-8">
-
-    <!-- Grupo Publicar --> 
-                <section id="publicar" class="card-feed">
-                    <h4><strong>O que está rolando?</strong></h4>
-                    <form action="" method="POST">
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
-                        </div>
-                        <div class="add">
-                            <div class="image-upload">
-                                <label for="file-input-img">
-                                    <img src="img/icones/icon_image.svg" alt="Imagem">
-                                </label>
-                                <input type="file" id="file-input-img" accept="image/*">
-                            </div>
-                            <div class="image-upload">
-                                <label for="file-input-video">
-                                    <i class="fas fa-film"></i>
-                                </label>
-                                <input type="file" id="file-input-video" accept="video/*" >
-                            </div>
-                            <button type="button" class="btn btn-salvar">Publicar</button>
-                        </div>
-                    </form>
-                </section>
     
      <!-- Grupo Publicacao --> 
                 <section id="publicacao">
@@ -214,11 +187,17 @@
                                 <img class="mini-avatar" src="img/teste/new_user1.png" alt="Jane Doe">
                                 <h5>Jane Doe</h5>
                             </a>
+                            <a href="">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img1.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
-                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href="">
+                                <i class="fas fa-star"></i>
+                                <span>150 Curtidas</span>
+                            </a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
                         </div>
                     </div>
@@ -228,11 +207,17 @@
                                 <img class="mini-avatar" src="img/teste/new_user2.png" alt="Jane Doe">
                                 <h5>Jane Doe</h5>
                             </a>
+                            <a href="">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img2.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
-                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href="">
+                                <i class="fas fa-star"></i>
+                                <span>150 Curtidas</span>
+                            </a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
                         </div>
                     </div>
@@ -242,11 +227,17 @@
                                 <img class="mini-avatar" src="img/teste/new_user3.png" alt="Jane Doe">
                                 <h5>Jane Doe</h5>
                             </a>
+                            <a href="">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img3.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
-                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href="">
+                                <i class="fas fa-star"></i>
+                                <span>150 Curtidas</span>
+                            </a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
                         </div>
                     </div>
@@ -256,11 +247,17 @@
                                 <img class="mini-avatar" src="img/teste/new_user4.png" alt="Jane Doe">
                                 <h5>Jane Doe</h5>
                             </a>
+                            <a href="">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </a>
                         </div>
                         <img class="img-public" src="img/teste/feed_img4.jpg" alt="Publicação">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
                         <div class="curtir">
-                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href="">
+                                <i class="fas fa-star"></i>
+                                <span>150 Curtidas</span>
+                            </a>
                             <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
                         </div>
                     </div>
@@ -270,18 +267,8 @@
         </div>
     </div>
 
-    <div class="edit">
-        <div class="circle">
-            <a href=""><i class="fas fa-pencil-alt"></i></i></a>
-        </div>
-    </div>
 
 
-    <!-- <script type="text/javascript">
-        function seguir() {
-            document.getElementById("seguirUser").src = "img/teste/icon_headset.svg"
-        }
-    </script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
