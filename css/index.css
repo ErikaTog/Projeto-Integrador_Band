@@ -139,8 +139,10 @@ button.mobile {
     width: 100%;
     background-color: black;
     padding: 0px;
-    display: flex;
-    justify-content: center;
+}
+
+.carousel-inner img {
+    margin: auto;
 }
 
 .carousel-item img{
