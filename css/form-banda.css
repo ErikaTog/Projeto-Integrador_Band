@@ -81,18 +81,11 @@ h5 {
 
 .form-control {
     color: #4C4F66;
-    font-size: 1.6rem;
-    padding: 0.5rem 2rem;
-}
-
-input.form-control {
-    height: 35px;
 }
 
 ::-webkit-input-placeholder{
     font-size: 1.6rem;
 }
-
 
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
