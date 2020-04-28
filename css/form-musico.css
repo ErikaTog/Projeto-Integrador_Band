@@ -119,16 +119,6 @@ input.form-control{
     font-size: 1.6rem;
 }
 
-input.form-control,
-select.form-control{
-    height: 40px;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.6rem;
-}
-
-
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
  #linha1.form-header {
@@ -210,10 +200,6 @@ label.custom-control-label{
    height: 54vh;
 }
 
-#hability-box{
-    width: 130px;
-}
-
 label#hability-label{
     margin: 2rem 0 1.5rem;
     font-size: 1.8rem;
@@ -226,8 +212,9 @@ label#hability-label{
 -------------------------------- */
 
 .popover-header{
-    text-align: center;
     font-size: 14px;
+    color: #fb3c00;
+    text-align: center;
 }
 
 .popover-body{
@@ -235,33 +222,19 @@ label#hability-label{
     font-size: 14px;
 }
 
-.btn-lg.btn-danger {
+.btn-primary {
     width: 16px;
     height: 16px;
     padding: 0px 0px 0px;
     margin: 0px 0px 5px;
     border: 0px;
-    background: transparent url("../img/icones/mdi_info.png") no-repeat;
+    background: url("../img/icones/mdi_info.png") no-repeat;
+    background-color:transparent;
+    border-color: transparent;
     overflow: hidden;
     cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
-    cursor: hand; /* para o IE 5.x */
+
 }
-
- 
-.btn-danger.focus, .btn-danger:focus {
-    box-shadow: none;
-}    
-
-.btn.focus, .btn:focus {
-    outline: 0;
-    box-shadow: none;
-}
-
-.btn-danger:hover {
-    background-color: #fb3c00;
-    border-color: #fb3c00;
-}
-
 
 /* --------------------------------
  grupo do ckeck-box de 3 opções
