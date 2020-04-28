@@ -92,22 +92,6 @@ h5 {
     padding: 0.5rem 1rem;
 }
 
-textarea.form-control,
-input.form-control,
-select.form-control{
-    font-size: 1.6rem;
-}
-
-input.form-control,
-select.form-control{
-    height: 35px;
-}
-
-::-webkit-input-placeholder{
-    font-size: 1.6rem;
-}
-
-
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
 #identificacao {
@@ -176,10 +160,15 @@ select.form-control{
 #inputAbertura,
 #inputFechamento{
     display: flex;
-    justify-content: center;
     text-align: center;
+    text-align-last: center; 
     margin:0px 0px 0px;
 } 
+
+#inputFuncionamento,
+#inputServico{
+    padding: 0.5rem 2rem;
+}
 
 .col-lg-3{
     margin-left: 6px;
@@ -327,7 +316,6 @@ select.form-control{
         margin-bottom: 0.5rem;
     }
     .form-group input {
-        height: 35px;
         margin-bottom: 0.5rem;
     } 
     #informacao .form-group label{
