@@ -249,7 +249,8 @@ button.btn.btn-cancelar-modal:hover {
     padding: 1rem 2rem;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     height: 40px;
 }
 
