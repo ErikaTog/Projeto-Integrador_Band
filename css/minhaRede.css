@@ -221,7 +221,7 @@ button.btn:focus{
 }
 
 .mesmaLinha button{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10px
 }
 
@@ -272,10 +272,6 @@ button.btn:focus{
         height: 45px;
     }
 
-    .mesmaLinha button{
-        margin-top: 5px;
-    }
-
     .radio-group label.custom-control-label{
         padding: 2px 10px;
     }
@@ -312,10 +308,6 @@ button.btn:focus{
     .form-control, 
     .radio-group{
         height: 40px;
-    }
-
-    .mesmaLinha button{
-        margin-top: 0px;
     }
 
     .nomeContato{

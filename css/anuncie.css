@@ -77,6 +77,10 @@
     align-self: flex-end;
 }
 
+.formulario-novo-produto h4{
+    padding-top: 6px;
+}
+
 /* --------------------------------
          Feed Produtos
 -------------------------------- */
@@ -105,7 +109,7 @@
 }
 
 .container textarea{
-    height: 50px;
+    height: 40px;
 }
 
 .container textarea#descriçãoNovoProduto,
@@ -115,7 +119,7 @@
 
 #dadosProdutoEditar div textarea,
 #descriçãoNovoProdutoDiv textarea{
-    padding-top: 12px;
+    padding-top: 8px;
 }
 
 /* Conteudo das Vagas */
@@ -195,7 +199,7 @@
 }
 
 .form-control{
-    height: 50px;
+    height: 40px;
     font-family: sans-serif;
     font-size: 1.6rem; 
     font-weight: normal;
@@ -232,6 +236,11 @@
     border: 1px solid #ced4da;
     margin-top: 20px;
     margin-bottom: 0px;
+}
+
+#dinheiroEditar textarea{
+    overflow: hidden;
+    resize: none;
 }
 
 .input-group-text{
@@ -275,8 +284,14 @@ form#dadosProdutoEditar{
 
 #imgProduto,
 #imgProdutoEditar{
-    border-radius: 10px;
+    border: none;
     padding: 20px;
+}
+
+#formControlFileImg,
+#formControlFileImgEditar{
+    box-shadow: none;
+    padding: 8px 0px;
 }
 
 /* --------------------------------
@@ -284,7 +299,7 @@ form#dadosProdutoEditar{
 -------------------------------- */
 .radio-group{
     width: 100%;
-    height: 50px;
+    height: 40px;
     font-size: 2.2rem; 
     font-weight: 700;
     border-radius: none;
@@ -350,6 +365,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 button.btn {
+    width: 100px;
     height: 40px;
     margin-top: 20px;
     font-size: 1.6rem;
@@ -359,6 +375,10 @@ button.btn {
     background-color: #fb3c00;
     border: 2px solid #fb3c00;
     border-radius: 10px;
+}
+
+button.btn-mais {
+    width: 105px;
 }
 
 button.btn:hover {
@@ -377,7 +397,7 @@ button.btn:focus{
 }
 
 .mesmaLinha button{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10px;
 }
 
@@ -420,14 +440,10 @@ a:hover{
         padding-top: 6px;
     }
 
-    .form-control,  
+    /* .form-control,  
     .radio-group{
         height: 45px;
-    }
-
-    .mesmaLinha button{
-        margin-top: 5px;
-    }
+    } */
 
     .radio-group label.custom-control-label{
         padding: 2px 10px;
@@ -466,15 +482,11 @@ a:hover{
         margin-bottom: 20px;
     }
 
-    .form-control, 
+    /* .form-control, 
     .radio-group,
     textarea.form-control{
         height: 40px;
-    }
-
-    .mesmaLinha button{
-        margin-top: 0px;
-    }
+    } */
 
     #modalPublicar,
     #modalPublicarEditar{
