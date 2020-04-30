@@ -120,6 +120,7 @@
 #dadosProdutoEditar div textarea,
 #descriçãoNovoProdutoDiv textarea{
     padding-top: 8px;
+    overflow: hidden;
 }
 
 /* Conteudo das Vagas */
@@ -440,10 +441,11 @@ a:hover{
         padding-top: 6px;
     }
 
-    /* .form-control,  
-    .radio-group{
-        height: 45px;
-    } */
+    #dinheiro textarea,
+    #dinheiroEditar textarea{
+        padding-left: 5px;
+        padding-right: 0px;
+    }
 
     .radio-group label.custom-control-label{
         padding: 2px 10px;
@@ -466,7 +468,7 @@ a:hover{
     }
 } 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     main,
     .modal{
         font-size: 53%; 
@@ -481,12 +483,6 @@ a:hover{
     .feedProduto{
         margin-bottom: 20px;
     }
-
-    /* .form-control, 
-    .radio-group,
-    textarea.form-control{
-        height: 40px;
-    } */
 
     #modalPublicar,
     #modalPublicarEditar{
@@ -589,5 +585,15 @@ a:hover{
     .conteudoMeuProduto,
     .conteudoProduto{
         min-width: 140px;
+    }
+
+    .form-group:nth-child(2){
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    #dinheiro,
+    #dinheiroEditar{
+    max-width: 50%;
     }
 }
