@@ -184,6 +184,7 @@
 
 .radio label.custom-control-label{
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 .radio-group{
@@ -200,6 +201,7 @@
 
 .radio-group label.custom-control-label{
     padding: 0px 10px;
+    cursor: pointer;
 }
 
 .custom-control{
