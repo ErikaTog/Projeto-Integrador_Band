@@ -1,0 +1,126 @@
+/* --------------------início_do_Grupo_Excluir_Conta--------------------- */
+
+#excluirConta {
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#excluirConta h4 {
+    margin-bottom: 20px;
+}
+
+#excluirConta .form-group {
+    margin-top: 10px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 40px;
+    padding: 0 2rem;
+}
+
+#excluirConta .danger {
+    margin-bottom: 5px;
+}
+
+.form-group label.danger {
+    color: #fe0000;
+}
+
+.form-group input#dangerSenha {
+    border: 2px solid #fe0000;
+}
+
+button.btn.btn-danger {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: #fe0000;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+button.btn.btn-danger:hover {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: rgba(254, 0, 0, 0.8);
+}
+
+/* --------------------fim_do_Grupo_Excluir_Conta--------------------- */
+
+.remover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
+
+.remover-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px;
+}  
+
+.card-remover {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 3rem 4rem;
+}
+
+
+@media screen and (max-width: 992px) {
+    .nav-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {   
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.6rem; }
+    h5 { font-size: 1.4rem; }
+
+   .remover-container {
+    width: 90%;
+    margin: 60px 0;
+}
+
+    .card-remover {
+    padding: 2rem 3rem;
+}
+
+    .remover-container p{
+    margin-left: 0;
+}
+    header { 
+        height: 45px; 
+    }
+
+    .nav-container {
+        width: 90%;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        height: 45px;
+    }
+    footer ul li {
+        padding: 2px;
+    }
+    footer img {
+        width: 15px;
+    }
+}
