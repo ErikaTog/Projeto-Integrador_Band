@@ -12,9 +12,7 @@
     align-items: center;
 }
 
-.publicarProduto, 
-.pesquisarProduto,
-.feedProduto{
+.publicarProduto{
     width: 80%;
     height: auto;
     max-width: 1170px;
@@ -27,6 +25,30 @@
     justify-content: center;
 }
 
+.feed{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px;
+}
+
+.pesquisarProduto,
+.feedProduto{
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.feedProduto{
+    margin-bottom: 30px;
+}
+
 .formulario-novo-produto,
 .feedProduto-conteudo{
     width: 90%;
@@ -34,6 +56,10 @@
     padding: 20px 0px 20px 0px;
     display: flex;
     justify-content: space-between;
+}
+
+.feedProduto-conteudo{
+    padding: 0px;
 }
 
 .feedProduto-conteudo{
@@ -68,7 +94,6 @@
 .pesquisarProduto form{
     width: 100%;
     max-width: 1048px;
-    padding: 20px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -84,11 +109,6 @@
 /* --------------------------------
          Feed Produtos
 -------------------------------- */
-.feedProduto{
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-}
-
 .feedProduto-conteudo{
     margin: 0px;
     display: flex;
@@ -532,14 +552,22 @@ a:hover{
     }
 
     .publicarProduto, 
-    .pesquisarProduto,
-    .feedProduto{
+    .feed{
         width: 90%;
         margin: 15px 0px 0px 0px;
     }
 
+    .feed{
+        margin-bottom: 15px;
+    }
+
+    .pesquisarProduto{
+        margin-top: 15px;
+    }
+
     .feedProduto{
-        margin-bottom: 20px;
+        margin: 0px;
+        margin-bottom: 15px;
     }
 
     .custom-control{
@@ -548,7 +576,7 @@ a:hover{
 
     .radio-group{
         padding: 6px 0px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
