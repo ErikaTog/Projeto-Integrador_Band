@@ -98,84 +98,86 @@
             </div>
         </button>
 
-        <!-- Pesquisar Vagas -->
-        <section class="pesquisarVaga">
-            <div class="formulario-pesquisar-vaga">
-                <div class="radio">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="customRadio4">Banda</label>
+        <div class="feed">
+            <!-- Pesquisar Vagas -->
+            <section class="pesquisarVaga">
+                <div class="formulario-pesquisar-vaga">
+                    <div class="radio">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadio4">Banda</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio5">Professor</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio6" name="customRadio2" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio6">Estabecimento</label>
+                        </div>
                     </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio5">Professor</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio6" name="customRadio2" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio6">Estabecimento</label>
-                    </div>
+                    <form action="" method="POST">
+                        <div class="mesmaLinha form-group">
+                            <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
+                            <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
+                            <button type="button" class="btn btn-Publicar">Pesquisar</button>
+                        </div>
+                    </form>
                 </div>
-                <form action="" method="POST">
-                    <div class="mesmaLinha form-group">
-                        <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
-                        <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
-                        <button type="button" class="btn btn-Publicar">Pesquisar</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+            </section>
 
-        <!-- Feed de Vagas -->
-        <section class="feedVagas"> 
-            <div class="feedVagas-conteudo">
-                <div class="radio-group">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadio7" name="customRadio3" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="customRadio7">Feed de Vagas</label>
+            <!-- Feed de Vagas -->
+            <section class="feedVagas"> 
+                <div class="feedVagas-conteudo">
+                    <div class="radio-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadio7" name="customRadio3" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadio7">Feed de Vagas</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadio8" name="customRadio3" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
+                        </div>
                     </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadio8" name="customRadio3" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
+                    <div class="conteudoVaga">
+                        <h5>Exemplo - Feed de Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                        <a href="">Link do usuário para contato</a>
+                    </div>
+                    <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
+                        <h5>Exemplo - Minhas Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                    </button>
+                    <div class="conteudoVaga">
+                        <h5>Exemplo - Feed de Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                        <a href="">Link do usuário para contato</a>
+                    </div>
+                    <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
+                        <h5>Exemplo - Minhas Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                    </button>
+                    <div class="conteudoVaga">
+                        <h5>Exemplo - Feed de Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                        <a href="">Link do usuário para contato</a>
+                    </div>
+                    <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
+                        <h5>Exemplo - Minhas Vagas</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
+                        <p>Local</p>
+                    </button>
+                    <div class="botao">
+                        <button type="button" class="btn btn-mais">+ Vagas</button>
                     </div>
                 </div>
-                <div class="conteudoVaga">
-                    <h5>Exemplo - Feed de Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                    <a href="">Link do usuário para contato</a>
-                </div>
-                <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
-                    <h5>Exemplo - Minhas Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                </button>
-                <div class="conteudoVaga">
-                    <h5>Exemplo - Feed de Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                    <a href="">Link do usuário para contato</a>
-                </div>
-                <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
-                    <h5>Exemplo - Minhas Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                </button>
-                <div class="conteudoVaga">
-                    <h5>Exemplo - Feed de Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                    <a href="">Link do usuário para contato</a>
-                </div>
-                <button type="button" class="conteudoMinhaVaga" data-toggle="modal" data-target="#editarVaga">
-                    <h5>Exemplo - Minhas Vagas</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                    <p>Local</p>
-                </button>
-                <div class="botao">
-                    <button type="button" class="btn btn-mais">+ Vagas</button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     
     <!-- Modal - Publicar Vaga -->
