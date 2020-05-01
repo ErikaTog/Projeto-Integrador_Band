@@ -12,8 +12,6 @@
     align-items: center;
 }
 
-.pesquisarContatos,
-.feedContatos,
 .feedRecomendados{
     width: 80%;
     height: auto;
@@ -29,6 +27,30 @@
     justify-content: center;
 }
 
+.feed{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px;
+}
+
+.pesquisarContatos,
+.feedContatos{
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.feedContatos{
+    margin-bottom: 30px;
+}
+
 /* --------------------------------
          Feed contatos
 -------------------------------- */
@@ -39,14 +61,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.feedContatos{
-    margin-bottom: 30px;
-}
-
-.feedRecomendados{
-    padding-bottom: 20px;
 }
 
 .scroll{
@@ -343,15 +357,26 @@ button.btn:focus{
         margin-top: 44.69px;
     }
 
-    .pesquisarContatos,
-    .feedContatos,
-    .feedRecomendados{
+    .feedRecomendados,
+    .feed{
         width: 90%;
         margin: 15px 0px 0px 0px;
     }
 
+    .feed{
+        margin-bottom: 15px;
+    }
+
+    .pesquisarContatos{
+        margin-top: 15px;
+    }
+
     .feedContatos{
-        margin-bottom: 20px;
+        margin: 0px;
+    }
+
+    .feedContatos{
+        margin-bottom: 15px;
     }
 
     .custom-control{
