@@ -1,0 +1,66 @@
+.duvidas {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
+
+.duvidas-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px;
+}  
+
+.card-duvidas {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 3rem 4rem;
+}
+
+
+h4{
+    box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 1rem;
+}
+
+h5{
+  margin: 2rem 0rem 0.5rem;  
+}
+
+.duvidas-container p{
+    margin-left: 2.3rem;
+}
+
+#gerencie,
+#gerencie:hover{
+ text-decoration: none;
+ color: #282a36;
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.6rem; }
+    h5 { font-size: 1.4rem; }
+
+   .duvidas-container {
+    width: 90%;
+    margin: 60px 0;
+}
+
+.card-duvidas {
+    padding: 2rem 3rem;
+}
+
+.duvidas-container p{
+    margin-left: 0;
+}
+}
