@@ -12,9 +12,7 @@
     align-items: center;
 }
 
-.publicarProduto, 
-.pesquisarProduto,
-.feedProduto{
+.publicarProduto{
     width: 80%;
     height: auto;
     max-width: 1170px;
@@ -27,6 +25,30 @@
     justify-content: center;
 }
 
+.feed{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px;
+}
+
+.pesquisarProduto,
+.feedProduto{
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.feedProduto{
+    margin-bottom: 30px;
+}
+
 .formulario-novo-produto,
 .feedProduto-conteudo{
     width: 90%;
@@ -34,6 +56,10 @@
     padding: 20px 0px 20px 0px;
     display: flex;
     justify-content: space-between;
+}
+
+.feedProduto-conteudo{
+    padding: 0px;
 }
 
 .feedProduto-conteudo{
@@ -68,7 +94,6 @@
 .pesquisarProduto form{
     width: 100%;
     max-width: 1048px;
-    padding: 20px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -77,14 +102,13 @@
     align-self: flex-end;
 }
 
+.formulario-novo-produto h4{
+    padding-top: 6px;
+}
+
 /* --------------------------------
          Feed Produtos
 -------------------------------- */
-.feedProduto{
-    font-size: 1.6rem;
-    margin-bottom: 30px;
-}
-
 .feedProduto-conteudo{
     margin: 0px;
     display: flex;
@@ -105,7 +129,7 @@
 }
 
 .container textarea{
-    height: 50px;
+    height: 40px;
 }
 
 .container textarea#descriçãoNovoProduto,
@@ -115,7 +139,8 @@
 
 #dadosProdutoEditar div textarea,
 #descriçãoNovoProdutoDiv textarea{
-    padding-top: 12px;
+    padding-top: 8px;
+    overflow: hidden;
 }
 
 /* Conteudo das Vagas */
@@ -195,7 +220,7 @@
 }
 
 .form-control{
-    height: 50px;
+    height: 40px;
     font-family: sans-serif;
     font-size: 1.6rem; 
     font-weight: normal;
@@ -232,6 +257,11 @@
     border: 1px solid #ced4da;
     margin-top: 20px;
     margin-bottom: 0px;
+}
+
+#dinheiroEditar textarea{
+    overflow: hidden;
+    resize: none;
 }
 
 .input-group-text{
@@ -275,8 +305,14 @@ form#dadosProdutoEditar{
 
 #imgProduto,
 #imgProdutoEditar{
-    border-radius: 10px;
+    border: none;
     padding: 20px;
+}
+
+#formControlFileImg,
+#formControlFileImgEditar{
+    box-shadow: none;
+    padding: 8px 0px;
 }
 
 /* --------------------------------
@@ -284,7 +320,7 @@ form#dadosProdutoEditar{
 -------------------------------- */
 .radio-group{
     width: 100%;
-    height: 50px;
+    height: 40px;
     font-size: 2.2rem; 
     font-weight: 700;
     border-radius: none;
@@ -296,6 +332,7 @@ form#dadosProdutoEditar{
 
 .radio-group label.custom-control-label{
     padding: 0px 10px;
+    cursor: pointer;
 }
 
 .custom-control{
@@ -350,6 +387,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 button.btn {
+    width: 100px;
     height: 40px;
     margin-top: 20px;
     font-size: 1.6rem;
@@ -359,6 +397,10 @@ button.btn {
     background-color: #fb3c00;
     border: 2px solid #fb3c00;
     border-radius: 10px;
+}
+
+button.btn-mais {
+    width: 105px;
 }
 
 button.btn:hover {
@@ -377,7 +419,7 @@ button.btn:focus{
 }
 
 .mesmaLinha button{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 10px;
 }
 
@@ -420,13 +462,10 @@ a:hover{
         padding-top: 6px;
     }
 
-    .form-control,  
-    .radio-group{
-        height: 45px;
-    }
-
-    .mesmaLinha button{
-        margin-top: 5px;
+    #dinheiro textarea,
+    #dinheiroEditar textarea{
+        padding-left: 5px;
+        padding-right: 0px;
     }
 
     .radio-group label.custom-control-label{
@@ -450,7 +489,7 @@ a:hover{
     }
 } 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     main,
     .modal{
         font-size: 53%; 
@@ -464,16 +503,6 @@ a:hover{
 
     .feedProduto{
         margin-bottom: 20px;
-    }
-
-    .form-control, 
-    .radio-group,
-    textarea.form-control{
-        height: 40px;
-    }
-
-    .mesmaLinha button{
-        margin-top: 0px;
     }
 
     #modalPublicar,
@@ -524,14 +553,22 @@ a:hover{
     }
 
     .publicarProduto, 
-    .pesquisarProduto,
-    .feedProduto{
+    .feed{
         width: 90%;
         margin: 15px 0px 0px 0px;
     }
 
+    .feed{
+        margin-bottom: 15px;
+    }
+
+    .pesquisarProduto{
+        margin-top: 15px;
+    }
+
     .feedProduto{
-        margin-bottom: 20px;
+        margin: 0px;
+        margin-bottom: 15px;
     }
 
     .custom-control{
@@ -540,7 +577,7 @@ a:hover{
 
     .radio-group{
         padding: 6px 0px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -577,5 +614,15 @@ a:hover{
     .conteudoMeuProduto,
     .conteudoProduto{
         min-width: 140px;
+    }
+
+    .form-group:nth-child(2){
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    #dinheiro,
+    #dinheiroEditar{
+    max-width: 50%;
     }
 }
