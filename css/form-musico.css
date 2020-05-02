@@ -232,9 +232,13 @@ label#hability-label{
     background-color:transparent;
     border-color: transparent;
     overflow: hidden;
-    cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
-
 }
+
+
+.d-inline-block{
+    cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
+}
+
 
 /* --------------------------------
  grupo do ckeck-box de 3 opções
@@ -400,6 +404,14 @@ input[type=checkbox]:checked + label:before {
     }
     .custom-control.custom-radio.custom-control-inline{
         margin: 5px 0px;
+    }
+
+    .bs-popover-bottom{
+        margin-left: 2.2rem;
+    }
+
+    .popover{
+        max-width: 268px;
     }
 
     .header-habilidades{
