@@ -1,0 +1,465 @@
+/* --------------------------------
+         Css - Página Vagas
+-------------------------------- */
+
+.container-vagas{
+    width: 100%;
+    height: auto;
+    background-color: #E5E5E5;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.publicarVaga{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.feed{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px;
+}
+
+.pesquisarVaga,
+.feedVagas{
+    width: 100%;
+    height: auto;
+    max-width: 1170px;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-nova-vaga,
+.feedVagas-conteudo{
+    width: 90%;
+    max-width: 1028px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario-nova-vaga{
+    padding: 20px 0px 20px 0px;
+}
+
+.feedVagas-conteudo{
+    padding: 0px;
+}
+
+.formulario-pesquisar-vaga{
+    width: 90%;
+    max-width: 1028px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-nova-vaga h4{
+    padding-top: 5px;
+}
+
+.mesmaLinha{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+}
+
+#localNovaVaga{
+    width: 50%;
+    margin-left: 10px;
+}
+
+.publicarVaga:focus,
+.pesquisarVaga:focus,
+.conteudoMinhaVaga:focus{
+    outline: none;
+}
+
+/* --------------------------------
+         Feed vagas
+-------------------------------- */
+.feedVagas{
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.feedVagas-conteudo{
+    flex-wrap: wrap;
+}
+
+.conteudoMinhaVaga,
+.conteudoVaga{
+    max-width: 48.64%;
+    min-width: 300px;
+    min-height: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conteudoVaga a{
+    color: #fb3c00;
+}
+
+.conteudoVaga a:hover{
+    color: #282a36;
+    text-decoration: none;
+}
+
+.feedVagas-conteudo .botao{
+    width: 100%;
+}
+
+#textareaTituloVagaDiv{
+    margin-top: 0px;
+}
+
+#textareaTituloVaga,
+#textareaLocalVaga{
+    min-height: 40px;
+}
+
+/* --------------------------------
+         Form
+-------------------------------- */
+.form-group{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.form-control{
+    height: 50px;
+    font-size: 1.6rem; 
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
+    color: #999999;
+}
+
+.form-control:focus{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+/* --------------------------------
+         Radio e Radio-group
+-------------------------------- */
+.radio{
+    height: 40px;
+    max-width: 370px;
+    font-size: 1.6rem; 
+    font-weight: normal;
+    color: #5E6380;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    padding: 0px 13px;
+    display: flex;
+    align-items: center;
+}
+
+.radio label.custom-control-label{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.radio-group{
+    width: 100%;
+    height: 40px;
+    font-size: 2.2rem; 
+    font-weight: 700;
+    border-radius: none;
+    box-shadow: none;
+    padding: 6px 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.radio-group label.custom-control-label{
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.custom-control{
+    margin-right: 10px;
+}
+
+.custom-control-label:before{
+    width: 20px;
+    height: 20px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+}
+
+/* --------------------------------
+         Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+/* --------------------------------
+         Botões
+-------------------------------- */
+.botao{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btn {
+    width: 100px;
+    height: 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: filter 0.2s;
+    color: #fff;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+button.btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+}
+
+button.btn:focus{
+    box-shadow: none;
+}
+
+.modal-footer .btn{
+    margin-top: 0px;
+}
+
+.mesmaLinha button{
+    margin-top: 0px;
+    margin-left: 10px
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+@media screen and (max-width: 992px) {
+    main,
+    .modal{
+        font-size: 58%;
+    }
+
+    .publicarVaga, 
+    .pesquisarVaga,
+    .feedVagas{
+        margin: 25px 0px 0px 0px;
+    }
+
+    .feedVagas{
+        margin-bottom: 25px;
+    }
+
+    .formulario-nova-vaga{
+        padding: 15px 0px;
+    }
+
+    .formulario-nova-vaga h4{
+        padding-top: 6px;
+    }
+
+    .radio{
+        width: 340px;
+    }
+
+    .radio-group label.custom-control-label{
+        padding: 2px 10px;
+    }
+} 
+
+@media screen and (max-width: 860px) {
+    .feedVagas-conteudo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }   
+
+    .conteudoMinhaVaga,
+    .conteudoVaga{
+        max-width: 90%;
+        min-height: 140px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main,
+    .modal{ 
+        font-size: 53%; 
+    }
+
+    .publicarVaga, 
+    .pesquisarVaga,
+    .feedVagas{
+        margin: 20px 0px 0px 0px;
+    }
+
+    .feedVagas{
+        margin-bottom: 20px;
+    }
+
+    .radio{
+        width: 325px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        font-size:62.5%;
+    }
+
+    .navbar-toggler-icon {
+        font-size: 2.3rem;
+        height: 1em;
+    }
+    
+    main,
+    .modal{ 
+        font-size: 47%; 
+    }    
+
+    .container-vagas{
+        margin-top: 44.69px;
+    }
+
+    .publicarVaga,
+    .feed{
+        width: 90%;
+        margin: 15px 0px 0px 0px;
+    }
+
+    .feed{
+        margin-bottom: 15px;
+    }
+
+    .pesquisarVaga,
+    .feedVagas{
+        margin: 0px;
+    }
+
+    .feedVagas{
+        margin-bottom: 15px;
+    }
+
+    .formulario-pesquisar-vaga{
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .mesmaLinha{
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mesmaLinha :nth-child(n){
+        margin-bottom: 7px;
+        margin-left: 0px;
+    }
+
+    #localNovaVaga{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .custom-control{
+        margin-top: 15px;
+    }
+
+    .radio{
+        width: 100%;
+        border: none;
+        border-radius: none;
+        box-shadow: none;
+        padding: 0px 0px;
+        margin-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .radio-group{
+        padding: 6px 0px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group{
+        margin-top: 0px;
+    }
+
+    #editarVaga .form-group,
+    #publicarNovaVaga .form-group{
+        margin-top: 10px;
+    }
+
+    .conteudoMinhaVaga,
+    .conteudoVaga{
+        min-width: 200px;
+    }
+
+    .radio label.custom-control-label{
+        padding: 5px 15px;
+    }
+    .radio-group label.custom-control-label{
+        padding: 5px 15px;
+    }
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Band+</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href="feed.html"><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="feed.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="vagas.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <p>Vagas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="minhaRede.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p>Minha rede</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bate-papo.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <p>Bate papo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anuncie.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <p>Anuncie</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil-musico.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li class="nav-item" id="sair">
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="feed-container container">
+        <div class="row">
+            <div class="col-md-3">
+    <!-- Grupo User Card -->
+                <section id="userCard" class="card-feed">
+                    <div class="user-info">
+                        <div class="avatar-content">
+                            <a href="perfil-musico.html">
+                                <img class="avatar" src="img/teste/jane.jpg" alt="Avatar">
+                            </a>
+                        </div>
+                        <h5>Jane Doe</h5>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="media divisoria">
+                                    <img src="img/icones/icon_star.svg" alt="Seguidores">
+                                    <div class="media-body">
+                                        <p>12 M</p>
+                                        <small>Seguidores</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="media">
+                                    <img src="img/icones/icon_headset.svg" alt="Seguindo">
+                                    <div class="media-body">
+                                        <p>250</p>
+                                        <small>Seguindo</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="feed-user.html">Minhas publicações</a>
+                </section>
+
+    <!-- Grupo New User -->            
+                <section id="newUser" class="card-feed">
+                    <h5><strong>Novos Usuários</strong></h5>
+                    <div class="scroll">
+                        <div class="media">
+                            <a href="perfil-musico.html">
+                                <img class="mini-avatar" src="img/teste/new_user1.png" alt="Anne">
+                                <p>Anne</p>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
+                        </div>
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user2.png" alt="John Doe">
+                                <p>John Doe</p>
+                            </a>    
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
+                        </div>
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user3.png" alt="Maria">
+                                <p>Maria</p>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
+                        </div>
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user4.png" alt="Pedro">
+                                <p>Pedro</p>
+                            </a>
+                            <a href=""><img src="img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
+                        </div>
+                    </div>
+                </section>
+
+    <!-- Rodapé -->          
+                <div id="rodape">
+                    <ul class="list-unstyled">
+                        <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+                        <li>
+                            <span class="copyright">Copyright &copy;
+                                2020 - Band+ by Group 1
+                            </span>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+
+            <div class="col-md-8">
+
+    <!-- Grupo Publicar --> 
+                <section id="publicar" class="card-feed">
+                    <h4><strong>O que está rolando?</strong></h4>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
+                        </div>
+                        <div class="add">
+                            <div class="image-upload">
+                                <label for="file-input-img">
+                                    <img src="img/icones/icon_image.svg" alt="Imagem">
+                                </label>
+                                <input type="file" id="file-input-img" accept="image/*">
+                            </div>
+                            <div class="image-upload">
+                                <label for="file-input-video">
+                                    <i class="fas fa-film"></i>
+                                </label>
+                                <input type="file" id="file-input-video" accept="video/*" >
+                            </div>
+                            <button type="button" class="btn btn-salvar">Publicar</button>
+                        </div>
+                    </form>
+                </section>
+    
+     <!-- Grupo Publicacao --> 
+                <section id="publicacao">
+                    <div class="card-feed">
+                        <div class="media">
+                            <a href="perfil-musico.html">
+                                <img class="mini-avatar" src="img/teste/new_user1.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
+                        </div>
+                        <img class="img-public" src="img/teste/feed_img1.jpg" alt="Publicação">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <div class="curtir">
+                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
+                        </div>
+                    </div>
+                    <div class="card-feed">
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user2.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
+                        </div>
+                        <img class="img-public" src="img/teste/feed_img2.jpg" alt="Publicação">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <div class="curtir">
+                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
+                        </div>
+                    </div>
+                    <div class="card-feed">
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user3.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
+                        </div>
+                        <img class="img-public" src="img/teste/feed_img3.jpg" alt="Publicação">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <div class="curtir">
+                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
+                        </div>
+                    </div>
+                    <div class="card-feed">
+                        <div class="media">
+                            <a href="">
+                                <img class="mini-avatar" src="img/teste/new_user4.png" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                            </a>
+                        </div>
+                        <img class="img-public" src="img/teste/feed_img4.jpg" alt="Publicação">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
+                        <div class="curtir">
+                            <a href=""><img src="img/teste/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <a href=""><img src="img/teste/icon_comment.svg" alt="Comentar"></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="edit">
+        <div class="circle">
+            <a href=""><i class="fas fa-pencil-alt"></i></i></a>
+        </div>
+    </div>
+
+
+    <!-- <script type="text/javascript">
+        function seguir() {
+            document.getElementById("seguirUser").src = "img/teste/icon_headset.svg"
+        }
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

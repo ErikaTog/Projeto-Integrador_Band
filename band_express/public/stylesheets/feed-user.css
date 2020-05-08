@@ -1,0 +1,104 @@
+/* --------------------início_do_Grupo_Publicacao--------------------- */
+
+#publicacao .card-feed:first-child {
+    margin-top: 0;
+}
+
+#publicacao .media {
+    margin: 0 5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#publicacao .media i {
+    color: #4C4F66;
+    font-size: 2rem;
+}
+
+.curtir {
+    margin: 15px 25px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.curtir a {
+    color: #FB3C00;
+    font-size: 2.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.curtir a span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.curtir a img {
+    width: 30px;
+    margin: 0;
+}
+
+/* --------------------fim_do_Grupo_Publicacao--------------------- */
+
+
+@media screen and (max-width: 767px) {
+    #userCard {
+        height: 210px;
+    }
+
+    #newUser {
+        height: 210px;
+    }
+    #newUser .scroll {
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    #publicacao .card-feed:first-child {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #userCard {
+        height: 75px;
+        display: flex;
+        align-self: center;
+    }
+
+    #newUser {
+        height: 75px;
+    }
+
+    #newUser .scroll {
+        height: auto;
+        margin-top: 0.3rem;
+    }
+    
+    #publicacao .media {
+        margin: 0 2rem 1rem;
+    }
+
+    #publicacao .media i {
+        font-size: 1.5rem;
+    }
+
+    .curtir {
+        margin: 10px 20px 0;
+    }
+
+    .curtir a {
+        font-size: 2rem;
+    }
+    
+    .curtir a span {
+        font-size: 1.2rem;
+    }
+    
+    .curtir a img {
+        width: 25px;
+    }
+}

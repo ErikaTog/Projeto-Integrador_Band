@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Estabelecimento</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/form-estab.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="form-banda">
+        <header>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    <a href="feed.html">
+                        <button type="button" class="btn btn-salvar">Cadastrar</button>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="cadastro-container container">
+            <div class="row">
+
+                <div class="col-md-6 col-sm-12"> <!-- COLUNA 1 -->
+
+                    <!-- Grupo Form Identificação -->
+                    <section id="identificacao" class="card-cadastro">
+                        <div class="form-header">
+                            <h4>Identificação</h4>
+                        </div>
+                        <h5>Dados do usuário</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputUser" class="col-xl-2 col-lg-3 col-form-label">Usuário</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="text" class="form-control" id="inputUser"
+                                            placeholder="Digite o usuário" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-xl-2 col-lg-3 col-form-label">Senha</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="password" class="form-control" id="inputPassword"
+                                            placeholder="6 dígitos" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="email" class="form-control" id="inputEmail"
+                                            placeholder="Digite o e-mail" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Grupo Form Informação -->
+                    <section id="informacao" class="card-cadastro">
+                        <div class="form-header">
+                            <h4>Informações do local</h4>
+                        </div>
+
+                        <h5>Categoria do local</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputTipo" class="col-xl-2 col-lg-3 col-form-label">Tipo</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <select class="form-control" name="serviço" id="inputServico">
+                                            <option>Bar/Pub</option>
+                                            <option>Escola de música</option>
+                                            <option>Estúdio</option>
+                                            <option>Gravadora</option>
+                                            <option>Loja</option>
+                                            <option>Produtora</option>
+                                            <option>Restaurante</option>
+                                            <option selected>Outro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>    
+
+                        <h5>Sobre o local</h5>
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputBio" class="remove-conte">Conte mais sobre o local</label>
+                                    <textarea class="form-control" id="inputBio" rows="11"
+                                    placeholder="Conte sobre o seu local!"></textarea>
+                            </div>
+                            </form>
+                    </section>
+                </div>
+
+                <div class="col-md-6 col-sm-12">  <!-- COLUNA 2 -->
+
+                    <!-- Grupo Form Dados -->
+                    <section id="dados" class="card-cadastro ml-auto">
+                        <div class="form-header">
+                            <h4>Dados do seu local</h4>
+                        </div>
+
+                        <h5>Localização</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="text" class="form-control" id="inputEstado"
+                                            placeholder="Digite seu Estado">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="text" class="form-control" id="inputCidade"
+                                            placeholder="Digite a cidade">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <h5>Contatos</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <label for="inputSite" class="col-xl-2 col-lg-3 col-form-label">Site</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="text" class="form-control" id="inputSite"
+                                            placeholder="Digite o site do seu local">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="text" class="form-control" id="inputEmail"
+                                            placeholder="Digite o e-mail do seu local">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputTelefone" class="col-xl-2 col-lg-3 col-form-label">Telefone</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="tel" class="form-control" id="inputTelefone"
+                                            placeholder="Digite o telefone do seu local">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <h5 id="h5">Funcionamento</h5>
+                        <div class="campo-form card-cadastro">
+                            <form action="" method="POST">
+                                <div class="form-group row">
+                                    <div class="col-lg-5 col-md-10 col-sm-4 col-12"> 
+                                        <select class="form-control" name="funcionamento" id="inputFuncionamento">
+                                            <option>Segunda</option>
+                                            <option>Terça</option>
+                                            <option>Quarta</option>
+                                            <option>Quinta</option>
+                                            <option>Sexta</option>
+                                            <option>Sábado</option>
+                                            <option>Domingo</option>
+                                            <option>Feriado</option>
+                                        </select>
+                                    </div>
+                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                        <input type="time" class="form-control" id="inputAbertura"
+                                            placeholder="Abertura">
+                                    </div>
+                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                        <input type="time" class="form-control" id="inputFechamento"
+                                            placeholder="Fechamento">
+                                    </div>
+                                    <div class="add-funcionamento">
+                                        <a href=""><i class="fas fa-plus-square"></i></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <ul class="list-unstyled mb-0">
+                <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+                <li>
+                    <span class="copyright">Copyright &copy;
+                        2020 -
+                        <img src="img/icone.png" width="20">
+                        Band+ by Group 1
+                    </span>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+            container: 'body'
+        })
+    </script>
+</body>
+
+</html>

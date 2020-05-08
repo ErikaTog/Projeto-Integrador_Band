@@ -1,0 +1,628 @@
+/* --------------------------------
+         Css - Anuncie
+-------------------------------- */ 
+
+.container-anuncie{
+    width: 100%;
+    height: auto;
+    background-color: #E5E5E5;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.publicarProduto{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.feed{
+    width: 80%;
+    height: auto;
+    max-width: 1170px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin: 30px 0px;
+}
+
+.pesquisarProduto,
+.feedProduto{
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.feedProduto{
+    margin-bottom: 30px;
+}
+
+.formulario-novo-produto,
+.feedProduto-conteudo{
+    width: 90%;
+    max-width: 1048px;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedProduto-conteudo{
+    padding: 0px;
+}
+
+.feedProduto-conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.formulario-pesquisar-produto{
+    width: 90%;
+    max-width: 1048px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mesmaLinha{
+    margin-top: 0px;
+    display: flex;
+}
+
+.publicarProduto:focus, 
+.pesquisarProduto:focus,
+.conteudoProduto:focus,
+.conteudoMeuProduto:focus{
+    outline: none;
+}
+
+/* --------------------------------
+         Pesquisar produtos
+-------------------------------- */
+.pesquisarProduto form{
+    width: 100%;
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-groupBtn{
+    align-self: flex-end;
+}
+
+.formulario-novo-produto h4{
+    padding-top: 6px;
+}
+
+/* --------------------------------
+         Feed Produtos
+-------------------------------- */
+.feedProduto-conteudo{
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feedProduto-conteudo .botao{
+    width: 100%;
+}
+
+#textareaTituloProdutoDiv{
+    margin-top: 0px;
+}
+
+#textareaTituloProduto{
+    min-height: 40px;
+}
+
+.container textarea{
+    height: 40px;
+}
+
+.container textarea#descriçãoNovoProduto,
+.container textarea#descriçãoNovoProdutoEditar{
+    height: auto;
+}
+
+#dadosProdutoEditar div textarea,
+#descriçãoNovoProdutoDiv textarea{
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+/* Conteudo das Vagas */
+.conteudoMeuProduto,
+.conteudoProduto{
+    width: 49%;
+    height: auto;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin-top: 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conteudoProduto img,
+.conteudoMeuProduto img{
+    background-color: #E5E5E5;
+    box-shadow: none;
+    border: none;
+}
+
+.conteudoProdutoInfoImg,
+.conteudoMeuProdutoInfoImg{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.conteudoProduto h5,
+.conteudoMeuProduto h5{
+    margin-bottom: 5px;
+}
+
+.conteudoProdutoDiv,
+.conteudoMeuProdutoDiv{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.conteudoProdutoInfo,
+.conteudoMeuProdutoInfo{
+    margin: auto 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.conteudoProdutoInfo2,
+.conteudoMeuProdutoInfo2{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* --------------------------------
+         Modal - Publicar
+-------------------------------- */
+#modalPublicar,
+#modalPublicarEditar{
+    max-width: 70%;
+}
+
+/* --------------------------------
+         Form
+-------------------------------- */
+.form-group{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.form-control{
+    height: 40px;
+    font-family: sans-serif;
+    font-size: 1.6rem; 
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.6rem;
+    color: #999999;
+}
+
+.form-control:focus{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+.form-group:first-child{
+    margin-top: 0px;
+}
+
+.form-group:nth-child(2){
+    max-width: 58%;
+    margin-right: 2%;
+}
+
+/* --------------------------------
+         Form - Publicar Produto
+-------------------------------- */
+#dinheiro,
+#dinheiroEditar{
+    max-width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#dinheiroEditar textarea{
+    overflow: hidden;
+    resize: none;
+}
+
+.input-group-text{
+    font-size: 1.6rem;
+    color: #999999;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+.avatar{
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    border: 1px solid #ced4da;
+    align-self: center;
+}
+
+.conteudoProdutoInfoImg img,
+.conteudoMeuProdutoInfoImg img{
+    width: 180px;
+    height: 180px;
+}
+
+.card .avatar{
+    width: 230px;
+    height: 230px;
+}
+
+#escolherImg,
+#escolherImgEditar{
+    padding: 20px 0px 0px 0px;
+}
+
+form#dadosProduto,
+form#dadosProdutoEditar{
+    padding-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#imgProduto,
+#imgProdutoEditar{
+    border: none;
+    padding: 20px;
+}
+
+#formControlFileImg,
+#formControlFileImgEditar{
+    box-shadow: none;
+    padding: 8px 0px;
+}
+
+/* --------------------------------
+         Radio e Radio-group
+-------------------------------- */
+.radio-group{
+    width: 100%;
+    height: 40px;
+    font-size: 2.2rem; 
+    font-weight: 700;
+    border-radius: none;
+    box-shadow: none;
+    padding: 6px 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.radio-group label.custom-control-label{
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.custom-control{
+    margin-right: 10px;
+}
+
+.custom-control-label:before{
+    width: 20px;
+    height: 20px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+}
+
+/* --------------------------------
+         Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+
+/* --------------------------------
+         Botões
+-------------------------------- */
+.botao{
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.btn {
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: filter 0.2s;
+    color: #fff;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    border-radius: 10px;
+}
+
+button.btn-mais {
+    width: 105px;
+}
+
+button.btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+}
+
+button.btn:focus{
+    box-shadow: none;
+}
+
+.modal-footer .btn{
+    margin-top: 0px;
+}
+
+.mesmaLinha button{
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+/* --------------------------------
+         Links
+-------------------------------- */
+a{
+    color: #fb3c00;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #282a36;
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+@media screen and (max-width: 992px) {
+    main,
+    .modal{
+        font-size: 58%;
+    }
+
+    .publicarProduto, 
+    .pesquisarProduto,
+    .feedProduto{
+        margin: 25px 0px 0px 0px;
+    }
+
+    .feedProduto{
+        margin-bottom: 25px;
+    }
+
+    .formulario-novo-produto{
+        padding: 15px 0px;
+    }
+
+    .formulario-novo-produto h4{
+        padding-top: 6px;
+    }
+
+    #dinheiro textarea,
+    #dinheiroEditar textarea{
+        padding-left: 5px;
+        padding-right: 0px;
+    }
+
+    .radio-group label.custom-control-label{
+        padding: 2px 10px;
+    }
+
+    .card .avatar{
+        width: 200px;
+        height: 200px;
+    }
+
+    #escolherImg,
+    #escolherImgEditar{
+        font-size: 1.6rem; 
+    }
+
+    .conteudoProdutoInfoImg img,
+    .conteudoMeuProdutoInfoImg img{
+        width: 160px;
+        height: 160px;
+    }
+} 
+
+@media screen and (max-width: 767px) {
+    main,
+    .modal{
+        font-size: 53%; 
+    }
+
+    .publicarProduto, 
+    .pesquisarProduto,
+    .feedProduto{
+        margin: 20px 0px 0px 0px;
+    }
+
+    .feedProduto{
+        margin-bottom: 20px;
+    }
+
+    #modalPublicar,
+    #modalPublicarEditar{
+        max-width: 60%;
+    }
+
+    #dadosProduto,
+    #dadosProdutoEditar{
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+
+    .card .avatar{
+        width: 170px;
+        height: 170px;
+    }
+
+    #escolherImg,
+    #escolherImgEditar{
+        font-size: 1.4rem; 
+    }
+
+    .conteudoProdutoInfoImg img,
+    .conteudoMeuProdutoInfoImg img{
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        font-size:62.5%;
+    }
+
+    .navbar-toggler-icon {
+        font-size: 2.3rem;
+        height: 1em;
+    }
+    
+    main,
+    .modal{ 
+        font-size: 47%; 
+    }
+
+    .container-anuncie{
+        margin-top: 44.69px;
+    }
+
+    .publicarProduto, 
+    .feed{
+        width: 90%;
+        margin: 15px 0px 0px 0px;
+    }
+
+    .feed{
+        margin-bottom: 15px;
+    }
+
+    .pesquisarProduto{
+        margin-top: 15px;
+    }
+
+    .feedProduto{
+        margin: 0px;
+        margin-bottom: 15px;
+    }
+
+    .custom-control{
+        margin-top: 15px;
+    }
+
+    .radio-group{
+        padding: 6px 0px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .radio-group label.custom-control-label{
+        padding: 5px 15px;
+    }
+
+    .feedProduto-conteudo{
+        padding-top: 0px;
+    }
+
+    #modalPublicar,
+    #modalPublicarEditar{
+        max-width: 100%;
+    }
+
+    .conteudoProdutoInfoImg img,
+    .conteudoMeuProdutoInfoImg img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .conteudoMeuProduto,
+    .conteudoProduto{
+        min-width: 280px;
+        width: 80%;
+        margin: 20px auto 0px auto;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .conteudoMeuProduto,
+    .conteudoProduto{
+        min-width: 140px;
+    }
+
+    .form-group:nth-child(2){
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    #dinheiro,
+    #dinheiroEditar{
+    max-width: 50%;
+    }
+}

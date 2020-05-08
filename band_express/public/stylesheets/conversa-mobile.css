@@ -1,0 +1,65 @@
+@media screen and (max-width: 576px) {
+    .bate-papo {
+        overflow: visible;
+    }
+
+    .papo-container {
+        box-shadow: 0 4px 6px -6px #999999;
+        padding-bottom: 15px;
+        margin: 60px auto 0;
+    }
+    
+    #voltar {
+        padding: 0.5rem 1rem;
+    }
+
+    #voltar .media {
+        align-items: center;
+    }
+
+    #voltar .media-body {
+        margin-left: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #conversa {
+        width: 100%;
+        padding: 0 1.5rem;
+        margin-top: 0;
+        display: block;
+    }
+    #conversa .scroll {
+        height: 65vh;
+        box-shadow: none;
+    }
+    #conversa img.avatar {
+        width: 30px;
+        height: 30px;
+    }
+    #conversa small {
+        margin-bottom: 10px;
+    }
+    #conversa .user.card-papo {
+        padding: 10px;
+        margin: 0 0 15px auto;
+    }
+    #conversa .card-papo {
+        padding: 10px;
+        margin-left: 10px;
+    }
+    #conversa .media.friend {
+        margin-bottom: 15px;
+    }
+
+    .mensagem {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
+        padding: 1rem;
+    }
+    .mensagem .form-group {
+        width: 300px;
+    }
+}

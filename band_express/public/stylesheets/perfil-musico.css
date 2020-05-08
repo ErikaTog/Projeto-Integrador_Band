@@ -1,0 +1,698 @@
+/* --------------------------------
+        Geral - Perfil músico
+-------------------------------- */
+.perfil-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-perfil {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+/* Container - Bootstrap */
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+/* --------------------início_do_Grupo_Head--------------------- */
+#head {
+    position: relative;
+}
+
+/* --------------------------------
+Imagem
+-------------------------------- */
+
+/* ------------------------------*/ 
+/* Fundo */
+.head-fundo {
+    width: auto;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/* ------------------------------*/ 
+/* Avatar */
+.avatar-content {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
+#head img.avatar {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+/* --------------------------------
+            Info - User
+-------------------------------- */
+.info-user {
+    padding-left: 27rem;
+}
+
+.info-user h3 {
+    padding: 1rem 3rem;
+}
+
+.info-user-status {
+    padding: 1rem 0 1.5rem;
+    display: flex;
+}
+
+.info-user .media p {
+    margin-left: 0.5rem;
+    align-self: center;
+}
+
+.info-user .media:last-child {
+    margin-left: 3.5rem;
+}
+
+/* --------------------------------
+            Configuração
+-------------------------------- */
+.config {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+}
+
+.config .dropdown-toggle::after {
+    content: none;
+}
+
+.btn-config {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #999999;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+.btn-config i {
+    font-size: 2.3rem;
+}
+
+.btn-config:hover,
+.btn-config:focus {
+    background-color: #fb3c00;
+    outline-style: none;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #999999;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.config a {
+    padding: 2.5rem 4rem;
+    text-align: center;
+    transition-duration: 0.25s;
+}
+
+.config a:hover {
+    background-color: #F7F7F7;
+}
+
+.config a:focus {
+    background-color: #fff;
+    color: #fb3c00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.config p {
+    font-size: 1.6rem;
+}
+
+/* --------------------fim_do_Grupo_Head--------------------- */
+
+/* --------------------início_do_Grupo_Bio--------------------- */
+
+#bio {
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#bio p {
+    padding-top: 2rem;
+}
+
+/* --------------------fim_do_Grupo_Bio--------------------- */
+
+/* --------------------início_do_Grupo_Habilidades--------------------- */
+.container.habil-info {
+    max-width: 1170px;
+}
+
+.habil-info .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hab.col-lg-6 {
+    padding-left: 0;
+}
+
+#habilidades {
+    max-width: 500px;
+    height: 340px;
+    padding: 2.5rem 2.5rem 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#habilidades .scroll {
+    padding-top: 2rem;
+}
+
+#habilidades .scroll .item.row {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.habilidades-item {
+    padding: 0 1rem 2rem 0;
+}
+
+.habilidades-item img {
+    width: 40px;
+}
+
+#habilidades p {
+    padding-left: 2.5rem;
+    align-self: center;
+}
+
+/* --------------------fim_do_Grupo_Habilidades--------------------- */
+
+/* --------------------início_do_Grupo_Infos--------------------- */
+
+.info.col-lg-6 {
+    padding-right: 0;
+}
+
+#infos {
+    max-width: 500px;
+    height: 340px;
+    padding: 2.5rem 5rem;
+    margin-top: 30px;
+    margin-left: auto;
+}
+
+.infos-item {
+    margin-top: 20px;
+}
+
+.infos-item img {
+    width: 40px;
+}
+
+#infos p {
+    padding-left: 2.5rem;
+    align-self: center;
+}
+
+/* --------------------fim_do_Grupo_Infos--------------------- */
+
+/* --------------------início_do_Grupo_Minha_Musica--------------------- */
+#minhaMusica {
+    padding: 2.5rem 2.5rem 2.5rem 5rem;
+    margin-top: 30px;
+}
+
+#minhaMusica .row {
+    height: auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-xl-6 {
+    padding-left: 0;
+}
+
+.musica-item {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 3rem;
+}
+
+.musica-item h5 {
+    padding: 1rem 0.5rem 0;
+}
+
+.musica-item video {
+    width: 100%;
+    height: 300px;
+    background-color: #282a36;
+}
+
+.musica-item iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* ------------------------------*/ 
+/* Audio player */
+ .player {
+    width: 100%;
+    height: 300px;
+    background: #fb754b ;
+    background-image: url(../img/teste/icone_bg.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 10%;
+    position: relative;
+}
+
+.player audio {
+    width: 100%;
+    position: absolute;
+    margin-top: 246px;
+}
+
+audio {
+    background-color: #f7f7f7;
+    border: 2px solid #fb754b;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #f7f7f7;
+}
+
+/* ------------------------------*/ 
+/* Button */
+.carregar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-carregar {
+    color: #fff;
+    font-size: 1.8rem;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+}
+
+.btn-carregar:hover {
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+}
+
+/* --------------------fim_do_Grupo_Minha_Musica--------------------- */
+
+/* --------------------------------
+              Modal
+-------------------------------- */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.modal-header button {
+    color: #999999;
+    font-size: 2rem;
+    outline-style: none;
+    transition-duration: 0.25s;
+}
+
+.modal-header button:hover {
+    color: #fb3c00;
+}
+
+.form-group {
+    margin: 0 0 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.modal-footer>:not(:first-child) {
+    margin-left: 1rem;
+}
+
+/* ------------------------------*/ 
+/* Alterar Senha */
+.form-group small a {
+    color: #999999;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .head-fundo {
+        height: 250px;
+    }
+    #head img.avatar {
+        width: 180px;
+        height: 180px;
+    }
+    #habilidades .scroll .item.row {
+        height: 230px;
+    }
+    
+    #minhaMusica {
+        padding: 2.5rem 5rem;
+        margin-top: 30px;
+    }
+    #minhaMusica .row {
+        padding-top: 4rem;
+        justify-content: center;
+    }
+    .col-sm-12 {
+        padding: 0;
+    }
+    .musica-item {
+        max-width: 600px;
+        padding-bottom: 2.5rem;
+    }
+    .musica-item:last-child {
+        padding-bottom: 0;
+    }
+    .musica-item h5 {
+        padding: 1rem 0 0;
+    }
+    .musica-item video {
+        height: 400px;
+    }
+    .musica-item iframe {
+        height: 400px;
+    }
+    .player {
+        height: 400px;
+        background-size: 55%;
+        background-position: 50% 20%;
+    }
+    .player audio {
+        margin-top: 346px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .head-fundo {
+        height: 200px;
+    }    
+    .avatar-content {
+        top: 30%;
+    }
+    #head img.avatar {
+        width: 150px;
+        height: 150px;
+    }
+    .info-user {
+        padding-left: 20rem;
+    }
+    
+    .col-md-12 {
+        padding: 0;
+    }
+    #habilidades {
+        max-width: 100%;
+        height: auto;
+    }
+    #infos {
+        max-width: 100%;
+        height: auto;
+    }
+} 
+
+@media screen and (max-width: 768px) {
+    .head-fundo {
+        height: 125px;
+    }
+    .avatar-content {
+        top: 15%;
+    }
+    #head img.avatar {
+        width: 125px;
+        height: 125px;
+        border: 2.5px solid #fff;
+    }
+    .info-user {
+        padding-left: 15rem;
+    }
+    .info-user h3 {
+        padding: 1rem 5rem;
+    }
+    .info-user-status {
+        padding-top: 0;
+    }
+    .info-user-status .media img {
+        width: 20px;
+    }
+    .info-user .media:last-child {
+        margin-left: 2.5rem;
+    }
+    .btn-config {
+        width: 30px;
+        height: 30px;
+    }
+    .config a {
+        padding: 1.5rem 3rem;
+        text-align: center;
+        transition-duration: 0.25s;
+    }
+
+    #bio {
+        padding: 2.5rem 2.5rem 2.5rem 5rem;
+    }
+    .bio-scroll {
+        height: 300px;
+        margin-top: 2rem;
+        overflow-y: scroll;
+    }
+    #bio p {
+        padding: 0 2.5rem 0 0;
+    }
+
+    #habilidades .scroll .item.row {
+        height: 220px;
+    }
+
+    #minhaMusica .row {
+        padding-top: 3rem;
+    }    
+    .musica-item {
+        margin-bottom: 1rem;
+    }
+    .musica-item video {
+        height: 300px;
+    }
+    .musica-item iframe {
+        height: 300px;
+    }
+     .player {
+        height: 300px;
+        background-size: 250px;
+        background-position: 50% 10%;
+    }
+    .player audio {
+        margin-top: 246px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+
+    .perfil-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 60px auto 15px;
+    }
+    .head-fundo {
+        height: 50px;
+    }
+    .avatar-content {
+        top: 10%;
+        left: 5%;
+    }
+    #head img.avatar {
+        width: 62px;
+        height: 62px;
+        border: 2px solid #fff;
+    }
+    .info-user {
+        padding-left: 7rem;
+    }
+    
+    .info-user h3 {
+        font-size: 1.4rem;
+        padding: 0.5rem 3rem;
+    }
+    .info-user-status {
+        padding: 0.5rem 0;
+        display: flex;
+    }
+    .info-user-status .media img {
+        width: 15px;
+    }
+    .info-user .media p {
+        font-size: 1rem;
+        margin-left: 0.3rem;
+    }
+    .info-user .media:last-child {
+        margin-left: 1.5rem;
+    }
+
+    .config {
+        position: absolute;
+        top: 5.5rem;
+        right: 1rem;
+    }
+    .btn-config {
+        width: 20px;
+        height: 20px;
+    }
+    .btn-config i {
+        font-size: 1.3rem;
+    }
+    .config a {
+        padding: 1rem 1.5rem;
+    }
+    .config p {
+        font-size: 1.2rem;
+    }
+
+    #bio {
+        padding: 1rem 1rem 1rem 2rem;
+        margin-top: 15px;
+    }
+    .bio-scroll {
+        height: 250px;
+        margin-top: 1rem;
+    }
+    #bio p {
+        padding: 0 1rem 0 0;
+    }
+    
+    #habilidades {
+        padding: 1rem 1rem 1rem 2rem;
+        margin-top: 15px;
+    }
+    #habilidades .scroll {
+        padding-top: 1rem;
+    }
+    .habilidades-item {
+        padding: 0 1rem 1rem 0;
+    }
+    .habilidades-item img {
+        width: 30px;
+        align-self: center;
+    }
+    #habilidades p {
+        padding-left: 1rem;
+    }
+
+    #infos {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+    .infos-item {
+        margin-top: 10px;
+    }
+    .infos-item img {
+        width: 30px;
+    }
+    #infos p {
+        padding-left: 1rem;
+    }
+
+    #minhaMusica {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+    #minhaMusica .row {
+        padding-top: 1.5rem;
+    }
+    .col-sm-12 {
+        padding: 0;
+        margin: 0;
+    }
+    .musica-item h5 {
+        padding: 1rem 0 2rem;
+    }
+    .musica-item video {
+        height: 200px;
+    }
+    .musica-item iframe {
+        height: 200px;
+    }
+     .player {
+        height: 200px;
+        background-size: 150px;
+    }
+    .player audio {
+        margin-top: 146px;
+    }
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        padding: 0rem 1rem;
+    }
+    .modal-header h4 {
+        font-size: 1.8rem;
+    }
+    .modal-body label {
+        font-size: 1.4rem;
+    }
+
+    .form-group {
+        margin: 0 0 15px;
+    }
+    .form-group input {
+        font-size: 1.4rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.4rem;
+    }
+}

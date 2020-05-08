@@ -1,0 +1,369 @@
+/* --------------------------------
+        Geral - Bate-papo
+-------------------------------- */
+.bate-papo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
+
+.papo-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto 30px;
+}
+
+.card-papo {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+.container, 
+.col-md-4,
+.col-md-8,
+.col-sm-1,
+.col-sm-10 {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+small {
+    font-size: 1.2rem;
+    color: #4c4f66;
+}
+
+/* --------------------início_do_Grupo_Pesquisar--------------------- */
+
+#pesquisar {
+    width: 90%;
+    max-width: 370px;
+    padding: 1rem 2rem;
+}
+
+#pesquisar .media {
+    margin-bottom: 10px;
+}
+
+#pesquisar .media h4 {
+    align-self: center;
+    margin-left: 10px;
+}
+
+/* --------------------fim_do_Grupo_Pesquisar--------------------- */
+
+/* --------------------início_do_Grupo_Msg_Antigas--------------------- */
+
+#msgAntigas {
+    width: 90%;
+    max-width: 370px;
+    padding: 1rem 1rem 1rem 2rem;
+    margin-top: 30px;
+}
+
+#msgAntigas a {
+    color: #282A36;
+    text-decoration: none;
+}
+
+#msgAntigas .media {
+    box-shadow: 0 4px 6px -6px #999999;
+    padding: 1rem 0;
+}
+
+#msgAntigas .media-body {
+    margin-left: 10px;
+    align-self: center;
+}
+
+#msgAntigas .scroll {
+    height: 630px;
+    overflow-y: scroll;
+}
+
+#msgAntigasMobile {
+    display: none;
+}
+
+/* --------------------fim_do_Grupo_Msg_Antigas--------------------- */
+
+/* --------------------início_do_Grupo_Conversa--------------------- */
+
+#conversa {
+    width: 100%;
+    max-width: 770px;
+    padding: 15px 15px 15px 25px;
+}
+
+#conversa .media.header {
+    box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 10px;
+}
+
+#conversa .media.header h5 {
+    margin-left: 20px;
+    align-self: center;
+}
+
+/* --------------------------------
+        Card - Conversas
+-------------------------------- */
+
+#conversa .scroll {
+    padding-right: 10px;
+    margin-top: 10px;
+    height: 650px;
+    overflow-y: scroll;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#conversa small {
+    color: #999999;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#conversa .user.card-papo {
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 20px;
+    margin: 0 0 30px auto;
+}
+
+#conversa .media img {
+    align-self: center;
+}
+
+#conversa .card-papo {
+    width: 70%;
+    max-width: 500px;
+    margin-left: 15px;
+    padding: 10px 20px;
+}
+
+#conversa .media.friend {
+    margin-bottom: 30px;
+}
+
+/* --------------------------------
+        Card - Mensagem
+-------------------------------- */
+.mensagem {
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload img {
+    width: 25px;
+    transition-duration: 0.25s;
+}
+
+.image-upload img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.mensagem .form-group {
+    width: 550px;
+    margin: 0 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mensagem .form-group textarea {
+    min-height: 46px;
+    resize: vertical;
+}
+
+button {
+    background: #fff;
+    border: none;
+}
+
+button.btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fb3c00;
+    margin-left: 15px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    transition-duration: 0.25s;
+}
+
+.mensagem .btn:hover {
+    opacity: 0.8;
+} 
+
+/* --------------------fim_do_Grupo_Conversa--------------------- */
+
+@media screen and (max-width: 1200px) {
+    .mensagem .form-group {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    img.avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    #pesquisar {
+        padding: 1rem;
+    }
+
+    #msgAntigas {
+        padding: 1rem;
+    }
+    #msgAntigas h5 {
+        font-size: 1.6rem;
+    }
+    #msgAntigas .scroll {
+        height: 633px;
+    }
+    
+    #conversa {
+        padding: 1rem;
+    }
+    #conversa .scroll {
+        height: 660px;
+    }
+    .mensagem {
+        padding: 1rem 0 0.5rem;
+    }
+    .mensagem .form-group {
+        width: 350px;
+    }
+    button.btn {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #pesquisar {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 2rem;
+    }
+    
+    #msgAntigas {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 1rem 1rem 2rem;
+    }
+    #msgAntigas .scroll {
+        height: 35vh;
+    }
+
+    #conversa {
+        margin-top: 30px;
+    }
+    #conversa .scroll {
+        height: 65vh;
+    }
+
+    .mensagem .form-group {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.6rem; }
+    h5 { font-size: 1.4rem; }
+
+    .bate-papo {
+        overflow: hidden;
+    }
+    
+    .form-group {
+        margin: 0;
+    }
+
+    .papo-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 60px auto 15px;
+    }
+
+    #pesquisar {
+        padding: 1.5rem;
+    }
+
+    #pesquisar .media {
+        margin-bottom: 5px;
+    }
+
+    #pesquisar input {
+        font-size: 1.4rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.4rem;
+    }
+
+    #msgAntigas {
+        display: none;
+    }
+
+    #msgAntigasMobile {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 1rem 7rem;
+        margin-top: 15px;
+        display: block;
+    }    
+    #msgAntigasMobile .media {
+        box-shadow: 0 4px 6px -6px #999999;
+        padding: 1rem 0;
+    }
+    #msgAntigasMobile .media-body {
+        margin-left: 10px;
+        align-self: center;
+    }
+    #msgAntigasMobile .scroll {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    #msgAntigasMobile a {
+        color: #282A36;
+        text-decoration: none;
+    }
+
+    #conversa {
+        display: none;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+}

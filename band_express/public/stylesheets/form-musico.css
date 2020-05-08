@@ -1,0 +1,433 @@
+/*Header e Footer está no geral.css*/
+
+.nav-container {
+    width: 80%;
+    max-width: 1030px;
+}
+
+/* --------------------------------
+        Geral - Form Músico
+-------------------------------- */
+.form-musico {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+footer {
+    width: 100%;
+}
+
+.cadastro-container {
+    width: 80%;
+    max-width: 1030px;
+    height: auto;
+    margin: 90px auto 30px!important;
+}
+
+.container {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.row.infos {
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    max-width: 1030px;
+    padding: 1.5rem 3rem 2.5rem;
+    max-width: 1030px;
+ }
+
+.card-cadastro {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+} 
+
+
+.col-xl-2,
+.col-xl-3,
+.col-xl-8,
+.col-xl-9,
+.col-lg-2,
+.col-lg-3,
+.col-lg-8,
+.col-lg-9,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-11,
+.col-sm-12{
+    padding: 0;
+}
+
+
+/* ------------------------------*/ 
+/* Formulário */
+.form-header {
+    width: 100%;
+    box-shadow: 0 4px 6px -6px #999999;
+    padding: 0rem 0rem 1rem 2.5rem;
+}
+
+
+h5 {
+    margin: 2rem 0 1.5rem;
+}
+
+.campo-form {
+    padding: 1rem 2rem;
+}
+
+.form-group.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* 
+.form-group:last-child {
+    margin-bottom: 0;
+} */
+
+.form-control {
+    color: #4C4F66;
+    padding: 0.5rem 1rem;
+}
+
+textarea.form-control,
+input.form-control{
+    font-size: 1.6rem;
+}
+
+/* --------------------início_do_Grupo_Form_Identificação--------------------- */
+
+ #linha1.form-header {
+    width: 100%;
+    box-shadow: 0 4px 6px -6px #999999;
+    padding: 0rem 0rem 1rem 0rem;
+}
+
+#primeiraLinha.card-cadastro  {
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 0 0;
+    padding: 10px 0px;
+
+} 
+
+/* --------------------------------
+ grupo do radio-box de 3 opções
+-------------------------------- */
+.radio-group{
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    box-shadow: 0px 2px 4px #999999;
+    border-radius: 10px;
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+label.custom-control-label{
+    height: 20px;
+    font-size: 12px;
+    font-weight: 900;
+    color:#495057;
+    margin: 0px;
+    padding: 4px 0px 0px 10px;
+}
+
+ /* ------------------------------*/ 
+/* estilo do radio*/
+.custom-control-label:before{
+    background-color:#F7F7F7;
+    border: none;
+    box-shadow: 0px 2px 4px #999999;
+    width: 20px;
+    height: 20px;
+} 
+  
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+    height: 20px;
+    width: 20px;
+    border: none;
+    box-shadow: 0px 2px 4px #999999;
+}
+
+.custom-control-label::after{
+    width: 20px;
+    height: 20px;
+  }
+
+#semMg.form-group.row{
+    margin-bottom: 0px;
+}
+ 
+
+/* --------------------fim_do_Grupo_Form_Identificação--------------------- */
+
+/* --------------------início_do_Grupo_Form_Informação--------------------- */
+
+#informacao {
+   margin-top: 30px;
+} 
+
+#inputSobre.form-control{
+   height: 54vh;
+}
+
+label#hability-label{
+    margin: 2rem 0 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 20px 0px 15px;
+}    
+
+/* --------------------------------
+   grupo do botão com popover 
+-------------------------------- */
+
+.popover-header{
+    font-size: 14px;
+    color: #fb3c00;
+    text-align: center;
+}
+
+.popover-body{
+    text-align: justify;
+    font-size: 14px;
+}
+
+.btn-primary {
+    width: 16px;
+    height: 16px;
+    padding: 0px 0px 0px;
+    margin: 0px 0px 5px;
+    border: 0px;
+    background: url("../img/icones/mdi_info.png") no-repeat;
+    background-color:transparent;
+    border-color: transparent;
+    overflow: hidden;
+}
+
+
+.d-inline-block{
+    cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
+}
+
+
+/* --------------------------------
+ grupo do ckeck-box de 3 opções
+-------------------------------- */
+
+.header-habilidades{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow:    0 4px 6px -6px #999999;
+    box-shadow:         0 4px 6px -6px #999999;
+} 
+
+label.form-check-label{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 900;
+    color:#495057;
+    margin: 0px;
+    padding: 0px 0px 0px 5px;
+}
+
+
+#iCanto.form-check-input,
+#iToco.form-check-input,
+#iTecnico.form-check-input{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+ input[type=checkbox]{
+    display: none;
+ }
+
+ 
+input[type=checkbox] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background-color:#F7F7F7;
+    margin-right: 10px;
+    box-shadow: 0px 2px 4px #999999;
+  }
+
+input[type=checkbox]:checked + label:before {
+    width: 18px;
+    height: 18px;
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-right: 10px;
+
+  }
+  
+/* --------------------_do_Grupo_Form_Informação-------------------- */
+
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+
+    #inputSobre.form-control{
+    height: 54vh;
+    }
+} 
+
+@media screen and (max-width: 991px) {
+
+    #inputSobre.form-control{
+        height: 91%;
+     }
+
+     label.form-check-label{
+       font-size: 10px;
+    }
+    #inputSobre.form-control{
+        height: 61vh;
+     }
+}
+
+@media screen and (max-width: 767px) {
+    .nav-container .btn {
+        height: 30px;
+    }    
+    #primeiraLinha.card-cadastro  {
+    padding: 0px 0px;
+    } 
+    label.custom-control-label{
+    padding: 4px 0px 0px 15px;
+    }
+    .form-group label {
+        margin-bottom: 1rem;
+    }
+    .form-group input {
+        margin-bottom: 1rem;
+    }
+    label.form-check-label{
+        font-size: 12px;
+     }
+     #inputSobre.form-control{
+        height: auto;
+     }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.8rem; }
+    h5 { font-size: 1.4rem; }
+
+    .nav-container {
+        width: 90%;
+    }
+    .nav-container .btn {
+        height: auto;
+        font-size: 1.2rem;
+    }
+
+    .cadastro-container {
+        width: 90%;
+        margin: 60px auto 15px !important;
+    }
+
+    h5 {
+        margin: 1.5rem 0;
+    }
+    .campo-form.card-cadastro {
+        box-shadow: none;
+        padding: 0;
+    }
+    .form-group label {
+        color: #4C4F66;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .form-group input {
+        margin-bottom: 0.5rem;
+    } 
+    .form-control {
+        color: #4C4F66;
+        padding: 0.5rem 1rem;
+    }
+
+    .radio-group{
+        height: auto;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .custom-control.custom-radio.custom-control-inline{
+        margin: 5px 0px;
+    }
+
+    .bs-popover-bottom{
+        margin-left: 2.2rem;
+    }
+
+    .popover{
+        max-width: 268px;
+    }
+
+    .header-habilidades{
+        height: auto;
+        padding: 12px 0px;
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        box-shadow: 0px 2px 4px #999999;
+        border-radius: 10px;
+        padding: 5px 12px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .form-check.form-check-inline{
+        margin: 10px 0px;
+    }
+  }

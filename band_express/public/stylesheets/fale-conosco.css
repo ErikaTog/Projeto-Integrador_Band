@@ -1,0 +1,125 @@
+/* --------------------------------
+        Geral - Fale Conosco
+-------------------------------- */
+
+.fale-conosco {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    position: initial;
+}
+
+.fale-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+    padding: 2rem 7rem;
+    margin: 30px 0;
+}
+
+.fale-container-header {
+    box-shadow: 0 4px 6px -6px #999999;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+input.form-control {
+    height: 50px;
+    padding: 1.5rem 3rem;
+}
+
+textarea.form-control {
+    padding: 1.5rem 3rem;
+}
+
+.container {
+    padding: 0;
+}
+
+.row {
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-sm-6,
+.col-sm-2 {
+    padding: 0;
+    margin: 0;
+}
+
+.col-sm-2 {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+button.btn {
+    padding: 0.5rem 3rem;
+}
+
+footer {
+    width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    input.form-control {
+        height: 40px;
+        padding: 1rem 2rem;
+    }
+    textarea.form-control {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+   
+    .fale-container {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.4rem; }
+
+    .topbar-mobile {
+        max-width: 90%;
+    }
+
+    .fale-container {
+        width: 90%;
+        padding: 1.5rem 2rem;
+        margin: 15px 0;
+    }
+    .form-group {
+        margin-top: 15px;
+    }
+    .row {
+        margin: 0;
+    }
+    .col-sm-2 {
+        margin-top: 15px;
+    }
+    button.btn {
+        font-size: 1.2rem;
+        padding: 0.5rem 3rem;
+    }
+}

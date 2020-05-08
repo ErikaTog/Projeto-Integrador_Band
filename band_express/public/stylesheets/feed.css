@@ -1,0 +1,547 @@
+/* --------------------------------
+        Geral - Feed
+-------------------------------- */
+.feed-container {
+    width: 80%;
+    max-width: 1170px;
+    height: auto;
+    margin: 90px auto;
+}
+
+.card-feed {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #999999;
+    border-radius: 10px;
+}
+
+img.mini-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.col-md-3 {
+    padding: 0;
+    position: fixed;
+}
+
+.col-md-8 {
+    padding: 0;
+    margin-left: auto;
+}
+
+/* --------------------início_do_Grupo_User_Card--------------------- */
+#userCard {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem;
+}
+
+.avatar-content {
+    display: flex;
+    justify-content: center;
+}
+
+img.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#userCard h5 {
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid #fb754b;
+}
+
+#userCard .col-lg-6 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#userCard .media {
+    width: 100%;
+    padding: 1rem 1.5rem 0 1.5rem;
+    text-align: center;
+}
+
+#userCard .media.divisoria {
+    border-right: 1px solid #fb754b;
+}
+
+#userCard .media img {
+    width: 30px;
+    align-self: center;
+}
+
+#userCard small {
+    font-size: 1.2rem;
+}
+
+#userCard a {
+    color: #4c4f66;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    display: block;
+    transition-duration: 0.25s;
+}
+
+#userCard a:hover {
+    color: #fb3c00;
+    text-decoration: none;
+}
+
+/* --------------------fim_do_Grupo_User_Card--------------------- */
+
+/* --------------------início_do_Grupo_New_User--------------------- */
+#newUser {
+    width: 100%;
+    max-width: 280px;
+    padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+    margin-top: 30px;
+}
+
+#newUser h5 {
+    text-align: center;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+#newUser .scroll {
+    height: 120px;
+    overflow-y: scroll;
+}
+
+#newUser .media {
+    margin: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#newUser .media a {
+    color: #282A36;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+#newUser .media a p {
+    padding-left: 1.5rem;
+}
+
+#newUser img.seguir {
+    width: 5rem;
+    padding: 0 1rem;
+}
+
+/* --------------------fim_do_Grupo_New_User--------------------- */
+
+/* --------------------início_do_Rodapé--------------------- */
+#rodape {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1.4rem;
+    color: #999999;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#rodape ul li a {
+    color: #999999;
+    transition-duration: 0.2s;
+}
+
+#rodape ul li a:hover {
+    color: #4c4f66;
+}
+
+/* --------------------fim_do_Rodapé--------------------- */
+
+/* --------------------início_do_Grupo_Publicar--------------------- */
+
+#publicar {
+    padding: 1rem 4.5rem;
+}
+
+#publicar h4 {
+    color: #4c4f66;
+    margin-bottom: 2.5rem;
+}
+
+.form-control {
+    color: #4c4f66;
+}
+
+.form-group textarea {
+    min-height: 118px;
+    resize: vertical;
+}
+
+.add {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition-duration: 0.25s;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload label {
+    margin: 0;
+    display: flex;
+}
+
+.image-upload img,
+.image-upload i {
+    color: #4c4f66;
+    width: 25px;
+    font-size: 25px;
+    margin-right: 1.5rem;
+    transition-duration: 0.25s;
+}
+
+.image-upload img:hover,
+.image-upload i:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.edit {
+    display: none;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    background-color: #fb3c00;
+    border-radius: 50%;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --------------------fim_do_Grupo_Publicar--------------------- */
+
+/* --------------------início_do_Grupo_Publicacao--------------------- */
+#publicacao .card-feed {
+    padding: 1.5rem 0;
+    margin-top: 30px;
+}
+
+#publicacao .media {
+    margin-left: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+#publicacao .media a {
+    color: #282A36;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+#publicacao .media h5 {
+    margin-left: 2rem;
+    align-self: center;
+}
+
+.img-public {
+    width: 100%;
+}
+
+#publicacao p {
+    text-align: justify;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 6px -6px #999999;
+}
+
+.curtir {
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.curtir a img {
+    width: 35px;
+    margin-right: 20px;
+    transition-duration: 0.2s;
+}
+
+.curtir a img:hover {
+    filter: brightness(0.8);
+}
+
+/* --------------------fim_do_Grupo_Publicacao--------------------- */
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 991px) {
+    img.avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    #userCard .media.divisoria {
+        border-right: none;
+    }
+    #userCard .media img {
+        width: 20px;
+        margin: 0 1rem;
+    }
+    #userCard .media-body {
+        display: flex;
+        align-items: center;
+    }
+    #userCard small {
+        font-size: 1.6rem;
+        padding-left: .5rem;
+    }
+
+    
+    img.mini-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    #newUser .scroll {
+        height: 150px;
+    }
+    #newUser .media-body {
+        padding-left: 1rem;
+    }
+    #newUser .media-body img {
+        width: 40px;
+    }
+
+    #rodape li:last-child {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    #publicar {
+        padding: 1rem 2.5rem;
+    }
+    
+    #publicar h4 {
+        margin-bottom: 1.5rem;
+    }
+    .form-control {
+        margin-bottom: 1.5rem;
+    }
+    
+    #publicacao .media {
+        margin-left: 2.5rem;
+    }
+    #publicacao p {
+        padding: 1.5rem 2.5rem;
+    }
+    .curtir {
+        margin-left: 2.5rem;
+    }
+    .curtir a img {
+        width: 25px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .col-md-3 {
+        position: unset;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    #rodape {
+        display: none;
+    }
+
+    #userCard {
+        max-width: 200px;
+        height: 230px;
+        margin-right: 3rem;
+    }
+
+    #newUser {
+        max-width: 100%;
+        height: 230px;
+        margin-top: 0;
+    }
+    #newUser .scroll {
+        height: 190px;
+    }
+
+    #publicar {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.2rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+
+    .feed-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 60px auto 15px;
+    }
+
+    .col-md-3 {
+        flex-wrap: wrap;
+    }
+
+    #userCard {
+        max-width: 180px;
+        height: 85px;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        margin-right: 0.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    #userCard .user-info {
+        display: flex;
+        align-self: center;
+    }
+    .avatar-content {
+        align-self: center;
+    }
+    img.avatar {
+        width: 50px;
+        height: 50px;
+    }
+    #userCard h5 {
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 50%;
+    }
+    #userCard .col-sm-12 {
+        padding-left: 1rem;
+        justify-content: flex-start;
+    }
+    #userCard .media {
+        width: auto;
+        padding: 0 0.5rem;
+    }
+    #userCard .media.divisoria {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    #userCard .media img {
+        width: 15px;
+        margin: 0 0.5rem;
+        align-self: center;
+    }
+    #userCard .media-body,
+    #userCard small {
+        font-size: 1rem;
+    }
+    #userCard a {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    img.mini-avatar {
+        width: 35px;
+        height: 35px;
+    }
+
+    #newUser {
+        width: 135px;
+        height: 85px;
+        padding: 0.5rem;
+    }
+    #newUser h5 {
+        padding-bottom: 0.2rem;
+    }
+    #newUser .scroll {
+        height: auto;
+        margin-top: 0.5rem;
+        display: flex;
+        overflow-y: unset;
+        overflow-x: scroll;
+    }
+    #newUser .media {
+        width: auto;
+        margin: 0.5rem 0 0 1rem;
+    }
+    #newUser .media a p {
+        padding-left: 1rem;
+    }
+    #newUser img.seguir {
+        width: 4rem;
+    }
+    
+    #publicar {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+    #publicar h4 {
+        margin-bottom: 1rem;
+    }
+    .form-group textarea {
+        min-height: 80px;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.4rem;
+    }
+    .add .image-upload {
+        margin-right: 1rem;
+    }
+    .image-upload label {
+        width: 20px;
+    }
+    .image-upload img,
+    .image-upload i {
+        width: 20px;
+        font-size: 20px;
+        margin-right: 1rem;
+    }
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    #publicacao .card-feed {
+        padding: 1rem 0;
+        margin-top: 15px;
+    }
+    #publicacao .media {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    #publicacao p {
+        padding: 2rem 1.5rem;
+    }
+    .curtir {
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+    }
+    .curtir a img {
+        width: 20px;
+        margin-right: 1rem;
+    }
+
+    .edit {
+        display: initial;
+    }
+}

@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+
+
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+p {
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+}
+
+
+/* --------------------------------
+            Body
+-------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #fb3c00; /*caso o background-image não carregue*/
+    background-image:url("../img/pre-cadastro-bg.jpg");
+    padding: 0;   
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* --------------------início_do_header-------------------- */
+
+header div.row {
+    height: 200px;
+    width: 100%;
+    margin: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 7rem;
+}
+
+header h1 {
+    padding-left: 1rem;
+}
+
+/* --------------------fim_do_header-------------------- */
+
+
+/* --------------------início_do_escolha-perfil-------------------- */
+#escolhaPerfil {
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -55%); 
+}
+
+#escolhaPerfil .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.col-lg-4 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+#escolhaPerfil img {
+    width: 30rem;
+}
+
+#escolhaPerfil p {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+#escolhaPerfil a:hover {
+    text-decoration: none;
+}
+/* Push */
+@-webkit-keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+@keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+.hvr-push {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+
+/* --------------------fim__do_escolha-perfil-------------------- */
+
+
+/* --------------------início_do_footer -------------------- */
+
+footer {
+    width: 100%;
+    height: 60px;
+    font-family: 400 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li {
+    padding-top: 1rem;
+}
+
+footer ul li a {
+    color: #ffffff;
+    transition: filter 0.5s;
+}
+
+footer ul li a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+/* --------------------fim_do_footer -------------------- */
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (min-width: 1441px){
+    body {
+        background-image:url("../img/pre-cadastro-bg.jpg");
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #escolhaPerfil img {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 45%;
+    }
+
+    header div.row {
+        height: 150px;
+    }
+
+    #escolhaPerfil img {
+        width: 25rem;
+    }
+    #escolhaPerfil {
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -58%); 
+    }
+
+    .col-sm-12 {
+        padding-bottom: 10px;
+    }
+    
+    footer {
+    font-size:1.94rem;
+    }
+}    
+
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size:40%;
+    }
+    #escolhaPerfil {
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+    header div.row{
+        display: flex;
+        flex-direction: column;
+    }
+    #escolhaPerfil p {
+        padding-top: 5px
+    }
+
+    .col-sm-12 {
+        padding-bottom: 10px;
+    }
+    footer {
+        font-size:2.18rem;
+        }
+}
+
+@media screen and (max-width: 567px) {
+    html {
+        font-size:62.5%;
+    }
+    h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding-top: 0px;
+    }
+    
+    header div.row {
+        height: 70px;
+        width: 100%;
+        margin: 0px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header img {
+        width: 4.2rem;
+    }
+
+    footer {
+        height: 4rem;
+        font-size: 1rem;
+    }
+
+    footer ul li {
+        padding-top: 0rem;
+    }
+
+    #escolhaPerfil {
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }    
+    #escolhaPerfil img {
+        width: 12rem;
+    }
+    #escolhaPerfil p {
+        font-size: 1.4rem;
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+    .col-sm-12{
+        padding-bottom: .5rem;
+    } 
+
+} 
+ 

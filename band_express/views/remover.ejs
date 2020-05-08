@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gerenciar</title>
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/remover.css">
+</head>
+
+<body>
+    <div class="remover">
+        <header class="fixed-top">
+            <div class="nav-container">
+                <nav class="navbar navbar-expand">
+                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                </nav>
+            </div>
+        </header>
+
+
+        <div class="remover-container">
+
+            <section id="excluirConta" class="card-remover">
+                <h4><strong>Excluir conta</strong></h4>
+                <p class="saudacao">Olá, <strong>Jane Doe</strong>.</p>
+                <p>É uma pena que você queira excluir a sua conta.</p>
+                <div class="form-group">
+                    <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
+                    <select class="form-control" id="motivoExcluir">
+                        <option class=" selected" selected disabled>Escolha...</option>
+                        <option>Uma segunda conta foi criada</option>
+                        <option>Problemas para começar</option>
+                        <option>Questões de privacidade</option>
+                        <option>Quero remover algo</option>
+                        <option>Não consigo achar pessoas para seguir</option>
+                        <option>Ocupa muito do meu tempo</option>
+                        <option>Outro motivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
+                    <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    <div class="carregar">
+                        <button type="button" class="btn btn-danger">Confirmar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <ul class="list-unstyled">
+                <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+                <li>
+                    <span class="copyright">Copyright &copy;
+                        2020 -
+                        <img src="img/icone.png" width="20">
+                        Band+ by Group 1
+                    </span>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

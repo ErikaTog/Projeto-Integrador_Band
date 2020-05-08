@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+}
+
+/* --------------------------------
+            Body
+-------------------------------- */
+
+body {
+    color: #282a36;
+    font-family: 'Poppins', sans-serif;
+    background: #F7F7F7;
+}
+
+/* --------------------------------
+            Títulos - H
+-------------------------------- */
+h1 { font-size: 4.5rem; font-weight: bold; }
+h4 { font-size: 2.2rem; font-weight: bold; }
+p { font-size: 2.0rem; font-weight: bold; }
+
+.col-md-4,
+.col-md-6,
+.col-sm-12,
+.col-4,
+.col-6 {
+    padding: 0;
+}
+
+button.btn.btn-salvar {
+    padding: 0.1rem 2rem;
+}
+
+/* --------------------começo_do_Header -------------------- */
+header{
+    height: 80px;
+}
+
+.nav-container {
+    width: 90%;
+}
+
+.navbar-brand img {
+    width: 180px;
+}
+
+nav.navbar{
+    padding: 8px 0px;
+    justify-content: space-between;
+}
+
+ul.navbar-nav{
+    padding-top: 4px;
+}
+
+
+.form-inline .form-control{
+    width: 200px;
+}
+
+.form-group input{
+    height: 40px;
+    color: #282a36;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    border: 2px solid #fb3c00;
+}
+
+::-webkit-input-placeholder{
+    font-size: 1.4rem;
+}
+
+.form-control:focus {
+    border: 2px solid #fb3c00;
+}
+
+.nav-item a{
+    color: #fb3c00;
+    font-size: 1.2rem;
+    margin-left: 290px;
+}
+
+.nav-item a:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
+
+button.mobile {
+    display: none;
+}
+
+/* ------------------------------*/ 
+/* Hamburger */
+.navbar-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: block;
+    overflow: visible;
+}
+
+.navbar-toggler {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+}
+
+.btn.btn-salvar {
+    height: 40px;
+}
+
+.btn.btn-salvar:hover,
+.btn.btn-salvar:focus,
+.btn.btn-outline-cancelar:hover,
+.btn.btn-outline-cancelar:focus {
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+}
+
+/* --------------------fim_do_Header -------------------- */
+
+/* --------------------começo_do_Carousel -------------------- */
+#carousel{
+    margin-top: 80px;
+}
+
+.container-carousel{
+    width: 100%;
+    background-color: black;
+    padding: 0px;
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+.carousel-item img{
+    height: 500px;
+}
+
+#botaoCarousel{
+    margin: 3px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------------*/ 
+/* Posição - control */
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+    position: initial;
+}
+
+.container-carousel {
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    margin-top: 80px;
+}
+
+/* --------------------fim_do_Carousel -------------------- */
+
+/* --------------------início_do_Conecte-se -------------------- */
+#conexao{
+    width: 100%;
+    margin: 40px 0px;
+}
+
+#conexao img{
+    width: 350px;
+}
+
+#conexao .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#conexao .col-lg-5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conexao h1{
+    width: 440px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* --------------------fim_do_Conecte-se -------------------- */
+
+/* --------------------início_do_Anuncie -------------------- */
+#anuncie img{
+    width: 100%;
+}
+
+#anuncie img:hover {
+    filter: brightness(125%);
+}
+/* --------------------fim_do_Anuncie -------------------- */
+
+/* --------------------início_do_Para quem -------------------- */
+#paraQuem{
+    width: 100%;
+    background-image: url(../img/pre-cadastro-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    color: white;
+    padding: 50px 0px;
+}
+
+#paraQuem h1,
+#paraQuem h4{
+    text-align: center;
+}
+
+#paraQuem h4{
+    color: #282A36;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+#paraQuem .row{
+    padding: 10px 0px;
+    margin: 0;
+}
+
+#paraQuem .col-md-3 {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#paraQuem img{
+    width: 250px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#paraQuem p{
+    color:white;
+    text-align: center;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+p.circle-banda { width: 160px; }
+p.circle-amigos { width: 150px; }
+p.circle-instr { width: 150px; }
+p.circle-prof { width: 210px; }
+
+#paraQuem a:hover{
+    text-decoration: none;
+}
+
+/* Push */
+@-webkit-keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+@keyframes hvr-push {
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+}
+.hvr-push {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+/* --------------------fim_do_Para quem -------------------- */
+
+/* --------------------------------
+            MEDIA QUERY
+-------------------------------- */
+
+@media screen and (max-width: 1199px) {
+    .nav-container {
+        width: 90%;
+    }
+
+    #paraQuem .container {
+        max-width: 100%;
+        width: 90%;
+        padding: 0;
+    }
+    #paraQuem img{
+        width: 225px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .nav-container {
+        width: 100%;
+    }
+    .navbar {
+        display: block;
+    }
+    .topbar-mobile {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .navbar-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .entrar {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar-collapse {
+        max-width: 250px;
+        background-color: #fff;
+        box-shadow: 0px 3px 3px #999999;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        margin-top: 8px;
+        margin-right: 5%;
+    }
+    .navbar-nav {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-inline .form-group {
+        margin-bottom: 10px;
+    }
+    .form-group input{
+        height: 35px;
+        margin-right: 0;
+    }
+    .form-inline button.btn.btn-outline-cancelar {
+        height: 35px;
+        margin-top: 20px;
+    }
+    .nav-item {
+        position: relative;
+    }
+    .nav-item a{
+        margin-left: 0px;
+        position: absolute;
+        bottom: 45px;
+        left: 50px;
+    }
+    button.expand {
+        display: none;
+    }
+    button.mobile {
+        display: inline-block;
+    }
+
+    .carousel-item img{
+        height: 400px;
+    }
+
+    #conexao .container {
+        max-width: 100%;
+    }
+    #conexao .row {
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    #conexao img{
+        width: 100%;
+    }
+    #conexao h1{
+        width: 100%;
+    }
+
+    #paraQuem img{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+    h1 { font-size: 4rem; }
+    h4 { font-size: 1.8rem; }
+
+    header{
+        height: 60px;
+    }    
+    .navbar-brand img {
+        width: 150px;
+    }
+    nav.navbar{
+        padding: 5px 0px;
+        justify-content: space-between;
+    }
+    .navbar-collapse {
+        margin-top: 5px;
+    }
+
+    .btn.btn-salvar {
+        height: 35px;
+    }
+
+    #carousel{
+        margin-top: 60px;
+    }
+    .carousel-item img{
+        height: 300px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 60px;
+    }
+
+    #conexao{
+        margin: 20px 0px;
+    }
+    #conexao .col-sm-12 {
+        display: flex;
+        justify-content: center;
+    }
+    #conexao img{
+        width: 300px;
+    }
+    #conexao h1{
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    #paraQuem{
+        padding: 30px 0px;
+    }
+    #paraQuem h4{
+        padding-bottom: 20px;
+    }
+    #paraQuem .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    #paraQuem .row{
+        padding: 0px;
+    }
+    #paraQuem .col-md-3 {
+        padding-bottom: 1rem;
+        display: block;
+    }
+    #paraQuem .col-md-3 a {
+        display: flex;
+        align-items: center;
+    }
+    #paraQuem .col-md-3 p {
+        text-align: left;
+        margin-left: 30px;
+    }
+    #paraQuem .col-md-3.reverse a {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #paraQuem .col-md-3.reverse p {
+        text-align: right;
+        margin-right: 30px;
+    }
+    #paraQuem img{
+        width: 180px;
+    }
+    #paraQuem p{
+        padding-top: 0;
+        text-align: initial;
+    }
+    p.circle-banda { width: 100%; }
+    p.circle-amigos { width: 100%; }
+    p.circle-instr { width: 100%; }
+    p.circle-prof { width: 100%; }
+}
+
+@media screen and (max-width: 576px) {
+    html { font-size: 62.5%; }
+    body { font-size: 1.4rem; }
+    h1 { font-size: 1.8rem; }
+    h4 { font-size: 1.4rem; }
+    p { font-size: 1.4rem; }
+
+
+    header { 
+        height: 45px; 
+    }
+    .topbar-mobile {
+        width: 90%;
+        max-width: 90%;
+    }
+    .navbar-brand img {
+        width: 100px;
+    }
+    .navbar-toggler {
+        line-height: 1.5;
+    }
+    .navbar-collapse {
+        margin-top: 2px;
+    }
+    .btn.btn-salvar {
+        height: auto;
+    }
+    .navbar-collapse {
+        max-width: 200px;
+    }
+    .form-inline .form-control{
+        width: 160px;
+    }
+    .form-group input{
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 1.2rem;
+    }    
+    .form-inline button.btn.btn-outline-cancelar {
+        height: auto;
+        margin-top: 18px;
+    }
+    .nav-item a{
+        bottom: 38px;
+        left: 25px;
+    }
+
+    button.btn {
+        font-size: 1.2rem;
+    }
+
+    #carousel{
+        margin-top: 45px;
+    }
+    .carousel-item img{
+        height: 200px;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 45px;
+    }
+    #botaoCarousel {
+        margin: 10px 0px;
+    }
+
+    #conexao{
+        margin: 30px 0px;
+    }
+    #conexao img{
+        width: 150px;
+    }
+    #conexao h1{
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    #paraQuem{
+        padding: 20px 0px;
+    }
+    #paraQuem h4{
+        width: 280px;
+        margin: 0 auto;
+    }
+    #paraQuem .container {
+        padding: 0 25px;
+    }
+    #paraQuem .col-md-3 {
+        padding-bottom: 20px;
+    }
+    #paraQuem .col-md-3 p {
+        margin-left: 20px;
+    }
+    #paraQuem .col-md-3.reverse p {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    #paraQuem img{
+        width: 110px;
+    }
+
+    footer {
+        height: 45px;
+    }
+    footer ul li {
+        padding: 2px;
+    }
+    footer img {
+        width: 15px;
+    }
+}
