@@ -409,9 +409,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Band`.`musico_has_instrumento`
+-- Table `Band`.`musico_instrumentos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Band`.`musico_has_instrumento` (
+CREATE TABLE IF NOT EXISTS `Band`.`musico_instrumentos` (
   `musico_id_musico` INT NOT NULL,
   `instrumento_id_instrumento` INT NOT NULL,
   PRIMARY KEY (`musico_id_musico`, `instrumento_id_instrumento`),
@@ -431,9 +431,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Band`.`musico_has_tecnico`
+-- Table `Band`.`musico_tecnicos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Band`.`musico_has_tecnico` (
+CREATE TABLE IF NOT EXISTS `Band`.`musico_tecnicos` (
   `musico_id_musico` INT NOT NULL,
   `tecnico_id_tecnico` INT NOT NULL,
   PRIMARY KEY (`musico_id_musico`, `tecnico_id_tecnico`),
