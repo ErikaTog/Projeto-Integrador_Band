@@ -49,17 +49,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 button.btn.btn-danger {
-    color: #fff;
-    border: 2px solid #fe0000;
-    background-color: #fe0000;
     margin-top: 20px;
     margin-left: auto;
-}
-
-button.btn.btn-danger:hover {
-    color: #fff;
-    border: 2px solid #fe0000;
-    background-color: rgba(254, 0, 0, 0.8);
 }
 
 /* --------------------fim_do_Grupo_Excluir_Conta--------------------- */

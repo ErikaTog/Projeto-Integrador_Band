@@ -233,6 +233,17 @@ button.btn.btn-cancelar-modal:hover {
     border: 2px solid #4c4f66;
 }
 
+button.btn.btn-danger {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: #fe0000;
+}
+
+button.btn.btn-danger:hover {
+    color: #fff;
+    border: 2px solid #fe0000;
+    background-color: rgba(254, 0, 0, 0.8);
+}
 
 /* --------------------------------
         Campos do Form

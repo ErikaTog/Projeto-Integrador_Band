@@ -8,4 +8,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/perfil/1', (req, res, next) => res.render('perfil-musico'));
 
+router.get('/perfil-editar/1', (req, res, next) => res.render('perfil-musico-editar'));
+
 module.exports = router;
