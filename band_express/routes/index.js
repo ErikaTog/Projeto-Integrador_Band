@@ -16,4 +16,6 @@ router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
 
 router.get('/fale-conosco', (req, res, next) => res.render('fale-conosco'));
 
+router.get('/anuncie', (req, res, next) => res.render('anuncie'));
+
 module.exports = router;
