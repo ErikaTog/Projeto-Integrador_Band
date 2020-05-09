@@ -10,6 +10,8 @@ router.get('/cadastro/2', (req, res, next) => res.render('form-banda'));
 
 router.get('/feed', (req, res, next) => res.render('feed'));
 
+router.get('/minhaRede', (req, res, next) => res.render('minhaRede'));
+
 router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
 
 router.get('/anuncie', (req, res, next) => res.render('anuncie'));
