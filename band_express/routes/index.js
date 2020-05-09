@@ -14,5 +14,6 @@ router.get('/feed', (req, res, next) => res.render('feed'));
 
 router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
 
+router.get('/fale-conosco', (req, res, next) => res.render('fale-conosco'));
 
 module.exports = router;
