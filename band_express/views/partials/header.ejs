@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perfil</title>
+    <link rel="shortcut icon" href="/img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/geral.css">
+    <link rel="stylesheet" href="/stylesheets/<%= css %>">
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="topbar-mobile">
+                    <a class="navbar-brand" href="feed.html"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
+                        
+                    <div class="navbar-icon">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
+                        </button>
+                    </div>
+                </div>
+        
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li <% if (active == "Home") { %>
+                            class="nav-item active"
+                        <% } %>
+                        > 
+                            <a class="nav-link" href="feed.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "Vagas") { %>
+                            class="nav-item active"
+                        <% } %>
+                        >
+                            <a class="nav-link" href="vagas.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <p>Vagas</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "MinhaRede") { %>
+                            class="nav-item active"
+                        <% } %>
+                        >
+                            <a class="nav-link" href="minhaRede.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p>Minha rede</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "BatePapo") { %>
+                            class="nav-item active"
+                        <% } %>
+                        > 
+                            <a class="nav-link" href="bate-papo.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <p>Bate papo</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "Anuncie") { %>
+                            class="nav-item active"
+                        <% } %>
+                        > 
+                            <a class="nav-link" href="anuncie.html">
+                                    <div class="nav-icon">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <p>Anuncie</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "Perfil") { %>
+                            class="nav-item active"
+                        <% } %>
+                        > 
+                            <a class="nav-link" href="">
+                                <div class="nav-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <p>Perfil</p>
+                            </a>
+                        </li>
+                        <li <% if (active == "Avatar") { %>
+                            class="nav-item active" id="sair"
+                        <% } %>
+                        > 
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <p>Sair</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
