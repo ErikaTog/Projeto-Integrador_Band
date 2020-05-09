@@ -106,6 +106,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+img.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 }
 
 li:hover .nav-link,
