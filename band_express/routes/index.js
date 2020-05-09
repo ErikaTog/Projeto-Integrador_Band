@@ -18,4 +18,6 @@ router.get('/fale-conosco', (req, res, next) => res.render('fale-conosco'));
 
 router.get('/cadastro/2', (req, res, next) => res.render('form-banda'));
 
+router.get('/anuncie', (req, res, next) => res.render('anuncie'));
+
 module.exports = router;
