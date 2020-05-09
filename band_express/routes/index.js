@@ -12,5 +12,7 @@ router.get('/perfil-editar/1', (req, res, next) => res.render('perfil-musico-edi
 
 router.get('/feed', (req, res, next) => res.render('feed'));
 
+router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
+
 
 module.exports = router;
