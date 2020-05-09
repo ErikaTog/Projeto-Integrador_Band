@@ -109,7 +109,7 @@ header {
     overflow: hidden;
 }
 
-img.avatar {
+img.avatar-nav {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -369,6 +369,10 @@ button.btn.btn-danger:hover {
         height: 40px;
         font-size: 2.3rem;
     }
+    img.avatar-nav {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -417,6 +421,10 @@ button.btn.btn-danger:hover {
         width: 30px;
         height: 30px;
         font-size: 1.5rem;
+    }
+    img.avatar-nav {
+        width: 30px;
+        height: 30px;
     }
     .navbar-icon {
         width: 30px;
