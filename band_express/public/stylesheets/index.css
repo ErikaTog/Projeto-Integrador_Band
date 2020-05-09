@@ -217,10 +217,10 @@ button.mobile {
 /* --------------------início_do_Para quem -------------------- */
 #paraQuem{
     width: 100%;
-    background-image: url(../img/pre-cadastro-bg.jpg);
+    background-image: url("../img/pre-cadastro-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: top center;
     color: white;
     padding: 50px 0px;
 }
