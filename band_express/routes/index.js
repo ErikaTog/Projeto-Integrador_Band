@@ -16,4 +16,6 @@ router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
 
 router.get('/fale-conosco', (req, res, next) => res.render('fale-conosco'));
 
+router.get('/cadastro/2', (req, res, next) => res.render('form-banda'));
+
 module.exports = router;

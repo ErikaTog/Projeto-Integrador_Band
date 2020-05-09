@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Banda</title>
-    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/icone.png" type="image/x-icon">
     <!-- estilo -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/form-banda.css">
+    <link rel="stylesheet" href="/stylesheets/geral.css">
+    <link rel="stylesheet" href="/stylesheets/form-banda.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
@@ -21,7 +21,7 @@
         <header>
             <div class="nav-container">
                 <nav class="navbar">
-                    <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
+                    <a class="navbar-brand" href=""><img src="/img/logo_5000x1500.png" alt="Band+"></a>
                     <a href="feed.html">
                         <button type="button" class="btn btn-salvar">Cadastrar</button>
                     </a>
@@ -174,37 +174,4 @@
             </div>
         </div>
     
-        <footer>
-            <ul class="list-unstyled mb-0">
-                <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
-                <li>
-                    <span class="copyright">Copyright &copy;
-                        2020 -
-                        <img src="img/icone.png" width="20">
-                        Band+ by Group 1
-                    </span>
-                </li>
-            </ul>
-        </footer>
-    </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-
-    <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-            container: 'body'
-        })
-    </script>
-</body>
-
-</html>
+<%- include('./partials/footer.ejs') %>
