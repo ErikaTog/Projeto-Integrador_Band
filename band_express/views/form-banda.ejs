@@ -22,9 +22,11 @@
             <div class="nav-container">
                 <nav class="navbar">
                     <a class="navbar-brand" href=""><img src="/img/logo_5000x1500.png" alt="Band+"></a>
-                    <a href="feed.html">
-                        <button type="button" class="btn btn-salvar">Cadastrar</button>
-                    </a>
+                    <form action="/cadastro/banda" method="POST">
+                        <a href="feed.html">
+                            <button type="submit" class="btn btn-salvar">Cadastrar</button>
+                        </a>
+                    </form>
                 </nav>
             </div>
         </header>
@@ -39,28 +41,29 @@
                         </div>
                         <h5>Dados do usuário</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form action="/cadastro/banda" method="POST">
                                 <div class="form-group row">
                                     <label for="inputUser" class="col-xl-2 col-lg-3 col-form-label">Usuário</label>
                                     <div class="col-xl-6 col-lg-9">
-                                        <input type="text" class="form-control" id="inputUser"
+                                        <input type="text" class="form-control" id="inputUser" name="nomeUsuario"
                                             placeholder="Digite o usuário" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-xl-2 col-lg-3 col-form-label">Senha</label>
                                     <div class="col-xl-6 col-lg-9">
-                                        <input type="password" class="form-control" id="inputPassword"
+                                        <input type="password" class="form-control" id="inputPassword" name="senhaUsuario"
                                             placeholder="6 dígitos" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
                                     <div class="col-xl-8 col-lg-9">
-                                        <input type="email" class="form-control" id="inputEmail"
+                                        <input type="email" class="form-control" id="inputEmail" name="emailUsuario"
                                             placeholder="Digite um e-mail" required>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn btn-salvar">Cadastrar</button>
                             </form>
                         </div>
                     </section>
@@ -71,7 +74,7 @@
                             <h4>Informações da banda</h4>
                         </div>
                         <h5 class="conte">Conte mais</h5>
-                        <form action="" method="POST">
+                        <form action="/cadastro/banda" method="POST">
                             <div class="form-group row">
                                 <label for="inputUser" class="col-sm-12 col-form-label"> 
                                     <h5>Gênero</h5>
@@ -101,7 +104,7 @@
                         </div>
                         <h5>Localização</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form action="/cadastro/banda" method="POST">
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
                                     <div class="col-xl-6 col-lg-9">
@@ -122,7 +125,7 @@
     
                         <h5>Contatos</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form action="/cadastro/banda" method="POST">
                                 <div class="form-group row">
                                     <label for="inputSite" class="col-xl-2 col-lg-3 col-form-label">Site</label>
                                     <div class="col-xl-8 col-lg-9">
@@ -149,7 +152,7 @@
     
                         <h5>Integrantes</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form action="/cadastro/banda" method="POST">
                                 <div class="form-group row">
                                     <label for="inputMembro" class="col-xl-2 col-lg-3 col-form-label">Usuário</label>
                                     <div class="col-xl-8 col-lg-8">

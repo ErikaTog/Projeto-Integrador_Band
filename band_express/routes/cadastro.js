@@ -7,8 +7,9 @@ const cadastroController = require('../controllers/CadastroController');
 /* GET pre-cadastro. */
 router.get('/', cadastroController.pre);
 
-/* GET/PoST cadastro-banda. */
+/* GET/POST cadastro-banda. */
 router.get('/banda', cadastroController.formBanda)
+router.post('/banda', cadastroController.saveBanda)
 
 
 module.exports = router;
