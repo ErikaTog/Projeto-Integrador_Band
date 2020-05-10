@@ -71,7 +71,7 @@
 
 .feed-recomendados-conteudo .card-contato{
     margin: 0px 8px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .feed-recomendados-conteudo h4{
@@ -155,7 +155,7 @@
 }
 
 .feed-contatos-conteudo .card-contato{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* --------------------------------
@@ -404,10 +404,9 @@ button.btn:focus{
     .feed-contatos{
         padding-top: 0px;
     }
-    
-    .feed-contatos .card-contato {
-        margin-bottom: 0px;
-        margin-top: 55px;
+
+    .radio-group{
+        margin-bottom: 70px;
     }
 
     .card-contato img.contato-img {
