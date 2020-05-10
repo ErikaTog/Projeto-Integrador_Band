@@ -54,6 +54,23 @@ const Musico = (sequelize, DataTypes) => {
         }
     );
 
+    musico.associate = models => {
+        musico.belongsTo(models.Usuario, { 
+            foreignKey: 'id_usuario', 
+            as: 'usuario'
+        });
+        musico.belongsToMany(models.Instrumento, { 
+            through: 'musico_instrumentos', 
+            foreignKey: 'id_musico',
+            as: 'instrumentos'
+        });
+        musico.belongsToMany(models.Tecnico, { 
+            through: 'musico_tecnicos', 
+            foreignKey: 'id_musico',
+            as: 'tecnicos'
+        });
+    };
+
     return musico;
 };
 

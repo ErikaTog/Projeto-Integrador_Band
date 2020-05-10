@@ -18,6 +18,12 @@ const Tecnico = (sequelize, DataTypes) => {
         }
     );
 
+    tecnico.belongsToMany(models.Musico, { 
+        through: 'musico_tecnicos', 
+        foreignKey: 'id_tecnico',
+        as: 'musicos'
+    });
+
     return tecnico;
 };
 
