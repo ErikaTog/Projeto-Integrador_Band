@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.publicarVaga{
+.publicar-vaga{
     width: 80%;
     height: auto;
     max-width: 1170px;
@@ -36,8 +36,8 @@
     margin: 30px 0px;
 }
 
-.pesquisarVaga,
-.feedVagas{
+.pesquisar-vaga,
+.feed-vagas{
     width: 100%;
     height: auto;
     max-width: 1170px;
@@ -47,7 +47,7 @@
 }
 
 .formulario-nova-vaga,
-.feedVagas-conteudo{
+.feed-vagas-conteudo{
     width: 90%;
     max-width: 1028px;
     display: flex;
@@ -58,7 +58,7 @@
     padding: 20px 0px 20px 0px;
 }
 
-.feedVagas-conteudo{
+.feed-vagas-conteudo{
     padding: 0px;
 }
 
@@ -73,7 +73,7 @@
     padding-top: 5px;
 }
 
-.mesmaLinha{
+.form-buscar-vaga{
     margin: 20px 0px 0px 0px;
     display: flex;
 }
@@ -83,26 +83,26 @@
     margin-left: 10px;
 }
 
-.publicarVaga:focus,
-.pesquisarVaga:focus,
-.conteudoMinhaVaga:focus{
+.publicar-vaga:focus,
+.pesquisar-vaga:focus,
+.conteudo-minha-vaga:focus{
     outline: none;
 }
 
 /* --------------------------------
          Feed vagas
 -------------------------------- */
-.feedVagas{
+.feed-vagas{
     font-size: 1.6rem;
     margin-bottom: 30px;
 }
 
-.feedVagas-conteudo{
+.feed-vagas-conteudo{
     flex-wrap: wrap;
 }
 
-.conteudoMinhaVaga,
-.conteudoVaga{
+.conteudo-minha-vaga,
+.conteudo-vaga{
     max-width: 48.64%;
     min-width: 300px;
     min-height: 200px;
@@ -117,16 +117,16 @@
     justify-content: space-between;
 }
 
-.conteudoVaga a{
+.conteudo-vaga a{
     color: #fb3c00;
 }
 
-.conteudoVaga a:hover{
+.conteudo-vaga a:hover{
     color: #282a36;
     text-decoration: none;
 }
 
-.feedVagas-conteudo .botao{
+.feed-vagas-conteudo .botao{
     width: 100%;
 }
 
@@ -163,6 +163,10 @@
     border-radius: 10px;
     box-shadow: 0px 2px 4px #999999;
     border: 1px solid #ced4da;
+}
+
+.form-control#textareaDescricaoVaga{
+    height: auto;
 }
 
 /* --------------------------------
@@ -283,7 +287,7 @@ button.btn:focus{
     margin-top: 0px;
 }
 
-.mesmaLinha button{
+.form-buscar-vaga button{
     margin-top: 0px;
     margin-left: 10px
 }
@@ -297,13 +301,13 @@ button.btn:focus{
         font-size: 58%;
     }
 
-    .publicarVaga, 
-    .pesquisarVaga,
-    .feedVagas{
+    .publicar-vaga, 
+    .pesquisar-vaga,
+    .feed-vagas{
         margin: 25px 0px 0px 0px;
     }
 
-    .feedVagas{
+    .feed-vagas{
         margin-bottom: 25px;
     }
 
@@ -325,14 +329,14 @@ button.btn:focus{
 } 
 
 @media screen and (max-width: 860px) {
-    .feedVagas-conteudo{
+    .feed-vagas-conteudo{
         display: flex;
         flex-direction: column;
         align-items: center;
     }   
 
-    .conteudoMinhaVaga,
-    .conteudoVaga{
+    .conteudo-minha-vaga,
+    .conteudo-vaga{
         max-width: 90%;
         min-height: 140px;
     }
@@ -344,13 +348,13 @@ button.btn:focus{
         font-size: 53%; 
     }
 
-    .publicarVaga, 
-    .pesquisarVaga,
-    .feedVagas{
+    .publicar-vaga, 
+    .pesquisar-vaga,
+    .feed-vagas{
         margin: 20px 0px 0px 0px;
     }
 
-    .feedVagas{
+    .feed-vagas{
         margin-bottom: 20px;
     }
 
@@ -378,7 +382,7 @@ button.btn:focus{
         margin-top: 44.69px;
     }
 
-    .publicarVaga,
+    .publicar-vaga,
     .feed{
         width: 90%;
         margin: 15px 0px 0px 0px;
@@ -388,12 +392,12 @@ button.btn:focus{
         margin-bottom: 15px;
     }
 
-    .pesquisarVaga,
-    .feedVagas{
+    .pesquisar-vaga,
+    .feed-vagas{
         margin: 0px;
     }
 
-    .feedVagas{
+    .feed-vagas{
         margin-bottom: 15px;
     }
 
@@ -402,13 +406,13 @@ button.btn:focus{
         flex-direction: column; 
     }
 
-    .mesmaLinha{
+    .form-buscar-vaga{
         margin: 0px;
         display: flex;
         flex-direction: column;
     }
 
-    .mesmaLinha :nth-child(n){
+    .form-buscar-vaga :nth-child(n){
         margin-bottom: 7px;
         margin-left: 0px;
     }
@@ -451,8 +455,8 @@ button.btn:focus{
         margin-top: 10px;
     }
 
-    .conteudoMinhaVaga,
-    .conteudoVaga{
+    .conteudo-minha-vaga,
+    .conteudo-vaga{
         min-width: 200px;
     }
 
