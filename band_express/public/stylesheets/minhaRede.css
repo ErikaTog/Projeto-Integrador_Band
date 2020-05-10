@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.feedRecomendados{
+.feed-recomendados{
     width: 80%;
     height: auto;
     max-width: 1170px;
@@ -38,8 +38,8 @@
     margin: 30px 0px;
 }
 
-.pesquisarContatos,
-.feedContatos{
+.pesquisar-contatos,
+.feed-contatos{
     width: 100%;
     font-size: 1.6rem;
     margin: 30px 0px 0px 0px;
@@ -47,15 +47,15 @@
     justify-content: center;
 }
 
-.feedContatos{
+.feed-contatos{
     margin-bottom: 30px;
 }
 
 /* --------------------------------
          Feed contatos
 -------------------------------- */
-.feedContatos-conteudo,
-.feedRecomendados-conteudo{
+.feed-contatos-conteudo,
+.feed-recomendados-conteudo{
     width: 90%;
     max-width: 1028px;
     display: flex;
@@ -69,21 +69,21 @@
     flex-wrap: nowrap;
 }
 
-.feedRecomendados-conteudo .cardContato{
+.feed-recomendados-conteudo .card-contato{
     margin: 0px 8px;
     margin-bottom: 5px;
 }
 
-.feedRecomendados-conteudo h4{
+.feed-recomendados-conteudo h4{
     width: 100%;
     margin-bottom: 10px;
 }
 
-.feedRecomendados-conteudo .nomeContato{
+.feed-recomendados-conteudo .nome-contato{
     width: 130px;
 }
 
-.feedRecomendados-conteudo .cardContato img.contatoimg {
+.feed-recomendados-conteudo .card-contato img.contato-img {
     width: 130px;
     height: 130px
 }
@@ -117,14 +117,14 @@
     flex-direction: column;
 }
 
-.mesmaLinha{
+.form-buscar-vaga{
     display: flex;
 }
 
 /* --------------------------------
          Card Contato
 -------------------------------- */
-.cardContato {
+.card-contato {
     margin: 0 auto;
     padding: 0px 5px;
     display: flex;
@@ -132,7 +132,7 @@
     align-items: center;
 }
 
-.nomeContato{
+.nome-contato{
     width: 170px;
     height: 30px;
     border-radius: 10px;
@@ -144,24 +144,24 @@
     align-items: center;
 }
 
-.nomeContato a{
+.nome-contato a{
     font-weight: 700;
     color: #11173d; 
 }
 
-.nomeContato a:hover{
+.nome-contato a:hover{
     text-decoration: none;
     color: #fb3c00;
 }
 
-.feedContatos-conteudo .cardContato{
+.feed-contatos-conteudo .card-contato{
     margin-bottom: 10px;
 }
 
 /* --------------------------------
          Img contato
 -------------------------------- */
-.cardContato img.contatoimg {
+.card-contato img.contato-img {
     width: 170px;
     height: 170px;
     background-color: #E5E5E5;
@@ -235,7 +235,7 @@ button.btn:focus{
     box-shadow: none;
 }
 
-.mesmaLinha button{
+.form-buscar-vaga button{
     margin-top: 0px;
     margin-left: 10px
 }
@@ -253,7 +253,7 @@ button.btn:focus{
     margin-top: 0px;
 }
 
-.feedContatos-conteudo .botao{
+.feed-contatos-conteudo .botao{
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -268,13 +268,13 @@ button.btn:focus{
         font-size: 58%;
     }
 
-    .pesquisarContatos,
-    .feedContatos,
-    .feedRecomendados{
+    .pesquisar-contatos,
+    .feed-contatos,
+    .feed-recomendados{
         margin: 25px 0px 0px 0px;
     }
 
-    .feedContatos{
+    .feed-contatos{
         margin-bottom: 25px;
     }
 
@@ -291,10 +291,10 @@ button.btn:focus{
         padding: 2px 10px;
     }
 
-    .nomeContato{
+    .nome-contato{
         width: 150px;
     }
-    .cardContato img.contatoimg {
+    .card-contato img.contato-img {
         width: 150px;
         height: 150px;
     }
@@ -310,13 +310,13 @@ button.btn:focus{
         font-size: 53%; 
     }
 
-    .pesquisarContatos,
-    .feedContatos,
-    .feedRecomendados{
+    .pesquisar-contatos,
+    .feed-contatos,
+    .feed-recomendados{
         margin: 20px 0px 0px 0px;
     }
 
-    .feedContatos{
+    .feed-contatos{
         margin-bottom: 20px;
     }
 
@@ -325,11 +325,11 @@ button.btn:focus{
         height: 40px;
     }
 
-    .nomeContato{
+    .nome-contato{
         width: 140px;
     }
 
-    .cardContato img.contatoimg {
+    .card-contato img.contato-img {
         width: 140px;
         height: 140px;
     }
@@ -358,7 +358,7 @@ button.btn:focus{
         margin-top: 44.69px;
     }
 
-    .feedRecomendados,
+    .feed-recomendados,
     .feed{
         width: 90%;
         margin: 15px 0px 0px 0px;
@@ -368,11 +368,11 @@ button.btn:focus{
         margin-bottom: 15px;
     }
 
-    .pesquisarContatos{
+    .pesquisar-contatos{
         margin-top: 15px;
     }
 
-    .feedContatos{
+    .feed-contatos{
         margin: 0px;
         margin-bottom: 15px;
     }
@@ -397,20 +397,20 @@ button.btn:focus{
         padding: 5px 15px;
     }
 
-    .nomeContato{
+    .nome-contato{
         width: 130px;
     }
 
-    .feedContatos{
+    .feed-contatos{
         padding-top: 0px;
     }
     
-    .feedContatos .cardContato {
+    .feed-contatos .card-contato {
         margin-bottom: 0px;
         margin-top: 55px;
     }
 
-    .cardContato img.contatoimg {
+    .card-contato img.contato-img {
         width: 130px;
         height: 130px
     }
