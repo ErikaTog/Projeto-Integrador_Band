@@ -308,7 +308,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Band`.`banda_integrantes` (
   `id_banda` INT NOT NULL,
   `id_integrantes` INT NOT NULL,
-  `função` VARCHAR(50) NOT NULL,
+  `funcao` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id_banda`, `id_integrantes`),
   INDEX `fk_banda_has_integrantes_integrantes1_idx` (`id_integrantes` ASC) VISIBLE,
   INDEX `fk_banda_has_integrantes_banda1_idx` (`id_banda` ASC) VISIBLE,
@@ -412,18 +412,18 @@ ENGINE = InnoDB;
 -- Table `Band`.`musico_instrumentos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Band`.`musico_instrumentos` (
-  `musico_id_musico` INT NOT NULL,
-  `instrumento_id_instrumento` INT NOT NULL,
-  PRIMARY KEY (`musico_id_musico`, `instrumento_id_instrumento`),
-  INDEX `fk_musico_has_instrumento_instrumento1_idx` (`instrumento_id_instrumento` ASC) VISIBLE,
-  INDEX `fk_musico_has_instrumento_musico1_idx` (`musico_id_musico` ASC) VISIBLE,
+  `id_musico` INT NOT NULL,
+  `id_instrumento` INT NOT NULL,
+  PRIMARY KEY (`id_musico`, `id_instrumento`),
+  INDEX `fk_musico_has_instrumento_instrumento1_idx` (`id_instrumento` ASC) VISIBLE,
+  INDEX `fk_musico_has_instrumento_musico1_idx` (`id_musico` ASC) VISIBLE,
   CONSTRAINT `fk_musico_has_instrumento_musico1`
-    FOREIGN KEY (`musico_id_musico`)
+    FOREIGN KEY (`id_musico`)
     REFERENCES `Band`.`musico` (`id_musico`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_musico_has_instrumento_instrumento1`
-    FOREIGN KEY (`instrumento_id_instrumento`)
+    FOREIGN KEY (`id_instrumento`)
     REFERENCES `Band`.`instrumento` (`id_instrumento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -434,18 +434,18 @@ ENGINE = InnoDB;
 -- Table `Band`.`musico_tecnicos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Band`.`musico_tecnicos` (
-  `musico_id_musico` INT NOT NULL,
-  `tecnico_id_tecnico` INT NOT NULL,
-  PRIMARY KEY (`musico_id_musico`, `tecnico_id_tecnico`),
-  INDEX `fk_musico_has_tecnico_tecnico1_idx` (`tecnico_id_tecnico` ASC) VISIBLE,
-  INDEX `fk_musico_has_tecnico_musico1_idx` (`musico_id_musico` ASC) VISIBLE,
+  `id_musico` INT NOT NULL,
+  `id_tecnico` INT NOT NULL,
+  PRIMARY KEY (`id_musico`, `id_tecnico`),
+  INDEX `fk_musico_has_tecnico_tecnico1_idx` (`id_tecnico` ASC) VISIBLE,
+  INDEX `fk_musico_has_tecnico_musico1_idx` (`id_musico` ASC) VISIBLE,
   CONSTRAINT `fk_musico_has_tecnico_musico1`
-    FOREIGN KEY (`musico_id_musico`)
+    FOREIGN KEY (`id_musico`)
     REFERENCES `Band`.`musico` (`id_musico`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_musico_has_tecnico_tecnico1`
-    FOREIGN KEY (`tecnico_id_tecnico`)
+    FOREIGN KEY (`id_tecnico`)
     REFERENCES `Band`.`tecnico` (`id_tecnico`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
