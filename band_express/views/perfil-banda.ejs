@@ -1,127 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Perfil</title>
-    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
-    <!-- estilo -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/perfil-banda.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
-</head>
-
-<body>
-    <header>
-            <div class="nav-container">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="topbar-mobile">
-                        <a class="navbar-brand" href=""><img src="img/logo_5000x1500.png" alt="Band+"></a>
-                        
-                        <div class="navbar-icon">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>            
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="feed.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-home"></i>
-                                    </div>
-                                    <p>Início</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="vagas.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-handshake"></i>
-                                    </div>
-                                    <p>Vagas</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="minhaRede.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <p>Minha rede</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="bate-papo.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-comment-dots"></i>
-                                    </div>
-                                    <p>Bate papo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="anuncie.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-bullhorn"></i>
-                                    </div>
-                                    <p>Anuncie</p>
-                                </a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <p>Perfil</p>
-                                </a>
-                            </li>
-                            <li class="nav-item" id="sair">
-                                <a class="nav-link" href="index.html">
-                                    <div class="nav-icon">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                    </div>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-    </header>
+<%- include('./partials/header.ejs', { active: "Perfil" , css: "perfil-banda.css"}) %>
 
     <div class="perfil-container">
 
         <!-- Grupo Head -->
         <section id="head" class="card-perfil">
             <div class="head-fundo">
-                <img class="wallpaper" src="img/teste/fundo-banda.jpg" alt="Foto de fundo">
+                <img class="wallpaper" src="/img/teste/fundo-banda.jpg" alt="Foto de fundo">
             </div>
 
             <div class="avatar-content">
-                <img class="avatar" src="img/teste/new_user4.png" alt="Foto de Perfil">
+                <img class="avatar" src="/img/teste/new_user4.png" alt="Foto de Perfil">
             </div>
 
             <div class="info-user">
                 <h3><strong>Os farofeiros</strong></h3>
                 <div class="info-user-status">
                     <div class="media">
-                        <img src="img/teste/icon_star.svg">
+                        <img src="/img/teste/icon_star.svg">
                         <p>Seguidores: 98M</p>
                     </div>
                      
                     <div class="media">
-                        <img src="img/teste/icon_headset.svg">
+                        <img src="/img/teste/icon_headset.svg">
                         <p>Seguindo: 200</p>
                     </div>
                      
                     <div class="media">
-                        <img src="img/teste/icon_genero.svg">
+                        <img src="/img/teste/icon_genero.svg">
                         <p>Gênero: Rock</p>
                     </div>
                     
@@ -193,7 +98,7 @@
                     <div class="scroll">
                         <div class="item row">
                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="img/teste/new_user2.png" class="mr-3" alt="Foto-Usuário"></div>
+                                <div class="container-img"><img src="/img/teste/new_user2.png" class="mr-3" alt="Foto-Usuário"></div>
                                 
                                 <div class= "media-body">
                                     <h5 class="mt-0">Jhon Doe</h5>
@@ -201,28 +106,28 @@
                                 </div>
                             </div>
                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="img/teste/usuario_pimentinha.jpeg" class="mr-3" alt="Foto-Usuário"></div>
+                                <div class="container-img"><img src="/img/teste/usuario_pimentinha.jpeg" class="mr-3" alt="Foto-Usuário"></div>
                                 <div class= "media-body">
                                     <h5 class="mt-0">Paty Pimentinha</h5>
                                     <p>Baterista</p>
                                 </div>
                             </div>   
                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="img/teste/usuario_jim.jpeg" class="mr-3" alt="Foto-Usuário"></div>
+                                <div class="container-img"><img src="/img/teste/usuario_jim.jpeg" class="mr-3" alt="Foto-Usuário"></div>
                                 <div class= "media-body">
                                     <h5 class="mt-0">Jim Wine</h5>
                                     <p>Guitarrista solo</p>
                                 </div> 
                             </div> 
                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="img/teste/usuario_jack.jpeg" class="mr-3" alt="Foto-Usuário"></div>
+                                <div class="container-img"><img src="/img/teste/usuario_jack.jpeg" class="mr-3" alt="Foto-Usuário"></div>
                                 <div class= "media-body">
                                     <h5 class="mt-0">Jack Mars</h5>
                                     <p>Guitarrista</p>
                                 </div>
                             </div>    
                              <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="img/teste/usuario_math.jpg" class="mr-3" alt="Foto-Usuário"></div>
+                                <div class="container-img"><img src="/img/teste/usuario_math.jpg" class="mr-3" alt="Foto-Usuário"></div>
                                 <div class= "media-body">
                                     <h5 class="mt-0">Math Soul</h5>
                                     <p>Baixo</p>
@@ -236,19 +141,19 @@
                 <section id="infos" class="card-perfil col-lg-5 col-md-12">
                     <h4><strong>+ Infos</strong></h4>
                     <div class="infos-item media">
-                        <img src="img/icones/pin-01.png" alt="Local">
+                        <img src="/img/icones/pin-01.png" alt="Local">
                         <p>São Paulo / SP</p>
                     </div>
                     <div class="infos-item media">
-                        <img src="img/icones/site-01.png" alt="Site">
+                        <img src="/img/icones/site-01.png" alt="Site">
                         <p>https://lorem.ipsum</p>
                     </div>
                     <div class="infos-item media">
-                        <img src="img/icones/canal-01.png" alt="Canal">
+                        <img src="/img/icones/canal-01.png" alt="Canal">
                         <p>Os Farofeiros</p>
                     </div>
                     <div class="infos-item media">
-                        <img src="img/icones/email-01.png" alt="Email">
+                        <img src="/img/icones/email-01.png" alt="Email">
                         <p>osfarofeirosband@email.com</p>
                     </div>
                 </section>
@@ -261,8 +166,8 @@
             <div class="row">
                 <div class="musica-item col-xl-6 col-sm-12">
                     <video controls>
-                        <source src="video/video1.mp4" type="video/mp4">
-                        <source src="video/video1.ogg" type="video/ogg">
+                        <source src="/video/video1.mp4" type="video/mp4">
+                        <source src="/video/video1.ogg" type="video/ogg">
                         <p>Seu browser não suporta este recurso</p>
                     </video>
                     <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
@@ -276,8 +181,8 @@
                 <div class="musica-item col-xl-6 col-sm-12">
                     <div class="player">
                         <audio controls>
-                            <source src="video/audio1.mp3" type="audio/mpeg">
-                            <source src="video/audio1.ogg" type="audio/ogg">
+                            <source src="/video/audio1.mp3" type="audio/mpeg">
+                            <source src="/video/audio1.ogg" type="audio/ogg">
                             <p>Seu browser não suporta este recurso</p>
                         </audio>
                     </div>
@@ -291,8 +196,8 @@
                 <div class="musica-item col-xl-6 col-sm-12">
                     <div class="player">
                         <audio controls>
-                            <source src="video/audio2.mp3" type="audio/mpeg">
-                            <source src="video/audio2.ogg" type="audio/ogg">
+                            <source src="/video/audio2.mp3" type="audio/mpeg">
+                            <source src="/video/audio2.ogg" type="audio/ogg">
                             <p>Seu browser não suporta este recurso</p>
                         </audio>
                     </div>
@@ -309,21 +214,6 @@
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <ul class="list-unstyled mb-0">
-            <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
-            <li>
-                <span class="copyright">Copyright &copy;
-                    2020 -
-                    <img src="img/icone.png" width="20">
-                    Band+ by Group 1
-                </span>
-            </li>
-        </ul>
-    </footer>
-
 
     <!-- Modal -->
     <!-- Aterar Senha -->
@@ -369,15 +259,4 @@
         </div>
     </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
-</body>
-
-</html>
+<%- include('./partials/footer.ejs') %>
