@@ -1,6 +1,6 @@
 const Banda = (sequelize, DataTypes) => {
-    const banda = sequelize.define('Banda', {
-        
+     const banda = sequelize.define('Banda', {
+
         id_banda: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -44,8 +44,15 @@ const Banda = (sequelize, DataTypes) => {
         tableName: "banda",
         timestamps: false
     });
+   
+    banda.associate = (listaDeModelos) => {
+        banda.belongsTo(listaDeModelos.Usuario,{
+            foreignKey: 'id_usuario',
+            as: 'usuariobanda'
+        })
+    };
 
     return banda;
-};
+}
 
 module.exports = Banda;
