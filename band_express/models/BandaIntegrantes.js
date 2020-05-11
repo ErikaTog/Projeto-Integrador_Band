@@ -4,13 +4,11 @@ const BandaIntegrantes = (sequelize, DataTypes) => {
         id_banda: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
         id_integrantes: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
             allowNull: false
         },
         funcao: {
