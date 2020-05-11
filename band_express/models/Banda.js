@@ -50,6 +50,11 @@ const Banda = (sequelize, DataTypes) => {
             foreignKey: 'id_usuario',
             as: 'usuariobanda'
         })
+        banda.belongsToMany(listaDeModelos.Integrante, {
+            foreignKey: 'id_integrantes',
+            as: 'bandaintegrantes',
+            through: listaDeModelos.BandaIntegrantes
+        })
     };
 
     return banda;
