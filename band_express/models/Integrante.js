@@ -21,8 +21,13 @@ const Integrante = (sequelize, DataTypes) => {
             foreignKey: 'id_usuario',
             as: 'usuariointegrante'
         })
-    }
 
+        integrante.belongsToMany(listaDeModelos.Banda, {
+            foreignKey: 'id_banda',
+            through: listaDeModelos.BandaIntegrantes,
+            as: 'integrantesbanda'  
+        })
+    }    
 
     return integrante;
 };
