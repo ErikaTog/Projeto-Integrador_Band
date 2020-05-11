@@ -2,12 +2,12 @@ const MusicoInstrumento = (sequelize, DataTypes) => {
     let musico_instrumento = sequelize.define(
         'MusicoInstrumento', 
         {
-            musico_id_musico: {
+            id_musico: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 allowNull: false
             },
-            instrumento_id_instrumento: {
+            id_instrumento: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 allowNull: false

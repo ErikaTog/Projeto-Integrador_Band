@@ -18,6 +18,14 @@ const Instrumento = (sequelize, DataTypes) => {
         }
     );
 
+    instrumento.associate = models => {
+        instrumento.belongsToMany(models.Musico, { 
+            through: 'musico_instrumentos', 
+            foreignKey: 'id_instrumento',
+            as: 'musicos'
+        });
+    }
+
     return instrumento;
 };
 

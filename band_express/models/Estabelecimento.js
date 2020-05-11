@@ -1,19 +1,19 @@
-const Musico = (sequelize, DataTypes) => {
-    let musico = sequelize.define(
-        'Musico', 
+const Estabelecimento = (sequelize, DataTypes) => {
+    let estabelecimento = sequelize.define(
+        'Estabelecimento', 
         {
-            id_musico: {
+            id_estab: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
                 allowNull: false
             },
-            sexo: {
+            categoria: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
             sobre: {
-                type: DataTypes.TEXT,
+                type: DataTypes.STRING,
                 allowNull: true
             },
             estado: {
@@ -28,19 +28,15 @@ const Musico = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            canal: {
+            email: {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            canto: {
-                type: DataTypes.BOOLEAN,
+            telefone: {
+                type: DataTypes.STRING,
                 allowNull: true
             },
-            toco: {
-                type: DataTypes.BOOLEAN,
-                allowNull: true
-            },
-            tecnico: {
+            funcionamento: {
                 type: DataTypes.BOOLEAN,
                 allowNull: true
             },
@@ -49,29 +45,11 @@ const Musico = (sequelize, DataTypes) => {
                 allowNull: false
             }
         }, {
-            tableName: "musico",
+            tableName: "estabelecimento",
             timestamps: false
-        }
-    );
+        })
 
-    musico.associate = models => {
-        musico.belongsTo(models.Usuario, { 
-            foreignKey: 'id_usuario', 
-            as: 'usuario'
-        });
-        musico.belongsToMany(models.Instrumento, { 
-            through: 'musico_instrumentos', 
-            foreignKey: 'id_musico',
-            as: 'instrumentos'
-        });
-        musico.belongsToMany(models.Tecnico, { 
-            through: 'musico_tecnicos', 
-            foreignKey: 'id_musico',
-            as: 'tecnicos'
-        });
-    };
-
-    return musico;
+    return estabelecimento;
 };
 
-module.exports = Musico;
+module.exports = Estabelecimento;
