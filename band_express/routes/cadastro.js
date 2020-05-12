@@ -11,5 +11,4 @@ router.get('/', cadastroController.pre);
 router.get('/banda', cadastroController.formBanda)
 router.post('/banda', cadastroController.saveBanda)
 
-
 module.exports = router;
