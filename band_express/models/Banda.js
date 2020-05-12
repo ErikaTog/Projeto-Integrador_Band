@@ -60,4 +60,4 @@ const Banda = (sequelize, DataTypes) => {
     return banda;
 }
 
-module.exports = Banda;
+module.exports = Banda;  
