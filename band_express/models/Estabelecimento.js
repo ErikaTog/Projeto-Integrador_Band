@@ -47,7 +47,21 @@ const Estabelecimento = (sequelize, DataTypes) => {
         }, {
             tableName: "estabelecimento",
             timestamps: false
-        })
+        }
+    );
+
+    estabelecimento.associate = (models) => {
+        estabelecimento.belongsTo(models.Usuario, {
+            foreignKey:'id_usuario',
+            as:'usuario'
+        });
+        estabelecimento.belongsToMany(models.Funcionamento, { 
+            through: 'funcionamento', 
+            foreignKey: 'id_estab',
+            as: 'funcionamento'
+        });
+    };
+
 
     return estabelecimento;
 };
