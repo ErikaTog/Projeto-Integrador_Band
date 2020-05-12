@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.createTable(
       'tipos_perfil', 
       { 
-        id_tipos_usuario: {
+        id_tipos_perfil: {
           type: Sequelize.INTEGER,
           allowNull: false,
           primaryKey: true,
