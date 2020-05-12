@@ -27,7 +27,15 @@ const Funcionamento = (sequelize, DataTypes) => {
         }, {
             tableName: "funcionamento",
             timestamps: false
-        })
+        }
+    );
+    funcionamento.associate = (models) => {
+        funcionamento.belongsTo(models.Estabelecimento, { 
+            through: 'estabelecimento', 
+            foreignKey: 'id_estab',
+            as: 'id_estab'
+        });
+    }
 
     return funcionamento;
 };
