@@ -58,7 +58,7 @@ const Estabelecimento = (sequelize, DataTypes) => {
         estabelecimento.belongsToMany(models.Funcionamento, { 
             through: 'funcionamento', 
             foreignKey: 'id_estab',
-            as: 'funcionamento'
+            as: 'funcionamentoEstab'
         });
     };
 
