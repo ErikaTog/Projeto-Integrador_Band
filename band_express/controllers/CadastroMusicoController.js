@@ -5,9 +5,11 @@ const cadastroMuicoController = {
         return res.render('form-musico');
     },
     saveMusician: (req, res) => {
-        Musico.create({
+        console.log(req.body);
+
+        // Musico.create({
             
-        })
+        // })
     }
 }
 
