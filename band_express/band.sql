@@ -99,12 +99,11 @@ CREATE TABLE IF NOT EXISTS `Band`.`estabelecimento` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
+- -----------------------------------------------------
 -- Table `Band`.`banda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Band`.`banda` (
   `id_banda` INT NOT NULL AUTO_INCREMENT,
-  `id_usuario` INT NOT NULL,
   `genero` VARCHAR(100) NULL,
   `sobre` VARCHAR(2200) NULL,
   `estado` VARCHAR(2) NOT NULL,
@@ -112,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `Band`.`banda` (
   `site` VARCHAR(200) NULL,
   `canal` VARCHAR(200) NULL,
   `email` VARCHAR(200) NULL,
+  `id_usuario` INT NOT NULL,
   INDEX `fk_usuario_banda_usuario1_idx` (`id_usuario` ASC) VISIBLE,
   PRIMARY KEY (`id_banda`),
   CONSTRAINT `fk_usuario_banda_usuario1`
@@ -121,21 +121,6 @@ CREATE TABLE IF NOT EXISTS `Band`.`banda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `Band`.`integrantes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Band`.`integrantes` (
-  `id_integrantes` INT NOT NULL AUTO_INCREMENT,
-  `id_usuario` INT NOT NULL,
-  PRIMARY KEY (`id_integrantes`),
-  INDEX `fk_integrantes_usuarios1_idx` (`id_usuario` ASC) VISIBLE,
-  CONSTRAINT `fk_integrantes_usuarios1`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `Band`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -307,19 +292,19 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Band`.`banda_integrantes` (
   `id_banda` INT NOT NULL,
-  `id_integrantes` INT NOT NULL,
+  `id_integrante` INT NOT NULL,
   `funcao` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_banda`, `id_integrantes`),
-  INDEX `fk_banda_has_integrantes_integrantes1_idx` (`id_integrantes` ASC) VISIBLE,
-  INDEX `fk_banda_has_integrantes_banda1_idx` (`id_banda` ASC) VISIBLE,
-  CONSTRAINT `fk_banda_has_integrantes_banda1`
+  INDEX `fk_banda_integrantes_banda1_idx` (`id_banda` ASC) VISIBLE,
+  INDEX `fk_banda_integrantes_usuario1_idx` (`id_integrante` ASC) VISIBLE,
+  PRIMARY KEY (`id_banda`, `id_integrante`),
+  CONSTRAINT `fk_banda_integrantes_banda1`
     FOREIGN KEY (`id_banda`)
     REFERENCES `Band`.`banda` (`id_banda`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_banda_has_integrantes_integrantes1`
-    FOREIGN KEY (`id_integrantes`)
-    REFERENCES `Band`.`integrantes` (`id_integrantes`)
+  CONSTRAINT `fk_banda_integrantes_usuario1`
+    FOREIGN KEY (`id_integrante`)
+    REFERENCES `Band`.`usuario` (`id_usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

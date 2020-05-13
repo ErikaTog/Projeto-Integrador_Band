@@ -9,8 +9,8 @@
     <!-- estilo -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/geral.css">
-    <link rel="stylesheet" href="/css/form-musico.css">
+    <link rel="stylesheet" href="/stylesheets/geral.css">
+    <link rel="stylesheet" href="/stylesheets/form-musico.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
         integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
@@ -22,9 +22,9 @@
             <div class="nav-container">
                 <nav class="navbar">
                     <a class="navbar-brand" href="#"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
-                    <a href="feed.html">
-                        <button type="button" class="btn btn-salvar">Cadastrar</button>
-                    </a>
+                    <form action="/feed">
+                        <button type="submit" class="btn btn-salvar" onclick="submitForms()">Cadastrar</button>
+                    </form>
                 </nav>
             </div>
         </header>
@@ -40,12 +40,12 @@
 
                 <div class="col-md-6 col-sm-12">
                     <!-- COLUNA ESQ [LINHA 1] -->
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Usuário</h5>
-                        <form action="" method="POST">
+                        <form method="POST" id="form1">
                             <div class="form-group">
                                 <div class="col-md-8 col-sm-12">
-                                    <input type="text" class="form-control" id="inputUser"
+                                    <input name="user" type="text" class="form-control" id="inputUser"
                                         placeholder="Digite o usuário" required>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <h5>Senha</h5>
                             <div class="form-group">
                                 <div class="col-md-8 col-sm-12">
-                                    <input type="password" class="form-control" id="inputPassword"
+                                    <input name="password" type="password" class="form-control" id="inputPassword"
                                         placeholder="Senha de 6 dígitos" required>
                                 </div>
                             </div>
@@ -64,13 +64,13 @@
 
                 <div class="col-md-6 col-sm-12">
                     <!-- COLUNA DIR [LINHA 1] -->
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                         <h5>E-mail</h5>
-                        <form action="" method="POST">
+                        <form method="POST" id="form2">
                             <div class="form-group">
 
                                 <div class="col-sm-12">
-                                    <input type="emal" class="form-control" name="senha" id="iEmail" maxlength="50"
+                                    <input type="email" class="form-control" name="email" id="iEmail" maxlength="50"
                                         placeholder="Digite um e-mail válido" required="required">
                                 </div>
                             </div>
@@ -79,18 +79,18 @@
                                 <div class="col-sm-12">
                                     <div class="radio-group">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" name="sexo" id="iFem"
-                                                value="Feminino" checked="checked">
+                                            <input type="radio" class="custom-control-input" name="gender" id="iFem"
+                                                value="F" checked="checked">
                                             <label class="custom-control-label" for="iFem">Feminino</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" name="sexo" id="iMasc"
-                                                value="Masculino">
+                                            <input type="radio" class="custom-control-input" name="gender" id="iMasc"
+                                                value="M">
                                             <label class="custom-control-label" for="iMasc">Masculino</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" name="sexo" id="iOutro"
-                                                value="Outro">
+                                            <input type="radio" class="custom-control-input" name="gender" id="iOutro"
+                                                value="O">
                                             <label class="custom-control-label" for="iOutro">Outro</label>
                                         </div>
                                     </div>
@@ -110,12 +110,12 @@
                 </div>
 
                 <div class="col-md-7 col-sm-12"> <!-- COLUNA ESQ [LINHA 2] -->
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Sobre mim</h5>
-                        <form action="" method="POST">
+                        <form method="POST" id="form3">
                             <div class="form-group">
                                 <div class="col-md-11 col-sm-12">
-                                    <textarea class="form-control" name="sobre" id="inputSobre" rows="10"
+                                    <textarea name="bio" class="form-control" id="inputSobre" rows="10"
                                         placeholder="Conte mais sobre você!"></textarea>
                                 </div>
                             </div>
@@ -125,21 +125,21 @@
 
                 <div class="col-md-5 col-sm-12">  <!-- COLUNA DIR [LINHA 2] -->
 
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Localização</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form method="POST" id="form4">
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-2 col-form-label">Estado</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input type="text" class="form-control" name="estado" id="iEstado" size="30"
+                                        <input name="estado" type="text" class="form-control" id="iEstado" size="30"
                                         maxlength="30" placeholder="Digite seu estado" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputCidade" class="col-xl-2 col-lg-2 col-form-label">Cidade</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input type="text" class="form-control" name="cidade" id="iCidade" size="30"
+                                        <input name="cidade" type="text" class="form-control" id="iCidade" size="30"
                                         maxlength="30" placeholder="Digite sua cidade" required="required">
                                     </div>
                                 </div>
@@ -148,21 +148,21 @@
                     </div>
 
 
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Contatos</h5>
                         <div class="campo-form card-cadastro">
-                            <form action="" method="POST">
+                            <form method="POST" id="form5">
                                 <div class="form-group row">
                                     <label for="inputSite" class="col-xl-2 col-lg-2 col-form-label">Site</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input type="text" class="form-control" id="inputSite"
+                                        <input name="site" type="text" class="form-control" id="inputSite"
                                             placeholder="Digite seu site">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputCanal" class="col-xl-2 col-lg-2 col-form-label">Canal</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input type="text" class="form-control" name="canal" id="inputCanal" size="30"
+                                        <input name="canal" type="text" class="form-control" id="inputCanal" size="30"
                                         maxlength="30" placeholder="Digite seu canal">
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                         </div>
                     </div>
 
-                    <div class="campo-form card-cadastro" id="primeiraLinha">
+                    <div class="campo-form card-cadastro primeiraLinha">
                             <div id="hability-box">
                                 <label id="hability-label" for="group">Habilidades</label>
                                 <span class="d-inline-block" data-toggle="popover" data-placement="bottom" disabled title="Acesse seu perfil" data-content="Após o cadastro, acesse seu perfil e inclua mais habilidades. Lá você também encontra opções para deixar seu perfil ainda mais atrativo!">
@@ -180,45 +180,45 @@
                             </div>
                         <div class="campo-form card-cadastro">                                                     
                                    
-                                    <div class="habilidades-group">
-                                        <form action="" method="POST" class="form-area">
-                                            <div class="header-habilidades">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="canto" id="iCanto"
-                                                        value="option1">
-                                                    <label class="form-check-label" for="iCanto"><span></span>Canto</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="toco" id="iToco"
-                                                        value="option2">
-                                                    <label class="form-check-label" for="iToco"><span></span>Toco</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" name="tecnico" id="iTecnico"
-                                                        value="option3">
-                                                    <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
-                                                </div>
-        
-                                            </div>
-                                        </form>
-                                        <form action="" method="POST" class="form-area">                                           
-                                            <div class="form-group row">
-                                                <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
-                                                <div class="col-xl-8 col-lg-8">
-                                                    <input type="text" class="form-control" name="instrumento" id="inputInstrumento" size="30"
-                                                    maxlength="30" placeholder="Digite o instrumento">
-                                                </div>
-                                            </div>
+                            <div class="habilidades-group">
+                                <form method="POST" class="form-area" id="form6">
+                                    <div class="header-habilidades">
+                                        <div class="form-check form-check-inline">
+                                            <input name="canto" class="form-check-input" type="checkbox" id="iCanto"
+                                                value="1">
+                                            <label class="form-check-label" for="iCanto"><span></span>Canto</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="toco" class="form-check-input" type="checkbox" id="iToco"
+                                                value="1">
+                                            <label class="form-check-label" for="iToco"><span></span>Toco</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="tecnico" class="form-check-input" type="checkbox" id="iTecnico"
+                                                value="1">
+                                            <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
+                                        </div>
 
-                                            <div class="form-group row" id="semMg">
-                                                <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
-                                                <div class="col-xl-8 col-lg-8">
-                                                    <input type="text" class="form-control" name="tecnico" id="inputTecnico" size="30"
-                                                    maxlength="30" placeholder="Digite a habilidade">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>                               
+                                    </div>
+                                </form>
+                                <form method="POST" class="form-area" id="form7">                                           
+                                    <div class="form-group row">
+                                        <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
+                                        <div class="col-xl-8 col-lg-8">
+                                            <input name="instrument" type="text" class="form-control" id="inputInstrumento" size="30"
+                                            maxlength="30" placeholder="Digite o instrumento">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row" id="semMg">
+                                        <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
+                                        <div class="col-xl-8 col-lg-8">
+                                            <input name="technicalSkill" type="text" class="form-control" id="inputTecnico" size="30"
+                                            maxlength="30" placeholder="Digite a habilidade">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                               
                                            
                         </div>
                     </div>
@@ -259,6 +259,7 @@
             container: 'body'
         })
     </script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

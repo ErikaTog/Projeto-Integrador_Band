@@ -18,7 +18,7 @@ const Tecnico = (sequelize, DataTypes) => {
         }
     );
 
-    instrumento.associate = models => {
+    tecnico.associate = models => {
         tecnico.belongsToMany(models.Musico, { 
             through: 'musico_tecnicos', 
             foreignKey: 'id_tecnico',

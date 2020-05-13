@@ -1,7 +1,5 @@
 const Usuario = (sequelize, DataTypes) => {
-    let usuario = sequelize.define(
-        'Usuario', 
-        {
+    let usuario = sequelize.define('Usuario', {
             id_usuario: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
@@ -49,8 +47,15 @@ const Usuario = (sequelize, DataTypes) => {
         }, {
             tableName: "usuario",
             timestamps: false
-        })
+        });
 
+    usuario.associate = (listaDeModelos) => {
+        usuario.hasOne(listaDeModelos.Banda,{
+            foreignKey: 'id_banda',
+            as: 'usuarioBanda'
+        })
+    };
+    
     return usuario;
 };
 

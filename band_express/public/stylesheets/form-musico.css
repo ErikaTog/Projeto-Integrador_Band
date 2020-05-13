@@ -127,7 +127,7 @@ input.form-control{
     padding: 0rem 0rem 1rem 0rem;
 }
 
-#primeiraLinha.card-cadastro  {
+.primeiraLinha.card-cadastro  {
     width: 100%;
     background-color: transparent;
     box-shadow: 0 0 0;
@@ -335,7 +335,7 @@ input[type=checkbox]:checked + label:before {
     .nav-container .btn {
         height: 30px;
     }    
-    #primeiraLinha.card-cadastro  {
+    .primeiraLinha.card-cadastro  {
     padding: 0px 0px;
     } 
     label.custom-control-label{
