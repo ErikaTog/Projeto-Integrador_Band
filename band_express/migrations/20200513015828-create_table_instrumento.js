@@ -3,22 +3,23 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'tipos_perfil', 
+      'instrumento', 
       { 
-        id_tipos_perfil: {
+        id_instrumento: {
           type: Sequelize.INTEGER,
           allowNull: false,
           primaryKey: true,
           autoIncrement: true
         },
-        tipo: {
-          type: Sequelize.STRING(45),
-          allowNull: false
+        instrumento: {
+          type: Sequelize.STRING(100),
+          allowNull: false,
+          unique: true
         }
       });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('tipos_perfil');
+      return queryInterface.dropTable('instrumento');
   }
 };
