@@ -17,14 +17,12 @@
 </head>
 
 <body>
-    <div class="form-musico">
+    <form class="form-musico" method="POST" action="/feed">
         <header>
             <div class="nav-container">
                 <nav class="navbar">
                     <a class="navbar-brand" href="#"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
-                    <form action="/feed">
-                        <button type="submit" class="btn btn-salvar" onclick="submitForms()">Cadastrar</button>
-                    </form>
+                    <button type="submit" class="btn btn-salvar">Cadastrar</button>
                 </nav>
             </div>
         </header>
@@ -42,7 +40,7 @@
                     <!-- COLUNA ESQ [LINHA 1] -->
                     <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Usuário</h5>
-                        <form method="POST" id="form1">
+                        <div>
                             <div class="form-group">
                                 <div class="col-md-8 col-sm-12">
                                     <input name="user" type="text" class="form-control" id="inputUser"
@@ -57,7 +55,7 @@
                                         placeholder="Senha de 6 dígitos" required>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
 
@@ -66,7 +64,7 @@
                     <!-- COLUNA DIR [LINHA 1] -->
                     <div class="campo-form card-cadastro primeiraLinha">
                         <h5>E-mail</h5>
-                        <form method="POST" id="form2">
+                        <div>
                             <div class="form-group">
 
                                 <div class="col-sm-12">
@@ -112,14 +110,14 @@
                 <div class="col-md-7 col-sm-12"> <!-- COLUNA ESQ [LINHA 2] -->
                     <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Sobre mim</h5>
-                        <form method="POST" id="form3">
+                        <div>
                             <div class="form-group">
                                 <div class="col-md-11 col-sm-12">
                                     <textarea name="bio" class="form-control" id="inputSobre" rows="10"
                                         placeholder="Conte mais sobre você!"></textarea>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
 
@@ -128,7 +126,7 @@
                     <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Localização</h5>
                         <div class="campo-form card-cadastro">
-                            <form method="POST" id="form4">
+                            <div>
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-2 col-form-label">Estado</label>
                                     <div class="col-xl-9 col-lg-9">
@@ -143,7 +141,7 @@
                                         maxlength="30" placeholder="Digite sua cidade" required="required">
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -151,7 +149,7 @@
                     <div class="campo-form card-cadastro primeiraLinha">
                         <h5>Contatos</h5>
                         <div class="campo-form card-cadastro">
-                            <form method="POST" id="form5">
+                            <div>
                                 <div class="form-group row">
                                     <label for="inputSite" class="col-xl-2 col-lg-2 col-form-label">Site</label>
                                     <div class="col-xl-9 col-lg-9">
@@ -166,8 +164,7 @@
                                         maxlength="30" placeholder="Digite seu canal">
                                     </div>
                                 </div>
-                                
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -181,7 +178,7 @@
                         <div class="campo-form card-cadastro">                                                     
                                    
                             <div class="habilidades-group">
-                                <form method="POST" class="form-area" id="form6">
+                                <div class="form-area">
                                     <div class="header-habilidades">
                                         <div class="form-check form-check-inline">
                                             <input name="canto" class="form-check-input" type="checkbox" id="iCanto"
@@ -200,8 +197,8 @@
                                         </div>
 
                                     </div>
-                                </form>
-                                <form method="POST" class="form-area" id="form7">                                           
+                                </div>
+                                <div class="form-area">                                           
                                     <div class="form-group row">
                                         <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
                                         <div class="col-xl-8 col-lg-8">
@@ -217,7 +214,7 @@
                                             maxlength="30" placeholder="Digite a habilidade">
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>                               
                                            
                         </div>
@@ -241,7 +238,7 @@
                 </li>
             </ul>
         </footer>
-    </div>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -259,7 +256,6 @@
             container: 'body'
         })
     </script>
-    <script src="/js/app.js"></script>
 </body>
 
 </html>

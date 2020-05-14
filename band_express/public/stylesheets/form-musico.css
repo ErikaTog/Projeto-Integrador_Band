@@ -9,7 +9,7 @@
         Geral - Form Músico
 -------------------------------- */
 .form-musico {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +25,7 @@ footer {
     width: 80%;
     max-width: 1030px;
     height: auto;
-    margin: 90px auto 30px!important;
+    margin: 90px auto 30px;
 }
 
 .container {
@@ -38,13 +38,12 @@ footer {
 
 .row.infos {
     width: 100%;
+    max-width: 1030px;
     margin: 0;
     background-color: #fff;
     box-shadow: 0 2px 4px #999999;
     border-radius: 10px;
-    max-width: 1030px;
     padding: 1.5rem 3rem 2.5rem;
-    max-width: 1030px;
  }
 
 .card-cadastro {
