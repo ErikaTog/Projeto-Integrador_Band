@@ -26,6 +26,14 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.DATE,
                 allowNull: false
             },
+            id_estado: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+            id_cidade: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
             admin: {
                 type: DataTypes.BOOLEAN,
                 allowNull: false
@@ -42,14 +50,34 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            perfil_id_perfil: {
+            id_tipos_perfil: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             }
         }, {
             tableName: "usuario",
             timestamps: false
+        }
+    );
+
+    usuario.associate = models => {
+        usuario.belongsTo(models.TiposPerfil, {
+            foreignKey: 'id_tipos_perfil', 
+            as: 'tipo_perfil'
+        });
+        usuario.belongsTo(models.Estado, {
+            foreignKey: 'id_estado', 
+            as: 'estado'
+        });
+        usuario.belongsTo(models.Cidade, {
+            foreignKey: 'id_cidade', 
+            as: 'cidade'
+        });
+        usuario.hasOne(models.Musico, {
+            foreignKey: 'id_usuario', 
+            as: 'musico'
         })
+    };
 
     return usuario;
 };
