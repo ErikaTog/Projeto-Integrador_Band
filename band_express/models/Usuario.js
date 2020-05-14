@@ -50,10 +50,12 @@ const Usuario = (sequelize, DataTypes) => {
     });
 
     usuario.associate = (listaDeModelos) => {
-        usuario.hasOne(listaDeModelos.Banda, {
+        usuario.hasOne(listaDeModelos.Banda, { 
+            foreignKey: 'id_usuario',
             as: 'usuarioBanda'
         })
         usuario.hasMany(listaDeModelos.BandaIntegrantes, {
+            foreignKey:  'id_integrante',
             as: 'usuarioIntegrantes'
         })
     };
