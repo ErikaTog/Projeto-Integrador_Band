@@ -10,6 +10,7 @@ const Instrumento = (sequelize, DataTypes) => {
             },
             instrumento: {
                 type: DataTypes.STRING,
+                unique: true,
                 allowNull: false
             }
         }, {
