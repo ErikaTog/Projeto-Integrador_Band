@@ -9,7 +9,6 @@ module.exports = {
           sobre: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsum rem quae ea aperiam alias molestiae architecto cumque, possimus neque.',
           site: 'www.',
           canal: 'youtube',
-          canto: 0,
           toco: 1,
           tecnico: 1,
           id_usuario: 2,
@@ -31,7 +30,6 @@ module.exports = {
           canal: 'channelJohn',
           canto: 1,
           toco: 1,
-          tecnico: 0,
           id_usuario: 5,
         }
       ], {});
