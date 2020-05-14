@@ -21,7 +21,7 @@ const BandaIntegrantes = (sequelize, DataTypes) => {
     });
 
     bandaIntegrantes.associate = (listaDeModelos) => {
-        bandaIntegrantes.belongsTo(listaDeModelos.Usuario,{
+        bandaIntegrantes.belongsTo(listaDeModelos.Usuario,{ 
             foreignKey:  'id_integrante',
             as: 'integrantesUsuario'
         })
