@@ -76,7 +76,13 @@ const Usuario = (sequelize, DataTypes) => {
         usuario.hasOne(models.Musico, {
             foreignKey: 'id_usuario', 
             as: 'musico'
-        })
+        }); 
+        usuario.hasOne(listaDeModelos.Banda, {
+            as: 'usuarioBanda'
+        });
+        usuario.hasMany(listaDeModelos.BandaIntegrantes, {
+            as: 'usuarioIntegrantes'
+        });
     };
 
     return usuario;

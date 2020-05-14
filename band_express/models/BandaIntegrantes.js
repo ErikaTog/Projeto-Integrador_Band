@@ -6,7 +6,7 @@ const BandaIntegrantes = (sequelize, DataTypes) => {
             primaryKey: true,
             allowNull: false
         },
-        id_integrantes: {
+        id_integrante: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false
@@ -19,6 +19,18 @@ const BandaIntegrantes = (sequelize, DataTypes) => {
         tableName: "banda_integrantes",
         timestamps: false
     });
+
+    bandaIntegrantes.associate = (listaDeModelos) => {
+        bandaIntegrantes.belongsTo(listaDeModelos.Usuario,{
+            foreignKey:  'id_integrante',
+            as: 'integrantesUsuario'
+        })
+        bandaIntegrantes.belongsTo(listaDeModelos.Banda,{
+            foreignKey: 'id_banda',
+            as: 'integrantesBanda'
+        })
+    };
+
 
     return bandaIntegrantes;
 };

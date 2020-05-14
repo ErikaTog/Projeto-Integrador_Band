@@ -6,14 +6,34 @@ module.exports = {
       'musico', [
         {
           sexo: 'F',
-          email: 'kinha@gmail.com',
-          senha: bcrypt.hashSync('123456', 10),
-          data_cadastro: new Date(),
-          id_estado: 26,
-          id_cidade: 5284,
-          admin: 1,
-          id_tipos_perfil: 2,
+          sobre: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsum rem quae ea aperiam alias molestiae architecto cumque, possimus neque.',
+          site: 'www.',
+          canal: 'youtube',
+          canto: 0,
+          toco: 1,
+          tecnico: 1,
+          id_usuario: 2,
         },
+        {
+          sexo: 'O',
+          sobre: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsum rem quae ea aperiam alias molestiae architecto cumque, possimus neque.',
+          site: 'www.Jane.com',
+          canal: 'channelJane',
+          canto: 1,
+          toco: 1,
+          tecnico: 1,
+          id_usuario: 4,
+        },
+        {
+          sexo: 'M',
+          sobre: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsum rem quae ea aperiam alias molestiae architecto cumque, possimus neque.',
+          site: 'www.John.com',
+          canal: 'channelJohn',
+          canto: 1,
+          toco: 1,
+          tecnico: 0,
+          id_usuario: 5,
+        }
       ], {});
   },
 

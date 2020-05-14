@@ -12,7 +12,7 @@ module.exports = {
           },
           {
             tipo: 'Estabelecimento'
-          }
+          } 
         ], {});
   },
 
