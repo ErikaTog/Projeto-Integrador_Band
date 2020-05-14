@@ -51,6 +51,7 @@ const Banda = (sequelize, DataTypes) => {
             as: 'bandaUsuario'
         })
         banda.hasMany(listaDeModelos.BandaIntegrantes, {
+            foreignKey: 'id_banda',
             as: 'bandaIntegrantes'
         })
 
