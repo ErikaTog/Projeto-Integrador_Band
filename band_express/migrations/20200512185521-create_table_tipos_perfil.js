@@ -9,7 +9,7 @@ module.exports = {
           type: Sequelize.INTEGER,
           allowNull: false,
           primaryKey: true,
-          autoIncrement: true
+          autoIncrement: false
         },
         tipo: {
           type: Sequelize.STRING(45),

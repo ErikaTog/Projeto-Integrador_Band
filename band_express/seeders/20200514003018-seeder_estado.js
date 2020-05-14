@@ -3,86 +3,114 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'estado', [{
-          uf: 'AC'
+      'estado', [
+        {
+          id_estado: 1,
+          uf: "AC"
         },
         {
-          uf: 'AL'
+          id_estado: 2,
+          uf: "AL"
         },
         {
-          uf: 'AM'
+          id_estado: 3,
+          uf: "AM"
         },
         {
-          uf: 'AP'
+          id_estado: 4,
+          uf: "AP"
         },
         {
-          uf: 'BA'
+          id_estado: 5,
+          uf: "BA"
         },
         {
-          uf: 'CE'
+          id_estado: 6,
+          uf: "CE"
         },
         {
-          uf: 'DF'
+          id_estado: 7,
+          uf: "DF"
         },
         {
-          uf: 'ES'
+          id_estado: 8,
+          uf: "ES"
         },
         {
-          uf: 'GO'
+          id_estado: 9,
+          uf: "GO"
         },
         {
-          uf: 'MA'
+          id_estado: 10,
+          uf: "MA"
         },
         {
-          uf: 'MG'
+          id_estado: 11,
+          uf: "MG"
         },
         {
-          uf: 'MS'
+          id_estado: 12,
+          uf: "MS"
         },
         {
-          uf: 'MT'
+          id_estado: 13,
+          uf: "MT"
         },
         {
-          uf: 'PA'
+          id_estado: 14,
+          uf: "PA"
         },
         {
-          uf: 'PB'
+          id_estado: 15,
+          uf: "PB"
         },
         {
-          uf: 'PE'
+          id_estado: 16,
+          uf: "PE"
         },
         {
-          uf: 'PI'
+          id_estado: 17,
+          uf: "PI"
         },
         {
-          uf: 'PR'
+          id_estado: 18,
+          uf: "PR"
         },
         {
-          uf: 'RJ'
+          id_estado: 19,
+          uf: "RJ"
         },
         {
-          uf: 'RN'
+          id_estado: 20,
+          uf: "RN"
         },
         {
-          uf: 'RO'
+          id_estado: 21,
+          uf: "RO"
         },
         {
-          uf: 'RR'
+          id_estado: 22,
+          uf: "RR"
         },
         {
-          uf: 'RS'
+          id_estado: 23,
+          uf: "RS"
         },
         {
-          uf: 'SC'
+          id_estado: 24,
+          uf: "SC"
         },
         {
-          uf: 'SE'
+          id_estado: 25,
+          uf: "SE"
         },
         {
-          uf: 'SP'
+          id_estado: 26,
+          uf: "SP"
         },
         {
-          uf: 'TO'
+          id_estado: 27,
+          uf: "TO"
         }
       ], {});
   },

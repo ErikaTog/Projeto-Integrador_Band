@@ -12,12 +12,12 @@ module.exports = {
           autoIncrement: true
         },
         nome: {
-            type: Sequelize.STRING(200),
+            type: Sequelize.STRING(100),
             allowNull: false,
             unique: true
         },
         email: {
-            type: Sequelize.STRING(200),
+            type: Sequelize.STRING(100),
             allowNull: false,
             unique: true
         },
