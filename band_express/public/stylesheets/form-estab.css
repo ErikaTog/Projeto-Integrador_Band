@@ -185,6 +185,7 @@ h5 {
     .campo-form {
         padding: 1rem;
     }
+    
     .form-group label {
         margin-right: 0;
     }
@@ -192,13 +193,16 @@ h5 {
     .col-xl-3{
         margin-left: 6px;
     }   
+
     .add-funcionamento a {
         font-size: 1.5rem;
     }
+
    .add-funcionamento {
         top: 18px;
         right: 6px;
     }
+
     .col-lg-3{
         margin-left: 0px;
     }
@@ -208,6 +212,7 @@ h5 {
     #inputFechamento{
        padding:0px 0px 0px;
     } 
+
     .a.col-lg-3{
         margin:0px 0px 0px 6px;
     }
@@ -217,41 +222,53 @@ h5 {
     .nav-container .btn {
         height: 30px;
     }  
+
     .nav-container {
         width: 80%;
     }
+
     .form-group label {
         margin-bottom: 1rem;
     }
+    
     .form-group input {
         margin-bottom: 1rem;
     }
+
     #identificacao {
         padding: 1.5rem 2.5rem 2rem;
     }
+
     #informacao {
         padding: 1.5rem 2.5rem 2rem;
     }
+
     #informacao .form-group label, 
     #informacao .form-group input {
         margin-bottom: 0;
     }
+
     #dados {
         padding: 1.5rem 2.5rem 2rem;
     }
+
     .add-funcionamento {
         top: 38px;
         right: 15px;
     }
+
     .add-funcionamento a {
         font-size: 2.3rem;
     }
+
      #inputFuncionamento{
         margin-bottom: 10px;
     }
+
     .a.col-lg-3{
         margin:0px 0px 0px 0px;
     }
+
     .a.col-md-5{
         margin:0px 3px 0px 0px;
     } 
@@ -263,20 +280,25 @@ h5 {
         width: 100%;
         max-width: 100%;
     }
+
     #informacao {
         width: 100%;
         max-width: 100%;
     }
+
     #dados {
         margin-top: 30px;
         max-width: 100%;
     }
+
     #inputFuncionamento{
         margin-bottom: 0px;
     }
+
     .a.col-sm-3{
         margin: 0px 0px 0px 15px
     }
+
     .add-funcionamento {
         top: 15px;
         right: 15px;
@@ -296,6 +318,7 @@ h5 {
     .nav-container {
         width: 90%;
     }
+
     .nav-container .btn {
         height: auto;
         font-size: 1.2rem;
@@ -310,17 +333,21 @@ h5 {
         box-shadow: none;
         padding: 0;
     }
+
     .form-group label {
         color: #4C4F66;
         font-weight: bold;
         margin-bottom: 0.5rem;
     }
+
     .form-group input {
         margin-bottom: 0.5rem;
     } 
+
     #informacao .form-group label{
         margin-bottom: 0.5rem;
     }
+
     .form-control {
         color: #4C4F66;
         font-size: 1rem;
@@ -335,15 +362,19 @@ h5 {
         padding: 1.5rem;
         margin-top: 15px;
     }
+
     #informacao .form-header {
         margin-bottom: 15px;
     }
+
     h5 {
         margin: 1.5rem 0;
     }
+
     .remove-conte {
         display: initial;
     } 
+
     #informacao .form-group h5 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
@@ -353,6 +384,7 @@ h5 {
         padding: 1.5rem;
         margin-top: 15px;
     }
+
     #dados .campo-form {
         margin-bottom: 0.5rem;
     }
@@ -360,10 +392,12 @@ h5 {
     .add-funcionamento a {
         font-size: 1.5rem;
     }
+
    .add-funcionamento {
         top: 0px;
         right: 5px;
     }
+
      #inputFuncionamento{
         margin-top: 20px;
         margin-bottom: 10px;
@@ -372,20 +406,24 @@ h5 {
     #inputAbertura, 
     #inputFechamento{
         margin-bottom: 10px;
-        co
     }
+
     .a.col-md-5{
         margin:0px 3px 0px 0px;
     }
+
     #h5{
         margin-bottom: 0px;
     }
+
     footer {
         height: 45px;
     }
+
     footer ul li {
         padding: 2px;
     }
+
     footer img {
         width: 15px;
     }
