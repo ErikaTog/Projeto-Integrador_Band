@@ -16,14 +16,6 @@ const Estabelecimento = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            estado: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            cidade: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
             site: {
                 type: DataTypes.STRING,
                 allowNull: true
