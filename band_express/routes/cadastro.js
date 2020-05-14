@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const cadastroController = require('../controllers/CadastroController');
+const cadastroController = require('../controllers/CadastroBandaController');
 const cadastroMusicoController = require('../controllers/CadastroMusicoController');
 const cadastroEstabController = require('../controllers/CadastroEstabController');
 
