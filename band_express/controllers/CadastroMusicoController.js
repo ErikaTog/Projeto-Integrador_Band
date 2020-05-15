@@ -6,10 +6,10 @@ const cadastroMuicoController = {
         return res.render('form-musico');
     },
     saveMusician: async (req, res) => {
-        let { user, password, email, gender, bio, estado, cidade, site, canal, canto, toco, tecnico, instrument, techinicalSkill } = req.body;
+        let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
         // console.log(user, password, email, gender, bio, estado, cidade, site, canal, canto, toco, tecnico, instrument, techinicalSkill)
         
-        password = bcrypt.hashSync(password, 10);
+        senha = bcrypt.hashSync(senha, 10);
         
         // Buscando o id da Cidade e do Estado na tabela cidade
         const findIdCidade = await Cidade.findOne({ where: { nome: cidade } })
@@ -19,36 +19,26 @@ const cadastroMuicoController = {
 
         // Inserindo informação na tabela usuario   
         const dadosUsuario = await Usuario.create({
-            nome: user,
-            email: email,
-            senha: password,
+            nome,
+            email,
+            senha,
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
             id_tipos_perfil: 1
         })
-        
 
-        // const findIdUsuario = await Usuario.findOne({
-        //     where: {
-        //         nome: user
-        //     }
-        // })
-
-        // const idUsuario = findIdUsuario.dataValues.id_usuario;
-
-        // inserindo dados complementares na tabela músico
-        // const dadosMusico = await Musico.create({
-        //     sexo: gender,
-        //     sobre: bio,
-        //     site: site,
-        //     canal: canal,
-        //     canto: canto,
-        //     toco: toco,
-        //     tecnico: tecnico,
-        //     id_usuario: idUsuario
-        // });
-
+        // Inserindo dados complementares na tabela músico
+        const dadosMusico = await Musico.create({
+            sexo,
+            sobre,
+            site,
+            canal,
+            canto,
+            toco,
+            tecnico,
+            id_usuario: dadosUsuario.id_usuario
+        });
 
         res.redirect('/feed');
     }
