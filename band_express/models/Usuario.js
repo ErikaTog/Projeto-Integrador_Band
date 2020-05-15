@@ -85,6 +85,10 @@ const Usuario = (sequelize, DataTypes) => {
             foreignKey: 'id_integrante',
             as: 'usuarioIntegrantes'
         });
+        usuario.hasOne(models.Estabelecimento, { 
+            foreignKey: 'id_usuario',
+            as: 'usuarioEstab'
+        });
 
     };
 
