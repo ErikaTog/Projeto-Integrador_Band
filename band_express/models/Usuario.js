@@ -36,6 +36,7 @@ const Usuario = (sequelize, DataTypes) => {
             },
             admin: {
                 type: DataTypes.BOOLEAN,
+                defaultValue: '0',
                 allowNull: false
             },
             avatar: {
