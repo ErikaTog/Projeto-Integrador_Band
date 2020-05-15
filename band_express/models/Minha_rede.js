@@ -22,12 +22,12 @@ const Minha_rede = (sequelize, DataTypes) => {
         }
     );
 
-    musico.associate = models => {
-        musico.belongsTo(models.Usuario, { 
+    minha_rede.associate = models => {
+        minha_rede.belongsTo(models.Usuario, { 
             foreignKey: 'id_usuario', 
             as: 'usuario'
         });
-        musico.belongsTo(models.Usuario, { 
+        minha_rede.belongsTo(models.Usuario, { 
             foreignKey: 'id_usuario_seguido', 
             as: 'usuario_seguido'
         });
