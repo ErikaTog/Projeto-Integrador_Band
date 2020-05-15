@@ -25,7 +25,7 @@ const Estabelecimento = (sequelize, DataTypes) => {
                 allowNull: true
             },
             telefone: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 allowNull: true
             },
             funcionamento: {
