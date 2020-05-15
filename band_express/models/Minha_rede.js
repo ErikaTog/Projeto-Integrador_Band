@@ -21,7 +21,18 @@ const Minha_rede = (sequelize, DataTypes) => {
             timestamps: false
         }
     );
-    
+
+    musico.associate = models => {
+        musico.belongsTo(models.Usuario, { 
+            foreignKey: 'id_usuario', 
+            as: 'usuario'
+        });
+        musico.belongsTo(models.Usuario, { 
+            foreignKey: 'id_usuario_seguido', 
+            as: 'usuario_seguido'
+        });
+    };
+
     return minha_rede;
 };
 
