@@ -47,13 +47,12 @@ const Estabelecimento = (sequelize, DataTypes) => {
             foreignKey:'id_usuario',
             as:'usuario'
         });
-        estabelecimento.belongsToMany(models.Funcionamento, { 
-            through: 'funcionamento', 
+        estabelecimento.hasMany(models.Funcionamento, { 
+            // through: 'funcionamento', 
             foreignKey: 'id_estab',
             as: 'funcionamentoEstab'
         });
     };
-
 
     return estabelecimento;
 };
