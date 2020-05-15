@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <form class="form-musico" method="POST" action="/feed">
+    <form class="form-musico" action="/cadastro/musico" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar">
@@ -187,31 +187,35 @@
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input name="toco" class="form-check-input" type="checkbox" id="iToco"
-                                                value="1">
+                                                value="1" data-toggle="collapse" data-target="#collapseInstrument" aria-expanded="false" aria-controls="collapseInstrument">
                                             <label class="form-check-label" for="iToco"><span></span>Toco</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input name="tecnico" class="form-check-input" type="checkbox" id="iTecnico"
-                                                value="1">
+                                                value="1" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
                                             <label class="form-check-label" for="iTecnico"><span></span>Técnico</label>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="form-area">                                           
-                                    <div class="form-group row">
-                                        <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
-                                        <div class="col-xl-8 col-lg-8">
-                                            <input name="instrument" type="text" class="form-control" id="inputInstrumento" size="30"
-                                            maxlength="30" placeholder="Digite o instrumento">
+                                <div class="form-area">
+                                    <div class="collapse" id="collapseInstrument">
+                                        <div class="form-group row">
+                                            <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
+                                            <div class="col-xl-8 col-lg-8">
+                                                <input name="instrument" type="text" class="form-control" id="inputInstrumento" size="30"
+                                                maxlength="30" placeholder="Digite o instrumento">
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div>                                           
 
-                                    <div class="form-group row" id="semMg">
-                                        <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
-                                        <div class="col-xl-8 col-lg-8">
-                                            <input name="technicalSkill" type="text" class="form-control" id="inputTecnico" size="30"
-                                            maxlength="30" placeholder="Digite a habilidade">
+                                    <div class="collapse" id="collapseTecnico">
+                                        <div class="form-group row" id="semMg">
+                                            <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
+                                            <div class="col-xl-8 col-lg-8">
+                                                <input name="technicalSkill" type="text" class="form-control" id="inputTecnico" size="30"
+                                                maxlength="30" placeholder="Digite a habilidade">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -29,15 +29,18 @@ module.exports = {
         },
         canto: {
           type: Sequelize.BOOLEAN,
-          defaultValue: false
+          defaultValue: '0',
+          allowNull: false
         },
         toco: {
           type: Sequelize.BOOLEAN,
-          defaultValue: false
+          defaultValue: '0',
+          allowNull: false
         },
         tecnico: {
           type: Sequelize.BOOLEAN,
-          defaultValue: false
+          defaultValue: '0',
+          allowNull: false
         },
         id_usuario: {
           type: Sequelize.INTEGER,

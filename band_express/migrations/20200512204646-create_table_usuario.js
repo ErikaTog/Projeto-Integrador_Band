@@ -51,7 +51,8 @@ module.exports = {
         },
         admin: {
             type: Sequelize.BOOLEAN,
-            defaultValue: false
+            defaultValue: '0',
+            allowNull: false
         },
         avatar: {
             type: Sequelize.STRING(256),

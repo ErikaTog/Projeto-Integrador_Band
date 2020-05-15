@@ -31,7 +31,7 @@ const Funcionamento = (sequelize, DataTypes) => {
     );
     funcionamento.associate = (models) => {
         funcionamento.belongsTo(models.Estabelecimento, { 
-            through: 'estabelecimento', 
+            // through: 'estabelecimento', 
             foreignKey: 'id_estab',
             as: 'estab'
         });

@@ -36,6 +36,7 @@ const Usuario = (sequelize, DataTypes) => {
             },
             admin: {
                 type: DataTypes.BOOLEAN,
+                defaultValue: '0',
                 allowNull: false
             },
             avatar: {
@@ -84,6 +85,10 @@ const Usuario = (sequelize, DataTypes) => {
         usuario.hasMany(models.BandaIntegrantes, {
             foreignKey: 'id_integrante',
             as: 'usuarioIntegrantes'
+        });
+        usuario.hasOne(models.Estabelecimento, { 
+            foreignKey: 'id_usuario',
+            as: 'usuarioEstab'
         });
 
     };

@@ -26,14 +26,17 @@ const Musico = (sequelize, DataTypes) => {
             },
             canto: {
                 type: DataTypes.BOOLEAN,
-                allowNull: true
+                defaultValue: '0',
+                allowNull: false
             },
             toco: {
                 type: DataTypes.BOOLEAN,
+                defaultValue: '0',
                 allowNull: true
             },
             tecnico: {
                 type: DataTypes.BOOLEAN,
+                defaultValue: '0',
                 allowNull: true
             },
             id_usuario: {

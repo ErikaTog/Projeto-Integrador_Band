@@ -182,10 +182,13 @@ label.custom-control-label{
     height: 20px;
   }
 
-#semMg.form-group.row{
+#collapseTecnico.form-group.row{
     margin-bottom: 0px;
 }
- 
+
+.custom-control-label {
+    cursor: pointer;
+}
 
 /* --------------------fim_do_Grupo_Form_Identificação--------------------- */
 
@@ -265,6 +268,9 @@ label.form-check-label{
     padding: 0px 0px 0px 5px;
 }
 
+label.form-check-label:hover {
+    cursor: pointer;
+}
 
 #iCanto.form-check-input,
 #iToco.form-check-input,
