@@ -29,11 +29,21 @@ router.post('/banda', [
 /* cadastro-músico */
 router.get('/musico', cadastroMusicoController.formMusician);
 router.post('/musico', 
-// [
-//     check('nome')
-//         .notEmpty().withMessage('Esse campo não pode ser vazio')
-//         .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
-// ], cadastroMusicoController.validations, 
+// cadastroMusicoController.validations, cadastroMusicoController.error,
+
+[
+    check('nome')
+    // .isEmpty().withMessage('Esse campo não pode ser vazio')
+    .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres'),
+    // body('nome')
+    // .custom(async value => {
+    //     let userCheck = await Usuario.findOne( { where: {nome: value} } );
+    //     if (userCheck !== null) {
+    //         console.log('User Exists');
+    //         return Promise.reject();
+    //     }
+    // }).withMessage('Este usuário está em uso')
+], cadastroMusicoController.error, 
 cadastroMusicoController.saveMusician);
 
 /* cadastro-estab */
