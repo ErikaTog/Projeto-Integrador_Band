@@ -15,14 +15,6 @@ const Banda = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-        estado: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        cidade: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         site: {
             type: DataTypes.STRING,
             allowNull: true
@@ -33,8 +25,7 @@ const Banda = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
+            allowNull: true
         },
         id_usuario: {
             type: DataTypes.INTEGER,
