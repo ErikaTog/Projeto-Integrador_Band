@@ -20,11 +20,13 @@ router.post('/banda', cadastroController.saveBanda)
 
 /* cadastro-músico */
 router.get('/musico', cadastroMusicoController.formMusician);
-router.post('/musico', [
-    check('nome')
-        .isEmpty().withMessage('Esse campo não pode ser vazio')
-        .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
-], cadastroMusicoController.validations, cadastroMusicoController.saveMusician);
+router.post('/musico', 
+// [
+//     check('nome')
+//         .notEmpty().withMessage('Esse campo não pode ser vazio')
+//         .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
+// ], cadastroMusicoController.validations, 
+cadastroMusicoController.saveMusician);
 
 /* cadastro-estab */
 router.get('/estabelecimento', cadastroEstabController.formEstab);

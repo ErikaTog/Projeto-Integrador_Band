@@ -6,7 +6,7 @@ const cadastroMuicoController = {
     formMusician: (req, res) => {
         return res.render('form-musico');
     },
-    validations: (req, res) => {
+    validations: (req, res, next) => {
         // check('nome')
         //     .isEmpty().withMessage('Esse campo não pode ser vazio')
         //     .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
@@ -23,29 +23,40 @@ const cadastroMuicoController = {
         if(!errors.isEmpty()) {
             return res.render('form-musico', { errors: errors.errors });
         }
+        next;
     },
     saveMusician: async (req, res) => {
 
         let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
-        // console.log(user, password, email, gender, bio, estado, cidade, site, canal, canto, toco, tecnico, instrument, techinicalSkill)
         
-        senha = bcrypt.hashSync(senha, 10);
+        // Buscando o id_cidade e id_estado na tabela cidade
+        const findIdCidade = await Cidade.findAll({
+            // attributes: ['id_cidade','nome'],
+            //Inner join
+            include: [{
+                // com a tabela Estado
+                model: Estado, 
+                // utilizando a chave estabelecida na associação do model Cidade com Estado, cujo alias é 'estado'
+                as: 'estado',
+                // com um filtro adicional do estado que o usuário digitou
+                where: {
+                    uf: estado
+                }
+                }],
+                // e um último filtro da cidade que o usuário digitou
+            where: { 
+                nome: cidade 
+            },
+        });
         
-        // Buscando o id da Cidade na tabela cidade
-        const findIdCidade = await Cidade.findOne({ where: { nome: cidade } })
-        
-        const idCidade = findIdCidade.dataValues.id_cidade;
-
-        // Buscando o id do Estado na tabela estado
-        const findIdEstado = await Estado.findOne({ where: { nome: estado } })
-
-        const idEstado = findIdEstado.dataValues.id_estado;
+        const idCidade = findIdCidade[0].dataValues.id_cidade;
+        const idEstado = findIdCidade[0].dataValues.id_estado;
 
         // Inserindo informação na tabela usuario   
         const dadosUsuario = await Usuario.create({
             nome,
             email,
-            senha,
+            senha: bcrypt.hashSync(senha, 10),
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
