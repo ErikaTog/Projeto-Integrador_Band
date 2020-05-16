@@ -9,6 +9,10 @@ const cadastroEstabController = require('../controllers/CadastroEstabController'
 /* GET pre-cadastro. */
 router.get('/', cadastroController.pre);
 
+/* GET feed. */
+router.get('/feed', cadastroController.irfeed);
+
+
 /* GET/POST cadastro-banda. */
 router.get('/banda', cadastroController.formBanda)
 router.post('/banda', cadastroController.saveBanda)
