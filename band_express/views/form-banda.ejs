@@ -17,8 +17,7 @@
 </head>
 
 <body>
-
-    <form class="form-banda" action="" method="POST">
+      <form class="form-banda" action="" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar">
@@ -27,9 +26,20 @@
                 </nav>
             </div>
         </header>
+ 
 
         <div class="cadastro-container container">
+
             <div class="row">
+                <% if(typeof(errors) != "undefined"){ %>
+            
+                    <ul>
+                        <% errors.forEach((error)=>{ %>
+                            <li><%= error.msg %></li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+                
                 <div class="col-md-6 col-sm-12">
                     <!-- Grupo Form Identificação -->
                     <section id="identificacao" class="card-cadastro">
