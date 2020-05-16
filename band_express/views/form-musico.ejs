@@ -29,6 +29,14 @@
 
         <div class="cadastro-container container">
 
+            <% if (typeof errors != 'undefined') { %>
+                <ul>
+                    <% for( let i = 0; i < errors.length; i++ ) { %>
+                        <li> <%= errors[i].msg %>  </li>
+                    <% } %>
+                </ul>
+            <% } %>
+
             <section class="row infos">
                 <!-- LINHA 1 -->
 
