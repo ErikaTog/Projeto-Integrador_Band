@@ -1,29 +1,42 @@
 const { Estado, Cidade, Usuario, Musico } = require('../models');
 const bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator');
+const { check, validationResult, body } = require('express-validator');
 
 const cadastroMuicoController = {
     formMusician: (req, res) => {
         return res.render('form-musico');
     },
-    validations: (req, res, next) => {
-        // check('nome')
-        //     .isEmpty().withMessage('Esse campo não pode ser vazio')
-        //     .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
-        //     .custom(async (value, { req }) => {
-        //         let user = await Usuario.findOne({ nome: value });
+    validations: () => {
+        check('nome')
+            .isEmpty().withMessage('Esse campo não pode ser vazio')
+            .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres'),
+        body('nome')
+            .custom(async value => {
+                let userCheck = await Usuario.findOne( { where: {nome: value} } );
+                if (userCheck !== null) {
+                    console.log('User Exists');
+                    return Promise.reject();
+                }
+            }).withMessage('Este usuário está em uso')
+    },
+    error: (req, res, next) => {
+    //     // check('nome')
+    //     //     .isEmpty().withMessage('Esse campo não pode ser vazio')
+    //     //     .isLength({ min: 2, max:100 }).withMessage('Esse campo deve ter entre 2 a 100 caracteres')
+    //     //     .custom(async (value, { req }) => {
+    //     //         let user = await Usuario.findOne({ nome: value });
             
-        //         if (!_.isEmpty(user)) {
-        //           return false;
-        //         }
-        //       })
-        //       .withMessage("Este usuário já existe")
+    //     //         if (!_.isEmpty(user)) {
+    //     //           return false;
+    //     //         }
+    //     //       })
+    //     //       .withMessage("Este usuário já existe")
         
         let errors = validationResult(req);
         if(!errors.isEmpty()) {
             return res.render('form-musico', { errors: errors.errors });
         }
-        next;
+        next();
     },
     saveMusician: async (req, res) => {
 
