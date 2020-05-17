@@ -45,9 +45,21 @@ router.post('/banda', [
 
     //validando o campo sobre
     check("sobre").trim() 
-    .isLength({ max:2200 }).withMessage('Uau, você gosta mesmo de falar sobre a sua banda, porém esse campo só aceita até 2200 caracteres.')
+    .isLength({ max:2200 }).withMessage('Uau, você gosta mesmo de falar sobre a sua banda, porém esse campo só aceita até 2200 caracteres.'),
 
-   
+    //validando o campo integrante
+    check("integrante").trim()
+    .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
+    .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres!'),
+    body('integrante').trim()
+        .custom(async value => {
+            let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
+            if (!integranteCheck) {
+                console.log('User Exists');
+                return Promise.reject('Não acredito, este músico ainda não faz parte do Band+!');
+            }
+        }),
+
             
 
 ], cadastroController.saveBanda);
