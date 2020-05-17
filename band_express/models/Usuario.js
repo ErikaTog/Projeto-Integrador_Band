@@ -94,6 +94,10 @@ const Usuario = (sequelize, DataTypes) => {
             foreignKey: 'id_usuario',
             as: 'usuarioVaga'
         });
+        usuario.hasMany(models.Anuncie, { 
+            foreignKey: 'id_usuario',
+            as: 'usuarioAnuncie'
+        });
     };
 
     return usuario;
