@@ -18,11 +18,9 @@ const cadastroController = {
     },  
 
     saveBanda: async (req, res) => {
-        let listaDeErros = validationResult(req);
+        let listaDeErros = validationResult(req).array({onlyFirstError: true});
 
-        console.log(listaDeErros)
-
-        if (listaDeErros.isEmpty()) {
+        if (!listaDeErros) {
             const {nome, email, senha, genero, sobre, estado, cidade, site, canal, emailBanda, integrante, funcao} = req.body;
 
             // Buscando o id_cidade e id_estado na tabela cidade
@@ -109,7 +107,7 @@ const cadastroController = {
             return res.redirect('/feed')
 
         }else{
-            return res.render('form-banda', {errors:listaDeErros.errors})
+            return res.render('form-banda', {errors:listaDeErros})
         }
     }
         
