@@ -30,6 +30,7 @@ const Estabelecimento = (sequelize, DataTypes) => {
             },
             funcionamento: {
                 type: DataTypes.BOOLEAN,
+                defaultValue: 0,
                 allowNull: true
             },
             id_usuario: {
@@ -50,7 +51,7 @@ const Estabelecimento = (sequelize, DataTypes) => {
         estabelecimento.hasMany(models.Funcionamento, { 
             // through: 'funcionamento', 
             foreignKey: 'id_estab',
-            as: 'funcionamentoEstab'
+            as: 'funcionamento'
         });
     };
 
