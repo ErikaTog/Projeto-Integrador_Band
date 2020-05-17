@@ -34,6 +34,13 @@ const Vagas = (sequelize, DataTypes) => {
         }
     );
 
+    vagas.associate = (models) => {
+        vagas.belongsTo(models.Usuario, {
+            foreignKey:'id_usuario',
+            as:'usuario'
+        });
+    };
+
     return vagas;
 };
 
