@@ -30,6 +30,17 @@ const Bate_papo = (sequelize, DataTypes) => {
         }
     );
 
+    bate_papo.associate = (models) => {
+        bate_papo.belongsTo(models.Usuario, {
+            foreignKey:'id_usuario_remetente',
+            as:'usuario_remetente'
+        });
+        bate_papo.belongsTo(models.Usuario, {
+            foreignKey:'id_usuario_destinatario',
+            as:'usuario_destinatario'
+        });
+    };
+
     return bate_papo;
 };
 
