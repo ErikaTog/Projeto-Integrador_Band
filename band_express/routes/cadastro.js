@@ -5,7 +5,6 @@ const {check, validationResult, body} = require('express-validator');
 const { Usuario } = require('../models')
 
 const cadastroController = require('../controllers/CadastroBandaController');
-const cadastroMusicoController = require('../controllers/CadastroMusicoController');
 const cadastroEstabController = require('../controllers/CadastroEstabController');
 
 // const cadastroBandaMiddleware = require('../middlewares/cadastroBanda');

@@ -1,17 +1,15 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 const {check, validationResult, body} = require('express-validator');
 
 const { Usuario } = require('../models');
 
 const cadastroMusicoController = require('../controllers/CadastroMusicoController');
 
-// const cadastroMusicoMiddleware = require('../middlewares/cadastroMusico');
-
 /* cadastro-músico */
-router.get('/musico', cadastroMusicoController.formMusician);
-router.post('/musico', 
-// cadastroMusicoController.validations, cadastroMusicoController.error,
+router.get('/', cadastroMusicoController.formMusician);
+router.post('/', 
+cadastroMusicoController.validations, cadastroMusicoController.error,
 
 [
     check('nome').trim()
@@ -27,3 +25,6 @@ router.post('/musico',
         })
 ], cadastroMusicoController.error, 
 cadastroMusicoController.saveMusician);
+
+
+module.exports = router;
