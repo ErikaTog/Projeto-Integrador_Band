@@ -27,9 +27,22 @@ router.post('/banda', [
 
     //validando o campo senha
     check("senha").trim()
-    .not().isEmpty().withMessage('Seu acesso é exclusivo e para isso é necessário que digite uma senha!') // Se digita vazio ou espaços
-    .isLength({ min: 6, max:16 }).withMessage('Sua senha deve ter entre 6 e 16 caracteres.')
-    
+    .not().isEmpty().withMessage('Seu acesso é exclusivo e para isso é necessário que digite uma senha!') // Se espaços
+    .isLength({ min: 6, max:16 }).withMessage('Sua senha deve ter entre 6 e 16 caracteres.'),
+
+    //validando o campo email
+    check("email").trim() 
+    .not().isEmpty().withMessage('Hey, queremos nos comunicar com sua banda! Diga o e-mail dela para nós!') // já está sendo validade pelo html
+    .isEmail().withMessage('Ops, você não digitou o email corretamente!'), // já está sendo validade pelo html
+    body('email').trim()
+        .custom(async value => {
+            let emailCheck = await Usuario.findOne( { where: {email: value} } );
+            if (emailCheck) {
+                console.log('Email Exists');
+                return Promise.reject('Esse e-mail já foi cadastrado. Precisamos que nos informe outro.');
+            }
+        }),
+        
 
 ], cadastroController.saveBanda);
 
