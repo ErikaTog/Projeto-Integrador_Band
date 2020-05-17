@@ -39,6 +39,13 @@ const Anuncie = (sequelize, DataTypes) => {
         }
     );
 
+    anuncie.associate = (models) => {
+        anuncie.belongsTo(models.Usuario, {
+            foreignKey:'id_usuario',
+            as:'usuario'
+        });
+    };
+
     return anuncie;
 };
 
