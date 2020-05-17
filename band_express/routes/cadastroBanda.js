@@ -42,7 +42,13 @@ router.post('/banda', [
                 return Promise.reject('Esse e-mail já foi cadastrado. Precisamos que nos informe outro.');
             }
         }),
-        
+
+    //validando o campo sobre
+    check("sobre").trim() 
+    .isLength({ max:2200 }).withMessage('Uau, você gosta mesmo de falar sobre a sua banda, porém esse campo só aceita até 2200 caracteres.')
+
+   
+            
 
 ], cadastroController.saveBanda);
 
