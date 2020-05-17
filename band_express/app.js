@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var cadastroRouter = require('./routes/cadastro');
+var cadastroRouter = require('./routes/cadastroBanda');
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 
 var app = express();
