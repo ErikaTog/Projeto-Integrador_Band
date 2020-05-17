@@ -47,6 +47,14 @@ router.post('/banda', [
     check("sobre").trim() 
     .isLength({ max:2200 }).withMessage('Uau, você gosta mesmo de falar sobre a sua banda, porém esse campo só aceita até 2200 caracteres.'),
 
+    //validando o campo estado
+    check("estado").trim() 
+    .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique um Estado.'),
+
+    //validando o campo cidade
+    check("cidade").trim() 
+    .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
+
     //validando o campo integrante
     check("integrante").trim()
     .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
@@ -64,7 +72,9 @@ router.post('/banda', [
     check("funcao").trim()
     .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
     .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
-    .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.'),        
+    .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.')        
+
+   
 
 ], cadastroController.saveBanda);
 
