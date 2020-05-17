@@ -50,7 +50,7 @@ router.post('/banda', [
     //validando o campo integrante
     check("integrante").trim()
     .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
-    .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres!'),
+    .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres.'),
     body('integrante').trim()
         .custom(async value => {
             let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
@@ -60,7 +60,11 @@ router.post('/banda', [
             }
         }),
 
-            
+    //validando o campo função
+    check("funcao").trim()
+    .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
+    .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
+    .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.'),        
 
 ], cadastroController.saveBanda);
 
