@@ -36,8 +36,8 @@ module.exports = {
           model: 'usuario',
           key: 'id_usuario'
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
       },
     });
   },
