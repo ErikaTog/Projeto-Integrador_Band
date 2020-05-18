@@ -90,7 +90,26 @@ const Usuario = (sequelize, DataTypes) => {
             foreignKey: 'id_usuario',
             as: 'usuarioEstab'
         });
-
+        usuario.hasMany(models.Audio, {
+            foreignKey: 'id_usuario',
+            as: 'usuarioAudio'
+        });
+        usuario.hasMany(models.Video, {
+            foreignKey: 'id_usuario',
+            as: 'usuarioVideo'
+        });
+        usuario.hasMany(models.Post, {
+            foreignKey: 'id_usuario',
+            as: 'usuarioPost'
+        });
+        usuario.hasMany(models.Comentario, {
+            foreignKey: 'id_usuario',
+            as: 'usuarioComentario'
+        });
+        usuario.hasMany(models.Curtida, {
+            foreignKey: 'id_usuario',
+            as: 'usuarioCurtida'
+        })
     };
 
     return usuario;
