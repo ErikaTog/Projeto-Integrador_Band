@@ -1,25 +1,33 @@
-const { Estado, Cidade, Usuario, Musico } = require('../models');
+const { Estado, Cidade, Usuario, Musico, Instrumento, Tecnico, MusicoInstrumentos, MusicoTecnicos } = require('../models');
 const bcrypt = require('bcrypt');
-const { check, validationResult, body } = require('express-validator');
+const { validationResult} = require('express-validator');
 
 const cadastroMuicoController = {
     formMusician: (req, res) => {
         return res.render('form-musico');
     },
-    error: (req, res, next) => {
+    error: (req, res) => {
         let errors = validationResult(req).array({ onlyFirstError: true });
+
         if(errors) {
             return res.render('form-musico', { errors: errors });
-        }
-        next();
+        } 
     },
     saveMusician: async (req, res) => {
 
-        let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
-        
+        // let errors = validationResult(req).array({ onlyFirstError: true });
+
+        // if(!errors) {
+        //     return res.render('form-musico', { errors: errors });
+        // } else {
+            
+        // }
+
+
+        const { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
+
         // Buscando o id_cidade e id_estado na tabela cidade
         const findIdCidade = await Cidade.findAll({
-            // attributes: ['id_cidade','nome'],
             //Inner join
             include: [{
                 // com a tabela Estado
@@ -62,6 +70,41 @@ const cadastroMuicoController = {
             tecnico,
             id_usuario: dadosUsuario.id_usuario
         });
+
+        if (toco) {
+            // Buscando o id_instrumento
+            const findIdInstrumento = await Instrumento.findOne({
+                where: {
+                    instrumento
+                }
+            });
+    
+            const idInstrumento = findIdInstrumento.dataValues.id_instrumento;
+            console.log(idInstrumento)
+            
+            // Inserindo id_instrumento nas tabelas intermediárias
+            const dadosToco = await MusicoInstrumentos.create({
+               id_musico: dadosMusico.id_musico,
+               id_instrumento:  idInstrumento
+            });
+        }
+
+        if (tecnico) {
+            // Buscando o id_tecnico
+            const findIdTecnico = await Tecnico.findOne({
+                where: {
+                    habilidade_tecnica: habilidadeTecnica
+                }
+            });
+    
+            const idTecnico = findIdTecnico.dataValues.id_tecnico;
+            
+            // Inserindo id_tecnico nas tabelas intermediárias
+            const dadosTecnicos = await MusicoTecnicos.create({
+                id_musico: dadosMusico.id_musico,
+                id_tecnico:  idTecnico
+             });
+        }
 
         res.redirect('/feed');
     }
