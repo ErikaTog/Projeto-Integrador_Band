@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const {check, validationResult, body} = require('express-validator');
-const cadastroController = require('../controllers/CadastroBandaController');
+const cadastroBandaController = require('../controllers/CadastroBandaController');                                                    
 // const cadastroBandaMiddleware = require('../middlewares/cadastroBanda');
 const { Usuario } = require('../models');
 
 /* GET pre-cadastro. */
-router.get('/', cadastroController.pre); 
+router.get('/', cadastroBandaController.pre); 
 
 /* GET/POST cadastro-banda. */
-router.get('/banda', cadastroController.formBanda);
+router.get('/banda', cadastroBandaController.formBanda);
 
 router.post('/banda', [
     //validando o campo nome
@@ -76,7 +76,7 @@ router.post('/banda', [
 
    
 
-], cadastroController.saveBanda);
+], cadastroBandaController.saveBanda);
 
 
 
