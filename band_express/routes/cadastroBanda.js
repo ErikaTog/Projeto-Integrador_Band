@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const {check, validationResult, body} = require('express-validator');
-const cadastroController = require('../controllers/CadastroBandaController');
+const cadastroBandaController = require('../controllers/CadastroBandaController');                                                    
 // const cadastroBandaMiddleware = require('../middlewares/cadastroBanda');
 const { Usuario } = require('../models');
 
 /* GET pre-cadastro. */
-router.get('/', cadastroController.pre); 
+router.get('/', cadastroBandaController.pre); 
 
 /* GET/POST cadastro-banda. */
-router.get('/banda', cadastroController.formBanda);
+router.get('/banda', cadastroBandaController.formBanda);
 
 router.post('/banda', [
     //validando o campo nome
@@ -42,9 +42,41 @@ router.post('/banda', [
                 return Promise.reject('Esse e-mail já foi cadastrado. Precisamos que nos informe outro.');
             }
         }),
-        
 
-], cadastroController.saveBanda);
+    //validando o campo sobre
+    check("sobre").trim() 
+    .isLength({ max:2200 }).withMessage('Uau, você gosta mesmo de falar sobre a sua banda, porém esse campo só aceita até 2200 caracteres.'),
+
+    //validando o campo estado
+    check("estado").trim() 
+    .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique um Estado.'),
+
+    //validando o campo cidade
+    check("cidade").trim() 
+    .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
+
+    //validando o campo integrante
+    check("integrante").trim()
+    .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
+    .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres.'),
+    body('integrante').trim()
+        .custom(async value => {
+            let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
+            if (!integranteCheck) {
+                console.log('User Exists');
+                return Promise.reject('Não acredito, este músico ainda não faz parte do Band+!');
+            }
+        }),
+
+    //validando o campo função
+    check("funcao").trim()
+    .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
+    .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
+    .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.')        
+
+   
+
+], cadastroBandaController.saveBanda);
 
 
 

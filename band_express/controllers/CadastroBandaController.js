@@ -4,7 +4,7 @@ const config = require('../config/database');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado} = require('../models')
 const {check, validationResult, body} = require('express-validator');
 
-const cadastroController = {
+const cadastroBandaController = {
     pre: (req, res) => {
         return res.render('pre-cadastro')
     },
@@ -114,4 +114,4 @@ const cadastroController = {
 }
 
 
-module.exports = cadastroController;
+module.exports = cadastroBandaController;
