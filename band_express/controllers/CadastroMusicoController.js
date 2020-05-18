@@ -8,9 +8,11 @@ const cadastroMuicoController = {
     },
     error: (req, res, next) => {
         let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
 
         if(errors) {
-            res.render('form-musico', { errors: errors });
+            console.log("Entrei no if")
+            return res.render('form-musico', { errors: errors });
         } 
 
         next();
