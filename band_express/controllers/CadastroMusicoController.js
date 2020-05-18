@@ -71,35 +71,40 @@ const cadastroMuicoController = {
             id_usuario: dadosUsuario.id_usuario
         });
 
-        // Buscando o id_instrumento
-        const findIdInstrumento = await Instrumento.findOne({
-            where: {
-                instrumento
-            }
-        });
+        if (toco) {
+            // Buscando o id_instrumento
+            const findIdInstrumento = await Instrumento.findOne({
+                where: {
+                    instrumento
+                }
+            });
+    
+            const idInstrumento = findIdInstrumento.dataValues.id_instrumento;
+            console.log(idInstrumento)
+            
+            // Inserindo id_instrumento nas tabelas intermediárias
+            const dadosToco = await MusicoInstrumentos.create({
+               id_musico: dadosMusico.id_musico,
+               id_instrumento:  idInstrumento
+            });
+        }
 
-        const idInstrumento = findIdInstrumento.dataValues.id_instrumento;
-        console.log(idInstrumento)
-
-        // Buscando o id_tecnico
-        const findIdTecnico = await Tecnico.findOne({
-            where: {
-                habilidade_tecnica: habilidadeTecnica
-            }
-        });
-
-        const idTecnico = findIdTecnico.dataValues.id_tecnico;
-
-        // Inserindo id_instrumento e id_tecnico nas tabelas intermediárias
-        const dadosToco = await MusicoInstrumentos.create({
-           id_musico: dadosMusico.id_musico,
-           id_instrumento:  idInstrumento
-        });
-        
-        const dadosTecnicos = await MusicoTecnicos.create({
-            id_musico: dadosMusico.id_musico,
-            id_tecnico:  idTecnico
-         });
+        if (tecnico) {
+            // Buscando o id_tecnico
+            const findIdTecnico = await Tecnico.findOne({
+                where: {
+                    habilidade_tecnica: habilidadeTecnica
+                }
+            });
+    
+            const idTecnico = findIdTecnico.dataValues.id_tecnico;
+            
+            // Inserindo id_tecnico nas tabelas intermediárias
+            const dadosTecnicos = await MusicoTecnicos.create({
+                id_musico: dadosMusico.id_musico,
+                id_tecnico:  idTecnico
+             });
+        }
 
         res.redirect('/feed');
     }
