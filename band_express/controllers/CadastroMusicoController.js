@@ -6,25 +6,28 @@ const cadastroMuicoController = {
     formMusician: (req, res) => {
         return res.render('form-musico');
     },
-    error: (req, res) => {
+    error: (req, res, next) => {
         let errors = validationResult(req).array({ onlyFirstError: true });
 
         if(errors) {
             return res.render('form-musico', { errors: errors });
         } 
+
+        return next();
     },
     saveMusician: async (req, res) => {
 
         // let errors = validationResult(req).array({ onlyFirstError: true });
 
         // if(!errors) {
-        //     return res.render('form-musico', { errors: errors });
         // } else {
-            
+        //     return res.render('form-musico', { errors: errors });
         // }
 
 
         let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
+
+        console.log(req.body);
 
         nome = nome.trim(); 
         senha = senha.trim();
