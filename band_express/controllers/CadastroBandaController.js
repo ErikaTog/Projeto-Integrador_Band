@@ -20,7 +20,7 @@ const cadastroBandaController = {
     saveBanda: async (req, res) => {
         let listaDeErros = validationResult(req).array({onlyFirstError: true});
 
-        if (!listaDeErros) {
+        if (!listaDeErros.length) {
             const {nome, email, senha, genero, sobre, estado, cidade, site, canal, emailBanda, integrante, funcao} = req.body;
 
             // Buscando o id_cidade e id_estado na tabela cidade
