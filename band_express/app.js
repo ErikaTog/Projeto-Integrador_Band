@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var cadastroRouter = require('./routes/cadastroBanda');
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
+var cadastroEstabRouter = require('./routes/cadastroEstab');
 
 var app = express();
 const methodOverride = require('method-override');
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
+app.use('/cadastro/estabelecimento', cadastroEstabRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
