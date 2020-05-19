@@ -118,8 +118,12 @@
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
                                     <div class="col-xl-6 col-lg-9">
-                                        <input type="text" class="form-control" id="inputEstado" name="estado"
-                                            placeholder="Digite seu Estado">
+                                        <select class="form-control" id="inputEstado" name="estado">
+                                            <option value="" disabled selected hidden>Escolha um Estado</option>
+                                            <% listaEstados.forEach((estado)=>{ %>
+                                                <option><%= estado %></option>
+                                            <% }) %>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
