@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session')
 var usersRouter = require('./routes/users'); // não estamos usando 
 var indexRouter = require('./routes/index');
 var cadastroBandaRouter = require('./routes/cadastroBanda');
@@ -31,6 +32,13 @@ app.use('/preCadastro', preCadastroRouter);
 app.use('/cadastro/banda', cadastroBandaRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
+
+app.use(session({
+  secret: "bandPlusSecretData",
+  resave: true,
+  saveUninitialized:true
+}))
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
