@@ -17,7 +17,7 @@
 </head>
 
 <body>
-      <form class="form-banda" action="" method="POST">
+    <form class="form-banda" action="" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar">
@@ -26,20 +26,23 @@
                 </nav>
             </div>
         </header>
- 
+
 
         <div class="cadastro-container container">
-
-            <div class="row">
-                <% if(typeof(errors) != "undefined"){ %>
             
-                    <ul>
-                        <% errors.forEach((error)=>{ %>
-                            <li><%= error.msg %></li>
-                        <% }) %>
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Falta pouco para se tornar membro da Band+, realize alguns ajustes...</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
                     </ul>
-                <% } %>
+                </div>
+            <% } %>
 
+            <div class="row">             
                 <div class="col-md-6 col-sm-12">
                     <!-- Grupo Form Identificação -->
                     <section id="identificacao" class="card-cadastro">
@@ -183,7 +186,7 @@
                 </div>
             </div>
         </div>
-    
+
         <footer>
             <ul class="list-unstyled mb-0">
                 <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
