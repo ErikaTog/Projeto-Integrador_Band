@@ -3,7 +3,7 @@ const router = express.Router();
 const {check, validationResult, body} = require('express-validator');
 const cadastroBandaController = require('../controllers/CadastroBandaController');                                                    
 // const cadastroBandaMiddleware = require('../middlewares/cadastroBanda');
-const { Usuario } = require('../models');
+const {Usuario, Banda, BandaIntegrantes, Cidade, Estado} = require('../models')
 
 /* GET pre-cadastro. */
 router.get('/', cadastroBandaController.pre); 
@@ -32,8 +32,8 @@ router.post('/banda', [
 
     //validando o campo email
     check("email").trim() 
-    .not().isEmpty().withMessage('Hey, queremos nos comunicar com sua banda! Diga o e-mail dela para nós!') // já está sendo validade pelo html
-    .isEmail().withMessage('Ops, você não digitou o email corretamente!'), // já está sendo validade pelo html
+    .not().isEmpty().withMessage('Hey, queremos nos comunicar com sua banda! Diga o e-mail dela para nós!'), // já está sendo validade pelo html. Funciona com espaços
+    // .isEmail().withMessage('Ops, você não digitou o email corretamente!'), // já está sendo validade pelo html
     body('email').trim()
         .custom(async value => {
             let emailCheck = await Usuario.findOne( { where: {email: value} } );
@@ -60,13 +60,15 @@ router.post('/banda', [
     .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
     .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres.'),
     body('integrante').trim()
-        .custom(async value => {
-            let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
-            if (!integranteCheck) {
-                console.log('User Exists');
-                return Promise.reject('Não acredito, este músico ainda não faz parte do Band+!');
-            }
-        }),
+    .custom(async value => {
+        let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
+        if (!integranteCheck) {
+           return Promise.reject('Não acredito, este músico ainda não faz parte do Band+!');
+        }
+        if (!(integranteCheck.dataValues.id_tipos_perfil == 1)) {
+            return Promise.reject('Ops, somente usuários com o perfil Músico podem ser integrantes de uma banda.')
+        }
+    }),
 
     //validando o campo função
     check("funcao").trim()
@@ -74,10 +76,9 @@ router.post('/banda', [
     .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
     .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.')        
 
-   
-
 ], cadastroBandaController.saveBanda);
 
-
-
 module.exports = router;
+
+
+
