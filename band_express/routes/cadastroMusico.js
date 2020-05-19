@@ -5,6 +5,7 @@ const {check, body} = require('express-validator');
 const { Usuario } = require('../models');
 
 const cadastroMusicoController = require('../controllers/CadastroMusicoController');
+const MusicoMiddleware = require('../middlewares/cadastroMusico');
 
 /* cadastro-músico */
 router.get('/', cadastroMusicoController.formMusician);
@@ -61,7 +62,7 @@ router.post('/',
     check('canal').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
 ], 
-cadastroMusicoController.error, 
+MusicoMiddleware.error, 
 cadastroMusicoController.saveMusician);
 
 

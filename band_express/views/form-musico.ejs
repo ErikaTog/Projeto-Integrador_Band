@@ -142,7 +142,12 @@
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-2 col-form-label">Estado</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input name="estado" type="text" class="form-control" id="iEstado" placeholder="Digite seu estado" required>
+                                        <select class="form-control" id="inputEstado" name="estado">
+                                            <option value="" disabled selected hidden>Escolha um Estado</option>
+                                            <% listaEstados.forEach(estado => { %>
+                                                <option value="<%= estado %>"><%= estado %></option>
+                                            <% }) %>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -212,7 +217,12 @@
                                         <div class="form-group row">
                                             <label for="inputInstrumento" class="col-xl-3 col-lg-3 col-form-label">Instrumento</label>
                                             <div class="col-xl-8 col-lg-8">
-                                                <input name="instrumento" type="text" class="form-control" id="inputInstrumento" placeholder="Digite o instrumento">
+                                                <select class="form-control" id="inputIntrumento" name="instrumento">
+                                                    <option value="" disabled selected hidden>Escolha...</option>
+                                                    <% listaInstrumentos.forEach(instrumento => { %>
+                                                        <option value="<%= instrumento %>"><%= instrumento %></option>
+                                                    <% }) %>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>                                           
@@ -221,7 +231,12 @@
                                         <div class="form-group row" id="semMg">
                                             <label for="inputTecnico" class="col-xl-3 col-lg-3 col-form-label">Técnico</label>
                                             <div class="col-xl-8 col-lg-8">
-                                                <input name="habilidadeTecnica" type="text" class="form-control" id="inputTecnico" placeholder="Digite a habilidade">
+                                                <select class="form-control" id="inputTecnico" name="habilidadeTecnica">
+                                                    <option value="" disabled selected hidden>Escolha...</option>
+                                                    <% listaTecnicos.forEach(tecnico => { %>
+                                                        <option value="<%= tecnico %>"><%= tecnico %></option>
+                                                    <% }) %>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>

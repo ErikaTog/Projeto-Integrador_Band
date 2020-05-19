@@ -109,6 +109,10 @@ h5 {
     padding: 1rem 2rem;
 }
 
+.form-group select {
+    padding: 0 1.5rem;
+}
+
 .form-group.row {
     display: flex;
     justify-content: space-around;

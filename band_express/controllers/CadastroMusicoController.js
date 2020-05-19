@@ -3,18 +3,42 @@ const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
 
 const cadastroMuicoController = {
-    formMusician: (req, res) => {
-        return res.render('form-musico');
-    },
-    error: (req, res, next) => {
-        let errors = validationResult(req).array({ onlyFirstError: true });
-        console.log(errors)
+    formMusician: async (req, res) => {
 
-        if(errors.length) {
-            return res.render('form-musico', { errors: errors });
-        } 
+        // Buscar todos os estados
+        const findEstados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
+        });
 
-        next();
+        listaEstados = [];
+        findEstados.forEach(estado => {
+            listaEstados.push(estado.uf)
+        });
+        
+        // Buscar todos os instrumentos
+        const findInstrumentos = await Instrumento.findAll({ 
+            raw: true,
+            attributes: ['instrumento'] 
+        });
+        
+        listaInstrumentos = [];
+        findInstrumentos.forEach(instrumento => {
+            listaInstrumentos.push(instrumento.instrumento)
+        });
+
+        // Buscar todas as habilidades
+        const findTecnicos = await Tecnico.findAll({ 
+            raw: true,
+            attributes: ['habilidade_tecnica'] 
+        });
+        
+        listaTecnicos = [];
+        findTecnicos.forEach(instrumento => {
+            listaTecnicos.push(instrumento.habilidade_tecnica)
+        });
+
+        return res.render('form-musico', { listaEstados, listaInstrumentos, listaTecnicos });
     },
     saveMusician: async (req, res) => {
 
