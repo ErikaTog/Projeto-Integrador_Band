@@ -11,7 +11,6 @@ const cadastroMuicoController = {
         console.log(errors)
 
         if(errors.length) {
-            console.log("Entrei no if")
             return res.render('form-musico', { errors: errors });
         } 
 

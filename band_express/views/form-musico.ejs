@@ -30,11 +30,15 @@
         <div class="cadastro-container container">
 
             <% if (typeof errors != 'undefined') { %>
-                <ul>
-                    <% for( let i = 0; i < errors.length; i++ ) { %>
-                        <li> <%= errors[i].msg %>  </li>
-                    <% } %>
-                </ul>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Falta pouco para se tornar membro da Band+, realize alguns ajustes...</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
             <% } %>
 
             <section class="row infos">
