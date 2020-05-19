@@ -1,12 +1,23 @@
-// const Sequelize = require('sequelize');
-// const config = require ('../config/database');
+const Sequelize = require('sequelize');
+const config = require ('../config/database');
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento } = require('../models');
 const { check, validationResult, body } = require('express-validator');
 const bcrypt = require('bcrypt');
 
 const cadastroEstabController = {
-    formEstab: (req, res) => {
-        return res.render('form-estab');
+    formEstab: async (req, res) => {
+        //fazendo a busca de todos os estados
+        const buscaEstados = await Estado.findAll({})
+
+        //criando uma variável que vai conter a lista de estados
+        listaEstados = []
+    
+        //buscando os estados e incluindo na lista
+        buscaEstados.forEach((estado) => {
+            listaEstados.push(estado.dataValues.uf)
+        })
+
+        return res.render('form-estab', {estados: listaEstados});
     },
 
     saveEstab: async(req, res) => {
@@ -70,14 +81,6 @@ const cadastroEstabController = {
             telefone, 
             funcionamento: 0,
             id_usuario: dadosUsuario.id_usuario
-        });
-        console.log(dadosUsuario.id_usuario)
-        // Inserindo dados complementares na tabela músico
-        const dadosFuncionamento = await Funcionamento.create({       
-            dia: inputFuncionamento,
-            horario_abertura: inputAbertura, 
-            horario_fechamento: inputFechamento,
-            id_estab: dadosUsuario.id_estab
         });
         
         return res.redirect('/feed')
