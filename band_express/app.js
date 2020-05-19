@@ -4,9 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var usersRouter = require('./routes/users'); // não estamos usando 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var cadastroRouter = require('./routes/cadastroBanda');
+var cadastroBandaRouter = require('./routes/cadastroBanda');
+var preCadastroRouter = require('./routes/preCadastro')
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
 
@@ -24,9 +25,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use('/users', usersRouter); // não estamos usando 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/cadastro', cadastroRouter);
+app.use('/preCadastro', preCadastroRouter);
+app.use('/cadastro/banda', cadastroBandaRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
 
