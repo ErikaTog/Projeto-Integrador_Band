@@ -1,6 +1,6 @@
 const { Estado, Cidade, Usuario, Musico, Instrumento, Tecnico, MusicoInstrumentos, MusicoTecnicos } = require('../models');
 const bcrypt = require('bcrypt');
-const { validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const cadastroMuicoController = {
     formMusician: (req, res) => {
@@ -10,21 +10,13 @@ const cadastroMuicoController = {
         let errors = validationResult(req).array({ onlyFirstError: true });
         console.log(errors)
 
-        if(errors) {
-            console.log("Entrei no if")
+        if(errors.length) {
             return res.render('form-musico', { errors: errors });
         } 
 
         next();
     },
     saveMusician: async (req, res) => {
-
-        // let errors = validationResult(req).array({ onlyFirstError: true });
-
-        // if(!errors) {
-        // } else {
-        //     return res.render('form-musico', { errors: errors });
-        // }
 
         try {
             let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
