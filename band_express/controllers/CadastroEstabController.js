@@ -1,17 +1,5 @@
-const Sequelize = require('sequelize');
-const config = require('../config/database');
-const {
-	Usuario,
-	Cidade,
-	Estado,
-	Estabelecimento,
-	Funcionamento
-} = require('../models');
-const {
-	check,
-	validationResult,
-	body
-} = require('express-validator');
+const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento } = require('../models');
+const { check, validationResult, body } = require('express-validator');
 const bcrypt = require('bcrypt');
 
 const cadastroEstabController = {
@@ -34,21 +22,8 @@ const cadastroEstabController = {
 
 	saveEstab: async (req, res) => {
 
-		let {
-			nome,
-			senha,
-			email,
-			servico,
-			sobre,
-			estado,
-			cidade,
-			site,
-			emailEstab,
-			telefone,
-			inputFuncionamento,
-			inputAbertura,
-			inputFechamento
-		} = req.body;
+		let { nome, senha, email, servico, sobre, estado, cidade, site, emailEstab, 
+			telefone, inputFuncionamento, inputAbertura, inputFechamento } = req.body;
 
 		nome = nome.trim();
 		senha = senha.trim();
