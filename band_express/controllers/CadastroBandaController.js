@@ -12,9 +12,21 @@ const cadastroBandaController = {
     irfeed: (req, res) => {
         return res.render('feed')
     },
+    
+    formBanda: async (req, res) => {
 
-    formBanda: (req, res) => {
-        return res.render('form-banda');
+        //fazendo a busca de todos os estados
+        const buscaEstados = await Estado.findAll({})
+
+        //criando uma variável que vai conter a lista de estados
+        listaEstados = []
+    
+        //buscando os estados e incluindo na lista
+        buscaEstados.forEach((estado) => {
+            listaEstados.push(estado.dataValues.uf)
+        })
+
+        return res.render('form-banda', {estados: listaEstados});
     },  
 
     saveBanda: async (req, res) => {
@@ -23,6 +35,32 @@ const cadastroBandaController = {
         if (!listaDeErros.length) {
             const {nome, email, senha, genero, sobre, estado, cidade, site, canal, emailBanda, integrante, funcao} = req.body;
 
+
+        // ----------------Em desenvolvimento ----------------------
+           //buscando as cidades de acordo com o estado escolhido pelo usuário
+            // const findCidades = await Cidade.findAll({
+            //     //Inner join
+            //     include: [{
+            //         // com a tabela Estado
+            //         model: Estado,
+            //         // utilizando a chave estabelecida na associação do model Cidade com Estado, cujo alias é 'estado'
+            //         as: 'estado',
+            //         // com um filtro adicional do estado que o usuário digitou
+            //         where: {
+            //             uf: estado
+            //         }
+            //     }]            
+            // });
+            
+            //lista onde ficarão armazenadas as cidades
+            // let listaCidades = []
+                    
+            //buscando as cidades e incluindo na lista
+            // findCidades.forEach((cidade) => {
+            //     listaCidades.push(dataValues.nome)
+            // })
+        // --------------------------------------------------
+        
             // Buscando o id_cidade e id_estado na tabela cidade
             const findIdCidade = await Cidade.findAll({
                 //Inner join
