@@ -1,6 +1,5 @@
 const { Estado, Cidade, Usuario, Musico, Instrumento, Tecnico, MusicoInstrumentos, MusicoTecnicos } = require('../models');
 const bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator');
 
 const cadastroMuicoController = {
     formMusician: async (req, res) => {
@@ -50,13 +49,9 @@ const cadastroMuicoController = {
             nome = nome.trim(); 
             senha = senha.trim();
             email = email.trim();
-            sobre = sobre.trim();
-            estado = estado.trim();
-            cidade = cidade.trim(); 
-            site = site.trim();
-            canal = canal.trim();
-            instrumento = instrumento.trim();
-            habilidadeTecnica = habilidadeTecnica.trim();
+            sobre = sobre ? sobre.trim() : '';
+            site = site ? site.trim(): '';
+            canal = canal ? canal.trim(): '';
     
             // Buscando o id_cidade e id_estado na tabela cidade
             const findIdCidade = await Cidade.findAll({
