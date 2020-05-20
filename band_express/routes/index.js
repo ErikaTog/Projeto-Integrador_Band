@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const indexController = require('../controllers/IndexController');                                             
-const auth = require('../middlewares/auth');
+// const auth = require('../middlewares/auth');
 
 /* GET Home. */
 router.get('/', indexController.view);
