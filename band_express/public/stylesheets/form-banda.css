@@ -108,6 +108,10 @@ h5 {
     font-size: 1.6rem;
 }
 
+.form-group select {
+    padding: 0 1.5rem;
+}
+
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
 #identificacao {
