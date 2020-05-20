@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session')
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var cadastroRouter = require('./routes/cadastroBanda');
+var cadastroBandaRouter = require('./routes/cadastroBanda');
+var preCadastroRouter = require('./routes/preCadastro')
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
+var homeController = require('./routes/home');
 
 var app = express();
 const methodOverride = require('method-override');
@@ -20,15 +22,23 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(session({
+  secret: "bandPlusSecretData",
+  resave: true,
+  saveUninitialized:true
+}))
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/cadastro', cadastroRouter);
+app.use('/preCadastro', preCadastroRouter);
+app.use('/cadastro/banda', cadastroBandaRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
+app.use('/home', homeController);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

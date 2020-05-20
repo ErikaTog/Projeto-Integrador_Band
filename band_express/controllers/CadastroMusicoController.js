@@ -138,7 +138,7 @@ const cadastroMuicoController = {
                  });
             }
     
-            res.redirect('/feed');
+            res.redirect('/home');
         }
         catch(erro) {
             console.log(erro);
