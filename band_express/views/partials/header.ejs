@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Band+</title> <!-- Alterar o title para cada página (Controller) --> 
+    <title>Band+ <%= title %></title> <!-- Alterar o title para cada página (Controller) --> 
     <link rel="shortcut icon" href="/img/icone.png" type="image/x-icon">
     <!-- estilo -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -21,7 +21,7 @@
         <div class="nav-container">
             <nav class="navbar navbar-expand-lg">
                 <div class="topbar-mobile">
-                    <a class="navbar-brand" href="feed.html"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
                         
                     <div class="navbar-icon">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -37,7 +37,7 @@
                             class="nav-item active"
                         <% } %>
                         > 
-                            <a class="nav-link" href="feed.html">
+                            <a class="nav-link" href="/">
                                 <div class="nav-icon">
                                     <i class="fas fa-home"></i>
                                 </div>
@@ -99,13 +99,17 @@
                                 <p>Perfil</p>
                             </a>
                         </li>
-                        <li class="nav-item"> 
-                            <a class="nav-link" href="">
-                                <div class="nav-icon">
-                                    <img src="/img/teste/jane.jpg" alt="Foto de Perfil" class="avatar-nav">
-                                </div>
-                                <p><%= usuario.nome %></p>
-                            </a>
+                        <li class="nav-item">
+                            <button type="button" class="nav-icon-avatar dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                                <img src="/img/teste/jane.jpg" alt="Foto de Perfil" class="avatar-nav">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <p class="dropdown-item"><%= usuario.nome %></p>
+                                <a class="dropdown-item" href="">Editar Perfil</a>
+                                <a class="dropdown-item" href="">Minhas publicações</a>
+                                <a class="dropdown-item" href="/">Sair</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
