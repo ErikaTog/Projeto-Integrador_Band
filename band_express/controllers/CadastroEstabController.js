@@ -1,5 +1,5 @@
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento } = require('../models');
-const { check, validationResult, body } = require('express-validator');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
 const cadastroEstabController = {
@@ -39,9 +39,6 @@ const cadastroEstabController = {
 			site = site.trim();
 			emailEstab = emailEstab.trim();
 			telefone = telefone.trim();
-			inputFuncionamento = inputFuncionamento.trim();
-			inputAbertura = inputAbertura.trim();
-			inputFechamento = inputFechamento.trim();
 
 			// Buscando o id_cidade e id_estado na tabela cidade
 			const findIdCidade = await Cidade.findAll({
@@ -64,7 +61,7 @@ const cadastroEstabController = {
 
 			const idCidade = findIdCidade[0].dataValues.id_cidade;
 			const idEstado = findIdCidade[0].dataValues.id_estado;
-
+			
 			// Inserindo informação na tabela usuario   
 			const dadosUsuario = await Usuario.create({
 				nome,
