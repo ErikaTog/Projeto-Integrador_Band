@@ -95,10 +95,10 @@ const cadastroEstabController = {
 				id_estab: dadosEstab.id_estab
 			});
 
-			return res.redirect('/feed')
+			return res.redirect('/home')
 
 		}else{
-			return res.render('form-banda', { errors:listaDeErros })
+			return res.render('form-estab', { errors:listaDeErros })
 		}
     }
 }
