@@ -10,7 +10,9 @@ var cadastroBandaRouter = require('./routes/cadastroBanda');
 var preCadastroRouter = require('./routes/preCadastro')
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
-var homeController = require('./routes/home');
+var homeRouter = require('./routes/home');
+var batePapoRouter = require('./routes/batePapo');
+
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
@@ -38,8 +40,8 @@ app.use('/preCadastro', preCadastroRouter);
 app.use('/cadastro/banda', cadastroBandaRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
-app.use('/home', homeController);
-
+app.use('/home', homeRouter);
+app.use('/batePapo', batePapoRouter);
 
 
 // catch 404 and forward to error handler
