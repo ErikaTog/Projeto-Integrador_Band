@@ -1,4 +1,4 @@
-const { Usuario } = require('../models')
+const { Usuario } = require('../models');
 const bcrypt = require('bcrypt');
 
 const indexController = {
@@ -7,34 +7,37 @@ const indexController = {
     },
 
     loginUsuario: async (req, res) => {
-        try{
-             //lendo informações do body
-            const {email, senha} = req.body;
+        
+        //lendo informações do body
+        const {email, senha, logado} = req.body;
 
-            // buscando o email informado
-            const usuario = await Usuario.findOne({
-                attributes: ['nome', 'email', 'senha'],
-                raw: true,
-                where: {
-                    email
-                }
-            });
+        // buscando o email informado
+        const usuario = await Usuario.findOne({
+            attributes: ['nome', 'email', 'senha'],
+            raw: true,
+            where: {
+                email
+            }
+        });
 
-            // verificando se existe o usuário com o email informado
-            if (!usuario) {
-                res.redirect("/?error=1")
-            };
-
-            // validando senha
-            if (!bcrypt.compareSync(senha, usuario.senha)){
-                res.redirect("/?error=1")
-            };
-            
-            req.session.usuario = usuario;
-
-            res.redirect('/home')
+        // verificando se existe o usuário com o email informado
+        if (!usuario) {
+            res.redirect("/?error=1");
         }
-        catch(error){console.log(error)};
+
+        // validando senha
+        if (!bcrypt.compareSync(senha, usuario.senha)){
+            res.redirect("/?error=1");
+        }
+        
+        req.session.usuario = usuario;
+
+        // Armazenar informações (cookie)
+        if (logado) {
+            res.cookie('logado', usuario.email, { maxAge: 900000 });
+        }
+
+        res.redirect('/home');
     }
 }
 

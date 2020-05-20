@@ -11,6 +11,7 @@ var preCadastroRouter = require('./routes/preCadastro')
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
 var homeController = require('./routes/home');
+var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express();
 const methodOverride = require('method-override');
@@ -30,6 +31,7 @@ app.use(session({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(cookieMiddleware);
 
 app.use('/', indexRouter);
 app.use('/preCadastro', preCadastroRouter);
