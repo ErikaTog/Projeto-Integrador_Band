@@ -73,6 +73,9 @@ const cadastroEstabController = {
 				id_tipos_perfil: 3
 			})
 
+			let funcionamento = 0;
+			(inputAbertura != '' && inputFechamento != '') ? funcionamento = 1 : null;
+
 			// Inserindo dados complementares na tabela estab
 			const dadosEstab = await Estabelecimento.create({
 				categoria: servico,
@@ -80,17 +83,19 @@ const cadastroEstabController = {
 				site,
 				email: emailEstab,
 				telefone,
-				funcionamento: 0,
+				funcionamento,
 				id_usuario: dadosUsuario.id_usuario
 			});
 
-			// Inserindo dados complementares na tabela músico
-			const dadosFuncionamento = await Funcionamento.create({
-				dia: inputFuncionamento,
-				horario_abertura: inputAbertura,
-				horario_fechamento: inputFechamento,
-				id_estab: dadosEstab.id_estab
-			});
+			if (funcionamento){
+				// Inserindo dados complementares na tabela músico
+				const dadosFuncionamento = await Funcionamento.create({
+					dia: inputFuncionamento,
+					horario_abertura: inputAbertura,
+					horario_fechamento: inputFechamento,
+					id_estab: dadosEstab.id_estab
+				});
+			}
 
 			return res.redirect('/home')
 
