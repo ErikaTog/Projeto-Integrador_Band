@@ -1,17 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const {check, validationResult, body} = require('express-validator');
+const {check, body} = require('express-validator');
+const {Usuario} = require('../models')
 const cadastroBandaController = require('../controllers/CadastroBandaController');                                                    
-// const cadastroBandaMiddleware = require('../middlewares/cadastroBanda');
-const {Usuario, Banda, BandaIntegrantes, Cidade, Estado} = require('../models')
+const bandaMiddleware = require('../middlewares/cadastroBanda');
 
-/* GET pre-cadastro. */
-router.get('/', cadastroBandaController.pre); 
 
 /* GET/POST cadastro-banda. */
-router.get('/banda', cadastroBandaController.formBanda);
+router.get('/', cadastroBandaController.formBanda);
 
-router.post('/banda', [
+router.post('/', [
     //validando o campo nome
     check("nome").trim()
     .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
@@ -27,8 +25,8 @@ router.post('/banda', [
 
     //validando o campo senha
     check("senha").trim()
-    .not().isEmpty().withMessage('Seu acesso é exclusivo e para isso é necessário que digite uma senha!') // Se espaços
-    .isLength({ min: 6, max:16 }).withMessage('Sua senha deve ter entre 6 e 16 caracteres.'),
+    .not().isEmpty().withMessage('Queremos preservar a sua conta dos invasores. Coloque uma senha!') // Se espaços
+    .isLength({ min: 6, max:16 }).withMessage('Para sua maior segurança a senha deve conter entre 6 a 16 caracteres!'),
 
     //validando o campo email
     check("email").trim() 
@@ -76,7 +74,7 @@ router.post('/banda', [
     .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
     .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.')        
 
-], cadastroBandaController.saveBanda);
+], bandaMiddleware.error, cadastroBandaController.saveBanda);
 
 module.exports = router;
 
