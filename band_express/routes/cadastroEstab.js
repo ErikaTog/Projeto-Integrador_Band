@@ -7,6 +7,54 @@ const { Usuario } = require('../models');
 const cadastroEstabController = require('../controllers/CadastroEstabController');
 
 router.get('/', cadastroEstabController.formEstab);
-router.post('/', cadastroEstabController.saveEstab);
+
+router.post('/', 
+    //validando o campo nome
+    check("nome").trim()
+        .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
+        .isLength({ min: 2, max:100 }).withMessage('O nome da sua banda não tem somente uma letra, não é mesmo? Escreva, ao menos, 2 caracteres!'),
+    body('nome').trim()
+        .custom(async value => {
+            let userCheck = await Usuario.findOne( { where: {nome: value} } );
+            if (userCheck) {
+                console.log('User Exists');
+                return Promise.reject('As bandas cadastradas no Band+ são únicas e a sua também será. Então, por favor, nos indique outro nome!');
+            }
+        }),
+    
+    //validando o campo senha
+    check("senha").trim()
+        .not().isEmpty().withMessage('Seu acesso é exclusivo e para isso é necessário que digite uma senha!') // Se espaços
+        .isLength({ min: 6, max:16 }).withMessage('Sua senha deve ter entre 6 e 16 caracteres.'),
+
+    //validando o campo email
+    check("email").trim() 
+        .not().isEmpty().withMessage('Hey, queremos nos comunicar com sua banda! Diga o e-mail dela para nós!'), // já está sendo validade pelo html. Funciona com espaços
+        // .isEmail().withMessage('Ops, você não digitou o email corretamente!'), // já está sendo validade pelo html
+    body('email').trim()
+        .custom(async value => {
+            let emailCheck = await Usuario.findOne( { where: {email: value} } );
+            if (emailCheck) {
+                console.log('Email Exists');
+                return Promise.reject('Esse e-mail já foi cadastrado. Precisamos que nos informe outro.');
+            }
+        }),
+
+     // Validando o campo sobre
+     check('sobre').trim()
+     .isLength({ max: 2200 }).withMessage('Uhmmm, a sua bio está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
+
+    // Validando o campo Estado
+    check('estado').trim()
+        .not().isEmpty().withMessage('Queremos que você faça sucesso por onde passar, mas precisamos que nos indique um Estado.'),
+    
+    // Validando o campo Cidade
+    check('cidade').trim()
+        .not().isEmpty().withMessage('Queremos que você faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
+    
+
+
+
+cadastroEstabController.saveEstab);
 
 module.exports = router;
