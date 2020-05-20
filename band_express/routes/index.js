@@ -28,6 +28,5 @@ router.get('/perfil/3', (req, res, next) => res.render('perfil-estab'));
 
 router.get('/perfil-editar/3', (req, res, next) => res.render('perfil-estab-editar'));
 
-router.get('/fale-conosco', (req, res, next) => res.render('fale-conosco'));
 
 module.exports = router;
