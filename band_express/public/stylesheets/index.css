@@ -87,13 +87,54 @@ ul.navbar-nav{
 .nav-item a{
     color: #fb3c00;
     font-size: 1.2rem;
-    margin-left: 290px;
+    margin-top: 3px;
+    margin-left: 100px;
 }
 
 .nav-item a:hover{
     font-weight: bold;
     text-decoration: none;
 }
+
+label.form-check-label{
+    color: #fb3c00;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0px;
+    margin: 3px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+label.form-check-label:hover {
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+ 
+input[type=checkbox] + label:before {
+    width: 15px;
+    height: 15px;
+    background-color:#F7F7F7;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px #999999;
+    margin-right: 10px;
+    display: inline-block;
+    content: "";
+  }
+
+input[type=checkbox]:checked + label:before {
+    width: 15px;
+    height: 15px;
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    overflow: hidden;
+  }
 
 button.mobile {
     display: none;
@@ -378,17 +419,38 @@ p.circle-prof { width: 210px; }
     }
     .form-inline button.btn.btn-outline-cancelar {
         height: 35px;
-        margin-top: 20px;
+        margin-top: 40px;
     }
     .nav-item {
         position: relative;
     }
-    .nav-item a{
-        margin-left: 0px;
+    .form-check-inline {
+        display: flex;
+        flex-direction: column-reverse;
         position: absolute;
-        bottom: 45px;
-        left: 50px;
+        left: 23%;
+        bottom: 25%;
     }
+    .nav-item a{
+        margin-top: 5px;
+        margin-left: 0px;
+    }    
+    label.form-check-label{
+        margin: 5px 0 0;
+    }
+    input[type=checkbox] + label:before {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        margin-right: 5px;
+      }
+    
+    input[type=checkbox]:checked + label:before {
+        width: 12px;
+        height: 12px;
+        background-size: 80%;
+        margin-right: 5px;
+      }
     button.expand {
         display: none;
     }
@@ -559,11 +621,11 @@ p.circle-prof { width: 210px; }
     }    
     .form-inline button.btn.btn-outline-cancelar {
         height: auto;
-        margin-top: 18px;
+        margin-top: 40px;
     }
-    .nav-item a{
-        bottom: 38px;
-        left: 25px;
+    .form-check-inline {
+        left: 12%;
+        bottom: 23%;
     }
 
     button.btn {
