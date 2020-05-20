@@ -1,6 +1,6 @@
 const homeController = {
     view: (req, res) => {
-        return res.render('home')
+        return res.render('feed');
     }
 } 
 
