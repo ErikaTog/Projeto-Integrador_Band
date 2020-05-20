@@ -18,199 +18,209 @@
 
 <body>
     <form class="form-estab" method="POST" action="/cadastro/estabelecimento">
-        <!-- <div class="form-banda"> -->
-            <header>
-                <div class="nav-container">
-                    <nav class="navbar">
-                        <a class="navbar-brand" href="#"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
-                        <button type="submit" class="btn btn-salvar">Cadastrar</button>
-                    </nav>
+        <header>
+            <div class="nav-container">
+                <nav class="navbar">
+                    <a class="navbar-brand" href="#"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
+                    <button type="submit" class="btn btn-salvar">Cadastrar</button>
+                </nav>
+            </div>
+        </header>
+
+        <div class="cadastro-container container">
+
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Falta pouco para se tornar membro da Band+, realize alguns ajustes...</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
                 </div>
-            </header>
+            <% } %>
 
-            <div class="cadastro-container container">
-                <div class="row">
+            <div class="row">
+                <div class="col-md-6 col-sm-12"> <!-- COLUNA 1 -->
 
-                    <div class="col-md-6 col-sm-12"> <!-- COLUNA 1 -->
-
-                        <!-- Grupo Form Identificação -->
-                        <section id="identificacao" class="card-cadastro">
-                            <div class="form-header">
-                                <h4>Identificação</h4>
-                            </div>
-                            <h5>Dados do usuário</h5>
-                            <div class="campo-form card-cadastro">
-                                <div>
-                                    <div class="form-group row">
-                                        <label for="inputUser" class="col-xl-2 col-lg-3 col-form-label">Usuário</label>
-                                        <div class="col-xl-6 col-lg-9">
-                                            <input type="text" class="form-control" id="inputUser" name="nome"
-                                                placeholder="Digite o usuário" required>
-                                        </div>
+                    <!-- Grupo Form Identificação -->
+                    <section id="identificacao" class="card-cadastro">
+                        <div class="form-header">
+                            <h4>Identificação</h4>
+                        </div>
+                        <h5>Dados do usuário</h5>
+                        <div class="campo-form card-cadastro">
+                            <div>
+                                <div class="form-group row">
+                                    <label for="inputUser" class="col-xl-2 col-lg-3 col-form-label">Usuário</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="text" class="form-control" id="inputUser" name="nome"
+                                            placeholder="Digite o usuário" required>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputPassword" class="col-xl-2 col-lg-3 col-form-label">Senha</label>
-                                        <div class="col-xl-6 col-lg-9">
-                                            <input type="password" class="form-control" id="inputPassword" name="senha"
-                                                placeholder="6 dígitos" required>
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-xl-2 col-lg-3 col-form-label">Senha</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="password" class="form-control" id="inputPassword" name="senha"
+                                            placeholder="6 dígitos" required>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
-                                        <div class="col-xl-8 col-lg-9">
-                                            <input type="email" class="form-control" id="inputEmail" name="email"
-                                                placeholder="Digite o e-mail" required>
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="email" class="form-control" id="inputEmail" name="email"
+                                            placeholder="Digite o e-mail" required>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
+                    </section>
 
-                        <!-- Grupo Form Informação -->
-                        <section id="informacao" class="card-cadastro">
-                            <div class="form-header">
-                                <h4>Informações do local</h4>
-                            </div>
+                    <!-- Grupo Form Informação -->
+                    <section id="informacao" class="card-cadastro">
+                        <div class="form-header">
+                            <h4>Informações do local</h4>
+                        </div>
 
-                            <h5>Categoria do local</h5>
-                            <div class="campo-form card-cadastro">
-                                <div>
-                                    <div class="form-group row">
-                                        <label for="inputTipo" class="col-xl-2 col-lg-3 col-form-label">Tipo</label>
-                                        <div class="col-xl-8 col-lg-9">
-                                            <select class="form-control" name="servico" id="inputServico">
-                                                <option>Bar/Pub</option>
-                                                <option>Escola de música</option>
-                                                <option>Estúdio</option>
-                                                <option>Gravadora</option>
-                                                <option>Loja</option>
-                                                <option>Produtora</option>
-                                                <option>Restaurante</option>
-                                                <option selected>Outro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
-
-                            <h5>Sobre o local</h5>
-                                <div>
-                                    <div class="form-group row">
-                                        <label for="inputBio" class="remove-conte">Conte mais sobre o local</label>
-                                        <textarea class="form-control" id="inputBio" rows="11" name="sobre"
-                                        placeholder="Conte sobre o seu local!"></textarea>
-                                    </div>
-                                </div>
-                        </section>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">  <!-- COLUNA 2 -->
-
-                        <!-- Grupo Form Dados -->
-                        <section id="dados" class="card-cadastro ml-auto">
-                            <div class="form-header">
-                                <h4>Dados do seu local</h4>
-                            </div>
-
-                            <h5>Localização</h5>
-                            <div class="campo-form card-cadastro">
-                                <div>
-                                    <div class="form-group row">
-                                        <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
-                                        <div class="col-xl-6 col-lg-9">
-                                            <select class="form-control" id="inputEstado" name="estado">
-                                                <option value="" disabled selected hidden>Escolha um Estado</option>
-                                                <% listaEstados.forEach((estado)=>{ %>
-                                                    <option><%= estado %></option>
-                                                <% }) %>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
-                                        <div class="col-xl-6 col-lg-9">
-                                            <input type="text" class="form-control" id="inputCidade" name="cidade"
-                                                placeholder="Digite a cidade">
-                                        </div>
+                        <h5>Categoria do local</h5>
+                        <div class="campo-form card-cadastro">
+                            <div>
+                                <div class="form-group row">
+                                    <label for="inputTipo" class="col-xl-2 col-lg-3 col-form-label">Tipo</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <select class="form-control" name="servico" id="inputServico">
+                                            <option>Bar/Pub</option>
+                                            <option>Escola de música</option>
+                                            <option>Estúdio</option>
+                                            <option>Gravadora</option>
+                                            <option>Loja</option>
+                                            <option>Produtora</option>
+                                            <option>Restaurante</option>
+                                            <option selected>Outro</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+                        </div>    
 
-                            <h5>Contatos</h5>
-                            <div class="campo-form card-cadastro">
-                                <div>
-                                    <div class="form-group row">
-                                        <label for="inputSite" class="col-xl-2 col-lg-3 col-form-label">Site</label>
-                                        <div class="col-xl-8 col-lg-9">
-                                            <input type="text" class="form-control" id="inputSite" name="site"
-                                                placeholder="Digite o site do seu local">
-                                        </div>
+                        <h5>Sobre o local</h5>
+                            <div>
+                                <div class="form-group row">
+                                    <label for="inputBio" class="remove-conte">Conte mais sobre o local</label>
+                                    <textarea class="form-control" id="inputBio" rows="11" name="sobre"
+                                    placeholder="Conte sobre o seu local!"></textarea>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+
+                <div class="col-md-6 col-sm-12">  <!-- COLUNA 2 -->
+
+                    <!-- Grupo Form Dados -->
+                    <section id="dados" class="card-cadastro ml-auto">
+                        <div class="form-header">
+                            <h4>Dados do seu local</h4>
+                        </div>
+
+                        <h5>Localização</h5>
+                        <div class="campo-form card-cadastro">
+                            <div>
+                                <div class="form-group row">
+                                    <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <select class="form-control" id="inputEstado" name="estado">
+                                            <option value="" disabled selected hidden>Escolha um Estado</option>
+                                            <% listaEstados.forEach((estado)=>{ %>
+                                                <option><%= estado %></option>
+                                            <% }) %>
+                                        </select>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
-                                        <div class="col-xl-8 col-lg-9">
-                                            <input type="text" class="form-control" id="inputEmailEstab" name="emailEstab"
-                                                placeholder="Digite o e-mail do seu local">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputTelefone" class="col-xl-2 col-lg-3 col-form-label">Telefone</label>
-                                        <div class="col-xl-8 col-lg-9">
-                                            <input type="tel" class="form-control" id="inputTelefone" name="telefone"
-                                                placeholder="Digite o telefone do seu local">
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
+                                    <div class="col-xl-6 col-lg-9">
+                                        <input type="text" class="form-control" id="inputCidade" name="cidade"
+                                            placeholder="Digite a cidade">
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <h5 id="h5">Funcionamento</h5>
-                            <div class="campo-form card-cadastro">
-                                <div>
-                                    <div class="form-group row">
-                                        <div class="col-lg-5 col-md-10 col-sm-4 col-12"> 
-                                            <select class="form-control" name="inputFuncionamento" id="inputFuncionamento">
-                                                <option>Segunda</option>
-                                                <option>Terça</option>
-                                                <option>Quarta</option>
-                                                <option>Quinta</option>
-                                                <option>Sexta</option>
-                                                <option>Sábado</option>
-                                                <option>Domingo</option>
-                                                <option>Feriado</option>
-                                            </select>
-                                        </div>
-                                        <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
-                                            <input type="time" class="form-control" id="inputAbertura"
-                                                placeholder="Abertura" name="inputAbertura">
-                                        </div>
-                                        <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
-                                            <input type="time" class="form-control" id="inputFechamento"
-                                                placeholder="Fechamento" name="inputFechamento">
-                                        </div>
-                                        <div class="add-funcionamento">
-                                            <a href=""><i class="fas fa-plus-square"></i></a>
-                                        </div>
+                        <h5>Contatos</h5>
+                        <div class="campo-form card-cadastro">
+                            <div>
+                                <div class="form-group row">
+                                    <label for="inputSite" class="col-xl-2 col-lg-3 col-form-label">Site</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="text" class="form-control" id="inputSite" name="site"
+                                            placeholder="Digite o site do seu local">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="text" class="form-control" id="inputEmailEstab" name="emailEstab"
+                                            placeholder="Digite o e-mail do seu local">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputTelefone" class="col-xl-2 col-lg-3 col-form-label">Telefone</label>
+                                    <div class="col-xl-8 col-lg-9">
+                                        <input type="tel" class="form-control" id="inputTelefone" name="telefone"
+                                            placeholder="Digite o telefone do seu local">
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+
+                        <h5 id="h5">Funcionamento</h5>
+                        <div class="campo-form card-cadastro">
+                            <div>
+                                <div class="form-group row">
+                                    <div class="col-lg-5 col-md-10 col-sm-4 col-12"> 
+                                        <select class="form-control" name="inputFuncionamento" id="inputFuncionamento">
+                                            <option>Segunda</option>
+                                            <option>Terça</option>
+                                            <option>Quarta</option>
+                                            <option>Quinta</option>
+                                            <option>Sexta</option>
+                                            <option>Sábado</option>
+                                            <option>Domingo</option>
+                                            <option>Feriado</option>
+                                        </select>
+                                    </div>
+                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                        <input type="time" class="form-control" id="inputAbertura"
+                                            placeholder="Abertura" name="inputAbertura">
+                                    </div>
+                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                        <input type="time" class="form-control" id="inputFechamento"
+                                            placeholder="Fechamento" name="inputFechamento">
+                                    </div>
+                                    <div class="add-funcionamento">
+                                        <a href=""><i class="fas fa-plus-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
+        </div>
 
-            <footer>
-                <ul class="list-unstyled mb-0">
-                    <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
-                    <li>
-                        <span class="copyright">Copyright &copy;
-                            2020 -
-                            <img src="/img/icone.png" width="20">
-                            Band+ by Group 1
-                        </span>
-                    </li>
-                </ul>
-            </footer>
-        <!-- </div> -->
+        <footer>
+            <ul class="list-unstyled mb-0">
+                <li><a href="">Políticas</a> | <a href="fale-conosco.html"><strong>Fale Conosco</strong></a></li>
+                <li>
+                    <span class="copyright">Copyright &copy;
+                        2020 -
+                        <img src="/img/icone.png" width="20">
+                        Band+ by Group 1
+                    </span>
+                </li>
+            </ul>
+        </footer>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
