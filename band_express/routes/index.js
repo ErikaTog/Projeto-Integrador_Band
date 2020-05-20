@@ -1,14 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
+const indexController = require('../controllers/IndexController');                                             
+const auth = require('../middlewares/auth');
+
+/* GET Home. */
+router.get('/', indexController.view);
+
+router.post('/', indexController.loginUsuario);
+
+
 /* GET home page. */
-//router.get('/', function(req, res, next) { res.render('index', { title: 'Express' }); });
-
-router.get('/', (req, res, next) => res.render('index'));
-
-router.get('/cadastro/2', (req, res, next) => res.render('form-banda'));
-
-router.get('/feed', (req, res, next) => res.render('feed'));
 
 router.get('/vagas', (req, res, next) => res.render('vagas'));
 
