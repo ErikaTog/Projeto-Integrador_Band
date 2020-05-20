@@ -9,6 +9,7 @@ const cadastroEstabController = require('../controllers/CadastroEstabController'
 router.get('/', cadastroEstabController.formEstab);
 
 router.post('/', 
+
     //validando o campo nome
     check("nome").trim()
         .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
@@ -51,9 +52,18 @@ router.post('/',
     // Validando o campo Cidade
     check('cidade').trim()
         .not().isEmpty().withMessage('Queremos que você faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
-    
 
+    // Validando o campo Site
+    check('site').trim()
+        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.'),
 
+     // Validando o campo emailEstab
+     check('emailEstab').trim()
+        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o email do seu estabelecimento? Este campo só aceita até 100 caracteres.'),
+ 
+     // Validando o campo telefone
+     check('telefone').trim()
+        .isNumeric().withMessage('Tem certeza que esse é o telefone do seu estabelecimento? Este campo só aceita numeros.'),
 
 cadastroEstabController.saveEstab);
 
