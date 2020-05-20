@@ -2,7 +2,7 @@
         Geral - Form Estab
 -------------------------------- */
 .form-banda {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -53,7 +53,26 @@ footer {
     border-radius: 10px;
 }
 
+/* ------------------------------*/ 
+/* Mensagem Erro */
 
+.alert {
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 30px;
+}
+
+.alert-danger {
+    border-radius: 10px;
+}
+
+.alert h5 {
+    margin: 0;
+}
+
+.error {
+    list-style-type: none;
+    margin-bottom: 0;
+}
 /* ------------------------------*/ 
 /* Formulário */
 .form-header {
