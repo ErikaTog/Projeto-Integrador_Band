@@ -8,7 +8,7 @@ module.exports = {
           titulo: 'Titulo Anuncio 01',
           descricao: 'Descrição Anuncio 01 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
           local: 'Local do Anuncio 01',
-          valor: '',
+          valor: 2,
           img_anuncio: null,
           id_usuario: 1
         },
