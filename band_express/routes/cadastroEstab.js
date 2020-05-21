@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {check, validationResult, body} = require('express-validator');
-
+const {check, body} = require('express-validator');
 const { Usuario } = require('../models');
-
 const cadastroEstabController = require('../controllers/CadastroEstabController');
+const estabMiddleware = require('../middlewares/cadastroEstab');
 
 router.get('/', cadastroEstabController.formEstab);
 
-router.post('/', 
+router.post('/', [
 
     //validando o campo nome
     check("nome").trim()
@@ -60,11 +59,9 @@ router.post('/',
      // Validando o campo emailEstab
      check('emailEstab').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o email do seu estabelecimento? Este campo só aceita até 100 caracteres.'),
- 
-     // Validando o campo telefone
-     check('telefone').trim()
-        .isNumeric().withMessage('Tem certeza que esse é o telefone do seu estabelecimento? Este campo só aceita numeros.'),
 
-cadastroEstabController.saveEstab);
+], 
+
+estabMiddleware.error, cadastroEstabController.saveEstab);
 
 module.exports = router;

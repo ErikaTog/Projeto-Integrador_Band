@@ -16,9 +16,7 @@ router.get('/vagas', (req, res, next) => res.render('vagas'));
 
 router.get('/minhaRede', (req, res, next) => res.render('minhaRede'));
 
-router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
-
-router.get('/anuncie', (req, res, next) => res.render('anuncie'));
+// router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
 
 router.get('/perfil/1', (req, res, next) => res.render('perfil-musico'));
 

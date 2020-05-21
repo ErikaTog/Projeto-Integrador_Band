@@ -1,6 +1,6 @@
 const homeController = {
     view: (req, res) => {
-        return res.render('feed');
+        return res.render('feed', { title: 'Home', usuario: req.session.usuario });
     }
 } 
 
