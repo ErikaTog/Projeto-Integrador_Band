@@ -170,8 +170,13 @@ img.avatar-nav {
     background-color: transparent;
 }
 
+.nav-item h5.dropdown-item {
+    height: auto;
+    font-weight: 700;
+    padding: 0;
+}
+
 .nav-item p.dropdown-item {
-    width: 150px;
     height: auto;
     font-weight: 700;
     box-shadow: 0 4px 6px -6px #999999;
