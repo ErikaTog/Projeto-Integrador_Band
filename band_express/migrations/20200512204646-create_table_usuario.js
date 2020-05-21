@@ -56,11 +56,13 @@ module.exports = {
         },
         avatar: {
             type: Sequelize.STRING(256),
-            allowNull: true
+            defaultValue: '/img/avatar_zero.png',
+            allowNull: false
         },
         wallpaper: {
             type: Sequelize.STRING(256),
-            allowNull: true
+            defaultValue: '/img/fundo_zero.png',
+            allowNull: false
         },
         link_perfil: {
             type: Sequelize.STRING(100),

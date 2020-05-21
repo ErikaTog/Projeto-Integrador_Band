@@ -13,6 +13,8 @@ module.exports = {
           id_estado: 26,
           id_cidade: 5284,
           admin: 1,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 2,
         },
         {
@@ -23,6 +25,8 @@ module.exports = {
           id_estado: 26,
           id_cidade: 5023,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 1,
         },
         {
@@ -33,6 +37,8 @@ module.exports = {
           id_estado: 26,
           id_cidade: 5265,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 3,
         },
         {
@@ -43,6 +49,8 @@ module.exports = {
           id_estado: 20,
           id_cidade: 3680,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 1,
         },
         {
@@ -53,6 +61,8 @@ module.exports = {
           id_estado: 15,
           id_cidade: 2558,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 1,
         },
         {
@@ -63,6 +73,8 @@ module.exports = {
           id_estado: 20,
           id_cidade: 3680,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 2,
         },
         {
@@ -73,6 +85,8 @@ module.exports = {
           id_estado: 15,
           id_cidade: 2558,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 3,
         },
         {
@@ -83,6 +97,8 @@ module.exports = {
           id_estado: 20,
           id_cidade: 3680,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 2,
         },
         {
@@ -93,6 +109,8 @@ module.exports = {
           id_estado: 20,
           id_cidade: 3680,
           admin: 0,
+          avatar: '/img/avatar_zero.png',
+          wallpaper: '/img/fundo_zero.png',
           id_tipos_perfil: 3,
         }
       ], {});
