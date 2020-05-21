@@ -13,8 +13,16 @@ var preCadastroRouter = require('./routes/preCadastro');
 var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
 var homeRouter = require('./routes/home');
+//Perfil Banda Erika
+//Editar Perfil Banda Erika
+//Perfil Músico Paty
+//Editar Perfil Músico Paty
+//Perfil Estab Andy
+//Perfil Editar Estab Andy
 var batePapoRouter = require('./routes/batePapo');
 var anuncieRouter = require('./routes/anuncie');
+//vagas Erika
+//minha rede Erika
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -46,8 +54,18 @@ app.use('/cadastro/banda', cadastroBandaRouter);
 app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
 app.use('/home', homeRouter);
+//Perfil Banda Erika
+//Editar Perfil Banda Erika
+//Perfil Músico Paty
+//Editar Perfil Músico Paty
+//Perfil Estab Andy
+//Perfil Editar Estab Andy
 app.use('/batePapo', batePapoRouter);
 app.use('/anuncie', anuncieRouter);
+//app.use(vaga)
+//app.use(minha rede)
+
+
 
 
 // catch 404 and forward to error handler
