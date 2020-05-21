@@ -12,6 +12,7 @@ var cadastroMusicoRouter = require('./routes/cadastroMusico');
 var cadastroEstabRouter = require('./routes/cadastroEstab');
 var homeRouter = require('./routes/home');
 var batePapoRouter = require('./routes/batePapo');
+var anuncieRouter = require('./routes/anuncie');
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -42,6 +43,7 @@ app.use('/cadastro/musico', cadastroMusicoRouter);
 app.use('/cadastro/estabelecimento', cadastroEstabRouter);
 app.use('/home', homeRouter);
 app.use('/batePapo', batePapoRouter);
+app.use('/anuncie', anuncieRouter);
 
 
 // catch 404 and forward to error handler
