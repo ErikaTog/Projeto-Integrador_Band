@@ -13,7 +13,7 @@ const indexController = {
 
         // buscando o email informado
         const usuario = await Usuario.findOne({
-            attributes: ['nome', 'email', 'senha'],
+            attributes: ['id_usuario', 'nome', 'email', 'senha', 'id_tipos_perfil'],
             raw: true,
             where: {
                 email

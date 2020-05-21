@@ -50,8 +50,6 @@ const cadastroMuicoController = {
         site = site ? site.trim(): '';
         canal = canal ? canal.trim(): '';
 
-        let usuario = { nome, senha, email, id_tipos_perfil: 1};
-
         // Buscando o id_cidade e id_estado na tabela cidade
         const findIdCidade = await Cidade.findAll({
             //Inner join
@@ -137,6 +135,8 @@ const cadastroMuicoController = {
         }
 
         // Setar session do usuario
+        let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 1};
+
         req.session.usuario = usuario;
 
         res.redirect('/home');

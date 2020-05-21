@@ -15,8 +15,8 @@ var cadastroEstabRouter = require('./routes/cadastroEstab');
 var homeRouter = require('./routes/home');
 //Perfil Banda Erika
 //Editar Perfil Banda Erika
-//Perfil Músico Paty
-//Editar Perfil Músico Paty
+var perfilMusicoRouter = require('./routes/perfilMusico');
+var perfilEditarMusicoRouter = require('./routes/perfilEditarMusico');
 //Perfil Estab Andy
 //Perfil Editar Estab Andy
 var batePapoRouter = require('./routes/batePapo');
@@ -56,8 +56,8 @@ app.use('/cadastro/estabelecimento', cadastroEstabRouter);
 app.use('/home', homeRouter);
 //Perfil Banda Erika
 //Editar Perfil Banda Erika
-//Perfil Músico Paty
-//Editar Perfil Músico Paty
+app.use('/perfil/musico', perfilMusicoRouter);
+app.use('/perfil/editar/musico', perfilEditarMusicoRouter);
 //Perfil Estab Andy
 //Perfil Editar Estab Andy
 app.use('/batePapo', batePapoRouter);
