@@ -32,13 +32,10 @@ const cadastroEstabController = {
 			nome = nome.trim();
 			senha = senha.trim();
 			email = email.trim();
-			servico = servico.trim();
-			sobre = sobre.trim();
-			estado = estado.trim();
-			cidade = cidade.trim();
-			site = site.trim();
-			emailEstab = emailEstab.trim();
-			telefone = telefone.trim();
+			sobre = sobre ? sobre.trim() : '';
+			site = site ? site.trim() : '';
+			emailEstab = emailEstab ? emailEstab.trim() : '';
+			telefone = telefone ? telefone.trim() : '';
 
 			// Buscando o id_cidade e id_estado na tabela cidade
 			const findIdCidade = await Cidade.findAll({
