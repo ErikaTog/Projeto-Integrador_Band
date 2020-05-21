@@ -43,14 +43,14 @@ const cadastroMuicoController = {
 
         let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
 
-        console.log(req.body);
-
         nome = nome.trim(); 
         senha = senha.trim();
         email = email.trim();
         sobre = sobre ? sobre.trim() : '';
         site = site ? site.trim(): '';
         canal = canal ? canal.trim(): '';
+
+        let usuario = { nome, senha, email, id_tipos_perfil: 1};
 
         // Buscando o id_cidade e id_estado na tabela cidade
         const findIdCidade = await Cidade.findAll({
@@ -82,8 +82,13 @@ const cadastroMuicoController = {
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
+            link_perfil: null,
             id_tipos_perfil: 1
         })
+
+        // Salvar o campo link_perfil
+        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosUsuario.id_usuario}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
 
         // Inserindo dados complementares na tabela músico
         const dadosMusico = await Musico.create({
@@ -106,7 +111,6 @@ const cadastroMuicoController = {
             });
     
             const idInstrumento = findIdInstrumento.dataValues.id_instrumento;
-            console.log(idInstrumento)
             
             // Inserindo id_instrumento nas tabelas intermediárias
             const dadosToco = await MusicoInstrumentos.create({
@@ -131,6 +135,9 @@ const cadastroMuicoController = {
                 id_tecnico:  idTecnico
                 });
         }
+
+        // Setar session do usuario
+        req.session.usuario = usuario;
 
         res.redirect('/home');
 
