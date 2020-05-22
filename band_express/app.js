@@ -17,8 +17,8 @@ var homeRouter = require('./routes/home');
 //Editar Perfil Banda Erika
 var perfilMusicoRouter = require('./routes/perfilMusico');
 var perfilEditarMusicoRouter = require('./routes/perfilEditarMusico');
-//Perfil Estab Andy
-//Perfil Editar Estab Andy
+var perfilEstabRouter = require('./routes/perfilEstab');
+var perfilEditarEstabRouter = require('./routes/perfilEditarEstab');
 var batePapoRouter = require('./routes/batePapo');
 var anuncieRouter = require('./routes/anuncie');
 var vagasRouter = require('./routes/vagas');
@@ -58,8 +58,8 @@ app.use('/home', homeRouter);
 //Editar Perfil Banda Erika
 app.use('/perfil/musico', perfilMusicoRouter);
 app.use('/perfil/editar/musico', perfilEditarMusicoRouter);
-//Perfil Estab Andy
-//Perfil Editar Estab Andy
+app.use('/perfil/estabelecimento', perfilEstabRouter);
+app.use('/perfil/editar/estabelecimento', perfilEditarEstabRouter);
 app.use('/batePapo', batePapoRouter);
 app.use('/anuncie', anuncieRouter);
 app.use('/vagas', vagasRouter);
