@@ -95,6 +95,10 @@
                             <a class="nav-link" 
                             <% if (usuario.id_tipos_perfil == 1) { %>
                                 href="/perfil/musico/<%= usuario.id_usuario %>"
+                            <% } else if (usuario.id_tipos_perfil == 2) { %>
+                                href="/perfil/banda/<%= usuario.id_usuario %>"
+                            <% } else { %>
+                                href="/perfil/estabelecimento/<%= usuario.id_usuario %>"
                             <% } %>
                             >
                                 <div class="nav-icon">
