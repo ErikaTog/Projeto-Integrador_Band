@@ -1,21 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const indexController = require('../controllers/IndexController');                                             
-// const auth = require('../middlewares/auth');
+const indexController = require('../controllers/IndexController');
 
 /* GET Home. */
 router.get('/', indexController.view);
 
 router.post('/', indexController.loginUsuario);
-
-
-/* GET home page. */
-
-// router.get('/bate-papo', (req, res, next) => res.render('bate-papo'));
-
-router.get('/perfil/1', (req, res, next) => res.render('perfil-musico'));
-
-router.get('/perfil-editar/1', (req, res, next) => res.render('perfil-musico-editar'));
 
 module.exports = router;

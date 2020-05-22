@@ -3,6 +3,8 @@ const router = express.Router();
 
 const batePapoController = require('../controllers/BatePapoController');
 
-router.get('/', batePapoController.show);
+const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
+
+router.get('/', VerificaUsuarioLogado, batePapoController.show);
 
 module.exports = router;
