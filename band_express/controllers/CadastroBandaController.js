@@ -91,8 +91,13 @@ const cadastroBandaController = {
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
+            link_perfil: null,
             id_tipos_perfil: 2
         });
+
+        // Salvar o campo link_perfil
+        dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosUsuario.id_usuario}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
 
 
         // inserindo dados complementares de banda na tabela banda
@@ -123,6 +128,11 @@ const cadastroBandaController = {
             id_integrante: idMusico,
             funcao
         });
+
+         // Setar session do usuario
+         let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 2};
+
+         req.session.usuario = usuario;
 
         res.redirect('/home')
 
