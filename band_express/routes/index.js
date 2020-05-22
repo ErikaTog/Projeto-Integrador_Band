@@ -18,9 +18,4 @@ router.get('/perfil/1', (req, res, next) => res.render('perfil-musico'));
 
 router.get('/perfil-editar/1', (req, res, next) => res.render('perfil-musico-editar'));
 
-router.get('/perfil/3', (req, res, next) => res.render('perfil-estab'));
-
-router.get('/perfil-editar/3', (req, res, next) => res.render('perfil-estab-editar'));
-
-
 module.exports = router;
