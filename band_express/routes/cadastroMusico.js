@@ -14,7 +14,7 @@ router.post('/',
     // Validando o campo nome
     check('nome').trim()
         .not().isEmpty().withMessage('Queremos ajudar você a ficar famoso. Para isso, precisamos que nos diga o seu nome!')
-        .isLength({ min: 2, max: 100 }).withMessage('O seu nome não tem somente uma letra, não é mesmo? Escreva, ao menos, 2 caracteres!'),
+        .isLength({ min: 2, max: 25 }).withMessage('O seu nome não tem somente uma letra, não é mesmo? Escreva, ao menos, 2 caracteres!'),
     body('nome').trim()
         .custom(async value => {
             let userCheck = await Usuario.findOne( { where: {nome: value} } );
