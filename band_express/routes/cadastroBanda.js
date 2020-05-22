@@ -13,7 +13,7 @@ router.post('/', [
     //validando o campo nome
     check("nome").trim()
     .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
-    .isLength({ min: 2, max:100 }).withMessage('O nome da sua banda não tem somente uma letra, não é mesmo? Escreva, ao menos, 2 caracteres!'),
+    .isLength({ min: 2, max:25 }).withMessage('O nome da sua banda não tem somente uma letra, não é mesmo? Escreva, ao menos, 2 caracteres e no máximo 25!'),
     body('nome').trim()
         .custom(async value => {
             let userCheck = await Usuario.findOne( { where: {nome: value} } );
@@ -56,7 +56,7 @@ router.post('/', [
     //validando o campo integrante
     check("integrante").trim()
     .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
-    .isLength({ min: 2, max:100 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres.'),
+    .isLength({ min: 2, max:25 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres.'),
     body('integrante').trim()
     .custom(async value => {
         let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
