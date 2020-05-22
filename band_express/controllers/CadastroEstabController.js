@@ -1,5 +1,4 @@
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento } = require('../models');
-// const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
 const cadastroEstabController = {
@@ -89,6 +88,10 @@ const cadastroEstabController = {
 				id_estab: dadosEstab.id_estab
 			});
 		}
+
+		// Setar session do usuario
+		let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 1};
+		req.session.usuario = usuario;
 
 		return res.redirect('/home')
 	}
