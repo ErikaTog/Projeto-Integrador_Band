@@ -7,7 +7,7 @@ const cookieLogin = async (req, res, next) => {
 
         // Procurar se há um usuário com esse e-mail
         const usuario = await Usuario.findOne({
-            attributes: ['nome', 'email', 'senha'],
+            attributes: ['id_usuario', 'nome', 'email', 'senha', 'id_tipos_perfil'],
             raw: true,
             where: {
                 email
