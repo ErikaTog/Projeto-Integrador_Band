@@ -53,6 +53,14 @@ router.post('/', [
     check("cidade").trim() 
     .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
 
+    // Validando o campo Site
+    check('site').trim()
+    .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.'),
+    
+    // Validando o campo Canal
+    check('canal').trim()
+    .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.'),
+    
     //validando o campo integrante
     check("integrante").trim()
     .not().isEmpty().withMessage('Sua banda não pode existir sem nenhum músico. Inclua pelo menos um usuário já cadastrado na rede!')
