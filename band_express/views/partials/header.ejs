@@ -114,7 +114,15 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <p class="dropdown-item">Olá, <%= usuario.nome %> </p>
-                                <a class="dropdown-item" href="">Editar Perfil</a>
+                                <a class="dropdown-item"
+                                <% if (usuario.id_tipos_perfil == 1) { %>
+                                    href="/perfil/editar/musico/<%= usuario.id_usuario %>"
+                                <% } else if (usuario.id_tipos_perfil == 2) { %>
+                                    href="/perfil/editar/banda/<%= usuario.id_usuario %>"
+                                <% } else { %>
+                                    href="/perfil/editar/estabelecimento/<%= usuario.id_usuario %>"
+                                <% } %> 
+                                >Editar Perfil</a>
                                 <a class="dropdown-item" href="">Minhas publicações</a>
                                 <a class="dropdown-item" href="/">Sair</a>
                             </div>
