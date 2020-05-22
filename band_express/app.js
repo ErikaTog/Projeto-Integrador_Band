@@ -21,8 +21,8 @@ var homeRouter = require('./routes/home');
 //Perfil Editar Estab Andy
 var batePapoRouter = require('./routes/batePapo');
 var anuncieRouter = require('./routes/anuncie');
-//vagas Erika
-//minha rede Erika
+var vagasRouter = require('./routes/vagas');
+var minhaRedeRouter = require('./routes/minhaRede');
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -62,8 +62,8 @@ app.use('/home', homeRouter);
 //Perfil Editar Estab Andy
 app.use('/batePapo', batePapoRouter);
 app.use('/anuncie', anuncieRouter);
-//app.use(vaga)
-//app.use(minha rede)
+app.use('/vagas', vagasRouter);
+app.use('/minhaRede', minhaRedeRouter);
 
 
 
