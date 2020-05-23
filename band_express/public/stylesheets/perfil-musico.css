@@ -28,6 +28,21 @@
     margin: 0;
 }
 
+/* Mensagem - Não há informações */
+p.msg-incentivo {
+    color: #999999;
+    font-weight: 700;
+}
+
+#habilidades p.msg-incentivo {
+    padding: 20px 0;
+    align-self: flex-start;
+}
+
+#minhaMusica p.msg-incentivo {
+    margin-bottom: 20px;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
@@ -455,6 +470,10 @@ audio::-webkit-media-controls-panel {
         max-width: 100%;
         height: auto;
     }
+    #habilidades .scroll .item.row {
+        height: auto;
+        max-height: 230px;
+    }
     #infos {
         max-width: 100%;
         height: auto;
@@ -512,7 +531,8 @@ audio::-webkit-media-controls-panel {
     }
 
     #habilidades .scroll .item.row {
-        height: 220px;
+        height: auto;
+        max-height: 220px;
     }
 
     #minhaMusica .row {

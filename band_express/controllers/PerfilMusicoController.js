@@ -7,7 +7,7 @@ const perfilMusicoController = {
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
             raw: true,
-            attributes: ['nome', 'email', 'senha', 'id_estado', 'id_cidade', 'avatar', 'wallpaper'] 
+            attributes: ['id_estado', 'id_cidade', 'avatar', 'wallpaper'] 
         });
 
         // Buscar cidade e estado

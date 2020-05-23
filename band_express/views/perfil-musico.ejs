@@ -45,13 +45,15 @@
 
             <h4><strong>Sobre mim</strong></h4>
             <div class="bio-scroll">
-                <p class="text-justify">
-                    <% if (dadosMusico.sobre) { %>
+                <% if (dadosMusico.sobre) { %>
+                    <p class="text-justify">
                         <%= dadosMusico.sobre %>
+                    </p>
                     <% } else { %>
-                        Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                        <p class="msg-incentivo">
+                            Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                        </p>    
                     <% } %>
-                </p>
             </div>
 
         </section>
@@ -66,7 +68,7 @@
                         <div class="scroll">
                             <div class="item row">
                                 <% if (!dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
-                                    <p>Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
+                                    <p class="msg-incentivo">Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
                                 <% } %>
                                 <% if (dadosMusico.canto) { %>
                                     <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
@@ -105,28 +107,23 @@
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/site-01.png" alt="Site">
-                            <p>
-                                <% if (dadosMusico.site) { %>
-                                    <%= dadosMusico.site %>
-                                <% } else { %>
-                                    Ops, você não informou este campo
-                                <% } %>
-                            </p>
-
+                            <% if (dadosMusico.site) { %>
+                                <p><%= dadosMusico.site %></p>
+                            <% } else { %>
+                                <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <% } %>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/canal-01.png" alt="Canal">
-                            <p>
-                                <% if (dadosMusico.site) { %>
-                                    <%= dadosMusico.canal %>
-                                <% } else { %>
-                                    Ops, você não informou este campo
-                                <% } %>
-                            </p>
+                            <% if (dadosMusico.site) { %>
+                                <p><%= dadosMusico.canal %></p>
+                            <% } else { %>
+                                <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <% } %>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/email-01.png" alt="Email">
-                            <p><%= usuario.email %> </p>
+                            <p><%= usuario.email %></p>
                         </div>
                     </section>
                 </div>
@@ -138,7 +135,7 @@
             <h4><strong>Minha música</strong></h4>            
             <div class="row">
                 <% if (!videos.length && !audios.length) { %>
-                    <p>Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+                    <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
                 <% } %>
                 <% if (videos.length) { %>
                     <% videos.forEach(video => { %>
