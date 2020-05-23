@@ -376,7 +376,7 @@ audio::-webkit-media-controls-panel {
 
 @media screen and (max-width: 1199px) {
     .head-fundo {
-        height: 250px;
+        height: 225px;
     }
     #head img.avatar {
         width: 180px;
@@ -457,10 +457,10 @@ audio::-webkit-media-controls-panel {
 
 @media screen and (max-width: 768px) {
     .head-fundo {
-        height: 125px;
+        height: 150px;
     }
     .avatar-content {
-        top: 15%;
+        top: 55px;
     }
     #head img.avatar {
         width: 125px;
@@ -540,10 +540,10 @@ audio::-webkit-media-controls-panel {
         margin: 60px auto 15px;
     }
     .head-fundo {
-        height: 50px;
+        height: 90px;
     }
     .avatar-content {
-        top: 10%;
+        top: 50px;
         left: 5%;
     }
     #head img.avatar {
@@ -576,7 +576,7 @@ audio::-webkit-media-controls-panel {
 
     .config {
         position: absolute;
-        top: 5.5rem;
+        top: 95px;
         right: 1rem;
     }
     .btn-config {
