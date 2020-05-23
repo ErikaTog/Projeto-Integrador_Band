@@ -148,34 +148,9 @@ Imagem
     outline-style: none;
 }
 
-.dropdown-menu {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px #999999;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-.config a {
-    padding: 2.5rem 4rem;
-    text-align: center;
-    transition-duration: 0.25s;
-}
-
-.config a:hover {
-    background-color: #F7F7F7;
-}
-
-.config a:focus {
-    background-color: #fff;
-    color: #fb3c00;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.config p {
+.config a.dropdown-item {
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 /* --------------------fim_do_Grupo_Head--------------------- */
@@ -511,11 +486,6 @@ audio::-webkit-media-controls-panel {
         width: 30px;
         height: 30px;
     }
-    .config a {
-        padding: 1.5rem 3rem;
-        text-align: center;
-        transition-duration: 0.25s;
-    }
 
     #bio {
         padding: 2.5rem 2.5rem 2.5rem 5rem;
@@ -616,13 +586,10 @@ audio::-webkit-media-controls-panel {
     .btn-config i {
         font-size: 1.3rem;
     }
-    .config a {
-        padding: 1rem 1.5rem;
+    .config a.dropdown-item {
+        font-size: 1.4rem;
     }
-    .config p {
-        font-size: 1.2rem;
-    }
-
+    
     #bio {
         padding: 1rem 1rem 1rem 2rem;
         margin-top: 15px;
