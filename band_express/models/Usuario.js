@@ -41,10 +41,12 @@ const Usuario = (sequelize, DataTypes) => {
             },
             avatar: {
                 type: DataTypes.STRING,
+                defaultValue: '/img/avatar_zero.png',
                 allowNull: true
             },
             wallpaper: {
                 type: DataTypes.STRING,
+                defaultValue: '/img/fundo_zero.png',
                 allowNull: true
             },
             link_perfil: {
