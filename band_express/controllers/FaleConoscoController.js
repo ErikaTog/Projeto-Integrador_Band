@@ -1,6 +1,6 @@
 const faleConoscoController = {
     view: (req, res) => {
-        return res.render('fale-conosco');
+    return res.render('fale-conosco', { title: 'Fale Conosco', usuario: req.session.usuario });
     }
 } 
 
