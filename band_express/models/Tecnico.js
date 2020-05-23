@@ -24,6 +24,10 @@ const Tecnico = (sequelize, DataTypes) => {
             foreignKey: 'id_tecnico',
             as: 'musicos'
         });
+        tecnico.hasMany(models.MusicoTecnicos, {
+            foreignKey: 'id_tecnico',
+            as: 'habilidade_tecnicas'
+        });
     }
 
     return tecnico;

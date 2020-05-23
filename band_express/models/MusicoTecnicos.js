@@ -20,7 +20,7 @@ const MusicoTecnicos = (sequelize, DataTypes) => {
         musicoTecnicos.associate = models => {
             musicoTecnicos.belongsTo(models.Musico,{ 
                 foreignKey:  'id_musico',
-                as: 'musicos'
+                as: 'musicosTec'
             })
             musicoTecnicos.belongsTo(models.Tecnico,{
                 foreignKey: 'id_tecnico',

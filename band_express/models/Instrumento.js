@@ -1,5 +1,5 @@
 const Instrumento = (sequelize, DataTypes) => {
-    let instrumento = sequelize.define(
+    const instrumento = sequelize.define(
         'Instrumento', 
         {
             id_instrumento: {
@@ -24,6 +24,10 @@ const Instrumento = (sequelize, DataTypes) => {
             through: 'musico_instrumentos', 
             foreignKey: 'id_instrumento',
             as: 'musicos'
+        });
+        instrumento.hasMany(models.MusicoInstrumentos, {
+            foreignKey: 'id_instrumento',
+            as: 'instrumentos'
         });
     }
 
