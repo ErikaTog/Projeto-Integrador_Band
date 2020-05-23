@@ -51,7 +51,7 @@ const perfilEstabController = {
             categoria: dadosEstab[0].dataValues.categoria,
             local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
             site: dadosEstab[0].dataValues.site,
-            servicos: dadosEstab[0].dataValues.servicos,
+            // servicos: dadosEstab[0].dataValues.servicos,
             sobre: dadosEstab[0].dataValues.sobre
         }
 
