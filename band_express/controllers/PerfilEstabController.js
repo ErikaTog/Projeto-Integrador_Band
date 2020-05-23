@@ -43,6 +43,18 @@ const perfilEstabController = {
             }
         })
 
+        let dadosView = {
+            avatar: dadosUsuario[0].dataValues.avatar,
+            wallpaper: dadosUsuario[0].dataValues.wallpaper,
+            totalSeguindo,
+            totalSeguidores,
+            categoria: dadosEstab[0].dataValues.categoria,
+            local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
+            site: dadosEstab[0].dataValues.site,
+            servicos: dadosEstab[0].dataValues.servicos,
+            sobre: dadosEstab[0].dataValues.sobre
+        }
+
         res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
     }
 }
