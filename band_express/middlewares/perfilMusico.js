@@ -1,9 +1,11 @@
-const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
 
-const perfilMusicoController = {
-    show: async (req, res) => {
-        
+const perfilMusico = {
+    error: async (req, res, next) => {
+        let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
+
         // Buscar informação da tabela usuario
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -113,40 +115,26 @@ const perfilMusicoController = {
             limit: 4
         });
 
-        res.render('perfil-musico', { 
-            title: 'Perfil', 
-            usuario: req.session.usuario,
-            dadosUsuario, 
-            cidade, 
-            estado, 
-            dadosMusico, 
-            instrumentos, 
-            tecnicos, 
-            seguidores, 
-            seguindo, 
-            audios, 
-            videos
-        });
-    },
-    changePassword: async (req, res) => {
-        let { senhaNova } = req.body;
-        
-        senhaNova = bcrypt.hashSync(senhaNova, 10);
+        if(errors.length) {
+            return res.render('perfil-musico', { 
+                title: 'Perfil', 
+                usuario: req.session.usuario,
+                dadosUsuario, 
+                cidade, 
+                estado, 
+                dadosMusico, 
+                instrumentos, 
+                tecnicos, 
+                seguidores, 
+                seguindo, 
+                audios, 
+                videos,
+                errors: errors 
+            });
+        } 
 
-        const senhaBD = await Usuario.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
-
-        senhaBD.senha = senhaNova;
-
-        await senhaBD.save({ fields: ['senha'] });
-
-        const dadosMusico = await Musico.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_musico'] 
-        });
-
-        res.redirect(`/perfil/musico/${dadosMusico.id_musico}`);
+        next();
     }
 }
 
-module.exports = perfilMusicoController;
+module.exports = perfilMusico;

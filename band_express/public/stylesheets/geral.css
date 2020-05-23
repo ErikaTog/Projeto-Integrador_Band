@@ -380,6 +380,29 @@ button.btn.btn-danger:hover {
     border: 1px solid #ced4da;
 }
 
+/* --------------------------------
+         Mensagem Erro
+-------------------------------- */
+
+.alert {
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 30px;
+}
+
+.alert-danger {
+    border-radius: 10px;
+}
+
+.alert h5 {
+    margin: 0;
+}
+
+.error {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
 
 /* --------------------início_do_xxxxxxxxxxx -------------------- */
 

@@ -94,7 +94,7 @@
                         > 
                             <a class="nav-link" 
                             <% if (usuario.id_tipos_perfil == 1) { %>
-                                href="/perfil/musico/<%= usuario.id_usuario %>"
+                                href="/perfil/musico/<%= dadosMusico.id_musico %>"
                             <% } else if (usuario.id_tipos_perfil == 2) { %>
                                 href="/perfil/banda/<%= usuario.id_usuario %>"
                             <% } else { %>
@@ -116,7 +116,7 @@
                                 <p class="dropdown-item">Olá, <%= usuario.nome %> </p>
                                 <a class="dropdown-item"
                                 <% if (usuario.id_tipos_perfil == 1) { %>
-                                    href="/perfil/editar/musico/<%= usuario.id_usuario %>"
+                                    href="/perfil/editar/musico/<%= dadosMusico.id_musico %>"
                                 <% } else if (usuario.id_tipos_perfil == 2) { %>
                                     href="/perfil/editar/banda/<%= usuario.id_usuario %>"
                                 <% } else { %>
