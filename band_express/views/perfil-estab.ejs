@@ -5,21 +5,21 @@
         <!-- Grupo Head -->
         <section id="head" class="card-perfil">
             <div class="head-fundo">
-                <img src="/img/teste/fundo-estb.png" alt="Foto de fundo" class="wallpaper">    
+                <img src=<%= dadosView.wallpaper %> alt="Foto de fundo" class="wallpaper">    
             </div>
             <div class="avatar-content">
-                <img src="/img/teste/jane-estb.png" alt="Foto de Perfil" class="avatar">
+                <img src=<%= dadosView.avatar %> alt="Foto de Perfil" class="avatar">
             </div>
             <div class="info-user">
-                <h3><strong>Estabelecimento</strong></h3>
+                <h3><strong><%= usuario.nome %></strong></h3>
                 <div class="info-user-status">
                     <div class="media">
                         <img src="/img/icones/icon_star.svg">
-                        <p>Seguidores: 12M</p>
+                        <p>Seguidores: <%= dadosView.totalSeguidores %></p>
                     </div>
                     <div class="media">
                         <img src="/img/icones/icon_headset.svg">
-                        <p>Seguindo: 250</p>
+                        <p>Seguindo: <%= dadosView.totalSeguindo %></p>
                     </div>
                 </div>
             </div>
@@ -48,24 +48,24 @@
             <h4><strong>Contato</strong></h4>
             <div class="infos-item media">
                 <img src="/img/icones/store-01.png" alt="Estab">
-                <p>Bar</p>
+                <p><%= dadosView.categoria %></p>
             </div>
             <div class="infos-item media">
                 <img src="/img/icones/pin-01.png" alt="Local">
-                <p>São Paulo / SP</p>
+                <p><%= dadosView.local %></p>
             </div>
             <div class="infos-item media">
                 <img src="/img/icones/site-01.png" alt="Site">
-                <p>https://lorem.ipsum</p>
+                <p><%= dadosView.site %></p>
             </div>
-            <div class="infos-item media">
+            <!-- <div class="infos-item media">
                 <img src="/img/icones/canal-01.png" alt="Canal">
                 <p>JaneeeeD</p>
             </div>
             <div class="infos-item media">
                 <img src="/img/icones/email-01.png" alt="Email">
                 <p>jane.doe@email.com</p>
-            </div>
+            </div> -->
         </section>
 
         <!-- Grupo Bio -->
@@ -73,7 +73,7 @@
             <h4><strong>Serviços</strong></h4>
             <div class="bio-scroll">
                 <p class="text-justify">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, magni officia. Corrupti soluta, ipsa ea assumenda excepturi optio ut quae fugiat cupiditate debitis eveniet dolorem cum iusto quos accusantium consequatur reprehenderit sapiente repellat veniam rem. Nihil aliquam minima inventore modi, reprehenderit veniam at, nesciunt beatae officiis recusandae temporibus hic nulla ab nisi quaerat? Deserunt, harum tempora? Est sit voluptatem vel placeat nulla. Repellat minima alias qui nostrum facilis autem! Omnis ipsa facilis voluptas ea fugiat fugit, optio illum, rerum ducimus vitae, aliquid doloremque tempore quo. Voluptas, totam necessitatibus. Id distinctio quo mollitia minima inventore deleniti assumenda dolores ducimus laboriosam quod ratione temporibus iusto dolor aut eveniet eaque officiis, accusamus deserunt. Culpa eligendi rerum temporibus in adipisci iste, facilis dolorum corporis nostrum totam vitae nisi, voluptatem dolorem ipsum animi natus maiores commodi aperiam? Sequi aliquid rerum officia molestias tempore consequatur assumenda natus inventore cupiditate nihil. Deleniti aliquam quaerat assumenda dignissimos adipisci expedita quidem molestiae consequuntur iusto minus. Enim optio accusantium aliquid magni ab cupiditate veritatis similique labore iusto nobis dolorem, at doloribus vero sunt quam quisquam ratione sed dolores corporis dignissimos doloremque quibusdam! Repudiandae impedit accusantium beatae, quae, nemo illum praesentium aut maxime labore ad quibusdam quisquam quos cupiditate temporibus! Et!
+                    <%= dadosView.servicos %>
                 </p>
             </div>
         </section>
@@ -98,7 +98,7 @@
             <h4><strong>Sobre o estabelecimento</strong></h4>
             <div class="bio-scroll">
                 <p class="text-justify">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, magni officia. Corrupti soluta, ipsa ea assumenda excepturi optio ut quae fugiat cupiditate debitis eveniet dolorem cum iusto quos accusantium consequatur reprehenderit sapiente repellat veniam rem. Nihil aliquam minima inventore modi, reprehenderit veniam at, nesciunt beatae officiis recusandae temporibus hic nulla ab nisi quaerat? Deserunt, harum tempora? Est sit voluptatem vel placeat nulla. Repellat minima alias qui nostrum facilis autem! Omnis ipsa facilis voluptas ea fugiat fugit, optio illum, rerum ducimus vitae, aliquid doloremque tempore quo. Voluptas, totam necessitatibus. Id distinctio quo mollitia minima inventore deleniti assumenda dolores ducimus laboriosam quod ratione temporibus iusto dolor aut eveniet eaque officiis, accusamus deserunt. Culpa eligendi rerum temporibus in adipisci iste, facilis dolorum corporis nostrum totam vitae nisi, voluptatem dolorem ipsum animi natus maiores commodi aperiam? Sequi aliquid rerum officia molestias tempore consequatur assumenda natus inventore cupiditate nihil. Deleniti aliquam quaerat assumenda dignissimos adipisci expedita quidem molestiae consequuntur iusto minus. Enim optio accusantium aliquid magni ab cupiditate veritatis similique labore iusto nobis dolorem, at doloribus vero sunt quam quisquam ratione sed dolores corporis dignissimos doloremque quibusdam! Repudiandae impedit accusantium beatae, quae, nemo illum praesentium aut maxime labore ad quibusdam quisquam quos cupiditate temporibus! Et!
+                    <%= dadosView.sobre %>
                 </p>
             </div>
         </section>
