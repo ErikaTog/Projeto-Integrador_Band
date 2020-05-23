@@ -21,7 +21,7 @@ const cadastroEstabController = {
 
 	saveEstab: async (req, res) => {
 
-		let { nome, senha, email, servico, sobre, estado, cidade, site, emailEstab, 
+		let { nome, senha, email, servico, sobre, estado, cidade, site,  
 			telefone, inputFuncionamento, inputAbertura, inputFechamento } = req.body;
 
 		nome = nome.trim();
@@ -29,7 +29,6 @@ const cadastroEstabController = {
 		email = email.trim();
 		sobre = sobre ? sobre.trim() : '';
 		site = site ? site.trim() : '';
-		emailEstab = emailEstab ? emailEstab.trim() : '';
 		telefone = telefone ? telefone.trim() : '';
 
 		// Buscando o id_cidade e id_estado na tabela cidade
@@ -65,6 +64,10 @@ const cadastroEstabController = {
 			id_tipos_perfil: 3
 		})
 
+		// Salvar o campo link_perfil
+        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosUsuario.id_usuario}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
+
 		let funcionamento = 0;
 		(inputAbertura != '' && inputFechamento != '') ? funcionamento = 1 : null;
 
@@ -73,7 +76,6 @@ const cadastroEstabController = {
 			categoria: servico,
 			sobre,
 			site,
-			email: emailEstab,
 			telefone,
 			funcionamento,
 			id_usuario: dadosUsuario.id_usuario
@@ -90,7 +92,7 @@ const cadastroEstabController = {
 		}
 
 		// Setar session do usuario
-		let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 1};
+		let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 3};
 		req.session.usuario = usuario;
 
 		return res.redirect('/home')
