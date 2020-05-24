@@ -8,27 +8,18 @@ const perfilMusicoController = {
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
             raw: true,
-            attributes: ['id_estado', 'id_cidade', 'avatar', 'wallpaper'] 
-        });
-
-        // Buscar cidade e estado
-        const findCidadeEstado = await Cidade.findAll({   
-            include:[
-                {
+            attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            include: [{
+                model: Cidade,
+                as: 'cidade',
+                attributes: [],
+                include: [{
                     model: Estado,
                     as: 'estado',
-                    attributes: ['uf'],
-                    where: {
-                        id_estado: dadosUsuario.id_estado
-                    }
-                }
-            ],
-            where: { id_cidade: dadosUsuario.id_cidade },
-            attributes: ['nome'],
+                    attributes: [],
+                }]
+            }]
         });
-
-        const cidade = findCidadeEstado[0].dataValues.nome;
-        const estado = findCidadeEstado[0].dataValues.estado.uf;
 
         // Buscar informação da tabela músico
         const dadosMusico = await Musico.findOne({ 
@@ -41,27 +32,24 @@ const perfilMusicoController = {
         let instrumentos = [];
 
         if (dadosMusico.toco) {
-            const buscarInstrumentos = await Musico.findAll({
+            instrumentos = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
+                raw: true,
+                attributes: ['musicos.instrumentos.instrumento'], 
                 include: [
                     {
                         model: MusicoInstrumentos,
                         as: 'musicos',
+                        attributes: [],
                         include: [
                             {
                                 model: Instrumento,
                                 as: 'instrumentos',
-                                attributes: ['instrumento']
+                                attributes: []
                             }
                         ]
                     }
                 ],
-            });
-        
-            let instrumentosBuscados = buscarInstrumentos[0].dataValues.musicos;
-        
-            instrumentosBuscados.forEach(musico => {
-                instrumentos.push(musico.instrumentos.dataValues.instrumento);
             });
         };
         
@@ -69,27 +57,24 @@ const perfilMusicoController = {
         let tecnicos = [];
 
         if (dadosMusico.tecnico) {
-            const buscarHabilTecnicas = await Musico.findAll({
+            tecnicos = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
+                raw: true,
+                attributes: ['musicosTec.habilidade_tecnicas.habilidade_tecnica'], 
                 include: [
                     {
                         model: MusicoTecnicos,
                         as: 'musicosTec',
+                        attributes: [],
                         include: [
                             {
                                 model: Tecnico,
                                 as: 'habilidade_tecnicas',
-                                attributes: ['habilidade_tecnica']
+                                attributes: []
                             }
                         ]
                     }
                 ],
-            });
-        
-            let tecnicosBuscados = buscarHabilTecnicas[0].dataValues.musicosTec;
-        
-            tecnicosBuscados.forEach(musico => {
-                tecnicos.push(musico.habilidade_tecnicas.dataValues.habilidade_tecnica);
             });
         }
         
@@ -116,9 +101,7 @@ const perfilMusicoController = {
         res.render('perfil-musico', { 
             title: 'Perfil', 
             usuario: req.session.usuario,
-            dadosUsuario, 
-            cidade, 
-            estado, 
+            dadosUsuario,
             dadosMusico, 
             instrumentos, 
             tecnicos, 

@@ -92,7 +92,7 @@
                                     <% instrumentos.forEach(instrumento => { %>
                                         <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
                                             <img src="/img/icones/tocar-01.png" alt="Toco">
-                                            <p><%= instrumento %></p>
+                                            <p><%= instrumento.instrumento %></p>
                                         </div>
                                     <% }) %>
                                 <% } %>
@@ -100,7 +100,7 @@
                                     <% tecnicos.forEach(tecnico => { %>
                                         <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
                                             <img src="/img/icones/palco-01.png" alt="Técnico">
-                                            <p><%= tecnico %> </p>
+                                            <p><%= tecnico.habilidade_tecnica %> </p>
                                         </div>
                                     <% }) %>
                                 <% } %>
@@ -115,7 +115,7 @@
                         <h4><strong>+ Infos</strong></h4>
                         <div class="infos-item media">
                             <img src="/img/icones/pin-01.png" alt="Local">
-                            <p><%= cidade %>  / <%= estado %> </p>
+                            <p><%= dadosUsuario.nome %>  / <%= dadosUsuario.uf %> </p>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/site-01.png" alt="Site">
