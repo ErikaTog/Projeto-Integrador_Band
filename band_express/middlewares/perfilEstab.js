@@ -78,10 +78,10 @@ const perfilEstab = {
             funcionamento: dadosEstab[0].dataValues.funcionamento,
             dadosFunc
         }
-        console.log(dadosView.id_estab)
-        console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
-        res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
-        
+
+        if(errors.length) {
+            return res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView, errors: errors });
+        }
         next();
     }
 }
