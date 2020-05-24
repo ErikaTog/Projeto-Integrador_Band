@@ -3,6 +3,18 @@
     <div class="perfil-container">
         
         <!-- Grupo Head -->
+        <% if (typeof errors != 'undefined') { %>
+            <div class="alert alert-danger" role="alert">
+                <h5>Não foi possível alterar a senha...</h5>
+                <hr>
+                <ul class="error">
+                    <% for( let i = 0; i < errors.length; i++ ) { %>
+                        <li>- <%= errors[i].msg %>  </li>
+                    <% } %>
+                </ul>
+            </div>
+        <% } %>
+
         <section id="head" class="card-perfil">
             <div class="head-fundo">
                 <img src=<%= dadosView.wallpaper %> alt="Foto de fundo" class="wallpaper">    
@@ -29,15 +41,11 @@
                     <i class="fas fa-cog"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="perfil-estab-editar.html">
-                        <h4>Editar Perfil</h4>
+                    <a class="dropdown-item" href="/perfil/editar/estabelecimento/<%= dadosView.id_musico %>">
+                        Editar Perfil
                     </a>
                     <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        <h4>Alterar Senha</h4>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#excluirConta" href="#">
-                        <p>Excluir a conta</p>
+                        Alterar Senha
                     </a>
                 </div>
             </div>
@@ -58,14 +66,6 @@
                 <img src="/img/icones/site-01.png" alt="Site">
                 <p><%= dadosView.site %></p>
             </div>
-            <!-- <div class="infos-item media">
-                <img src="/img/icones/canal-01.png" alt="Canal">
-                <p>JaneeeeD</p>
-            </div>
-            <div class="infos-item media">
-                <img src="/img/icones/email-01.png" alt="Email">
-                <p>jane.doe@email.com</p>
-            </div> -->
         </section>
 
         <!-- Grupo Bio -->
@@ -106,76 +106,42 @@
 
     <!-- Modal -->
     <!-- Aterar Senha -->
-    <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="modalAlterarSenha" aria-hidden="true">
+    <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="modalAlterarSenha"
+    aria-hidden="true">
         <div class="modal-dialog" role="document">
+            
             <div class="modal-content">
+                
                 <div class="modal-header">
                     <h4 class="modal-title" id="modalAlterarSenha">Alterar a senha</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form>
+                
+                <form action="/perfil/estabelecimento/<%= usuario.id_usuario %>?_method=PUT" method="POST">
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="senhaAtual">Senha atual</label>
                             <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
-                                placeholder="Senha">
+                            placeholder="Senha" name="senha" required>
                             <small id="passwordHelp" class="form-text text-muted"><a href="">Esqueceu a senha?</a></small>
                         </div>
                         <div class="form-group">
                             <label for="novaSenha">Nova senha</label>
-                            <input type="password" class="form-control" id="novaSenha" placeholder="Senha">
+                            <input type="password" class="form-control" id="novaSenha" placeholder="Senha" name="senhaNova" required>
                         </div>
                         <div class="form-group">
                             <label for="confirmarSenha">Confirme a nova senha</label>
-                            <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha">
+                            <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha" name="senhaNovaConfirmar" required>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-salvar-modal">Alterar senha</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Excluir conta -->
-    <div class="modal fade" id="excluirConta" tabindex="-1" role="dialog" aria-labelledby="modalExcluiConta" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modalExcluiConta">Excluir sua conta</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                </div>  
-                <div class="modal-body">
-                    <p>Olá, <strong>Jane Doe</strong>.</p>
-                    <p>É uma pena que você queira excluir a sua conta.</p>
-                    <div class="form-group">
-                        <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
-                        <select class="form-control" id="motivoExcluir">
-                            <option class=" selected" selected disabled>Escolha...</option>                                
-                            <option>Uma segunda conta foi criada</option>
-                            <option>Problemas para começar</option>
-                            <option>Questões de privacidade</option>
-                            <option>Quero remover algo</option>
-                            <option>Não consigo achar pessoas para seguir</option>
-                            <option>Ocupa muito do meu tempo</option>
-                            <option>Outro motivo</option>
-                        </select>
                     </div>
-                    <div class="form-group">
-                        <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
-                        <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
-                    </div>
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger">Confirmar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Alterar senha</button>
                     </div>
-                </div>
+                </form> 
             </div>
         </div>
     </div>
