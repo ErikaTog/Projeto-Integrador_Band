@@ -228,7 +228,7 @@ Imagem
 #infosFuncionamento .infos-item{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #infosFuncionamento h4{
@@ -236,9 +236,9 @@ Imagem
 }
 
 #infosFuncionamento p {
-    min-width: 25%;
+    /* min-width: 25%; */
     padding-left: 1.0rem;
-    align-self: center;
+    padding-bottom: 10px;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
