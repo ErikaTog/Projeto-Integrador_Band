@@ -9,6 +9,11 @@
     margin-left: 20px;
 }
 
+.col-lg-12,
+.col-sm-6 {
+    padding: 0;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 
 /* --------------------------------
@@ -79,9 +84,20 @@ div.icon i:hover {
     margin: 20px auto 0;
 }
 
+#bio .form-control {
+    height: auto;
+    min-height: 150px;
+    max-height: 250px;
+    resize: vertical;
+}
+
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Habilidades--------------------- */
+#habilidades {
+    height: 410px;
+}
+
 #habilidades h4 {
     margin-bottom: 1rem;
 }
@@ -100,14 +116,11 @@ a.modal-link:hover {
 -------------------------------- */
 
 #habilidades .scroll {
-    height: 200px;
+    height: auto;
+    max-height: 280px;
+    padding-top: 0;
     margin-top: 1rem;
     overflow-y: scroll;
-}
-
-#habilidades .form-group {
-    width: 80%;
-    margin: 0;
 }
 
 .habilidades-item.media {
@@ -116,10 +129,6 @@ a.modal-link:hover {
 
 .habilidades-item img {
     align-items: center;
-}
-
-.habilidades-item  textarea {
-    margin: 0 1.5rem;
 }
 
 /* ------------------------------*/ 
@@ -135,12 +144,16 @@ div.icon-border-none i:hover {
 }
 
 .habilidades-item div.icon-border-none {
-    padding-left: 3rem;
+    margin: 0 15px 0 auto;
 }
 
 /* --------------------fim_do_Grupo_Habilidades--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
+#infos {
+    height: 410px;
+}
+
 .infos-item.media {
     align-items: center;
 }
@@ -300,11 +313,20 @@ input[type=checkbox]:checked + label:before {
         width: 40%;
     }
 
+    #habilidades {
+        height: auto;
+    }
     #habilidades .scroll {
-        height: 240px;
+        height: auto;
+        max-height: 280px;
+        margin-top: 2rem;
     }
     #habilidades .form-group {
         width: 100%;
+    }
+
+    #infos {
+        height: auto;
     }
 
     .col-sm-12 {
@@ -382,7 +404,8 @@ input[type=checkbox]:checked + label:before {
     }
 
     #habilidades .scroll {
-        height: 170px;
+        height: auto;
+        max-height: 170px;
     }
 
     input.form-control-file {
