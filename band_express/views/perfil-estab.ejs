@@ -82,16 +82,13 @@
         <section id="infosFuncionamento" class="card-perfil">
             <h4><strong>Funcionamento</strong></h4>
             <div class="infos-item">
-                <p class="">Seg 20:00 - 2:00</p>
-                <!-- 
-                <p class="">Ter 20:00 - 2:00</p>
-                <p class="">Qua 20:00 - 2:00</p>
-                <p class="">Qui 20:00 - 2:00</p>
-                <p class="">Sex 20:00 - 2:00</p>
-                <p class="">Sab 20:00 - 2:00</p>
-                <p class="">Dom 20:00 - 2:00</p>
-                <p class="">Feriados 20:00 - 2:00</p>
-                 -->
+
+                <% if (dadosView.funcionamento) { %>
+                    <% for( let i = 0; i < dadosView.dadosFunc.length; i++ ) { %>
+                        <p> <strong><%= dadosView.dadosFunc[i].dia %>:</strong> <%= dadosView.dadosFunc[i].horario_abertura %> - <%= dadosView.dadosFunc[i].horario_fechamento %></p>
+                    <% } %>
+                <% } %>
+
             </div>
         </section>
 
