@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = require('../models'); 
 
 const perfilEstabController = {
@@ -66,6 +67,7 @@ const perfilEstabController = {
             wallpaper: dadosUsuario[0].dataValues.wallpaper,
             totalSeguindo,
             totalSeguidores,
+            id_estab: dadosEstab[0].dataValues.id_estab,
             categoria: dadosEstab[0].dataValues.categoria,
             local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
             site: dadosEstab[0].dataValues.site,
@@ -76,7 +78,28 @@ const perfilEstabController = {
         }
 
         res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
+    },
+
+    changePassword: async (req, res) => {
+        let { senhaNova } = req.body;
+        
+        senhaNova = bcrypt.hashSync(senhaNova, 10);
+
+        const senhaBD = await Usuario.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
+
+        senhaBD.senha = senhaNova;
+
+        await senhaBD.save({ fields: ['senha'] });
+
+        const dadosEstab = await Estabelecimento.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_estab'] 
+        });
+
+        res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
     }
+
 }
 
 module.exports = perfilEstabController;
