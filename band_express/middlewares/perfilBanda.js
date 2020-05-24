@@ -1,26 +1,20 @@
-const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
 
-
-
-const perfilBandaController = {
-    show: async (req, res) => {
+const perfilBanda = {
+    error: async (req, res, next) => {
+        let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
 
         //Pegando o id_usuario
         let id_usuario = req.session.usuario.id_usuario
-        // console.log('Id_usuario: ' + id_usuario)
-
-
+       
         //Pegando o nome da banda
         let nomeBanda = req.session.usuario.nome
-        // console.log('Nome: ' + nomeBanda)
-
-
+     
         //Pegando o email da banda
         let emailBanda = req.session.usuario.email
-        // console.log('Email: ' + email)
-
-
+       
         //Selecionando os dados da banda
         const dadosBanda = await Banda.findOne({
             raw: true,
@@ -29,9 +23,7 @@ const perfilBandaController = {
                 id_usuario
             }
         })
-        // console.log(dadosBanda)
-
-
+        
         // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
@@ -50,8 +42,7 @@ const perfilBandaController = {
                 id_usuario
             }
         })
-        // console.log(dadosUsuarioBanda)
-
+    
         // Selecionando o nome, função e avatar dos integrantes
         const integrantes = await BandaIntegrantes.findAll({
             raw: true,
@@ -66,28 +57,21 @@ const perfilBandaController = {
             }
 
         })
-        // console.log(integrantes)
-
-
+  
         //Verificando a quantidade de usuários que a banda está seguindo
         let seguindo = await Minha_rede.count({
             where: {
                 id_usuario
             }
         });
-        // console.log('Seguindo: '+ seguindo)
-
-
+    
         //Verificando a quantidade de seguidores da banda
         let seguidores = await Minha_rede.count({
             where: {
                 'id_usuario_seguido': id_usuario
             }
         });
-        // console.log('Seguidores: '+ seguidores)
-
-
-
+ 
         //Pegando os vídeos postados
         const videos = await Video.findAll({
             raw: true,
@@ -96,8 +80,7 @@ const perfilBandaController = {
                 id_usuario
             }
         })
-        // console.log(videos)
-
+ 
 
         //Pegando os áudios postados
         const audios = await Audio.findAll({
@@ -107,48 +90,26 @@ const perfilBandaController = {
                 id_usuario
             }
         })
-        // console.log(audios) 
 
-        return res.render('perfil-banda', {
-            title: 'Perfil',
-            usuario: req.session.usuario,
-            nomeBanda,
-            emailBanda,
-            seguindo,
-            seguidores,
-            dadosBanda,
-            dadosUsuarioBanda,
-            integrantes,
-            videos,
-            audios
-        });
-    },
-    changePassword: async (req, res) => {
-        let { senhaNova } = req.body;
-        
-        senhaNova = bcrypt.hashSync(senhaNova, 10);
+        if(errors.length) {
+            return res.render('perfil-banda', {
+                title: 'Perfil',
+                usuario: req.session.usuario,
+                nomeBanda,
+                emailBanda,
+                seguindo,
+                seguidores,
+                dadosBanda,
+                dadosUsuarioBanda,
+                integrantes,
+                videos,
+                audios,
+                errors: errors 
+            });
+        } 
 
-        const senhaBD = await Usuario.findOne({ 
-            where: { 
-                id_usuario: req.session.usuario.id_usuario 
-            }
-        });
-
-        senhaBD.senha = senhaNova;
-
-        await senhaBD.save({ fields: ['senha'] });
-
-        const dadosBanda = await Banda.findOne({ 
-            raw: true,
-            attributes: ['id_banda'],
-            where: { 
-                id_usuario: req.session.usuario.id_usuario 
-            } 
-        });
-
-        res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
+        next();
     }
 }
 
-module.exports = perfilBandaController;
-
+module.exports = perfilBanda;

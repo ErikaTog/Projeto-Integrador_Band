@@ -2,32 +2,45 @@
 
     <div class="perfil-container">
 
+    <!-- Grupo Head -->
+        <% if (typeof errors != 'undefined') { %>
+        <div class="alert alert-danger" role="alert">
+            <h5>Não foi possível alterar a senha...</h5>
+            <hr>
+            <ul class="error">
+                <% for( let i = 0; i < errors.length; i++ ) { %>
+                    <li>- <%= errors[i].msg %>  </li>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+
         <!-- Grupo Head -->
         <section id="head" class="card-perfil">
             <div class="head-fundo">
-                <img class="wallpaper" src="/img/teste/fundo-banda.jpg" alt="Foto de fundo">
+                <img class="wallpaper" src="<%= dadosUsuarioBanda.wallpaper %>" alt="Foto de fundo">
             </div>
 
             <div class="avatar-content">
-                <img class="avatar" src="/img/teste/new_user4.png" alt="Foto de Perfil">
+                <img class="avatar" src="<%= dadosUsuarioBanda.avatar %>" alt="Foto de Perfil">
             </div>
 
             <div class="info-user">
-                <h3><strong>Os farofeiros</strong></h3>
+                <h3><strong><%= nomeBanda %> </strong></h3>
                 <div class="info-user-status">
                     <div class="media">
-                        <img src="/img/teste/icon_star.svg">
-                        <p>Seguidores: 98M</p>
+                        <img src="/img/icones/icon_star.svg">
+                        <p>Seguidores: <%= seguidores %></p>
                     </div>
                      
                     <div class="media">
-                        <img src="/img/teste/icon_headset.svg">
-                        <p>Seguindo: 200</p>
-                    </div>
+                        <img src="/img/icones/icon_headset.svg">
+                        <p>Seguindo: <%= seguindo %></p>
+                    </div>  
                      
                     <div class="media">
-                        <img src="/img/teste/icon_genero.svg">
-                        <p>Gênero: Rock</p>
+                        <img src="/img/icones/icon_genero.svg">
+                        <p><%= dadosBanda.genero %></p>
                     </div>
                     
                 </div>
@@ -39,11 +52,11 @@
                     <i class="fas fa-cog"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="perfil-banda-editar.html">
-                        <h4>Editar Perfil</h4>
+                    <a class="dropdown-item" href="/perfil/editar/musico/<%= dadosBanda.id_banda %>">
+                        Editar Perfil
                     </a>
                     <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        <h4>Alterar Senha</h4>
+                        Alterar Senha
                     </a>
                 </div>
             </div>
@@ -54,37 +67,15 @@
 
             <h4><strong>Sobre a banda</strong></h4>
             <div class="bio-scroll">
-            <p class="text-justify">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis
-                optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore
-                tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae,
-                placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut
-                unde!
-                <br>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto
-                eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur
-                deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor
-                consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis,
-                voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-                <br>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto
-                eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur
-                deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor
-                consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis,
-                voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-                <br>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaeca   ti architecto
-                eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur
-                deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor
-                consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis,
-                voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-                <br>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto
-                eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur
-                deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor
-                consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis,
-                voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-            </p>
+                <% if (dadosBanda.sobre) { %>
+                    <p class="text-justify">
+                        <%= dadosBanda.sobre %>
+                    </p>
+                    <% } else { %>
+                        <p class="msg-incentivo">
+                            Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                        </p>    
+                    <% } %>
             </div>  
 
         </section>
@@ -97,42 +88,15 @@
                     <h4><strong>Integrantes</strong></h4>
                     <div class="scroll">
                         <div class="item row">
+                            <% integrantes.forEach(integrante => { %>
                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="/img/teste/new_user2.png" class="mr-3" alt="Foto-Usuário"></div>
-                                
+                                <div class="container-img"><img src= <%= integrante.avatar %> class="mr-3" alt="Foto-Usuário"></div>
                                 <div class= "media-body">
-                                    <h5 class="mt-0">Jhon Doe</h5>
-                                    <p>Vocalista</p>
+                                    <h5 class="mt-0"> <%= integrante.nome %> </h5>
+                                    <p> <%= integrante.funcao %> </p>
                                 </div>
                             </div>
-                            <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="/img/teste/usuario_pimentinha.jpeg" class="mr-3" alt="Foto-Usuário"></div>
-                                <div class= "media-body">
-                                    <h5 class="mt-0">Paty Pimentinha</h5>
-                                    <p>Baterista</p>
-                                </div>
-                            </div>   
-                            <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="/img/teste/usuario_jim.jpeg" class="mr-3" alt="Foto-Usuário"></div>
-                                <div class= "media-body">
-                                    <h5 class="mt-0">Jim Wine</h5>
-                                    <p>Guitarrista solo</p>
-                                </div> 
-                            </div> 
-                            <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="/img/teste/usuario_jack.jpeg" class="mr-3" alt="Foto-Usuário"></div>
-                                <div class= "media-body">
-                                    <h5 class="mt-0">Jack Mars</h5>
-                                    <p>Guitarrista</p>
-                                </div>
-                            </div>    
-                             <div class="integrantes-item media col-xl-6 col-lg-12 col-6">
-                                <div class="container-img"><img src="/img/teste/usuario_math.jpg" class="mr-3" alt="Foto-Usuário"></div>
-                                <div class= "media-body">
-                                    <h5 class="mt-0">Math Soul</h5>
-                                    <p>Baixo</p>
-                                </div>         
-                            </div>
+                            <% }) %>                                      
                         </div>
                     </div>
                 </section>
@@ -142,19 +106,27 @@
                     <h4><strong>+ Infos</strong></h4>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                        <p>São Paulo / SP</p>
+                        <p><%= dadosUsuarioBanda.nome %> / <%= dadosUsuarioBanda.uf %>  </p>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
-                        <p>https://lorem.ipsum</p>
+                        <% if (dadosBanda.site) { %>
+                            <p><%= dadosBanda.site %></p>
+                        <% } else { %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
+                        <% } %>                      
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/canal-01.png" alt="Canal">
-                        <p>Os Farofeiros</p>
+                        <% if (dadosBanda.canal) { %>
+                            <p><%= dadosBanda.canal %></p>
+                        <% } else { %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
+                        <% } %>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/email-01.png" alt="Email">
-                        <p>osfarofeirosband@email.com</p>
+                        <p><%= emailBanda %> </p>
                     </div>
                 </section>
             </div>
@@ -164,51 +136,57 @@
         <section id="minhaMusica" class="card-perfil">
             <h4><strong>Minha música</strong></h4>            
             <div class="row">
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <video controls>
-                        <source src="/video/video1.mp4" type="video/mp4">
-                        <source src="/video/video1.ogg" type="video/ogg">
-                        <p>Seu browser não suporta este recurso</p>
-                    </video>
-                    <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                </div>
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                    <h5>Metalica</h5>
-                </div>
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <div class="player">
-                        <audio controls>
-                            <source src="/video/audio1.mp3" type="audio/mpeg">
-                            <source src="/video/audio1.ogg" type="audio/ogg">
-                            <p>Seu browser não suporta este recurso</p>
-                        </audio>
-                    </div>
-                    <h5>Canon Rock - Jerry C cover by Laura</h5>
-                </div>
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <iframe scrolling="no" frameborder="no" allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                    <h5>Always - Bon Jovi - piano cover</h5>
-                </div>
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <div class="player">
-                        <audio controls>
-                            <source src="/video/audio2.mp3" type="audio/mpeg">
-                            <source src="/video/audio2.ogg" type="audio/ogg">
-                            <p>Seu browser não suporta este recurso</p>
-                        </audio>
-                    </div>
-                    <h5>Always - Bon Jovi - piano cover</h5>
-                </div>
-                <div class="musica-item col-xl-6 col-sm-12">
-                    <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                    <h5>Gucci Mane</h5>
-                </div>
+                <% if (!videos.length && !audios.length) { %>
+                    <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+                <% } %>
+                <% if (videos.length) { %>
+                    <% videos.forEach(video => { %>
+                        <% if (video.tipo == "arquivo") { %>
+                            <div class="musica-item col-xl-6 col-sm-12">
+                                <video controls>
+                                    <source src="<%= video.caminho %>" type="video/mp4">
+                                    <source src="<%= video.caminho %>" type="video/ogg">
+                                    <p>Seu browser não suporta este recurso</p>
+                                </video>
+                                <h5><%= video.titulo %></h5>
+                            </div>
+                        <% } %>
+                        <% if (video.tipo == "link") { %>
+                            <div class="musica-item col-xl-6 col-sm-12">
+                                <iframe src="https://www.youtube.com/embed/x5YP_oLcgpg" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <h5><%= video.titulo %></h5>
+                            </div>
+                        <% } %>
+                    <% }) %>
+                <% } %>
+                
+                <% if (audios.length) { %>
+                    <% audios.forEach(audio => { %>
+                        <% if (audio.tipo == "arquivo") { %>
+                            <div class="musica-item col-xl-6 col-sm-12">
+                                <div class="player">
+                                    <audio controls>
+                                        <source src="<%= audio.caminho %>" type="audio/mpeg">
+                                        <source src="<%= audio.caminho %>" type="audio/ogg">
+                                        <p>Seu browser não suporta este recurso</p>
+                                    </audio>
+                                </div>
+                                <h5><%= audio.titulo %></h5>
+                            </div>
+                        <% } %>
+                        <% if (audio.tipo == "link") { %>
+                            <div class="musica-item col-xl-6 col-sm-12">
+                                <iframe scrolling="no" frameborder="no" allow="autoplay"
+                                    src="<%= audio.caminho %>"></iframe>
+                                <h5><%= audio.titulo %></h5>
+                            </div>
+                        <% } %>
+                    <% }) %>
+                <% } %>
             </div>
-
+            
             <div class="carregar">
                 <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
             </div>
@@ -230,29 +208,29 @@
                     </button>
                 </div>
                 
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="senhaAtual">Senha atual</label>
-                            <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
-                                placeholder="Senha">
-                            <small id="passwordHelp" class="form-text text-muted"><a href="">Esqueceu a senha?</a></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="novaSenha">Nova senha</label>
-                            <input type="password" class="form-control" id="novaSenha" placeholder="Senha">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmarSenha">Confirme a nova senha</label>
-                            <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha">
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-salvar-modal">Alterar senha</button>
-                </div>
+                        <form action="/perfil/banda/<%= usuario.id_usuario %>?_method=PUT" method="POST">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="senhaAtual">Senha atual</label>
+                                    <input type="password" class="form-control" id="senhaAtual" aria-describedby="passwordHelp"
+                                    placeholder="Senha" name="senha" required>
+                                    <small id="passwordHelp" class="form-text text-muted"><a href="">Esqueceu a senha?</a></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="novaSenha">Nova senha</label>
+                                    <input type="password" class="form-control" id="novaSenha" placeholder="Senha" name="senhaNova" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmarSenha">Confirme a nova senha</label>
+                                    <input type="password" class="form-control" id="confirmarSenha" placeholder="Senha" name="senhaNovaConfirmar" required>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-salvar-modal">Alterar senha</button>
+                            </div>
+                        </form>
 
             </div>
 
