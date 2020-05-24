@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
 
 
@@ -13,10 +14,10 @@ const perfilBandaController = {
         //Pegando o nome da banda
         let nomeBanda = req.session.usuario.nome
         // console.log('Nome: ' + nomeBanda)
-       
+
 
         //Pegando o email da banda
-        let email = req.session.usuario.email
+        let emailBanda = req.session.usuario.email
         // console.log('Email: ' + email)
 
 
@@ -24,10 +25,10 @@ const perfilBandaController = {
         const dadosBanda = await Banda.findOne({
             raw: true,
             attributes: ['id_banda', 'genero', 'sobre', 'site', 'canal'],
-            where:{
+            where: {
                 id_usuario
             }
-        })        
+        })
         // console.log(dadosBanda)
 
 
@@ -38,14 +39,14 @@ const perfilBandaController = {
             include: [{
                 attributes: [],
                 model: Cidade,
-                as: 'cidade', 
+                as: 'cidade',
                 include: [{
                     attributes: [],
                     model: Estado,
-                    as: 'estado'   
-                }]                
-            }],                                 
-            where:{
+                    as: 'estado'
+                }]
+            }],
+            where: {
                 id_usuario
             }
         })
@@ -58,11 +59,11 @@ const perfilBandaController = {
             include: [{
                 attributes: [],
                 model: Usuario,
-                as: 'integrantesUsuario'   
+                as: 'integrantesUsuario'
             }],
             where: {
-                id_banda: dadosBanda.id_banda 
-            }     
+                id_banda: dadosBanda.id_banda
+            }
 
         })
         // console.log(integrantes)
@@ -71,7 +72,7 @@ const perfilBandaController = {
         //Verificando a quantidade de usuários que a banda está seguindo
         let seguindo = await Minha_rede.count({
             where: {
-              id_usuario  
+                id_usuario
             }
         });
         // console.log('Seguindo: '+ seguindo)
@@ -84,36 +85,70 @@ const perfilBandaController = {
             }
         });
         // console.log('Seguidores: '+ seguidores)
-     
+
 
 
         //Pegando os vídeos postados
         const videos = await Video.findAll({
             raw: true,
             attributes: ['tipo', 'titulo', 'caminho'],
-            where:{
+            where: {
                 id_usuario
             }
-        })        
+        })
         // console.log(videos)
-        
+
 
         //Pegando os áudios postados
-       const audios = await Audio.findAll({
+        const audios = await Audio.findAll({
             raw: true,
             attributes: ['tipo', 'titulo', 'caminho'],
-            where:{
+            where: {
                 id_usuario
             }
-        })  
+        })
+        // console.log(audios) 
 
-  
-        let perfilBandaDados = {id_usuario, nomeBanda, email, seguindo, seguidores, dadosBanda, dadosUsuarioBanda, integrantes, videos, audios };
+        return res.render('perfil-banda', {
+            title: 'Perfil',
+            usuario: req.session.usuario,
+            nomeBanda,
+            emailBanda,
+            seguindo,
+            seguidores,
+            dadosBanda,
+            dadosUsuarioBanda,
+            integrantes,
+            videos,
+            audios
+        });
+    },
+    changePassword: async (req, res) => {
+        let { senhaNova } = req.body;
+        
+        senhaNova = bcrypt.hashSync(senhaNova, 10);
 
-        // console.log(perfilBandaDados) 
-            
-    return res.render('perfil-banda', { title: 'Perfil', usuario: req.session.usuario, dados: perfilBandaDados });
-    }  
+        const senhaBD = await Usuario.findOne({ 
+            where: { 
+                id_usuario: req.session.usuario.id_usuario 
+            }
+        });
+
+        senhaBD.senha = senhaNova;
+
+        await senhaBD.save({ fields: ['senha'] });
+
+        const dadosBanda = await Banda.findOne({ 
+            raw: true,
+            attributes: ['id_banda'],
+            where: { 
+                id_usuario: req.session.usuario.id_usuario 
+            } 
+        });
+
+        res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
+    }
 }
 
 module.exports = perfilBandaController;
+
