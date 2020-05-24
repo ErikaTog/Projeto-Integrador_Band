@@ -28,6 +28,16 @@
     margin: 0;
 }
 
+/* Mensagem - Não há informações */
+p.msg-incentivo {
+    color: #999999;
+    font-weight: 700;
+}
+
+#minhaMusica p.msg-incentivo {
+    margin-bottom: 20px;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
@@ -137,33 +147,9 @@ Imagem
     outline-style: none;
 }
 
-.dropdown-menu {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px #999999;
-    padding: 0;
-    margin: 0;
-}
-
-.config a {
-    padding: 2.5rem 4rem;
-    text-align: center;
-    transition-duration: 0.25s;
-}
-
-.config a:hover {
-    background-color: #F7F7F7;
-}
-
-.config a:focus {
-    background-color: #fff;
-    color: #fb3c00;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.config p {
+.config a.dropdown-item {
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 /* --------------------fim_do_Grupo_Head--------------------- */
@@ -437,7 +423,7 @@ button.btn.btn-danger:hover {
 
 @media screen and (max-width: 1199px) {
     .head-fundo {
-        height: 250px;
+        height: 225px;
     }
     #head img.avatar {
         width: 180px;
@@ -588,10 +574,10 @@ button.btn.btn-danger:hover {
     }
 
     .head-fundo {
-        height: 125px;
+        height: 150px;
     }
     .avatar-content {
-        top: 15%;
+        top: 55px;
     }
     #head img.avatar {
         width: 125px;
@@ -630,12 +616,7 @@ button.btn.btn-danger:hover {
         width: 30px;
         height: 30px;
     }
-    .config a {
-        padding: 1.5rem 3rem;
-        text-align: center;
-        transition-duration: 0.25s;
-    }
-
+    
     #bio {
         padding: 2.5rem 2.5rem 2.5rem 5rem;
     }
@@ -734,10 +715,10 @@ button.btn.btn-danger:hover {
         margin: 60px auto 15px;
     }
     .head-fundo {
-        height: 50px;
+        height: 90px;
     }
     .avatar-content {
-        top: 10%;
+        top: 50px;
         left: 5%;
     }
     #head img.avatar {
@@ -771,8 +752,8 @@ button.btn.btn-danger:hover {
 
     .config {
         position: absolute;
-        bottom: 4.3rem;
-        right: 1.5rem;
+        top: 95px;
+        right: 1rem;
     }
     .btn-config {
         width: 20px;
@@ -781,11 +762,8 @@ button.btn.btn-danger:hover {
     .btn-config i {
         font-size: 1.3rem;
     }
-    .config a {
-        padding: 0.5rem 1rem; /* 1rem 1.5rem*/
-    }
-    .config p {
-        font-size: 1.2rem;
+    .config a.dropdown-item {
+        font-size: 1.4rem;
     }
 
     #bio {
