@@ -24,6 +24,21 @@
     margin: 0;
 }
 
+/* Mensagem - Não há informações */
+p.msg-incentivo {
+    color: #999999;
+    font-weight: 700;
+}
+
+#habilidades p.msg-incentivo {
+    padding: 20px 0;
+    align-self: flex-start;
+}
+
+#minhaMusica p.msg-incentivo {
+    margin-bottom: 20px;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
@@ -131,36 +146,6 @@ Imagem
     outline-style: none;
 }
 
-/* .dropdown-menu {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px #999999;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-} */
-
-/* .config a {
-    padding: 2.5rem 4rem;
-    text-align: center;
-    transition-duration: 0.25s;
-} */
-
-/* .config a:hover {
-    background-color: #F7F7F7;
-}
-
-.config a:focus {
-    background-color: #fff;
-    color: #fb3c00;
-    font-weight: bold;
-    text-decoration: underline;
-} */
-
-/* .config p {
-    font-size: 1.6rem;
-} */
-
 .config a.dropdown-item {
     font-size: 1.6rem;
     font-weight: 700;
@@ -241,9 +226,14 @@ Imagem
 }
 
 #infosFuncionamento p {
-    /* min-width: 25%; */
-    padding-left: 1.0rem;
+    padding-right: 1.0rem;
     padding-bottom: 10px;
+}
+
+.funcionamento{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
