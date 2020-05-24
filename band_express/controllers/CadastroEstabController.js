@@ -21,13 +21,14 @@ const cadastroEstabController = {
 
 	saveEstab: async (req, res) => {
 
-		let { nome, senha, email, servico, sobre, estado, cidade, site,  
+		let { nome, senha, email, categoria, sobre, estado, cidade, site, servicos,
 			telefone, inputFuncionamento, inputAbertura, inputFechamento } = req.body;
 
 		nome = nome.trim();
 		senha = senha.trim();
 		email = email.trim();
 		sobre = sobre ? sobre.trim() : '';
+		servicos = servicos ? servicos.trim() : '';
 		site = site ? site.trim() : '';
 		telefone = telefone ? telefone.trim() : '';
 
@@ -73,9 +74,10 @@ const cadastroEstabController = {
 
 		// Inserindo dados complementares na tabela estab
 		const dadosEstab = await Estabelecimento.create({
-			categoria: servico,
+			categoria,
 			sobre,
 			site,
+			servicos,
 			telefone,
 			funcionamento,
 			id_usuario: dadosUsuario.id_usuario
