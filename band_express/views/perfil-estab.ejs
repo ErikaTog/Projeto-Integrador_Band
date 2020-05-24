@@ -64,7 +64,11 @@
             </div>
             <div class="infos-item media">
                 <img src="/img/icones/site-01.png" alt="Site">
-                <p><%= dadosView.site %></p>
+                <% if (dadosView.site) { %>
+                    <p><%= dadosView.site %></p>
+                <% } else { %>
+                    <p class="msg-incentivo"><%= dadosView.mensagemNull %></p>
+                <% } %>
             </div>
         </section>
 
@@ -72,9 +76,13 @@
         <section id="bio2" class="card-perfil">
             <h4><strong>Sobre o estabelecimento</strong></h4>
             <div class="bio-scroll">
-                <p class="text-justify">
-                    <%= dadosView.sobre %>
-                </p>
+                <% if (dadosView.site) { %>
+                    <p class="text-justify">
+                        <%= dadosView.sobre %>
+                    </p>
+                <% } else { %>
+                    <p class="msg-incentivo"><%= dadosView.mensagemNull %></p>
+                <% } %>
             </div>
         </section>
 
@@ -87,6 +95,10 @@
                     <% for( let i = 0; i < dadosView.dadosFunc.length; i++ ) { %>
                         <p> <strong><%= dadosView.dadosFunc[i].dia %>:</strong> <%= dadosView.dadosFunc[i].horario_abertura %> - <%= dadosView.dadosFunc[i].horario_fechamento %></p>
                     <% } %>
+                <% } else { %>
+                    <div class="funcionamento">
+                        <p class="msg-incentivo"><%= dadosView.mensagemNull %></p>
+                    </div>
                 <% } %>
 
             </div>
@@ -96,9 +108,13 @@
         <section id="bio" class="card-perfil">
             <h4><strong>Serviços</strong></h4>
             <div class="bio-scroll">
-                <p class="text-justify">
-                    <%= dadosView.servicos %>
-                </p>
+                <% if (dadosView.site) { %>
+                    <p class="text-justify">
+                        <%= dadosView.servicos %>
+                    </p>
+                <% } else { %>
+                    <p class="msg-incentivo"><%= dadosView.mensagemNull %></p>
+                <% } %>
             </div>
         </section>
 
