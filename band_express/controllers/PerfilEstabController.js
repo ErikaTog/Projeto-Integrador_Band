@@ -43,6 +43,24 @@ const perfilEstabController = {
             }
         })
 
+        // Tratamento dos dados da tabela Funcionamento
+        let dadosFunc = [];
+        if(dadosEstab[0].dataValues.funcionamento){
+            // Dados da tabela Funcionamento referente ao usuario
+            const dadosFuncionamento = await Funcionamento.findAll({
+                where: {
+                    id_estab: dadosEstab[0].dataValues.id_estab
+                }
+            });
+            for (let i = 0; i < dadosFuncionamento.length; i++) {
+                dadosFunc[i] = { 
+                    dia: dadosFuncionamento[i].dataValues.dia,
+                    horario_abertura: dadosFuncionamento[i].dataValues.horario_abertura,
+                    horario_fechamento: dadosFuncionamento[i].dataValues.horario_fechamento
+                };
+            }
+        }
+
         let dadosView = {
             avatar: dadosUsuario[0].dataValues.avatar,
             wallpaper: dadosUsuario[0].dataValues.wallpaper,
@@ -51,8 +69,10 @@ const perfilEstabController = {
             categoria: dadosEstab[0].dataValues.categoria,
             local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
             site: dadosEstab[0].dataValues.site,
-            // servicos: dadosEstab[0].dataValues.servicos,
-            sobre: dadosEstab[0].dataValues.sobre
+            servicos: dadosEstab[0].dataValues.servicos,
+            sobre: dadosEstab[0].dataValues.sobre,
+            funcionamento: dadosEstab[0].dataValues.funcionamento,
+            dadosFunc
         }
 
         res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
