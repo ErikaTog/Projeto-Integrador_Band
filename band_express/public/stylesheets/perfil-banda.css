@@ -294,7 +294,7 @@ h5.mt-0{
     width: 100%;
     height: 300px;
     background: #fb754b ;
-    background-image: url(../img/teste/icone_bg.png);
+    background-image: url(/img/icones/icone_bg.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 50% 10%;
