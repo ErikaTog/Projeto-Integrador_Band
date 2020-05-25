@@ -13,6 +13,11 @@
     margin-left: 20px;
 }
 
+.col-lg-12,
+.col-sm-6 {
+    padding: 0;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 
 /* --------------------------------
@@ -21,7 +26,7 @@
 
 .fundo-content a img,
 .avatar-content a img {
-    transition: 0.2s;
+    transition-duration: 0.25s;
 }
 
 .fundo-content a img:hover,
@@ -85,9 +90,25 @@ div.icon i:hover {
     margin: 20px auto 0;
 }
 
+#bio .form-control {
+    height: auto;
+    min-height: 150px;
+    max-height: 250px;
+    resize: vertical;
+}
+
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Integrantes--------------------- */
+
+.int.col-lg-6.col-md-12{
+padding: 0;
+}
+
+#integrantes {
+    height: 410px;
+}
+
 #integrantes h4 {
     margin-bottom: 1rem;
 }
@@ -106,7 +127,9 @@ a.modal-link:hover {
 -------------------------------- */
 
 #integrantes .scroll {
-    height: 200px;
+    height: auto;
+    height: 280px;
+    padding-top: 0;
     margin-top: 1rem;
     overflow-y: scroll;
 }
@@ -145,16 +168,14 @@ div.icon-border-none i:hover {
 /* --------------------início_do_Grupo_Infos--------------------- */
 
 #infos {
-    max-width: 500px;
-    padding: 2.5rem  5rem  2.5rem 2.5rem;
-    margin-top: 30px;
+    height: 410px;
 }
 
 .infos-item.media {
     align-items: center;
 }
 
-#infos form {
+#infos .form {
     width: 100%;
     margin-left: 1.5rem;
 }
@@ -171,7 +192,7 @@ div.icon-border-none i:hover {
     padding-top: 1rem;
 }
 
-.musica-item.col-xl-6.col-sm-12 {
+.musica-item {
     padding-left: 0;
     padding-right: 1rem;
 }
@@ -189,6 +210,7 @@ div.icon-border-none i:hover {
 input.form-control-file {
     box-shadow: none;
     border-radius: 0;
+    padding: 0;
     margin: 1rem 0;
 }
 
@@ -273,21 +295,26 @@ div.col-sm-12{
     }
 
     #infos {
-        max-width: 100%;
+        height: auto;
     }
     .info-user {
         padding-left: 2rem;
     }
     .info-user textarea {
-        width: 25%;
+        width: 40%;
     }
     #textareaUserName.form-control{
         margin: 10px 0px 10px 200px;
     }
 
+    #integrantes {
+        height: auto;
+    }
 
     #integrantes .scroll {
-        height: 240px;
+        height: auto;
+        max-height: 280px;
+        margin-top: 2rem;
     }
     #integrantes .form-group {
         width: 100%;
@@ -330,8 +357,16 @@ div.col-sm-12{
 }
 
 @media screen and (max-width: 576px) {
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
     .form-control {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 1.2rem;
     }
 
     .nav-container {
@@ -354,9 +389,9 @@ div.col-sm-12{
         left: 85%;
     }
 
-    #infos {
+    /* #infos {
         padding: 1rem 2rem;
-    }
+    } */
     .info-user {
         padding-left: 1rem;
     }
@@ -373,10 +408,14 @@ div.col-sm-12{
     }
 
     #bio {
-        padding: 1rem 2rem;
+        padding: 1rem 2rem 1.5rem;
+    }
+    #bio .form-group {
+        margin-top: 10px;
     }
 
     #integrantes .scroll {
+        height: auto;
         height: 170px;
     }
 
@@ -389,6 +428,19 @@ div.col-sm-12{
     }
     .integrantes-item div.icon-border-none {
         padding-left: 0.2rem;
+    }
+
+    input.form-control-file {
+        padding: 0;
+    }
+
+    #excluirConta {
+        padding: 1rem 2rem;
+        margin-top: 15px;
+    }
+
+    select.form-control:not([size]):not([multiple]) {
+        padding: 0 1rem;
     }
 
 }
