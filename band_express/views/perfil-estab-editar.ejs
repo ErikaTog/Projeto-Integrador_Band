@@ -45,30 +45,30 @@
             <section id="head" class="card-perfil">
                 <div class="head-fundo fundo-content">
                     <a data-toggle="modal" data-target="#alterarFundo" href="">
-                        <img src="/img/teste/fundo-estb.png" alt="Foto de fundo" class="wallpaper">
+                        <img src=<%= dadosView.wallpaper %> alt="Foto de fundo" class="wallpaper">
                         <div class="icon"><i class="fas fa-camera"></i></div>
                     </a>
                 </div>
                 <div class="avatar-content">
                     <a data-toggle="modal" data-target="#alterarAvatar" href="">
-                        <img src="/img/teste/jane-estb.png" alt="Foto de Perfil" class="avatar">
+                        <img src=<%= dadosView.avatar %> alt="Foto de Perfil" class="avatar">
                         <div class="icon"><i class="fas fa-camera"></i></div>
                     </a>
                 </div>
                 <div class="info-user">
                     <div class="form">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaUserName" rows="1" name="nome">Estabelecimento</textarea>
+                            <textarea class="form-control" id="textareaUserName" rows="1" name="nome"><%= usuario.nome %></textarea>
                         </div>
                     </div>
                     <div class="info-user-status">
                         <div class="media">
                             <img src="/img/icones/icon_star.svg">
-                            <p>Seguidores: 12M</p>
+                            <p>Seguidores: <%= dadosView.totalSeguidores %></p>
                         </div>
                         <div class="media">
                             <img src="/img/icones/icon_headset.svg">
-                            <p>Seguindo: 250</p>
+                            <p>Seguindo: <%= dadosView.totalSeguindo %></p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <img src="/img/icones/store-01.png" alt="Estab">
                     <div class="form">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos1" rows="1" name="categoria">Bar</textarea>
+                            <textarea class="form-control" id="textareaInfos1" rows="1" name="categoria"><%= dadosView.categoria %></textarea>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <img src="/img/icones/pin-01.png" alt="Local">
                     <div class="form">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos2" rows="1" name="local">São Paulo / SP</textarea>
+                            <textarea class="form-control" id="textareaInfos2" rows="1" name="local"><%= dadosView.local %></textarea>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                     <img src="/img/icones/site-01.png" alt="Site">
                     <div class="form">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos3" rows="1" name="site">https://lorem.ipsum</textarea>
+                            <textarea class="form-control" id="textareaInfos3" rows="1" name="site"><%= dadosView.site %></textarea>
                         </div>
                     </div>
                 </div>
@@ -109,8 +109,7 @@
                 <div class="form">
                     <div class="form-group">
                         <textarea class="form-control" id="textareaBio" rows="10" name="sobre">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
+                            <%= dadosView.sobre %>
                         </textarea>
                     </div>
                 </div>
@@ -122,15 +121,13 @@
                 <div class="infos-item">
                     <div class="form">
                         <div class="form-group">
-                            <!-- fazeu um for depois colocar name -->
-                            <textarea class="form-control" id="" rows="1">Seg 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Ter 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Qua 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Qui 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Sex 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Sab 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Dom 20:00 - 2:00</textarea>
-                            <textarea class="form-control" id="" rows="1">Feriados 20:00 - 2:00</textarea>
+
+                            <% if (dadosView.funcionamento) { %>
+                                <% for( let i = 0; i < dadosView.dadosFunc.length; i++ ) { %>
+                                    <textarea class="form-control" id="" rows="1"><%= dadosView.dadosFunc[i].dia %> <%= dadosView.dadosFunc[i].horario_abertura %> - <%= dadosView.dadosFunc[i].horario_fechamento %></textarea>
+                                <% } %>
+                            <% } %>
+            
                         </div>
                     </div>
                 </div>
@@ -142,8 +139,7 @@
                 <div class="form">
                     <div class="form-group">
                         <textarea class="form-control" id="textareaBio" rows="10" name="servicos">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
+                            <%= dadosView.servicos %>
                         </textarea>
                     </div>
                 </div>
