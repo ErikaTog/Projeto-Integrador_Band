@@ -96,7 +96,7 @@
                             <% if (usuario.id_tipos_perfil == 1) { %>
                                 href="/perfil/musico/<%= dadosMusico.id_musico %>"
                             <% } else if (usuario.id_tipos_perfil == 2) { %>
-                                href="/perfil/banda/<%= usuario.id_usuario %>"
+                                href="/perfil/banda/<%= dadosBanda.id_banda %>"
                             <% } else { %>
                                 href="/perfil/estabelecimento/<%= dadosEstab.id_estab %>"
                             <% } %>
