@@ -189,11 +189,12 @@ Imagem
 }
 
 #integrantes .scroll .item.row {
-    height: 250px;
+    height: 240px;
     overflow-y: scroll;
 }
 
 .integrantes-item {
+    height: 60px;
     padding: 0 1rem 2rem 0;
 }
 
@@ -560,10 +561,21 @@ button.btn.btn-danger:hover {
 
     #integrantes {
         max-width: 100%;
+        height: auto;
+    }
+
+     #integrantes .scroll .item.row {
+        height: auto;
+        max-height: 230px;
     }
 
     #infos {
         max-width: 100%;
+        height: auto;
+    }
+
+    .info.col-lg-6 {
+        padding-left: 0;
     }
     
 } 
@@ -638,7 +650,8 @@ button.btn.btn-danger:hover {
     }
 
     #integrantes .scroll .item.row {
-        height: 220px;
+        height: auto;
+        max-height: 220px;
     }
 
     #minhaMusica .row {
