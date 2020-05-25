@@ -77,4 +77,22 @@ router.put('/:id',
 MusicoMiddleware.error, 
 perfilEditarMusicoController.change);
 
+router.post('/:id', 
+[
+    body('toco')
+        .custom(async (value, { req }) => {
+            if (value && !req.body.instrumento) {
+                return Promise.reject('Para cadastrar o seu talento precisamos que nos informe o intrumento!');
+            }
+        }),
+    body('tecnico')
+        .custom(async (value, { req }) => {
+            if (value && !req.body.habilidade_tecnica) {
+                return Promise.reject('Para cadastrar o seu talento precisamos que nos informe a habilidade técnica!');
+            }
+        }),
+],
+MusicoMiddleware.error, 
+perfilEditarMusicoController.saveSkills);
+
 module.exports = router;

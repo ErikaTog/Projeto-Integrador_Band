@@ -414,7 +414,7 @@
                     </button>
                 </div>
 
-                <form action="" method="POST">
+                <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>" method="POST">
                     <div class="modal-body">
                         <!-- Opção Canto -->
                         <div class="form-check">
@@ -425,7 +425,7 @@
                         </div>
                         <!-- Opção Intrumento -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tocoAdd" value="1" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
+                            <input class="form-check-input" type="checkbox" name="toco" value="1" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
                             <label class="form-check-label" for="checkInstrumento">
                               Instrumento
                             </label>
@@ -433,26 +433,40 @@
                         <div class="collapse" id="collapseInstrumento">
                             <div class="form-group">
                                 <select class="custom-select" id="addInstrumento" name="instrumento">
+                                    <option value="" disabled selected hidden>Escolha um instrumento</option>
                                     <% listaInstrumentos.forEach(item => { %>
-                                        <% if (instrumentos == item.instrumento) { %>
-                                            <option disabled hidden><%= item.instrumento %></option> 
-                                        <% } else { %>
-                                            <option value="<%= item.instrumento %>"><%= item.instrumento %></option>
-                                        <% } %>
+                                        <option value="<%= item.instrumento %>"
+                                            <% instrumentos.forEach(instrumento => { %>
+                                                <% if (instrumento.instrumento == item.instrumento) { %>
+                                                    disabled
+                                                <% } %>
+                                            <% }) %>    
+                                        ><%= item.instrumento %></option>
                                     <% }) %>
                                 </select>
                             </div>
                         </div>
                         <!-- Opção Técnico -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tecnicoAdd" value="1" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
+                            <input class="form-check-input" type="checkbox" name="tecnico" value="1" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
                             <label class="form-check-label" for="checkTecnico">
                               Técnico
                             </label>
                         </div>
                         <div class="collapse" id="collapseTecnico">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="addTecnico" placeholder="Digite a habilidade técnica" name="habilidade_tecnica">
+                                <select class="custom-select" id="addTecnico" name="habilidade_tecnica">
+                                    <option value="" disabled selected hidden>Escolha uma habilidade técnica</option>
+                                    <% listaTecnicos.forEach(item => { %>
+                                        <option value="<%= item.habilidade_tecnica %>"
+                                            <% tecnicos.forEach(tecnico => { %>
+                                                <% if (tecnico.habilidade_tecnica == item.habilidade_tecnica) { %>
+                                                    disabled
+                                                <% } %>
+                                            <% }) %>    
+                                        ><%= item.habilidade_tecnica %></option>
+                                    <% }) %>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -106,6 +106,18 @@ const perfilEditarMusico = {
             attributes: ['uf'] 
         });
 
+        // Buscar todos os instrumentos
+        const listaInstrumentos = await Instrumento.findAll({ 
+            raw: true,
+            attributes: ['instrumento'] 
+        });
+
+        // Buscar todas as habilidades
+        const listaTecnicos = await Tecnico.findAll({ 
+            raw: true,
+            attributes: ['habilidade_tecnica'] 
+        });
+
         if(errors.length) {
             return res.render('perfil-musico-editar', {
                 usuario: req.session.usuario,
@@ -118,6 +130,8 @@ const perfilEditarMusico = {
                 audios, 
                 videos,
                 estados,
+                listaInstrumentos,
+                listaTecnicos,
                 errors: errors 
             });
         } 

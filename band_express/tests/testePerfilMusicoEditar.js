@@ -43,46 +43,64 @@ const query = async () => {
     // });
     // console.log(userDiferenteId);
 
-    let instrumentos = [];
+    // let instrumentos = [];
  
-    instrumentos = await Musico.findAll({
-        where: { id_musico: 1 },
-        raw: true,
-        attributes: ['musicos.instrumentos.instrumento'], 
-        include: [
-            {
-                model: MusicoInstrumentos,
-                as: 'musicos',
-                attributes: [],
-                include: [
-                    {
-                        model: Instrumento,
-                        as: 'instrumentos',
-                        attributes: []
-                    }
-                ]
-            }
-        ],
-    });
+    // instrumentos = await Musico.findAll({
+    //     where: { id_musico: 1 },
+    //     raw: true,
+    //     attributes: ['musicos.instrumentos.instrumento'], 
+    //     include: [
+    //         {
+    //             model: MusicoInstrumentos,
+    //             as: 'musicos',
+    //             attributes: [],
+    //             include: [
+    //                 {
+    //                     model: Instrumento,
+    //                     as: 'instrumentos',
+    //                     attributes: []
+    //                 }
+    //             ]
+    //         }
+    //     ],
+    // });
 
-    console.log(instrumentos);
+    // console.log(instrumentos);  instrumentos.instrumento
 
     // Buscar todos os instrumentos
-    const listaInstrumentos = await Instrumento.findAll({ 
-        raw: true,
-        attributes: ['instrumento'] 
-    });
+    // const listaInstrumentos = await Instrumento.findAll({ 
+    //     raw: true,
+    //     attributes: ['instrumento'] 
+    // });
 
+    // listaInstrumentos.forEach(item => {
+    //     for (const instrumento of instrumentos) {
+    //         if (item.instrumento == instrumento.instrumento) {
+    //             console.log(instrumento.instrumento);
+    //         }
+    //     }
+    // });
+
+    // console.log(instrumentos);
     
     // console.log(findInstrumentos)
 
     // Buscar todas as habilidades
-    const findTecnicos = await Tecnico.findAll({ 
-        raw: true,
-        attributes: ['habilidade_tecnica'] 
-    });
+    // const findTecnicos = await Tecnico.findAll({ 
+    //     raw: true,
+    //     attributes: ['habilidade_tecnica'] 
+    // });
     
     // console.log(findTecnicos)
+
+    // Buscando o id_instrumento
+    const findIdInstrumento = await Instrumento.findOne({
+        where: { instrumento: 'violão' },
+        raw: true,
+        attributes: ['id_instrumento']
+    });
+
+    console.log(findIdInstrumento);
 }
 
 query();
