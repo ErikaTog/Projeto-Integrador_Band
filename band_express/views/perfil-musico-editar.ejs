@@ -25,7 +25,7 @@
                     <a class="navbar-brand" href="/home"><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/perfil/musico"> <!--Adicionar id_musico-->
+                            <a class="nav-link" href="/perfil/musico/<%= dadosMusico.id_musico %> "> <!--Adicionar id_musico-->
                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
@@ -46,14 +46,14 @@
                 
                 <div class="head-fundo fundo-content">
                     <a data-toggle="modal" data-target="#alterarFundo" href="">
-                        <img src="/img/teste/fundo.png" alt="Foto de fundo" class="wallpaper">
+                        <img src="<%= dadosUsuario.wallpaper %>" alt="Foto de fundo" class="wallpaper">
                         <div class="icon"><i class="fas fa-camera"></i></div>
                     </a>
                 </div>
                 
                 <div class="avatar-content">
                     <a data-toggle="modal" data-target="#alterarAvatar" href="">
-                        <img src="/img/teste/jane.jpg" alt="Foto de Perfil" class="avatar">
+                        <img src="<%= dadosUsuario.avatar %>" alt="Foto de Perfil" class="avatar">
                         <div class="icon"><i class="fas fa-camera"></i></div>
                     </a>
                 </div>
@@ -61,17 +61,17 @@
                 <div class="info-user">
                     <div>
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaUserName" rows="1" name="nome">Jane Doe</textarea>
+                            <textarea class="form-control" id="textareaUserName" rows="1" name="nome"><%= usuario.nome %></textarea>
                         </div>
                     </div>
                     <div class="info-user-status">
                         <div class="media">
                             <img src="/img/icones/icon_star.svg">
-                            <p>Seguidores: 12M</p>
+                            <p>Seguidores: <%= seguidores %></p>
                         </div>
                         <div class="media">
                             <img src="/img/icones/icon_headset.svg">
-                            <p>Seguindo: 250</p>
+                            <p>Seguindo: <%= seguindo %></p>
                         </div>
                     </div>
                 </div>
@@ -84,10 +84,11 @@
                 <h4><strong>Sobre mim</strong></h4>
                 <div>
                     <div class="form-group">
-                        <textarea class="form-control" id="textareaBio" rows="10" name="sobre">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-                        </textarea>
+                        <textarea class="form-control" id="textareaBio" name="sobre"
+                        <% if (!dadosMusico.sobre) { %>
+                            placeholder="Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores!"
+                        <% } %>
+                        ><%= dadosMusico.sobre %></textarea>
                     </div>
                 </div>
 
@@ -105,41 +106,56 @@
                                 Adicionar habilidade...
                             </a>
                             
+                            <% if (!dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
+                                <p class="msg-incentivo">Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
+                            <% } %>
+
                             <div class="scroll">
-                                <div class="habilidades-item media">
-                                    <img src="/img/icones/cantar-01.png" alt="Canto">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="textareaHabilidade" rows="1" name="canto">Canto</textarea>
-                                    </div>
-                                    <div class="icon-border-none">
-                                        <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                            <i class="fas fa-trash fa-lg"></i>
-                                        </a>
-                                    </div>
+
+                                <div class="row">
+                                    <% if (dadosMusico.canto) { %>
+                                        <div class="habilidades-item media col-lg-12 col-sm-6">
+                                            <img src="/img/icones/cantar-01.png" alt="Canto">
+                                            <p>Canto</p>
+                                            <div class="icon-border-none">
+                                                <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                    <i class="fas fa-trash fa-lg"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <% } %>
+
+                                    <% if (instrumentos.length) { %>
+                                        <% instrumentos.forEach(instrumento => { %>
+                                            <div class="habilidades-item media col-lg-12 col-sm-6">
+                                                <img src="/img/icones/tocar-01.png" alt="Toco">
+                                                <p><%= instrumento.instrumento %></p>
+                                                <div class="icon-border-none">
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                        <i class="fas fa-trash fa-lg"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } %>
+    
+                                    <% if (tecnicos.length) { %>
+                                        <% tecnicos.forEach(tecnico => { %>
+                                            <div class="habilidades-item media col-lg-12 col-sm-6">
+                                                <img src="/img/icones/palco-01.png" alt="Técnico">
+                                                <p><%= tecnico.habilidade_tecnica %></p>
+                                                <div class="icon-border-none">
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                        <i class="fas fa-trash fa-lg"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } %>
                                 </div>
-                                <div class="habilidades-item media">
-                                    <img src="/img/icones/tocar-01.png" alt="Toco">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="textareaHabilidade" rows="1" name="toco">Violão</textarea>
-                                    </div>
-                                    <div class="icon-border-none">
-                                        <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                            <i class="fas fa-trash fa-lg"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="habilidades-item media">
-                                    <img src="/img/icones/palco-01.png" alt="Técnico">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="textareaHabilidade" rows="1" name="tecnico">Iluminação de palco</textarea>
-                                    </div>
-                                    <div class="icon-border-none">
-                                        <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                            <i class="fas fa-trash fa-lg"></i>
-                                        </a>
-                                    </div>
-                                </div>
+
                             </div>
+
                         </section>
                     </div>
 
@@ -151,7 +167,15 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="local">São Paulo / SP</textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infos-item media">
+                                <img src="/img/icones/pin-01.png" alt="Local">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="estado"><%= dadosUsuario.uf %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +183,11 @@
                                 <img src="/img/icones/site-01.png" alt="Site">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="site">https://lorem.ipsum</textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="site"
+                                        <% if (!dadosMusico.site) { %>
+                                            placeholder="Ops, você não informou este campo"
+                                        <% } %>
+                                        ><%= dadosMusico.site %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +195,11 @@
                                 <img src="/img/icones/canal-01.png" alt="Canal">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="canal">JaneeeeD</textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="canal"
+                                        <% if (!dadosMusico.canal) { %>
+                                            placeholder="Ops, você não informou este campo"
+                                        <% } %>
+                                        ><%= dadosMusico.canal %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +207,7 @@
                                 <img src="/img/icones/email-01.png" alt="Email">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="email">jane.doe@email.com</textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="email"><%= usuario.email %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -194,77 +226,76 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <video controls>
-                                <source src="video/video1.mp4" type="video/mp4">
-                                <source src="video/video1.ogg" type="video/ogg">
-                                <p>Seu browser não suporta este recurso</p>
-                            </video>
-                            <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                            
-                        </div>
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <h5>Metalica</h5>
-                        </div>
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="player">
-                                <audio controls>
-                                    <source src="video/audio1.mp3" type="audio/mpeg">
-                                    <source src="video/audio1.ogg" type="audio/ogg">
-                                    <p>Seu browser não suporta este recurso</p>
-                                </audio>
-                            </div>
-                            <h5>Canon Rock - Jerry C cover by Laura</h5>
-                        </div>
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <h5>Magic! - Rude</h5>
-                        </div>
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <div class="player">
-                                <audio controls>
-                                    <source src="video/audio2.mp3" type="audio/mpeg">
-                                    <source src="video/audio2.ogg" type="audio/ogg">
-                                    <p>Seu browser não suporta este recurso</p>
-                                </audio>
-                            </div>
-                            <h5>Always - Bon Jovi - piano cover</h5>
-                        </div>
-                        <div class="musica-item col-xl-6 col-sm-12">
-                            <div class="icon-border-none">
-                                <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                    <i class="fas fa-trash fa-lg"></i>
-                                </a>
-                            </div>
-                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                            <h5>Gucci Mane</h5>
-                        </div>
+
+                        <% if (!videos.length && !audios.length) { %>
+                            <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+                        <% } %>
+
+                        <% if (videos.length) { %>
+                            <% videos.forEach(video => { %>
+                                <% if (video.tipo == "arquivo") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <video controls>
+                                            <source src="<%= video.caminho %>" type="video/mp4">
+                                            <source src="<%= video.caminho %>" type="video/ogg">
+                                            <p>Seu browser não suporta este recurso</p>
+                                        </video>
+                                        <h5><%= video.titulo %></h5>
+                                    </div>
+                                <% } %>
+
+                                <% if (video.tipo == "link") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <iframe src="<%= video.caminho %>" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <h5><%= video.titulo %></h5>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+
+                        <% if (audios.length) { %>
+                            <% audios.forEach(audio => { %>
+                                <% if (audio.tipo == "arquivo") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <div class="player">
+                                            <audio controls>
+                                                <source src="<%= audio.caminho %>" type="audio/mpeg">
+                                                <source src="<%= audio.caminho %>" type="audio/ogg">
+                                                <p>Seu browser não suporta este recurso</p>
+                                            </audio>
+                                        </div>
+                                        <h5><%= audio.titulo %></h5>
+                                    </div>
+                                <% } %>
+                                <% if (audio.tipo == "link") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="<%= audio.caminho %>"></iframe>
+                                        <h5><%= audio.titulo %></h5>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+
                     </div>
                 </div>
 

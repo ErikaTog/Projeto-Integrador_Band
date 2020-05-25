@@ -61,11 +61,11 @@
                     <p class="text-justify">
                         <%= dadosMusico.sobre %>
                     </p>
-                    <% } else { %>
-                        <p class="msg-incentivo">
-                            Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
-                        </p>    
-                    <% } %>
+                <% } else { %>
+                    <p class="msg-incentivo">
+                        Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                    </p>    
+                <% } %>
             </div>
 
         </section>
@@ -100,7 +100,7 @@
                                     <% tecnicos.forEach(tecnico => { %>
                                         <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
                                             <img src="/img/icones/palco-01.png" alt="Técnico">
-                                            <p><%= tecnico.habilidade_tecnica %> </p>
+                                            <p><%= tecnico.habilidade_tecnica %></p>
                                         </div>
                                     <% }) %>
                                 <% } %>
@@ -115,7 +115,7 @@
                         <h4><strong>+ Infos</strong></h4>
                         <div class="infos-item media">
                             <img src="/img/icones/pin-01.png" alt="Local">
-                            <p><%= dadosUsuario.nome %>  / <%= dadosUsuario.uf %> </p>
+                            <p><%= dadosUsuario.nome %>  / <%= dadosUsuario.uf %></p>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/site-01.png" alt="Site">
