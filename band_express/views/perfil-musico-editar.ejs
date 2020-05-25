@@ -18,14 +18,14 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
                     <a class="navbar-brand" href="/home"><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/perfil/musico/<%= dadosMusico.id_musico %> "> <!--Adicionar id_musico-->
+                            <a class="nav-link" href="/perfil/musico/<%= dadosMusico.id_musico %>">
                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
@@ -40,6 +40,18 @@
         </header>
 
         <div class="perfil-container">
+        
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível alterar a senha...</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
         
         <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -167,7 +179,15 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                        <select class="custom-select" name="estado">
+                                            <% estados.forEach(estado => { %>
+                                                <% if (dadosUsuario.uf == estado.uf) { %>
+                                                    <option selected><%= estado.uf %></option> 
+                                                <% } else { %>
+                                                    <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                                <% } %>
+                                            <% }) %>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +195,7 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="estado"><%= dadosUsuario.uf %></textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -412,7 +432,15 @@
                         </div>
                         <div class="collapse" id="collapseInstrumento">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="addInstrumento" placeholder="Digite o instrumento" name="instrumento">
+                                <select class="custom-select" id="addInstrumento" name="instrumento">
+                                    <% listaInstrumentos.forEach(item => { %>
+                                        <% if (instrumentos == item.instrumento) { %>
+                                            <option disabled hidden><%= item.instrumento %></option> 
+                                        <% } else { %>
+                                            <option value="<%= item.instrumento %>"><%= item.instrumento %></option>
+                                        <% } %>
+                                    <% }) %>
+                                </select>
                             </div>
                         </div>
                         <!-- Opção Técnico -->

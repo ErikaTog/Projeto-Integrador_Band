@@ -47,9 +47,9 @@ const query = async () => {
 
     // let instrumentos = [];
 
-    // instrumentosBuscados.forEach(musico => {
-    //     instrumentos.push(musico.instrumentos.dataValues.instrumento);
-    // });
+    instrumentosBuscados.forEach(musico => {
+        instrumentos.push(musico.instrumentos.dataValues.instrumento);
+    });
 
     // console.log(instrumentos);
 

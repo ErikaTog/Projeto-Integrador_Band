@@ -163,6 +163,10 @@ div.icon-border-none i:hover {
     margin-left: 1.5rem;
 }
 
+.form-group select {
+    height: 46px;
+}
+
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Minha_Musica--------------------- */
@@ -312,6 +316,9 @@ input[type=checkbox]:checked + label:before {
     .info-user textarea {
         width: 40%;
     }
+    .form-group select {
+        height: 41px;
+    }
 
     #habilidades {
         height: auto;
@@ -349,6 +356,9 @@ input[type=checkbox]:checked + label:before {
     }
     .info-user textarea {
         width: 45%;
+    }
+    .form-group select {
+        height: 37px;
     }
 
     #bio {
@@ -394,6 +404,9 @@ input[type=checkbox]:checked + label:before {
     .info-user textarea {
         width: 45%;
         margin: 0.5rem 3rem;
+    }
+    .form-group select {
+        height: 30px;
     }
 
     #bio {
