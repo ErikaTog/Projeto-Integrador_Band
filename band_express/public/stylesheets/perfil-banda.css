@@ -179,7 +179,8 @@ Imagem
 
 #integrantes {
     max-width: 500px;
-    padding: 2.5rem;
+    height: 340px;
+    padding: 2.5rem 2.5rem 2.5rem 5rem;
     margin-top: 30px;
 }
 
@@ -228,10 +229,16 @@ h5.mt-0{
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
+.info.col-lg-6 {
+    padding-right: 0;
+}
+
 #infos {
     max-width: 500px;
-    padding: 2.5rem;
+    height: 340px;
+    padding: 2.5rem 5rem;
     margin-top: 30px;
+    margin-left: auto;
 }
 
 .infos-item {
