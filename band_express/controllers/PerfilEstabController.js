@@ -74,10 +74,11 @@ const perfilEstabController = {
             servicos: dadosEstab[0].dataValues.servicos,
             sobre: dadosEstab[0].dataValues.sobre,
             funcionamento: dadosEstab[0].dataValues.funcionamento,
+            mensagemNull: 'Ops, você não informou este campo',
             dadosFunc
         }
 
-        res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
+        res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosEstab, dadosView});
     },
 
     changePassword: async (req, res) => {
