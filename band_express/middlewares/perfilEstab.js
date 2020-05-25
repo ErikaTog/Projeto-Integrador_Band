@@ -76,11 +76,12 @@ const perfilEstab = {
             servicos: dadosEstab[0].dataValues.servicos,
             sobre: dadosEstab[0].dataValues.sobre,
             funcionamento: dadosEstab[0].dataValues.funcionamento,
+            mensagemNull: 'Ops, você não informou este campo',
             dadosFunc
         }
 
         if(errors.length) {
-            return res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView, errors: errors });
+            return res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosEstab, dadosView, errors: errors });
         }
         next();
     }
