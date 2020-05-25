@@ -1,7 +1,11 @@
+const { validationResult } = require('express-validator');
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
 
-const perfilEditarMusicoController = {
-    show: async (req, res) => {
+const perfilEditarMusico = {
+    error: async (req, res, next) => {
+        let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
+
         // Buscar informação da tabela usuario
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -114,128 +118,26 @@ const perfilEditarMusicoController = {
             attributes: ['habilidade_tecnica'] 
         });
 
-        res.render('perfil-musico-editar', { 
-            usuario: req.session.usuario,
-            dadosUsuario,
-            dadosMusico, 
-            instrumentos, 
-            tecnicos, 
-            seguidores, 
-            seguindo, 
-            audios, 
-            videos,
-            estados,
-            listaInstrumentos,
-            listaTecnicos
-        });
-    },
-    change: async (req, res) => {
-
-        let { nome, sobre, estado, cidade, site, canal, email } = req.body;
-
-        const dadosUsuario = await Usuario.findOne({ 
-            where: { nome: req.session.usuario.nome },
-        });
-        
-        const dadosMusico = await Musico.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario }, 
-        });
-        
-        // Buscar o id_cidade e id_estado na tabela cidade
-        const findIdLocal = await Cidade.findOne({
-            where: { nome: cidade },
-            raw: true,
-            attributes: ['id_cidade', 'estado.id_estado'],
-            include: [{
-                model: Estado, 
-                as: 'estado',
-                attributes: [],
-                where: { uf: estado }
-            }]
-        });
-
-        // Substituir valores
-        dadosUsuario.nome = nome;
-        dadosUsuario.email = email;
-        dadosUsuario.id_estado = findIdLocal.id_estado;
-        dadosUsuario.id_cidade = findIdLocal.id_cidade;
-        dadosMusico.sobre = sobre;
-        dadosMusico.site = site;
-        dadosMusico.canal = canal;
-
-        // Salvar no BD
-        await dadosUsuario.save({ fields: ['nome', 'email', 'id_cidade', 'id_estado'] });
-        await dadosMusico.save({ fields: ['sobre', 'site', 'canal'] });
-
-        // Setar session do usuario
-        let usuario = { 
-            id_usuario: dadosUsuario.id_usuario, 
-            nome: dadosUsuario.nome, 
-            senha: dadosUsuario.senha, 
-            email: dadosUsuario.email,
-            id_tipos_perfil: 1
-        };
-
-        req.session.usuario = usuario;
-
-        res.cookie('logado', usuario.email, { maxAge: 900000 });
-        
-        res.redirect(`/perfil/musico/${dadosMusico.id_musico}`);
-    },
-    saveSkills: async (req, res) => {
-
-        const { canto, toco, tecnico, instrumento, habilidade_tecnica } = req.body;
-
-        const dadosMusico = await Musico.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario }
-        });
-
-        // Salvar canto
-        if (canto) {
-            dadosMusico.canto = canto;
-            await dadosMusico.save({ fields: ['canto'] });
-        };
-
-        // Salvar instrumento
-        if (toco) {
-            dadosMusico.toco = toco;
-            await dadosMusico.save({ fields: ['toco'] });
-
-            // Buscando o id_instrumento
-            const findIdInstrumento = await Instrumento.findOne({
-                where: { instrumento },
-                raw: true,
-                attributes: ['id_instrumento']
+        if(errors.length) {
+            return res.render('perfil-musico-editar', {
+                usuario: req.session.usuario,
+                dadosUsuario,
+                dadosMusico, 
+                instrumentos, 
+                tecnicos, 
+                seguidores, 
+                seguindo, 
+                audios, 
+                videos,
+                estados,
+                listaInstrumentos,
+                listaTecnicos,
+                errors: errors 
             });
-            
-            // Inserindo id_instrumento nas tabelas intermediárias
-            await MusicoInstrumentos.create({
-                id_musico: dadosMusico.id_musico,
-                id_instrumento: findIdInstrumento.id_instrumento
-            });
-        };
+        } 
 
-        // Salvar habilidade técnica
-        if (tecnico) {
-            dadosMusico.tecnico = tecnico;
-            await dadosMusico.save({ fields: ['tecnico'] });
-
-            // Buscando o id_instrumento
-            const findIdTecnico = await Tecnico.findOne({
-                where: { habilidade_tecnica },
-                raw: true,
-                attributes: ['id_tecnico']
-            });
-            
-            // Inserindo id_instrumento nas tabelas intermediárias
-            await MusicoTecnicos.create({
-                id_musico: dadosMusico.id_musico,
-                id_tecnico: findIdTecnico.id_tecnico
-            });
-        };
-
-        res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
+        next();
     }
 }
 
-module.exports = perfilEditarMusicoController;
+module.exports = perfilEditarMusico;

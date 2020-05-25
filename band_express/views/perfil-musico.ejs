@@ -58,9 +58,7 @@
             <h4><strong>Sobre mim</strong></h4>
             <div class="bio-scroll">
                 <% if (dadosMusico.sobre) { %>
-                    <p class="text-justify">
-                        <%= dadosMusico.sobre %>
-                    </p>
+                    <p class="text-justify" style="white-space: pre-wrap"><%= dadosMusico.sobre %></p>
                 <% } else { %>
                     <p class="msg-incentivo">
                         Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
@@ -220,7 +218,7 @@
                     </button>
                 </div>
                 
-                <form action="/perfil/musico/<%= usuario.id_usuario %>?_method=PUT" method="POST">
+                <form action="/perfil/musico/<%= dadosMusico.id_musico %>?_method=PUT" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="senhaAtual">Senha atual</label>
