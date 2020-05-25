@@ -13,6 +13,10 @@ module.exports = {
           id_usuario_seguido: 3
         },
         {
+          id_usuario: 1,
+          id_usuario_seguido: 4
+        },
+        {
           id_usuario: 2,
           id_usuario_seguido: 3
         },
@@ -21,12 +25,20 @@ module.exports = {
           id_usuario_seguido: 4
         },
         {
+          id_usuario: 2,
+          id_usuario_seguido: 5
+        },
+        {
           id_usuario: 3,
           id_usuario_seguido: 4
         },
         {
           id_usuario: 3,
           id_usuario_seguido: 5
+        },
+        {
+          id_usuario: 3,
+          id_usuario_seguido: 6
         },
         {
           id_usuario: 4,

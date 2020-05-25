@@ -61,11 +61,11 @@
                     <p class="text-justify">
                         <%= dadosMusico.sobre %>
                     </p>
-                    <% } else { %>
-                        <p class="msg-incentivo">
-                            Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
-                        </p>    
-                    <% } %>
+                <% } else { %>
+                    <p class="msg-incentivo">
+                        Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                    </p>    
+                <% } %>
             </div>
 
         </section>
@@ -92,7 +92,7 @@
                                     <% instrumentos.forEach(instrumento => { %>
                                         <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
                                             <img src="/img/icones/tocar-01.png" alt="Toco">
-                                            <p><%= instrumento %></p>
+                                            <p><%= instrumento.instrumento %></p>
                                         </div>
                                     <% }) %>
                                 <% } %>
@@ -100,7 +100,7 @@
                                     <% tecnicos.forEach(tecnico => { %>
                                         <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
                                             <img src="/img/icones/palco-01.png" alt="Técnico">
-                                            <p><%= tecnico %> </p>
+                                            <p><%= tecnico.habilidade_tecnica %></p>
                                         </div>
                                     <% }) %>
                                 <% } %>
@@ -115,7 +115,7 @@
                         <h4><strong>+ Infos</strong></h4>
                         <div class="infos-item media">
                             <img src="/img/icones/pin-01.png" alt="Local">
-                            <p><%= cidade %>  / <%= estado %> </p>
+                            <p><%= dadosUsuario.nome %>  / <%= dadosUsuario.uf %></p>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/site-01.png" alt="Site">
@@ -127,7 +127,7 @@
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/canal-01.png" alt="Canal">
-                            <% if (dadosMusico.site) { %>
+                            <% if (dadosMusico.canal) { %>
                                 <p><%= dadosMusico.canal %></p>
                             <% } else { %>
                                 <p class="msg-incentivo">Ops, você não informou este campo</p>

@@ -20,7 +20,7 @@ const Estabelecimento = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            email: {
+            servicos: {
                 type: DataTypes.STRING,
                 allowNull: true
             },

@@ -1,8 +1,10 @@
-const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = require('../models'); 
 
-const perfilEstabController = {
-    show: async (req, res) => {
+const perfilEstab = {
+    error: async (req, res, next) => {
+        let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
 
         let id_usuario = req.session.usuario.id_usuario
 
@@ -77,29 +79,11 @@ const perfilEstabController = {
             dadosFunc
         }
 
-        res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView});
-    },
-
-    changePassword: async (req, res) => {
-        let { senhaNova } = req.body;
-        
-        senhaNova = bcrypt.hashSync(senhaNova, 10);
-
-        const senhaBD = await Usuario.findOne({ where: { id_usuario: req.session.usuario.id_usuario } });
-
-        senhaBD.senha = senhaNova;
-
-        await senhaBD.save({ fields: ['senha'] });
-
-        const dadosEstab = await Estabelecimento.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_estab'] 
-        });
-
-        res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
+        if(errors.length) {
+            return res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosView, errors: errors });
+        }
+        next();
     }
-
 }
 
-module.exports = perfilEstabController;
+module.exports = perfilEstab;

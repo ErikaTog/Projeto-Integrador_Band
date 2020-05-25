@@ -18,310 +18,298 @@
 </head>
 
 <body>
-    <header>
+    <form action="" method="POST">
+        <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
-                    <a class="navbar-brand" href="feed.html"><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
+                    <a class="navbar-brand" href="/home"><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="perfil-musico.html">
+                            <a class="nav-link" href="/perfil/musico/<%= dadosMusico.id_musico %> "> <!--Adicionar id_musico-->
                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="feedback-editar.html">
-                                <button type="button" class="btn btn-salvar">Salvar</button>
+                            <a class="nav-link" href="">
+                                <button type="submit" class="btn btn-salvar">Salvar</button>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-    </header>
+        </header>
 
-    <div class="perfil-container">
-    
-    <!-- Grupo Head -->
-        <section id="head" class="card-perfil">
-            
-            <div class="head-fundo fundo-content">
-                <a data-toggle="modal" data-target="#alterarFundo" href="">
-                    <img src="/img/teste/fundo.png" alt="Foto de fundo" class="wallpaper">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                </a>
-            </div>
-            
-            <div class="avatar-content">
-                <a data-toggle="modal" data-target="#alterarAvatar" href="">
-                    <img src="/img/teste/jane.jpg" alt="Foto de Perfil" class="avatar">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                </a>
-            </div>
+        <div class="perfil-container">
+        
+        <!-- Grupo Head -->
+            <section id="head" class="card-perfil">
+                
+                <div class="head-fundo fundo-content">
+                    <a data-toggle="modal" data-target="#alterarFundo" href="">
+                        <img src="<%= dadosUsuario.wallpaper %>" alt="Foto de fundo" class="wallpaper">
+                        <div class="icon"><i class="fas fa-camera"></i></div>
+                    </a>
+                </div>
+                
+                <div class="avatar-content">
+                    <a data-toggle="modal" data-target="#alterarAvatar" href="">
+                        <img src="<%= dadosUsuario.avatar %>" alt="Foto de Perfil" class="avatar">
+                        <div class="icon"><i class="fas fa-camera"></i></div>
+                    </a>
+                </div>
 
-            <div class="info-user">
-                <form action="" method="post">
+                <div class="info-user">
+                    <div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaUserName" rows="1" name="nome"><%= usuario.nome %></textarea>
+                        </div>
+                    </div>
+                    <div class="info-user-status">
+                        <div class="media">
+                            <img src="/img/icones/icon_star.svg">
+                            <p>Seguidores: <%= seguidores %></p>
+                        </div>
+                        <div class="media">
+                            <img src="/img/icones/icon_headset.svg">
+                            <p>Seguindo: <%= seguindo %></p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        <!-- Grupo Bio -->
+            <section id="bio" class="card-perfil">
+
+                <h4><strong>Sobre mim</strong></h4>
+                <div>
                     <div class="form-group">
-                        <textarea class="form-control" id="textareaUserName" rows="1">Jane Doe</textarea>
-                    </div>
-                </form>
-                <div class="info-user-status">
-                    <div class="media">
-                        <img src="/img/icones/icon_star.svg">
-                        <p>Seguidores: 12M</p>
-                    </div>
-                    <div class="media">
-                        <img src="/img/icones/icon_headset.svg">
-                        <p>Seguindo: 250</p>
+                        <textarea class="form-control" id="textareaBio" name="sobre"
+                        <% if (!dadosMusico.sobre) { %>
+                            placeholder="Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores!"
+                        <% } %>
+                        ><%= dadosMusico.sobre %></textarea>
                     </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
 
-    <!-- Grupo Bio -->
-        <section id="bio" class="card-perfil">
-
-            <h4><strong>Sobre mim</strong></h4>
-            <form action="" method="post">
-                <div class="form-group">
-                    <textarea class="form-control" id="textareaBio" rows="10">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate perspiciatis optio tempore, omnis accusantium ab eos quos! Eveniet ut velit earum? Autem sapiente corporis labore tempore eveniet, mollitia qui quaerat doloribus cupiditate nisi eaque perferendis nihil. Molestiae placeat, sunt voluptate dolorem deserunt eius exercitationem eum, culpa sapiente eveniet aut unde!
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate fuga obcaecati architecto eveniet, rerum est id cumque sequi corrupti, saepe dolore dolores. Esse voluptatibus cum nam tenetur deleniti. Fugit, quae, hic eius veniam, suscipit iste placeat atque voluptates impedit magni odio dolor consequuntur expedita. Praesentium, nesciunt id eos consequuntur possimus aliquid sit reiciendis voluptatem commodi, eveniet corrupti temporibus ea quibusdam.
-                    </textarea>
-                </div>
-            </form>
-
-        </section>
-
-        <div class="container habil-info">
-            <div class="row">
-
-    <!-- Grupo Habilidades -->
-                <div class="hab col-lg-6 col-md-12">
-                    <section id="habilidades" class="card-perfil">
-                        <h4><strong>Habilidades</strong></h4>
-                        
-                        <a class="modal-link" data-toggle="modal" data-target="#adicionarHabilidade" href="">
-                            Adicionar habilidade...
-                        </a>
-                        
-                        <div class="scroll">
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/cantar-01.png" alt="Canto">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Canto</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/tocar-01.png" alt="Toco">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Violão</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/tocar-01.png" alt="Toco">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Teclado</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/palco-01.png" alt="Técnico">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Iluminação de palco</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/palco-01.png" alt="Técnico">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Equipamentos de som</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/palco-01.png" alt="Técnico">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Edição de vídeo</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="habilidades-item media">
-                                <img src="/img/icones/palco-01.png" alt="Técnico">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaHabilidade" rows="1">Gravação</textarea>
-                                </div>
-                                <div class="icon-border-none">
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-    <!-- Grupo Infos -->
-                <div class="info col-lg-6 col-md-12">
-                    <section id="infos" class="card-perfil">
-                        <h4><strong>+ Infos</strong></h4>
-                        <div class="infos-item media">
-                            <img src="/img/icones/pin-01.png" alt="Local">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaInfos" rows="1">São Paulo / SP</textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="infos-item media">
-                            <img src="/img/icones/site-01.png" alt="Site">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaInfos" rows="1">https://lorem.ipsum</textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="infos-item media">
-                            <img src="/img/icones/canal-01.png" alt="Canal">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaInfos" rows="1">JaneeeeD</textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="infos-item media">
-                            <img src="/img/icones/email-01.png" alt="Email">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="textareaInfos" rows="1">jane.doe@email.com</textarea>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-    <!-- Grupo Minha Música -->
-        <section id="minhaMusica" class="card-perfil">
-            <h4><strong>Minha música</strong></h4>
-
-            <a class="modal-link" data-toggle="modal" data-target="#adicionarMusica" href="">
-                Adicionar música...
-            </a>
-
-            <div class="container">
+            <div class="container habil-info">
                 <div class="row">
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
+
+        <!-- Grupo Habilidades -->
+                    <div class="hab col-lg-6 col-md-12">
+                        <section id="habilidades" class="card-perfil">
+                            <h4><strong>Habilidades</strong></h4>
+                            
+                            <a class="modal-link" data-toggle="modal" data-target="#adicionarHabilidade" href="">
+                                Adicionar habilidade...
                             </a>
-                        </div>
-                        <video controls>
-                            <source src="video/video1.mp4" type="video/mp4">
-                            <source src="video/video1.ogg" type="video/ogg">
-                            <p>Seu browser não suporta este recurso</p>
-                        </video>
-                        <h5>Sweet Child O' Mine - Guns n’ Roses (Cover by First To Eleven)</h5>
-                        
+                            
+                            <% if (!dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
+                                <p class="msg-incentivo">Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
+                            <% } %>
+
+                            <div class="scroll">
+
+                                <div class="row">
+                                    <% if (dadosMusico.canto) { %>
+                                        <div class="habilidades-item media col-lg-12 col-sm-6">
+                                            <img src="/img/icones/cantar-01.png" alt="Canto">
+                                            <p>Canto</p>
+                                            <div class="icon-border-none">
+                                                <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                    <i class="fas fa-trash fa-lg"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <% } %>
+
+                                    <% if (instrumentos.length) { %>
+                                        <% instrumentos.forEach(instrumento => { %>
+                                            <div class="habilidades-item media col-lg-12 col-sm-6">
+                                                <img src="/img/icones/tocar-01.png" alt="Toco">
+                                                <p><%= instrumento.instrumento %></p>
+                                                <div class="icon-border-none">
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                        <i class="fas fa-trash fa-lg"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } %>
+    
+                                    <% if (tecnicos.length) { %>
+                                        <% tecnicos.forEach(tecnico => { %>
+                                            <div class="habilidades-item media col-lg-12 col-sm-6">
+                                                <img src="/img/icones/palco-01.png" alt="Técnico">
+                                                <p><%= tecnico.habilidade_tecnica %></p>
+                                                <div class="icon-border-none">
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao"href="">
+                                                        <i class="fas fa-trash fa-lg"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } %>
+                                </div>
+
+                            </div>
+
+                        </section>
                     </div>
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
-                            </a>
-                        </div>
-                        <iframe src="https://www.youtube.com/embed/5_e-Hvg57cA" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5>Metalica</h5>
-                    </div>
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
-                            </a>
-                        </div>
-                        <div class="player">
-                            <audio controls>
-                                <source src="video/audio1.mp3" type="audio/mpeg">
-                                <source src="video/audio1.ogg" type="audio/ogg">
-                                <p>Seu browser não suporta este recurso</p>
-                            </audio>
-                        </div>
-                        <h5>Canon Rock - Jerry C cover by Laura</h5>
-                    </div>
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
-                            </a>
-                        </div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/100339982&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                        <h5>Magic! - Rude</h5>
-                    </div>
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
-                            </a>
-                        </div>
-                        <div class="player">
-                            <audio controls>
-                                <source src="video/audio2.mp3" type="audio/mpeg">
-                                <source src="video/audio2.ogg" type="audio/ogg">
-                                <p>Seu browser não suporta este recurso</p>
-                            </audio>
-                        </div>
-                        <h5>Always - Bon Jovi - piano cover</h5>
-                    </div>
-                    <div class="musica-item col-xl-6 col-sm-12">
-                        <div class="icon-border-none">
-                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
-                                <i class="fas fa-trash fa-lg"></i>
-                            </a>
-                        </div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/499505559&color=%23fb3c00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                        <h5>Gucci Mane</h5>
+
+        <!-- Grupo Infos -->
+                    <div class="info col-lg-6 col-md-12">
+                        <section id="infos" class="card-perfil">
+                            <h4><strong>+ Infos</strong></h4>
+                            <div class="infos-item media">
+                                <img src="/img/icones/pin-01.png" alt="Local">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infos-item media">
+                                <img src="/img/icones/pin-01.png" alt="Local">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="estado"><%= dadosUsuario.uf %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infos-item media">
+                                <img src="/img/icones/site-01.png" alt="Site">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="site"
+                                        <% if (!dadosMusico.site) { %>
+                                            placeholder="Ops, você não informou este campo"
+                                        <% } %>
+                                        ><%= dadosMusico.site %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infos-item media">
+                                <img src="/img/icones/canal-01.png" alt="Canal">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="canal"
+                                        <% if (!dadosMusico.canal) { %>
+                                            placeholder="Ops, você não informou este campo"
+                                        <% } %>
+                                        ><%= dadosMusico.canal %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="infos-item media">
+                                <img src="/img/icones/email-01.png" alt="Email">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="email"><%= usuario.email %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
 
-            <div class="carregar">
-                <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
-            </div>
-        </section>    
-    </div>
+        <!-- Grupo Minha Música -->
+            <section id="minhaMusica" class="card-perfil">
+                <h4><strong>Minha música</strong></h4>
 
+                <a class="modal-link" data-toggle="modal" data-target="#adicionarMusica" href="">
+                    Adicionar música...
+                </a>
+
+                <div class="container">
+                    <div class="row">
+
+                        <% if (!videos.length && !audios.length) { %>
+                            <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+                        <% } %>
+
+                        <% if (videos.length) { %>
+                            <% videos.forEach(video => { %>
+                                <% if (video.tipo == "arquivo") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <video controls>
+                                            <source src="<%= video.caminho %>" type="video/mp4">
+                                            <source src="<%= video.caminho %>" type="video/ogg">
+                                            <p>Seu browser não suporta este recurso</p>
+                                        </video>
+                                        <h5><%= video.titulo %></h5>
+                                    </div>
+                                <% } %>
+
+                                <% if (video.tipo == "link") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <iframe src="<%= video.caminho %>" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <h5><%= video.titulo %></h5>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+
+                        <% if (audios.length) { %>
+                            <% audios.forEach(audio => { %>
+                                <% if (audio.tipo == "arquivo") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <div class="player">
+                                            <audio controls>
+                                                <source src="<%= audio.caminho %>" type="audio/mpeg">
+                                                <source src="<%= audio.caminho %>" type="audio/ogg">
+                                                <p>Seu browser não suporta este recurso</p>
+                                            </audio>
+                                        </div>
+                                        <h5><%= audio.titulo %></h5>
+                                    </div>
+                                <% } %>
+                                <% if (audio.tipo == "link") { %>
+                                    <div class="musica-item col-xl-6 col-sm-12">
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="<%= audio.caminho %>"></iframe>
+                                        <h5><%= audio.titulo %></h5>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } %>
+
+                    </div>
+                </div>
+
+                <div class="carregar">
+                    <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
+                </div>
+            </section>    
+        </div>
+    </form>
 
     <!-- Footer -->
     <footer>
         <ul class="list-unstyled mb-0">
-            <li><a href="">Políticas</a> | <a href="duvidas.html">Ajuda</a> | <a href="/faleConosco"><strong>Fale Conosco</strong></a></li>
+            <li><a href="">Políticas</a> | <a href="">Ajuda</a> | <a href="/faleConosco"><strong>Fale Conosco</strong></a></li>
             <li>
                 <span class="copyright">Copyright &copy;
                     2020 -
@@ -346,17 +334,17 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper">
                         </div>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
@@ -376,17 +364,17 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar">
                         </div>
                     </div>
     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
@@ -406,43 +394,43 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="" method="POST">
                     <div class="modal-body">
                         <!-- Opção Canto -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="canto" value="option1" id="checkCanto">
+                            <input class="form-check-input" type="checkbox" name="canto" value="1" id="checkCanto">
                             <label class="form-check-label" for="checkCanto">
                               Canto
                             </label>
                         </div>
                         <!-- Opção Intrumento -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="instrumento" value="option2" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
+                            <input class="form-check-input" type="checkbox" name="tocoAdd" value="1" id="checkInstrumento" data-toggle="collapse" data-target="#collapseInstrumento" aria-expanded="false" aria-controls="collapseInstrumento">
                             <label class="form-check-label" for="checkInstrumento">
                               Instrumento
                             </label>
                         </div>
                         <div class="collapse" id="collapseInstrumento">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="addInstrumento" placeholder="Digite o instrumento">
+                                <input type="text" class="form-control" id="addInstrumento" placeholder="Digite o instrumento" name="instrumento">
                             </div>
                         </div>
                         <!-- Opção Técnico -->
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="tecnico" value="option3" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
+                            <input class="form-check-input" type="checkbox" name="tecnicoAdd" value="1" id="checkTecnico" data-toggle="collapse" data-target="#collapseTecnico" aria-expanded="false" aria-controls="collapseTecnico">
                             <label class="form-check-label" for="checkTecnico">
                               Técnico
                             </label>
                         </div>
                         <div class="collapse" id="collapseTecnico">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="addTecnico" placeholder="Digite a habilidade técnica">
+                                <input type="text" class="form-control" id="addTecnico" placeholder="Digite a habilidade técnica" name="habilidade_tecnica">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
@@ -462,10 +450,10 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="" method="POST">
                     <div class="modal-body">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
+                            <input class="form-check-input" type="checkbox" name="videoAdd" value="1" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
                             <label class="form-check-label" for="checkVideo">
                               Quero enviar um vídeo
                             </label>
@@ -474,47 +462,47 @@
                         <div class="collapse" id="collapseVideo">
                             <div class="form-group">
                                 <label for="tituloVideo">Título</label>
-                                <input type="text" class="form-control" id="tituloVideo">
+                                <input type="text" class="form-control" id="tituloVideo" name="videoTitulo">
                             </div>
                             <hr>
                             <div class="form-group">
                                 <label for="linkVideo">Link</label>
-                                <input type="text" class="form-control" id="linkVideo" aria-describedby="linkHelp">
+                                <input type="text" class="form-control" id="linkVideo" aria-describedby="linkHelp" name="videoLink">
                                 <small id="linkHelp" class="form-text text-muted">Coloque o link do vídeo.</small>
                             </div>
                             ou
                             <div class="form-group">
-                                <label for="formControlFileImg">Escolha um arquivo</label>
-                                <input type="file" class="form-control-file" id="formControlFileImg" accept="video/*">
+                                <label for="arquivoVideo">Escolha um arquivo</label>
+                                <input type="file" class="form-control-file" id="arquivoVideo" accept="video/*" name="videoArquivo">
                             </div>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
+                            <input class="form-check-input" type="checkbox" name="audio" value="1" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
                             <label class="form-check-label" for="checkAudio">
                               Quero enviar um áudio
                             </label>
                         </div>
                         <div class="collapse" id="collapseAudio'">
                             <div class="form-group">
-                                <label for="tituloVideo">Título</label>
-                                <input type="text" class="form-control" id="tituloVideo">
+                                <label for="tituloAudio">Título</label>
+                                <input type="text" class="form-control" id="tituloAudio" name="audioTitulo">
                             </div>
                             <hr>
                             <div class="form-group">
                                 <label for="linkAudio">Link</label>
-                                <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp">
+                                <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp" name="audioLink">
                                 <small id="linkHelp" class="form-text text-muted">Coloque o link do áudio.</small>
                             </div>
                             ou
                             <div class="form-group">
-                                <label for="formControlFileImg">Escolha um arquivo</label>
-                                <input type="file" class="form-control-file" id="formControlFileImg" accept="audio/*">
+                                <label for="arquivoAudio">Escolha um arquivo</label>
+                                <input type="file" class="form-control-file" id="arquivoAudio" accept="audio/*" name="audioArquivo">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
@@ -537,10 +525,12 @@
                     <p class="danger">Tem certeza que quer excluir esta habilidade?</p>
                     <p>Depois de excluir, você não poderá desfazer esta ação.</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                </div>
+                <form action="" method="POST">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -561,10 +551,10 @@
                     <p class="danger">Tem certeza que quer excluir a sua música?</p>
                     <p>Depois de excluir, você não poderá desfazer esta ação.</p>
                 </div>
-                <form action="" method="post">
+                <form action="" method="POST">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <button type="submit" class="btn btn-danger">Excluir</button>
                     </div>
                 </form>
             </div>

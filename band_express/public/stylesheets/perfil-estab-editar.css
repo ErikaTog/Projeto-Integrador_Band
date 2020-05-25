@@ -104,7 +104,7 @@ div.icon i:hover {
     align-items: center;
 }
 
-#infos form {
+#infos .form {
     /* width: 100%; */
     margin-left: 1.5rem;
 }

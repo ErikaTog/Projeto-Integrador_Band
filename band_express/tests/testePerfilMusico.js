@@ -21,22 +21,27 @@ const query = async () => {
     // console.log(cidade[0].dataValues.estado.uf);
 
     // Buscar instrumentos e habilidades técnicas (id_musico) 
-    // const buscarInstrumentos = await Musico.findAll({
-    //     where: { id_musico: 2 },
-    //     include: [
-    //         {
-    //             model: MusicoInstrumentos,
-    //             as: 'musicos',
-    //             include: [
-    //                 {
-    //                     model: Instrumento,
-    //                     as: 'instrumentos',
-    //                     attributes: ['instrumento']
-    //                 }
-    //             ]
-    //         }
-    //     ],
-    // });
+    const buscarInstrumentos = await Musico.findAll({
+        where: { id_musico: 2 },
+        raw: true,
+        attributes: ['musicos.instrumentos.instrumento'], 
+        include: [
+            {
+                model: MusicoInstrumentos,
+                as: 'musicos',
+                attributes: [],
+                include: [
+                    {
+                        model: Instrumento,
+                        as: 'instrumentos',
+                        attributes: []
+                    }
+                ]
+            }
+        ],
+    });
+
+    console.log(buscarInstrumentos)
 
     // let instrumentosBuscados = buscarInstrumentos[0].dataValues.musicos;
 
@@ -85,22 +90,31 @@ const query = async () => {
     // Buscar áudios e vídeos
     // const buscarVideos = await Videos
 
-    const dadosUsuario = await Usuario.findOne({ 
-        where: { nome: 'Andressa' },
-        raw: true,
-        attributes: ['nome', 'email', 'senha', 'id_estado', 'id_cidade', 'avatar', 'wallpaper'],
-
-    });
+    // const dadosUsuario = await Usuario.findOne({ 
+    //     where: { nome: 'Mitsu325' },
+    //     raw: true,
+    //     attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+    //     include: [{
+    //         model: Cidade,
+    //         as: 'cidade',
+    //         attributes: [],
+    //         include: [{
+    //             model: Estado,
+    //             as: 'estado',
+    //             attributes: [],
+    //         }]
+    //     }]
+    // });
     
     // console.log(dadosUsuario);
 
-    const buscarAudios = await Audio.findAll({
-        where: { id_usuario: 3 },
-        raw: true,
-        attributes: ['tipo', 'titulo', 'caminho']
-    })
+    // const buscarAudios = await Audio.findAll({
+    //     where: { id_usuario: 3 },
+    //     raw: true,
+    //     attributes: ['tipo', 'titulo', 'caminho']
+    // })
 
-    console.log(buscarAudios);
+    // console.log(buscarAudios);
 
     
     // let audiosBuscados = dadosUsuario.usuarioAudio;

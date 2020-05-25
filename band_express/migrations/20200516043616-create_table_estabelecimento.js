@@ -23,7 +23,7 @@ module.exports = {
             type: Sequelize.STRING(100),
             allowNull: true
         },
-        email: {
+        servicos: {
             type: Sequelize.STRING(100),
             allowNull: true
         },
