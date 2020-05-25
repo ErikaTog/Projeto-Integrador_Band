@@ -100,18 +100,22 @@ div.icon i:hover {
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
+#infos{
+    display: flex;
+    justify-content: space-around;
+}
+
 .infos-item.media {
     align-items: center;
 }
 
-#infos .form {
-    /* width: 100%; */
-    margin-left: 1.5rem;
+#infos div {
+    margin-left: 0.5rem;
 }
 
-.infos-item{
+/* .infos-item{
     min-width: 50%;
-}
+} */
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
