@@ -98,7 +98,7 @@
                             <% } else if (usuario.id_tipos_perfil == 2) { %>
                                 href="/perfil/banda/<%= usuario.id_usuario %>"
                             <% } else { %>
-                                href="/perfil/estabelecimento/<%= usuario.id_usuario %>"
+                                href="/perfil/estabelecimento/<%= dadosEstab.id_estab %>"
                             <% } %>
                             >
                                 <div class="nav-icon">
@@ -120,7 +120,7 @@
                                 <% } else if (usuario.id_tipos_perfil == 2) { %>
                                     href="/perfil/editar/banda/<%= usuario.id_usuario %>"
                                 <% } else { %>
-                                    href="/perfil/editar/estabelecimento/<%= usuario.id_usuario %>"
+                                    href="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>"
                                 <% } %> 
                                 >Editar Perfil</a>
                                 <a class="dropdown-item" href="">Minhas publicações</a>
