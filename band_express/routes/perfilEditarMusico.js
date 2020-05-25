@@ -77,6 +77,7 @@ router.put('/:id',
 MusicoMiddleware.error, 
 perfilEditarMusicoController.change);
 
+// Modal habilidade
 router.post('/:id', 
 [
     body('toco')
