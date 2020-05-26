@@ -43,7 +43,7 @@
         
             <% if (typeof errors != 'undefined') { %>
                 <div class="alert alert-danger" role="alert">
-                    <h5>Não foi possível alterar a senha...</h5>
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
                     <hr>
                     <ul class="error">
                         <% for( let i = 0; i < errors.length; i++ ) { %>
@@ -354,7 +354,7 @@
                     </button>
                 </div>
 
-                <form action="" method="POST">
+                <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
