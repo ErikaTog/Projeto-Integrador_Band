@@ -116,6 +116,67 @@ const perfilEditarBandaController = {
             audios,
             estados
         });
+    },
+       change: async (req, res) => {
+
+        let { nome, sobre, estado, cidade, site, canal, email } = req.body;
+
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { 
+                nome: req.session.usuario.nome 
+            },
+        });
+        
+        const dadosBanda = await Banda.findOne({ 
+            where: { 
+                id_usuario: req.session.usuario.id_usuario 
+            }, 
+        });
+        
+        // Buscar o id_cidade e id_estado na tabela cidade
+        const findIdLocal = await Cidade.findOne({
+            raw: true,
+            attributes: ['id_cidade', 'estado.id_estado'],
+            where: { 
+                nome: cidade 
+            },            
+            include: [{
+                model: Estado, 
+                as: 'estado',
+                attributes: [],
+                where: { 
+                    uf: estado 
+                }
+            }]
+        });
+
+        // Substituir valores
+        dadosUsuario.nome = nome;
+        dadosUsuario.email = email;
+        dadosUsuario.id_estado = findIdLocal.id_estado;
+        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosBanda.sobre = sobre;
+        dadosBanda.site = site;
+        dadosBanda.canal = canal;
+
+        // Salvar no BD
+        await dadosUsuario.save({ fields: ['nome', 'email', 'id_cidade', 'id_estado'] });
+        await dadosBanda.save({ fields: ['sobre', 'site', 'canal'] });
+
+        // Setar session do usuario
+        let usuario = { 
+            id_usuario: dadosUsuario.id_usuario, 
+            nome: dadosUsuario.nome, 
+            senha: dadosUsuario.senha, 
+            email: dadosUsuario.email,
+            id_tipos_perfil: 2
+        };
+
+        req.session.usuario = usuario;
+
+        res.cookie('logado', usuario.email, { maxAge: 900000 });
+        
+        res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
     }
   
 }
