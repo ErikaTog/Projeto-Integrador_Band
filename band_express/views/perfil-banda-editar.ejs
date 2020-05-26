@@ -27,7 +27,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/perfil/banda/<%= dadosBanda.id_banda %>">
-                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                                <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -43,17 +43,17 @@
         <div class="perfil-container">
 
             <% if (typeof errors != 'undefined') { %>
-                <div class="alert alert-danger" role="alert">
-                    <h5>Não foi possível fazer a alteração solicitada!</h5>
-                    <hr>
-                    <ul class="error">
-                        <% for( let i = 0; i < errors.length; i++ ) { %>
-                            <li>- <%= errors[i].msg %>  </li>
-                        <% } %>
-                    </ul>
-                </div>
+            <div class="alert alert-danger" role="alert">
+                <h5>Não foi possível fazer a alteração solicitada!</h5>
+                <hr>
+                <ul class="error">
+                    <% for( let i = 0; i < errors.length; i++ ) { %>
+                    <li>- <%= errors[i].msg %> </li>
+                    <% } %>
+                </ul>
+            </div>
             <% } %>
-        
+
 
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -166,13 +166,13 @@
                                     <div class="form-group">
                                         <select class="custom-select" name="estado">
                                             <% estados.forEach(estado => { %>
-                                                <% if (dadosUsuarioBanda.uf == estado.uf) { %>
-                                                    <option selected><%= estado.uf %></option> 
-                                                <% } else { %>
-                                                    <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                                <% } %>
+                                            <% if (dadosUsuarioBanda.uf == estado.uf) { %>
+                                            <option selected><%= estado.uf %></option>
+                                            <% } else { %>
+                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                            <% } %>
                                             <% }) %>
-                                        </select>    
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -302,6 +302,7 @@
                     </div>
                 </section>
             </div>
+        </div>
     </form>
 
     <!-- Footer -->
