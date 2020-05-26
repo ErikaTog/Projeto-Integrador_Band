@@ -128,16 +128,14 @@ a.modal-link:hover {
 
 #integrantes .scroll {
     height: auto;
-    height: 280px;
+    max-height: 280px;
     padding-top: 0;
     margin-top: 1rem;
     overflow-y: scroll;
 }
 
 .integrantes-item.media{
-    display: flex;
     align-items: center;
-    justify-content: space-between;
 } 
 
 .integrantes-item img{
@@ -178,6 +176,10 @@ div.icon-border-none i:hover {
 #infos .form {
     width: 100%;
     margin-left: 1.5rem;
+}
+
+.form-group select {
+    height: 46px;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
@@ -303,6 +305,10 @@ div.col-sm-12{
     .info-user textarea {
         width: 40%;
     }
+    .form-group select {
+        height: 41px;
+    }
+
     #textareaUserName.form-control{
         margin: 10px 0px 10px 200px;
     }
@@ -344,6 +350,10 @@ div.col-sm-12{
     .info-user textarea {
         width: 31%;
     }
+    .form-group select {
+        height: 37px;
+    }
+
     #textareaUserName.form-control{
         margin: 10px 0px 10px 160px;
     }
@@ -399,6 +409,9 @@ div.col-sm-12{
         width: 45%;
         margin: 0.5rem 3rem;
     }
+    .form-group select {
+        height: 30px;
+    }
   
     #textareaUserName.form-control{
         margin: 10px 0px 10px 100px;
@@ -416,7 +429,7 @@ div.col-sm-12{
 
     #integrantes .scroll {
         height: auto;
-        height: 170px;
+        max-height: 170px;
     }
 
     .integrantes-item img {
