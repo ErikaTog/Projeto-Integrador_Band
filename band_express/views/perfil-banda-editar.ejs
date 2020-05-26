@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>" method="POST">
+    <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">
@@ -42,7 +42,18 @@
 
         <div class="perfil-container">
 
-             <!-- INCLUIR MENSAGEM DE ERROS -->
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
+        
 
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
