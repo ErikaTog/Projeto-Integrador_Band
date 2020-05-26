@@ -96,9 +96,14 @@ const perfilEditarBandaController = {
                 id_usuario
             }
         })
+
+        //Listando todos os Estados
+        const estados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
+        });
        
         return res.render('perfil-banda-editar', {
-            title: 'Perfil-editar',
             usuario: req.session.usuario,
             nomeBanda,
             emailBanda,
@@ -108,9 +113,10 @@ const perfilEditarBandaController = {
             dadosUsuarioBanda,
             integrantes,
             videos,
-            audios
+            audios,
+            estados
         });
-    }  
+    }
   
 }
 
