@@ -43,6 +43,12 @@ const perfilEditarEstabController = {
             }
         })
 
+        // Buscar lista de Estados
+        const estados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
+        });
+
         // Tratamento dos dados da tabela Funcionamento
         let dadosFunc = [];
         if(dadosEstab[0].dataValues.funcionamento){
@@ -79,7 +85,14 @@ const perfilEditarEstabController = {
 
 
         // res.render('persfil-estab-editar', { title: 'Perfil-editar', usuario: req.session.usuario });
-        res.render('perfil-estab-editar', { title: 'Perfil-editar', usuario: req.session.usuario, dadosEstab, dadosView});
+        res.render('perfil-estab-editar', { 
+            title: 'Perfil-editar', 
+            usuario: req.session.usuario, 
+            dadosUsuario,
+            estados,
+            dadosEstab, 
+            dadosView
+        });
     }
 }
 
