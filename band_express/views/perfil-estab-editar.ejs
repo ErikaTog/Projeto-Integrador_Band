@@ -79,27 +79,43 @@
                 <h4><strong>Contato</strong></h4>
                 <div class="infos-item media">
                     <img src="/img/icones/store-01.png" alt="Estab">
-                    <div class="form">
+                    <!-- <div class="form"> -->
                         <div class="form-group">
                             <textarea class="form-control" id="textareaInfos1" rows="1" name="categoria"><%= dadosView.categoria %></textarea>
                         </div>
-                    </div>
-                </div>
-                <div class="infos-item media">
-                    <img src="/img/icones/pin-01.png" alt="Local">
-                    <div class="form">
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos2" rows="1" name="local"><%= dadosView.local %></textarea>
-                        </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <div class="infos-item media">
                     <img src="/img/icones/site-01.png" alt="Site">
-                    <div class="form">
+                    <!-- <div class="form"> -->
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos3" rows="1" name="site"><%= dadosView.site %></textarea>
+                            <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosView.site %></textarea>
                         </div>
-                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="infos-item media">
+                    <img src="/img/icones/pin-01.png" alt="Local">
+                    <!-- <div class="form"> -->
+                        <div class="form-group">
+                            <select class="custom-select" name="estado" id="select">
+                                <% estados.forEach(estado => { %>
+                                    <% if (dadosView.estado == estado.uf) { %>
+                                        <option selected><%= estado.uf %></option> 
+                                    <% } else { %>
+                                        <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                    <% } %>
+                                <% }) %>
+                            </select>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="infos-item media">
+                    <img src="/img/icones/pin-01.png" alt="Local">
+                    <!-- <div class="form"> -->
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosView.cidade %></textarea>
+                        </div>
+                    <!-- </div> -->
                 </div>
             </section>
 
