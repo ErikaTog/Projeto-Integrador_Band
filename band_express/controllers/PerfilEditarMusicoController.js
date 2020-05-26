@@ -235,6 +235,9 @@ const perfilEditarMusicoController = {
         };
 
         res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
+    },
+    saveWallpaper: async (req, res) => {
+        console.log(req.file);
     }
 }
 

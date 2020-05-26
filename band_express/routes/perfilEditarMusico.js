@@ -3,6 +3,8 @@ const router = express.Router();
 const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+// const multer = require('multer');
+// const path = require('path');
 
 const { Usuario } = require('../models');
 
@@ -10,6 +12,18 @@ const perfilEditarMusicoController = require('../controllers/PerfilEditarMusicoC
 
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const MusicoMiddleware = require('../middlewares/PerfilEditarMusico');
+
+// Upload de arquivos
+// let storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, '/public/img/avatars')
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+//     }
+// })
+   
+// let upload = multer({ storage: storage })
 
 
 router.get('/:id', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -68,11 +82,13 @@ router.put('/:id',
 
     // Validando o campo Site
     check('site').trim()
-        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.'),
+        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.')
+        .isURL().withMessage('Tem certeza que esse é o seu site? Este não parece um endereço válido.'),
     
     // Validando o campo Canal
     check('canal').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
+        .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
 ],
 MusicoMiddleware.error, 
 perfilEditarMusicoController.change);
@@ -95,5 +111,8 @@ router.post('/:id',
 ],
 MusicoMiddleware.error, 
 perfilEditarMusicoController.saveSkills);
+
+// Modal wallpaper
+// router.post('/:id', upload.any(), perfilEditarMusicoController.saveWallpaper);
 
 module.exports = router;
