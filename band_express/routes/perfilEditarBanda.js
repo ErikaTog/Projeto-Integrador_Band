@@ -10,8 +10,7 @@ const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
 
 router.get('/:id', VerificaUsuarioLogado, perfilEditarBandaController.show);
 
-router.put('/:id',
-[
+router.put('/:id', [
     // Validando o campo nome
     check('nome').trim()
         .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
@@ -27,7 +26,7 @@ router.put('/:id',
                 }
             });
             if (userCheck) {
-                return Promise.reject('As bandas cadastradas no Band+ são únicas e a sua também será. Então, por favor, nos indique outro nome!');
+                return Promise.reject('As bandas cadastradas no Band+ são únicas. Então, por favor, nos indique outro nome!');
             }
         }),
 
@@ -52,11 +51,11 @@ router.put('/:id',
     
     // Validando o campo Estado
     check('estado').trim()
-        .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique um Estado.'),
+        .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique um Estado.'), //ALTERAR ESSA FRASE DEPOIS QUE CONSEGUIRMOS LISTAR AS CIDADES POR ESTADO
     
     // Validando o campo Cidade
     check('cidade').trim()
-        .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'),
+        .not().isEmpty().withMessage('Queremos que sua banda faça sucesso por onde passar, mas precisamos que nos indique uma Cidade.'), //ALTERAR ESSA FRASE DEPOIS QUE CONSEGUIRMOS LISTAR AS CIDADES POR ESTADO
 
     // Validando o campo sobre
     check('sobre').trim()
@@ -64,13 +63,14 @@ router.put('/:id',
 
     // Validando o campo Site
     check('site').trim()
-        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.'),
+        .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.')
+        .isURL().withMessage('Tem certeza que esse é o seu site? Este não parece um endereço válido.'),
     
     // Validando o campo Canal
     check('canal').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
-],
-BandaMiddleware.error, 
-perfilEditarBandaController.change);
+        .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
+
+], BandaMiddleware.error, perfilEditarBandaController.change);
 
 module.exports = router;
