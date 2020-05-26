@@ -229,12 +229,6 @@ label.col-sm-2.col-form-label{
     padding-right: 0;
 }
 
-div.col-sm-8, 
-div.col-sm-12{
-    padding: 0px;
-   
-}
-
 ::-webkit-input-placeholder{
     font-size: 14px;
     color: orangered;
