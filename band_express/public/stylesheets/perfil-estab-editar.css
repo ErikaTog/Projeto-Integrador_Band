@@ -73,6 +73,22 @@ div.icon i:hover {
     left: 80%;
 }
 
+/* ------------------------------*/ 
+/* Ícone - lixo */
+
+div.icon-border-none i {
+    color: #999999;
+    transition: 0.2s;
+}
+
+div.icon-border-none i:hover {
+    color: #4c4f66;
+}
+
+.habilidades-item div.icon-border-none {
+    margin: 0 15px 0 auto;
+}
+
 /* --------------------------------
             Info - User
 -------------------------------- */
@@ -116,10 +132,10 @@ div.icon i:hover {
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
-#infos{
+/* #infos{
     display: flex;
     justify-content: space-around;
-}
+} */
 
 .infos-item.media {
     align-items: center;
@@ -145,14 +161,22 @@ div.icon i:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-#infosFuncionamento textarea {
+/* #infosFuncionamento textarea {
     max-width: 23%;
     margin-left: 1.0rem;
     margin-bottom: 10px;
     align-self: center;
-} 
+}  */
+
+#itemFuncionamento{
+    padding-top: 10px;
+    margin-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
@@ -359,11 +383,16 @@ input[type=checkbox]:checked + label:before {
         width: 45%;
     }
 
-    #bio {
+    #bio,
+    #bio2{
         padding: 1rem 2rem;
     }
 
-    #bio2 {
-        padding: 1rem 2rem;
+    #bio textarea,
+    #bio2 textarea,
+    .infos-item textarea,
+    .info-user textarea,
+    .form-group select{
+        font-size: 1.2rem;
     }
 }
