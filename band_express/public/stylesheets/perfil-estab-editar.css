@@ -92,10 +92,26 @@ div.icon i:hover {
     margin: 20px auto 0;
 }
 
+#bio .form-control {
+    height: 150px;
+    max-height: 250px;
+    min-height: 150px;
+    resize: vertical;
+    text-align: left;
+}
+
 #bio2 .form-group {
     width: 100%;
     height: auto;
     margin: 20px auto 0;
+}
+
+#bio2 .form-control {
+    height: 150px;
+    min-height: 150px;
+    max-height: 250px;
+    resize: vertical;
+    text-align: left;
 }
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
@@ -107,15 +123,20 @@ div.icon i:hover {
 
 .infos-item.media {
     align-items: center;
+    min-width: 48%;
 }
 
-#infos div {
+#infos div{
     margin-left: 0.5rem;
 }
 
-/* .infos-item{
-    min-width: 50%;
-} */
+#infos .form-group {
+    min-width: 85%;
+} 
+
+.form-group select {
+    height: 46px;
+}
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
@@ -141,22 +162,6 @@ div.icon i:hover {
 input.form-control-file {
     box-shadow: none;
     border-radius: 0;
-    margin: 1rem 0;
-}
-
-#adicionarHabilidade input.form-control {
-    margin-bottom: 10px;
-}
-
-#adicionarMusica .form-group label {
-    color: #4c4f66;
-}
-
-#adicionarMusica label.form-check-label {
-    font-weight: 600;
-}
-
-#adicionarMusica .form-group {
     margin: 1rem 0;
 }
 
@@ -242,14 +247,17 @@ input[type=checkbox]:checked + label:before {
         width: 80%;
         display: flex;
     }
+
     .navbar {
         width: 100%;
     }
+
     .navbar-nav {
         width: 100%;
         padding: 0;
         justify-content: flex-end;
     }
+
     .nav-item {
         margin-left: 10px;
     }
@@ -258,9 +266,11 @@ input[type=checkbox]:checked + label:before {
         width: 35px;
         height: 35px;
     }
+
     .info-user {
         padding-left: 25rem;
     }
+
     .info-user textarea {
         width: 40%;
     }
@@ -283,8 +293,22 @@ input[type=checkbox]:checked + label:before {
     .info-user {
         padding-left: 20rem;
     }
+
     .info-user textarea {
         width: 45%;
+    }
+
+    .info-user textarea {
+        width: 45%;
+    }
+
+    .form-group select{
+        height: 35%;
+        min-width: 100%;
+    }
+
+    .infos-item.media {
+        min-width: 100%;
     }
 
     #bio {
@@ -316,16 +340,23 @@ input[type=checkbox]:checked + label:before {
         font-size: 1rem;
         border: 1px solid #fb3c00;
     }
+
     .avatar-content div.icon {
         top: 48%;
         left: 85%;
     }
+
     .info-user {
         padding-left: 7rem;
     }
+
     .info-user textarea {
         width: 45%;
         margin: 0.5rem 3rem;
+    }
+
+    .form-group select{
+        width: 45%;
     }
 
     #bio {

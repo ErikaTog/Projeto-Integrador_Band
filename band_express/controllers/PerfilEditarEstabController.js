@@ -43,6 +43,12 @@ const perfilEditarEstabController = {
             }
         })
 
+        // Buscar lista de Estados
+        const estados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
+        });
+
         // Tratamento dos dados da tabela Funcionamento
         let dadosFunc = [];
         if(dadosEstab[0].dataValues.funcionamento){
@@ -68,7 +74,8 @@ const perfilEditarEstabController = {
             totalSeguidores,
             id_estab: dadosEstab[0].dataValues.id_estab,
             categoria: dadosEstab[0].dataValues.categoria,
-            local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
+            cidade: nomeCidade[0].dataValues.nome,
+            estado: nomeEstado[0].dataValues.uf,
             site: dadosEstab[0].dataValues.site,
             servicos: dadosEstab[0].dataValues.servicos,
             sobre: dadosEstab[0].dataValues.sobre,
@@ -79,7 +86,14 @@ const perfilEditarEstabController = {
 
 
         // res.render('persfil-estab-editar', { title: 'Perfil-editar', usuario: req.session.usuario });
-        res.render('perfil-estab-editar', { title: 'Perfil-editar', usuario: req.session.usuario, dadosEstab, dadosView});
+        res.render('perfil-estab-editar', { 
+            title: 'Perfil-editar', 
+            usuario: req.session.usuario, 
+            dadosUsuario,
+            estados,
+            dadosEstab, 
+            dadosView
+        });
     }
 }
 
