@@ -8,8 +8,8 @@ const perfilEstab = {
 
         let id_usuario = req.session.usuario.id_usuario
 
-         // Dados da tabela Usuario
-         const dadosUsuario = await Usuario.findAll({
+        // Dados da tabela Usuario
+        const dadosUsuario = await Usuario.findAll({
 			where: {
                 id_usuario: id_usuario
             }
@@ -81,7 +81,13 @@ const perfilEstab = {
         }
 
         if(errors.length) {
-            return res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosEstab, dadosView, errors: errors });
+            return res.render('perfil-estab', { 
+                title: 'Perfil', 
+                usuario: req.session.usuario, 
+                dadosEstab, 
+                dadosView, 
+                errors: errors 
+            });
         }
         next();
     }
