@@ -27,7 +27,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/perfil/banda/<%= dadosBanda.id_banda %>">
-                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
+                                <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -43,17 +43,17 @@
         <div class="perfil-container">
 
             <% if (typeof errors != 'undefined') { %>
-                <div class="alert alert-danger" role="alert">
-                    <h5>Não foi possível fazer a alteração solicitada!</h5>
-                    <hr>
-                    <ul class="error">
-                        <% for( let i = 0; i < errors.length; i++ ) { %>
-                            <li>- <%= errors[i].msg %>  </li>
-                        <% } %>
-                    </ul>
-                </div>
+            <div class="alert alert-danger" role="alert">
+                <h5>Não foi possível fazer a alteração solicitada!</h5>
+                <hr>
+                <ul class="error">
+                    <% for( let i = 0; i < errors.length; i++ ) { %>
+                    <li>- <%= errors[i].msg %> </li>
+                    <% } %>
+                </ul>
+            </div>
             <% } %>
-        
+
 
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -166,13 +166,13 @@
                                     <div class="form-group">
                                         <select class="custom-select" name="estado">
                                             <% estados.forEach(estado => { %>
-                                                <% if (dadosUsuarioBanda.uf == estado.uf) { %>
-                                                    <option selected><%= estado.uf %></option> 
-                                                <% } else { %>
-                                                    <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                                <% } %>
+                                            <% if (dadosUsuarioBanda.uf == estado.uf) { %>
+                                            <option selected><%= estado.uf %></option>
+                                            <% } else { %>
+                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                            <% } %>
                                             <% }) %>
-                                        </select>    
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -302,6 +302,7 @@
                     </div>
                 </section>
             </div>
+        </div>
     </form>
 
     <!-- Footer -->
@@ -396,24 +397,18 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*">
-                        </div>
+                <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>" method="POST">
+                    <div class="modal-body">                  
                         <div class="form-group">
                             <label for="inputMembro" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputMembro"
-                                    placeholder="Digite o nome/usuário">
+                                <input type="text" class="form-control" id="inputMembro" name= "membro" placeholder="Digite o nome/usuário">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputFuncao" class="col-sm-2 col-form-label">Função</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="inputFuncao" placeholder="Digite a função">
+                                <input type="text" class="form-control" id="inputFuncao" name="funcao" placeholder="Digite a função">
                             </div>
                         </div>
                     </div>

@@ -177,6 +177,41 @@ const perfilEditarBandaController = {
         res.cookie('logado', usuario.email, { maxAge: 900000 });
         
         res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
+    },
+    saveMembers: async (req, res) => {
+
+        let { membro, funcao } = req.body;
+
+        membro = membro.trim();
+        funcao = funcao.trim();         
+    
+        //Selecionando o id_banda
+        const idBanda = await Banda.findOne({
+            raw: true,
+            attributes: ['id_banda'],
+            where: {
+                id_usuario: req.session.usuario.id_usuario
+            }
+        });
+
+        // buscando o id do novo membro na tabela usuario 
+        const idNovoMembro = await Usuario.findOne({
+            raw: true,
+            attributes: ['id_usuario'],
+            where: {
+                nome: membro
+            }
+        });
+            
+        // inserindo o id da banda e do novo membro na tabela intermediaria
+        const novoMembro = await BandaIntegrantes.create({
+            id_banda: idBanda.id_banda,
+            id_integrante: idNovoMembro.id_usuario,
+            funcao
+        });
+
+    res.redirect(`/perfil/editar/banda/${idBanda}`);       
+
     }
   
 }

@@ -91,7 +91,7 @@ const perfilEditarBanda = {
             }
         })
 
-        // Lintando todos os Estados
+        // Listando todos os Estados
         const estados = await Estado.findAll({ 
             raw: true,
             attributes: ['uf'] 

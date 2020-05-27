@@ -101,6 +101,10 @@ div.icon i:hover {
 
 /* --------------------início_do_Grupo_Integrantes--------------------- */
 
+#integrantes p {
+    font-size: 16px;
+}
+
 .int.col-lg-6.col-md-12{
 padding: 0;
 }
@@ -229,12 +233,6 @@ label.col-sm-2.col-form-label{
     padding-right: 0;
 }
 
-div.col-sm-8, 
-div.col-sm-12{
-    padding: 0px;
-   
-}
-
 ::-webkit-input-placeholder{
     font-size: 14px;
     color: orangered;
@@ -326,6 +324,10 @@ div.col-sm-12{
         width: 100%;
     }
 
+    #integrantes p {
+        font-size: 14.08px;
+    }
+
     .col-sm-12 {
         padding: 0;
     }
@@ -363,6 +365,10 @@ div.col-sm-12{
 
     #bio {
         padding: 2.5rem 5rem;
+    }
+
+    #integrantes p {
+        font-size: 12.8px;
     }
 }
 
@@ -436,6 +442,11 @@ div.col-sm-12{
         width: 20px;
         height: 20px;
     }
+
+    #integrantes p {
+        font-size: 12px;
+    }
+
     .form-group.col-5{
         padding: 0rem 0.3rem;
     }
