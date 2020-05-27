@@ -135,13 +135,18 @@
                 <div class="infos-item">
                     <div class="form">
                         <div class="form-group">
-
                             <% if (dadosView.funcionamento) { %>
                                 <% for( let i = 0; i < dadosView.dadosFunc.length; i++ ) { %>
-                                    <textarea class="form-control" id="" rows="1"><%= dadosView.dadosFunc[i].dia %> <%= dadosView.dadosFunc[i].horario_abertura %> - <%= dadosView.dadosFunc[i].horario_fechamento %></textarea>
+                                    <div id="itemFuncionamento">
+                                        <p><%= dadosView.dadosFunc[i].dia %> <%= dadosView.dadosFunc[i].horario_abertura %> - <%= dadosView.dadosFunc[i].horario_fechamento %></p>
+                                        <div class="icon-border-none">
+                                            <a data-toggle="modal" data-target="#confirmarExclusao" href="">
+                                                <i class="fas fa-trash fa-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 <% } %>
                             <% } %>
-            
                         </div>
                     </div>
                 </div>
