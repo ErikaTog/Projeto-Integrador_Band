@@ -24,7 +24,7 @@ const homeController = {
             attributes: ['id_estab'] 
         });
 
-        return res.render('feed', { title: 'Home', usuario: req.session.usuario, dadosMusico, dadosBanda, dadosEstab });
+        return res.render('feed', { title: 'Band+', usuario: req.session.usuario, dadosMusico, dadosBanda, dadosEstab });
     }
 } 
 
