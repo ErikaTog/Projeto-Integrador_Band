@@ -399,9 +399,9 @@ button.btn.btn-danger:hover {
         padding: 2.5rem 2.5rem 2.5rem 5rem;
     }
     .bio-scroll {
-        height: 300px;
+        /* height: 300px; */
         margin-top: 2rem;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
     #bio p {
         padding: 0 2.5rem 0 0;
@@ -498,7 +498,7 @@ button.btn.btn-danger:hover {
         margin-top: 15px;
     }
     .bio-scroll {
-        height: 250px;
+        /* height: 250px; */
         margin-top: 1rem;
     }
     #bio p {
