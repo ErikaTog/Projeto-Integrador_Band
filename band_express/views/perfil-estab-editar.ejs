@@ -18,19 +18,19 @@
 </head>
 
 <body>
-    <form action="" method="POST">
+    <form action="/perfil/editar/estabelecimento/<%= dadosView.id_estab %>?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
-                    <a class="navbar-brand" href=""><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
+                    <a class="navbar-brand" href="/home"><img src="/img/logo_5000x1500.png" alt="Band+" width="150"></a>                        
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="perfil-musico.html">
+                            <a class="nav-link" href="/perfil/estabelecimento/<%= dadosView.id_estab %>">
                                 <button type="button" class="btn btn-outline-cancelar">Cancelar</button>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="feedback-editar.html">
+                            <a class="nav-link" href="">
                                 <button type="submit" class="btn btn-salvar">Salvar</button>
                             </a>
                         </li>
@@ -40,6 +40,18 @@
         </header>
 
         <div class="perfil-container">
+
+            <% if (typeof errors != 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
         
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -81,6 +93,18 @@
                     <img src="/img/icones/store-01.png" alt="Estab">
                     <!-- <div class="form"> -->
                         <div class="form-group">
+
+                            <!-- <select class="form-control" name="categoria" id="inputServico">
+                                <option>Bar/Pub</option>
+                                <option>Escola de música</option>
+                                <option>Estúdio</option>
+                                <option>Gravadora</option>
+                                <option>Loja</option>
+                                <option>Produtora</option>
+                                <option>Restaurante</option>
+                                <option selected>Outro</option>
+                            </select> -->
+
                             <textarea class="form-control" id="textareaInfos1" rows="1" name="categoria"><%= dadosView.categoria %></textarea>
                         </div>
                     <!-- </div> -->
@@ -124,7 +148,11 @@
                 <h4><strong>Sobre o estabelecimento</strong></h4>
                 <div class="form">
                     <div class="form-group">
-                        <textarea class="form-control" id="textareaBio1" rows="10" name="sobre"><%= dadosView.sobre %></textarea>
+                        <textarea class="form-control" id="textareaBio" name="sobre"
+                        <% if (!dadosView.sobre) { %>
+                            placeholder="Fique à vontade para usar esse espaço para divulgar o seu estabelecimento e desperte o interesse dos outros usuários e ganhe muitos seguidores!"
+                        <% } %>
+                        ><%= dadosView.sobre %></textarea>
                     </div>
                 </div>
             </section>
@@ -157,7 +185,11 @@
                 <h4><strong>Serviços</strong></h4>
                 <div class="form">
                     <div class="form-group">
-                        <textarea class="form-control" id="textareaBio2" rows="10" name="servicos"><%= dadosView.servicos %></textarea>
+                        <textarea class="form-control" id="textareaBio" name="sobre"
+                        <% if (!dadosView.sobre) { %>
+                            placeholder="Fique à vontade para usar esse espaço para descrever os serviços prestados no seu estabelecimento!"
+                        <% } %>
+                        ><%= dadosView.sobre %></textarea>
                     </div>
                 </div>
             </section>
