@@ -84,8 +84,6 @@ const perfilEditarEstabController = {
             dadosFunc
         }
 
-
-        // res.render('persfil-estab-editar', { title: 'Perfil-editar', usuario: req.session.usuario });
         res.render('perfil-estab-editar', { 
             title: 'Perfil-editar', 
             usuario: req.session.usuario, 
@@ -94,6 +92,61 @@ const perfilEditarEstabController = {
             dadosEstab, 
             dadosView
         });
+    },
+
+    change: async (req, res) => {
+
+        let { nome, sobre, estado, cidade, site, servicos, categoria } = req.body;
+
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome },
+        });
+        
+        const dadosEstab = await Estabelecimento.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario }, 
+        });
+        
+        // Buscar o id_cidade e id_estado na tabela cidade
+        const findIdLocal = await Cidade.findOne({
+            where: { nome: cidade },
+            raw: true,
+            attributes: ['id_cidade', 'estado.id_estado'],
+            include: [{
+                model: Estado, 
+                as: 'estado',
+                attributes: [],
+                where: { uf: estado }
+            }]
+        });
+
+        // Substituir valores
+        dadosUsuario.nome = nome;
+        dadosUsuario.id_estado = findIdLocal.id_estado;
+        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosEstab.sobre = sobre;
+        dadosEstab.site = site;
+        dadosEstab.servicos = servicos;
+        dadosEstab.categoria = categoria;
+
+        // Salvar no BD
+        await dadosUsuario.save({ fields: ['nome', 'id_cidade', 'id_estado'] });
+        await dadosEstab.save({ fields: ['sobre', 'site', 'servicos', 'categoria'] });
+
+        // Setar session do usuario
+        let usuario = { 
+            id_usuario: dadosUsuario.id_usuario, 
+            nome: dadosUsuario.nome, 
+            senha: dadosUsuario.senha, 
+            email: req.session.usuario.email,
+            id_tipos_perfil: 3
+        };
+
+        req.session.usuario = usuario;
+
+        res.cookie('logado', usuario.email, { maxAge: 900000 });
+        
+        res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
+
     }
 }
 
