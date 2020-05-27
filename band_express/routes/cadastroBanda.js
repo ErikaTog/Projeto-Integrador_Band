@@ -79,8 +79,8 @@ router.post('/', [
     //validando o campo função
     check("funcao").trim()
     .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
-    .isLength({ min: 6, max:100 }).withMessage('A função do integrante deve ter pelo menos 6 caracteres.')
-    .isAlpha().withMessage('Use apenas letras para descrever a função do integrante.')        
+    .isLength({ min: 4, max:100 }).withMessage('A função do integrante deve ter pelo menos 4 caracteres.')
+     
 
 ], bandaMiddleware.error, cadastroBandaController.saveBanda);
 
