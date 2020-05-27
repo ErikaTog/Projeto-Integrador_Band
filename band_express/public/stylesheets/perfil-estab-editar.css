@@ -97,6 +97,7 @@ div.icon i:hover {
     max-height: 250px;
     min-height: 150px;
     resize: vertical;
+    text-align: left;
 }
 
 #bio2 .form-group {
@@ -110,6 +111,7 @@ div.icon i:hover {
     min-height: 150px;
     max-height: 250px;
     resize: vertical;
+    text-align: left;
 }
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
