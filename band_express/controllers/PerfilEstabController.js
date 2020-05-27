@@ -78,7 +78,12 @@ const perfilEstabController = {
             dadosFunc
         }
 
-        res.render('perfil-estab', { title: 'Perfil', usuario: req.session.usuario, dadosEstab, dadosView});
+        res.render('perfil-estab', { 
+            title: 'Perfil', 
+            usuario: req.session.usuario, 
+            dadosEstab, 
+            dadosView
+        });
     },
 
     changePassword: async (req, res) => {
