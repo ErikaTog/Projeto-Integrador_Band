@@ -3,7 +3,7 @@ const router = express.Router();
 const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const { Usuario } = require('../models');
+const { Usuario, Banda, BandaIntegrantes } = require('../models');
 const perfilEditarBandaController = require('../controllers/PerfilEditarBandaController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
@@ -73,4 +73,48 @@ router.put('/:id', [
 
 ], BandaMiddleware.error, perfilEditarBandaController.change);
 
+// Modal Integrantes
+router.post('/:id', 
+[
+    check("membro").trim()
+    .isLength({ min: 2, max:25 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres e no máximo 25.'),
+        body('membro').trim()
+        .custom(async (value, { req }) => {
+            let integranteCheck = await Usuario.findOne( { where: {nome: value} } );
+            if (!integranteCheck) {
+               return Promise.reject('Não acredito, este músico ainda não faz parte do Band+!');
+            }
+            if (!(integranteCheck.dataValues.id_tipos_perfil == 1)) {
+                return Promise.reject('Ops, somente usuários com o perfil Músico podem ser integrantes de uma banda.');
+            }
+            let idBanda = await Banda.findOne({
+                where: {
+                    id_usuario: {
+                        [Op.eq]: req.session.usuario.id_usuario
+                    }
+                }
+            });
+            
+            let integranteCadastrado = await BandaIntegrantes.findOne({
+                attributes: ['id_integrante'],
+                where:{
+                    id_banda: idBanda.id_banda, 
+                    id_integrante: integranteCheck.id_usuario
+                }
+            });
+       
+            if(integranteCadastrado){
+                return Promise.reject(`${value} já está na banda ${req.session.usuario.nome}!`)
+            } 
+
+        }),
+    
+    check("funcao").trim()
+    .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
+    .isLength({ min: 5, max:100 }).withMessage('A função do integrante deve ter pelo menos 5 caracteres.')
+        
+], BandaMiddleware.error, perfilEditarBandaController.saveMembers);
+
+
 module.exports = router;
+       
