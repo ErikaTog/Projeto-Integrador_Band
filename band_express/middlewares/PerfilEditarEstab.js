@@ -83,9 +83,10 @@ const perfilEditarEstab = {
                 totalSeguindo,
                 totalSeguidores,
                 mensagemNull: 'Ops, você não informou este campo',
+                errors: errors 
             });
         } 
-        
+
         next();
     }
 }
