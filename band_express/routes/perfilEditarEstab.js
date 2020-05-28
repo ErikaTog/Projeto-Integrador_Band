@@ -50,7 +50,7 @@ router.put('/:id',
 
      // Validando o campo sobre
      check('servicos').trim()
-     .isLength({ max: 2200 }).withMessage('A descrição dos serviços prestaods no seu estabelecimento está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
+     .isLength({ max: 100 }).withMessage('A descrição dos serviços prestados no seu estabelecimento está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
     
 ],
 EstabMiddleware.error, 
