@@ -95,7 +95,7 @@
                         <div class="form-group">
                             <select class="custom-select" name="categoria" id="inputServico">
                                 <% tipoCategoria.forEach(categoria => { %>
-                                    <% if (dadosEstab.categoria == dadosEstab.categoria) { %>
+                                    <% if (dadosEstab.categoria == categoria) { %>
                                         <option selected><%= categoria %></option> 
                                     <% } else { %>
                                         <option value="<%= categoria %>"><%= categoria %></option>
