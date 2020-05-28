@@ -3,8 +3,8 @@ const router = express.Router();
 const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-// const multer = require('multer');
-// const path = require('path');
+const multer = require('multer');
+const path = require('path');
 
 const { Usuario } = require('../models');
 
@@ -14,16 +14,16 @@ const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const MusicoMiddleware = require('../middlewares/PerfilEditarMusico');
 
 // Upload de arquivos
-// let storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, '/public/img/avatars')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-// })
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/img/avatars')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + path.extname(file.originalname))
+    }
+})
    
-// let upload = multer({ storage: storage })
+let upload = multer({ storage: storage })
 
 
 router.get('/:id', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -112,7 +112,7 @@ router.post('/:id',
 MusicoMiddleware.error, 
 perfilEditarMusicoController.saveSkills);
 
-// Modal wallpaper
-// router.post('/:id', upload.any(), perfilEditarMusicoController.saveWallpaper);
+// Modal avatar
+router.put('/:id/avatar', upload.any(), perfilEditarMusicoController.saveAvatar);
 
 module.exports = router;

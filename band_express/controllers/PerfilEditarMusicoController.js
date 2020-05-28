@@ -1,4 +1,5 @@
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
+const path = require('path');
 
 const perfilEditarMusicoController = {
     show: async (req, res) => {
@@ -236,8 +237,31 @@ const perfilEditarMusicoController = {
 
         res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
     },
-    saveWallpaper: async (req, res) => {
-        console.log(req.file);
+    saveAvatar: async (req, res, next) => {
+        console.log(req.files);
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
+
+        dadosUsuario.avatar = pathFile;
+
+        await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Renderiza perfil editar
+
+        const dadosMusico = await Musico.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_musico']
+        });
+
+        res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
+
     }
 }
 

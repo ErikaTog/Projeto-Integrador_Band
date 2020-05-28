@@ -4,9 +4,9 @@ const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, Musico
 const perfilMusicoController = {
     show: async (req, res) => {
         
-        // Buscar informação da tabela usuario
+        // Buscar informação da tabela usuario - buscar pelo id
         const dadosUsuario = await Usuario.findOne({ 
-            where: { nome: req.session.usuario.nome },
+            where: { id_usuario: req.params.id }, 
             raw: true,
             attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
             include: [{
@@ -20,6 +20,8 @@ const perfilMusicoController = {
                 }]
             }]
         });
+
+        // Verificar id_usuario para saber de qual tipo pertence... Redirecionar para o perfil
 
         // Buscar informação da tabela músico
         const dadosMusico = await Musico.findOne({ 
