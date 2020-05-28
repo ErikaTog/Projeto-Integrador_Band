@@ -3,45 +3,45 @@ const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = 
 const perfilEditarEstabController = {
     show: async (req, res) => {
 
-        let id_usuario = req.session.usuario.id_usuario
-
         // Dados da tabela Usuario
-        const dadosUsuario = await Usuario.findAll({
-			where: {
-                id_usuario: id_usuario
-            }
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { 
+                nome: req.session.usuario.nome 
+            },
+            raw: true,
+            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            include: [{
+                model: Cidade,
+                as: 'cidade',
+                attributes: [],
+                include: [{
+                    model: Estado,
+                    as: 'estado',
+                    attributes: [],
+                }]
+            }]
         });
 
         // Quantidade de pessoas que o usuario esta seguindo e que seguem ele
         const totalSeguindo = await Minha_rede.count({
 			where: {
-                id_usuario: id_usuario
+                id_usuario: req.session.usuario.id_usuario
             }
         });
         const totalSeguidores = await Minha_rede.count({
 			where: {
-                id_usuario_seguido: id_usuario
+                id_usuario_seguido: req.session.usuario.id_usuario
             }
         });
 
         // Dados da tabela Estabelecimento referente ao usuario
-        const dadosEstab = await Estabelecimento.findAll({
+        const dadosEstab = await Estabelecimento.findOne({
 			where: {
-                id_usuario: id_usuario
-            }
+                id_usuario:  req.session.usuario.id_usuario
+            },
+            raw: true,
+            attributes: ['id_estab', 'categoria', 'sobre', 'site', 'servicos', 'telefone', 'funcionamento'] 
         });
-
-        // Dados da tabela Cidade/Estado referente ao usuario
-        const nomeCidade = await Cidade.findAll({
-            where: {
-                id_cidade: dadosUsuario[0].dataValues.id_cidade
-            }
-        })
-        const nomeEstado = await Estado.findAll({
-            where: {
-                id_estado: dadosUsuario[0].dataValues.id_estado
-            }
-        })
 
         // Buscar lista de Estados
         const estados = await Estado.findAll({ 
@@ -51,11 +51,11 @@ const perfilEditarEstabController = {
 
         // Tratamento dos dados da tabela Funcionamento
         let dadosFunc = [];
-        if(dadosEstab[0].dataValues.funcionamento){
+        if(dadosEstab.funcionamento){
             // Dados da tabela Funcionamento referente ao usuario
             const dadosFuncionamento = await Funcionamento.findAll({
                 where: {
-                    id_estab: dadosEstab[0].dataValues.id_estab
+                    id_estab: dadosEstab.id_estab
                 }
             });
             for (let i = 0; i < dadosFuncionamento.length; i++) {
@@ -67,30 +67,18 @@ const perfilEditarEstabController = {
             }
         }
 
-        let dadosView = {
-            avatar: dadosUsuario[0].dataValues.avatar,
-            wallpaper: dadosUsuario[0].dataValues.wallpaper,
-            totalSeguindo,
-            totalSeguidores,
-            id_estab: dadosEstab[0].dataValues.id_estab,
-            categoria: dadosEstab[0].dataValues.categoria,
-            cidade: nomeCidade[0].dataValues.nome,
-            estado: nomeEstado[0].dataValues.uf,
-            site: dadosEstab[0].dataValues.site,
-            servicos: dadosEstab[0].dataValues.servicos,
-            sobre: dadosEstab[0].dataValues.sobre,
-            funcionamento: dadosEstab[0].dataValues.funcionamento,
-            mensagemNull: 'Ops, você não informou este campo',
-            dadosFunc
-        }
+        tipoCategoria = [ "Bar/Pub", "Escola de música", "Estúdio", "Gravadora", "Loja", "Produtora", "Restaurante", "Outro"]
 
         res.render('perfil-estab-editar', { 
-            title: 'Perfil-editar', 
             usuario: req.session.usuario, 
             dadosUsuario,
-            estados,
             dadosEstab, 
-            dadosView
+            estados,
+            tipoCategoria,
+            dadosFunc,
+            totalSeguindo,
+            totalSeguidores,
+            mensagemNull: 'Ops, você não informou este campo',
         });
     },
 
