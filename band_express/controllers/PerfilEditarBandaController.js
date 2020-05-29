@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const fs = require("fs");
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
 
 const perfilEditarBandaController = {
@@ -216,6 +217,26 @@ const perfilEditarBandaController = {
 
     saveAvatar: async (req, res, next) => {
         console.log(req.files);
+
+        //Excluir arquivo anterior
+
+        const avatarZero = "/img/avatar_zero.png"
+
+        const avatarBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['avatar'],
+            where: { nome: req.session.usuario.nome }
+        });
+             
+        const cutPath = avatarBd.avatar.slice(13)    
+
+        if(avatarBd.avatar != avatarZero){
+            fs.unlinkSync(`./public/img/avatars/${cutPath}`, function(err){
+                if(err) return console.log(err);
+                console.log('file deleted successfully');    
+            })
+        }
+
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
