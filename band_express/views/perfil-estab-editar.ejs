@@ -86,59 +86,6 @@
                 </div>
             </section>
 
-            <!-- Grupo Infos -->
-            <section id="infos" class="card-perfil">
-                <h4><strong>Contato</strong></h4>
-                <div class="infos-item media">
-                    <img src="/img/icones/store-01.png" alt="Estab">
-                    <!-- <div class="form"> -->
-                        <div class="form-group">
-                            <select class="custom-select" name="categoria" id="inputServico">
-                                <% tipoCategoria.forEach(categoria => { %>
-                                    <% if (dadosEstab.categoria == categoria) { %>
-                                        <option selected><%= categoria %></option> 
-                                    <% } else { %>
-                                        <option value="<%= categoria %>"><%= categoria %></option>
-                                    <% } %>
-                                <% }) %>
-                            </select>
-                        </div>
-                    <!-- </div> -->
-                </div>
-                <div class="infos-item media">
-                    <img src="/img/icones/site-01.png" alt="Site">
-                    <!-- <div class="form"> -->
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
-                        </div>
-                    <!-- </div> -->
-                </div>
-                <div class="infos-item media">
-                    <img src="/img/icones/pin-01.png" alt="Local">
-                    <!-- <div class="form"> -->
-                        <div class="form-group">
-                            <select class="custom-select" name="estado">
-                                <% estados.forEach(estado => { %>
-                                    <% if (dadosUsuario.uf == estado.uf) { %>
-                                        <option selected><%= estado.uf %></option> 
-                                    <% } else { %>
-                                        <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                    <% } %>
-                                <% }) %>
-                            </select>
-                        </div>
-                    <!-- </div> -->
-                </div>
-                <div class="infos-item media">
-                    <img src="/img/icones/pin-01.png" alt="Local">
-                    <!-- <div class="form"> -->
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
-                        </div>
-                    <!-- </div> -->
-                </div>
-            </section>
-
             <!-- Grupo Bio - Sobre -->
             <section id="bio2" class="card-perfil">
                 <h4><strong>Sobre o estabelecimento</strong></h4>
@@ -154,27 +101,79 @@
             </section>
 
             <!-- Grupo Infos -->
-            <section id="infosFuncionamento" class="card-perfil">
-                <h4><strong>Funcionamento</strong></h4>
-                <div class="infos-item">
-                    <div class="form">
-                        <div class="form-group">
-                            <% if (dadosEstab.funcionamento) { %>
-                                <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
-                                    <div id="itemFuncionamento">
-                                        <p><%= dadosFunc[i].dia %> <%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
-                                        <div class="icon-border-none">
-                                            <a data-toggle="modal" data-target="#confirmarExclusao" href="">
-                                                <i class="fas fa-trash fa-lg"></i>
-                                            </a>
+            <div class="contato col-lg-6 col-md-12">
+                <section id="infos" class="card-perfil">
+                    <h4><strong>Contato</strong></h4>
+                    <div class="infos-item media">
+                        <img src="/img/icones/store-01.png" alt="Estab">
+                            <div class="form-group">
+                                <select class="custom-select" name="categoria" id="inputServico">
+                                    <% tipoCategoria.forEach(categoria => { %>
+                                        <% if (dadosEstab.categoria == categoria) { %>
+                                            <option selected><%= categoria %></option> 
+                                        <% } else { %>
+                                            <option value="<%= categoria %>"><%= categoria %></option>
+                                        <% } %>
+                                    <% }) %>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="Site">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/pin-01.png" alt="Local">
+                            <div class="form-group">
+                                <select class="custom-select" name="estado">
+                                    <% estados.forEach(estado => { %>
+                                        <% if (dadosUsuario.uf == estado.uf) { %>
+                                            <option selected><%= estado.uf %></option> 
+                                        <% } else { %>
+                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                        <% } %>
+                                    <% }) %>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/pin-01.png" alt="Local">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                            </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Grupo Infos -->
+            <div class="func col-lg-6 col-md-12">
+                <section id="infosFuncionamento" class="card-perfil">
+                    <h4><strong>Funcionamento</strong>
+                        <a href=""><i class="fas fa-plus-square"></i></a>
+                    </h4>
+                    
+                    <div class="infos-item">
+                        <div class="form">
+                            <div class="form-group">
+                                <% if (dadosEstab.funcionamento) { %>
+                                    <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
+                                        <div id="itemFuncionamento">
+                                            <p><%= dadosFunc[i].dia %> <%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                                            <div class="icon-border-none">
+                                                <a data-toggle="modal" data-target="#confirmarExclusao" href="">
+                                                    <i class="fas fa-trash fa-lg"></i>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <% } %>
                                 <% } %>
-                            <% } %>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
         </div>
     </form>
