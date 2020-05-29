@@ -48,10 +48,6 @@ router.put('/:id',
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu site? Este não parece um endereço válido.'),
 
-     // Validando o campo sobre
-     check('servicos').trim()
-     .isLength({ max: 100 }).withMessage('A descrição dos serviços prestados no seu estabelecimento está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
-    
 ],
 EstabMiddleware.error, 
 perfilEditarEstabController.change);
