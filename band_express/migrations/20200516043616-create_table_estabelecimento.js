@@ -23,10 +23,6 @@ module.exports = {
             type: Sequelize.STRING(100),
             allowNull: true
         },
-        servicos: {
-            type: Sequelize.STRING(100),
-            allowNull: true
-        },
         telefone: {
             type: Sequelize.INTEGER,
             allowNull: true

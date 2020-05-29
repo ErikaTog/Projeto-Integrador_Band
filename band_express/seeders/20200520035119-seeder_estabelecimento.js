@@ -8,7 +8,6 @@ module.exports = {
           categoria: 'Loja',
           sobre: 'Loja - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.lojaandy.com',
-          servicos: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           telefone: '911112222',
           funcionamento: 1,
           id_usuario: 3
@@ -17,7 +16,6 @@ module.exports = {
           categoria: 'Restaurante',
           sobre: 'Jack Doe Restaurante - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.jackdoerestaurante.com',
-          servicos: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           telefone: '933334444',
           funcionamento: 1,
           id_usuario: 7
@@ -26,7 +24,6 @@ module.exports = {
           categoria: 'Bar/Pub',
           sobre: 'Beth Bar - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.beth_bar.com',
-          servicos: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           telefone: '977778888',
           funcionamento: 0,
           id_usuario: 9
