@@ -40,7 +40,7 @@ const perfilEditarEstabController = {
                 id_usuario:  req.session.usuario.id_usuario
             },
             raw: true,
-            attributes: ['id_estab', 'categoria', 'sobre', 'site', 'servicos', 'telefone', 'funcionamento'] 
+            attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
         });
 
         // Buscar lista de Estados
@@ -84,7 +84,7 @@ const perfilEditarEstabController = {
 
     change: async (req, res) => {
 
-        let { nome, sobre, estado, cidade, site, servicos, categoria } = req.body;
+        let { nome, sobre, estado, cidade, site, categoria } = req.body;
 
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -113,12 +113,11 @@ const perfilEditarEstabController = {
         dadosUsuario.id_cidade = findIdLocal.id_cidade;
         dadosEstab.sobre = sobre;
         dadosEstab.site = site;
-        dadosEstab.servicos = servicos;
         dadosEstab.categoria = categoria;
 
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'id_cidade', 'id_estado'] });
-        await dadosEstab.save({ fields: ['sobre', 'site', 'servicos', 'categoria'] });
+        await dadosEstab.save({ fields: ['sobre', 'site', 'categoria'] });
 
         // Setar session do usuario
         let usuario = { 

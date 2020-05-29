@@ -43,7 +43,7 @@ const perfilEditarEstab = {
                 id_usuario:  req.session.usuario.id_usuario
             },
             raw: true,
-            attributes: ['id_estab', 'categoria', 'sobre', 'site', 'servicos', 'telefone', 'funcionamento'] 
+            attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
         });
 
         // Buscar lista de Estados
