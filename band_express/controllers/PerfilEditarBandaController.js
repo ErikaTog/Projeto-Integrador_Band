@@ -212,6 +212,33 @@ const perfilEditarBandaController = {
 
     res.redirect(`/perfil/editar/banda/${idBanda}`);       
 
+    },
+
+    saveAvatar: async (req, res, next) => {
+        console.log(req.files);
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
+
+        dadosUsuario.avatar = pathFile;
+
+        await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Renderiza perfil editar
+
+        const dadosBanda = await Banda.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_banda']
+        });
+
+        res.redirect(`/perfil/editar/banda/${dadosBanda.id_banda}`);
+
     }
   
 }
