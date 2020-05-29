@@ -21,35 +21,35 @@ const query = async () => {
     // console.log(cidade[0].dataValues.estado.uf);
 
     // Buscar instrumentos e habilidades técnicas (id_musico) 
-    const buscarInstrumentos = await Musico.findAll({
-        where: { id_musico: 2 },
-        raw: true,
-        attributes: ['musicos.instrumentos.instrumento'], 
-        include: [
-            {
-                model: MusicoInstrumentos,
-                as: 'musicos',
-                attributes: [],
-                include: [
-                    {
-                        model: Instrumento,
-                        as: 'instrumentos',
-                        attributes: []
-                    }
-                ]
-            }
-        ],
-    });
+    // const buscarInstrumentos = await Musico.findAll({
+    //     where: { id_musico: 2 },
+    //     raw: true,
+    //     attributes: ['musicos.instrumentos.instrumento'], 
+    //     include: [
+    //         {
+    //             model: MusicoInstrumentos,
+    //             as: 'musicos',
+    //             attributes: [],
+    //             include: [
+    //                 {
+    //                     model: Instrumento,
+    //                     as: 'instrumentos',
+    //                     attributes: []
+    //                 }
+    //             ]
+    //         }
+    //     ],
+    // });
 
-    console.log(buscarInstrumentos)
+    // console.log(buscarInstrumentos)
 
     // let instrumentosBuscados = buscarInstrumentos[0].dataValues.musicos;
 
     // let instrumentos = [];
 
-    instrumentosBuscados.forEach(musico => {
-        instrumentos.push(musico.instrumentos.dataValues.instrumento);
-    });
+    // instrumentosBuscados.forEach(musico => {
+    //     instrumentos.push(musico.instrumentos.dataValues.instrumento);
+    // });
 
     // console.log(instrumentos);
 
@@ -135,6 +135,42 @@ const query = async () => {
 
     // console.log(videos);
 
+    /**
+     * Buscar informações do Usuario através do id_musico
+     */
+
+    const dadosMusico = await Musico.findOne({ 
+        where: { id_musico: 1 },
+        raw: true,
+        attributes: ['id_musico', 'sobre', 'site', 'canal', 'canto', 'toco', 'tecnico', 'id_usuario', 'usuario.nome', 'usuario.email', 'usuario.avatar', 'usuario.wallpaper', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
+        include: [{
+            model: Usuario,
+            as: 'usuario',
+            attributes: [],
+            include: [{
+                model: Cidade,
+                as: 'cidade',
+                attributes: [],
+                include: [{
+                    model: Estado,
+                    as: 'estado',
+                    attributes: [],
+                }]
+            }] 
+        }]
+    });
+
+    console.log(dadosMusico);
+
+    // let telefone = "1146043255";
+    // const ddd = telefone.slice(0,2);
+    // console.log(ddd);
+    // const telefoneParte1 = telefone.slice(2,6);
+    // console.log(telefoneParte1)
+    // const telefoneParte2 = telefone.slice(6,10);
+    // console.log(telefoneParte2)
+    // telefone = `(${ddd}) ${telefoneParte1}-${telefoneParte2}`
+    // console.log(telefone)
 }
 
 query();

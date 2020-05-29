@@ -1,6 +1,8 @@
 const { Cidade, Estado, Musico, MusicoInstrumentos ,Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video, Usuario } = require('../models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const fs = require('fs');
+const path = require('path');
 
 const query = async () => {
     
@@ -94,13 +96,28 @@ const query = async () => {
     // console.log(findTecnicos)
 
     // Buscando o id_instrumento
-    const findIdInstrumento = await Instrumento.findOne({
-        where: { instrumento: 'violão' },
-        raw: true,
-        attributes: ['id_instrumento']
-    });
+    // const findIdInstrumento = await Instrumento.findOne({
+    //     where: { instrumento: 'violão' },
+    //     raw: true,
+    //     attributes: ['id_instrumento']
+    // });
 
-    console.log(findIdInstrumento);
+    // console.log(findIdInstrumento);
+
+    let fileAvatar = "./public/img/avatars/avatar2"
+    const extJpg = fs.existsSync(`${fileAvatar}.jpg`) ? ".jpg": false;
+    const extPng = fs.existsSync(`${fileAvatar}.png`) ? ".png": false;
+    console.log(extJpg);
+    console.log(extPng);
+
+
+    // fileAvatar += ext;
+    // console.log(fileAvatar);
+
+    // if (fs.existsSync(`./public/img/avatars/avatar2${ext}`)) {
+    //     console.log("Este arquivo existe!")
+        fs.unlinkSync(`./public/img/avatars/avatar2${ext}`)
+    // }
 }
 
 query();

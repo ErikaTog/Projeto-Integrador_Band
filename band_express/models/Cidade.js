@@ -1,5 +1,5 @@
 const Cidade = (sequelize, DataTypes) => {
-    let cidade = sequelize.define(
+    const cidade = sequelize.define(
         'Cidade', 
         {
             id_cidade: {
@@ -8,7 +8,7 @@ const Cidade = (sequelize, DataTypes) => {
                 primaryKey: true,
                 autoIncrement: true
             },
-            nome: {
+            cidade: {
                 type: DataTypes.STRING,
                 allowNull: false
             },

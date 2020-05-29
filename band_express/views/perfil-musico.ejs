@@ -17,14 +17,14 @@
         
         <section id="head" class="card-perfil">
             <div class="head-fundo">
-                <img src="<%= dadosUsuario.wallpaper %>" alt="Foto de fundo" class="wallpaper">    
+                <img src="<%= dadosMusico.wallpaper %>" alt="Foto de fundo" class="wallpaper">    
             </div>
 
             <div class="avatar-content">
-                <img src="<%= dadosUsuario.avatar %>" alt="Foto de Perfil" class="avatar">
+                <img src="<%= dadosMusico.avatar %>" alt="Foto de Perfil" class="avatar">
             </div>
             <div class="info-user">
-                <h3><strong><%= usuario.nome %> </strong></h3>
+                <h3><strong><%= dadosMusico.nome %> </strong></h3>
                 <div class="info-user-status">
                     <div class="media">
                         <img src="/img/icones/icon_star.svg">
@@ -36,20 +36,22 @@
                     </div>
                 </div>
             </div>
-            <div class="config">
-                <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cog"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/perfil/editar/musico/<%= dadosMusico.id_musico %>">
-                        Editar Perfil
-                    </a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        Alterar Senha
-                    </a>
+            <% if (dadosMusico.id_usuario === usuario.id_usuario) { %>
+                <div class="config">
+                    <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="/perfil/editar/musico/<%= dadosMusico.id_musico %>">
+                            Editar Perfil
+                        </a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                            Alterar Senha
+                        </a>
+                    </div>
                 </div>
-            </div>
+            <% } %>
         </section>
 
     <!-- Grupo Bio -->
@@ -113,7 +115,7 @@
                         <h4><strong>+ Infos</strong></h4>
                         <div class="infos-item media">
                             <img src="/img/icones/pin-01.png" alt="Local">
-                            <p><%= dadosUsuario.nome %>  / <%= dadosUsuario.uf %></p>
+                            <p><%= dadosMusico.cidade %>  / <%= dadosMusico.uf %></p>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/site-01.png" alt="Site">
@@ -133,7 +135,7 @@
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/email-01.png" alt="Email">
-                            <p><%= usuario.email %></p>
+                            <p><%= dadosMusico.email %></p>
                         </div>
                     </section>
                 </div>
