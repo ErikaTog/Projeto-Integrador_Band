@@ -81,6 +81,8 @@ Imagem
     height: 200px;
     border: 5px solid #fff;
     border-radius: 50%;
+    object-fit:cover;
+    
 }
 
 /* --------------------------------
