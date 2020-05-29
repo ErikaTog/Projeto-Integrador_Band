@@ -26,9 +26,9 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage })
 
 
-router.get('/:id', VerificaUsuarioLogado, perfilEditarMusicoController.show);
+router.get('/', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 
-router.put('/:id',
+router.put('/',
 [
     // Validando o campo nome
     check('nome').trim()
@@ -94,7 +94,7 @@ MusicoMiddleware.error,
 perfilEditarMusicoController.change);
 
 // Modal habilidade
-router.post('/:id', 
+router.post('/', 
 [
     body('toco')
         .custom(async (value, { req }) => {
@@ -113,6 +113,6 @@ MusicoMiddleware.error,
 perfilEditarMusicoController.saveSkills);
 
 // Modal avatar
-router.put('/:id/avatar', upload.any(), perfilEditarMusicoController.saveAvatar);
+router.put('/avatar', upload.any(), perfilEditarMusicoController.saveAvatar);
 
 module.exports = router;
