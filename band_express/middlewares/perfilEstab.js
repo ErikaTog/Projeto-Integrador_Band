@@ -73,7 +73,6 @@ const perfilEstab = {
             categoria: dadosEstab[0].dataValues.categoria,
             local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
             site: dadosEstab[0].dataValues.site,
-            servicos: dadosEstab[0].dataValues.servicos,
             sobre: dadosEstab[0].dataValues.sobre,
             funcionamento: dadosEstab[0].dataValues.funcionamento,
             mensagemNull: 'Ops, você não informou este campo',
