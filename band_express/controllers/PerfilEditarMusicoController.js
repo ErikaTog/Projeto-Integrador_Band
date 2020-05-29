@@ -1,5 +1,5 @@
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
-const path = require('path');
+const fs = require('fs');
 
 const perfilEditarMusicoController = {
     show: async (req, res) => {
@@ -238,7 +238,9 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
     },
     saveAvatar: async (req, res, next) => {
-        console.log(req.files);
+        
+        // Excluir os arquivos de imagem da pasta avatars
+        
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
