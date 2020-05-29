@@ -132,11 +132,6 @@ div.icon-border-none i:hover {
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
-/* #infos{
-    display: flex;
-    justify-content: space-around;
-} */
-
 .infos-item.media {
     align-items: center;
     min-width: 48%;
@@ -154,23 +149,21 @@ div.icon-border-none i:hover {
     height: 46px;
 }
 
+#infosFuncionamento p {
+    padding-bottom: 10px;
+}
+
+#infosFuncionamento a {
+    color: #999999;
+    transition-duration: 0.25s;
+}
+
+#infosFuncionamento a:hover {
+    color: #FB3C00;
+}
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Funcionamento--------------------- */
-#infosFuncionamento .form-group{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-/* #infosFuncionamento textarea {
-    max-width: 23%;
-    margin-left: 1.0rem;
-    margin-bottom: 10px;
-    align-self: center;
-}  */
-
 #itemFuncionamento{
     padding-top: 10px;
     margin-right: 25px;
@@ -253,17 +246,20 @@ input[type=checkbox]:checked + label:before {
         top: 60%;
         left: 85%;
     }
+
     .info-user textarea {
         width: 35%;
     }
+
     #infosFuncionamento .form-group{
         justify-content: center;
         padding-left: 0px;
     }
+
     #infosFuncionamento textarea {
         max-width: 100%;            
         margin-left: 0px;
-    }
+    } 
 }
 
 @media screen and (max-width: 991px) {
@@ -301,6 +297,10 @@ input[type=checkbox]:checked + label:before {
 
     .col-sm-12 {
         padding: 0;
+    }
+
+    #infosFuncionamento p {
+        min-width: 0%;        
     }
 }
 
@@ -395,4 +395,5 @@ input[type=checkbox]:checked + label:before {
     .form-group select{
         font-size: 1.2rem;
     }
+
 }
