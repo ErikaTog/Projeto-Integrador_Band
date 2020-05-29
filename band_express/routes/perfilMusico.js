@@ -37,7 +37,8 @@ router.put('/:id',
             }
         })
 ],
-MusicoMiddleware.error, 
+MusicoMiddleware.error,
+VerificaUsuarioLogado,
 perfilMusicoController.changePassword);
 
 module.exports = router;

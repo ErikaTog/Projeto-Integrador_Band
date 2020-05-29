@@ -116,7 +116,7 @@ const query = async () => {
 
     // if (fs.existsSync(`./public/img/avatars/avatar2${ext}`)) {
     //     console.log("Este arquivo existe!")
-    //     fs.unlinkSync(`./public/img/avatars/avatar2${ext}`)
+        fs.unlinkSync(`./public/img/avatars/avatar2${ext}`)
     // }
 }
 

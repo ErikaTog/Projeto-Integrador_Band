@@ -142,7 +142,7 @@ const query = async () => {
     const dadosMusico = await Musico.findOne({ 
         where: { id_musico: 1 },
         raw: true,
-        attributes: ['id_musico', 'sobre', 'site', 'canal', 'canto', 'toco', 'tecnico', 'id_usuario', 'usuario.avatar', 'usuario.wallpaper', 'usuario.cidade.nome', 'usuario.cidade.estado.uf'],
+        attributes: ['id_musico', 'sobre', 'site', 'canal', 'canto', 'toco', 'tecnico', 'id_usuario', 'usuario.nome', 'usuario.email', 'usuario.avatar', 'usuario.wallpaper', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
         include: [{
             model: Usuario,
             as: 'usuario',

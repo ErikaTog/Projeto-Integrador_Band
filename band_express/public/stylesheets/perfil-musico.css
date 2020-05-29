@@ -178,6 +178,7 @@ Imagem
 .habil-info .row {
     display: flex;
     justify-content: space-between;
+    align-content: flex-start;
 }
 
 .hab.col-lg-6 {
