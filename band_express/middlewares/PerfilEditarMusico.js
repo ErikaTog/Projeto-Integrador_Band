@@ -10,7 +10,7 @@ const perfilEditarMusico = {
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',

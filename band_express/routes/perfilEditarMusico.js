@@ -90,11 +90,12 @@ router.put('/',
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
 ],
-MusicoMiddleware.error, 
+MusicoMiddleware.error,
+VerificaUsuarioLogado,
 perfilEditarMusicoController.change);
 
 // Modal habilidade
-router.post('/', 
+router.post('/skills', 
 [
     body('toco')
         .custom(async (value, { req }) => {
@@ -109,10 +110,11 @@ router.post('/',
             }
         }),
 ],
-MusicoMiddleware.error, 
+MusicoMiddleware.error,
+VerificaUsuarioLogado,
 perfilEditarMusicoController.saveSkills);
 
 // Modal avatar
-router.put('/avatar', upload.any(), perfilEditarMusicoController.saveAvatar);
+router.put('/avatar', upload.any(), perfilEditarMusicoController.changeAvatar);
 
 module.exports = router;

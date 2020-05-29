@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>?_method=PUT" method="POST">
+    <form action="/perfil/editar/musico?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
@@ -195,7 +195,7 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +384,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/musico/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
@@ -414,7 +414,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/musico/<%= dadosMusico.id_musico %>" method="POST">
+                <form action="/perfil/editar/musico/skills" method="POST">
                     <div class="modal-body">
                         <!-- Opção Canto -->
                         <div class="form-check">
