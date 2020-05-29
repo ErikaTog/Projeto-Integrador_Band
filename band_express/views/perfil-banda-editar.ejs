@@ -366,12 +366,11 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="/perfil/editar/musico/<%= dadosBanda.id_banda %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*"
-                                name="avatar">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar<%= usuario.id_usuario %>">
                         </div>
                     </div>
 

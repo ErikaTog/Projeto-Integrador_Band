@@ -3,10 +3,25 @@ const router = express.Router();
 const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const multer = require('multer');
+const path = require('path');
 const { Usuario, Banda, BandaIntegrantes } = require('../models');
 const perfilEditarBandaController = require('../controllers/PerfilEditarBandaController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
+
+// Upload de arquivos
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/img/avatars')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + path.extname(file.originalname))
+    }
+})
+   
+let upload = multer({ storage: storage })
+
 
 router.get('/:id', VerificaUsuarioLogado, perfilEditarBandaController.show);
 
@@ -113,7 +128,11 @@ router.post('/:id',
     .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
     .isLength({ min: 5, max:100 }).withMessage('A função do integrante deve ter pelo menos 5 caracteres.')
         
-], BandaMiddleware.error, perfilEditarBandaController.saveMembers);
+], BandaMiddleware.error, perfilEditarBandaController.saveMembers),
+
+
+// Modal avatar
+router.put('/:id/avatar', upload.any(), perfilEditarBandaController.saveAvatar);
 
 
 module.exports = router;
