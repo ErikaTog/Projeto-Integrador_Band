@@ -44,10 +44,6 @@ router.post('/', [
      check('sobre').trim()
      .isLength({ max: 2200 }).withMessage('Uhmmm, a sua bio está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
 
-     // Validando o campo sobre
-     check('servicos').trim()
-     .isLength({ max: 2200 }).withMessage('A descrição dos serviços prestaods no seu estabelecimento está muito interessante, porém esse campo só aceita até 2200 caracteres.'),
-
     // Validando o campo Estado
     check('estado').trim()
         .not().isEmpty().withMessage('Queremos que seu estabelecimento seja conhecido na sua região. Por isso, precisamos que nos indique um Estado.'),
