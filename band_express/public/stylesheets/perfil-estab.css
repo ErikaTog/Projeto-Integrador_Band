@@ -155,15 +155,6 @@ Imagem
 
 /* --------------------início_do_Grupo_Bio--------------------- */
 
-#bio {
-    padding: 2.5rem 5rem;
-    margin-top: 30px;
-}
-
-#bio p {
-    padding-top: 2rem;
-}
-
 #bio2 {
     padding: 2.5rem 5rem;
     margin-top: 30px;
@@ -177,14 +168,19 @@ Imagem
 
 /* --------------------início_do_Grupo_Infos--------------------- */
 
+.contato.col-lg-6 {
+    padding-left: 0;
+}
+
 #infos {
     width: 100%;
+    min-height: 330px;
     max-width: 1170px;
     padding: 2.5rem 5rem;
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 #infos h4{
@@ -209,16 +205,20 @@ Imagem
 
 /* --------------------início_do_Grupo_Funcionamento--------------------- */
 
+.func.col-lg-6 {
+    padding-right: 0;
+}
+
 #infosFuncionamento {
-    max-width: 1170px;
     padding: 2.5rem 5rem;
     margin-top: 30px;
+    min-height: 330px;
 }
 
 #infosFuncionamento .infos-item{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 #infosFuncionamento h4{
@@ -227,7 +227,7 @@ Imagem
 
 #infosFuncionamento p {
     padding-right: 1.0rem;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .funcionamento{
@@ -332,29 +332,45 @@ button.btn.btn-danger:hover {
 }
 
 @media screen and (max-width: 991px) {
+    .contato.col-lg-6 {
+        padding-right: 0;
+    }
+    
+    .func.col-lg-6 {
+        padding-left: 0;
+    }
+
     .head-fundo {
         height: 200px;
     }    
+
     .avatar-content {
         top: 30%;
     }
+
     #head img.avatar {
         width: 150px;
         height: 150px;
     }
+
     .info-user {
         padding-left: 20rem;
-    }
-    #bio {
-        width: 100%;
     }
 
     .infos-item{
         min-width: 50%;
     }
 
+    #infos {
+        min-height: auto;
+    }
+
+    #infosFuncionamento {
+        min-height: auto;
+    }
+
     #infosFuncionamento p {
-        min-width: 50%;
+        min-width: 50%;        
     }
 } 
 
@@ -389,27 +405,16 @@ button.btn.btn-danger:hover {
         width: 30px;
         height: 30px;
     }
-    /* .config a {
-        padding: 1.5rem 3rem;
-        text-align: center;
-        transition-duration: 0.25s;
-    } */
 
-    #bio {
-        padding: 2.5rem 2.5rem 2.5rem 5rem;
-    }
     .bio-scroll {
-        /* height: 300px; */
         margin-top: 2rem;
         /* overflow-y: scroll; */
-    }
-    #bio p {
-        padding: 0 2.5rem 0 0;
     }
 
     #bio2 {
         padding: 2.5rem 2.5rem 2.5rem 5rem;
     }
+
     .bio2-scroll {
         height: 300px;
         margin-top: 2rem;
@@ -486,23 +491,9 @@ button.btn.btn-danger:hover {
     .btn-config i {
         font-size: 1.3rem;
     }
-    /* .config a {
-        padding: 1rem 1.5rem;
-    }
-    .config p {
-        font-size: 1.2rem;
-    } */
 
-    #bio {
-        padding: 1rem 1rem 1rem 2rem;
-        margin-top: 15px;
-    }
     .bio-scroll {
-        /* height: 250px; */
         margin-top: 1rem;
-    }
-    #bio p {
-        padding: 0 1rem 0 0;
     }
 
     #bio2 {
