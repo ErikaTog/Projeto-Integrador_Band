@@ -342,6 +342,10 @@ input[type=checkbox]:checked + label:before {
     #bio2 {
         padding: 2.5rem 5rem;
     }
+
+    #horarioSemana{
+        width: 85px;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -395,5 +399,5 @@ input[type=checkbox]:checked + label:before {
     .form-group select{
         font-size: 1.2rem;
     }
-
+    
 }
