@@ -4,9 +4,24 @@ const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { Usuario } = require('../models');
+const multer = require('multer');
+const path = require('path');
+
 const perfilEditarEstabController = require('../controllers/PerfilEditarEstabController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const EstabMiddleware = require('../middlewares/PerfilEditarEstab');
+
+// Upload de arquivos
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/img/avatars')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + path.extname(file.originalname))
+    }
+})
+   
+let upload = multer({ storage: storage })
 
 router.get('/:id', VerificaUsuarioLogado, perfilEditarEstabController.show);
 
@@ -30,6 +45,25 @@ router.put('/:id',
                 return Promise.reject('Os estabelecimentos cadastrados no Band+ são únicos e você também será. Então, por favor, nos indique outro nome!');
             }
         }),
+
+    // Validando o campo email
+    check('email').trim()
+        .not().isEmpty().withMessage('Hey, queremos nos comunicar com você! Diga o seu e-mail para nós!')
+        .isEmail().withMessage('Ops, você não digitou o email corretamente!'),
+    body('email').trim()
+        .custom(async (value, { req }) => {
+            let emailCheck = await Usuario.findOne({
+                where: {
+                    email: value,
+                    id_usuario: {
+                        [Op.ne]: req.session.usuario.id_usuario
+                    }
+                } 
+            });
+            if (emailCheck) {
+                return Promise.reject('Esse e-mail já foi cadastrado. Precisamos que nos informe outro.');
+            }
+        }),
     
     // Validando o campo Estado
     check('estado').trim()
@@ -50,6 +84,10 @@ router.put('/:id',
 
 ],
 EstabMiddleware.error, 
+VerificaUsuarioLogado,
 perfilEditarEstabController.change);
+
+// Modal avatar
+router.put('/:id/avatar', upload.any(), perfilEditarEstabController.changeAvatar);
 
 module.exports = router;
