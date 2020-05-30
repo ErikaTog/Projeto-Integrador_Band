@@ -10,7 +10,7 @@ const perfilEditarBandaController = require('../controllers/PerfilEditarBandaCon
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
 
-// Upload de arquivos
+// Upload de arquivos 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/img/avatars')
@@ -20,12 +20,44 @@ let storage = multer.diskStorage({
     }
 })
    
-let upload = multer({ storage: storage })
+    // FALTA TRABALHARMOS NO RETORNO DO ERRO E NA VALIDAÇÃO DE ARQUIVO VAZIO
+let upload = multer({ storage: storage,
+    limits: {
+        fileSize: 5 * 1024 * 1024
+    }, 
+    fileFilter: (req, file, cb) => {
+        const allowedMimes = [
+            'image/jpg',
+            'image/png',
+            'image/gif',
+            'image/tiff',   
+        ]
+        if (allowedMimes.includes(file.mimetype)) {
+            cb(null, true);
+        }else{
+            cb(new Error ("Arquivo não suportado."));
+            console.log("Erro de arquivo não suportado")
+        }     
+    } 
+});
 
 
-router.get('/:id', VerificaUsuarioLogado, perfilEditarBandaController.show);
+// Upload de wallpaper
+// let storageWallpaper = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, './public/img/wallpapers')
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, file.fieldname + path.extname(file.originalname))
+//     }
+// })
+   
+// let uploadWallpaper = multer({ storage: storageWallpaper })
 
-router.put('/:id', [
+
+router.get('/', VerificaUsuarioLogado, perfilEditarBandaController.show);
+
+router.put('/', [
     // Validando o campo nome
     check('nome').trim()
         .not().isEmpty().withMessage('Queremos ajudar a sua banda a ficar famosa. Para isso, precisamos que nos diga o nome dela!')
@@ -86,10 +118,10 @@ router.put('/:id', [
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
 
-], BandaMiddleware.error, perfilEditarBandaController.change);
+], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.change);
 
 // Modal Integrantes
-router.post('/:id', 
+router.post('/integrantes', 
 [
     check("membro").trim()
     .isLength({ min: 2, max:25 }).withMessage('O nome do músico deve ter pelo menos 2 caracteres e no máximo 25.'),
@@ -128,11 +160,15 @@ router.post('/:id',
     .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
     .isLength({ min: 5, max:100 }).withMessage('A função do integrante deve ter pelo menos 5 caracteres.')
         
-], BandaMiddleware.error, perfilEditarBandaController.saveMembers),
+], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.saveMembers),
 
 
-// Modal avatar
-router.put('/:id/avatar', upload.any(), perfilEditarBandaController.saveAvatar);
+// Modal avatar 
+router.put('/avatar', upload.any(), perfilEditarBandaController.saveAvatar), 
+
+
+// Modal wallpaper 
+// router.put('/wallpaper', uploadWallpaper.any(), perfilEditarBandaController.saveWallpaper);
 
 
 module.exports = router;
