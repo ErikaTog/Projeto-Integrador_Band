@@ -137,6 +137,10 @@ div.icon-border-none i:hover {
     min-width: 48%;
 }
 
+#infos{
+    min-height: 480px;
+}
+
 #infos div{
     margin-left: 0.5rem;
 }
@@ -147,6 +151,10 @@ div.icon-border-none i:hover {
 
 .form-group select {
     height: 46px;
+}
+
+#infosFuncionamento{
+    min-height: 480px;
 }
 
 #infosFuncionamento p {
@@ -301,6 +309,14 @@ input[type=checkbox]:checked + label:before {
 
     #infosFuncionamento p {
         min-width: 0%;        
+    }
+
+    #infos {
+        min-height: auto;
+    }
+
+    #infosFuncionamento {
+        min-height: auto;
     }
 }
 
