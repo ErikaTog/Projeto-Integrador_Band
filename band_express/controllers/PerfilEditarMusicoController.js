@@ -238,9 +238,24 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
     },
     changeAvatar: async (req, res, next) => {
+        console.log(req.body);
+        console.log(req.files);
+
         
         // Excluir os arquivos de imagem da pasta avatars
-        
+        const avatarZero = "/img/avatar_zero.png";
+
+        const avatarBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['avatar'],
+            where: { nome: req.session.usuario.nome }
+        });
+             
+        const cutPath = avatarBd.avatar.slice(13)    
+
+        if (avatarBd.avatar != avatarZero) {
+            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
+        }
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
@@ -254,16 +269,7 @@ const perfilEditarMusicoController = {
 
         await dadosUsuario.save({ fields: ['avatar'] });
 
-        // Renderiza perfil editar
-
-        const dadosMusico = await Musico.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_musico']
-        });
-
         res.redirect(`/perfil/editar/musico`);
-
     }
 }
 
