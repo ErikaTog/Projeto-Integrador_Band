@@ -38,6 +38,9 @@ input.form-control {
     filter: brightness(0.9);
 }
 
+#alterarAvatar .form-control-file{
+    min-height:40px;
+}
 /* --------------------------------
              Icon
 -------------------------------- */
