@@ -65,8 +65,8 @@ Imagem
     top: 50%;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
     transform: translate(-50%, 0);
+    object-fit: cover;
 }
 
 /* ------------------------------*/ 
@@ -82,6 +82,7 @@ Imagem
     height: 200px;
     border: 5px solid #fff;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /* --------------------------------
