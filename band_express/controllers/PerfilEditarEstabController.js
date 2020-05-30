@@ -1,4 +1,5 @@
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = require('../models'); 
+const fs = require("fs");
 
 const perfilEditarEstabController = {
     show: async (req, res) => {
@@ -9,7 +10,7 @@ const perfilEditarEstabController = {
                 nome: req.session.usuario.nome 
             },
             raw: true,
-            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',
@@ -60,7 +61,7 @@ const perfilEditarEstabController = {
             });
             for (let i = 0; i < dadosFuncionamento.length; i++) {
                 dadosFunc[i] = { 
-                    dia: dadosFuncionamento[i].dataValues.dia,
+                    dia:   dadosFuncionamento[i].dataValues.dia,
                     horario_abertura: dadosFuncionamento[i].dataValues.horario_abertura,
                     horario_fechamento: dadosFuncionamento[i].dataValues.horario_fechamento
                 };
@@ -96,7 +97,7 @@ const perfilEditarEstabController = {
         
         // Buscar o id_cidade e id_estado na tabela cidade
         const findIdLocal = await Cidade.findOne({
-            where: { nome: cidade },
+            where: { cidade: cidade },
             raw: true,
             attributes: ['id_cidade', 'estado.id_estado'],
             include: [{
@@ -134,6 +135,34 @@ const perfilEditarEstabController = {
         
         res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
 
+    },
+
+    changeAvatar: async (req, res, next) => {
+        
+        // Excluir os arquivos de imagem da pasta avatars
+        
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
+
+        dadosUsuario.avatar = pathFile;
+
+        await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Renderiza perfil editar
+
+        const dadosEstab = await Estabelecimento.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_estab']
+        });
+
+        res.redirect(`/perfil/editar/estabelecimento/${dadosEstab.id_estab}`);
     }
 }
 

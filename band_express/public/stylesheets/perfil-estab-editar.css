@@ -38,6 +38,9 @@ input.form-control {
     filter: brightness(0.9);
 }
 
+#alterarAvatar .form-control-file{
+    min-height:40px;
+}
 /* --------------------------------
              Icon
 -------------------------------- */
@@ -137,6 +140,10 @@ div.icon-border-none i:hover {
     min-width: 48%;
 }
 
+#infos{
+    min-height: 480px;
+}
+
 #infos div{
     margin-left: 0.5rem;
 }
@@ -147,6 +154,10 @@ div.icon-border-none i:hover {
 
 .form-group select {
     height: 46px;
+}
+
+#infosFuncionamento{
+    min-height: 480px;
 }
 
 #infosFuncionamento p {
@@ -302,6 +313,14 @@ input[type=checkbox]:checked + label:before {
     #infosFuncionamento p {
         min-width: 0%;        
     }
+
+    #infos {
+        min-height: auto;
+    }
+
+    #infosFuncionamento {
+        min-height: auto;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -341,6 +360,10 @@ input[type=checkbox]:checked + label:before {
 
     #bio2 {
         padding: 2.5rem 5rem;
+    }
+
+    #horarioSemana{
+        width: 85px;
     }
 }
 
@@ -395,5 +418,5 @@ input[type=checkbox]:checked + label:before {
     .form-group select{
         font-size: 1.2rem;
     }
-
+    
 }

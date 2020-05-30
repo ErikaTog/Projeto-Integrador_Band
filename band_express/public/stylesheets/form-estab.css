@@ -193,6 +193,11 @@ h5 {
     margin-left: 6px;
 }
 
+#inputAbertura,
+#inputFechamento{
+    padding: 1rem 0.5rem;
+}
+
 /* --------------------fim_do_Grupo_Form_Dados--------------------- */
 
 
@@ -292,6 +297,10 @@ h5 {
         margin:0px 3px 0px 0px;
     } 
      
+    #inputAbertura,
+    #inputFechamento{
+        padding: 1rem 1rem;
+    }
 }
 
 @media screen and (max-width: 767px) {

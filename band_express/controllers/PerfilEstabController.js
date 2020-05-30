@@ -10,7 +10,7 @@ const perfilEstabController = {
                 nome: req.session.usuario.nome 
             },
             raw: true,
-            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',
@@ -66,19 +66,6 @@ const perfilEstabController = {
                     horario_fechamento: dadosFuncionamento[i].dataValues.horario_fechamento
                 };
             }
-        }
-
-        let dadosView = {
-            // avatar: dadosUsuario[0].dataValues.avatar,
-            // wallpaper: dadosUsuario[0].dataValues.wallpaper,
-            // id_estab: dadosEstab[0].dataValues.id_estab,
-            // categoria: dadosEstab[0].dataValues.categoria,
-            // local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
-            // site: dadosEstab[0].dataValues.site,
-            // sobre: dadosEstab[0].dataValues.sobre,
-            // funcionamento: dadosEstab[0].dataValues.funcionamento,
-            mensagemNull: 'Ops, você não informou este campo',
-            dadosFunc
         }
 
         res.render('perfil-estab', { 

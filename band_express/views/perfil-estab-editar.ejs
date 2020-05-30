@@ -119,12 +119,6 @@
                             </div>
                     </div>
                     <div class="infos-item media">
-                        <img src="/img/icones/site-01.png" alt="Site">
-                            <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
-                            </div>
-                    </div>
-                    <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
                             <div class="form-group">
                                 <select class="custom-select" name="estado">
@@ -141,7 +135,25 @@
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
                             <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="Site">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="telefone">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="telefone"><%= dadosEstab.telefone %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="email">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="email"><%= usuario.email %></textarea>
                             </div>
                     </div>
                 </section>
@@ -160,7 +172,8 @@
                                 <% if (dadosEstab.funcionamento) { %>
                                     <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
                                         <div id="itemFuncionamento">
-                                            <p><%= dadosFunc[i].dia %> <%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                                            <p id="diaSemana"><%= dadosFunc[i].dia %></p>
+                                            <p id="horarioSemana"><%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
                                             <div class="icon-border-none">
                                                 <a data-toggle="modal" data-target="#confirmarExclusao" href="">
                                                     <i class="fas fa-trash fa-lg"></i>
@@ -232,16 +245,17 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="" method="post">
+                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar<%= usuario.id_usuario %>">
                         </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
@@ -267,31 +281,6 @@
                 <form class="modal-footer">
                     <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-danger">Excluir</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmar Exclusão - Música -->
-    <div class="modal fade" id="confirmarExclusaoMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="danger">Tem certeza que quer excluir a sua música?</p>
-                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
-                </div>
-                <form action="" method="post">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </div>
                 </form>
             </div>
         </div>

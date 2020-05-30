@@ -75,7 +75,7 @@
                 </div>
                 <div class="infos-item media">
                     <img src="/img/icones/pin-01.png" alt="Local">
-                    <p><%= dadosUsuario.nome %> / <%= dadosUsuario.uf %></p>
+                    <p><%= dadosUsuario.cidade %> / <%= dadosUsuario.uf %></p>
                 </div>
                 <div class="infos-item media">
                     <img src="/img/icones/site-01.png" alt="Site">
@@ -93,6 +93,10 @@
                         <p class="msg-incentivo"><%= mensagemNull %></p>
                     <% } %>
                 </div>
+                <div class="infos-item media">
+                    <img src="/img/icones/email-01.png" alt="Email">
+                    <p><%= usuario.email %></p>
+                </div>
             </section>
         </div>
 
@@ -104,7 +108,10 @@
                     
                     <% if (dadosEstab.funcionamento) { %>
                         <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
-                            <p> <strong><%= dadosFunc[i].dia %>:</strong> <%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                            <div id="itemFuncionamento">
+                                <p id="diaSemana"><strong><%= dadosFunc[i].dia %></strong></p> 
+                                <p id="horarioSemana"><%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                            </div>
                         <% } %>
                     <% } else { %>
                         <div class="funcionamento">
