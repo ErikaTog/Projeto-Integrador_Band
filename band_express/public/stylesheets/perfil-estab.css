@@ -226,7 +226,6 @@ Imagem
 }
 
 #infosFuncionamento p {
-    padding-right: 1.0rem;
     padding-bottom: 15px;
 }
 
@@ -234,6 +233,21 @@ Imagem
     width: 100%;
     display: flex;
     justify-content: flex-start;
+}
+
+#itemFuncionamento{
+    padding-top: 10px;
+    padding-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#diaSemana{
+    width: 78px;
+}
+
+#horarioSemana{
+    width: 110px;
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */
