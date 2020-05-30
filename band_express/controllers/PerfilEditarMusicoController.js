@@ -144,7 +144,7 @@ const perfilEditarMusicoController = {
         
         // Buscar o id_cidade e id_estado na tabela cidade
         const findIdLocal = await Cidade.findOne({
-            where: { nome: cidade },
+            where: { cidade },
             raw: true,
             attributes: ['id_cidade', 'estado.id_estado'],
             include: [{
@@ -235,9 +235,9 @@ const perfilEditarMusicoController = {
             });
         };
 
-        res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
+        res.redirect(`/perfil/editar/musico`);
     },
-    saveAvatar: async (req, res, next) => {
+    changeAvatar: async (req, res, next) => {
         
         // Excluir os arquivos de imagem da pasta avatars
         
@@ -262,7 +262,7 @@ const perfilEditarMusicoController = {
             attributes: ['id_musico']
         });
 
-        res.redirect(`/perfil/editar/musico/${dadosMusico.id_musico}`);
+        res.redirect(`/perfil/editar/musico`);
 
     }
 }

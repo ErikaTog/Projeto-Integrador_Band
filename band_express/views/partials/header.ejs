@@ -116,7 +116,7 @@
                                 <p class="dropdown-item">Olá, <%= usuario.nome %> </p>
                                 <a class="dropdown-item"
                                 <% if (usuario.id_tipos_perfil == 1) { %>
-                                    href="/perfil/editar/musico/<%= dadosMusico.id_musico %>"
+                                    href="/perfil/editar/musico"
                                 <% } else if (usuario.id_tipos_perfil == 2) { %>
                                     href="/perfil/editar/banda/<%= dadosBanda.id_banda %>"
                                 <% } else { %>
