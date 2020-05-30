@@ -10,7 +10,7 @@ const perfilEstabController = {
                 nome: req.session.usuario.nome 
             },
             raw: true,
-            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',
