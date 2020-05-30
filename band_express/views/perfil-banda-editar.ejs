@@ -323,7 +323,7 @@
 
 
     <!-- Modal -->
-    <!-- Aterar Fundo -->
+    <!-- Alterar Fundo -->
     <div class="modal fade" id="alterarFundo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -335,12 +335,11 @@
                     </button>
                 </div>
 
-                <form action="" method="post">
+                <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*"
-                                name="wallpaper">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper<%= usuario.id_usuario %>">
                         </div>
                     </div>
 
@@ -366,7 +365,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/musico/<%= dadosBanda.id_banda %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
