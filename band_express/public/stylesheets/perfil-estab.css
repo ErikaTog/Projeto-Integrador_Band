@@ -174,7 +174,7 @@ Imagem
 
 #infos {
     width: 100%;
-    min-height: 342px;
+    min-height: 390px;
     max-width: 1170px;
     padding: 2.5rem 5rem;
     margin-top: 30px;
@@ -212,7 +212,7 @@ Imagem
 #infosFuncionamento {
     padding: 2.5rem 5rem;
     margin-top: 30px;
-    min-height: 342px;
+    min-height: 390px;
 }
 
 #infosFuncionamento .infos-item{
@@ -382,10 +382,6 @@ button.btn.btn-danger:hover {
     #infosFuncionamento {
         min-height: auto;
     }
-
-    #infosFuncionamento p {
-        min-width: 50%;        
-    }
 } 
 
 @media screen and (max-width: 768px) {
@@ -441,8 +437,13 @@ button.btn.btn-danger:hover {
     .form-group input {
         font-size: 1.8rem;
     }
+
     ::-webkit-input-placeholder{
         font-size: 1.6rem;
+    }
+
+    #diaSemana{
+        width: 65px;
     }
 }
 
@@ -548,15 +549,19 @@ button.btn.btn-danger:hover {
     .modal-content {
         padding: 0rem 1rem;
     }
+
     .form-group {
         margin: 0 0 15px;
     }
+
     .form-control {
         font-size: 1.2rem;
     }
+
     ::-webkit-input-placeholder{
         font-size: 1.2rem;
     }
+
     #infosFuncionamento{
         padding: 10px 20px;
     }
