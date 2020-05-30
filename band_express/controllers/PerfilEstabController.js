@@ -68,19 +68,6 @@ const perfilEstabController = {
             }
         }
 
-        let dadosView = {
-            // avatar: dadosUsuario[0].dataValues.avatar,
-            // wallpaper: dadosUsuario[0].dataValues.wallpaper,
-            // id_estab: dadosEstab[0].dataValues.id_estab,
-            // categoria: dadosEstab[0].dataValues.categoria,
-            // local: nomeCidade[0].dataValues.nome + ' / ' + nomeEstado[0].dataValues.uf,
-            // site: dadosEstab[0].dataValues.site,
-            // sobre: dadosEstab[0].dataValues.sobre,
-            // funcionamento: dadosEstab[0].dataValues.funcionamento,
-            mensagemNull: 'Ops, você não informou este campo',
-            dadosFunc
-        }
-
         res.render('perfil-estab', { 
             title: 'Perfil', 
             usuario: req.session.usuario, 
