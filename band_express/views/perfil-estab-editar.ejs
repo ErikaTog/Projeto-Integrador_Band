@@ -119,12 +119,6 @@
                             </div>
                     </div>
                     <div class="infos-item media">
-                        <img src="/img/icones/site-01.png" alt="Site">
-                            <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
-                            </div>
-                    </div>
-                    <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
                             <div class="form-group">
                                 <select class="custom-select" name="estado">
@@ -141,7 +135,25 @@
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
                             <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.nome %></textarea>
+                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="Site">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.site %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="telefone">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= dadosEstab.telefone %></textarea>
+                            </div>
+                    </div>
+                    <div class="infos-item media">
+                        <img src="/img/icones/site-01.png" alt="Email">
+                            <div class="form-group">
+                                <textarea class="form-control" id="textareaInfos2" rows="1" name="site"><%= usuario.email %></textarea>
                             </div>
                     </div>
                 </section>
@@ -160,7 +172,8 @@
                                 <% if (dadosEstab.funcionamento) { %>
                                     <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
                                         <div id="itemFuncionamento">
-                                            <p><%= dadosFunc[i].dia %> <%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                                            <p id="diaSemana"><%= dadosFunc[i].dia %></p>
+                                            <p id="horarioSemana"><%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
                                             <div class="icon-border-none">
                                                 <a data-toggle="modal" data-target="#confirmarExclusao" href="">
                                                     <i class="fas fa-trash fa-lg"></i>
