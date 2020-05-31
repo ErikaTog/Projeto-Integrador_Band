@@ -26,7 +26,7 @@
         </div>
 
         <div class="info-user">
-            <h3><strong><%= nomeBanda %> </strong></h3>
+            <h3><strong><%= dadosUsuarioBanda.nome %> </strong></h3>
             <div class="info-user-status">
                 <div class="media">
                     <img src="/img/icones/icon_star.svg">
@@ -109,7 +109,7 @@
                     <h4><strong>+ Infos</strong></h4>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                        <p><%= dadosUsuarioBanda.nome %> / <%= dadosUsuarioBanda.uf %> </p>
+                        <p><%= dadosUsuarioBanda.cidade %> / <%= dadosUsuarioBanda.uf %> </p>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
@@ -129,7 +129,7 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/email-01.png" alt="Email">
-                        <p><%= emailBanda %> </p>
+                        <p><%= dadosUsuarioBanda.email %> </p>
                     </div>
                 </section>
             </div>
