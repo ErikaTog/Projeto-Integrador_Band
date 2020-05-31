@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>?_method=PUT" method="POST">
+    <form action="/perfil/editar/banda?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">
@@ -156,7 +156,7 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" name="cidade" rows="1"><%= dadosUsuarioBanda.nome %></textarea>
+                                        <textarea class="form-control" id="textareaInfos" name="cidade" rows="1"><%= dadosUsuarioBanda.cidade %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -335,7 +335,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/banda/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
@@ -353,7 +353,7 @@
         </div>
     </div>
 
-    <!-- Aterar Avatar -->
+    <!-- Alterar Avatar -->
     <div class="modal fade" id="alterarAvatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -395,7 +395,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/banda/<%= dadosBanda.id_banda %>" method="POST">
+                <form action="/perfil/editar/banda" method="POST">
                     <div class="modal-body">                  
                         <div class="form-group">
                             <label for="inputMembro" class="col-sm-2 col-form-label">Nome</label>
