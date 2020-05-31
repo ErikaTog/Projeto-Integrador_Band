@@ -45,21 +45,22 @@
 
             </div>
         </div>
-
-        <div class="config">
-            <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <i class="fas fa-cog"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="/perfil/editar/banda">
-                    Editar Perfil
-                </a>
-                <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                    Alterar Senha
-                </a>
+        <% if (dadosBanda.id_usuario === usuario.id_usuario) { %>
+            <div class="config">
+                <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/perfil/editar/banda">
+                        Editar Perfil
+                    </a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                        Alterar Senha
+                    </a>
+                </div>
             </div>
-        </div>
+        <% } %>    
     </section>
 
     <!-- Grupo Bio -->
