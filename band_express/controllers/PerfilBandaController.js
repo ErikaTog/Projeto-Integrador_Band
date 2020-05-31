@@ -6,36 +6,21 @@ const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Vide
 const perfilBandaController = {
     show: async (req, res) => {
 
-        //Pegando o id_usuario
-        let id_usuario = req.session.usuario.id_usuario
-        // console.log('Id_usuario: ' + id_usuario)
-
-
-        //Pegando o nome da banda
-        let nomeBanda = req.session.usuario.nome
-        // console.log('Nome: ' + nomeBanda)
-
-
-        //Pegando o email da banda
-        let emailBanda = req.session.usuario.email
-        // console.log('Email: ' + email)
-
-
-        //Selecionando os dados da banda
+        // Selecionando os dados da banda na tabela banda
         const dadosBanda = await Banda.findOne({
             raw: true,
-            attributes: ['id_banda', 'genero', 'sobre', 'site', 'canal'],
+            attributes: ['id_banda', 'genero', 'sobre', 'site', 'canal', 'id_usuario'],
             where: {
-                id_usuario
+                id_banda: req.params.id
             }
         })
         // console.log(dadosBanda)
 
 
-        // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
+        // Selecionando demais dados da banda nas tabelas usuario, cidade e estado
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['nome', 'email', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 attributes: [],
                 model: Cidade,
@@ -47,7 +32,7 @@ const perfilBandaController = {
                 }]
             }],
             where: {
-                id_usuario
+                id_usuario: dadosBanda.id_usuario
             }
         })
         // console.log(dadosUsuarioBanda)
@@ -72,7 +57,7 @@ const perfilBandaController = {
         //Verificando a quantidade de usuários que a banda está seguindo
         let seguindo = await Minha_rede.count({
             where: {
-                id_usuario
+                id_usuario: dadosBanda.id_usuario
             }
         });
         // console.log('Seguindo: '+ seguindo)
@@ -81,7 +66,7 @@ const perfilBandaController = {
         //Verificando a quantidade de seguidores da banda
         let seguidores = await Minha_rede.count({
             where: {
-                'id_usuario_seguido': id_usuario
+                'id_usuario_seguido': dadosBanda.id_usuario
             }
         });
         // console.log('Seguidores: '+ seguidores)
@@ -93,7 +78,7 @@ const perfilBandaController = {
             raw: true,
             attributes: ['tipo', 'titulo', 'caminho'],
             where: {
-                id_usuario
+                id_usuario: dadosBanda.id_usuario
             }
         })
         // console.log(videos)
@@ -104,7 +89,7 @@ const perfilBandaController = {
             raw: true,
             attributes: ['tipo', 'titulo', 'caminho'],
             where: {
-                id_usuario
+                id_usuario: dadosBanda.id_usuario
             }
         })
         // console.log(audios) 
@@ -112,13 +97,11 @@ const perfilBandaController = {
         return res.render('perfil-banda', {
             title: 'Perfil',
             usuario: req.session.usuario,
-            nomeBanda,
-            emailBanda,
-            seguindo,
-            seguidores,
             dadosBanda,
             dadosUsuarioBanda,
             integrantes,
+            seguindo,
+            seguidores,
             videos,
             audios
         });
