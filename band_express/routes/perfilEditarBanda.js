@@ -121,6 +121,7 @@ router.put('/', [
 ], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.change);
 
 // Modal Integrantes
+router.get('/integrantes', VerificaUsuarioLogado, perfilEditarBandaController.show);
 router.post('/integrantes', 
 [
     check("membro").trim()
@@ -164,6 +165,7 @@ router.post('/integrantes',
 
 
 // Modal avatar 
+router.get('/avatar', VerificaUsuarioLogado, perfilEditarBandaController.show);
 router.put('/avatar', upload.any(), perfilEditarBandaController.saveAvatar), 
 
 
