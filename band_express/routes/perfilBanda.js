@@ -35,6 +35,7 @@ router.put('/:id',
         })
 ],
 BandaMiddleware.error, 
+VerificaUsuarioLogado,
 perfilBandaController.changePassword);
 
 module.exports = router;
