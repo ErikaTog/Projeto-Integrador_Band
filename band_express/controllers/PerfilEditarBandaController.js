@@ -30,7 +30,7 @@ const perfilEditarBandaController = {
         // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 attributes: [],
                 model: Cidade,
@@ -139,7 +139,7 @@ const perfilEditarBandaController = {
             raw: true,
             attributes: ['id_cidade', 'estado.id_estado'],
             where: { 
-                nome: cidade 
+                cidade 
             },            
             include: [{
                 model: Estado, 
@@ -211,14 +211,22 @@ const perfilEditarBandaController = {
             funcao
         });
 
-    res.redirect(`/perfil/editar/banda/${idBanda}`);       
+    res.redirect('/perfil/editar/banda');       
 
     },
 
     saveAvatar: async (req, res, next) => {
+
         console.log(req.files);
 
-        //Excluir arquivo anterior
+        const dadosBanda = await Banda.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_banda']
+        });
+ 
+       
+      //Excluir arquivo anterior
 
         const avatarZero = "/img/avatar_zero.png"
 
@@ -250,18 +258,60 @@ const perfilEditarBandaController = {
 
         await dadosUsuario.save({ fields: ['avatar'] });
 
-        // Renderiza perfil editar
-
-        const dadosBanda = await Banda.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_banda']
-        });
-
-        res.redirect(`/perfil/editar/banda/${dadosBanda.id_banda}`);
+          
+        res.redirect(`/perfil/editar/banda`);
 
     }
-  
+
+    // saveWallpaper: async (req, res, next) => {
+
+    //     console.log(req.files);
+
+    //     //Excluir arquivo anterior
+
+    //     const wallpaperZero = "/img/fundo_zero.png"
+
+    //     const wallpaperBd = await Usuario.findOne({
+    //         raw: true,
+    //         attributes: ['wallpaper'],
+    //         where: { nome: req.session.usuario.nome }
+    //     });
+             
+    //     const cutPath = wallpaperBd.wallpaper.slice(16)  
+        
+    //     console.log(wallpaperBd.wallpaper)
+
+
+    //     if(wallpaperBd.wallpaper != wallpaperZero){
+    //         fs.unlinkSync(`./public/img/wallpapers/${cutPath}`, function(err){
+    //             if(err) return console.log(err);
+    //             console.log('file deleted successfully');    
+    //         })
+    //     }
+
+
+    //     // Pegar o caminho do arquivo
+    //     const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+    //     // Salvar no BD
+    //     const dadosUsuario = await Usuario.findOne({ 
+    //         where: { nome: req.session.usuario.nome }
+    //     });
+
+    //     dadosUsuario.wallpaper = pathFile;
+
+    //     await dadosUsuario.save({ fields: ['wallpaper'] });
+
+    //     // Renderiza perfil editar
+
+    //     const dadosBanda = await Banda.findOne({ 
+    //         where: { id_usuario: req.session.usuario.id_usuario },
+    //         raw: true,
+    //         attributes: ['id_banda']
+    //     });
+
+    //     res.redirect(`/perfil/editar/banda/${dadosBanda.id_banda}`);
+    // }
 }
 
 
