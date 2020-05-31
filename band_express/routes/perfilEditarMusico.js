@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { check, body, checkSchema } = require('express-validator');
+const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const path = require('path');
 const multer = require('multer');
 
 const { Usuario } = require('../models');
@@ -12,18 +11,7 @@ const perfilEditarMusicoController = require('../controllers/PerfilEditarMusicoC
 
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const MusicoMiddleware = require('../middlewares/PerfilEditarMusico');
-
-// Upload de arquivos
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img/avatars')
-    },
-    filename: function (req, file, cb) {
-        cb(null, `${file.fieldname} ${req.session.usuario.id_usuario} - ${Date.now()} ${path.extname(file.originalname)}`)
-    }
-})
-   
-let upload = multer({ storage: storage })
+const MulterAvatar = require('../middlewares/multerAvatar');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -90,9 +78,7 @@ router.put('/',
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
 ],
-MusicoMiddleware.error,
-VerificaUsuarioLogado,
-perfilEditarMusicoController.change);
+MusicoMiddleware.error, VerificaUsuarioLogado, perfilEditarMusicoController.change);
 
 // Modal habilidade
 router.get('/skills', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -111,39 +97,10 @@ router.post('/skills',
             }
         }),
 ],
-MusicoMiddleware.error,
-VerificaUsuarioLogado,
-perfilEditarMusicoController.saveSkills);
+MusicoMiddleware.error, VerificaUsuarioLogado, perfilEditarMusicoController.saveSkills);
 
 // Modal avatar
 router.get('/avatar', VerificaUsuarioLogado, perfilEditarMusicoController.show);
-router.put('/avatar',
-// [
-    // check('avatar')
-    //     .not().isEmpty().withMessage('Para atualizar a sua imagem precisamos que selecione um arquivo'),
-    // body('avatar')
-    //     .custom((value, { req }) => {
-    //         if (!req.files[0].path) {
-    //             return Promise.reject('Para atualizar a sua imagem precisamos que selecione um arquivo!');
-    //         }
-    //     }),
-
-    // checkSchema({
-    //     in: "files",
-    //     avatar: {
-    //         custom: {
-    //             options: (value, { req, path }) => {
-    //                 if (!req.files.path) {
-    //                     return Promise.reject('Para atualizar a sua imagem precisamos que selecione um arquivo');
-    //                 }
-    //             }
-    //         }
-    //     }
-    // })
-// ],
-upload.any(),
-MusicoMiddleware.error,
-VerificaUsuarioLogado,
-perfilEditarMusicoController.changeAvatar);
+router.put('/avatar', multer(MulterAvatar).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeAvatar);
 
 module.exports = router;
