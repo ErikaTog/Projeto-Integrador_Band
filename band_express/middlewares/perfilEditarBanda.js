@@ -27,7 +27,7 @@ const perfilEditarBanda = {
         // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.nome', 'cidade.estado.uf'],
+            attributes: ['avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 attributes: [],
                 model: Cidade,
