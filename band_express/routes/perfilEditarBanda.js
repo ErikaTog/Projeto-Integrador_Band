@@ -13,10 +13,10 @@ const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
 // Upload de arquivos 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/img/avatars')
+        cb(null, './public/img/uploads')
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + path.extname(file.originalname))
+        cb(null, `${file.fieldname} ${req.session.usuario.id_usuario} - ${Date.now()} ${path.extname(file.originalname)}`)
     }
 })
    
@@ -41,18 +41,6 @@ let upload = multer({ storage: storage,
     } 
 });
 
-
-// Upload de wallpaper
-// let storageWallpaper = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, './public/img/wallpapers')
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.fieldname + path.extname(file.originalname))
-//     }
-// })
-   
-// let uploadWallpaper = multer({ storage: storageWallpaper })
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarBandaController.show);
