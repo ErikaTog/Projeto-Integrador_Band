@@ -120,8 +120,8 @@ const perfilEditarBandaController = {
     },
        change: async (req, res) => {
 
-        let { nome, sobre, estado, cidade, site, canal, email } = req.body;
-
+        let { nome, sobre, funcao, estado, cidade, site, canal, email } = req.body;
+    
         const dadosUsuario = await Usuario.findOne({ 
             where: { 
                 nome: req.session.usuario.nome 
@@ -133,7 +133,20 @@ const perfilEditarBandaController = {
                 id_usuario: req.session.usuario.id_usuario 
             }, 
         });
+
+        const dadosIntegrantes = await BandaIntegrantes.findAll({
+            attributes: ['id_banda', 'id_integrante', 'funcao'],
+            where: {
+                id_banda: dadosBanda.id_banda,
+            }
+        });
         
+     
+        for (let i = 0; i < dadosIntegrantes.length; i++) {
+            dadosIntegrantes[i].funcao = funcao[i].trim();
+            await dadosIntegrantes[i].save({fields: ['funcao'] })            
+        }
+
         // Buscar o id_cidade e id_estado na tabela cidade
         const findIdLocal = await Cidade.findOne({
             raw: true,
@@ -163,6 +176,7 @@ const perfilEditarBandaController = {
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'email', 'id_cidade', 'id_estado'] });
         await dadosBanda.save({ fields: ['sobre', 'site', 'canal'] });
+        
 
         // Setar session do usuario
         let usuario = { 
