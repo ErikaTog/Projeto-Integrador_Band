@@ -198,7 +198,7 @@
 </div>
 
 <!-- Modal -->
-<!-- Aterar Senha -->
+<!-- Alterar Senha -->
 <div class="modal fade" id="alterarSenha" tabindex="-1" role="dialog" aria-labelledby="modalAlterarSenha"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -212,7 +212,7 @@
                 </button>
             </div>
 
-            <form action="/perfil/banda/<%= usuario.id_usuario %>?_method=PUT" method="POST">
+            <form action="/perfil/banda/<%= dadosBanda.id_banda %>?_method=PUT" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="senhaAtual">Senha atual</label>
