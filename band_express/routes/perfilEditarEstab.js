@@ -89,5 +89,6 @@ perfilEditarEstabController.change);
 
 // Modal avatar
 router.put('/:id/avatar', upload.any(), perfilEditarEstabController.changeAvatar);
+router.put('/:id/wallpaper', upload.any(), perfilEditarEstabController.changeWallpaper);
 
 module.exports = router;

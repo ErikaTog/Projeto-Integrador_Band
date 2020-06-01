@@ -57,13 +57,15 @@ const perfilEditarEstabController = {
             const dadosFuncionamento = await Funcionamento.findAll({
                 where: {
                     id_estab: dadosEstab.id_estab
-                }
+                },
+                raw: true,
+                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
             });
             for (let i = 0; i < dadosFuncionamento.length; i++) {
                 dadosFunc[i] = { 
-                    dia:   dadosFuncionamento[i].dataValues.dia,
-                    horario_abertura: dadosFuncionamento[i].dataValues.horario_abertura,
-                    horario_fechamento: dadosFuncionamento[i].dataValues.horario_fechamento
+                    dia:   dadosFuncionamento[i].dia,
+                    horario_abertura: dadosFuncionamento[i].horario_abertura,
+                    horario_fechamento: dadosFuncionamento[i].horario_fechamento
                 };
             }
         }
@@ -106,6 +108,15 @@ const perfilEditarEstabController = {
                 attributes: [],
                 where: { uf: estado }
             }]
+        });
+
+        // Dados da tabela Funcionamento referente ao usuario
+        const dadosFuncionamento = await Funcionamento.findAll({
+            where: {
+                id_estab: dadosEstab.id_estab
+            },
+            raw: true,
+            attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
         });
 
         // Substituir valores
@@ -153,6 +164,34 @@ const perfilEditarEstabController = {
         dadosUsuario.avatar = pathFile;
 
         await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Renderiza perfil editar
+
+        const dadosEstab = await Estabelecimento.findOne({ 
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_estab']
+        });
+
+        res.redirect(`/perfil/editar/estabelecimento/${dadosEstab.id_estab}`);
+    },
+
+    changeWallpaper: async (req, res, next) => {
+        
+        // Excluir os arquivos de imagem da pasta avatars
+        
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
+
+        dadosUsuario.wallpaper = pathFile;
+
+        await dadosUsuario.save({ fields: ['wallpaper'] });
 
         // Renderiza perfil editar
 

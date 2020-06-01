@@ -41,6 +41,10 @@ input.form-control {
 #alterarAvatar .form-control-file{
     min-height:40px;
 }
+
+#alterarFundo .form-control-file{
+    min-height:40px;
+}
 /* --------------------------------
              Icon
 -------------------------------- */
@@ -161,7 +165,7 @@ div.icon-border-none i:hover {
 }
 
 #infosFuncionamento p {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 #infosFuncionamento a {
@@ -175,11 +179,23 @@ div.icon-border-none i:hover {
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Funcionamento--------------------- */
-#itemFuncionamento{
-    padding-top: 10px;
+.itemFuncionamento{
+    padding-top: 15px;
     margin-right: 25px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+.itemFuncionamento .form-control {
+    padding: 10px 5px;
+    font-size: 1.4rem;
+    width: 80px;
+    margin-right: 8px;
+}
+
+.itemFuncionamento input:invalid::before {
+    content: attr(placeholder);
 }
 
 /* --------------------fim_do_Grupo_Infos--------------------- */

@@ -171,9 +171,10 @@
                             <div class="form-group">
                                 <% if (dadosEstab.funcionamento) { %>
                                     <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
-                                        <div id="itemFuncionamento">
-                                            <p id="diaSemana"><%= dadosFunc[i].dia %></p>
-                                            <p id="horarioSemana"><%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                                        <div class="itemFuncionamento">
+                                            <p class="diaSemana" id="diaSemana"><%= dadosFunc[i].dia %></p>
+                                                <input type="time" class="form-control" id="teste1" placeholder="<%= dadosFunc[i].horario_abertura %>" required name="teste1"> 
+                                                <input type="time" class="form-control" id="teste2" placeholder="<%= dadosFunc[i].horario_fechamento %>" required name="teste2">
                                             <div class="icon-border-none">
                                                 <a data-toggle="modal" data-target="#confirmarExclusao" href="">
                                                     <i class="fas fa-trash fa-lg"></i>
@@ -187,7 +188,6 @@
                     </div>
                 </section>
             </div>
-
         </div>
     </form>
 
@@ -217,16 +217,16 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="" method="post">
+                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper<%= usuario.id_usuario %>">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-salvar-modal">Salvar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
                     </div>
                 </form>
 
