@@ -107,10 +107,10 @@
                 <div class="infos-item">
                     
                     <% if (dadosEstab.funcionamento) { %>
-                        <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
-                            <div id="itemFuncionamento">
-                                <p id="diaSemana"><strong><%= dadosFunc[i].dia %></strong></p> 
-                                <p id="horarioSemana"><%= dadosFunc[i].horario_abertura %> - <%= dadosFunc[i].horario_fechamento %></p>
+                        <% for( let i = 0; i < dadosFuncionamento.length; i++ ) { %>
+                            <div class="itemFuncionamento">
+                                <p class="diaSemana" id="diaSemana"><strong><%= dadosFuncionamento[i].dia %></strong></p> 
+                                <p id="horarioSemana"><%= dadosFuncionamento[i].horario_abertura %> - <%= dadosFuncionamento[i].horario_fechamento %></p>
                             </div>
                         <% } %>
                     <% } else { %>

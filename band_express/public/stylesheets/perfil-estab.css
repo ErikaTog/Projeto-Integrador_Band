@@ -236,14 +236,14 @@ Imagem
     justify-content: flex-start;
 }
 
-#itemFuncionamento{
+.itemFuncionamento{
     padding-top: 10px;
     padding-right: 0px;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
-#diaSemana{
+.diaSemana{
     width: 78px;
 }
 
@@ -443,7 +443,7 @@ button.btn.btn-danger:hover {
         font-size: 1.6rem;
     }
 
-    #diaSemana{
+    .diaSemana{
         width: 65px;
     }
 }
