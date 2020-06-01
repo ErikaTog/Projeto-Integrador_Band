@@ -106,6 +106,18 @@ router.put('/', [
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
 
+    // validando o campo função       
+    body('funcao')
+    .custom(async (value, { req }) => {
+        for (let i = 0; i < value.length; i++){
+            if (!value[i]){
+                return Promise.reject('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
+            } 
+            if (value[i].trim().length < 4  || value[i].trim().length > 100){
+                return Promise.reject('A função do integrante deve ter pelo menos 4 caracteres.')
+            }        
+        }
+    })
 ], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.change);
 
 // Modal Integrantes
@@ -147,7 +159,7 @@ router.post('/integrantes',
     
     check("funcao").trim()
     .not().isEmpty().withMessage('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
-    .isLength({ min: 5, max:100 }).withMessage('A função do integrante deve ter pelo menos 5 caracteres.')
+    .isLength({ min: 4, max:100 }).withMessage('A função do integrante deve ter pelo menos 4 caracteres.')
         
 ], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.saveMembers),
 
