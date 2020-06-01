@@ -194,10 +194,13 @@ div.icon-border-none i:hover {
     margin-right: 8px;
 }
 
-.itemFuncionamento input:invalid::before {
-    content: attr(placeholder);
+.itemFuncionamento .diaSemana{
+    background: #ffffff;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0px;
 }
-
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------------------

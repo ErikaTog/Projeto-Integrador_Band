@@ -170,11 +170,11 @@
                         <div class="form">
                             <div class="form-group">
                                 <% if (dadosEstab.funcionamento) { %>
-                                    <% for( let i = 0; i < dadosFunc.length; i++ ) { %>
+                                    <% for( let i = 0; i < dadosFuncionamento.length; i++ ) { %>
                                         <div class="itemFuncionamento">
-                                            <p class="diaSemana" id="diaSemana"><%= dadosFunc[i].dia %></p>
-                                                <input type="time" class="form-control" id="teste1" placeholder="<%= dadosFunc[i].horario_abertura %>" required name="teste1"> 
-                                                <input type="time" class="form-control" id="teste2" placeholder="<%= dadosFunc[i].horario_fechamento %>" required name="teste2">
+                                            <input class="diaSemana" id="diaSemana<%= i %>" name="inputDia" value="<%= dadosFuncionamento[i].dia %>" readonly>
+                                            <input type="time" class="form-control" id="inputAbertura<%= i %>" value="<%= dadosFuncionamento[i].horario_abertura %>" name="inputAbertura"> 
+                                            <input type="time" class="form-control" id="inputFechamento<%= i %>" value="<%= dadosFuncionamento[i].horario_fechamento %>" name="inputFechamento">
                                             <div class="icon-border-none">
                                                 <a data-toggle="modal" data-target="#confirmarExclusao" href="">
                                                     <i class="fas fa-trash fa-lg"></i>
@@ -182,6 +182,10 @@
                                             </div>
                                         </div>
                                     <% } %>
+                                <% } else { %>
+                                    <div class="funcionamento">
+                                        <p class="msg-incentivo"><%= mensagemNull %></p>
+                                    </div>
                                 <% } %>
                             </div>
                         </div>

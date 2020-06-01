@@ -50,25 +50,14 @@ const perfilEditarEstabController = {
             attributes: ['uf'] 
         });
 
-        // Tratamento dos dados da tabela Funcionamento
-        let dadosFunc = [];
-        if(dadosEstab.funcionamento){
-            // Dados da tabela Funcionamento referente ao usuario
-            const dadosFuncionamento = await Funcionamento.findAll({
-                where: {
-                    id_estab: dadosEstab.id_estab
-                },
-                raw: true,
-                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-            });
-            for (let i = 0; i < dadosFuncionamento.length; i++) {
-                dadosFunc[i] = { 
-                    dia:   dadosFuncionamento[i].dia,
-                    horario_abertura: dadosFuncionamento[i].horario_abertura,
-                    horario_fechamento: dadosFuncionamento[i].horario_fechamento
-                };
-            }
-        }
+        // Busca tabela de Funcionamento
+        const dadosFuncionamento = await Funcionamento.findAll({
+            where: {
+                id_estab: dadosEstab.id_estab
+            },
+            raw: true,
+            attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+        });
 
         tipoCategoria = [ "Bar/Pub", "Escola de música", "Estúdio", "Gravadora", "Loja", "Produtora", "Restaurante", "Outro"]
 
@@ -78,7 +67,7 @@ const perfilEditarEstabController = {
             dadosEstab, 
             estados,
             tipoCategoria,
-            dadosFunc,
+            dadosFuncionamento,
             totalSeguindo,
             totalSeguidores,
             mensagemNull: 'Ops, você não informou este campo',
@@ -87,7 +76,7 @@ const perfilEditarEstabController = {
 
     change: async (req, res) => {
 
-        let { nome, sobre, estado, cidade, site, categoria } = req.body;
+        let { nome, sobre, estado, cidade, site, categoria, inputDia, inputAbertura, inputFechamento } = req.body;
 
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -110,15 +99,23 @@ const perfilEditarEstabController = {
             }]
         });
 
-        // Dados da tabela Funcionamento referente ao usuario
-        const dadosFuncionamento = await Funcionamento.findAll({
-            where: {
-                id_estab: dadosEstab.id_estab
-            },
-            raw: true,
-            attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-        });
-
+        // Guardando os valores de funcionamento no banco de dados
+        if(dadosEstab.funcionamento){
+            for (let valor of inputDia){
+                const dadosFunc = await Funcionamento.findOne({
+                    where: {
+                        id_estab: dadosEstab.id_estab,
+                        dia: valor
+                    }
+                });
+                let index = inputDia.indexOf(valor);
+                dadosFunc.horario_abertura = inputAbertura[index];
+                dadosFunc.horario_fechamento = inputFechamento[index];
+                console.log(dadosFunc)
+                await dadosFunc.save({ fields: ['horario_abertura', 'horario_fechamento'] });
+            }
+        }
+        
         // Substituir valores
         dadosUsuario.nome = nome;
         dadosUsuario.id_estado = findIdLocal.id_estado;

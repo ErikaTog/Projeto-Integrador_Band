@@ -52,23 +52,14 @@ const perfilEditarEstab = {
             attributes: ['uf'] 
         });
 
-        // Tratamento dos dados da tabela Funcionamento
-        let dadosFunc = [];
-        if(dadosEstab.funcionamento){
-            // Dados da tabela Funcionamento referente ao usuario
-            const dadosFuncionamento = await Funcionamento.findAll({
-                where: {
-                    id_estab: dadosEstab.id_estab
-                }
-            });
-            for (let i = 0; i < dadosFuncionamento.length; i++) {
-                dadosFunc[i] = { 
-                    dia: dadosFuncionamento[i].dataValues.dia,
-                    horario_abertura: dadosFuncionamento[i].dataValues.horario_abertura,
-                    horario_fechamento: dadosFuncionamento[i].dataValues.horario_fechamento
-                };
-            }
-        }
+        // Busca tabela de Funcionamento
+        const dadosFuncionamento = await Funcionamento.findAll({
+            where: {
+                id_estab: dadosEstab.id_estab
+            },
+            raw: true,
+            attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+        });
 
         tipoCategoria = [ "Bar/Pub", "Escola de música", "Estúdio", "Gravadora", "Loja", "Produtora", "Restaurante", "Outro"]
 
@@ -79,7 +70,7 @@ const perfilEditarEstab = {
                 dadosEstab, 
                 estados,
                 tipoCategoria,
-                dadosFunc,
+                dadosFuncionamento,
                 totalSeguindo,
                 totalSeguidores,
                 mensagemNull: 'Ops, você não informou este campo',
