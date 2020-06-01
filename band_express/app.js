@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('connect-flash');
 
 var session = require('express-session')
 
@@ -42,6 +43,7 @@ app.use(session({
   saveUninitialized:true
 }))
 app.use(cookieParser());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(cookieMiddleware);
@@ -66,8 +68,6 @@ app.use('/vagas', vagasRouter);
 app.use('/minhaRede', minhaRedeRouter);
 
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -75,6 +75,18 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  // multer >> limit: fileSize ultrapassar
+  if (err.code === 'LIMIT_FILE_SIZE') {
+    // res.send({ result: 'fail', error: { code: 1001, message: 'File is too big' } })
+    req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo e tenha menos de 5 MB.')
+    if(req.session.usuario.id_tipos_perfil == 1) {
+      res.redirect('/perfil/editar/musico')
+    }
+    return 
+  }
+
+  // Handle any other errors
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

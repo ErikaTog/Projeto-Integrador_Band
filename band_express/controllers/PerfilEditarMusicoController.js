@@ -127,7 +127,8 @@ const perfilEditarMusicoController = {
             videos,
             estados,
             listaInstrumentos,
-            listaTecnicos
+            listaTecnicos,
+            errorsAvatar: req.flash('errorAvatar'),
         });
     },
     change: async (req, res) => {
@@ -240,6 +241,13 @@ const perfilEditarMusicoController = {
     changeAvatar: async (req, res, next) => {
         console.log(req.body);
         console.log(req.files);
+
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
 
         
         // Excluir os arquivos de imagem da pasta avatars
