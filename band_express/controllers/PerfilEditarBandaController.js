@@ -115,7 +115,8 @@ const perfilEditarBandaController = {
             integrantes,
             videos,
             audios,
-            estados
+            estados,
+            errorsAvatar: req.flash('errorAvatar'),
         });
     },
        change: async (req, res) => {
@@ -229,19 +230,19 @@ const perfilEditarBandaController = {
 
     },
 
-    saveAvatar: async (req, res, next) => {
-
+    changeAvatar: async (req, res, next) => {
+        console.log(req.body);
         console.log(req.files);
 
-        const dadosBanda = await Banda.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_banda']
-        });
- 
-       
-      //Excluir arquivo anterior
 
+        // se nenhum arquivo for enviado
+        if (!req.files.length) {
+        req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+        res.redirect('/perfil/editar/banda')
+        return
+        }
+     
+      //Excluir arquivo anterior da pasta 
         const avatarZero = "/img/avatar_zero.png"
 
         const avatarBd = await Usuario.findOne({
@@ -253,12 +254,8 @@ const perfilEditarBandaController = {
         const cutPath = avatarBd.avatar.slice(13)    
 
         if(avatarBd.avatar != avatarZero){
-            fs.unlinkSync(`./public/img/avatars/${cutPath}`, function(err){
-                if(err) return console.log(err);
-                console.log('file deleted successfully');    
-            })
+            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
         }
-
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
