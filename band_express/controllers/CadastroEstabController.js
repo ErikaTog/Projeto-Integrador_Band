@@ -29,7 +29,11 @@ const cadastroEstabController = {
 		email = email.trim();
 		sobre = sobre ? sobre.trim() : '';
 		site = site ? site.trim() : '';
-		telefone = telefone ? telefone.trim() : '';
+
+		if(telefone.length == 14){
+			telefone = telefone.replace("-","");
+			telefone = telefone.substr(0,9) + "-" + telefone.substr(9);
+		}
 
 		// Buscando o id_cidade e id_estado na tabela cidade
 		const findIdCidade = await Cidade.findAll({
@@ -46,7 +50,7 @@ const cadastroEstabController = {
 			}],
 			// e um último filtro da cidade que o usuário digitou
 			where: {
-				nome: cidade
+				cidade: cidade
 			},
 		});
 

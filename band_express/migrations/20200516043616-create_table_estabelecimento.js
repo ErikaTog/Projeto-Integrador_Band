@@ -24,7 +24,7 @@ module.exports = {
             allowNull: true
         },
         telefone: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING(15),
             allowNull: true
         },
         funcionamento: {

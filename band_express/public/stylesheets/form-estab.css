@@ -111,6 +111,10 @@ h5 {
     padding: 0.5rem 1rem;
 }
 
+.form-group select{
+    color: #4C4F66;
+}
+
 /* --------------------início_do_Grupo_Form_Identificação--------------------- */
 
 #identificacao {
@@ -118,7 +122,6 @@ h5 {
     max-width: 550px;
     padding: 1.5rem 3rem 2.5rem;
 }
-
 
 /* --------------------fim_do_Grupo_Form_Identificação--------------------- */
 

@@ -76,7 +76,7 @@ const perfilEditarEstabController = {
 
     change: async (req, res) => {
 
-        let { nome, sobre, estado, cidade, site, categoria, inputDia, inputAbertura, inputFechamento } = req.body;
+        let { nome, sobre, estado, cidade, site, categoria, telefone, inputDia, inputAbertura, inputFechamento } = req.body;
 
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -98,6 +98,11 @@ const perfilEditarEstabController = {
                 where: { uf: estado }
             }]
         });
+
+        if(telefone.length == 14){
+			telefone = telefone.replace("-","");
+			telefone = telefone.substr(0,9) + "-" + telefone.substr(9);
+		}
 
         // Guardando os valores de funcionamento no banco de dados
         if(dadosEstab.funcionamento){
@@ -123,10 +128,11 @@ const perfilEditarEstabController = {
         dadosEstab.sobre = sobre;
         dadosEstab.site = site;
         dadosEstab.categoria = categoria;
+        dadosEstab.telefone = telefone;
 
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'id_cidade', 'id_estado'] });
-        await dadosEstab.save({ fields: ['sobre', 'site', 'categoria'] });
+        await dadosEstab.save({ fields: ['sobre', 'site', 'categoria', 'telefone'] });
 
         // Setar session do usuario
         let usuario = { 
