@@ -132,7 +132,8 @@ const perfilEditarMusico = {
                 estados,
                 listaInstrumentos,
                 listaTecnicos,
-                errors: errors 
+                errors: errors,
+                errorsAvatar: req.flash('errorAvatar'),
             });
         } 
 

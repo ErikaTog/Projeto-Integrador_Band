@@ -103,4 +103,8 @@ MusicoMiddleware.error, VerificaUsuarioLogado, perfilEditarMusicoController.save
 router.get('/avatar', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.put('/avatar', multer(MulterAvatar).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeAvatar);
 
+// Modal wallpaper
+router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarMusicoController.show);
+router.put('/wallpaper', multer(MulterAvatar).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeWallpaper);
+
 module.exports = router;
