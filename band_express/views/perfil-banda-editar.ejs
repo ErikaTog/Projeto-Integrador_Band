@@ -54,6 +54,15 @@
             </div>
             <% } %>
 
+             <!-- Mensagem de erro (flash - avatar) -->
+            <% if (errorsAvatar.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <p class="error">- <%= errorsAvatar %></p>
+                </div>
+            <% } %>
+
         
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -370,7 +379,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar" required>
                         </div>
                     </div>
 
