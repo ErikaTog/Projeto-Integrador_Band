@@ -239,8 +239,6 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
     },
     changeAvatar: async (req, res, next) => {
-        console.log(req.body);
-        console.log(req.files);
 
         // Nenhum arquivo for enviado
         if (!req.files.length) {
@@ -248,9 +246,8 @@ const perfilEditarMusicoController = {
             res.redirect('/perfil/editar/musico')
             return
         }
-
         
-        // Excluir os arquivos de imagem da pasta avatars
+        // Excluir os arquivos de imagem
         const avatarZero = "/img/avatar_zero.png";
 
         const avatarBd = await Usuario.findOne({
@@ -276,6 +273,45 @@ const perfilEditarMusicoController = {
         dadosUsuario.avatar = pathFile;
 
         await dadosUsuario.save({ fields: ['avatar'] });
+
+        res.redirect(`/perfil/editar/musico`);
+
+    },
+    changeWallpaper: async (req, res, next) => {
+
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorAvatar', 'Para alterar a imagem do seu fundo precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
+        
+        // Excluir os arquivos de imagem
+        const wallpaperZero = "/img/fundo_zero.png";
+
+        const wallpaperBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['wallpaper'],
+            where: { nome: req.session.usuario.nome }
+        });
+             
+        const cutPath = wallpaperBd.wallpaper.slice(13)    
+
+        if (wallpaperBd.wallpaper != wallpaperZero) {
+            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
+        }
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
+
+        dadosUsuario.wallpaper = pathFile;
+
+        await dadosUsuario.save({ fields: ['wallpaper'] });
 
         res.redirect(`/perfil/editar/musico`);
     }
