@@ -4,43 +4,12 @@ const { check, body } = require('express-validator');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const multer = require('multer');
-const path = require('path');
+
 const { Usuario, Banda, BandaIntegrantes } = require('../models');
 const perfilEditarBandaController = require('../controllers/PerfilEditarBandaController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
-
-// Upload de arquivos 
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img/uploads')
-    },
-    filename: function (req, file, cb) {
-        cb(null, `${file.fieldname} ${req.session.usuario.id_usuario} - ${Date.now()} ${path.extname(file.originalname)}`)
-    }
-})
-   
-    // FALTA TRABALHARMOS NO RETORNO DO ERRO E NA VALIDAÇÃO DE ARQUIVO VAZIO
-let upload = multer({ storage: storage,
-    limits: {
-        fileSize: 5 * 1024 * 1024
-    }, 
-    fileFilter: (req, file, cb) => {
-        const allowedMimes = [
-            'image/jpg',
-            'image/png',
-            'image/gif',
-            'image/tiff',   
-        ]
-        if (allowedMimes.includes(file.mimetype)) {
-            cb(null, true);
-        }else{
-            cb(new Error ("Arquivo não suportado."));
-            console.log("Erro de arquivo não suportado")
-        }     
-    } 
-});
-
+const MulterAvatar = require('../middlewares/multerAvatar');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarBandaController.show);
@@ -166,7 +135,7 @@ router.post('/integrantes',
 
 // Modal avatar 
 router.get('/avatar', VerificaUsuarioLogado, perfilEditarBandaController.show);
-router.put('/avatar', upload.any(), perfilEditarBandaController.saveAvatar), 
+router.put('/avatar',  multer(MulterAvatar).any(), perfilEditarBandaController.changeAvatar), 
 
 
 // Modal wallpaper 
