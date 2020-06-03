@@ -254,7 +254,7 @@ const perfilEditarMusicoController = {
         const cutPath = avatarBd.avatar.slice(13)    
 
         if (avatarBd.avatar != avatarZero) {
-            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
         }
 
         // Pegar o caminho do arquivo
@@ -293,7 +293,7 @@ const perfilEditarMusicoController = {
         const cutPath = wallpaperBd.wallpaper.slice(13)    
 
         if (wallpaperBd.wallpaper != wallpaperZero) {
-            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
         }
 
         // Pegar o caminho do arquivo

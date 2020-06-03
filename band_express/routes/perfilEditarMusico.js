@@ -11,7 +11,7 @@ const perfilEditarMusicoController = require('../controllers/PerfilEditarMusicoC
 
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const MusicoMiddleware = require('../middlewares/PerfilEditarMusico');
-const MulterAvatar = require('../middlewares/multerAvatar');
+const MulterImage = require('../middlewares/multerImage');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -101,10 +101,10 @@ MusicoMiddleware.error, VerificaUsuarioLogado, perfilEditarMusicoController.save
 
 // Modal avatar
 router.get('/avatar', VerificaUsuarioLogado, perfilEditarMusicoController.show);
-router.put('/avatar', multer(MulterAvatar).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeAvatar);
+router.put('/avatar', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeAvatar);
 
 // Modal wallpaper
 router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarMusicoController.show);
-router.put('/wallpaper', multer(MulterAvatar).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeWallpaper);
+router.put('/wallpaper', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeWallpaper);
 
 module.exports = router;
