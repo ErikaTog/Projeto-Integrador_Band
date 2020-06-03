@@ -78,7 +78,7 @@ app.use(function(err, req, res, next) {
   // multer >> limit: fileSize ultrapassar
   if (err.code === 'LIMIT_FILE_SIZE') {
     // res.send({ result: 'fail', error: { code: 1001, message: 'File is too big' } })
-    req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo e tenha menos de 5 MB.')
+    req.flash('errorAvatar', 'Para alterar a imagem é necessário que o arquivo tenha menos de 2 MB.')
     if(req.session.usuario.id_tipos_perfil == 1) {
       res.redirect('/perfil/editar/musico')
     }
