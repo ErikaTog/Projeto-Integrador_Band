@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>?_method=PUT" method="POST">
+    <form action="/perfil/editar/estabelecimento?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
@@ -221,7 +221,7 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/estabelecimento/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
@@ -249,7 +249,7 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/estabelecimento/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>

@@ -23,9 +23,9 @@ let storage = multer.diskStorage({
    
 let upload = multer({ storage: storage })
 
-router.get('/:id', VerificaUsuarioLogado, perfilEditarEstabController.show);
+router.get('/', VerificaUsuarioLogado, perfilEditarEstabController.show);
 
-router.put('/:id',
+router.put('/',
 [
     // Validando o campo nome
     check('nome').trim()
@@ -81,14 +81,13 @@ router.put('/:id',
     check('site').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu site? Este não parece um endereço válido.'),
-
 ],
 EstabMiddleware.error, 
 VerificaUsuarioLogado,
 perfilEditarEstabController.change);
 
 // Modal avatar
-router.put('/:id/avatar', upload.any(), perfilEditarEstabController.changeAvatar);
-router.put('/:id/wallpaper', upload.any(), perfilEditarEstabController.changeWallpaper);
+router.put('/avatar', upload.any(), perfilEditarEstabController.changeAvatar);
+router.put('/wallpaper', upload.any(), perfilEditarEstabController.changeWallpaper);
 
 module.exports = router;

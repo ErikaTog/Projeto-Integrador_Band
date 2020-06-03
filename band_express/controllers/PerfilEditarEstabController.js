@@ -77,7 +77,7 @@ const perfilEditarEstabController = {
     change: async (req, res) => {
 
         let { nome, sobre, estado, cidade, site, categoria, telefone, inputDia, inputAbertura, inputFechamento } = req.body;
-
+    
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
         });
@@ -128,7 +128,7 @@ const perfilEditarEstabController = {
         dadosEstab.sobre = sobre;
         dadosEstab.site = site;
         dadosEstab.categoria = categoria;
-        dadosEstab.telefone = telefone;
+        !telefone == "" ? dadosEstab.telefone = telefone: '';
 
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'id_cidade', 'id_estado'] });
@@ -176,7 +176,7 @@ const perfilEditarEstabController = {
             attributes: ['id_estab']
         });
 
-        res.redirect(`/perfil/editar/estabelecimento/${dadosEstab.id_estab}`);
+        res.redirect(`/perfil/editar/estabelecimento`);
     },
 
     changeWallpaper: async (req, res, next) => {
@@ -204,7 +204,7 @@ const perfilEditarEstabController = {
             attributes: ['id_estab']
         });
 
-        res.redirect(`/perfil/editar/estabelecimento/${dadosEstab.id_estab}`);
+        res.redirect(`/perfil/editar/estabelecimento`);
     }
 }
 
