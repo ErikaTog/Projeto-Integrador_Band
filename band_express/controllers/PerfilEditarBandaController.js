@@ -119,6 +119,7 @@ const perfilEditarBandaController = {
             errorsAvatar: req.flash('errorAvatar'),
         });
     },
+
        change: async (req, res) => {
 
         let { nome, sobre, funcao, estado, cidade, site, canal, email } = req.body;
@@ -194,6 +195,7 @@ const perfilEditarBandaController = {
         
         res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
     },
+
     saveMembers: async (req, res) => {
 
         let { membro, funcao } = req.body;
@@ -231,10 +233,7 @@ const perfilEditarBandaController = {
     },
 
     changeAvatar: async (req, res, next) => {
-        console.log(req.body);
-        console.log(req.files);
-
-
+     
         // se nenhum arquivo for enviado
         if (!req.files.length) {
         req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
@@ -254,7 +253,7 @@ const perfilEditarBandaController = {
         const cutPath = avatarBd.avatar.slice(13)    
 
         if(avatarBd.avatar != avatarZero){
-            fs.unlinkSync(`./public/img/avatars/${cutPath}`);
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
         }
 
         // Pegar o caminho do arquivo
@@ -271,58 +270,47 @@ const perfilEditarBandaController = {
 
           
         res.redirect(`/perfil/editar/banda`);
+    },
 
-    }
+    changeWallpaper: async (req, res, next) => {
+     
+        // se nenhum arquivo for enviado
+        if (!req.files.length) {
+        req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+        res.redirect('/perfil/editar/banda')
+        return
+        }
+     
+      //Excluir arquivo anterior da pasta 
+        const wallpaperZero = "/img/fundo_zero.png"
 
-    // saveWallpaper: async (req, res, next) => {
-
-    //     console.log(req.files);
-
-    //     //Excluir arquivo anterior
-
-    //     const wallpaperZero = "/img/fundo_zero.png"
-
-    //     const wallpaperBd = await Usuario.findOne({
-    //         raw: true,
-    //         attributes: ['wallpaper'],
-    //         where: { nome: req.session.usuario.nome }
-    //     });
+        const wallpaperBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['wallpaper'],
+            where: { nome: req.session.usuario.nome }
+        });
              
-    //     const cutPath = wallpaperBd.wallpaper.slice(16)  
-        
-    //     console.log(wallpaperBd.wallpaper)
+        const cutPath = wallpaperBd.wallpaper.slice(13)    
 
+        if (wallpaperBd.wallpaper != wallpaperZero) {
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
+        }
 
-    //     if(wallpaperBd.wallpaper != wallpaperZero){
-    //         fs.unlinkSync(`./public/img/wallpapers/${cutPath}`, function(err){
-    //             if(err) return console.log(err);
-    //             console.log('file deleted successfully');    
-    //         })
-    //     }
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
 
+        // Salvar no BD
+        const dadosUsuario = await Usuario.findOne({ 
+            where: { nome: req.session.usuario.nome }
+        });
 
-    //     // Pegar o caminho do arquivo
-    //     const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+        dadosUsuario.wallpaper = pathFile;
 
-    //     // Salvar no BD
-    //     const dadosUsuario = await Usuario.findOne({ 
-    //         where: { nome: req.session.usuario.nome }
-    //     });
+        await dadosUsuario.save({ fields: ['wallpaper'] });
 
-    //     dadosUsuario.wallpaper = pathFile;
-
-    //     await dadosUsuario.save({ fields: ['wallpaper'] });
-
-    //     // Renderiza perfil editar
-
-    //     const dadosBanda = await Banda.findOne({ 
-    //         where: { id_usuario: req.session.usuario.id_usuario },
-    //         raw: true,
-    //         attributes: ['id_banda']
-    //     });
-
-    //     res.redirect(`/perfil/editar/banda/${dadosBanda.id_banda}`);
-    // }
+          
+        res.redirect(`/perfil/editar/banda`);
+    }    
 }
 
 
