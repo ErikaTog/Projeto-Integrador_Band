@@ -6,7 +6,7 @@ const multerAvatar = {
     
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, './public/img/avatars')
+            cb(null, path.resolve('__dirname','..','public', 'img', 'uploads'))
         },
         filename: (req, file, cb) => {
             cb(null, `${file.fieldname}${req.session.usuario.id_usuario}-${Date.now()}${path.extname(file.originalname)}`)
@@ -14,7 +14,7 @@ const multerAvatar = {
     }),
 
     limits: {
-        fileSize: 5 * 1024 * 1024,
+        fileSize: 2 * 1024 * 1024,
         files: 1
     },
 
