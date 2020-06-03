@@ -155,7 +155,9 @@
                             <div class="musica-item col-xl-6 col-sm-12">
                                 <video controls>
                                     <source src="<%= video.caminho %>" type="video/mp4">
-                                    <source src="<%= video.caminho %>" type="video/ogg">
+                                    <source src="<%= video.caminho %>" type="video/avi">
+                                    <source src="<%= video.caminho %>" type="video/mpeg">
+                                    <source src="<%= video.caminho %>" type="video/flv">
                                     <p>Seu browser não suporta este recurso</p>
                                 </video>
                                 <h5><%= video.titulo %></h5>
@@ -178,8 +180,12 @@
                             <div class="musica-item col-xl-6 col-sm-12">
                                 <div class="player">
                                     <audio controls>
-                                        <source src="<%= audio.caminho %>" type="audio/mpeg">
+                                        <source src="<%= audio.caminho %>" type="audio/mp3">
                                         <source src="<%= audio.caminho %>" type="audio/ogg">
+                                        <source src="<%= audio.caminho %>" type="audio/aiff">
+                                        <source src="<%= audio.caminho %>" type="audio/wma">
+                                        <source src="<%= audio.caminho %>" type="audio/aac">
+                                        <source src="<%= audio.caminho %>" type="audio/wave">
                                         <p>Seu browser não suporta este recurso</p>
                                     </audio>
                                 </div>
