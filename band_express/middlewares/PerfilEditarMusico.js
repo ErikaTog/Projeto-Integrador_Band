@@ -1,5 +1,4 @@
 const { validationResult } = require('express-validator');
-const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
 
 const perfilEditarMusico = {
     error: async (req, res, next) => {
