@@ -157,18 +157,10 @@
                                             placeholder="Digite o site do seu local">
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row">
-                                    <label for="inputEmail" class="col-xl-2 col-lg-3 col-form-label">E-mail</label>
-                                    <div class="col-xl-8 col-lg-9">
-                                        <input type="text" class="form-control" id="inputEmailEstab" name="emailEstab"
-                                            placeholder="Digite o e-mail do seu local">
-                                    </div>
-                                </div> -->
                                 <div class="form-group row">
                                     <label for="inputTelefone" class="col-xl-2 col-lg-3 col-form-label">Telefone</label>
                                     <div class="col-xl-8 col-lg-9">
-                                        <input type="tel" class="form-control" id="inputTelefone" name="telefone"
-                                            placeholder="Digite o telefone do seu local">
+                                        <input type="text" class="form-control" name="telefone" placeholder="(99)99999-9999" onkeypress="$(this).mask('(00) 00000-0000')">
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +224,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script>
         $(function () {
             $('[data-toggle="popover"]').popover()

@@ -14,6 +14,15 @@ input.form-control {
     height: 35px;
 }
 
+#telefone{
+    height: 46px;
+    color: #282A36;
+}
+
+#telefone::placeholder{
+    color: #282A36;
+}
+
 ::-webkit-input-placeholder{
     font-size: 1.6rem;
 }

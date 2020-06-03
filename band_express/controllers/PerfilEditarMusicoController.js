@@ -35,20 +35,16 @@ const perfilEditarMusicoController = {
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
                 attributes: ['musicos.instrumentos.instrumento'], 
-                include: [
-                    {
-                        model: MusicoInstrumentos,
-                        as: 'musicos',
-                        attributes: [],
-                        include: [
-                            {
-                                model: Instrumento,
-                                as: 'instrumentos',
-                                attributes: []
-                            }
-                        ]
-                    }
-                ],
+                include: [{
+                    model: MusicoInstrumentos,
+                    as: 'musicos',
+                    attributes: [],
+                    include: [{
+                        model: Instrumento,
+                        as: 'instrumentos',
+                        attributes: []
+                    }]
+                }],
             });
         };
         
@@ -60,20 +56,16 @@ const perfilEditarMusicoController = {
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
                 attributes: ['musicosTec.habilidade_tecnicas.habilidade_tecnica'], 
-                include: [
-                    {
-                        model: MusicoTecnicos,
-                        as: 'musicosTec',
-                        attributes: [],
-                        include: [
-                            {
-                                model: Tecnico,
-                                as: 'habilidade_tecnicas',
-                                attributes: []
-                            }
-                        ]
-                    }
-                ],
+                include: [{
+                    model: MusicoTecnicos,
+                    as: 'musicosTec',
+                    attributes: [],
+                    include: [{
+                        model: Tecnico,
+                        as: 'habilidade_tecnicas',
+                        attributes: []
+                    }]
+                }],
             });
         }
         
@@ -97,6 +89,8 @@ const perfilEditarMusicoController = {
             limit: 4
         });
 
+        // Usado nos campos select
+        
         // Buscar lista de Estados
         const estados = await Estado.findAll({ 
             raw: true,
@@ -128,6 +122,7 @@ const perfilEditarMusicoController = {
             estados,
             listaInstrumentos,
             listaTecnicos,
+            errors: req.flash('errorValidator'),
             errorsAvatar: req.flash('errorAvatar'),
         });
     },

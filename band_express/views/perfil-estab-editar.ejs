@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>?_method=PUT" method="POST">
+    <form action="/perfil/editar/estabelecimento?_method=PUT" method="POST">
         <header>
             <div class="nav-container">
                 <nav class="navbar navbar-expand">                    
@@ -146,8 +146,8 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="telefone">
-                            <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos2" rows="1" name="telefone"><%= dadosEstab.telefone %></textarea>
+                            <div class="form-group" >
+                                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="<%= dadosEstab.telefone %>" onkeypress="$(this).mask('(00) 00000-0000')">
                             </div>
                     </div>
                     <div class="infos-item media">
@@ -221,7 +221,7 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/estabelecimento/wallpaper?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
@@ -249,7 +249,7 @@
                         <span aria-hidden="true"><i class="fas fa-times"></i></span>
                     </button>
                 </div>
-                <form action="/perfil/editar/estabelecimento/<%= dadosEstab.id_estab %>/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/estabelecimento/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
@@ -299,6 +299,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </body>
 
 </html>

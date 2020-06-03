@@ -8,7 +8,7 @@ module.exports = {
           categoria: 'Loja',
           sobre: 'Loja - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.lojaandy.com',
-          telefone: '911112222',
+          telefone: '(11) 99999-9999',
           funcionamento: 1,
           id_usuario: 3
         },
@@ -16,7 +16,7 @@ module.exports = {
           categoria: 'Restaurante',
           sobre: 'Jack Doe Restaurante - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.jackdoerestaurante.com',
-          telefone: '933334444',
+          telefone: '(12) 99999-9999',
           funcionamento: 1,
           id_usuario: 7
         },
@@ -24,7 +24,7 @@ module.exports = {
           categoria: 'Bar/Pub',
           sobre: 'Beth Bar - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
           site: 'www.beth_bar.com',
-          telefone: '977778888',
+          telefone: '(13) 99999-9999',
           funcionamento: 0,
           id_usuario: 9
         }
