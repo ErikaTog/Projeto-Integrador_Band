@@ -6,7 +6,7 @@ const multerAvatar = {
     
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, path.resolve('__dirname','..','public', 'img', 'uploads'))
+            cb(null, './public/img/uploads')
         },
         filename: (req, file, cb) => {
             cb(null, `${file.fieldname}${req.session.usuario.id_usuario}-${Date.now()}${path.extname(file.originalname)}`)
