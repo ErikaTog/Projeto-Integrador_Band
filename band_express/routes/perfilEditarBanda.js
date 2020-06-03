@@ -9,7 +9,7 @@ const { Usuario, Banda, BandaIntegrantes } = require('../models');
 const perfilEditarBandaController = require('../controllers/PerfilEditarBandaController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
-const MulterAvatar = require('../middlewares/multerAvatar');
+const MulterImage = require('../middlewares/multerImage');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarBandaController.show);
@@ -135,11 +135,12 @@ router.post('/integrantes',
 
 // Modal avatar 
 router.get('/avatar', VerificaUsuarioLogado, perfilEditarBandaController.show);
-router.put('/avatar',  multer(MulterAvatar).any(), perfilEditarBandaController.changeAvatar), 
+router.put('/avatar',  multer(MulterImage).any(), perfilEditarBandaController.changeAvatar), 
 
 
 // Modal wallpaper 
-// router.put('/wallpaper', uploadWallpaper.any(), perfilEditarBandaController.saveWallpaper);
+router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarBandaController.show);
+router.put('/wallpaper',  multer(MulterImage).any(), perfilEditarBandaController.changeWallpaper), 
 
 
 module.exports = router;
