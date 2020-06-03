@@ -123,7 +123,7 @@ const perfilEditarMusicoController = {
             listaInstrumentos,
             listaTecnicos,
             errors: req.flash('errorValidator'),
-            errorsAvatar: req.flash('errorAvatar'),
+            errorsImage: req.flash('errorImage'),
         });
     },
     change: async (req, res) => {
@@ -237,7 +237,7 @@ const perfilEditarMusicoController = {
 
         // Nenhum arquivo for enviado
         if (!req.files.length) {
-            req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            req.flash('errorImage', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
             res.redirect('/perfil/editar/musico')
             return
         }
@@ -276,7 +276,7 @@ const perfilEditarMusicoController = {
 
         // Nenhum arquivo for enviado
         if (!req.files.length) {
-            req.flash('errorAvatar', 'Para alterar a imagem do seu fundo precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            req.flash('errorImage', 'Para alterar a imagem do seu fundo precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
             res.redirect('/perfil/editar/musico')
             return
         }
