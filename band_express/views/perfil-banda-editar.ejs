@@ -54,12 +54,12 @@
             </div>
             <% } %>
 
-             <!-- Mensagem de erro (flash - avatar) -->
-            <% if (errorsAvatar.length) { %>
+             <!-- Mensagem de erro (flash - imagens) -->
+            <% if (errorsImage.length) { %>
                 <div class="alert alert-danger" role="alert">
                     <h5>Não foi possível fazer a alteração solicitada!</h5>
                     <hr>
-                    <p class="error">- <%= errorsAvatar %></p>
+                    <p class="error">- <%= errorsImage %></p>
                 </div>
             <% } %>
 
@@ -349,7 +349,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper" required>
                         </div>
                     </div>
 
@@ -446,7 +446,7 @@
                     <div class="modal-body">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="1" id="checkVideo"
-                                name="videoAdd data-toggle=" collapse" data-target="#collapseVideo"
+                                name="videoAdd" data-toggle="collapse" data-target="#collapseVideo"
                                 aria-expanded="false" aria-controls="collapseVideo">
                             <label class="form-check-label" for="checkVideo">
                                 Quero enviar um vídeo

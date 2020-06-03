@@ -236,7 +236,7 @@ const perfilEditarBandaController = {
      
         // se nenhum arquivo for enviado
         if (!req.files.length) {
-        req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+        req.flash('errorImage', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
         res.redirect('/perfil/editar/banda')
         return
         }
@@ -276,7 +276,7 @@ const perfilEditarBandaController = {
      
         // se nenhum arquivo for enviado
         if (!req.files.length) {
-        req.flash('errorAvatar', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+        req.flash('errorImage', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
         res.redirect('/perfil/editar/banda')
         return
         }
