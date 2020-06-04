@@ -99,10 +99,12 @@ const perfilMusicoController = {
                 seguidores, 
                 seguindo, 
                 audios, 
-                videos
+                videos,
+                errors: req.flash('errorValidator')
             });
             
         } catch (error) {
+            // Quando o usuário digita um id_musico (req_params) que não existe
             return res.redirect('/home');
         }
 
