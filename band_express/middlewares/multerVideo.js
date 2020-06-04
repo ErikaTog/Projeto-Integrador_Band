@@ -35,4 +35,4 @@ const multerVideo = {
 
 }
 
-module.exports = multerAvatar;
+module.exports = multerVideo;
