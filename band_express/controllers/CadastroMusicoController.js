@@ -83,11 +83,7 @@ const cadastroMuicoController = {
             link_perfil: null,
             id_tipos_perfil: 1
         })
-
-        // Salvar o campo link_perfil
-        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosUsuario.id_usuario}`;
-        await dadosUsuario.save({ fields: ['link_perfil'] });
-
+        
         // Inserindo dados complementares na tabela músico
         const dadosMusico = await Musico.create({
             sexo,
@@ -99,6 +95,10 @@ const cadastroMuicoController = {
             tecnico,
             id_usuario: dadosUsuario.id_usuario
         });
+        
+        // Salvar o campo link_perfil
+        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosMusico.id_musico}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
 
         if (toco) {
             // Buscando o id_instrumento
