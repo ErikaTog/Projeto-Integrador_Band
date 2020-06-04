@@ -503,7 +503,7 @@
                     </button>
                 </div>
 
-                <form action="" method="POST">
+                <form action="/perfil/editar/musico/music" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="videoAdd" value="1" id="checkVideo" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
@@ -515,7 +515,7 @@
                         <div class="collapse" id="collapseVideo">
                             <div class="form-group">
                                 <label for="tituloVideo">Título</label>
-                                <input type="text" class="form-control" id="tituloVideo" name="videoTitulo">
+                                <input type="text" class="form-control" id="tituloVideo"  required>
                             </div>
                             <hr>
                             <div class="form-group">
@@ -530,7 +530,7 @@
                             </div>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="audio" value="1" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
+                            <input class="form-check-input" type="checkbox" name="audioAdd" value="1" id="checkAudio" data-toggle="collapse" data-target="#collapseAudio'" aria-expanded="false" aria-controls="collapseAudio'">
                             <label class="form-check-label" for="checkAudio">
                               Quero enviar um áudio
                             </label>
@@ -538,7 +538,7 @@
                         <div class="collapse" id="collapseAudio'">
                             <div class="form-group">
                                 <label for="tituloAudio">Título</label>
-                                <input type="text" class="form-control" id="tituloAudio" name="audioTitulo">
+                                <input type="text" class="form-control" id="tituloAudio" name="audioTitulo" required>
                             </div>
                             <hr>
                             <div class="form-group">
