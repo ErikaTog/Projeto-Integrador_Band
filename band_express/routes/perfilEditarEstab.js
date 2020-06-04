@@ -5,26 +5,13 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { Usuario } = require('../models');
 const multer = require('multer');
-const path = require('path');
 
 const perfilEditarEstabController = require('../controllers/PerfilEditarEstabController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const EstabMiddleware = require('../middlewares/PerfilEditarEstab');
-
-// Upload de arquivos
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img/avatars')
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + path.extname(file.originalname))
-    }
-})
-   
-let upload = multer({ storage: storage })
+const MulterImage = require('../middlewares/multerImage');
 
 router.get('/', VerificaUsuarioLogado, perfilEditarEstabController.show);
-
 router.put('/',
 [
     // Validando o campo nome
@@ -82,12 +69,12 @@ router.put('/',
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu site? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu site? Este não parece um endereço válido.'),
 ],
-EstabMiddleware.error, 
-VerificaUsuarioLogado,
-perfilEditarEstabController.change);
+EstabMiddleware.error, VerificaUsuarioLogado, perfilEditarEstabController.change);
 
-// Modal avatar
-router.put('/avatar', upload.any(), perfilEditarEstabController.changeAvatar);
-router.put('/wallpaper', upload.any(), perfilEditarEstabController.changeWallpaper);
+router.get('/avatar', VerificaUsuarioLogado, perfilEditarEstabController.show);
+router.put('/avatar',  multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarEstabController.changeAvatar), 
+
+router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarEstabController.show);
+router.put('/wallpaper',  multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarEstabController.changeWallpaper), 
 
 module.exports = router;

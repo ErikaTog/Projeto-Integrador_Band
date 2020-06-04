@@ -85,6 +85,9 @@ app.use(function(err, req, res, next) {
     if(req.session.usuario.id_tipos_perfil == 2) {
       res.redirect('/perfil/editar/banda')
     }
+    if(req.session.usuario.id_tipos_perfil == 3) {
+      res.redirect('/perfil/editar/estabelecimento')
+    }
     return 
   }
 

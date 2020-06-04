@@ -70,6 +70,8 @@ const perfilEditarEstabController = {
             dadosFuncionamento,
             totalSeguindo,
             totalSeguidores,
+            errors: req.flash('errorValidator'),
+            errorsImage: req.flash('errorImage'),
             mensagemNull: 'Ops, você não informou este campo',
         });
     },
@@ -153,8 +155,27 @@ const perfilEditarEstabController = {
 
     changeAvatar: async (req, res, next) => {
         
-        // Excluir os arquivos de imagem da pasta avatars
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorImage', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            res.redirect('/perfil/editar/estabelecimento')
+            return
+        }
         
+        // Excluir os arquivos de imagem
+        const avatarZero = "/img/avatar_zero.png";
+
+        const avatarBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['avatar'],
+            where: { nome: req.session.usuario.nome }
+        });
+             
+        const cutPath = avatarBd.avatar.slice(13)    
+
+        if (avatarBd.avatar != avatarZero) {
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
+        }
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
@@ -168,21 +189,33 @@ const perfilEditarEstabController = {
 
         await dadosUsuario.save({ fields: ['avatar'] });
 
-        // Renderiza perfil editar
-
-        const dadosEstab = await Estabelecimento.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_estab']
-        });
 
         res.redirect(`/perfil/editar/estabelecimento`);
     },
 
     changeWallpaper: async (req, res, next) => {
         
-        // Excluir os arquivos de imagem da pasta avatars
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorImage', 'Para alterar a imagem do seu fundo precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            res.redirect('/perfil/editar/estabelecimento')
+            return
+        }
         
+        // Excluir os arquivos de imagem
+        const wallpaperZero = "/img/fundo_zero.png";
+
+        const wallpaperBd = await Usuario.findOne({
+            raw: true,
+            attributes: ['wallpaper'],
+            where: { nome: req.session.usuario.nome }
+        });
+             
+        const cutPath = wallpaperBd.wallpaper.slice(13)    
+
+        if (wallpaperBd.wallpaper != wallpaperZero) {
+            fs.unlinkSync(`./public/img/uploads/${cutPath}`);
+        }
 
         // Pegar o caminho do arquivo
         const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
@@ -195,14 +228,6 @@ const perfilEditarEstabController = {
         dadosUsuario.wallpaper = pathFile;
 
         await dadosUsuario.save({ fields: ['wallpaper'] });
-
-        // Renderiza perfil editar
-
-        const dadosEstab = await Estabelecimento.findOne({ 
-            where: { id_usuario: req.session.usuario.id_usuario },
-            raw: true,
-            attributes: ['id_estab']
-        });
 
         res.redirect(`/perfil/editar/estabelecimento`);
     }

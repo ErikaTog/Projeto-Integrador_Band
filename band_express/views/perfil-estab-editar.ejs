@@ -41,7 +41,7 @@
 
         <div class="perfil-container">
 
-            <% if (typeof errors != 'undefined') { %>
+            <% if (errors.length) { %>
                 <div class="alert alert-danger" role="alert">
                     <h5>Não foi possível fazer a alteração solicitada!</h5>
                     <hr>
@@ -50,6 +50,15 @@
                             <li>- <%= errors[i].msg %>  </li>
                         <% } %>
                     </ul>
+                </div>
+            <% } %>
+
+            <!-- Mensagem de erro (flash - avatar) -->
+            <% if (errorsImage.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <p class="error">- <%= errorsImage %></p>
                 </div>
             <% } %>
         
@@ -225,7 +234,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper<%= usuario.id_usuario %>">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="wallpaper" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -253,7 +262,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="formControlFileImg">Escolha uma imagem</label>
-                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar<%= usuario.id_usuario %>">
+                            <input type="file" class="form-control-file" id="formControlFileImg" accept="image/*" name="avatar" required>
                         </div>
                     </div>
 
