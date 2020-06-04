@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt');
 const fs = require("fs");
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
 
@@ -116,7 +115,8 @@ const perfilEditarBandaController = {
             videos,
             audios,
             estados,
-            errorsAvatar: req.flash('errorAvatar'),
+            errors: req.flash('errorValidator'),
+            errorsImage: req.flash('errorImage')
         });
     },
 
