@@ -105,7 +105,8 @@ const perfilBandaController = {
                 seguindo,
                 seguidores,
                 videos,
-                audios
+                audios,
+                errors: req.flash('errorValidator'),
             });
 
         } catch (error) {
