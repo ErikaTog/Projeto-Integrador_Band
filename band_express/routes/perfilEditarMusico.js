@@ -107,4 +107,8 @@ router.put('/avatar', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEd
 router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.put('/wallpaper', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeWallpaper);
 
+// Modal música
+router.get('/music', VerificaUsuarioLogado, perfilEditarMusicoController.show);
+router.post('/music', VerificaUsuarioLogado, perfilEditarMusicoController.saveMusic);
+
 module.exports = router;

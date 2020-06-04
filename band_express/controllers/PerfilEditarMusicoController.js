@@ -309,6 +309,9 @@ const perfilEditarMusicoController = {
         await dadosUsuario.save({ fields: ['wallpaper'] });
 
         res.redirect(`/perfil/editar/musico`);
+    },
+    saveMusic: async (req, res) => {
+        
     }
 }
 
