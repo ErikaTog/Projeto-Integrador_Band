@@ -211,6 +211,15 @@ div.icon-border-none i:hover {
     padding-top: 8px;
 }
 
+#minhaMusica p {
+    margin: .5rem 0;
+}
+
+#minhaMusica a.modal-link {
+    color: #4c4f66;
+    font-weight: 600;
+}
+
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
 /* --------------------------------
