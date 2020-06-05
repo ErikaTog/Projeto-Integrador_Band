@@ -128,6 +128,8 @@ const perfilEditarMusicoController = {
     },
     change: async (req, res) => {
 
+        console.log(req.body);
+
         let { nome, sobre, estado, cidade, site, canal, email } = req.body;
 
         const dadosUsuario = await Usuario.findOne({ 
