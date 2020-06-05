@@ -314,12 +314,20 @@ const perfilEditarMusicoController = {
     },
     saveVideoFile: async (req, res) => {
         // console.log(req.files, req.body);
+        let { videoArquivoTitulo: titulo } = req.body;
+
+        titulo = titulo.trim();
 
         // Pegar o caminho do arquivo
-        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+        const caminho = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
 
-        console.log(pathFile);
-
+        // Salvar no BD
+        await Video.create({
+            tipo: 'arquivo',
+            titulo,
+            caminho,
+            id_usuario: req.session.usuario.id_usuario
+        })
 
         res.redirect(`/perfil/editar/musico`);
     }
