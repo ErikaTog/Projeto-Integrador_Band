@@ -109,8 +109,8 @@ router.put('/avatar', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEd
 router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.put('/wallpaper', multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarMusicoController.changeWallpaper);
 
-// Modal música
-router.get('/music', VerificaUsuarioLogado, perfilEditarMusicoController.show);
-router.post('/music', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveMusic);
+// Modal arquivo video
+router.get('/video', VerificaUsuarioLogado, perfilEditarMusicoController.show);
+router.post('/video', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveVideoFile);
 
 module.exports = router;
