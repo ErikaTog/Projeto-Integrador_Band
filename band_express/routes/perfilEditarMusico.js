@@ -12,6 +12,8 @@ const perfilEditarMusicoController = require('../controllers/PerfilEditarMusicoC
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const MusicoMiddleware = require('../middlewares/PerfilEditarMusico');
 const MulterImage = require('../middlewares/multerImage');
+const MulterVideo = require('../middlewares/multerVideo');
+const MulterAudio = require('../middlewares/multerAudio');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarMusicoController.show);
@@ -109,6 +111,6 @@ router.put('/wallpaper', multer(MulterImage).any(), VerificaUsuarioLogado, perfi
 
 // Modal música
 router.get('/music', VerificaUsuarioLogado, perfilEditarMusicoController.show);
-router.post('/music', VerificaUsuarioLogado, perfilEditarMusicoController.saveMusic);
+router.post('/music', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveMusic);
 
 module.exports = router;

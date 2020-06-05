@@ -188,6 +188,29 @@ div.icon-border-none i:hover {
     margin-bottom: 0.5rem;
 }
 
+/* --------------------------------
+         Adicionar Música
+-------------------------------- */
+.col-md-6 {
+    padding: 0 15px 0 0;
+}
+
+#minhaMusica a.addMusic {
+    color: #282a36;
+}
+
+#minhaMusica a.addMusic:hover {
+    color: #4c4f66;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#minhaMusica .form-group label {
+    color: #4c4f66;
+    font-weight: 600;
+    padding-top: 8px;
+}
+
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
 /* --------------------------------

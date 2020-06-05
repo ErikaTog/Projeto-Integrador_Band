@@ -311,7 +311,15 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
     },
     saveMusic: async (req, res) => {
-        
+        console.log(req.files, req.body);
+
+        // Nenhum arquivo for enviado
+        // if (!req.files.length) {
+        //     res.send({ result: 'fail', error: { code: 1001, message: 'Unsent File' } })
+        //     return
+        // }
+
+        res.redirect(`/perfil/editar/musico`);
     }
 }
 

@@ -14,8 +14,7 @@ const multerVideo = {
     }),
 
     limits: {
-        fileSize: 4 * 1024 * 1024 * 1024,
-        files: 1
+        fileSize: 4 * 1024 * 1024 * 1024
     },
 
     fileFilter: (req, file, cb) => {

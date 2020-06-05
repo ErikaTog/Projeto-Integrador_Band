@@ -15,7 +15,7 @@ const multerAudio = {
 
     limits: {
         fileSize: 4 * 1024 * 1024 * 1024,
-        files: 1
+        // files: 1
     },
 
     fileFilter: (req, file, cb) => {
