@@ -313,7 +313,13 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
     },
     saveVideoFile: async (req, res) => {
-        console.log(req.files, req.body);
+        // console.log(req.files, req.body);
+
+        // Pegar o caminho do arquivo
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        console.log(pathFile);
+
 
         res.redirect(`/perfil/editar/musico`);
     }
