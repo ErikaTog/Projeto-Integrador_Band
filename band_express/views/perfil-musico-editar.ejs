@@ -62,6 +62,14 @@
             </div>
         <% } %>
         
+        <!-- Mensagem de erro (flash - upload) -->
+        <% if (errorsUpload.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <h5>Não foi possível fazer a alteração solicitada!</h5>
+                <hr>
+                <p class="error">- <%= errorsUpload %></p>
+            </div>
+        <% } %>
         
         
         <!-- Grupo Head -->
@@ -568,11 +576,11 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="tituloVideo">Título</label>
-                            <input type="text" class="form-control" id="tituloVideo" name="videoArquivoTitulo">
+                            <input type="text" class="form-control" id="tituloVideo" name="videoArquivoTitulo" required>
                         </div>
                         <div class="form-group">
                             <label for="arquivoVideo">Escolha um arquivo</label>
-                            <input type="file" class="form-control-file" id="arquivoVideo" accept="video/*" name="video">
+                            <input type="file" class="form-control-file" id="arquivoVideo" accept="video/*" name="video" required>
                         </div>
                     </div>
                     <div class="modal-footer">
