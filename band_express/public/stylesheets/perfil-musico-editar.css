@@ -228,16 +228,24 @@ input.form-control-file {
     margin-bottom: 10px;
 }
 
-#adicionarMusica .form-group label {
+#arquivoVideo .form-group label,
+#arquivoAudio .form-group label {
     color: #4c4f66;
+    margin-top: 1rem;
 }
 
-#adicionarMusica label.form-check-label {
+/* #adicionarMusica label.form-check-label {
     font-weight: 600;
+} */
+
+#arquivoVideo .form-group,
+#arquivoAudio .form-group {
+    margin: 1rem 0;
 }
 
-#adicionarMusica .form-group {
-    margin: 1rem 0;
+#arquivoVideo input.form-control-file,
+#arquivoAudio input.form-control-file {
+    margin: 0;
 }
 
 /* ------------------------------*/ 

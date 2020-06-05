@@ -301,6 +301,10 @@
                                 <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp" name="audioLink">
                                 <small id="linkHelp" class="form-text text-muted">Coloque o link do áudio.</small>
                             </div>
+                            <p>ou</p>
+                            <a class="modal-link" data-toggle="modal" data-target="#arquivoAudio" href="">
+                                Enviar arquivo
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -536,6 +540,72 @@
                                     <% }) %>
                                 </select>
                             </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicionar arquivo vídeo -->
+    <div class="modal fade" id="arquivoVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Enviar arquivo - vídeo</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form action="/perfil/editar/musico/music" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="tituloVideo">Título</label>
+                            <input type="text" class="form-control" id="tituloVideo" name="videoArquivoTitulo">
+                        </div>
+                        <div class="form-group">
+                            <label for="arquivoVideo">Escolha um arquivo</label>
+                            <input type="file" class="form-control-file" id="arquivoVideo" accept="video/*" name="videoArquivo">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-salvar-modal">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicionar arquivo áudio -->
+    <div class="modal fade" id="arquivoAudio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Enviar arquivo - áudio</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form action="/perfil/editar/musico/music" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="tituloAudio">Título</label>
+                            <input type="text" class="form-control" id="tituloAudio" name="audioArquivoTitulo">
+                        </div>
+                        <div class="form-group">
+                            <label for="arquivoAudio">Escolha um arquivo</label>
+                            <input type="file" class="form-control-file" id="arquivoAudio" accept="audio/*" name="audioArquivo">
                         </div>
                     </div>
                     <div class="modal-footer">
