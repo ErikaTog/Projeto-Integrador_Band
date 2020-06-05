@@ -124,6 +124,7 @@ const perfilEditarMusicoController = {
             listaTecnicos,
             errors: req.flash('errorValidator'),
             errorsImage: req.flash('errorImage'),
+            errorsUpload: req.flash('errorUpload'),
         });
     },
     change: async (req, res) => {
@@ -314,9 +315,27 @@ const perfilEditarMusicoController = {
     },
     saveVideoFile: async (req, res) => {
         // console.log(req.files, req.body);
+        
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorUpload', 'Para enviar o seu vídeo precisamos que seja salvo como arquivo MP4, AVI, MPEG, ou FLV')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
+
         let { videoArquivoTitulo: titulo } = req.body;
 
         titulo = titulo.trim();
+
+        // Se o título estiver vazio (space)
+        if (!titulo) {
+            // Excluir o arquivo da pasta
+            fs.unlinkSync(`./public/video/${req.files[0].filename}`);
+
+            req.flash('errorUpload', 'Opa, quremos te ajudar para que a sua música fique famosa. Para isso, precisamos que nos diga o título!')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
 
         // Pegar o caminho do arquivo
         const caminho = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
