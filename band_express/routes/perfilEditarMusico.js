@@ -113,4 +113,8 @@ router.put('/wallpaper', multer(MulterImage).any(), VerificaUsuarioLogado, perfi
 router.get('/video', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.post('/video', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveVideoFile);
 
+// Modal arquivo audio
+router.get('/audio', VerificaUsuarioLogado, perfilEditarMusicoController.show);
+router.post('/audio', multer(MulterAudio).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveAudioFile);
+
 module.exports = router;
