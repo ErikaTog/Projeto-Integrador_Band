@@ -188,6 +188,38 @@ div.icon-border-none i:hover {
     margin-bottom: 0.5rem;
 }
 
+/* --------------------------------
+         Adicionar Música
+-------------------------------- */
+.col-md-6 {
+    padding: 0 15px 0 0;
+}
+
+#minhaMusica a.addMusic {
+    color: #282a36;
+}
+
+#minhaMusica a.addMusic:hover {
+    color: #4c4f66;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#minhaMusica .form-group label {
+    color: #4c4f66;
+    font-weight: 600;
+    padding-top: 8px;
+}
+
+#minhaMusica p {
+    margin: .5rem 0;
+}
+
+#minhaMusica a.modal-link {
+    color: #4c4f66;
+    font-weight: 600;
+}
+
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
 /* --------------------------------
@@ -205,16 +237,24 @@ input.form-control-file {
     margin-bottom: 10px;
 }
 
-#adicionarMusica .form-group label {
+#arquivoVideo .form-group label,
+#arquivoAudio .form-group label {
     color: #4c4f66;
+    margin-top: 1rem;
 }
 
-#adicionarMusica label.form-check-label {
+/* #adicionarMusica label.form-check-label {
     font-weight: 600;
+} */
+
+#arquivoVideo .form-group,
+#arquivoAudio .form-group {
+    margin: 1rem 0;
 }
 
-#adicionarMusica .form-group {
-    margin: 1rem 0;
+#arquivoVideo input.form-control-file,
+#arquivoAudio input.form-control-file {
+    margin: 0;
 }
 
 /* ------------------------------*/ 

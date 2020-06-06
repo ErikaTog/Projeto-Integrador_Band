@@ -14,16 +14,15 @@ const multerVideo = {
     }),
 
     limits: {
-        fileSize: 4 * 1024 * 1024 * 1024,
-        files: 1
+        fileSize: 4 * 1024 * 1024 * 1024
     },
 
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
             'video/mp4',
-            'video/avi',
+            'video/x-msvideo', //avi
             'video/mpeg',  
-            'video/flv',  
+            'video/x-flv',  //flv
         ]
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);

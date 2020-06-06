@@ -6,7 +6,7 @@ const multerAudio = {
     
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, './public/img/audio')
+            cb(null, './public/audio')
         },
         filename: (req, file, cb) => {
             cb(null, `${file.fieldname}${req.session.usuario.id_usuario}-${Date.now()}${path.extname(file.originalname)}`)
@@ -15,17 +15,17 @@ const multerAudio = {
 
     limits: {
         fileSize: 4 * 1024 * 1024 * 1024,
-        files: 1
+        // files: 1
     },
 
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
-            'audio/mp3',
-            'audio/AAC',
-            'audio/WMA',
-            'audio/WAVE',
-            'audio/AIFF',
-            'audio/Ogg',   
+            'audio/mpeg',
+            'audio/aac',
+            'audio/x-ms-wma',
+            'audio/x-wav',
+            'audio/aiff',
+            'audio/ogg',   
         ]
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);
