@@ -236,7 +236,7 @@ const perfilEditarMusicoController = {
 
         res.redirect(`/perfil/editar/musico`);
     },
-    changeAvatar: async (req, res, next) => {
+    changeAvatar: async (req, res) => {
 
         // Nenhum arquivo for enviado
         if (!req.files.length) {
@@ -275,7 +275,7 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
 
     },
-    changeWallpaper: async (req, res, next) => {
+    changeWallpaper: async (req, res) => {
 
         // Nenhum arquivo for enviado
         if (!req.files.length) {
@@ -349,6 +349,9 @@ const perfilEditarMusicoController = {
         })
 
         res.redirect(`/perfil/editar/musico`);
+    },
+    saveAudioFile: async (req, res) => {
+        
     }
 }
 
