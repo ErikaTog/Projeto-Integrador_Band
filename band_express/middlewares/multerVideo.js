@@ -20,9 +20,7 @@ const multerVideo = {
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
             'video/mp4',
-            'video/x-msvideo', //avi
-            'video/mpeg',  
-            'video/x-flv',  //flv
+            'video/ogg'
         ]
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);
