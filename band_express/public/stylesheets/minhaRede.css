@@ -85,7 +85,7 @@
 
 .feed-recomendados-conteudo .card-contato img.contato-img {
     width: 130px;
-    height: 130px
+    height: 130px;
 }
 
 /* --------------------------------
@@ -166,6 +166,7 @@
     height: 170px;
     background-color: #E5E5E5;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /* --------------------------------
