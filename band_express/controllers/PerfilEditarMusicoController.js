@@ -351,7 +351,41 @@ const perfilEditarMusicoController = {
         res.redirect(`/perfil/editar/musico`);
     },
     saveAudioFile: async (req, res) => {
+        console.log(req.files, req.body);
         
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorUpload', 'Para enviar o seu áudio precisamos que seja salvo como arquivo MP3, AAC, WMA, WAVE, AIFF ou OGG')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
+
+        let { audioArquivoTitulo: titulo } = req.body;
+
+        titulo = titulo.trim();
+
+        // Se o título estiver vazio (space)
+        if (!titulo) {
+            // Excluir o arquivo da pasta
+            fs.unlinkSync(`./public/audio/${req.files[0].filename}`);
+
+            req.flash('errorUpload', 'Opa, quremos te ajudar para que a sua música fique famosa. Para isso, precisamos que nos diga o título!')
+            res.redirect('/perfil/editar/musico')
+            return
+        }
+
+        // Pegar o caminho do arquivo
+        const caminho = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        await Audio.create({
+            tipo: 'arquivo',
+            titulo,
+            caminho,
+            id_usuario: req.session.usuario.id_usuario
+        })
+
+        res.redirect(`/perfil/editar/musico`);
     }
 }
 
