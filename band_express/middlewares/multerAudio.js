@@ -21,11 +21,9 @@ const multerAudio = {
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
             'audio/mpeg',
-            'audio/aac',
-            'audio/x-ms-wma',
-            'audio/x-wav',
-            'audio/aiff',
             'audio/ogg',   
+            'audio/aiff',
+            'audio/flac',
         ]
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);
