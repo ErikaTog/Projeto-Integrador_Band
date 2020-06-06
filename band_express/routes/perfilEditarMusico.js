@@ -79,6 +79,23 @@ router.put('/',
     check('canal').trim()
         .isLength({ max: 100 }).withMessage('Tem certeza que esse é o seu canal? Este campo só aceita até 100 caracteres.')
         .isURL().withMessage('Tem certeza que esse é o seu canal? Este não parece um endereço válido.'),
+
+    // Validando o campo de vídeo
+    body('videoAdd')
+        .custom(async (value, {req}) => {
+            if (value && !req.body.videoTitulo.trim()) {
+                return Promise.reject('Opa, quremos te ajudar para que a sua música fique famosa. Para isso, precisamos que nos diga o título!');
+            }
+            if (value && !req.body.videoLink.trim()) {
+                return Promise.reject('Não conseguimos te ajudar para que a sua música fique famosa se você não nos informar o link!');
+            }
+        }),
+    body('videoLink')
+        .custom(async (value) => {
+            if (!value.includes('youtube.com') && !value.includes('vimeo.com') && !value.includes('dailymotion.com')) {
+                return Promise.reject('Por enquanto só aceitamos link do https://www.youtube.com/, https://vimeo.com/pt-br ou https://www.dailymotion.com/br...');
+            }
+        }),
 ],
 MusicoMiddleware.error, VerificaUsuarioLogado, perfilEditarMusicoController.change);
 
