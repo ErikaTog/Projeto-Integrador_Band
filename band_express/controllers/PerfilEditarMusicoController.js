@@ -131,7 +131,15 @@ const perfilEditarMusicoController = {
 
         console.log(req.body);
 
-        let { nome, sobre, estado, cidade, site, canal, email } = req.body;
+        let { nome, sobre, estado, cidade, site, canal, email, videoAdd, videoTitulo, videoLink } = req.body;
+        
+        nome = nome.trim();
+        sobre = sobre.trim();
+        site = site.trim();
+        canal = canal.trim();
+        email = email.trim();
+        videoTitulo = videoTitulo.trim();
+        videoLink = videoLink.trim();
 
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -166,6 +174,38 @@ const perfilEditarMusicoController = {
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'email', 'id_cidade', 'id_estado'] });
         await dadosMusico.save({ fields: ['sobre', 'site', 'canal'] });
+
+        // Verificar se o usuário quer add vídeo
+        if (videoAdd) {
+            let src;
+
+            // Tratar os link
+            // YouTube
+            if (videoLink.includes('youtube.com')) {
+                let urlYoutube = videoLink.split("=");
+                src = `https://www.youtube.com/embed/${urlYoutube[1]}`
+            }
+
+            // Vimeo 
+            if (videoLink.includes('vimeo.com')) {
+                let urlVimeo = videoLink.split("/");
+                src = `https://player.vimeo.com/video/${urlVimeo[3]}`
+            }
+
+            // Dailymotion
+            if (videoLink.includes('dailymotion.com')) {
+                let urlDaily = videoLink.split("/");
+                src = `https://www.dailymotion.com/embed/video/${urlDaily[4]}`
+            }
+
+            // Salvando os dados no BD
+            await Video.create({
+                tipo: 'link',
+                titulo: videoTitulo,
+                caminho: src,
+                id_usuario: req.session.usuario.id_usuario
+            })
+        }
 
         // Setar session do usuario
         let usuario = { 
