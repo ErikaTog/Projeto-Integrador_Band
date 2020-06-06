@@ -336,9 +336,9 @@
                                         </div>
                                         <video controls>
                                             <source src="<%= video.caminho %>" type="video/mp4">
-                                            <source src="<%= video.caminho %>" type="video/avi">
+                                            <source src="<%= video.caminho %>" type="video/x-msvideo">
                                             <source src="<%= video.caminho %>" type="video/mpeg">
-                                            <source src="<%= video.caminho %>" type="video/flv">
+                                            <source src="<%= video.caminho %>" type="video/x-flv">
                                             <p>Seu browser não suporta este recurso</p>
                                         </video>
                                         <h5><%= video.titulo %></h5>
@@ -370,12 +370,12 @@
                                         </div>
                                         <div class="player">
                                             <audio controls>
-                                                <source src="<%= audio.caminho %>" type="audio/mp3">
+                                                <source src="<%= audio.caminho %>" type="audio/mpeg">
                                                 <source src="<%= audio.caminho %>" type="audio/ogg">
                                                 <source src="<%= audio.caminho %>" type="audio/aiff">
-                                                <source src="<%= audio.caminho %>" type="audio/wma">
+                                                <source src="<%= audio.caminho %>" type="audio/x-ms-wma">
                                                 <source src="<%= audio.caminho %>" type="audio/aac">
-                                                <source src="<%= audio.caminho %>" type="audio/wave">
+                                                <source src="<%= audio.caminho %>" type="audio/x-wav">
                                                 <p>Seu browser não suporta este recurso</p>
                                             </audio>
                                         </div>
@@ -605,7 +605,7 @@
                     </button>
                 </div>
 
-                <form action="/perfil/editar/musico/music" method="POST" enctype="multipart/form-data">
+                <form action="/perfil/editar/musico/audio" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="tituloAudio">Título</label>
@@ -613,7 +613,7 @@
                         </div>
                         <div class="form-group">
                             <label for="arquivoAudio">Escolha um arquivo</label>
-                            <input type="file" class="form-control-file" id="arquivoAudio" accept="audio/*" name="audioArquivo">
+                            <input type="file" class="form-control-file" id="arquivoAudio" accept="audio/*" name="audio">
                         </div>
                     </div>
                     <div class="modal-footer">
