@@ -5,7 +5,10 @@ const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 
 
 /* GET pre-cadastro. */
-router.get('/', VerificaUsuarioLogado, vagasController.view); 
+router.get('/', VerificaUsuarioLogado, vagasController.show);
+
+router.get('/novaVaga', VerificaUsuarioLogado, vagasController.show);
+router.post('/novaVaga', VerificaUsuarioLogado, vagasController.novaVaga); 
 
 
 module.exports = router;
