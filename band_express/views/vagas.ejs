@@ -50,9 +50,9 @@
                             <input type="radio" id="customRadio8" name="radioFeed" class="custom-control-input">
                             <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
                         </div>
-                        
                     </div>
-                    <% for( let i = 0; i < 10; i++ ) { %>
+
+                    <% for( let i = 0; i < dadosVagas.length; i++ ) { %>
                         <div class="conteudo-vaga">
                             <h5><%= dadosVagas[i].titulo %></h5>
                             <p><%= dadosVagas[i].descricao %></p>
@@ -79,44 +79,52 @@
     <!-- Modal - Publicar Vaga -->
     <div class="modal fade" id="publicarNovaVaga" tabindex="-1" role="dialog" aria-labelledby="modalPublicarNovaVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Publicar nova vaga</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            </div>
-            <div class="modal-body" id="publicarNovaVaga2">
+            <form class="modal-content" action="/vagas/novaVaga" method="POST" >
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Publicar nova vaga</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body" id="publicarNovaVaga2">
                     <div class="radio">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" checked>
-                            <label class="custom-control-label" for="customRadio1">Banda</label>
+                            <input type="radio" id="tipoVaga1" name="tipoVaga" class="custom-control-input" value="Banda" checked>
+                            <label class="custom-control-label" for="tipoVaga1">Banda</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Professor</label>
+                            <input type="radio" id="tipoVaga2" name="tipoVaga" class="custom-control-input" value="Professor">
+                            <label class="custom-control-label" for="tipoVaga2">Professor</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Estabecimento</label>
+                            <input type="radio" id="tipoVaga3" name="tipoVaga" class="custom-control-input" value="Estabecimento">
+                            <label class="custom-control-label" for="tipoVaga3">Estabecimento</label>
                         </div>
                     </div>
-                    <form action="" method="POST">
+                    <div>
                         <div class="form-group">
-                            <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
+                            <input class="form-control" id="tituloNovaVaga" name="tituloNovaVaga" placeholder="Título da vaga">
                         </div>
                         <div class="form-group">
-                            <input type="localNovaVaga" class="form-control" id="localNovaVaga2" placeholder="Local">
+                            <select class="form-control" id="inputEstado" name="estado">
+                                <option value="" disabled selected hidden>Escolha um Estado</option>
+                                <% estados.forEach((estado)=>{ %>
+                                    <option><%= estado.uf %></option>
+                                <% }) %>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
+                            <input class="form-control" id="inputCidade" name="cidade" placeholder="Cidade">
                         </div>
-                    </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-Publicar">Publicar</button>
-            </div>
-        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="descricaoNovaVaga" name="descricaoNovaVaga" placeholder="Descrição da vaga">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-Publicar">Publicar</button>
+                </div>
+            </form>
         </div>
     </div>
 
