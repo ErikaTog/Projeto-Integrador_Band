@@ -2,7 +2,7 @@ const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = requi
 
 const vagasController = {
 
-    view: async (req, res) => {
+    show: async (req, res) => {
         
         const dadosMusico = await Musico.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario },
@@ -22,6 +22,12 @@ const vagasController = {
             where: { id_usuario: req.session.usuario.id_usuario },
             raw: true,
             attributes: ['id_estab'] 
+        });
+
+        // Buscar lista de Estados
+        const estados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
         });
 
         const dadosVagas = await Vagas.findAll({ 
@@ -47,14 +53,32 @@ const vagasController = {
 
         res.render('vagas', { 
             title: 'Vagas',
+            estados,
             dadosMusico,
             dadosBanda,
             dadosEstab,
             dadosVagas,
             usuario: req.session.usuario,
             errors: req.flash('errorValidator')
-        });
-            
+        });    
+    },
+
+    novaVaga: async (req, res) => {
+        let { tipoVaga, tituloNovaVaga, estado, cidade, descricaoNovaVaga } = req.body;
+
+        tituloNovaVaga = tituloNovaVaga.trim();
+        descricaoNovaVaga = descricaoNovaVaga.trim();
+        cidade = cidade.trim();
+
+        const dadosNovaVaga = await Vagas.create({
+			titulo: tituloNovaVaga,
+			descricao: descricaoNovaVaga,
+			local: cidade + " / " + estado,
+            tipo_vaga: tipoVaga,
+            id_usuario: req.session.usuario.id_usuario
+		})
+
+		return res.redirect('/home')
     }
 }
 
