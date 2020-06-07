@@ -128,9 +128,6 @@ const perfilEditarMusicoController = {
         });
     },
     change: async (req, res) => {
-
-        console.log(req.body);
-
         let { nome, sobre, estado, cidade, site, canal, email, videoAdd, videoTitulo, videoLink } = req.body;
         
         nome = nome.trim();
@@ -358,7 +355,7 @@ const perfilEditarMusicoController = {
         
         // Nenhum arquivo for enviado
         if (!req.files.length) {
-            req.flash('errorUpload', 'Para enviar o seu vídeo precisamos que seja salvo como arquivo MP4, AVI, MPEG, ou FLV')
+            req.flash('errorUpload', 'Para enviar o seu vídeo precisamos que seja salvo como arquivo MP4 ou OGG')
             res.redirect('/perfil/editar/musico')
             return
         }
@@ -368,7 +365,7 @@ const perfilEditarMusicoController = {
         titulo = titulo.trim();
 
         // Se o título estiver vazio (space)
-        if (!titulo) {
+        if (!titulo || titulo.length > 255) {
             // Excluir o arquivo da pasta
             fs.unlinkSync(`./public/video/${req.files[0].filename}`);
 
@@ -395,7 +392,7 @@ const perfilEditarMusicoController = {
         
         // Nenhum arquivo for enviado
         if (!req.files.length) {
-            req.flash('errorUpload', 'Para enviar o seu áudio precisamos que seja salvo como arquivo MP3, AAC, WMA, WAVE, AIFF ou OGG')
+            req.flash('errorUpload', 'Para enviar o seu áudio precisamos que seja salvo como arquivo MP3, FLAC, AIFF ou OGG')
             res.redirect('/perfil/editar/musico')
             return
         }
@@ -405,7 +402,7 @@ const perfilEditarMusicoController = {
         titulo = titulo.trim();
 
         // Se o título estiver vazio (space)
-        if (!titulo) {
+        if (!titulo || titulo.length > 255) {
             // Excluir o arquivo da pasta
             fs.unlinkSync(`./public/audio/${req.files[0].filename}`);
 

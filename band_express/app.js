@@ -75,10 +75,10 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
   // multer >> limit: fileSize ultrapassar
   if (err.code === 'LIMIT_FILE_SIZE') {
-    // res.send({ result: 'fail', error: { code: 1001, message: 'File is too big' } })
-    req.flash('errorImage', 'Para alterar a imagem é necessário que o arquivo tenha menos de 2 MB.')
+    req.flash('errorImage', `Nós temos limite para armazenar o seu arquivo. Leve em conta o tamanho máximo: \n Imagem: 2MB \n Áudio e Vídeo: 4GB`)
     if(req.session.usuario.id_tipos_perfil == 1) {
       res.redirect('/perfil/editar/musico')
     }

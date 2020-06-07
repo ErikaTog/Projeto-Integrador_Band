@@ -58,7 +58,7 @@
             <div class="alert alert-danger" role="alert">
                 <h5>Não foi possível fazer a alteração solicitada!</h5>
                 <hr>
-                <p class="error">- <%= errorsImage %></p>
+                <p class="error" style="white-space: pre-wrap">- <%= errorsImage %></p>
             </div>
         <% } %>
         
@@ -300,7 +300,7 @@
                             </label>
                         </div>
                         <div class="collapse" id="collapseAudio'">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="tituloAudio">Título</label>
                                 <input type="text" class="form-control" id="tituloAudio" name="audioTitulo">
                             </div>
@@ -309,7 +309,7 @@
                                 <input type="text" class="form-control" id="linkAudio" aria-describedby="linkHelp" name="audioLink">
                                 <small id="linkHelp" class="form-text text-muted">Coloque o link do áudio.</small>
                             </div>
-                            <p>ou</p>
+                            <p>ou</p> -->
                             <a class="modal-link" data-toggle="modal" data-target="#arquivoAudio" href="">
                                 Enviar arquivo
                             </a>
@@ -336,9 +336,7 @@
                                         </div>
                                         <video controls>
                                             <source src="<%= video.caminho %>" type="video/mp4">
-                                            <source src="<%= video.caminho %>" type="video/x-msvideo">
-                                            <source src="<%= video.caminho %>" type="video/mpeg">
-                                            <source src="<%= video.caminho %>" type="video/x-flv">
+                                            <source src="<%= video.caminho %>" type="video/ogg">
                                             <p>Seu browser não suporta este recurso</p>
                                         </video>
                                         <h5><%= video.titulo %></h5>
@@ -373,9 +371,7 @@
                                                 <source src="<%= audio.caminho %>" type="audio/mpeg">
                                                 <source src="<%= audio.caminho %>" type="audio/ogg">
                                                 <source src="<%= audio.caminho %>" type="audio/aiff">
-                                                <source src="<%= audio.caminho %>" type="audio/x-ms-wma">
-                                                <source src="<%= audio.caminho %>" type="audio/aac">
-                                                <source src="<%= audio.caminho %>" type="audio/x-wav">
+                                                <source src="<%= audio.caminho %>" type="audio/flac">
                                                 <p>Seu browser não suporta este recurso</p>
                                             </audio>
                                         </div>
