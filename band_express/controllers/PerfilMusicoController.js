@@ -2,6 +2,9 @@ const bcrypt = require('bcrypt');
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
 
 const perfilMusicoController = {
+    showUser: async (req, res) => {
+
+    },
     show: async (req, res) => {
         
         try {
