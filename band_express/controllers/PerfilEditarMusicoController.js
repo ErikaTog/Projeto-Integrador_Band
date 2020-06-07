@@ -128,10 +128,7 @@ const perfilEditarMusicoController = {
         });
     },
     change: async (req, res) => {
-
-        console.log(req.body);
-
-        let { nome, sobre, estado, cidade, site, canal, email, videoAdd, videoTitulo, videoLink, audioAdd, audioTitulo, audioLink } = req.body;
+        let { nome, sobre, estado, cidade, site, canal, email, videoAdd, videoTitulo, videoLink } = req.body;
         
         nome = nome.trim();
         sobre = sobre.trim();
@@ -140,8 +137,6 @@ const perfilEditarMusicoController = {
         email = email.trim();
         videoTitulo = videoTitulo.trim();
         videoLink = videoLink.trim();
-        audioTitulo = audioTitulo.trim();
-        audioLink = audioLink.trim();
 
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
@@ -208,30 +203,6 @@ const perfilEditarMusicoController = {
                 id_usuario: req.session.usuario.id_usuario
             })
         }
-
-        // Verificar se o usuário quer add Audio
-        // if (audioAdd) {
-        //     let src;
-
-        //     // Tratar os link
-        //     // SoundCloud
-        //     // "https://soundcloud.com/tsukune-aono/hatsune-miku-romeo-and"
-        //     // "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/36236548&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-        //     // "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/57398445&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-
-        //     if (audioLink.includes('youtube.com')) {
-        //         let urlYoutube = videoLink.split("=");
-        //         // src = `https://www.youtube.com/embed/${urlYoutube[1]}`
-        //     }
-
-        //     // Salvando os dados no BD
-        //     await Audio.create({
-        //         tipo: 'link',
-        //         titulo: audioTitulo,
-        //         caminho: src,
-        //         id_usuario: req.session.usuario.id_usuario
-        //     })
-        // }
 
         // Setar session do usuario
         let usuario = { 
