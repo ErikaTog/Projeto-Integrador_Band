@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
+const {Banda} = require('../models')
 
 const perfilBanda = {
     error: async (req, res, next) => {
@@ -11,13 +11,13 @@ const perfilBanda = {
             raw: true,
             attributes: ['id_banda'],
             where: {
-                id_banda: req.params.id
-            }
+                id_usuario: req.session.usuario.id_usuario
+            }    
         })
   
         if(errors.length) {
             req.flash('errorValidator', errors);
-            res.redirect(`/perfil/banda/${dadosBanda.id_banda}`)
+            res.redirect(`/perfil/banda`)
             return 
         } 
 
