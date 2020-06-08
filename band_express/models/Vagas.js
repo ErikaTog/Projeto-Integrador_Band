@@ -16,7 +16,11 @@ const Vagas = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            local: {
+            cidade_vaga: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            estado_vaga: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
