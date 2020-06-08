@@ -7,9 +7,10 @@ const perfilBandaController = require('../controllers/PerfilBandaController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/perfilBanda');
 
-router.get('/:id', VerificaUsuarioLogado, perfilBandaController.show);
+//Para o perfil do  usuário da sessão
+router.get('/', VerificaUsuarioLogado, perfilBandaController.showUser);
 
-router.put('/:id', 
+router.put('/', 
 [
     // Validar a senha
     body('senha').trim()
@@ -35,5 +36,8 @@ router.put('/:id',
             }
         })
 ], BandaMiddleware.error, VerificaUsuarioLogado, perfilBandaController.changePassword);
+
+// Perfil dos usuários (busca)
+router.get('/:id', VerificaUsuarioLogado, perfilBandaController.show);
 
 module.exports = router;

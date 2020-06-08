@@ -76,7 +76,7 @@ const cadastroBandaController = {
             }],
             // e um último filtro da cidade que o usuário digitou
             where: {
-                nome: cidade
+                cidade
             },
         });
 

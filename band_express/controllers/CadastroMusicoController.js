@@ -64,9 +64,7 @@ const cadastroMuicoController = {
                 }
                 }],
                 // e um último filtro da cidade que o usuário digitou
-            where: { 
-                nome: cidade 
-            },
+            where: { cidade },
         });
         
         const idCidade = findIdCidade[0].dataValues.id_cidade;

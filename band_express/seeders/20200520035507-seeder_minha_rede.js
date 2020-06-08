@@ -58,11 +58,15 @@ module.exports = {
         },
         {
           id_usuario: 6,
-          id_usuario_seguido: 7
+          id_usuario_seguido: 2
         },
         {
           id_usuario: 6,
-          id_usuario_seguido: 8
+          id_usuario_seguido: 4
+        },
+        {
+          id_usuario: 6,
+          id_usuario_seguido: 5
         },
         {
           id_usuario: 7,
@@ -88,6 +92,10 @@ module.exports = {
           id_usuario: 9,
           id_usuario_seguido: 2
         },
+        {
+          id_usuario: 9,
+          id_usuario_seguido: 6
+        }
       ], {});
   },
 
