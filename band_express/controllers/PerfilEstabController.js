@@ -2,6 +2,10 @@ const bcrypt = require('bcrypt');
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = require('../models'); 
 
 const perfilEstabController = {
+    showUser: async (req, res) => {
+        return res.redirect('/home');
+    },
+
     show: async (req, res) => {
 
         try {
