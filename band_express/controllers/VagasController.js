@@ -102,6 +102,10 @@ const vagasController = {
 		})
 
 		res.redirect(`/vagas`);
+    },
+
+    editarVaga: async (req, res) => {
+        res.redirect(`/vagas`);
     }
 }
 
