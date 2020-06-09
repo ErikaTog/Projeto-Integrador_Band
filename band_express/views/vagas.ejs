@@ -108,10 +108,10 @@
                     </div>
                     <div>
                         <div class="form-group">
-                            <input class="form-control" id="tituloNovaVaga" name="tituloNovaVaga" placeholder="Título da vaga">
+                            <input class="form-control" maxlength="50" id="tituloNovaVaga" name="tituloNovaVaga" placeholder="Título da vaga" required>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" id="inputEstado" name="estado">
+                            <select class="form-control" id="inputEstado" name="estado" required>
                                 <option value="" disabled selected hidden>Escolha um Estado</option>
                                 <% estados.forEach((estado)=>{ %>
                                     <option><%= estado.uf %></option>
@@ -119,10 +119,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="inputCidade" name="cidade" placeholder="Cidade">
+                            <input class="form-control" maxlength="120" id="inputCidade" name="cidade" placeholder="Cidade" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="descricaoNovaVaga" name="descricaoNovaVaga" placeholder="Descrição da vaga">
+                            <input class="form-control" maxlength="200" id="descricaoNovaVaga" name="descricaoNovaVaga" placeholder="Descrição da vaga" required>
                         </div>
                     </div>
                 </div>
