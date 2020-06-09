@@ -61,10 +61,14 @@
             <div class="bio-scroll">
                 <% if (dadosMusico.sobre) { %>
                     <p class="text-justify" style="white-space: pre-wrap"><%= dadosMusico.sobre %></p>
-                <% } else { %>
+                <% } else if (dadosMusico.id_usuario === usuario.id_usuario) { %>
                     <p class="msg-incentivo">
                         Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
-                    </p>    
+                    </p>
+                <% } else { %>
+                    <p class="msg-incentivo">
+                        Se quiser mais informações sobre <%= dadosMusico.nome %> pode entrar em contato pelo <%= dadosMusico.email %>
+                    </p>
                 <% } %>
             </div>
 
@@ -79,8 +83,10 @@
                         <h4><strong>Habilidades</strong></h4>
                         <div class="scroll">
                             <div class="item row">
-                                <% if (!dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
+                                <% if (dadosMusico.id_usuario === usuario.id_usuario && !dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
                                     <p class="msg-incentivo">Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
+                                <% } else { %>
+                                    <p class="msg-incentivo"><%= dadosMusico.nome %> ainda não cadastrou as habilidades.</p>
                                 <% } %>
                                 <% if (dadosMusico.canto) { %>
                                     <div class="habilidades-item media col-xl-6 col-lg-12 col-6">
@@ -121,16 +127,20 @@
                             <img src="/img/icones/site-01.png" alt="Site">
                             <% if (dadosMusico.site) { %>
                                 <p><%= dadosMusico.site %></p>
-                            <% } else { %>
+                            <% } else if (dadosMusico.id_usuario === usuario.id_usuario) { %>
                                 <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <% } else { %>
+                                <p class="msg-incentivo">Campo não informado</p>
                             <% } %>
                         </div>
                         <div class="infos-item media">
                             <img src="/img/icones/canal-01.png" alt="Canal">
                             <% if (dadosMusico.canal) { %>
                                 <p><%= dadosMusico.canal %></p>
-                            <% } else { %>
+                            <% } else if (dadosMusico.id_usuario === usuario.id_usuario) { %>
                                 <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <% } else { %>
+                                <p class="msg-incentivo">Campo não informado</p>
                             <% } %>
                         </div>
                         <div class="infos-item media">
@@ -146,8 +156,10 @@
         <section id="minhaMusica" class="card-perfil">
             <h4><strong>Minha música</strong></h4>            
             <div class="row">
-                <% if (!videos.length && !audios.length) { %>
+                <% if (dadosMusico.id_usuario === usuario.id_usuario && !videos.length && !audios.length) { %>
                     <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+                <% } else { %>
+                    <p class="msg-incentivo"><%= dadosMusico.nome %> não divulgou nenhuma música por enquanto.</p>
                 <% } %>
                 <% if (videos.length) { %>
                     <% videos.forEach(video => { %>
@@ -222,7 +234,7 @@
                     </button>
                 </div>
                 
-                <form action="/perfil/musico/<%= dadosMusico.id_musico %>?_method=PUT" method="POST">
+                <form action="/perfil/musico?_method=PUT" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="senhaAtual">Senha atual</label>
