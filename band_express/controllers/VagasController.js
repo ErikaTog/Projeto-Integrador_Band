@@ -13,9 +13,7 @@ const vagasController = {
         const dadosBanda = await Banda.findOne({
             raw: true,
             attributes: ['id_banda'],
-            where: {
-                id_usuario: req.session.usuario.id_usuario
-            }
+            where: { id_usuario: req.session.usuario.id_usuario }
         });
 
         const dadosEstab = await Estabelecimento.findOne({ 
@@ -33,7 +31,30 @@ const vagasController = {
         const dadosVagas = await Vagas.findAll({ 
             where: { },
             raw: true,
-            attributes: ['id_vagas', 'titulo', 'descricao', 'local', 'tipo_vaga', 'id_usuario', 'usuario.nome', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
+            attributes: ['id_vagas', 'titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga', 'id_usuario', 'usuario.nome'],
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: [],
+                include: [{
+                    model: Cidade,
+                    as: 'cidade',
+                    attributes: [],
+                    include: [{
+                        model: Estado,
+                        as: 'estado',
+                        attributes: [],
+                    }]
+                }] 
+            }]
+        });
+
+        const dadosMinhasVagas = await Vagas.findAll({ 
+            where: { 
+                id_usuario: req.session.usuario.id_usuario
+            },
+            raw: true,
+            attributes: ['id_vagas', 'titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga', 'id_usuario', 'usuario.nome'],
             include: [{
                 model: Usuario,
                 as: 'usuario',
@@ -58,6 +79,7 @@ const vagasController = {
             dadosBanda,
             dadosEstab,
             dadosVagas,
+            dadosMinhasVagas,
             usuario: req.session.usuario,
             errors: req.flash('errorValidator')
         });    
@@ -73,12 +95,13 @@ const vagasController = {
         const dadosNovaVaga = await Vagas.create({
 			titulo: tituloNovaVaga,
 			descricao: descricaoNovaVaga,
-			local: cidade + " / " + estado,
+            cidade_vaga: cidade, 
+            estado_vaga: estado,
             tipo_vaga: tipoVaga,
             id_usuario: req.session.usuario.id_usuario
 		})
 
-		return res.redirect('/home')
+		res.redirect(`/vagas`);
     }
 }
 
