@@ -103,6 +103,7 @@
 
 .conteudo-minha-vaga,
 .conteudo-vaga{
+    width: 100%;
     max-width: 48.64%;
     min-width: 300px;
     min-height: 200px;
