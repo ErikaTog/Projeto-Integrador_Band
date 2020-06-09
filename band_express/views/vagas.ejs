@@ -67,8 +67,8 @@
                             <p><%= dadosMinhasVagas[i].descricao %></p>
                             <p><%= dadosMinhasVagas[i].cidade_vaga %> / <%= dadosMinhasVagas[i].estado_vaga %></p>
                             <div>
-                                <a href="">Editar</a>
-                                <a href="">Excluir</a>
+                                <a data-toggle="modal" data-target="#editarVaga"href="">Editar</a>
+                                <a data-toggle="modal" data-target="#confirmarExclusao" href="">Excluir</a>
                             </div>
                         </div>
                     <% } %>
@@ -136,32 +136,53 @@
     <!-- Modal - Editar vaga -->
     <div class="modal fade" id="editarVaga" tabindex="-1" role="dialog" aria-labelledby="modalEditarVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Editar vaga</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            </div>
-            <div class="modal-body" id="editarVaga2">
-                <form action="" method="POST">
-                    <div class="form-group" id="textareaTituloVagaDiv">
-                        <textarea class="form-control" id="textareaTituloVaga" rows="1">Título da vaga</textarea>
+            <form class="modal-content" action="/vagas/editarVaga" method="POST">
+                <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Editar vaga</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                </div>
+                <div class="modal-body" id="editarVaga2">
+                    <div action="" method="POST">
+                        <div class="form-group" id="textareaTituloVagaDiv">
+                            <textarea class="form-control" id="textareaTituloVaga" rows="1">Título da vaga</textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaLocalVaga" rows="1">Local</textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="textareaLocalVaga" rows="1">Local</textarea>
-                    </div>
-                </form>
-            </div>
-            <form action="" method="POST">
+                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-Salvar">Salvar</button>
+                    <button type="submit" class="btn btn-Salvar">Salvar</button>
                 </div>
             </form>
         </div>
+    </div>
+
+    <!-- Confirmar Exclusão -->
+    <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="danger">Tem certeza que quer excluir esta Vaga?</p>
+                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
+                </div>
+                <form class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+            </div>
         </div>
     </div>
 
