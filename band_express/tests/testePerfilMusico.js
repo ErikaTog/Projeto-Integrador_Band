@@ -139,28 +139,28 @@ const query = async () => {
      * Buscar informações do Usuario através do id_musico
      */
 
-    const dadosMusico = await Musico.findOne({ 
-        where: { id_musico: 1 },
-        raw: true,
-        attributes: ['id_musico', 'sobre', 'site', 'canal', 'canto', 'toco', 'tecnico', 'id_usuario', 'usuario.nome', 'usuario.email', 'usuario.avatar', 'usuario.wallpaper', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
-        include: [{
-            model: Usuario,
-            as: 'usuario',
-            attributes: [],
-            include: [{
-                model: Cidade,
-                as: 'cidade',
-                attributes: [],
-                include: [{
-                    model: Estado,
-                    as: 'estado',
-                    attributes: [],
-                }]
-            }] 
-        }]
-    });
+    // const dadosMusico = await Musico.findOne({ 
+    //     where: { id_musico: 1 },
+    //     raw: true,
+    //     attributes: ['id_musico', 'sobre', 'site', 'canal', 'canto', 'toco', 'tecnico', 'id_usuario', 'usuario.nome', 'usuario.email', 'usuario.avatar', 'usuario.wallpaper', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
+    //     include: [{
+    //         model: Usuario,
+    //         as: 'usuario',
+    //         attributes: [],
+    //         include: [{
+    //             model: Cidade,
+    //             as: 'cidade',
+    //             attributes: [],
+    //             include: [{
+    //                 model: Estado,
+    //                 as: 'estado',
+    //                 attributes: [],
+    //             }]
+    //         }] 
+    //     }]
+    // });
 
-    console.log(dadosMusico);
+    // console.log(dadosMusico);
 
     // let telefone = "1146043255";
     // const ddd = telefone.slice(0,2);
@@ -171,6 +171,64 @@ const query = async () => {
     // console.log(telefoneParte2)
     // telefone = `(${ddd}) ${telefoneParte1}-${telefoneParte2}`
     // console.log(telefone)
+
+    // Buscar informação da tabela usuario e músico - id_usuario
+    // const dadosMusico = await Usuario.findOne({ 
+    //     where: { id_usuario: 2 },
+    //     raw: true,
+    //     attributes: [ 'id_usuario', 'nome', 'email', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf', 'musico.id_musico', 'musico.sobre', 'musico.site', 'musico.canal', 'musico.canto', 'musico.toco', 'musico.tecnico'],
+    //     include: [{
+    //         model: Cidade,
+    //         as: 'cidade',
+    //         attributes: [],
+    //         include: [{
+    //             model: Estado,
+    //             as: 'estado',
+    //             attributes: [],
+    //         }],
+    //     }],
+    //     include: [{
+    //         model: Musico,
+    //         as: 'musico',
+    //         attributes: [],
+    //     }]
+    // });
+
+    // console.log(dadosMusico)
+
+    // Busca na tabela Usuario e Musico
+    const buscaMusico = await Usuario.findOne({ 
+        where: { id_usuario: 2 },
+        raw: true,
+        attributes: [ 'id_usuario', 'nome', 'email', 'avatar', 'wallpaper', 'musico.id_musico', 'musico.sobre', 'musico.site', 'musico.canal', 'musico.canto', 'musico.toco', 'musico.tecnico'],
+        include: [{
+            model: Musico,
+            as: 'musico',
+            attributes: [],
+        }]
+    });
+
+    // Busca cidade e UF
+    const buscaLocal = await Usuario.findOne({ 
+        where: { id_usuario: 2 },
+        raw: true,
+        attributes: ['cidade.cidade', 'cidade.estado.uf'],
+        include: [{
+            model: Cidade,
+            as: 'cidade',
+            attributes: [],
+            include: [{
+                model: Estado,
+                as: 'estado',
+                attributes: [],
+            }],
+        }]
+    });
+
+    // Concatenar os objetos de busca
+    let dadosMusico = Object.assign({}, buscaMusico, buscaLocal);
+
+    console.log(dadosMusico);
 }
 
 query();
