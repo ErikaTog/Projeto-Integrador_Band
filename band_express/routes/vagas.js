@@ -8,7 +8,10 @@ const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 router.get('/', VerificaUsuarioLogado, vagasController.show);
 
 router.get('/novaVaga', VerificaUsuarioLogado, vagasController.show);
-router.post('/novaVaga', VerificaUsuarioLogado, vagasController.novaVaga); 
+router.post('/novaVaga', VerificaUsuarioLogado, vagasController.novaVaga);
+
+router.get('/editarVaga', VerificaUsuarioLogado, vagasController.show);
+router.put('/editarVaga', VerificaUsuarioLogado, vagasController.editarVaga); 
 
 
 module.exports = router;
