@@ -118,13 +118,19 @@
     justify-content: space-between;
 }
 
+.conteudo-minha-vaga a,
 .conteudo-vaga a{
     color: #fb3c00;
 }
 
+.conteudo-minha-vaga a:hover,
 .conteudo-vaga a:hover{
     color: #282a36;
     text-decoration: none;
+}
+
+.conteudo-minha-vaga div a:first-child{
+    margin-right: 10px;
 }
 
 .feed-vagas-conteudo .botao{
