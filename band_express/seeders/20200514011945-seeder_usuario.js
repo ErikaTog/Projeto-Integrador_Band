@@ -15,7 +15,7 @@ module.exports = {
           admin: 1,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/banda/1",
+          link_perfil: "http://localhost:3000/perfil/banda/1",
           id_tipos_perfil: 2,
         },
         {
@@ -28,7 +28,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/1",
+          link_perfil: "http://localhost:3000/perfil/musico/1",
           id_tipos_perfil: 1,
         },
         {
@@ -41,7 +41,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/estabelecimento/1",
+          link_perfil: "http://localhost:3000/perfil/estabelecimento/1",
           id_tipos_perfil: 3,
         },
         {
@@ -54,7 +54,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/2",
+          link_perfil: "http://localhost:3000/perfil/musico/2",
           id_tipos_perfil: 1,
         },
         {
@@ -67,7 +67,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/3",
+          link_perfil: "http://localhost:3000/perfil/musico/3",
           id_tipos_perfil: 1,
         },
         {
@@ -80,7 +80,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/banda/2",
+          link_perfil: "http://localhost:3000/perfil/banda/2",
           id_tipos_perfil: 2,
         },
         {
@@ -93,7 +93,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/estabelecimento/2",
+          link_perfil: "http://localhost:3000/perfil/estabelecimento/2",
           id_tipos_perfil: 3,
         },
         {
@@ -106,7 +106,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/banda/3",
+          link_perfil: "http://localhost:3000/perfil/banda/3",
           id_tipos_perfil: 2,
         },
         {
@@ -119,7 +119,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/estabelecimento/3",
+          link_perfil: "http://localhost:3000/perfil/estabelecimento/3",
           id_tipos_perfil: 3,
         },
         {
@@ -132,7 +132,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/4",
+          link_perfil: "http://localhost:3000/perfil/musico/4",
           id_tipos_perfil: 1,
         },
         {
@@ -145,7 +145,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/5",
+          link_perfil: "http://localhost:3000/perfil/musico/5",
           id_tipos_perfil: 1,
         },
         {
@@ -158,7 +158,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/6",
+          link_perfil: "http://localhost:3000/perfil/musico/6",
           id_tipos_perfil: 1,
         },
         {
@@ -171,7 +171,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/7",
+          link_perfil: "http://localhost:3000/perfil/musico/7",
           id_tipos_perfil: 1, 
         },
         {
@@ -184,7 +184,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/8",
+          link_perfil: "http://localhost:3000/perfil/musico/8",
           id_tipos_perfil: 1, 
         }, 
         {
@@ -197,7 +197,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/9",
+          link_perfil: "http://localhost:3000/perfil/musico/9",
           id_tipos_perfil: 1, 
         }, 
         {
@@ -210,7 +210,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/10",
+          link_perfil: "http://localhost:3000/perfil/musico/10",
           id_tipos_perfil: 1, 
         }, 
         {
@@ -223,7 +223,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/musico/11",
+          link_perfil: "http://localhost:3000/perfil/musico/11",
           id_tipos_perfil: 1, 
         }, 
         {
@@ -236,7 +236,7 @@ module.exports = {
           admin: 0,
           avatar: '/img/avatar_zero.png',
           wallpaper: '/img/fundo_zero.png',
-          link_perfil: "localhost:3000/perfil/estabelecimento/4",
+          link_perfil: "http://localhost:3000/perfil/estabelecimento/4",
           id_tipos_perfil: 3, 
         }
       ], {});
