@@ -19,8 +19,12 @@ module.exports = {
           type: Sequelize.STRING(200),
           allowNull: false
         },
-        local: {
-          type: Sequelize.STRING(50),
+        cidade_vaga: {
+          type: Sequelize.STRING(120),
+          allowNull: false
+        },
+        estado_vaga: {
+          type: Sequelize.STRING(2),
           allowNull: false
         },
         tipo_vaga: {

@@ -7,8 +7,8 @@ const perfilEstabController = require('../controllers/PerfilEstabController');
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const EstabMiddleware = require('../middlewares/perfilEstab');
 
-router.get('/:id', VerificaUsuarioLogado, perfilEstabController.show);
-router.put('/:id', 
+router.get('/', VerificaUsuarioLogado, perfilEstabController.showUser);
+router.put('/', 
 [
     // Validar a senha
     body('senha').trim()
@@ -36,5 +36,7 @@ router.put('/:id',
 ],
 EstabMiddleware.error, 
 perfilEstabController.changePassword);
+
+router.get('/:id', VerificaUsuarioLogado, perfilEstabController.show);
 
 module.exports = router;

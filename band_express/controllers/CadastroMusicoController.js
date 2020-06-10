@@ -43,8 +43,9 @@ const cadastroMuicoController = {
 
         let { nome, senha, email, sexo, sobre, estado, cidade, site, canal, canto, toco, tecnico, instrumento, habilidadeTecnica } = req.body;
 
-        nome = nome.trim(); 
+        nome = nome.trim();
         senha = senha.trim();
+        senha = bcrypt.hashSync(senha, 10);
         email = email.trim();
         sobre = sobre ? sobre.trim() : '';
         site = site ? site.trim(): '';
@@ -74,7 +75,7 @@ const cadastroMuicoController = {
         const dadosUsuario = await Usuario.create({
             nome,
             email,
-            senha: bcrypt.hashSync(senha, 10),
+            senha,
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
@@ -133,7 +134,7 @@ const cadastroMuicoController = {
         }
 
         // Setar session do usuario
-        let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, id_tipos_perfil: 1};
+        let usuario = { id_usuario:dadosUsuario.id_usuario, nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 1};
 
         req.session.usuario = usuario;
 

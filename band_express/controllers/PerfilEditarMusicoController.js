@@ -210,6 +210,7 @@ const perfilEditarMusicoController = {
             nome: dadosUsuario.nome, 
             senha: dadosUsuario.senha, 
             email: dadosUsuario.email,
+            avatar: dadosUsuario.avatar,
             id_tipos_perfil: 1
         };
 
@@ -217,7 +218,7 @@ const perfilEditarMusicoController = {
 
         res.cookie('logado', usuario.email, { maxAge: 900000 });
         
-        res.redirect(`/perfil/musico/${dadosMusico.id_musico}`);
+        res.redirect("/perfil/musico");
     },
     saveSkills: async (req, res) => {
 
@@ -308,6 +309,9 @@ const perfilEditarMusicoController = {
         dadosUsuario.avatar = pathFile;
 
         await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Setar o novo avatar
+        req.session.usuario.avatar = pathFile;
 
         res.redirect(`/perfil/editar/musico`);
 

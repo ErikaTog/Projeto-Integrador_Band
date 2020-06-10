@@ -2,7 +2,7 @@ const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = requi
 
 const vagasController = {
 
-    view: async (req, res) => {
+    show: async (req, res) => {
         
         const dadosMusico = await Musico.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario },
@@ -13,9 +13,7 @@ const vagasController = {
         const dadosBanda = await Banda.findOne({
             raw: true,
             attributes: ['id_banda'],
-            where: {
-                id_usuario: req.session.usuario.id_usuario
-            }
+            where: { id_usuario: req.session.usuario.id_usuario }
         });
 
         const dadosEstab = await Estabelecimento.findOne({ 
@@ -24,10 +22,39 @@ const vagasController = {
             attributes: ['id_estab'] 
         });
 
+        // Buscar lista de Estados
+        const estados = await Estado.findAll({ 
+            raw: true,
+            attributes: ['uf'] 
+        });
+
         const dadosVagas = await Vagas.findAll({ 
             where: { },
             raw: true,
-            attributes: ['id_vagas', 'titulo', 'descricao', 'local', 'tipo_vaga', 'id_usuario', 'usuario.nome', 'usuario.cidade.cidade', 'usuario.cidade.estado.uf'],
+            attributes: ['id_vagas', 'titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga', 'id_usuario', 'usuario.nome'],
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: [],
+                include: [{
+                    model: Cidade,
+                    as: 'cidade',
+                    attributes: [],
+                    include: [{
+                        model: Estado,
+                        as: 'estado',
+                        attributes: [],
+                    }]
+                }] 
+            }]
+        });
+
+        const dadosMinhasVagas = await Vagas.findAll({ 
+            where: { 
+                id_usuario: req.session.usuario.id_usuario
+            },
+            raw: true,
+            attributes: ['id_vagas', 'titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga', 'id_usuario', 'usuario.nome'],
             include: [{
                 model: Usuario,
                 as: 'usuario',
@@ -47,14 +74,38 @@ const vagasController = {
 
         res.render('vagas', { 
             title: 'Vagas',
+            estados,
             dadosMusico,
             dadosBanda,
             dadosEstab,
             dadosVagas,
+            dadosMinhasVagas,
             usuario: req.session.usuario,
             errors: req.flash('errorValidator')
-        });
-            
+        });    
+    },
+
+    novaVaga: async (req, res) => {
+        let { tipoVaga, tituloNovaVaga, estado, cidade, descricaoNovaVaga } = req.body;
+
+        tituloNovaVaga = tituloNovaVaga.trim();
+        descricaoNovaVaga = descricaoNovaVaga.trim();
+        cidade = cidade.trim();
+
+        const dadosNovaVaga = await Vagas.create({
+			titulo: tituloNovaVaga,
+			descricao: descricaoNovaVaga,
+            cidade_vaga: cidade, 
+            estado_vaga: estado,
+            tipo_vaga: tipoVaga,
+            id_usuario: req.session.usuario.id_usuario
+		})
+
+		res.redirect(`/vagas`);
+    },
+
+    editarVaga: async (req, res) => {
+        res.redirect(`/vagas`);
     }
 }
 

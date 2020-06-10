@@ -142,6 +142,7 @@ const perfilEditarEstabController = {
             nome: dadosUsuario.nome, 
             senha: dadosUsuario.senha, 
             email: req.session.usuario.email,
+            avatar: dadosUsuario.avatar,
             id_tipos_perfil: 3
         };
 
@@ -189,6 +190,7 @@ const perfilEditarEstabController = {
 
         await dadosUsuario.save({ fields: ['avatar'] });
 
+        req.session.usuario.avatar = pathFile;
 
         res.redirect(`/perfil/editar/estabelecimento`);
     },

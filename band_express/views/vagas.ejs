@@ -50,23 +50,28 @@
                             <input type="radio" id="customRadio8" name="radioFeed" class="custom-control-input">
                             <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
                         </div>
-                        
                     </div>
-                    <% for( let i = 0; i < 10; i++ ) { %>
+
+                    <% for( let i = 0; i < dadosVagas.length; i++ ) { %>
                         <div class="conteudo-vaga">
                             <h5><%= dadosVagas[i].titulo %></h5>
                             <p><%= dadosVagas[i].descricao %></p>
-                            <p><%= dadosVagas[i].cidade %> / <%= dadosVagas[i].uf %></p>
+                            <p><%= dadosVagas[i].cidade_vaga %> / <%= dadosVagas[i].estado_vaga %></p>
                             <a href=""><%= dadosVagas[i].nome %></a>
                         </div>
                     <% } %>
 
-                    <!-- Cards MInhas Vagas -->
-                    <!-- <button type="button" class="conteudo-minha-vaga" data-toggle="modal" data-target="#editarVaga">
-                        <h5>Exemplo - Minhas Vagas</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>
-                        <p>Local</p>
-                    </button> -->
+                    <% for( let i = 0; i < dadosMinhasVagas.length; i++ ) { %>
+                        <div class="conteudo-minha-vaga">
+                            <h5><%= dadosMinhasVagas[i].titulo %></h5>
+                            <p><%= dadosMinhasVagas[i].descricao %></p>
+                            <p><%= dadosMinhasVagas[i].cidade_vaga %> / <%= dadosMinhasVagas[i].estado_vaga %></p>
+                            <div>
+                                <a data-toggle="modal" data-target="#editarVaga"href="">Editar</a>
+                                <a data-toggle="modal" data-target="#confirmarExclusao" href="">Excluir</a>
+                            </div>
+                        </div>
+                    <% } %>
                     
                     <div class="botao">
                         <button type="button" class="btn btn-mais">+ Vagas</button>
@@ -79,76 +84,105 @@
     <!-- Modal - Publicar Vaga -->
     <div class="modal fade" id="publicarNovaVaga" tabindex="-1" role="dialog" aria-labelledby="modalPublicarNovaVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Publicar nova vaga</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            </div>
-            <div class="modal-body" id="publicarNovaVaga2">
+            <form class="modal-content" action="/vagas/novaVaga" method="POST" >
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Publicar nova vaga</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body" id="publicarNovaVaga2">
                     <div class="radio">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" checked>
-                            <label class="custom-control-label" for="customRadio1">Banda</label>
+                            <input type="radio" id="tipoVaga1" name="tipoVaga" class="custom-control-input" value="Banda" checked>
+                            <label class="custom-control-label" for="tipoVaga1">Banda</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Professor</label>
+                            <input type="radio" id="tipoVaga2" name="tipoVaga" class="custom-control-input" value="Professor">
+                            <label class="custom-control-label" for="tipoVaga2">Professor</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Estabecimento</label>
+                            <input type="radio" id="tipoVaga3" name="tipoVaga" class="custom-control-input" value="Estabecimento">
+                            <label class="custom-control-label" for="tipoVaga3">Estabecimento</label>
                         </div>
                     </div>
-                    <form action="" method="POST">
+                    <div>
                         <div class="form-group">
-                            <input type="títuloNovaVaga" class="form-control" id="títuloNovaVaga" placeholder="Título da vaga">
+                            <input class="form-control" maxlength="50" id="tituloNovaVaga" name="tituloNovaVaga" placeholder="Título da vaga" required>
                         </div>
                         <div class="form-group">
-                            <input type="localNovaVaga" class="form-control" id="localNovaVaga2" placeholder="Local">
+                            <select class="form-control" id="inputEstado" name="estado" required>
+                                <option value="" disabled selected hidden>Escolha um Estado</option>
+                                <% estados.forEach((estado)=>{ %>
+                                    <option><%= estado.uf %></option>
+                                <% }) %>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <input type="descriçãoNovaVaga" class="form-control" id="descriçãoNovaVaga" placeholder="Descrição da vaga">
+                            <input class="form-control" maxlength="120" id="inputCidade" name="cidade" placeholder="Cidade" required>
                         </div>
-                    </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-Publicar">Publicar</button>
-            </div>
-        </div>
+                        <div class="form-group">
+                            <input class="form-control" maxlength="200" id="descricaoNovaVaga" name="descricaoNovaVaga" placeholder="Descrição da vaga" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-Publicar">Publicar</button>
+                </div>
+            </form>
         </div>
     </div>
 
     <!-- Modal - Editar vaga -->
     <div class="modal fade" id="editarVaga" tabindex="-1" role="dialog" aria-labelledby="modalEditarVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Editar vaga</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-            </button>
-            </div>
-            <div class="modal-body" id="editarVaga2">
-                <form action="" method="POST">
-                    <div class="form-group" id="textareaTituloVagaDiv">
-                        <textarea class="form-control" id="textareaTituloVaga" rows="1">Título da vaga</textarea>
+            <form class="modal-content" action="/vagas/editarVaga" method="POST">
+                <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Editar vaga</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                </div>
+                <div class="modal-body" id="editarVaga2">
+                    <div action="" method="POST">
+                        <div class="form-group" id="textareaTituloVagaDiv">
+                            <textarea class="form-control" id="textareaTituloVaga" rows="1">Título da vaga</textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="textareaLocalVaga" rows="1">Local</textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="textareaLocalVaga" rows="1">Local</textarea>
-                    </div>
-                </form>
-            </div>
-            <form action="" method="POST">
+                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-Salvar">Salvar</button>
+                    <button type="submit" class="btn btn-Salvar">Salvar</button>
                 </div>
             </form>
         </div>
+    </div>
+
+    <!-- Confirmar Exclusão -->
+    <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="danger">Tem certeza que quer excluir esta Vaga?</p>
+                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
+                </div>
+                <form class="modal-footer">
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+            </div>
         </div>
     </div>
 
