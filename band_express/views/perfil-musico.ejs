@@ -27,11 +27,11 @@
                 <h3><strong><%= dadosMusico.nome %> </strong></h3>
                 <div class="info-user-status">
                     <div class="media">
-                        <img src="/img/icones/icon_star.svg">
+                        <i class="fas fa-star"></i>
                         <p>Seguidores: <%= seguidores %> </p>
                     </div>
                     <div class="media">
-                        <img src="/img/icones/icon_headset.svg">
+                        <i class="fas fa-headphones-alt fone"></i>
                         <p>Seguindo: <%= seguindo %> </p>
                     </div>
                 </div>
@@ -50,6 +50,12 @@
                             Alterar Senha
                         </a>
                     </div>
+                </div>
+            <% } else { %>
+                <div class="config">
+                    <button type="button" class="btn-config">
+                        <i class="fas fa-headphones-alt"></i>
+                    </button>
                 </div>
             <% } %>
         </section>
