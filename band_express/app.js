@@ -25,6 +25,7 @@ var anuncieRouter = require('./routes/anuncie');
 var vagasRouter = require('./routes/vagas');
 var minhaRedeRouter = require('./routes/minhaRede');
 var feedbackRouter = require('./routes/feedback');
+var ajudaRouter = require('./routes/ajuda');
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -68,7 +69,7 @@ app.use('/anuncie', anuncieRouter);
 app.use('/vagas', vagasRouter);
 app.use('/minhaRede', minhaRedeRouter);
 app.use('/feedback', feedbackRouter);
-
+app.use('/ajuda', ajudaRouter);
 
 
 // catch 404 and forward to error handler
