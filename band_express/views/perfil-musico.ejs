@@ -85,7 +85,7 @@
                             <div class="item row">
                                 <% if (dadosMusico.id_usuario === usuario.id_usuario && !dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
                                     <p class="msg-incentivo">Adicione suas habilidades para que o seu perfil ganhe mais destaque.</p>
-                                <% } else { %>
+                                <% } else if (dadosMusico.id_usuario !== usuario.id_usuario && !dadosMusico.canto && !instrumentos.length && !tecnicos.length) { %>
                                     <p class="msg-incentivo"><%= dadosMusico.nome %> ainda não cadastrou as habilidades.</p>
                                 <% } %>
                                 <% if (dadosMusico.canto) { %>
@@ -158,7 +158,7 @@
             <div class="row">
                 <% if (dadosMusico.id_usuario === usuario.id_usuario && !videos.length && !audios.length) { %>
                     <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
-                <% } else { %>
+                <% } else if (dadosMusico.id_usuario !== usuario.id_usuario && !videos.length && !audios.length) { %>
                     <p class="msg-incentivo"><%= dadosMusico.nome %> não divulgou nenhuma música por enquanto.</p>
                 <% } %>
                 <% if (videos.length) { %>
