@@ -132,24 +132,24 @@ const minhaRedeController = {
                 id_estado: localUsuario.id_estado
             }
         });
-        console.log(usuariosEstado)
+        // console.log(usuariosEstado)
 
         //Criando lista de id_usuários que tem o mesmo estado
         let idsEst = []
         usuariosEstado.forEach(usuario => {
             idsEst.push(usuario.id_usuario)
         });
-        console.log(idsEst)
+        // console.log(idsEst)
 
         //Iterando sobre idSeguindo, comparando com idsEstados e retirando ele mesmo e os que ele já segue
         idSeguindo.forEach(idseg => {
             if (idsEst.indexOf(idseg) != -1){
                 idsEst.splice(idsEst.indexOf(idseg), 1)
-                console.log(idsEst)
+                // console.log(idsEst)
             }
         });
         idsEst.splice(idsEst.indexOf(req.session.usuario.id_usuario), 1)
-        console.log(idsEst)
+        // console.log(idsEst)
 
 
         //Criando lista de id_usuários seguidores
@@ -159,11 +159,11 @@ const minhaRedeController = {
         });
         console.log(idSeguidores)
 
-         //Iterando sobre idSeguidores, comparando com o que sobrou em idsEst e retirando seus seguidores
+        //Iterando sobre idSeguidores, comparando com o que sobrou em idsEst e retirando seus seguidores
          idSeguidores.forEach(idseg => {
             if (idsEst.indexOf(idseg) != -1){
                 idsEst.splice(idsEst.indexOf(idseg), 1)
-                console.log(idsEst)
+                // console.log(idsEst)
             }
         });         
 
@@ -174,7 +174,7 @@ const minhaRedeController = {
             where:{
                 id_usuario: idsEst
             },
-            // limit: 10
+            limit: 20
         });
         console.log(geral)
         
@@ -186,11 +186,27 @@ const minhaRedeController = {
             dadosEstab, 
             seguindo,
             seguidores,
-            recomendados
+            recomendados,
+            geral
         })    
-    
-    }       
-    
+    }, 
+
+    busca: async (req, res) => {   
+        let {buscar} = req.body
+        console.log(buscar)
+
+        let encontrado = await Usuario.findOne({
+            raw: true,
+            attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
+            where:{
+                nome: buscar
+            }           
+        });
+        console.log(encontrado)
+
+        //TERMINAR DE DESENVOLVER
+       
+    }
     
 }
 
