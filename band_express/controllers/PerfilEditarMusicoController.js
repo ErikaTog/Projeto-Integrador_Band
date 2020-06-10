@@ -217,7 +217,7 @@ const perfilEditarMusicoController = {
 
         res.cookie('logado', usuario.email, { maxAge: 900000 });
         
-        res.redirect(`/perfil/musico/${dadosMusico.id_musico}`);
+        res.redirect("/perfil/musico");
     },
     saveSkills: async (req, res) => {
 
