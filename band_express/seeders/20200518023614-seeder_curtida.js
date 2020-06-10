@@ -19,7 +19,27 @@ module.exports = {
         {
           id_post: 1,
           id_usuario: 9,
-        }
+        }, 
+        {
+          id_post: 2,
+          id_usuario: 1,
+        },
+        {
+          id_post: 2,
+          id_usuario: 3,
+        },
+        {
+          id_post: 3,
+          id_usuario: 4,
+        },
+        {
+          id_post: 3,
+          id_usuario: 1,
+        },
+        {
+          id_post: 3,
+          id_usuario: 9,
+        }, 
       ], {});
   },
   
