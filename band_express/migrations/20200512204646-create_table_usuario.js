@@ -66,7 +66,8 @@ module.exports = {
         },
         link_perfil: {
             type: Sequelize.STRING(100),
-            allowNull: true
+            allowNull: false,
+            unique: true
         },
         id_tipos_perfil: {
           type: Sequelize.INTEGER,
