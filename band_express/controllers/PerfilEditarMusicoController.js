@@ -210,6 +210,7 @@ const perfilEditarMusicoController = {
             nome: dadosUsuario.nome, 
             senha: dadosUsuario.senha, 
             email: dadosUsuario.email,
+            avatar: dadosUsuario.avatar,
             id_tipos_perfil: 1
         };
 
@@ -308,6 +309,9 @@ const perfilEditarMusicoController = {
         dadosUsuario.avatar = pathFile;
 
         await dadosUsuario.save({ fields: ['avatar'] });
+
+        // Setar o novo avatar
+        req.session.usuario.avatar = pathFile;
 
         res.redirect(`/perfil/editar/musico`);
 
