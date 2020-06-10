@@ -30,7 +30,16 @@
                 <h3>Edição Salva</h3>
                 <p>Alterações realizada com sucesso!</p>
                 <p>Continue explorando a sua rede...</p>
-                <a href="/perfil"><button type="button" class="btn btn-salvar-modal">Voltar</button></a>
+                <a
+                    <% if (usuario.id_tipos_perfil == 1) { %>
+                        href="/perfil/musico"
+                    <% } else if (usuario.id_tipos_perfil == 2) { %>
+                        href="/perfil/banda"
+                    <% } else { %>
+                        href="/perfil/estabelecimento"
+                    <% } %>
+                    >
+                <button type="button" class="btn btn-salvar-modal">Voltar</button></a>
             </div>
         </div>
     </div>
