@@ -6,18 +6,18 @@
     <!-- Grupo User Card -->
                 <section id="userCard" class="card-feed">
                     <div class="user-info">
-                        <div class="avatar-content">
-                            <a href="perfil-musico.html">
-                                <img class="avatar" src="/img/teste/jane.jpg" alt="Avatar">
-                            </a>
-                        </div>
-                        <h5>Jane Doe</h5>
+                        <a href="<%= link %>">
+                            <div class="avatar-content">
+                                <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
+                            </div>
+                            <h5>Jane Doe</h5>
+                        </a>
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <div class="media divisoria">
                                     <i class="fas fa-star"></i>
                                     <div class="media-body">
-                                        <p>12 M</p>
+                                        <p><%= seguidores %></p>
                                         <small>Seguidores</small>
                                     </div>
                                 </div>
@@ -26,7 +26,7 @@
                                 <div class="media">
                                     <i class="fas fa-headphones-alt fone"></i>
                                     <div class="media-body">
-                                        <p>250</p>
+                                        <p><%= seguindo %></p>
                                         <small>Seguindo</small>
                                     </div>
                                 </div>

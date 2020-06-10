@@ -96,7 +96,7 @@ const cadastroMuicoController = {
         });
         
         // Salvar o campo link_perfil
-        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosMusico.id_musico}`;
+        dadosUsuario.link_perfil = `http://localhost:3000/perfil/musico/${dadosMusico.id_musico}`;
         await dadosUsuario.save({ fields: ['link_perfil'] });
 
         if (toco) {
