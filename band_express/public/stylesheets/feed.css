@@ -19,6 +19,7 @@ img.mini-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .col-md-3 {
@@ -47,6 +48,7 @@ img.avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 #userCard h5 {
@@ -73,9 +75,14 @@ img.avatar {
     border-right: 1px solid #fb754b;
 }
 
-#userCard .media img {
-    width: 30px;
+#userCard .media i {
+    color: #fb3c00;
+    font-size: 2.5rem;
     align-self: center;
+}
+
+#userCard .media i.fone {
+    font-size: 2.8rem;
 }
 
 #userCard small {
@@ -136,9 +143,11 @@ img.avatar {
     padding-left: 1.5rem;
 }
 
-#newUser img.seguir {
-    width: 5rem;
+#newUser i {
+    color: #4c4f66;
+    font-size: 2.8rem;
     padding: 0 1rem;
+    cursor: pointer;
 }
 
 /* --------------------fim_do_Grupo_New_User--------------------- */
@@ -191,26 +200,30 @@ img.avatar {
     transition-duration: 0.25s;
 }
 
-.image-upload > input {
+.upload > input {
     display: none;
 }
 
-.image-upload label {
+.upload label {
     margin: 0;
     display: flex;
 }
 
-.image-upload img,
-.image-upload i {
+.upload img,
+.upload i {
     color: #4c4f66;
     width: 25px;
-    font-size: 25px;
+    font-size: 2.5rem;
     margin-right: 1.5rem;
     transition-duration: 0.25s;
 }
 
-.image-upload img:hover,
-.image-upload i:hover {
+.upload i.link {
+    font-size: 2.2rem;
+}
+
+.upload img:hover,
+.upload i:hover {
     cursor: pointer;
     opacity: 0.8;
 }
@@ -303,9 +316,12 @@ img.avatar {
     #userCard .media.divisoria {
         border-right: none;
     }
-    #userCard .media img {
-        width: 20px;
+    #userCard .media i {
+        font-size: 2rem;
         margin: 0 1rem;
+    }
+    #userCard .media i.fone {
+        font-size: 2.3rem;
     }
     #userCard .media-body {
         display: flex;
@@ -445,10 +461,13 @@ img.avatar {
         margin-top: 2rem;
         margin-bottom: 0.5rem;
     }
-    #userCard .media img {
-        width: 15px;
+    #userCard .media i {
+        font-size: 1.2rem;
         margin: 0 0.5rem;
         align-self: center;
+    }
+    #userCard .media i.fone {
+        font-size: 1.5rem;
     }
     #userCard .media-body,
     #userCard small {
@@ -486,8 +505,8 @@ img.avatar {
     #newUser .media a p {
         padding-left: 1rem;
     }
-    #newUser img.seguir {
-        width: 4rem;
+    #newUser i {
+        font-size: 2rem;
     }
     
     #publicar {
@@ -505,14 +524,14 @@ img.avatar {
     ::-webkit-input-placeholder{
         font-size: 1.4rem;
     }
-    .add .image-upload {
+    .add .upload {
         margin-right: 1rem;
     }
-    .image-upload label {
+    .upload label {
         width: 20px;
     }
-    .image-upload img,
-    .image-upload i {
+    .upload img,
+    .upload i {
         width: 20px;
         font-size: 20px;
         margin-right: 1rem;
