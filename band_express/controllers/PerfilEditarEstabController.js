@@ -150,8 +150,7 @@ const perfilEditarEstabController = {
 
         res.cookie('logado', usuario.email, { maxAge: 900000 });
         
-        res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
-
+        res.redirect(`/feedback`);
     },
 
     changeAvatar: async (req, res, next) => {
