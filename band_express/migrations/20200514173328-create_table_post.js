@@ -26,8 +26,15 @@ module.exports = {
       imagem: {
         type: Sequelize.STRING
       },
-      video: {
+      video_arquivo: {
         type: Sequelize.STRING
+      },
+      video_link: {
+        type: Sequelize.STRING
+      },
+      data_post: {
+        type: Sequelize.DATE,
+        allowNull: false
       },
       curtido: {
         type: Sequelize.BOOLEAN,
