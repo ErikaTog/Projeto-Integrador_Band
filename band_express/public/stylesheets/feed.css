@@ -257,6 +257,7 @@ img.avatar {
 #publicacao .card-feed {
     padding: 1.5rem 0;
     margin-top: 30px;
+    overflow: hidden;
 }
 
 #publicacao .media {
@@ -278,12 +279,29 @@ img.avatar {
 
 .img-public {
     width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    object-fit: cover;
 }
 
 #publicacao p {
     text-align: justify;
-    padding: 3rem 2.5rem;
+    padding: 0 2.5rem 3rem;
     box-shadow: 0 4px 6px -6px #999999;
+}
+
+#publicacao video {
+    width: 100%;
+    height: 360px;
+    background-color: #000;
+    margin-bottom: 2rem;
+}
+
+#publicacao iframe {
+    width: 100%;
+    height: 360px;
+    background-color: #000;
+    margin-bottom: 2rem;
 }
 
 .curtir {
@@ -366,9 +384,22 @@ img.avatar {
     #publicacao .media {
         margin-left: 2.5rem;
     }
-    #publicacao p {
-        padding: 1.5rem 2.5rem;
+    .img-public {
+        height: 320px;
+        margin-bottom: 1.5rem;
     }
+    #publicacao p {
+        padding: 0 2.5rem 1.5rem;
+    }
+    #publicacao video {
+        height: 320px;
+        margin-bottom: 1.5rem;
+    }
+    #publicacao iframe {
+        height: 320px;
+        margin-bottom: 1.5rem;
+    }
+
     .curtir {
         margin-left: 2.5rem;
     }
@@ -548,8 +579,17 @@ img.avatar {
         margin-left: 2rem;
         margin-bottom: 1rem;
     }
+    .img-public {
+        height: 200px;
+    }
     #publicacao p {
-        padding: 2rem 1.5rem;
+        padding: 0 1.5rem 2rem;
+    }    
+    #publicacao video {
+        height: 200px;
+    }
+    #publicacao iframe {
+        height: 200px;
     }
     .curtir {
         margin-top: 1rem;
