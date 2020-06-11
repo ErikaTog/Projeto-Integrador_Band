@@ -116,13 +116,17 @@ const perfilEditarBandaController = {
             audios,
             estados,
             errors: req.flash('errorValidator'),
-            errorsImage: req.flash('errorImage')
+            errorsImage: req.flash('errorImage'),
+            errorsUpload: req.flash('errorUpload')
         });
     },
 
        change: async (req, res) => {
 
-        let { nome, sobre, funcao, estado, cidade, site, canal, email } = req.body;
+        let { nome, sobre, funcao, estado, cidade, site, canal, email, videoAdd, videoTitulo, videoLink} = req.body;
+
+        videoTitulo = videoTitulo.trim();
+        videoLink = videoLink.trim();
     
         const dadosUsuario = await Usuario.findOne({ 
             where: { 
@@ -178,7 +182,38 @@ const perfilEditarBandaController = {
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'email', 'id_cidade', 'id_estado'] });
         await dadosBanda.save({ fields: ['sobre', 'site', 'canal'] });
-        
+
+        // Verificar se o usuário quer add vídeo
+         if (videoAdd) {
+            let src;
+
+            // Tratar os link
+            // YouTube
+            if (videoLink.includes('youtube.com')) {
+                let urlYoutube = videoLink.split("=");
+                src = `https://www.youtube.com/embed/${urlYoutube[1]}`
+            }
+
+            // Vimeo 
+            if (videoLink.includes('vimeo.com')) {
+                let urlVimeo = videoLink.split("/");
+                src = `https://player.vimeo.com/video/${urlVimeo[3]}`
+            }
+
+            // Dailymotion
+            if (videoLink.includes('dailymotion.com')) {
+                let urlDaily = videoLink.split("/");
+                src = `https://www.dailymotion.com/embed/video/${urlDaily[4]}`
+            }  
+            
+            // Salvando os dados no BD
+             await Video.create({
+                tipo: 'link',
+                titulo: videoTitulo,
+                caminho: src,
+                id_usuario: req.session.usuario.id_usuario
+            })
+        }
 
         // Setar session do usuario
         let usuario = { 
@@ -186,6 +221,7 @@ const perfilEditarBandaController = {
             nome: dadosUsuario.nome, 
             senha: dadosUsuario.senha, 
             email: dadosUsuario.email,
+            avatar: dadosUsuario.avatar,
             id_tipos_perfil: 2
         };
 
@@ -193,7 +229,7 @@ const perfilEditarBandaController = {
 
         res.cookie('logado', usuario.email, { maxAge: 900000 });
         
-        res.redirect(`/perfil/banda/${dadosBanda.id_banda}`);
+        res.redirect("/feedback");
     },
 
     saveMembers: async (req, res) => {
@@ -310,7 +346,84 @@ const perfilEditarBandaController = {
 
           
         res.redirect(`/perfil/editar/banda`);
-    }    
+    },
+
+    saveVideoFile: async (req, res) => {
+        // console.log(req.files, req.body);
+        
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorUpload', 'Para enviar o seu vídeo precisamos que seja salvo como arquivo MP4 ou WEBM')
+            res.redirect('/perfil/editar/banda')
+            return
+        }
+
+        let { videoArquivoTitulo: titulo } = req.body;
+
+        titulo = titulo.trim();
+
+        // Se o título estiver vazio (space)
+        if (!titulo || titulo.length > 255) {
+            // Excluir o arquivo da pasta
+            fs.unlinkSync(`./public/video/${req.files[0].filename}`);
+
+            req.flash('errorUpload', 'Opa, queremos te ajudar para que a sua música fique famosa. Para isso, precisamos que nos diga o título!')
+            res.redirect('/perfil/editar/banda')
+            return
+        }
+
+        // Pegar o caminho do arquivo
+        const caminho = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        await Video.create({
+            tipo: 'arquivo',
+            titulo,
+            caminho,
+            id_usuario: req.session.usuario.id_usuario
+        })
+
+        res.redirect("/perfil/editar/banda");
+    },
+
+    saveAudioFile: async (req, res) => {
+        console.log(req.files, req.body);
+        
+        // Nenhum arquivo for enviado
+        if (!req.files.length) {
+            req.flash('errorUpload', 'Para enviar o seu áudio precisamos que ele seja salvo como arquivo MP3, FLAC, AIFF ou OGG')
+            res.redirect('/perfil/editar/banda')
+            return
+        }
+
+        let { audioArquivoTitulo: titulo } = req.body;
+
+        titulo = titulo.trim();
+
+        // Se o título estiver vazio (space)
+        if (!titulo || titulo.length > 255) {
+            // Excluir o arquivo da pasta
+            fs.unlinkSync(`./public/audio/${req.files[0].filename}`);
+
+            req.flash('errorUpload', 'Opa, quremos te ajudar para que a sua música fique famosa. Para isso, precisamos que nos diga o título!')
+            res.redirect('/perfil/editar/banda')
+            return
+        }
+
+        // Pegar o caminho do arquivo
+        const caminho = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        // Salvar no BD
+        await Audio.create({
+            tipo: 'arquivo',
+            titulo,
+            caminho,
+            id_usuario: req.session.usuario.id_usuario
+        })
+
+        res.redirect(`/perfil/editar/banda`);
+    }
+
 }
 
 
