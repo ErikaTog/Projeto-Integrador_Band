@@ -10,7 +10,7 @@
                             <div class="avatar-content">
                                 <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
                             </div>
-                            <h5>Jane Doe</h5>
+                            <h5><%= usuario.nome %></h5>
                         </a>
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -106,7 +106,7 @@
                                 </a>
                             </div>
                             <% if (post.imagem) { %>
-                                <img class="img-public" src="/img/teste/feed_img1.jpg" alt="Publicação">
+                                <img class="img-public" src="<%= post.imagem %>" alt="Publicação">
                             <% } %>
                             <% if (post.video_arquivo) { %>
                                 <video controls>
@@ -145,6 +145,7 @@
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
                                             placeholder="Adicione um comentário..." name="comentario"></textarea>
+                                        <input type="hidden" name="id_post" value="<%= post.id_post %>">
                                         <button type="submit" class="btn-submit">
                                             <img src="/img/icones/icon_send.svg" alt="Enviar">
                                         <button>                            
