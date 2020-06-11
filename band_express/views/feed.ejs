@@ -123,7 +123,33 @@
                             <p><%= post.texto %></p>
                             <div class="curtir">
                                 <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
-                                <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
+                                <a data-toggle="collapse" href="#collapseComentario<%= post.id_post %>" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
+                            </div>
+                            <div class="collapse comentarios" id="collapseComentario<%= post.id_post %>">
+                                <% comentarios.forEach(comentario => { %>
+                                    <% if (post.id_post === comentario.id_post) { %>
+                                        <div class="media comentario">
+                                            <a href="<%= comentario.link_perfil %>">
+                                                <img class="mini-avatar" src="<%= comentario.avatar %>" alt="<%= comentario.nome %>">
+                                            </a>
+                                            <div class="card-feed">
+                                                <a href="<%= comentario.link_perfil %>">
+                                                    <p class="nome-comentario"><%= comentario.nome %></p>
+                                                </a>
+                                                <p class="texto-comentario"><%= comentario.comentario %></p>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                <% }) %>
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="inputComentario" rows="1"
+                                            placeholder="Adicione um comentário..."></textarea>
+                                        <button type="submit" class="btn-submit">
+                                            <img src="/img/icones/icon_send.svg" alt="Enviar">
+                                        <button>                            
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     <% }) %>
