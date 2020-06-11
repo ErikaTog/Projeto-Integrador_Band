@@ -178,6 +178,7 @@ Imagem
 .integ-info .row {
     display: flex;
     justify-content: space-between;
+    align-content: start;
 }
 
 #integrantes {

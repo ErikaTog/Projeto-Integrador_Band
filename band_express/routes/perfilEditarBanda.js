@@ -6,10 +6,14 @@ const Op = Sequelize.Op;
 const multer = require('multer');
 
 const { Usuario, Banda, BandaIntegrantes } = require('../models');
+
 const perfilEditarBandaController = require('../controllers/PerfilEditarBandaController');
+
 const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 const BandaMiddleware = require('../middlewares/PerfilEditarBanda')
 const MulterImage = require('../middlewares/multerImage');
+const MulterVideo = require('../middlewares/multerVideo');
+const MulterAudio = require('../middlewares/multerAudio');
 
 
 router.get('/', VerificaUsuarioLogado, perfilEditarBandaController.show);
@@ -86,7 +90,23 @@ router.put('/', [
                 return Promise.reject('A função do integrante deve ter pelo menos 4 caracteres.')
             }        
         }
-    })
+    }),
+
+    // Validando o campo de vídeo
+    body('videoAdd')
+        .custom(async (value, {req}) => {
+            if (value) {
+                if (!req.body.videoTitulo.trim() || req.body.videoTitulo.trim().length > 255) {
+                    return Promise.reject('Opa, não identificamos o nome da sua música! Por favor, conte para nós no campo título.');
+                }
+                if (!req.body.videoLink.trim()) {
+                    return Promise.reject('Sem o link da música não conseguimos inclui-la em seu perfil! Por favor, coloque esta informação no campo link.');
+                }
+                if (!req.body.videoLink.includes('youtube.com') && !req.body.videoLink.includes('vimeo.com') && !req.body.videoLink.includes('dailymotion.com')) {
+                    return Promise.reject('Por enquanto só aceitamos link do https://www.youtube.com/, https://vimeo.com/pt-br ou https://www.dailymotion.com/br');
+                }
+            }
+        })    
 ], BandaMiddleware.error, VerificaUsuarioLogado, perfilEditarBandaController.change);
 
 // Modal Integrantes
@@ -140,7 +160,15 @@ router.put('/avatar',  multer(MulterImage).any(), perfilEditarBandaController.ch
 
 // Modal wallpaper 
 router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarBandaController.show);
-router.put('/wallpaper',  multer(MulterImage).any(), perfilEditarBandaController.changeWallpaper), 
+router.put('/wallpaper',  multer(MulterImage).any(), perfilEditarBandaController.changeWallpaper);
+
+// Modal arquivo video
+router.get('/video', VerificaUsuarioLogado, perfilEditarBandaController.show);
+router.post('/video',  multer(MulterVideo).any(),  VerificaUsuarioLogado, perfilEditarBandaController.saveVideoFile);
+
+// Modal arquivo audio
+router.get('/audio', VerificaUsuarioLogado, perfilEditarBandaController.show);
+router.post('/audio', multer(MulterAudio).any(), VerificaUsuarioLogado, perfilEditarBandaController.saveAudioFile);
 
 
 module.exports = router;
