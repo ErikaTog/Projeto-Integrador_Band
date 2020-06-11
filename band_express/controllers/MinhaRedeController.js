@@ -1,4 +1,6 @@
 const { Usuario, Musico, Banda, Estabelecimento, Minha_rede, Cidade} = require('../models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const minhaRedeController = {
     show: async (req, res) => {
@@ -145,7 +147,7 @@ const minhaRedeController = {
         idSeguindo.forEach(idseg => {
             if (idsEst.indexOf(idseg) != -1){
                 idsEst.splice(idsEst.indexOf(idseg), 1)
-                // console.log(idsEst)
+                console.log(idsEst)
             }
         });
         idsEst.splice(idsEst.indexOf(req.session.usuario.id_usuario), 1)
@@ -157,13 +159,13 @@ const minhaRedeController = {
         seguidores.forEach(usuario => {
             idSeguidores.push(usuario.id_usuario)
         });
-        console.log(idSeguidores)
+        // console.log(idSeguidores)
 
         //Iterando sobre idSeguidores, comparando com o que sobrou em idsEst e retirando seus seguidores
          idSeguidores.forEach(idseg => {
             if (idsEst.indexOf(idseg) != -1){
                 idsEst.splice(idsEst.indexOf(idseg), 1)
-                // console.log(idsEst)
+                console.log(idsEst)
             }
         });         
 
@@ -176,7 +178,7 @@ const minhaRedeController = {
             },
             limit: 20
         });
-        console.log(geral)
+        // console.log(geral)
         
         return res.render('minhaRede', { 
             title: 'Minha Rede', 
@@ -195,16 +197,124 @@ const minhaRedeController = {
         let {buscar} = req.body
         console.log(buscar)
 
-        let encontrado = await Usuario.findOne({
+        let encontrado = await Usuario.findAll({
             raw: true,
             attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
             where:{
-                nome: buscar
+                nome: {[Op.like]:'%'+buscar+'%'} 
             }           
         });
-        console.log(encontrado)
+        // console.log(encontrado)
+        
 
-        //TERMINAR DE DESENVOLVER
+         //********************Seguidores********************
+        
+        //Pessoas que estão seguindo o usuário da sessão
+        let seguidoresEncontrados = await Minha_rede.findAll({
+            raw: true,
+            attributes: ['id_usuario', 'usuario.nome', 'usuario.avatar', 'usuario.id_tipos_perfil', 'usuario.link_perfil'],
+            include: [{
+                attributes: [],
+                model: Usuario,
+                as: 'usuario',
+                where:{
+                    nome: {[Op.like]:'%'+buscar+'%'}
+                }
+            }], 
+            where: {
+                id_usuario_seguido: req.session.usuario.id_usuario
+            }
+        });
+        console.log(seguidoresEncontrados)
+
+
+         //********************Seguindo********************
+          
+        //Pessoas que o usuário da sessão está seguindo
+        let seguindoEncontrados = await Minha_rede.findAll({
+            raw: true,
+            attributes: ['id_usuario_seguido', 'usuario_seguido.nome', 'usuario_seguido.avatar', 'usuario_seguido.id_tipos_perfil', 'usuario_seguido.link_perfil' ],
+            include: [{
+                attributes: [],
+                model: Usuario,
+                as: 'usuario_seguido',
+                where:{
+                    nome: {[Op.like]:'%'+buscar+'%'}
+                }
+            }],             
+            where: {
+                id_usuario: req.session.usuario.id_usuario
+            }
+        });
+        console.log(seguindoEncontrados)
+
+
+        //********************Geral********************
+
+        //Base de usuários
+        let usuarios = await Usuario.findAll({
+            raw: true,
+            attributes: ['id_usuario', 'nome', 'avatar'],
+            where:{
+                 nome: {[Op.like]:'%'+buscar+'%'}
+            }
+        });
+        console.log(usuarios)
+
+        //Criando lista de id_usuários
+        let idUsers = []
+        usuarios.forEach(usuario => {
+            idUsers.push(usuario.id_usuario)
+        });
+        console.log(idUsers)
+
+
+        //Criando lista de id_usuários seguindo
+        let idSeguindo = []
+        seguindoEncontrados.forEach(usuario => {
+            idSeguindo.push(usuario.id_usuario)
+        });
+        console.log(idSeguindo)
+
+
+        //Iterando sobre idSeguindo, comparando com idUsers e retirando ele mesmo e os que ele já segue
+        idSeguindo.forEach(idseg => {
+            if (idUsers.indexOf(idseg) != -1){
+                idUsers.splice(idUsers.indexOf(idseg), 1)
+                console.log(idUsers)
+            }
+        });
+        // idUsers.splice(idUsers.indexOf(req.session.usuario.id_usuario), 1)
+        // console.log(idUsers)
+
+
+        //Criando lista de id_usuários seguidores
+        let idSeguidores = []
+        seguidoresEncontrados.forEach(usuario => {
+            idSeguidores.push(usuario.id_usuario)
+        });
+        console.log(idSeguidores)
+
+        //Iterando sobre idSeguidores, comparando com o que sobrou em idUsers e retirando seus seguidores
+         idSeguidores.forEach(idseg => {
+            if (idUsers.indexOf(idseg) != -1){
+                idUsers.splice(idUsers.indexOf(idseg), 1)
+                console.log(idUsers)
+            }
+        });         
+
+        //Buscando somente os usuários com os ids que sobraram em idUsers para mostrar no geral
+        let geral = await Usuario.findAll({
+            raw: true,
+            attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
+            where:{
+                id_usuario: idUsers
+            },
+            limit: 20
+        });
+        console.log(geral)
+
+        
        
     }
     
