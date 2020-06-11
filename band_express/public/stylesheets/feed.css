@@ -319,6 +319,70 @@ img.avatar {
     filter: brightness(0.8);
 }
 
+/* --------------------------------
+            Comentários
+-------------------------------- */
+
+.comentarios {
+    margin: 1.5rem 5rem 0;
+}
+
+#publicacao .media.comentario {
+    margin: 0;
+}
+
+#publicacao .comentarios .card-feed {
+    padding: 1.5rem;
+    margin: 0 0 2.5rem 1.5rem;
+}
+
+#publicacao .comentarios .card-feed a {
+    box-shadow: 0 4px 6px -6px #999999;
+    margin-bottom: 1rem;
+}
+
+#publicacao p.nome-comentario {
+    color: #282A36;
+    font-weight: 600;
+    box-shadow: none;
+    padding: 0;
+}
+
+#publicacao p.texto-comentario {
+    padding: 0;
+    box-shadow: none;
+}
+
+#publicacao .form-group {
+    display: flex;
+    align-items: center;
+}
+
+#publicacao textarea {
+    min-height: auto;
+    resize: none;
+    margin: 0;
+}
+
+button {
+    background: #fff;
+    border: none;
+}
+
+.btn-submit {
+    width: 40px;
+    height: 40px;
+    background-color: #fb3c00;
+    border: 0;
+    border-radius: 50%;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
 
 /* --------------------------------
@@ -405,6 +469,14 @@ img.avatar {
     }
     .curtir a img {
         width: 25px;
+    }
+
+    .comentarios {
+        margin: 1.5rem 2.5rem 0;
+    }
+    .btn-submit {
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -595,9 +667,13 @@ img.avatar {
         margin-top: 1rem;
         margin-left: 1.5rem;
     }
-    .curtir a img {
+    .curtir img {
         width: 20px;
         margin-right: 1rem;
+    }
+
+    .comentarios {
+        margin: 1.5rem 1.5rem 0;
     }
 
     .edit {
