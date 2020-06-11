@@ -50,14 +50,17 @@ const perfilEditarEstabController = {
             attributes: ['uf'] 
         });
 
-        // Busca tabela de Funcionamento
-        const dadosFuncionamento = await Funcionamento.findAll({
-            where: {
-                id_estab: dadosEstab.id_estab
-            },
-            raw: true,
-            attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-        });
+        let dadosFuncionamento = [];
+        if(dadosEstab.funcionamento){
+            // Busca tabela de Funcionamento
+            dadosFuncionamento = await Funcionamento.findAll({
+                where: {
+                    id_estab: dadosEstab.id_estab
+                },
+                raw: true,
+                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+            });
+        };
 
         tipoCategoria = [ "Bar/Pub", "Escola de música", "Estúdio", "Gravadora", "Loja", "Produtora", "Restaurante", "Outro"]
 
