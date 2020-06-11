@@ -70,27 +70,27 @@
     <!-- Grupo Publicar --> 
                 <section id="publicar" class="card-feed">
                     <h4><strong>O que está rolando?</strong></h4>
-                    <form action="" method="POST">
+                    <form action="/home/publicar" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
+                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar"></textarea>
                         </div>
                         <div class="add">
                             <div class="upload">
                                 <label for="file-input-img">
                                     <img src="/img/icones/icon_image.svg" alt="Imagem">
                                 </label>
-                                <input type="file" id="file-input-img" accept="image/*">
+                                <input type="file" id="file-input-img" accept="image/*" name="imagem">
                             </div>
                             <div class="upload">
                                 <label for="file-input-video">
                                     <i class="fas fa-film"></i>
                                 </label>
-                                <input type="file" id="file-input-video" accept="video/*" >
+                                <input type="file" id="file-input-video" accept="video/*" name="video">
                             </div>
                             <div class="upload">
                                 <i class="fas fa-link link"></i>
                             </div>
-                            <button type="button" class="btn btn-salvar">Publicar</button>
+                            <button type="submit" class="btn btn-salvar">Publicar</button>
                         </div>
                     </form>
                 </section>
@@ -111,7 +111,7 @@
                             <% if (post.video_arquivo) { %>
                                 <video controls>
                                     <source src="<%= post.video_arquivo %>" type="video/mp4">
-                                    <source src="<%= post.video_arquivo %>" type="video/ogg">
+                                    <source src="<%= post.video_arquivo %>" type="video/webm">
                                     <p>Seu browser não suporta este recurso</p>
                                 </video>
                             <% } %>
@@ -141,10 +141,10 @@
                                         </div>
                                     <% } %>
                                 <% }) %>
-                                <form>
+                                <form action="/home" method="POST">
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
-                                            placeholder="Adicione um comentário..."></textarea>
+                                            placeholder="Adicione um comentário..." name="comentario"></textarea>
                                         <button type="submit" class="btn-submit">
                                             <img src="/img/icones/icon_send.svg" alt="Enviar">
                                         <button>                            
