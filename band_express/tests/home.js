@@ -1,4 +1,4 @@
-const { Cidade, Usuario, Musico, Instrumento, Tecnico, Post } = require('../models');
+const { Cidade, Usuario, Musico, Instrumento, Tecnico, Post, Comentario } = require('../models');
 const { Op } = require('sequelize');
 const moment = require('moment');
 
@@ -29,7 +29,7 @@ const find = async () => {
 
     const posts = await Post.findAll({
         raw: true,
-        attributes: ['texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+        attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
         include: [{
             model: Usuario,
             as: 'postUsuario',
@@ -39,7 +39,47 @@ const find = async () => {
         order: [['data_post', 'DESC']]
     })
 
-    console.log(posts);
+    // console.log(posts);
+
+    // const comentarios = await Post.findAll({
+    //     raw: true,
+    //     attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+    //     include: [{
+    //         model: Usuario,
+    //         as: 'postUsuario',
+    //         // attributes: []
+    //     }, {
+    //         model: Comentario,
+    //         as: 'postComentario',
+    //         include: [{
+    //             model: Usuario,
+    //             as: 'comentarioUsuario',
+    //         }]
+    //         // attributes: []
+    //     }],
+    //     // limit: 10,
+    //     // order: [['data_post', 'DESC']]
+    // })
+
+    // console.log(comentarios)
+
+    // const comentarios = await Comentario.findAll({
+
+    // })
+    
+    let comentarios  = await Comentario.findAll({
+        raw: true,
+        attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
+        include: [{
+            model: Usuario,
+            as: 'comentarioUsuario',
+            attributes:[]
+        }],
+        order: [['id_post']]
+    })
+
+    console.log(comentarios);
+
 };
 
 find();
