@@ -1,7 +1,7 @@
 <%- include('./partials/header.ejs', { active: "Perfil" , css: "perfil-estab.css"}) %>
-
+    
     <div class="perfil-container">
-        
+
         <!-- Grupo Head -->
         <% if (typeof errors != 'undefined') { %>
             <div class="alert alert-danger" role="alert">
@@ -42,7 +42,7 @@
                         <i class="fas fa-cog"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="/perfil/editar/musico">
+                        <a class="dropdown-item" href="/perfil/editar/estabelecimento">
                             Editar Perfil
                         </a>
                         <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
