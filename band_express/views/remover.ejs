@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<%- include('./partials/header.ejs', { active: "Gerenciar" , css: "remover.css"}) %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Gerenciar</title>
-    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
-    <!-- estilo -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/remover.css">
-</head>
-
-<body>
-    <div class="remover">
-        <header class="fixed-top">
-            <div class="nav-container">
-                <nav class="navbar navbar-expand">
-                    <a class="navbar-brand" href="#"><img src="img/logo_5000x1500.png" alt="Band+"></a>
-                </nav>
-            </div>
-        </header>
-
-
-        <div class="remover-container">
-
+        <form class="remover-container">
             <section id="excluirConta" class="card-remover">
                 <h4><strong>Excluir conta</strong></h4>
-                <p class="saudacao">Olá, <strong>Jane Doe</strong>.</p>
-                <p>É uma pena que você queira excluir a sua conta.</p>
+                <p class="saudacao">Olá, <strong><%= usuario.nome %></strong>.</p>
+                <p>É uma pena que você queira excluir a sua conta...</p>
+                <p>Você perderá todos os seus dados e postagens pois tudo será excluído do nosso banco de dados.</p>
                 <div class="form-group">
                     <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
                     <select class="form-control" id="motivoExcluir">
@@ -52,7 +27,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </form>
 
         <!-- Footer -->
         <footer>
@@ -61,7 +36,7 @@
                 <li>
                     <span class="copyright">Copyright &copy;
                         2020 -
-                        <img src="img/icone.png" width="20">
+                        <img src="/img/icone.png" width="20">
                         Band+ by Group 1
                     </span>
                 </li>

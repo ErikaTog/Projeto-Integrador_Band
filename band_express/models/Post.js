@@ -32,7 +32,7 @@ const Post = (sequelize, DataTypes) => {
                 type: DataTypes.DATE,
                 allowNull: false
             },
-            curtir: {
+            curtido: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: '0',
                 allowNull: false

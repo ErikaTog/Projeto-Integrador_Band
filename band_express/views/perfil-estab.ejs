@@ -1,7 +1,7 @@
 <%- include('./partials/header.ejs', { active: "Perfil" , css: "perfil-estab.css"}) %>
-
+    
     <div class="perfil-container">
-        
+
         <!-- Grupo Head -->
         <% if (typeof errors != 'undefined') { %>
             <div class="alert alert-danger" role="alert">
@@ -23,7 +23,7 @@
                 <img src=<%= dadosUsuario.avatar %> alt="Foto de Perfil" class="avatar">
             </div>
             <div class="info-user">
-                <h3><strong><%= usuario.nome %></strong></h3>
+                <h3><strong><%= dadosUsuario.nome %></strong></h3>
                 <div class="info-user-status">
                     <div class="media">
                         <img src="/img/icones/icon_star.svg">
@@ -35,20 +35,28 @@
                     </div>
                 </div>
             </div>
-            <div class="config">
-                <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cog"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/perfil/editar/estabelecimento">
-                        Editar Perfil
-                    </a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        Alterar Senha
-                    </a>
+            <% if (dadosUsuario.id_usuario === usuario.id_usuario) { %>
+                <div class="config">
+                    <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="/perfil/editar/estabelecimento">
+                            Editar Perfil
+                        </a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                            Alterar Senha
+                        </a>
+                    </div>
                 </div>
-            </div>
+            <% } else { %>
+                <div class="config">
+                    <button type="button" class="btn-config">
+                        <i class="fas fa-headphones-alt"></i>
+                    </button>
+                </div>
+            <% } %>
         </section>
 
         <!-- Grupo Bio -->
@@ -95,7 +103,7 @@
                 </div>
                 <div class="infos-item media">
                     <img src="/img/icones/email-01.png" alt="Email">
-                    <p><%= usuario.email %></p>
+                    <p><%= dadosUsuario.email %></p>
                 </div>
             </section>
         </div>

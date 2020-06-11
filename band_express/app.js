@@ -24,6 +24,9 @@ var batePapoRouter = require('./routes/batePapo');
 var anuncieRouter = require('./routes/anuncie');
 var vagasRouter = require('./routes/vagas');
 var minhaRedeRouter = require('./routes/minhaRede');
+var feedbackRouter = require('./routes/feedback');
+var ajudaRouter = require('./routes/ajuda');
+var removerRouter = require('./routes/remover');
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -66,7 +69,9 @@ app.use('/batePapo', batePapoRouter);
 app.use('/anuncie', anuncieRouter);
 app.use('/vagas', vagasRouter);
 app.use('/minhaRede', minhaRedeRouter);
-
+app.use('/feedback', feedbackRouter);
+app.use('/ajuda', ajudaRouter);
+app.use('/remover', removerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -27,6 +27,14 @@ module.exports = {
           telefone: '(13) 99999-9999',
           funcionamento: 0,
           id_usuario: 9
+        },
+        {
+          categoria: 'Outro',
+          sobre: 'Rio Eventos - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl.',
+          site: 'www.rio_eventos.com',
+          telefone: '(14) 99999-9999',
+          funcionamento: 0,
+          id_usuario: 18
         }
       ], {});
   },
