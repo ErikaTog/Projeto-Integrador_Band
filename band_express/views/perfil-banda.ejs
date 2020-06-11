@@ -15,7 +15,6 @@
     </div>
     <% } %>
 
-    <!-- Grupo Head -->
     <section id="head" class="card-perfil">
         <div class="head-fundo">
             <img class="wallpaper" src="<%= dadosUsuarioBanda.wallpaper %>" alt="Foto de fundo">
@@ -29,12 +28,12 @@
             <h3><strong><%= dadosUsuarioBanda.nome %> </strong></h3>
             <div class="info-user-status">
                 <div class="media">
-                    <img src="/img/icones/icon_star.svg">
+                    <i class="fas fa-star"></i>
                     <p>Seguidores: <%= seguidores %></p>
                 </div>
 
                 <div class="media">
-                    <img src="/img/icones/icon_headset.svg">
+                    <i class="fas fa-headphones-alt fone"></i>
                     <p>Seguindo: <%= seguindo %></p>
                 </div>
 
@@ -60,6 +59,12 @@
                 </a>
             </div>
         </div>
+        <% } else { %>
+            <div class="config">
+                <button type="button" class="btn-config">
+                    <i class="fas fa-headphones-alt"></i>
+                </button>
+            </div>
         <% } %>
     </section>
 
@@ -69,16 +74,17 @@
         <h4><strong>Sobre a banda</strong></h4>
         <div class="bio-scroll">
             <% if (dadosBanda.sobre) { %>
-            <p class="text-justify">
-                <%= dadosBanda.sobre %>
-            </p>
-            <% } else { %>
-            <p class="msg-incentivo">
-                Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros
-                usuários e ganhe muitos seguidores!
-            </p>
-            <% } %>
-        </div>
+                <p class="text-justify" style="white-space: pre-wrap"><%= dadosBanda.sobre %></p>
+                <% } else if (dadosBanda.id_usuario === usuario.id_usuario) { %>
+                    <p class="msg-incentivo">
+                        Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                    </p>
+                <% } else { %>
+                    <p class="msg-incentivo">
+                        Se quiser mais informações sobre <%= dadosUsuarioBanda.nome %> pode entrar em contato pelo <%= dadosUsuarioBanda.email %>
+                    </p>
+                <% } %>
+            </div>
 
     </section>
 
@@ -115,17 +121,21 @@
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
                         <% if (dadosBanda.site) { %>
-                        <p><%= dadosBanda.site %></p>
+                            <p><%= dadosBanda.site %></p>
+                        <% } else if (dadosBanda.id_usuario === usuario.id_usuario){ %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
                         <% } else { %>
-                        <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <p class="msg-incentivo">Campo não informado</p>
                         <% } %>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/canal-01.png" alt="Canal">
                         <% if (dadosBanda.canal) { %>
-                        <p><%= dadosBanda.canal %></p>
+                            <p><%= dadosBanda.canal %></p>
+                        <% } else if (dadosBanda.id_usuario === usuario.id_usuario) { %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
                         <% } else { %>
-                        <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <p class="msg-incentivo">Campo não informado</p>
                         <% } %>
                     </div>
                     <div class="infos-item media">
