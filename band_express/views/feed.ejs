@@ -40,34 +40,15 @@
                 <section id="newUser" class="card-feed">
                     <h5><strong>Novos Usuários</strong></h5>
                     <div class="scroll">
-                        <div class="media">
-                            <a href="perfil-musico.html">
-                                <img class="mini-avatar" src="/img/teste/new_user1.png" alt="Anne">
-                                <p>Anne</p>
-                            </a>
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user2.png" alt="John Doe">
-                                <p>John Doe</p>
-                            </a>    
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user3.png" alt="Maria">
-                                <p>Maria</p>
-                            </a>
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user4.png" alt="Pedro">
-                                <p>Pedro</p>
-                            </a>
-                            <i class="fas fa-headphones-alt"></i>
-                        </div>
+                        <% novosUsuarios.forEach(user => { %>
+                            <div class="media">
+                                <a href="<%= user.link_perfil %>">
+                                    <img class="mini-avatar" src="<%= user.avatar %>" alt="Anne">
+                                    <p><%= user.nome %></p>
+                                </a>
+                                <i class="fas fa-headphones-alt"></i>
+                            </div>
+                        <% }) %>
                     </div>
                 </section>
 
