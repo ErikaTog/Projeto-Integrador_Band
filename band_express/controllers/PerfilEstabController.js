@@ -52,13 +52,16 @@ const perfilEstabController = {
             });
 
             // Busca tabela de Funcionamento
-            const dadosFuncionamento = await Funcionamento.findAll({
-                where: {
-                    id_estab: dadosEstab.id_estab
-                },
-                raw: true,
-                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-            });
+            let dadosFuncionamento = [];
+            if(dadosEstab.funcionamento){
+                dadosFuncionamento = await Funcionamento.findAll({
+                    where: {
+                        id_estab: dadosEstab.id_estab
+                    },
+                    raw: true,
+                    attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+                });
+            }
 
             res.render('perfil-estab', { 
                 title: 'Perfil', 
@@ -81,13 +84,22 @@ const perfilEstabController = {
 
         try {
 
+            // Dados da tabela Estabelecimento referente ao usuario
+            const dadosEstab = await Estabelecimento.findOne({
+                where: {
+                    id_estab: req.params.id 
+                },
+                raw: true,
+                attributes: ['id_usuario', 'id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
+            });
+
             // Dados da tabela Usuario
             const dadosUsuario = await Usuario.findOne({ 
                 where: { 
-                    nome: req.session.usuario.nome 
+                    id_usuario: dadosEstab.id_usuario
                 },
                 raw: true,
-                attributes: ['nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
+                attributes: ['id_usuario', 'nome', 'email', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
                 include: [{
                     model: Cidade,
                     as: 'cidade',
@@ -103,22 +115,13 @@ const perfilEstabController = {
             // Quantidade de pessoas que o usuario esta seguindo e que seguem ele
             const totalSeguindo = await Minha_rede.count({
                 where: {
-                    id_usuario: req.session.usuario.id_usuario
+                    id_usuario: dadosUsuario.id_usuario
                 }
             });
             const totalSeguidores = await Minha_rede.count({
                 where: {
-                    id_usuario_seguido: req.session.usuario.id_usuario
+                    id_usuario_seguido: dadosUsuario.id_usuario
                 }
-            });
-
-            // Dados da tabela Estabelecimento referente ao usuario
-            const dadosEstab = await Estabelecimento.findOne({
-                where: {
-                    id_usuario:  req.session.usuario.id_usuario
-                },
-                raw: true,
-                attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
             });
 
             // Buscar lista de Estados
@@ -128,13 +131,16 @@ const perfilEstabController = {
             });
 
             // Busca tabela de Funcionamento
-            const dadosFuncionamento = await Funcionamento.findAll({
-                where: {
-                    id_estab: dadosEstab.id_estab
-                },
-                raw: true,
-                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-            });
+            let dadosFuncionamento = [];
+            if(dadosEstab.funcionamento){
+                const dadosFuncionamento = await Funcionamento.findAll({
+                    where: {
+                        id_estab: dadosEstab.id_estab
+                    },
+                    raw: true,
+                    attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+                });
+            }
 
             res.render('perfil-estab', { 
                 title: 'Perfil', 
