@@ -11,7 +11,7 @@ const perfilEstabController = {
                     id_usuario: req.session.usuario.id_usuario 
                 },
                 raw: true,
-                attributes: ['nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
+                attributes: ['id_usuario', 'nome', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
                 include: [{
                     model: Cidade,
                     as: 'cidade',
@@ -52,8 +52,6 @@ const perfilEstabController = {
             });
 
             // Busca tabela de Funcionamento
-            let dadosFuncionamento = [];
-            if(dadosEstab.funcionamento){
                 dadosFuncionamento = await Funcionamento.findAll({
                     where: {
                         id_estab: dadosEstab.id_estab
@@ -61,7 +59,6 @@ const perfilEstabController = {
                     raw: true,
                     attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
                 });
-            }
 
             res.render('perfil-estab', { 
                 title: 'Perfil', 
@@ -131,8 +128,6 @@ const perfilEstabController = {
             });
 
             // Busca tabela de Funcionamento
-            let dadosFuncionamento = [];
-            if(dadosEstab.funcionamento){
                 const dadosFuncionamento = await Funcionamento.findAll({
                     where: {
                         id_estab: dadosEstab.id_estab
@@ -140,7 +135,6 @@ const perfilEstabController = {
                     raw: true,
                     attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
                 });
-            }
 
             res.render('perfil-estab', { 
                 title: 'Perfil', 
@@ -151,7 +145,7 @@ const perfilEstabController = {
                 dadosFuncionamento,
                 totalSeguindo,
                 totalSeguidores,
-                mensagemNull: 'Ops, você não informou este campo',
+                mensagemNull: 'Dados não preenchidos',
             });
 
         } catch (error) {
