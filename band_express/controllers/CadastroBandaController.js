@@ -91,15 +91,11 @@ const cadastroBandaController = {
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
-            link_perfil: null,
+            link_perfil: nome,
             id_tipos_perfil: 2
         });
 
-        // Salvar o campo link_perfil
-        dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosUsuario.id_usuario}`;
-        await dadosUsuario.save({ fields: ['link_perfil'] });
-
-
+      
         // inserindo dados complementares de banda na tabela banda
         const dadosBanda = await Banda.create({
             id_usuario: dadosUsuario.id_usuario,
@@ -109,6 +105,10 @@ const cadastroBandaController = {
             canal,
             email: emailBanda
         });
+
+          // Salvar o campo link_perfil
+          dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosBanda.id_banda}`;
+          await dadosUsuario.save({ fields: ['link_perfil'] });
 
 
         // buscando o id dos integrantes na tabela usuario 
