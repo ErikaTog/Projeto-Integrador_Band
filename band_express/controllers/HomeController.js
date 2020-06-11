@@ -65,6 +65,43 @@ const homeController = {
             posts,
             comentarios
         });
+    },
+    saveComentario: async (req, res) => {
+        console.log(req.body);
+
+        res.redirect('/home');
+    },
+    savePublicar: async (req, res) => {
+        // console.log(req.body);
+        // console.log(req.files);
+
+        let { textoPublicar: texto } = req.body;
+        let caminhoImagem = '';
+        let caminhoVideo = '';
+
+        // Verificar se req.files não está vazio
+        // verificar fieldname >> imagem ou video
+        if (req.files.length) {
+            if (req.files[0].fieldname == 'imagem') {
+                caminhoImagem = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+            }
+
+            if (req.files[0].fieldname == 'video') {
+                caminhoVideo = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+            }
+        }
+
+        // Salvar no BD
+        await Post.create({
+            id_usuario: req.session.usuario.id_usuario,
+            texto,
+            imagem: caminhoImagem,
+            video_arquivo: caminhoVideo,
+            data_post: new Date(),
+            curtido: 0
+        })
+
+        res.redirect('/home');
     }
 } 
 

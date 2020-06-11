@@ -201,7 +201,7 @@ img.avatar {
 }
 
 .upload > input {
-    display: none;
+    display: contents;
 }
 
 .upload label {
@@ -381,6 +381,12 @@ button {
     align-items: center;
     cursor: pointer;
     transition-duration: 0.25s;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    background-color: #fb3c00;
+    outline-style: none;
 }
 
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
