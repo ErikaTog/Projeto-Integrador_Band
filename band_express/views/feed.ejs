@@ -6,27 +6,27 @@
     <!-- Grupo User Card -->
                 <section id="userCard" class="card-feed">
                     <div class="user-info">
-                        <div class="avatar-content">
-                            <a href="perfil-musico.html">
-                                <img class="avatar" src="/img/teste/jane.jpg" alt="Avatar">
-                            </a>
-                        </div>
-                        <h5>Jane Doe</h5>
+                        <a href="<%= link %>">
+                            <div class="avatar-content">
+                                <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
+                            </div>
+                            <h5>Jane Doe</h5>
+                        </a>
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <div class="media divisoria">
-                                    <img src="/img/icones/icon_star.svg" alt="Seguidores">
+                                    <i class="fas fa-star"></i>
                                     <div class="media-body">
-                                        <p>12 M</p>
+                                        <p><%= seguidores %></p>
                                         <small>Seguidores</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <div class="media">
-                                    <img src="/img/icones/icon_headset.svg" alt="Seguindo">
+                                    <i class="fas fa-headphones-alt fone"></i>
                                     <div class="media-body">
-                                        <p>250</p>
+                                        <p><%= seguindo %></p>
                                         <small>Seguindo</small>
                                     </div>
                                 </div>
@@ -40,34 +40,15 @@
                 <section id="newUser" class="card-feed">
                     <h5><strong>Novos Usuários</strong></h5>
                     <div class="scroll">
-                        <div class="media">
-                            <a href="perfil-musico.html">
-                                <img class="mini-avatar" src="/img/teste/new_user1.png" alt="Anne">
-                                <p>Anne</p>
-                            </a>
-                            <a href=""><img src="/img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user2.png" alt="John Doe">
-                                <p>John Doe</p>
-                            </a>    
-                            <a href=""><img src="/img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user3.png" alt="Maria">
-                                <p>Maria</p>
-                            </a>
-                            <a href=""><img src="/img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
-                        </div>
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user4.png" alt="Pedro">
-                                <p>Pedro</p>
-                            </a>
-                            <a href=""><img src="/img/icones/icon_headset_border.svg" alt="Seguir" class="seguir"></a>
-                        </div>
+                        <% novosUsuarios.forEach(user => { %>
+                            <div class="media">
+                                <a href="<%= user.link_perfil %>">
+                                    <img class="mini-avatar" src="<%= user.avatar %>" alt="Anne">
+                                    <p><%= user.nome %></p>
+                                </a>
+                                <i class="fas fa-headphones-alt"></i>
+                            </div>
+                        <% }) %>
                     </div>
                 </section>
 
@@ -94,17 +75,20 @@
                             <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!"></textarea>
                         </div>
                         <div class="add">
-                            <div class="image-upload">
+                            <div class="upload">
                                 <label for="file-input-img">
                                     <img src="/img/icones/icon_image.svg" alt="Imagem">
                                 </label>
                                 <input type="file" id="file-input-img" accept="image/*">
                             </div>
-                            <div class="image-upload">
+                            <div class="upload">
                                 <label for="file-input-video">
                                     <i class="fas fa-film"></i>
                                 </label>
                                 <input type="file" id="file-input-video" accept="video/*" >
+                            </div>
+                            <div class="upload">
+                                <i class="fas fa-link link"></i>
                             </div>
                             <button type="button" class="btn btn-salvar">Publicar</button>
                         </div>
@@ -113,62 +97,36 @@
     
      <!-- Grupo Publicacao --> 
                 <section id="publicacao">
-                    <div class="card-feed">
-                        <div class="media">
-                            <a href="perfil-musico.html">
-                                <img class="mini-avatar" src="/img/teste/new_user1.png" alt="Jane Doe">
-                                <h5>Jane Doe</h5>
-                            </a>
+                    <% posts.forEach(post => { %>
+                        <div class="card-feed">
+                            <div class="media">
+                                <a href="<%= post.link_perfil %>">
+                                    <img class="mini-avatar" src="<%= post.avatar %>" alt="<%= post.nome %>">
+                                    <h5><%= post.nome %></h5>
+                                </a>
+                            </div>
+                            <% if (post.imagem) { %>
+                                <img class="img-public" src="/img/teste/feed_img1.jpg" alt="Publicação">
+                            <% } %>
+                            <% if (post.video_arquivo) { %>
+                                <video controls>
+                                    <source src="<%= post.video_arquivo %>" type="video/mp4">
+                                    <source src="<%= post.video_arquivo %>" type="video/ogg">
+                                    <p>Seu browser não suporta este recurso</p>
+                                </video>
+                            <% } %>
+                            <% if (post.video_link) { %>
+                                <iframe src="<%= post.video_link %>" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            <% } %>
+                            <p><%= post.texto %></p>
+                            <div class="curtir">
+                                <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
+                                <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
+                            </div>
                         </div>
-                        <img class="img-public" src="/img/teste/feed_img1.jpg" alt="Publicação">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
-                        <div class="curtir">
-                            <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
-                            <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
-                        </div>
-                    </div>
-                    <div class="card-feed">
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user2.png" alt="Jane Doe">
-                                <h5>Jane Doe</h5>
-                            </a>
-                        </div>
-                        <img class="img-public" src="/img/teste/feed_img2.jpg" alt="Publicação">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
-                        <div class="curtir">
-                            <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
-                            <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
-                        </div>
-                    </div>
-                    <div class="card-feed">
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user3.png" alt="Jane Doe">
-                                <h5>Jane Doe</h5>
-                            </a>
-                        </div>
-                        <img class="img-public" src="/img/teste/feed_img3.jpg" alt="Publicação">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
-                        <div class="curtir">
-                            <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
-                            <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
-                        </div>
-                    </div>
-                    <div class="card-feed">
-                        <div class="media">
-                            <a href="">
-                                <img class="mini-avatar" src="/img/teste/new_user4.png" alt="Jane Doe">
-                                <h5>Jane Doe</h5>
-                            </a>
-                        </div>
-                        <img class="img-public" src="/img/teste/feed_img4.jpg" alt="Publicação">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam, minus quidem quos necessitatibus quisquam a cupiditate consectetur ipsum mollitia delectus sequi numquam quia architecto provident amet ad? Aut, corrupti!Natus nostrum eveniet vero! Perspiciatis mollitia aperiam similique itaque perferendis aspernatur ducimus temporibus consectetur tempora architecto ullam deleniti culpa, obcaecati doloremque in facere? Cum expedita dolorem cumque fugiat repellat nihil.</p>
-                        <div class="curtir">
-                            <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
-                            <a href=""><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
-                        </div>
-                    </div>
+                    <% }) %>
                 </section>
             </div>
 

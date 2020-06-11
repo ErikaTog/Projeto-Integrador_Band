@@ -587,6 +587,13 @@ audio::-webkit-media-controls-panel {
     .info-user .media:last-child {
         margin-left: 1.5rem;
     }
+    .info-user .media i {
+        font-size: 1.5rem;
+    }
+    
+    .info-user .media i.fone {
+        font-size: 1.8rem;
+    }
 
     .config {
         position: absolute;

@@ -13,6 +13,11 @@ module.exports = {
           id_post: 1,
           id_usuario: 6,
           comentario: "Ficou muito top!"
+        },
+        {
+          id_post: 2,
+          id_usuario: 1,
+          comentario: "Opa, marcado na minha agenda!"
         }
       ], {});
   },
