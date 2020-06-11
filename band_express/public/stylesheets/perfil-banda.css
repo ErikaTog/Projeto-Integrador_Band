@@ -112,6 +112,20 @@ Imagem
     margin-left: 3.5rem;
 }
 
+.info-user-status .media img {
+    width: 2.8rem;
+}
+
+.info-user .media i {
+    color: #fb3c00;
+    font-size: 2rem;
+    align-self: center;
+}
+
+.info-user .media i.fone {
+    font-size: 2.4rem;
+}
+
 /* --------------------------------
             Configuração
 -------------------------------- */
@@ -178,6 +192,7 @@ Imagem
 .integ-info .row {
     display: flex;
     justify-content: space-between;
+    align-content: start;
 }
 
 #integrantes {
@@ -764,6 +779,13 @@ button.btn.btn-danger:hover {
     }
     .info-user-status .media img {
         width: 15px;
+    }
+    .info-user .media i {
+        font-size: 12px;
+    }
+    
+    .info-user .media i.fone {
+        font-size: 14px;
     }
     .info-user .media p {
        margin-left: 0.3rem;

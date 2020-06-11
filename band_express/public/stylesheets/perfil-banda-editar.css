@@ -208,6 +208,38 @@ div.icon-border-none i:hover {
     margin-bottom: 0.5rem;
 }
 
+/* --------------------------------
+         Adicionar Música
+-------------------------------- */
+.col-md-6 {
+    padding: 0 15px 0 0;
+}
+
+#minhaMusica a.addMusic {
+    color: #282a36;
+}
+
+#minhaMusica a.addMusic:hover {
+    color: #4c4f66;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#minhaMusica .form-group label {
+    color: #4c4f66;
+    font-weight: 600;
+    padding-top: 8px;
+}
+
+#minhaMusica p {
+    margin: .5rem 0;
+}
+
+#minhaMusica a.modal-link {
+    color: #4c4f66;
+    font-weight: 600;
+}
+
 /* --------------------fim_do_Grupo_Minha_Musica--------------------- */
 
 /* --------------------------------
@@ -220,7 +252,80 @@ input.form-control-file {
     margin: 1rem 0;
 }
 
-.collapse .form-group {
+#adicionarHabilidade input.form-control {
+    margin-bottom: 10px;
+}
+
+#arquivoVideo .form-group label,
+#arquivoAudio .form-group label {
+    color: #4c4f66;
+    margin-top: 1rem;
+}
+
+/* #adicionarMusica label.form-check-label {
+    font-weight: 600;
+} */
+
+#arquivoVideo .form-group,
+#arquivoAudio .form-group {
+    margin: 1rem 0;
+}
+
+#arquivoVideo input.form-control-file,
+#arquivoAudio input.form-control-file {
+    margin: 0;
+}
+
+/* ------------------------------*/ 
+/* Check Box */
+
+.form-check {
+    padding: 1rem 0;
+}
+
+
+label.form-check-label{
+    display: flex;
+    align-items: center;
+}
+
+label.form-check-label:hover {
+    cursor: pointer;
+}
+
+.form-check-input,
+.form-check-input,
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+ input[type=checkbox]{
+    display: none;
+}
+
+ 
+input[type=checkbox] + label:before {
+    width: 18px;
+    height: 18px;
+    background-color:#F7F7F7;
+    box-shadow: 0px 2px 4px #999999;
+    border-radius: 5px;
+    margin-right: 10px;
+    content: "";
+    display: inline-block;
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color:#fb3c00;
+    background-image: url(../img/icones/check-vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* .collapse .form-group {
     margin-top: 20px;
 }
 
@@ -236,7 +341,7 @@ label.col-sm-2.col-form-label{
 ::-webkit-input-placeholder{
     font-size: 14px;
     color: orangered;
-}
+} */
 
 /* ------------------------------*/ 
 /* Confirmar Exclusão */

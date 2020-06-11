@@ -1,95 +1,22 @@
 <%- include('./partials/header.ejs', { active: "MinhaRede" , css: "minhaRede.css"}) %>
 
+
     <main class="container-minhaRede">
         <!-- Feed de Contatos Recomendados -->
         <section class="feed-recomendados"> 
             <div class="feed-recomendados-conteudo">
                 <h4>Recomendados</h4>
                 <div class= "scroll">
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
+                    <% recomendados.forEach(recomendado => { %> 
+                        <div class="card-contato">
+                            <img class="contato-img" src="<%= recomendado.avatar %>" alt="Foto Contato">
+                            <div class="nome-contato">
+                                <a href="<%= recomendado.link_perfil %>"><%= recomendado.nome %></a>
+                            </div>
+                            <button type="button" class="btn btn-Seguir">Seguir</button>
                         </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
+                    <% }) %>
+                    
                 </div>
             </div>
         </section>
@@ -98,10 +25,10 @@
             <!-- Buscar Contatos -->
             <section class="pesquisar-contatos"> 
                 <div class="formulario-pesquisar-contato">
-                    <form action="" method="POST">
+                    <form action="/minhaRede" method="POST">
                         <div class="form-buscar-vaga form-group">
-                            <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar contato">
-                            <button type="button" class="btn btn-Buscar">Buscar</button>
+                            <input type="buscarVaga" class="form-control" id="buscarContato" name="buscar" placeholder="Buscar contato">
+                            <button type="submit" class="btn btn-Buscar">Buscar</button>
                         </div>
                     </form>
                 </div>
@@ -109,126 +36,30 @@
 
             <!-- Feed de Contatos -->
             <section class="feed-contatos"> 
-                <div class="feed-contatos-conteudo">
+                <div class="feed-contatos-conteudo" id="divConteudo">
+                   
                     <div class="radio-group">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" checked>
+                            <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" >
                             <label class="custom-control-label" for="customRadio1">Seguindo</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
+                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input" >
                             <label class="custom-control-label" for="customRadio2">Seguidores</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Geral</label>
+                            <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio3">Geral</label>
                         </div>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
-                    <div class="card-contato">
-                        <img class="contato-img" src="/img/icones/imgEditar.png" alt="Foto Contato">
-                        <div class="nome-contato">
-                            <a href="">Jane Doe</a>
-                        </div>
-                        <button type="button" class="btn btn-Seguir">Seguir</button>
-                    </div>
+                    </div> 
+                    
+                    
+
+
+
+
+                                         
+                                       
                     <div class="botao">
                         <button type="button" class="btn btn-mais">+ Contatos</button>
                     </div>
@@ -236,5 +67,14 @@
             </section>
         </div>
     </main>
+
+    <script>
+        let seguindoJs = '<%- JSON.stringify(seguindo) %>';
+        let seguidoresJs = '<%- JSON.stringify(seguidores) %>'; 
+        let geralJs = '<%- JSON.stringify(geral) %>';
+   </script>
+   
+   <script src="javascripts/radio.js"></script>
+    
 
     <%- include('./partials/footer.ejs') %>

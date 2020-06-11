@@ -15,7 +15,6 @@
     </div>
     <% } %>
 
-    <!-- Grupo Head -->
     <section id="head" class="card-perfil">
         <div class="head-fundo">
             <img class="wallpaper" src="<%= dadosUsuarioBanda.wallpaper %>" alt="Foto de fundo">
@@ -29,12 +28,12 @@
             <h3><strong><%= dadosUsuarioBanda.nome %> </strong></h3>
             <div class="info-user-status">
                 <div class="media">
-                    <img src="/img/icones/icon_star.svg">
+                    <i class="fas fa-star"></i>
                     <p>Seguidores: <%= seguidores %></p>
                 </div>
 
                 <div class="media">
-                    <img src="/img/icones/icon_headset.svg">
+                    <i class="fas fa-headphones-alt fone"></i>
                     <p>Seguindo: <%= seguindo %></p>
                 </div>
 
@@ -46,21 +45,27 @@
             </div>
         </div>
         <% if (dadosBanda.id_usuario === usuario.id_usuario) { %>
-            <div class="config">
-                <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <i class="fas fa-cog"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/perfil/editar/banda">
-                        Editar Perfil
-                    </a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
-                        Alterar Senha
-                    </a>
-                </div>
+        <div class="config">
+            <button type="button" class="btn-config dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="/perfil/editar/banda">
+                    Editar Perfil
+                </a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#alterarSenha" href="#">
+                    Alterar Senha
+                </a>
             </div>
-        <% } %>    
+        </div>
+        <% } else { %>
+            <div class="config">
+                <button type="button" class="btn-config">
+                    <i class="fas fa-headphones-alt"></i>
+                </button>
+            </div>
+        <% } %>
     </section>
 
     <!-- Grupo Bio -->
@@ -69,16 +74,17 @@
         <h4><strong>Sobre a banda</strong></h4>
         <div class="bio-scroll">
             <% if (dadosBanda.sobre) { %>
-            <p class="text-justify">
-                <%= dadosBanda.sobre %>
-            </p>
-            <% } else { %>
-            <p class="msg-incentivo">
-                Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros
-                usuários e ganhe muitos seguidores!
-            </p>
-            <% } %>
-        </div>
+                <p class="text-justify" style="white-space: pre-wrap"><%= dadosBanda.sobre %></p>
+                <% } else if (dadosBanda.id_usuario === usuario.id_usuario) { %>
+                    <p class="msg-incentivo">
+                        Fique à vontade para usar esse espaço divulgando o seu talento e desperte o interesse dos outros usuários e ganhe muitos seguidores! 
+                    </p>
+                <% } else { %>
+                    <p class="msg-incentivo">
+                        Se quiser mais informações sobre <%= dadosUsuarioBanda.nome %> pode entrar em contato pelo <%= dadosUsuarioBanda.email %>
+                    </p>
+                <% } %>
+            </div>
 
     </section>
 
@@ -115,17 +121,21 @@
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
                         <% if (dadosBanda.site) { %>
-                        <p><%= dadosBanda.site %></p>
+                            <p><%= dadosBanda.site %></p>
+                        <% } else if (dadosBanda.id_usuario === usuario.id_usuario){ %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
                         <% } else { %>
-                        <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <p class="msg-incentivo">Campo não informado</p>
                         <% } %>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/canal-01.png" alt="Canal">
                         <% if (dadosBanda.canal) { %>
-                        <p><%= dadosBanda.canal %></p>
+                            <p><%= dadosBanda.canal %></p>
+                        <% } else if (dadosBanda.id_usuario === usuario.id_usuario) { %>
+                            <p class="msg-incentivo">Ops, você não informou este campo</p>
                         <% } else { %>
-                        <p class="msg-incentivo">Ops, você não informou este campo</p>
+                            <p class="msg-incentivo">Campo não informado</p>
                         <% } %>
                     </div>
                     <div class="infos-item media">
@@ -141,53 +151,57 @@
     <section id="minhaMusica" class="card-perfil">
         <h4><strong>Minha música</strong></h4>
         <div class="row">
-            <% if (!videos.length && !audios.length) { %>
+            <% if (dadosBanda.id_usuario === usuario.id_usuario && !videos.length && !audios.length) { %>
             <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
+            <% } else if (dadosBanda.id_usuario !== usuario.id_usuario && !videos.length && !audios.length) { %>
+            <p class="msg-incentivo"><%= dadosUsuarioBanda.nome %> não divulgou nenhuma música por enquanto.</p>
             <% } %>
             <% if (videos.length) { %>
-            <% videos.forEach(video => { %>
-            <% if (video.tipo == "arquivo") { %>
-            <div class="musica-item col-xl-6 col-sm-12">
-                <video controls>
-                    <source src="<%= video.caminho %>" type="video/mp4">
-                    <source src="<%= video.caminho %>" type="video/ogg">
-                    <p>Seu browser não suporta este recurso</p>
-                </video>
-                <h5><%= video.titulo %></h5>
-            </div>
-            <% } %>
-            <% if (video.tipo == "link") { %>
-            <div class="musica-item col-xl-6 col-sm-12">
-                <iframe src="https://www.youtube.com/embed/x5YP_oLcgpg" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <h5><%= video.titulo %></h5>
-            </div>
-            <% } %>
-            <% }) %>
+                <% videos.forEach(video => { %>
+                    <% if (video.tipo == "arquivo") { %>
+                        <div class="musica-item col-xl-6 col-sm-12">
+                            <video controls>
+                                <source src="<%= video.caminho %>" type="video/mp4">
+                                <source src="<%= video.caminho %>" type="video/webm">
+                                <p>Seu browser não suporta este recurso</p>
+                            </video>
+                            <h5><%= video.titulo %></h5>
+                        </div>
+                    <% } %>
+                    <% if (video.tipo == "link") { %>
+                        <div class="musica-item col-xl-6 col-sm-12">
+                            <iframe src="<%= video.caminho %>" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <h5><%= video.titulo %></h5>
+                        </div>
+                    <% } %>
+                <% }) %>
             <% } %>
 
             <% if (audios.length) { %>
-            <% audios.forEach(audio => { %>
-            <% if (audio.tipo == "arquivo") { %>
-            <div class="musica-item col-xl-6 col-sm-12">
-                <div class="player">
-                    <audio controls>
-                        <source src="<%= audio.caminho %>" type="audio/mpeg">
-                        <source src="<%= audio.caminho %>" type="audio/ogg">
-                        <p>Seu browser não suporta este recurso</p>
-                    </audio>
-                </div>
-                <h5><%= audio.titulo %></h5>
-            </div>
-            <% } %>
-            <% if (audio.tipo == "link") { %>
-            <div class="musica-item col-xl-6 col-sm-12">
-                <iframe scrolling="no" frameborder="no" allow="autoplay" src="<%= audio.caminho %>"></iframe>
-                <h5><%= audio.titulo %></h5>
-            </div>
-            <% } %>
-            <% }) %>
+                <% audios.forEach(audio => { %>
+                    <% if (audio.tipo == "arquivo") { %>
+                        <div class="musica-item col-xl-6 col-sm-12">
+                            <div class="player">
+                                <audio controls>
+                                    <source src="<%= audio.caminho %>" type="audio/mp3">
+                                    <source src="<%= audio.caminho %>" type="audio/ogg">
+                                    <source src="<%= audio.caminho %>" type="audio/aiff">
+                                    <source src="<%= audio.caminho %>" type="audio/flac">
+                                    <p>Seu browser não suporta este recurso</p>
+                                </audio>
+                            </div>
+                            <h5><%= audio.titulo %></h5>
+                        </div>
+                    <% } %>
+                    <% if (audio.tipo == "link") { %>
+                        <div class="musica-item col-xl-6 col-sm-12">
+                            <iframe scrolling="no" frameborder="no" allow="autoplay" src="<%= audio.caminho %>"></iframe>
+                            <h5><%= audio.titulo %></h5>
+                        </div>
+                    <% } %>
+                <% }) %>
             <% } %>
         </div>
 
