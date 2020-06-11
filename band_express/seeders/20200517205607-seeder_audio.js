@@ -25,13 +25,13 @@ module.exports = {
         {
           tipo: "arquivo", 
           titulo: "The Children's Song" ,
-          caminho: "/video/The Children's Song.mp3",
+          caminho: "/audio/The Children's Song.mp3",
           id_usuario: 5,
         },
         {
           tipo: "arquivo", 
           titulo: "Rude" ,
-          caminho:"/video/Rude.mp3",
+          caminho:"/audio/Rude.mp3",
           id_usuario: 6,
         },
         {
