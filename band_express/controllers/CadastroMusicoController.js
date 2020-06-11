@@ -79,7 +79,7 @@ const cadastroMuicoController = {
             data_cadastro: new Date(),
             id_cidade: idCidade,
             id_estado: idEstado,
-            link_perfil: null,
+            link_perfil: nome,
             id_tipos_perfil: 1
         })
         
