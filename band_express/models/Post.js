@@ -20,9 +20,17 @@ const Post = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            video: {
+            video_arquivo: {
                 type: DataTypes.STRING,
                 allowNull: true
+            },
+            video_link: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            data_post: {
+                type: DataTypes.DATE,
+                allowNull: false
             },
             curtir: {
                 type: DataTypes.BOOLEAN,
@@ -30,7 +38,7 @@ const Post = (sequelize, DataTypes) => {
                 allowNull: false
             }
         }, {
-            tableName: "video",
+            tableName: "post",
             timestamps: false
         }
     );
