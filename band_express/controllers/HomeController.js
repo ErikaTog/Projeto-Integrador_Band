@@ -1,4 +1,4 @@
-const { Usuario, Minha_rede, Post } = require('../models');
+const { Usuario, Minha_rede, Post, Comentario } = require('../models');
 const { Op } = require('sequelize');
 const moment = require('moment');
 
@@ -32,7 +32,7 @@ const homeController = {
         // Post ordenados pelos mais recentes 
         const posts = await Post.findAll({
             raw: true,
-            attributes: ['texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+            attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
             include: [{
                 model: Usuario,
                 as: 'postUsuario',
@@ -40,6 +40,18 @@ const homeController = {
             }],
             limit: 10,
             order: [['data_post', 'DESC']]
+        })
+
+        // Buscar os comentários dos posts
+        let comentarios  = await Comentario.findAll({
+            raw: true,
+            attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
+            include: [{
+                model: Usuario,
+                as: 'comentarioUsuario',
+                attributes:[]
+            }],
+            order: [['id_post']]
         })
 
 
@@ -50,7 +62,8 @@ const homeController = {
             seguidores,
             seguindo,
             novosUsuarios,
-            posts
+            posts,
+            comentarios
         });
     }
 } 
