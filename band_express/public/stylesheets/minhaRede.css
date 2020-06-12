@@ -124,6 +124,13 @@
 /* --------------------------------
          Card Contato
 -------------------------------- */
+#redeGroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    min-height: 200px;
+   }
+
 .card-contato {
     margin: 0 auto;
     padding: 0px 5px;
@@ -156,6 +163,13 @@
 
 .feed-contatos-conteudo .card-contato{
     margin-bottom: 20px;
+}
+
+#idResp{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --------------------------------
