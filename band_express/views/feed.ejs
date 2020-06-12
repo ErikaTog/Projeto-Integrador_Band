@@ -75,20 +75,23 @@
                             <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar"></textarea>
                         </div>
                         <div class="add">
+                            <div class="form">
+                                <div class="upload link">
+                                    <input type="text" class="form-control" id="linkVideo" placeholder="Digite o link" name="videoLink">
+                                    <label for="linkVideo"><i class="fas fa-link link"></i></label>
+                                </div>
+                            </div>
                             <div class="upload">
                                 <label for="file-input-img">
                                     <img src="/img/icones/icon_image.svg" alt="Imagem">
                                 </label>
-                                <input type="file" id="file-input-img" accept="image/*" name="imagem">
+                                <input type="file" class="file" id="file-input-img" accept="image/*" name="imagem">
                             </div>
                             <div class="upload">
                                 <label for="file-input-video">
                                     <i class="fas fa-film"></i>
                                 </label>
-                                <input type="file" id="file-input-video" accept="video/*" name="video">
-                            </div>
-                            <div class="upload">
-                                <i class="fas fa-link link"></i>
+                                <input type="file" class="file" id="file-input-video" accept="video/*" name="video">
                             </div>
                             <button type="submit" class="btn btn-salvar">Publicar</button>
                         </div>
