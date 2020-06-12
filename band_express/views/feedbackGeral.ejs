@@ -25,12 +25,12 @@
 
     <div class="container" id="msgFeedback">
         <div class="row">
-            <img src="/img/feedback_excluir.svg" alt="" class="col-lg-5 col-sm-12">
+            <img src="<%= imagem %>" alt="" class="col-lg-5 col-sm-12">
             <div class="alert alert-success col-lg-6 col-sm-12" role="alert">
-                <h3>Exclusão feita com sucesso</h3>
-                <p>Sua conta Band + e todos os seus dados foram excluídos do nosso banco de dados.</p>
-                <a href="/">
-                    <button type="button" class="btn btn-salvar-modal">Band +</button>
+                <h3><%= titulo %></h3>
+                <p><%= mensagem %></p>
+                <a href="/home">
+                    <button type="button" class="btn btn-salvar-modal"><%= botao %></button>
                 </a>
             </div>
         </div>
