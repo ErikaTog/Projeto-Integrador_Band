@@ -10,7 +10,7 @@
                             <div class="avatar-content">
                                 <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
                             </div>
-                            <h5>Jane Doe</h5>
+                            <h5><%= usuario.nome %></h5>
                         </a>
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -75,20 +75,23 @@
                             <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar"></textarea>
                         </div>
                         <div class="add">
+                            <div class="form">
+                                <div class="upload link">
+                                    <input type="text" class="form-control" id="linkVideo" placeholder="Digite o link" name="videoLink">
+                                    <label for="linkVideo"><i class="fas fa-link link"></i></label>
+                                </div>
+                            </div>
                             <div class="upload">
                                 <label for="file-input-img">
                                     <img src="/img/icones/icon_image.svg" alt="Imagem">
                                 </label>
-                                <input type="file" id="file-input-img" accept="image/*" name="imagem">
+                                <input type="file" class="file" id="file-input-img" accept="image/*" name="imagem">
                             </div>
                             <div class="upload">
                                 <label for="file-input-video">
                                     <i class="fas fa-film"></i>
                                 </label>
-                                <input type="file" id="file-input-video" accept="video/*" name="video">
-                            </div>
-                            <div class="upload">
-                                <i class="fas fa-link link"></i>
+                                <input type="file" class="file" id="file-input-video" accept="video/*" name="video">
                             </div>
                             <button type="submit" class="btn btn-salvar">Publicar</button>
                         </div>
@@ -106,7 +109,7 @@
                                 </a>
                             </div>
                             <% if (post.imagem) { %>
-                                <img class="img-public" src="/img/teste/feed_img1.jpg" alt="Publicação">
+                                <img class="img-public" src="<%= post.imagem %>" alt="Publicação">
                             <% } %>
                             <% if (post.video_arquivo) { %>
                                 <video controls>
@@ -145,6 +148,7 @@
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
                                             placeholder="Adicione um comentário..." name="comentario"></textarea>
+                                        <input type="hidden" name="id_post" value="<%= post.id_post %>">
                                         <button type="submit" class="btn-submit">
                                             <img src="/img/icones/icon_send.svg" alt="Enviar">
                                         <button>                            

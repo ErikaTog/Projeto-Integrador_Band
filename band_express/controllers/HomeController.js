@@ -43,7 +43,7 @@ const homeController = {
         })
 
         // Buscar os comentários dos posts
-        let comentarios  = await Comentario.findAll({
+        const comentarios  = await Comentario.findAll({
             raw: true,
             attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
             include: [{
