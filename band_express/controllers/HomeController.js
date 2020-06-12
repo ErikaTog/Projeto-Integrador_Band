@@ -49,7 +49,8 @@ const homeController = {
             include: [{
                 model: Usuario,
                 as: 'comentarioUsuario',
-                attributes:[]
+                attributes:[],
+                order: [['id_comentario']]
             }],
             order: [['id_post']]
         })
@@ -68,7 +69,15 @@ const homeController = {
         });
     },
     saveComentario: async (req, res) => {
-        console.log(req.body);
+        // console.log(req.body);
+        let { comentario, id_post } = req.body;
+
+        // Salvar no BD
+        await Comentario.create({
+            id_post,
+            id_usuario: req.session.usuario.id_usuario,
+            comentario,
+        })
 
         res.redirect('/home');
     },

@@ -16,6 +16,18 @@ const home = {
         } 
 
         next();
+    },
+    errorComentario: async (req, res, next) => {
+        let errors = validationResult(req).array({ onlyFirstError: true });
+        console.log(errors)
+        
+        if(errors.length) {
+            req.flash('errorValidator', errors);
+            res.redirect('/home')
+            return 
+        } 
+
+        next();
     }
 }
 

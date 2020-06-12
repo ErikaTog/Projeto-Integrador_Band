@@ -335,6 +335,13 @@ img.avatar {
 /* --------------------------------
             Comentários
 -------------------------------- */
+.box-comentario {
+    max-height: 240px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
 
 .comentarios {
     margin: 1.5rem 5rem 0;

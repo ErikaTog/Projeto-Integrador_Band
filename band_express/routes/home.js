@@ -9,7 +9,15 @@ const HomeMiddleware = require('../middlewares/Home');
 const MulterPost = require('../middlewares/multerPost');
 
 router.get('/', VerificaUsuarioLogado, homeController.view);
-router.post('/', VerificaUsuarioLogado, homeController.saveComentario);
+router.post('/', 
+[
+    // Validando campo texto
+    check('comentario').trim()
+        .not().isEmpty().withMessage('O seu comentário está vazio...')
+        .isLength({ max: 500 }).withMessage('Uhmmm, o seu comentário está muito interessante, porém esse campo só aceita até 500 caracteres.'),
+],
+HomeMiddleware.errorComentario,
+VerificaUsuarioLogado, homeController.saveComentario);
 router.get('/publicar', VerificaUsuarioLogado, homeController.view);
 router.post('/publicar',
 multer(MulterPost).any(),

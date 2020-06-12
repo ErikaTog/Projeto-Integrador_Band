@@ -73,7 +73,8 @@ const find = async () => {
         include: [{
             model: Usuario,
             as: 'comentarioUsuario',
-            attributes:[]
+            attributes:[],
+            order: [['id_comentario']]
         }],
         order: [['id_post']]
     })
