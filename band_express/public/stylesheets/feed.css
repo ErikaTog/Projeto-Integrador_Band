@@ -525,6 +525,10 @@ button {
         height: 190px;
     }
 
+    .alert {
+        margin-top: 30px;
+    }
+
     #publicar {
         margin-top: 30px;
     }
@@ -629,6 +633,10 @@ button {
     }
     #newUser i {
         font-size: 2rem;
+    }
+
+    .alert {
+        margin-top: 15px;
     }
     
     #publicar {

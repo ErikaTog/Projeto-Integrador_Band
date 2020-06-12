@@ -66,13 +66,25 @@
             </div>
 
             <div class="col-md-8">
-
+            
+            <% if (errors.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
+            
     <!-- Grupo Publicar --> 
                 <section id="publicar" class="card-feed">
                     <h4><strong>O que está rolando?</strong></h4>
                     <form action="/home/publicar" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar"></textarea>
+                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar" required></textarea>
                         </div>
                         <div class="add">
                             <div class="form">
@@ -123,7 +135,7 @@
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             <% } %>
-                            <p><%= post.texto %></p>
+                            <p style="white-space: pre-wrap"><%= post.texto %></p>
                             <div class="curtir">
                                 <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
                                 <a data-toggle="collapse" href="#collapseComentario<%= post.id_post %>" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
