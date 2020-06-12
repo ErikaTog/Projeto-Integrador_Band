@@ -65,6 +65,7 @@ const cadastroEstabController = {
 			data_cadastro: new Date(),
 			id_cidade: idCidade,
 			id_estado: idEstado,
+			link_perfil: nome,
 			id_tipos_perfil: 3
 		})
 

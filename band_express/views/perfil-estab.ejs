@@ -103,7 +103,11 @@
                 </div>
                 <div class="infos-item media">
                     <img src="/img/icones/email-01.png" alt="Email">
-                    <p><%= dadosUsuario.email %></p>
+                    <% if (dadosUsuario.email) { %>
+                        <p><%= dadosUsuario.email %></p>
+                    <% } else { %>
+                        <p class="msg-incentivo"><%= mensagemNull %></p>
+                    <% } %>
                 </div>
             </section>
         </div>

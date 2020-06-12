@@ -176,7 +176,7 @@ img.avatar {
 /* --------------------início_do_Grupo_Publicar--------------------- */
 
 #publicar {
-    padding: 1rem 4.5rem;
+    padding: 1.5rem 4.5rem;
 }
 
 #publicar h4 {
@@ -200,12 +200,25 @@ img.avatar {
     transition-duration: 0.25s;
 }
 
-.upload > input {
+.upload > input.file {
     display: contents;
 }
 
-.upload label {
+.upload.link {
+    display: flex;
+    align-items: center;
+}
+
+#publicar .form {
+    width: 100%;
+}
+
+#publicar input.form-control {
     margin: 0;
+}
+
+.upload label {
+    margin: 0 1.5rem 0 0;
     display: flex;
 }
 
@@ -214,12 +227,12 @@ img.avatar {
     color: #4c4f66;
     width: 25px;
     font-size: 2.5rem;
-    margin-right: 1.5rem;
     transition-duration: 0.25s;
 }
 
 .upload i.link {
     font-size: 2.2rem;
+    margin-left: 1rem;
 }
 
 .upload img:hover,
@@ -322,6 +335,13 @@ img.avatar {
 /* --------------------------------
             Comentários
 -------------------------------- */
+.box-comentario {
+    max-height: 240px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
 
 .comentarios {
     margin: 1.5rem 5rem 0;
@@ -512,6 +532,10 @@ button {
         height: 190px;
     }
 
+    .alert {
+        margin-top: 30px;
+    }
+
     #publicar {
         margin-top: 30px;
     }
@@ -617,6 +641,10 @@ button {
     #newUser i {
         font-size: 2rem;
     }
+
+    .alert {
+        margin-top: 15px;
+    }
     
     #publicar {
         padding: 1rem 2rem;
@@ -633,8 +661,8 @@ button {
     ::-webkit-input-placeholder{
         font-size: 1.4rem;
     }
-    .add .upload {
-        margin-right: 1rem;
+    input.form-control {
+        font-size: 1.4rem;
     }
     .upload label {
         width: 20px;
@@ -643,7 +671,9 @@ button {
     .upload i {
         width: 20px;
         font-size: 20px;
-        margin-right: 1rem;
+    }
+    .upload i.link {
+        font-size: 1.8rem;
     }
     button.btn {
         font-size: 1.2rem;

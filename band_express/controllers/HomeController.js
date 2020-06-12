@@ -43,13 +43,14 @@ const homeController = {
         })
 
         // Buscar os comentários dos posts
-        let comentarios  = await Comentario.findAll({
+        const comentarios  = await Comentario.findAll({
             raw: true,
             attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
             include: [{
                 model: Usuario,
                 as: 'comentarioUsuario',
-                attributes:[]
+                attributes:[],
+                order: [['id_comentario']]
             }],
             order: [['id_post']]
         })
@@ -63,11 +64,20 @@ const homeController = {
             seguindo,
             novosUsuarios,
             posts,
-            comentarios
+            comentarios,
+            errors: req.flash('errorValidator'),
         });
     },
     saveComentario: async (req, res) => {
-        console.log(req.body);
+        // console.log(req.body);
+        let { comentario, id_post } = req.body;
+
+        // Salvar no BD
+        await Comentario.create({
+            id_post,
+            id_usuario: req.session.usuario.id_usuario,
+            comentario,
+        })
 
         res.redirect('/home');
     },
@@ -75,9 +85,12 @@ const homeController = {
         // console.log(req.body);
         // console.log(req.files);
 
-        let { textoPublicar: texto } = req.body;
+        let { textoPublicar, videoLink } = req.body;
+        let texto = textoPublicar.trim();
+        videoLink = videoLink.trim();
         let caminhoImagem = '';
         let caminhoVideo = '';
+        let video_link = '';
 
         // Verificar se req.files não está vazio
         // verificar fieldname >> imagem ou video
@@ -91,12 +104,36 @@ const homeController = {
             }
         }
 
+        // Tratar link de video
+        if (videoLink) {
+
+            // YouTube
+            if (videoLink.includes('youtube.com')) {
+                let urlYoutube = videoLink.split("=");
+                video_link = `https://www.youtube.com/embed/${urlYoutube[1]}`
+            }
+
+            // Vimeo 
+            if (videoLink.includes('vimeo.com')) {
+                let urlVimeo = videoLink.split("/");
+                video_link = `https://player.vimeo.com/video/${urlVimeo[3]}`
+            }
+
+            // Dailymotion
+            if (videoLink.includes('dailymotion.com')) {
+                let urlDaily = videoLink.split("/");
+                video_link = `https://www.dailymotion.com/embed/video/${urlDaily[4]}`
+            }
+        }
+
+
         // Salvar no BD
         await Post.create({
             id_usuario: req.session.usuario.id_usuario,
             texto,
             imagem: caminhoImagem,
             video_arquivo: caminhoVideo,
+            video_link,
             data_post: new Date(),
             curtido: 0
         })

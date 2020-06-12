@@ -1,14 +1,27 @@
 <%- include('./partials/header.ejs', { active: "Gerenciar" , css: "remover.css"}) %>
 
-        <form class="remover-container">
+        <form class="remover-container" action="/remover?_method=PUT" method="POST">
             <section id="excluirConta" class="card-remover">
                 <h4><strong>Excluir conta</strong></h4>
+
+                <% if (errors.length) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <!-- <h5>Não foi possível fazer a alteração solicitada!</h5> -->
+                        <!-- <hr> -->
+                        <ul class="error">
+                            <% for( let i = 0; i < errors.length; i++ ) { %>
+                                <li>- <%= errors[i].msg %>  </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
+
                 <p class="saudacao">Olá, <strong><%= usuario.nome %></strong>.</p>
-                <p>É uma pena que você queira excluir a sua conta...</p>
-                <p>Você perderá todos os seus dados e postagens pois tudo será excluído do nosso banco de dados.</p>
+                <p>É uma pena que você queira excluir a sua conta.</p>
+                <!-- <p>Você perderá todos os seus dados, postagens, mensagens... tudo será excluído do nosso banco de dados.</p> -->
                 <div class="form-group">
                     <label for="motivoExcluir">Por que você está excluindo a sua conta?</label>
-                    <select class="form-control" id="motivoExcluir">
+                    <select class="form-control" id="motivoExcluir" name="motivo">
                         <option class=" selected" selected disabled>Escolha...</option>
                         <option>Uma segunda conta foi criada</option>
                         <option>Problemas para começar</option>
@@ -21,9 +34,9 @@
                 </div>
                 <div class="form-group">
                     <label class="danger" for="dangerSenha">Para confirmar a ação insira a sua senha.</label>
-                    <input type="password" class="form-control" id="dangerSenha" placeholder="Senha">
+                    <input type="password" class="form-control" id="dangerSenha" placeholder="Senha" name="senhaExcluir">
                     <div class="carregar">
-                        <button type="button" class="btn btn-danger">Confirmar</button>
+                        <button type="submit" class="btn btn-danger">Confirmar</button>
                     </div>
                 </div>
             </section>

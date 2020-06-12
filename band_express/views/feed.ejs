@@ -10,7 +10,7 @@
                             <div class="avatar-content">
                                 <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
                             </div>
-                            <h5>Jane Doe</h5>
+                            <h5><%= usuario.nome %></h5>
                         </a>
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -66,29 +66,44 @@
             </div>
 
             <div class="col-md-8">
+            
+            <% if (errors.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
 
     <!-- Grupo Publicar --> 
                 <section id="publicar" class="card-feed">
                     <h4><strong>O que está rolando?</strong></h4>
                     <form action="/home/publicar" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar"></textarea>
+                            <textarea class="form-control" id="textareaPublicacao" rows="4" placeholder="Publique o que está acontecendo por aí!!" name="textoPublicar" required></textarea>
                         </div>
                         <div class="add">
+                            <div class="form">
+                                <div class="upload link">
+                                    <input type="text" class="form-control" id="linkVideo" placeholder="Digite o link" name="videoLink">
+                                    <label for="linkVideo"><i class="fas fa-link link"></i></label>
+                                </div>
+                            </div>
                             <div class="upload">
                                 <label for="file-input-img">
                                     <img src="/img/icones/icon_image.svg" alt="Imagem">
                                 </label>
-                                <input type="file" id="file-input-img" accept="image/*" name="imagem">
+                                <input type="file" class="file" id="file-input-img" accept="image/*" name="imagem">
                             </div>
                             <div class="upload">
                                 <label for="file-input-video">
                                     <i class="fas fa-film"></i>
                                 </label>
-                                <input type="file" id="file-input-video" accept="video/*" name="video">
-                            </div>
-                            <div class="upload">
-                                <i class="fas fa-link link"></i>
+                                <input type="file" class="file" id="file-input-video" accept="video/*" name="video">
                             </div>
                             <button type="submit" class="btn btn-salvar">Publicar</button>
                         </div>
@@ -106,7 +121,7 @@
                                 </a>
                             </div>
                             <% if (post.imagem) { %>
-                                <img class="img-public" src="/img/teste/feed_img1.jpg" alt="Publicação">
+                                <img class="img-public" src="<%= post.imagem %>" alt="Publicação">
                             <% } %>
                             <% if (post.video_arquivo) { %>
                                 <video controls>
@@ -120,31 +135,34 @@
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             <% } %>
-                            <p><%= post.texto %></p>
+                            <p style="white-space: pre-wrap"><%= post.texto %></p>
                             <div class="curtir">
                                 <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
                                 <a data-toggle="collapse" href="#collapseComentario<%= post.id_post %>" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
                             </div>
                             <div class="collapse comentarios" id="collapseComentario<%= post.id_post %>">
-                                <% comentarios.forEach(comentario => { %>
-                                    <% if (post.id_post === comentario.id_post) { %>
-                                        <div class="media comentario">
-                                            <a href="<%= comentario.link_perfil %>">
-                                                <img class="mini-avatar" src="<%= comentario.avatar %>" alt="<%= comentario.nome %>">
-                                            </a>
-                                            <div class="card-feed">
+                                <div class="box-comentario">
+                                    <% comentarios.forEach(comentario => { %>
+                                        <% if (post.id_post === comentario.id_post) { %>
+                                            <div class="media comentario">
                                                 <a href="<%= comentario.link_perfil %>">
-                                                    <p class="nome-comentario"><%= comentario.nome %></p>
+                                                    <img class="mini-avatar" src="<%= comentario.avatar %>" alt="<%= comentario.nome %>">
                                                 </a>
-                                                <p class="texto-comentario"><%= comentario.comentario %></p>
+                                                <div class="card-feed">
+                                                    <a href="<%= comentario.link_perfil %>">
+                                                        <p class="nome-comentario"><%= comentario.nome %></p>
+                                                    </a>
+                                                    <p class="texto-comentario" style="white-space: pre-wrap"><%= comentario.comentario %></p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <% } %>
-                                <% }) %>
+                                        <% } %>
+                                    <% }) %>
+                                </div>
                                 <form action="/home" method="POST">
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
-                                            placeholder="Adicione um comentário..." name="comentario"></textarea>
+                                            placeholder="Adicione um comentário..." name="comentario" required></textarea>
+                                        <input type="hidden" name="id_post" value="<%= post.id_post %>">
                                         <button type="submit" class="btn-submit">
                                             <img src="/img/icones/icon_send.svg" alt="Enviar">
                                         <button>                            
