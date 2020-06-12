@@ -63,7 +63,8 @@ const homeController = {
             seguindo,
             novosUsuarios,
             posts,
-            comentarios
+            comentarios,
+            errors: req.flash('errorValidator'),
         });
     },
     saveComentario: async (req, res) => {
@@ -75,9 +76,12 @@ const homeController = {
         // console.log(req.body);
         // console.log(req.files);
 
-        let { textoPublicar: texto } = req.body;
+        let { textoPublicar, videoLink } = req.body;
+        let texto = textoPublicar.trim();
+        videoLink = videoLink.trim();
         let caminhoImagem = '';
         let caminhoVideo = '';
+        let video_link = '';
 
         // Verificar se req.files não está vazio
         // verificar fieldname >> imagem ou video
@@ -91,12 +95,36 @@ const homeController = {
             }
         }
 
+        // Tratar link de video
+        if (videoLink) {
+
+            // YouTube
+            if (videoLink.includes('youtube.com')) {
+                let urlYoutube = videoLink.split("=");
+                video_link = `https://www.youtube.com/embed/${urlYoutube[1]}`
+            }
+
+            // Vimeo 
+            if (videoLink.includes('vimeo.com')) {
+                let urlVimeo = videoLink.split("/");
+                video_link = `https://player.vimeo.com/video/${urlVimeo[3]}`
+            }
+
+            // Dailymotion
+            if (videoLink.includes('dailymotion.com')) {
+                let urlDaily = videoLink.split("/");
+                video_link = `https://www.dailymotion.com/embed/video/${urlDaily[4]}`
+            }
+        }
+
+
         // Salvar no BD
         await Post.create({
             id_usuario: req.session.usuario.id_usuario,
             texto,
             imagem: caminhoImagem,
             video_arquivo: caminhoVideo,
+            video_link,
             data_post: new Date(),
             curtido: 0
         })
