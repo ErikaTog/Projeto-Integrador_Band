@@ -25,6 +25,7 @@ var anuncieRouter = require('./routes/anuncie');
 var vagasRouter = require('./routes/vagas');
 var minhaRedeRouter = require('./routes/minhaRede');
 var feedbackRouter = require('./routes/feedback');
+var feedbackExcluirRouter = require('./routes/feedbackExcluir');
 var ajudaRouter = require('./routes/ajuda');
 var removerRouter = require('./routes/remover');
 
@@ -70,6 +71,7 @@ app.use('/anuncie', anuncieRouter);
 app.use('/vagas', vagasRouter);
 app.use('/minhaRede', minhaRedeRouter);
 app.use('/feedback', feedbackRouter);
+app.use('/feedbackExcluir', feedbackExcluirRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/remover', removerRouter);
 
