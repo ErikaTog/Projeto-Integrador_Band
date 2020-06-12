@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/geral.css">
-    <link rel="stylesheet" href="/stylesheets/<%= css %>">
+    <% css.forEach(css => { %>
+        <link rel="stylesheet" href="/stylesheets/<%= css %>">
+    <% }) %>
      <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
@@ -123,7 +125,7 @@
                                     href="/perfil/editar/estabelecimento"
                                 <% } %> 
                                 >Editar Perfil</a>
-                                <a class="dropdown-item" href="">Minhas publicações</a>
+                                <a class="dropdown-item" href="/minhaPublicacao">Minhas publicações</a>
                                 <a class="dropdown-item" href="/">Sair</a>
                             </div>
                         </li>

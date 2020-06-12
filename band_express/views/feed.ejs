@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs', { active: "Home" , css: "feed.css"}) %>
+<%- include('./partials/header.ejs', { active: "Home" , css: ["feed.css"]}) %>
 
     <div class="feed-container container">
         <div class="row">
@@ -8,7 +8,7 @@
                     <div class="user-info">
                         <a href="<%= link %>">
                             <div class="avatar-content">
-                                <img class="avatar" src="<%= usuario.avatar %>" alt="Avatar">
+                                <img class="avatar" src="<%= usuario.avatar %>" alt="<%= usuario.nome %>">
                             </div>
                             <h5><%= usuario.nome %></h5>
                         </a>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="feed-user.html">Minhas publicações</a>
+                    <a href="/minhaPublicacao">Minhas publicações</a>
                 </section>
 
     <!-- Grupo New User -->            
@@ -158,7 +158,7 @@
                                         <% } %>
                                     <% }) %>
                                 </div>
-                                <form action="/home" method="POST">
+                                <form action="" method="POST">
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
                                             placeholder="Adicione um comentário..." name="comentario" required></textarea>
