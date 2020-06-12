@@ -77,7 +77,12 @@ app.use('/remover', removerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).render('feedbackGeral', { 
+    imagem: '/img/feedback_404.svg',
+    titulo: 'Pagina não encontrada',
+    mensagem: 'Não encontramos essa página, tente mais tarde ou cliqe em voltar para a pagina inicial.',
+    botao: 'Voltar'
+  });
 });
 
 // error handler
