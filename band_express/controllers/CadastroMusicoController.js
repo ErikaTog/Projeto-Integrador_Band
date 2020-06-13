@@ -5,39 +5,33 @@ const cadastroMuicoController = {
     formMusician: async (req, res) => {
 
         // Buscar todos os estados
-        const findEstados = await Estado.findAll({ 
-            raw: true,
-            attributes: ['uf'] 
+        const estados = await Estado.findAll({ 
+            raw: true
         });
 
-        listaEstados = [];
-        findEstados.forEach(estado => {
-            listaEstados.push(estado.uf)
+        // Buscar todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
         });
         
         // Buscar todos os instrumentos
-        const findInstrumentos = await Instrumento.findAll({ 
+        const instrumentos = await Instrumento.findAll({ 
             raw: true,
             attributes: ['instrumento'] 
         });
-        
-        listaInstrumentos = [];
-        findInstrumentos.forEach(instrumento => {
-            listaInstrumentos.push(instrumento.instrumento)
-        });
 
         // Buscar todas as habilidades
-        const findTecnicos = await Tecnico.findAll({ 
+        const tecnicos = await Tecnico.findAll({ 
             raw: true,
             attributes: ['habilidade_tecnica'] 
         });
-        
-        listaTecnicos = [];
-        findTecnicos.forEach(instrumento => {
-            listaTecnicos.push(instrumento.habilidade_tecnica)
-        });
 
-        return res.render('form-musico', { listaEstados, listaInstrumentos, listaTecnicos });
+        return res.render('form-musico', { 
+            estados, 
+            instrumentos, 
+            tecnicos,
+            cidades
+        });
     },
     saveMusician: async (req, res) => {
 
