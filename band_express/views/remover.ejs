@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs', { active: "Gerenciar" , css: "remover.css"}) %>
+<%- include('./partials/header.ejs', { active: "Gerenciar" , css: ["remover.css"]}) %>
 
         <form class="remover-container" action="/remover?_method=PUT" method="POST">
             <section id="excluirConta" class="card-remover">
