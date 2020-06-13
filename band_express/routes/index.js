@@ -8,4 +8,6 @@ router.get('/', indexController.view);
 
 router.post('/', indexController.loginUsuario);
 
+router.get('/logout', indexController.logoutUsuario);
+
 module.exports = router;
