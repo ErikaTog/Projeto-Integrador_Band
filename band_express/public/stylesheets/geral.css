@@ -350,6 +350,12 @@ button.btn.btn-danger:hover {
     overflow-y: auto;
 }
 
+select.readonly {
+    background: #eee; /* Simular campo inativo */
+    pointer-events: none;
+    touch-action: none;
+}
+
 
 /* --------------------------------
          Cor do radio
