@@ -1,5 +1,5 @@
-const { Usuario, Minha_rede, Post, Comentario } = require('../models');
-const { Op } = require('sequelize');
+const { Usuario, Minha_rede, Post, Comentario, Curtida } = require('../models');
+const { Op, Sequelize} = require('sequelize');
 const moment = require('moment');
 
 const publicacaoController = {
@@ -55,6 +55,18 @@ const publicacaoController = {
             order: [['id_post']]
         })
 
+        // Buscar curtidas
+        const curtidas = await Post.findAll({
+            raw: true,
+            attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('postCurtida.id_post')), 'curtidas']],
+            include: [{
+                model: Curtida,
+                as: 'postCurtida',
+                attributes: []
+            }],
+            group: ['id_post']
+        })
+
         return res.render('feed-user', { 
             title: 'Minhas publicações', 
             usuario: req.session.usuario,
@@ -64,6 +76,7 @@ const publicacaoController = {
             novosUsuarios,
             posts,
             comentarios,
+            curtidas
         });
         
     }

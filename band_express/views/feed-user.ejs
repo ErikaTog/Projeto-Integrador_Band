@@ -98,7 +98,12 @@
                             <div class="curtir">
                                 <div>
                                     <i class="fas fa-star"></i>
-                                    <span>150 Curtidas</span>
+                                    <span>
+                                        <% curtidas.forEach(curtida => { %>
+                                        <% if (post.id_post === curtida.id_post) { %>
+                                            <%= curtida.curtidas %> 
+                                        <% } %>
+                                    <% }) %> Curtidas</span>
                                 </div>
                                 <a data-toggle="collapse" href="#collapseComentario<%= post.id_post %>" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
                             </div>

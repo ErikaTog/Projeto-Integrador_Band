@@ -1,5 +1,5 @@
-const { Cidade, Usuario, Musico, Instrumento, Tecnico, Post, Comentario, Curtida } = require('../models');
-const { Op } = require('sequelize');
+const { Cidade, Usuario, Musico, Instrumento, Tecnico, Post, Comentario, Curtida, sequelize } = require('../models');
+const { Op, Sequelize } = require('sequelize');
 const moment = require('moment');
 const { post } = require('../routes/minhaPublicacao');
 
@@ -82,6 +82,29 @@ const find = async () => {
 
     // console.log(comentarios);
 
+    // const curtidas = await Curtida.findAll({
+    //     raw: true,
+    //     attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('id_post')), 'curtidas']],
+    //     group: ['id_post']
+    // })
+
+    // console.log(curtidas);
+    
+    const curtidas = await Post.findAll({
+        raw: true,
+        attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('postCurtida.id_post')), 'curtidas']],
+        include: [{
+            model: Curtida,
+            as: 'postCurtida',
+            attributes: []
+        }],
+        group: ['id_post']
+    })
+
+    console.log(curtidas);
+
+
+    // Buscar curtidas somente dos posts carregados
     // const posts = await Post.findAll({
     //     where: { id_usuario: 2 },
     //     raw: true,
@@ -102,67 +125,19 @@ const find = async () => {
     //     id_posts.push(post.id_post)
     // });
 
-    // // console.log(id_posts);
-
-    // let contarCurtida = [];
-
-    // posts.forEach( async post => {
-    //     contarCurtida.push( await Curtida.count({
-    //         where: {
-    //             id_post: post.id_post
-    //         }
-    //     }))
-    // })
-    // console.log(contarCurtida);
-
-    
-    // let buscaCurtida = await Curtida.findAll({
+    // const curtidas = await Curtida.findAll({
     //     raw: true,
-    //     attributes: ['id_post'],
+    //     attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('id_post')), 'curtidas']],
+    //     group: ['id_post'],
     //     where: {
     //         id_post: {
     //             [Op.or]: id_posts
     //         }
     //     }
     // })
-    
-    // console.log(buscaCurtida);
-
-    // let id_post_curtida = [];
-
-    // buscaCurtida.forEach(curtida => {
-    //     id_post_curtida.push(curtida.id_post)
-    // });
-
-    // // console.log(id_post_curtida);
-
-    // let curtidas = id_post_curtida.reduce(function( object , item ){
-    //     console.log(object);
-    //     if ( !object[item] ) {
-    //        object[item]=1;
-    //     } else {
-    //        object[item]++;
-    //     }
-    //     return object; 
-    //   },{}) 
 
     // console.log(curtidas);
 
-    
-    // // console.log(Object.keys(curtidas))
-    
-    // // const busca = await Curtida.findAll({
-    // //     raw: true
-    // // });
-
-    // // posts.forEach(post => {
-    // //     Object.keys(curtidas).forEach(curtida => {
-    // //         if (post.id_post == curtida) {
-
-    // //             console.log(`${post.id_post} tem ${curtidas} curtidas`)
-    // //         }
-    // //     })
-    // // });
 
 };
 
