@@ -1,4 +1,4 @@
-<%- include('./partials/header.ejs', { active: "Vagas" , css: "vagas.css"}) %>
+<%- include('./partials/header.ejs', { active: "Vagas" , css: ["vagas.css"]}) %>
     
     <main class="container-vagas">
 
@@ -13,7 +13,7 @@
         <div class="feed">
             <!-- Pesquisar Vagas -->
             <section class="pesquisar-vaga">
-                <div class="formulario-pesquisar-vaga">
+                <form class="formulario-pesquisar-vaga">
                     <div class="radio">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" checked>
@@ -28,14 +28,14 @@
                             <label class="custom-control-label" for="customRadio6">Estabecimento</label>
                         </div>
                     </div>
-                    <form action="" method="POST">
+                    <div>
                         <div class="form-buscar-vaga form-group">
                             <input type="buscarVaga" class="form-control" id="buscarVaga" placeholder="Buscar vaga">
                             <input type="localNovaVaga" class="form-control" id="localNovaVaga" placeholder="Local">
-                            <button type="button" class="btn btn-Publicar">Pesquisar</button>
+                            <button type="submit" class="btn btn-Publicar">Pesquisar</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </section>
 
             <!-- Feed de Vagas -->
