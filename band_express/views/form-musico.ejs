@@ -144,8 +144,8 @@
                                     <div class="col-xl-9 col-lg-9">
                                         <select class="form-control" id="inputEstado" name="estado">
                                             <option value="" disabled selected hidden>Escolha um Estado</option>
-                                            <% listaEstados.forEach(estado => { %>
-                                                <option value="<%= estado %>"><%= estado %></option>
+                                            <% estados.forEach(estado => { %>
+                                                <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                             <% }) %>
                                         </select>
                                     </div>
@@ -153,7 +153,9 @@
                                 <div class="form-group row">
                                     <label for="inputCidade" class="col-xl-2 col-lg-2 col-form-label">Cidade</label>
                                     <div class="col-xl-9 col-lg-9">
-                                        <input name="cidade" type="text" class="form-control" id="iCidade" placeholder="Digite sua cidade" required>
+                                        <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                            <option value="" disabled selected hidden>Escolha uma Cidade</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -219,8 +221,8 @@
                                             <div class="col-xl-8 col-lg-8">
                                                 <select class="form-control" id="inputIntrumento" name="instrumento">
                                                     <option value="" disabled selected hidden>Escolha...</option>
-                                                    <% listaInstrumentos.forEach(instrumento => { %>
-                                                        <option value="<%= instrumento %>"><%= instrumento %></option>
+                                                    <% instrumentos.forEach(instrumento => { %>
+                                                        <option value="<%= instrumento.instrumento %>"><%= instrumento.instrumento %></option>
                                                     <% }) %>
                                                 </select>
                                             </div>
@@ -233,8 +235,8 @@
                                             <div class="col-xl-8 col-lg-8">
                                                 <select class="form-control" id="inputTecnico" name="habilidadeTecnica">
                                                     <option value="" disabled selected hidden>Escolha...</option>
-                                                    <% listaTecnicos.forEach(tecnico => { %>
-                                                        <option value="<%= tecnico %>"><%= tecnico %></option>
+                                                    <% tecnicos.forEach(tecnico => { %>
+                                                        <option value="<%= tecnico.habilidade_tecnica %>"><%= tecnico.habilidade_tecnica %></option>
                                                     <% }) %>
                                                 </select>
                                             </div>
@@ -275,13 +277,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-
+ 
     <script>
         $(function () {
             $('[data-toggle="popover"]').popover()
             container: 'body'
         })
     </script>
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
 </body>
 
 </html>
