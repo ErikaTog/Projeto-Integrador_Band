@@ -18,7 +18,9 @@ const removerController = {
                 id_usuario:  req.session.usuario.id_usuario
             }
         });
-        
+
+        req.session.destroy();
+
         return res.render('feedbackGeral', { 
             imagem: '/img/feedback_excluir.svg',
             titulo: 'Exclusão feita com sucesso',
