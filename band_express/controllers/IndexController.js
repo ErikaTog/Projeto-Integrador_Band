@@ -38,6 +38,14 @@ const indexController = {
         }
 
         res.redirect('/home');
+    },
+
+    logoutUsuario:  async (req, res) => {
+
+        req.session.destroy();
+        
+        res.redirect('/home');
+
     }
 }
 
