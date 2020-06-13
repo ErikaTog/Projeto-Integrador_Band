@@ -2,30 +2,43 @@ let seguindo = JSON.parse(seguindoJs);
 let seguidores = JSON.parse(seguidoresJs);
 let geral = JSON.parse(geralJs);
 
-let resp = "falso"
-console.log(seguidores)
-console.log(seguindo)
-console.log(geral)
-console.log(seguidores[0].nome)
-console.log(`"${seguidores[0].avatar}"`)
+// console.log(seguidores)
+// console.log(seguindo)
+// console.log(geral)
+// console.log(seguidores[0].nome)
+// console.log(`"${seguidores[0].avatar}"`)
+
+window.onload = function(){
+    let divRedeGroup = document.getElementById('redeGroup')
+    divRedeGroup.innerText = "";
+
+    let hResp = document.createElement('h5')
+            hResp.id = 'idResp'
+
+            divRedeGroup.appendChild(hResp)
+
+            hResp.innerHTML = "Selecione uma opção!";
+
+}
 
 
-//TENTATIVA 4
 function clicado() {
-    
+
 
     if (document.getElementById('customRadio1').checked) {
 
-        let divConteudo = document.getElementById('divConteudo')
+        let divRedeGroup = document.getElementById('redeGroup')
+        divRedeGroup.innerText = "";
 
         if (seguindo.length) {
             for (let index = 0; index < seguindo.length; index++) {
 
-                let divCard = document.createElement('div')
+                divCard = document.createElement('div')
                 divCard.className = 'card-contato'
                 divCard.id = 'rede'
 
-                divConteudo.appendChild(divCard)
+                divRedeGroup.appendChild(divCard)
+
 
                 let imagem = document.createElement('img')
                 imagem.className = 'contato-img'
@@ -49,25 +62,34 @@ function clicado() {
                 divNome.appendChild(nomeLink)
 
                 let seguir = document.createElement('button')
-                seguir.type = 'button' //provavelmente terá que ser um submit e estará em um form
+                seguir.type = 'button' // desenvolver esta parte
                 seguir.className = 'btn btn-Seguir'
                 seguir.innerHTML = 'Seguir'
 
                 divCard.appendChild(seguir)
             }
+        } else {
+            let hResp = document.createElement('h5')
+            hResp.id = 'idResp'
+
+            divRedeGroup.appendChild(hResp)
+
+            hResp.innerHTML = "Você ainda não segue ninguém!<br> Veja nossas recomendações ou procure um contato específico e inicie sua rede!";
+
         }
     } else if (document.getElementById('customRadio2').checked) {
 
-        let divConteudo = document.getElementById('divConteudo')
+        let divRedeGroup = document.getElementById('redeGroup')
+        divRedeGroup.innerText = "";
 
         if (seguidores.length) {
             for (let index = 0; index < seguidores.length; index++) {
 
-                let divCard = document.createElement('div')
+                divCard = document.createElement('div')
                 divCard.className = 'card-contato'
                 divCard.id = 'rede'
 
-                divConteudo.appendChild(divCard)
+                divRedeGroup.appendChild(divCard)
 
                 let imagem = document.createElement('img')
                 imagem.className = 'contato-img'
@@ -91,27 +113,34 @@ function clicado() {
                 divNome.appendChild(nomeLink)
 
                 let seguir = document.createElement('button')
-                seguir.type = 'button' // provavelmente terá que ser um submit e estará em um form
+                seguir.type = 'button' // desenvolver esta parte
                 seguir.className = 'btn btn-Seguir'
                 seguir.innerHTML = 'Seguir'
 
                 divCard.appendChild(seguir)
 
             }
+        } else {
+            let hResp = document.createElement('h5')
+            hResp.id = 'idResp'
+
+            divRedeGroup.appendChild(hResp)
+
+            hResp.innerHTML = "Você ainda não tem nenhum seguidor!<br> Aproveite para revisar o seu perfil e deixá-lo mais atrativo para os outros usuários! ";
         }
     } else {
 
-        let divConteudo = document.getElementById('divConteudo')
-        
+        let divRedeGroup = document.getElementById('redeGroup')
+        divRedeGroup.innerText = "";
 
         if (geral.length) {
             for (let index = 0; index < geral.length; index++) {
 
-                let divCard = document.createElement('div')
+                divCard = document.createElement('div')
                 divCard.className = 'card-contato'
                 divCard.id = 'rede'
 
-                divConteudo.appendChild(divCard)
+                divRedeGroup.appendChild(divCard)
 
                 let imagem = document.createElement('img')
                 imagem.className = 'contato-img'
@@ -135,7 +164,7 @@ function clicado() {
                 divNome.appendChild(nomeLink)
 
                 let seguir = document.createElement('button')
-                seguir.type = 'button' // provavelmente terá que ser um submit e estará em um form
+                seguir.type = 'button' // desenvolver esta parte
                 seguir.className = 'btn btn-Seguir'
                 seguir.innerHTML = 'Seguir'
 

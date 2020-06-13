@@ -18,13 +18,13 @@ const Curtida = (sequelize, DataTypes) => {
             },
 
         }, {
-            indexes: [{
-                unique: true,
-                fields: ['id_posts', 'id_usuario']
-            }]
-        }, {
             tableName: "curtida",
             timestamps: false
+        }, {
+            indexes: [{
+                unique: true,
+                fields: ['id_post', 'id_usuario']
+            }]
         }
     );
 

@@ -18,6 +18,7 @@ router.post('/',
 ],
 HomeMiddleware.errorComentario,
 VerificaUsuarioLogado, homeController.saveComentario);
+
 router.get('/publicar', VerificaUsuarioLogado, homeController.view);
 router.post('/publicar',
 multer(MulterPost).any(),

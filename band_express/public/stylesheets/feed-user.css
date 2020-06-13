@@ -22,7 +22,7 @@
     justify-content: space-between;
 }
 
-.curtir a {
+.curtir div {
     color: #FB3C00;
     font-size: 2.5rem;
     text-decoration: none;
@@ -30,7 +30,7 @@
     align-items: center;
 }
 
-.curtir a span {
+.curtir span {
     font-size: 1.6rem;
     font-weight: 600;
     margin-left: 5px;
