@@ -201,7 +201,7 @@
                                         <select class="custom-select" id="inputEstado" name="estado">
                                             <% estados.forEach(estado => { %>
                                                 <% if (dadosUsuario.uf == estado.uf) { %>
-                                                    <option selected><%= estado.uf %></option> 
+                                                    <option value="<%= estado.id_estado %>" selected><%= estado.uf %></option> 
                                                 <% } else { %>
                                                     <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                                 <% } %>
