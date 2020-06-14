@@ -37,8 +37,8 @@ h5 {
 
 #gerencie,
 #gerencie:hover {
-    text-decoration: none;
     color: #282a36;
+    text-decoration: underline;
 }
 
 footer {
