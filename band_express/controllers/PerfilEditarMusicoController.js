@@ -157,25 +157,12 @@ const perfilEditarMusicoController = {
         const dadosMusico = await Musico.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario }, 
         });
-        
-        // Buscar o id_cidade e id_estado na tabela cidade
-        const findIdLocal = await Cidade.findOne({
-            where: { cidade },
-            raw: true,
-            attributes: ['id_cidade', 'estado.id_estado'],
-            include: [{
-                model: Estado, 
-                as: 'estado',
-                attributes: [],
-                where: { uf: estado }
-            }]
-        });
 
         // Substituir valores
         dadosUsuario.nome = nome;
         dadosUsuario.email = email;
-        dadosUsuario.id_estado = findIdLocal.id_estado;
-        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosUsuario.id_estado = estado;
+        dadosUsuario.id_cidade = cidade;
         dadosMusico.sobre = sobre;
         dadosMusico.site = site;
         dadosMusico.canal = canal;
@@ -234,7 +221,7 @@ const perfilEditarMusicoController = {
     },
     saveSkills: async (req, res) => {
 
-        const { canto, toco, tecnico, instrumento, habilidade_tecnica } = req.body;
+        const { canto, toco, tecnico, instrumento: id_instrumento, habilidade_tecnica: id_tecnico } = req.body;
 
         const dadosMusico = await Musico.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario }
@@ -250,18 +237,11 @@ const perfilEditarMusicoController = {
         if (toco) {
             dadosMusico.toco = toco;
             await dadosMusico.save({ fields: ['toco'] });
-
-            // Buscando o id_instrumento
-            const findIdInstrumento = await Instrumento.findOne({
-                where: { instrumento },
-                raw: true,
-                attributes: ['id_instrumento']
-            });
             
             // Inserindo id_instrumento nas tabelas intermediárias
             await MusicoInstrumentos.create({
                 id_musico: dadosMusico.id_musico,
-                id_instrumento: findIdInstrumento.id_instrumento
+                id_instrumento
             });
         };
 
@@ -269,18 +249,11 @@ const perfilEditarMusicoController = {
         if (tecnico) {
             dadosMusico.tecnico = tecnico;
             await dadosMusico.save({ fields: ['tecnico'] });
-
-            // Buscando o id_instrumento
-            const findIdTecnico = await Tecnico.findOne({
-                where: { habilidade_tecnica },
-                raw: true,
-                attributes: ['id_tecnico']
-            });
             
             // Inserindo id_instrumento nas tabelas intermediárias
             await MusicoTecnicos.create({
                 id_musico: dadosMusico.id_musico,
-                id_tecnico: findIdTecnico.id_tecnico
+                id_tecnico
             });
         };
 
