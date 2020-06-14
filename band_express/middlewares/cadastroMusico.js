@@ -6,7 +6,9 @@ const Musico = {
         console.log(errors)
 
         if(errors.length) {
-            return res.render('form-musico', { errors: errors });
+            req.flash('errorValidator', errors);
+            res.redirect('/cadastro/musico');
+            return
         } 
 
         next();

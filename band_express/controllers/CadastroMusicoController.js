@@ -30,7 +30,8 @@ const cadastroMuicoController = {
             estados, 
             instrumentos, 
             tecnicos,
-            cidades
+            cidades,
+            errors: req.flash('errorValidator')
         });
     },
     saveMusician: async (req, res) => {
