@@ -1,5 +1,6 @@
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
 const fs = require('fs');
+const { Op } = require('sequelize');
 
 const perfilEditarMusicoController = {
     show: async (req, res) => {
@@ -34,7 +35,7 @@ const perfilEditarMusicoController = {
             instrumentosUsuario = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
-                attributes: ['musicos.instrumentos.instrumento'], 
+                attributes: ['musicos.instrumentos.id_instrumento' ,'musicos.instrumentos.instrumento'], 
                 include: [{
                     model: MusicoInstrumentos,
                     as: 'musicos',
@@ -410,6 +411,36 @@ const perfilEditarMusicoController = {
             caminho,
             id_usuario: req.session.usuario.id_usuario
         })
+
+        res.redirect(`/perfil/editar/musico`);
+    },
+    deleteInstrument: async (req, res) => {
+
+        const musicoDados = await Musico.findOne({
+            where: { id_usuario: req.session.usuario.id_usuario }
+        });
+        
+        // Excluir o instrumento da tabela intermediária
+        await MusicoInstrumentos.destroy({
+            where: {
+                [Op.and]: [
+                    { id_musico: musicoDados.id_musico },
+                    { id_instrumento: req.params.id }
+                ]
+            }
+        });
+        
+        // Verificar se o usuário possui outros instrumentos cadastrados
+
+
+        const contarInstrumento = await MusicoInstrumentos.count({ where: { id_musico: musicoDados.id_musico } });
+        console.log(contarInstrumento);
+        
+        if (!contarInstrumento) {            
+            musicoDados.toco = 0;
+
+            await musicoDados.save({ fields: ['toco'] });
+        }
 
         res.redirect(`/perfil/editar/musico`);
     }
