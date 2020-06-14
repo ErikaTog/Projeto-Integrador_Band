@@ -222,7 +222,7 @@
                                                 <select class="form-control" id="inputIntrumento" name="instrumento">
                                                     <option value="" disabled selected hidden>Escolha...</option>
                                                     <% instrumentos.forEach(instrumento => { %>
-                                                        <option value="<%= instrumento.instrumento %>"><%= instrumento.instrumento %></option>
+                                                        <option value="<%= instrumento.id_instrumento %>"><%= instrumento.instrumento %></option>
                                                     <% }) %>
                                                 </select>
                                             </div>
@@ -236,7 +236,7 @@
                                                 <select class="form-control" id="inputTecnico" name="habilidadeTecnica">
                                                     <option value="" disabled selected hidden>Escolha...</option>
                                                     <% tecnicos.forEach(tecnico => { %>
-                                                        <option value="<%= tecnico.habilidade_tecnica %>"><%= tecnico.habilidade_tecnica %></option>
+                                                        <option value="<%= tecnico.id_tecnico %>"><%= tecnico.habilidade_tecnica %></option>
                                                     <% }) %>
                                                 </select>
                                             </div>
