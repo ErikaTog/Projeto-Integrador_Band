@@ -156,8 +156,8 @@
                                         </div>
                                     <% } %>
 
-                                    <% if (instrumentos.length) { %>
-                                        <% instrumentos.forEach(instrumento => { %>
+                                    <% if (instrumentosUsuario.length) { %>
+                                        <% instrumentosUsuario.forEach(instrumento => { %>
                                             <div class="habilidades-item media col-lg-12 col-sm-6">
                                                 <img src="/img/icones/tocar-01.png" alt="Toco">
                                                 <p><%= instrumento.instrumento %></p>
@@ -170,8 +170,8 @@
                                         <% }) %>
                                     <% } %>
     
-                                    <% if (tecnicos.length) { %>
-                                        <% tecnicos.forEach(tecnico => { %>
+                                    <% if (tecnicosUsuario.length) { %>
+                                        <% tecnicosUsuario.forEach(tecnico => { %>
                                             <div class="habilidades-item media col-lg-12 col-sm-6">
                                                 <img src="/img/icones/palco-01.png" alt="Técnico">
                                                 <p><%= tecnico.habilidade_tecnica %></p>
@@ -198,12 +198,12 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <select class="custom-select" name="estado">
+                                        <select class="custom-select" id="inputEstado" name="estado">
                                             <% estados.forEach(estado => { %>
                                                 <% if (dadosUsuario.uf == estado.uf) { %>
                                                     <option selected><%= estado.uf %></option> 
                                                 <% } else { %>
-                                                    <option value="<%= estado.uf %>"><%= estado.uf %></option>
+                                                    <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                                 <% } %>
                                             <% }) %>
                                         </select>
@@ -214,7 +214,15 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
+                                        <select class="custom-select" id="inputCidade" name="cidade">
+                                            <% cidadesUsuario.forEach(cidade => { %>
+                                                <% if (dadosUsuario.cidade == cidade.cidade) { %>
+                                                    <option value="<%= cidade.id_cidade %>" selected><%= cidade.cidade %></option> 
+                                                <% } else { %>
+                                                    <option value="<%= cidade.id_cidade %>"><%= cidade.cidade %></option>
+                                                <% } %>
+                                            <% }) %>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -510,9 +518,9 @@
                             <div class="form-group">
                                 <select class="custom-select" id="addInstrumento" name="instrumento">
                                     <option value="" disabled selected hidden>Escolha um instrumento</option>
-                                    <% listaInstrumentos.forEach(item => { %>
-                                        <option value="<%= item.instrumento %>"
-                                            <% instrumentos.forEach(instrumento => { %>
+                                    <% instrumentos.forEach(item => { %>
+                                        <option value="<%= item.id_instrumento %>"
+                                            <% instrumentosUsuario.forEach(instrumento => { %>
                                                 <% if (instrumento.instrumento == item.instrumento) { %>
                                                     disabled
                                                 <% } %>
@@ -533,9 +541,9 @@
                             <div class="form-group">
                                 <select class="custom-select" id="addTecnico" name="habilidade_tecnica">
                                     <option value="" disabled selected hidden>Escolha uma habilidade técnica</option>
-                                    <% listaTecnicos.forEach(item => { %>
-                                        <option value="<%= item.habilidade_tecnica %>"
-                                            <% tecnicos.forEach(tecnico => { %>
+                                    <% tecnicos.forEach(item => { %>
+                                        <option value="<%= item.id_tecnico %>"
+                                            <% tecnicosUsuario.forEach(tecnico => { %>
                                                 <% if (tecnico.habilidade_tecnica == item.habilidade_tecnica) { %>
                                                     disabled
                                                 <% } %>
@@ -673,15 +681,20 @@
         </div>
     </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
 </body>
 
 </html>

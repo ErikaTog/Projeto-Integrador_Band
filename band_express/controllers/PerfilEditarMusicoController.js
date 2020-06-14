@@ -7,7 +7,7 @@ const perfilEditarMusicoController = {
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
+            attributes: ['id_estado' ,'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',
@@ -28,10 +28,10 @@ const perfilEditarMusicoController = {
         });
 
         // Buscar informação das habilidades - instrumentos
-        let instrumentos = [];
+        let instrumentosUsuario = [];
 
         if (dadosMusico.toco) {
-            instrumentos = await Musico.findAll({
+            instrumentosUsuario = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
                 attributes: ['musicos.instrumentos.instrumento'], 
@@ -49,10 +49,10 @@ const perfilEditarMusicoController = {
         };
         
         // Buscar informação das habilidades - tecnicos
-        let tecnicos = [];
+        let tecnicosUsuario = [];
 
         if (dadosMusico.tecnico) {
-            tecnicos = await Musico.findAll({
+            tecnicosUsuario = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
                 attributes: ['musicosTec.habilidade_tecnicas.habilidade_tecnica'], 
@@ -93,35 +93,47 @@ const perfilEditarMusicoController = {
         
         // Buscar lista de Estados
         const estados = await Estado.findAll({ 
-            raw: true,
-            attributes: ['uf'] 
+            raw: true
         });
+
+        // Buscar todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
+        });
+
+        // Buscar as cidas do estado do Usuário
+        const cidadesUsuario = await Cidade.findAll({
+            raw: true,
+            where: { id_estado: dadosUsuario.id_estado }
+        })
 
         // Buscar todos os instrumentos
-        const listaInstrumentos = await Instrumento.findAll({ 
+        const instrumentos = await Instrumento.findAll({ 
             raw: true,
-            attributes: ['instrumento'] 
+            order: [['instrumento', 'ASC']]
         });
 
-        // Buscar todas as habilidades
-        const listaTecnicos = await Tecnico.findAll({ 
+         // Buscar todas as habilidades
+         const tecnicos = await Tecnico.findAll({ 
             raw: true,
-            attributes: ['habilidade_tecnica'] 
+            order: [['habilidade_tecnica', 'ASC']]
         });
 
         res.render('perfil-musico-editar', { 
             usuario: req.session.usuario,
             dadosUsuario,
             dadosMusico, 
-            instrumentos, 
-            tecnicos, 
+            instrumentosUsuario, 
+            tecnicosUsuario, 
             seguidores, 
             seguindo, 
             audios, 
             videos,
             estados,
-            listaInstrumentos,
-            listaTecnicos,
+            cidades,
+            cidadesUsuario,
+            instrumentos,
+            tecnicos,
             errors: req.flash('errorValidator'),
             errorsImage: req.flash('errorImage'),
             errorsUpload: req.flash('errorUpload'),
