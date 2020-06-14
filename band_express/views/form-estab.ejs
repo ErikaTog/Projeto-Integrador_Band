@@ -169,7 +169,7 @@
                         <h5 id="h5">Funcionamento</h5>
                         <div class="campo-form card-cadastro">
                             <div>
-                                <div class="form-group row">
+                                <div class="form-group row" id="grupoFuncionamento">
                                     <div class="col-lg-5 col-md-10 col-sm-4 col-12"> 
                                         <select class="form-control" name="inputFuncionamento" id="inputFuncionamento">
                                             <option>Segunda</option>
@@ -182,11 +182,11 @@
                                             <option>Feriado</option>
                                         </select>
                                     </div>
-                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                    <div class="col-lg-3 col-md-5 col-sm-3 col-12">
                                         <input type="time" class="form-control" id="inputAbertura"
                                             placeholder="Abertura" name="inputAbertura">
                                     </div>
-                                    <div class="a col-lg-3 col-md-5 col-sm-3 col-12">
+                                    <div class="col-lg-3 col-md-5 col-sm-3 col-12">
                                         <input type="time" class="form-control" id="inputFechamento"
                                             placeholder="Fechamento" name="inputFechamento">
                                     </div>
@@ -231,6 +231,9 @@
             container: 'body'
         })
     </script>
+
+    <script src="../javascripts/formEstabJs.js"></script>
+
 </body>
 
 </html>
