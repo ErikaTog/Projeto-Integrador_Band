@@ -21,7 +21,7 @@
         <header>
             <div class="nav-container">
                 <nav class="navbar">
-                    <a class="navbar-brand" href=""><img src="/img/logo_5000x1500.png" alt="Band+"></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
                     <button type="submit" class="btn btn-salvar">Cadastrar</button>
                 </nav>
             </div>
@@ -30,7 +30,7 @@
 
         <div class="cadastro-container container">
             
-            <% if (typeof errors != 'undefined') { %>
+            <% if (errors.length) { %>
                 <div class="alert alert-danger" role="alert">
                     <h5>Falta pouco para se tornar membro da Band+, realize alguns ajustes...</h5>
                     <hr>
@@ -120,8 +120,8 @@
                                     <div class="col-xl-6 col-lg-9">
                                         <select class="form-control" id="inputEstado" name="estado">
                                             <option value="" disabled selected hidden>Escolha um Estado</option>
-                                            <% listaEstados.forEach((estado)=>{ %>
-                                                <option><%= estado %></option>
+                                            <% estados.forEach((estado)=>{ %>
+                                                <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                             <% }) %>
                                         </select>
                                     </div>
@@ -129,8 +129,9 @@
                                 <div class="form-group row">
                                     <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
                                     <div class="col-xl-6 col-lg-9">
-                                        <input type="text" class="form-control" id="inputCidade" name="cidade"
-                                            placeholder="Digite a cidade">
+                                        <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                            <option value="" disabled selected hidden>Escolha uma Cidade</option>
+                                        </select>    
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +187,7 @@
 
         <footer>
             <ul class="list-unstyled mb-0">
-                <li><a href="">Políticas</a> | <a href="/faleConosco">"><strong>Fale Conosco</strong></a></li>
+                <li><a href="">Políticas</a> | <a href="/faleConosco"><strong>Fale Conosco</strong></a></li>
                 <li>
                     <span class="copyright">Copyright &copy;
                         2020 -
@@ -206,7 +207,11 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>7<script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
+
 </body>
 
 </html>

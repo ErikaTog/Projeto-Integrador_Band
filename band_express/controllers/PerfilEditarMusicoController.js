@@ -56,7 +56,7 @@ const perfilEditarMusicoController = {
             tecnicosUsuario = await Musico.findAll({
                 where: { id_musico: dadosMusico.id_musico },
                 raw: true,
-                attributes: ['musicosTec.habilidade_tecnicas.habilidade_tecnica'], 
+                attributes: ['musicosTec.habilidade_tecnicas.id_tecnico', 'musicosTec.habilidade_tecnicas.habilidade_tecnica'], 
                 include: [{
                     model: MusicoTecnicos,
                     as: 'musicosTec',
@@ -414,6 +414,19 @@ const perfilEditarMusicoController = {
 
         res.redirect(`/perfil/editar/musico`);
     },
+    deleteCanto: async (req, res) => {
+
+        const musicoDados = await Musico.findOne({
+            where: { id_usuario: req.session.usuario.id_usuario }
+        });
+
+        // Alterar campo canto na tabela Musico
+        musicoDados.canto = 0;
+
+        await musicoDados.save({ fields: ['canto'] });
+
+        res.redirect(`/perfil/editar/musico`);
+    },
     deleteInstrument: async (req, res) => {
 
         const musicoDados = await Musico.findOne({
@@ -431,10 +444,7 @@ const perfilEditarMusicoController = {
         });
         
         // Verificar se o usuário possui outros instrumentos cadastrados
-
-
         const contarInstrumento = await MusicoInstrumentos.count({ where: { id_musico: musicoDados.id_musico } });
-        console.log(contarInstrumento);
         
         if (!contarInstrumento) {            
             musicoDados.toco = 0;
@@ -443,7 +453,34 @@ const perfilEditarMusicoController = {
         }
 
         res.redirect(`/perfil/editar/musico`);
-    }
+    },
+    deleteTecnico: async (req, res) => {
+
+        const musicoDados = await Musico.findOne({
+            where: { id_usuario: req.session.usuario.id_usuario }
+        });
+        
+        // Excluir a habilidade técnica da tabela intermediária
+        await MusicoTecnicos.destroy({
+            where: {
+                [Op.and]: [
+                    { id_musico: musicoDados.id_musico },
+                    { id_tecnico: req.params.id }
+                ]
+            }
+        });
+        
+        // Verificar se o usuário possui outra habilidade técnica cadastrada
+        const contarHabilTecnica = await MusicoTecnicos.count({ where: { id_musico: musicoDados.id_musico } });
+        
+        if (!contarHabilTecnica) {            
+            musicoDados.tecnico = 0;
+
+            await musicoDados.save({ fields: ['tecnico'] });
+        }
+
+        res.redirect(`/perfil/editar/musico`);
+    },
 }
 
 module.exports = perfilEditarMusicoController;

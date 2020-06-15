@@ -2,27 +2,28 @@ const bcrypt = require('bcrypt');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado} = require('../models')
 
 const cadastroBandaController = {
-    pre: (req, res) => {
-        return res.render('pre-cadastro')
-    },
-
+    
     formBanda: async (req, res) => {
 
-        //fazendo a busca de todos os estados
-        const buscaEstados = await Estado.findAll({
+        //Fazendo a busca de todos os estados
+        const estados = await Estado.findAll({
             raw: true,
-            attributes: ['uf']
+        });
+        console.log(estados)
+
+        
+        // Fazendo a busca de todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
+        });
+    
+    
+        return res.render('form-banda', {
+            estados,
+            cidades,
+            errors: req.flash('errorValidator')
         });
 
-        //criando uma variável que vai conter a lista de estados
-        listaEstados = []
-
-        //buscando os estados e incluindo na lista
-        buscaEstados.forEach((estado) => {
-            listaEstados.push(estado.uf)
-        })
-
-        return res.render('form-banda', {estados: listaEstados});
     },
 
     saveBanda: async (req, res) => {
@@ -36,53 +37,7 @@ const cadastroBandaController = {
         site = site ? site.trim() : '';
         canal = canal ? canal.trim() : '';
 
-        // ----------------Em desenvolvimento ----------------------
-        //buscando as cidades de acordo com o estado escolhido pelo usuário
-        // const findCidades = await Cidade.findAll({
-        //     //Inner join
-        //     include: [{
-        //         // com a tabela Estado
-        //         model: Estado,
-        //         // utilizando a chave estabelecida na associação do model Cidade com Estado, cujo alias é 'estado'
-        //         as: 'estado',
-        //         // com um filtro adicional do estado que o usuário digitou
-        //         where: {
-        //             uf: estado
-        //         }
-        //     }]            
-        // });
-
-        //lista onde ficarão armazenadas as cidades
-        // let listaCidades = []
-
-        //buscando as cidades e incluindo na lista
-        // findCidades.forEach((cidade) => {
-        //     listaCidades.push(dataValues.nome)
-        // })
-        // --------------------------------------------------
-
-        // Buscando o id_cidade e id_estado na tabela cidade
-        const findIdCidade = await Cidade.findAll({
-            //Inner join
-            include: [{
-                // com a tabela Estado
-                model: Estado,
-                // utilizando a chave estabelecida na associação do model Cidade com Estado, cujo alias é 'estado'
-                as: 'estado',
-                // com um filtro adicional do estado que o usuário digitou
-                where: {
-                    uf: estado
-                }
-            }],
-            // e um último filtro da cidade que o usuário digitou
-            where: {
-                cidade
-            },
-        });
-
-        const idCidade = findIdCidade[0].dataValues.id_cidade;
-        const idEstado = findIdCidade[0].dataValues.id_estado;
-
+    
         // Cadastrando dados na tabela usuario
         const dadosUsuario = await Usuario.create({
             nome,
@@ -106,9 +61,9 @@ const cadastroBandaController = {
             email: emailBanda
         });
 
-          // Salvar o campo link_perfil
-          dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosBanda.id_banda}`;
-          await dadosUsuario.save({ fields: ['link_perfil'] });
+        // Salvar o campo link_perfil
+        dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosBanda.id_banda}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
 
 
         // buscando o id dos integrantes na tabela usuario 
@@ -129,10 +84,10 @@ const cadastroBandaController = {
             funcao
         });
 
-         // Setar session do usuario
-         let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 2};
+        // Setar session do usuario
+        let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 2};
 
-         req.session.usuario = usuario;
+        req.session.usuario = usuario;
 
         res.redirect('/home')
 
