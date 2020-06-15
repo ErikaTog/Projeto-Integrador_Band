@@ -3,7 +3,6 @@ let diasDaSemana = [ 'Segunda', 'Terça', 'Quarta',
 
 let diasAdicionados = [];
 
-// Função q carrega os itens do Html
 const view = () => {
 
     let grupoFuncionamento = document.getElementById('grupoFuncionamento');
@@ -50,6 +49,7 @@ const view = () => {
         let divAdd = document.createElement('div');
         divAdd.className = 'add-funcionamento';
         divAdd.id= 'add-funcionamento';
+        divAdd.addEventListener('click', clickAddFunc);
         grupoFuncionamento.appendChild(divAdd);
                 
             let aAdd = document.createElement('a');
@@ -58,9 +58,6 @@ const view = () => {
                 let iAdd = document.createElement('i');
                 iAdd.className ='fas fa-plus-square';
                 aAdd.appendChild(iAdd); 
-
-    let clickAdd = document.getElementById('add-funcionamento');
-    clickAdd.addEventListener('click', clickAddFunc);
             
     let grupoSelecionado = document.getElementById('grupoSelecionado');
     grupoSelecionado.innerHTML = '';
@@ -79,6 +76,7 @@ const view = () => {
                 itemFuncionamento.appendChild(textoDia);
 
                 let textoHorario = document.createElement('p');
+                textoHorario.className = 'horarioSemana';
                 textoHorario.id = 'horarioSemana' + i;
                 textoHorario.innerText = diasAdicionados[i].abertura + " - " + diasAdicionados[i].fechamento;
                 itemFuncionamento.appendChild(textoHorario);
@@ -89,19 +87,18 @@ const view = () => {
 
                     let lixo = document.createElement('i');
                     lixo.className = 'fas fa-trash fa-lg';
-                    iconeLixo.appendChild(lixo);
-
+                    lixo.id = i;
+                    lixo.addEventListener('click', clickDeleteFunc, false) ;
+                    iconeLixo.appendChild(lixo);               
         }                
 }
 
-// Função de tratamento de dados ao clicar no add
 const clickAddFunc = () => {
     let diaEscolhido = document.getElementById('inputFuncionamento').value;
     let inputAbertura = document.getElementById('inputAbertura').value;
     let inputFechamento = document.getElementById('inputFechamento').value;
 
-    if(diaEscolhido != ''){
-
+    if(diaEscolhido != '' && inputAbertura != '' && inputFechamento != ''){
         diasAdicionados.push({
             dia: diaEscolhido,
             abertura: inputAbertura, 
@@ -114,6 +111,23 @@ const clickAddFunc = () => {
 
         view();
     }   
+}
+
+const clickDeleteFunc = (evt) => {
+
+    let id = String(evt.target.id);
+
+    let apagarDia = diasAdicionados[id].dia;
+
+    diasDaSemana.push(apagarDia);
+    console.log(diasDaSemana)
+
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    diasAdicionados.splice(id, 1);
+    console.log(diasAdicionados)
+
+    view();
+    
 }
 
 window.onload = view();
