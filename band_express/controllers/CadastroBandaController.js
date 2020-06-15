@@ -2,27 +2,28 @@ const bcrypt = require('bcrypt');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado} = require('../models')
 
 const cadastroBandaController = {
-    pre: (req, res) => {
-        return res.render('pre-cadastro')
-    },
-
+    
     formBanda: async (req, res) => {
 
-        //fazendo a busca de todos os estados
-        const buscaEstados = await Estado.findAll({
+        //Fazendo a busca de todos os estados
+        const estados = await Estado.findAll({
             raw: true,
-            attributes: ['uf']
+        });
+        console.log(estados)
+
+        
+        // Fazendo a busca de todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
+        });
+    
+    
+        return res.render('form-banda', {
+            estados,
+            cidades,
+            errors: req.flash('errorValidator')
         });
 
-        //criando uma variável que vai conter a lista de estados
-        listaEstados = []
-
-        //buscando os estados e incluindo na lista
-        buscaEstados.forEach((estado) => {
-            listaEstados.push(estado.uf)
-        })
-
-        return res.render('form-banda', {estados: listaEstados});
     },
 
     saveBanda: async (req, res) => {
