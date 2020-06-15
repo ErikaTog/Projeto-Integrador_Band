@@ -1,5 +1,13 @@
-let diasDaSemana = [ 'Segunda', 'Terça', 'Quarta', 
-    'Quinta', 'Sexta', 'Sábado', 'Domingo', 'Feriado' ];
+let diasDaSemana = [ 
+    { dia: 'Segunda', on: 1 },
+    { dia: 'Terça'  , on: 1 },
+    { dia: 'Quarta' , on: 1 },
+    { dia: 'Quinta' , on: 1 },
+    { dia: 'Sexta'  , on: 1 },
+    { dia: 'Sábado' , on: 1 },
+    { dia: 'Domingo', on: 1 },
+    { dia: 'Feriado', on: 1 }
+]
 
 let diasAdicionados = [];
 
@@ -19,9 +27,11 @@ const view = () => {
             divSemana.appendChild(select);
 
                 for (let i=0 ; i<diasDaSemana.length ; i++) {
-                    let option = document.createElement('option');
-                    option.innerText = diasDaSemana[i];
-                    select.appendChild(option);
+                    if (diasDaSemana[i].on == 1){
+                        let option = document.createElement('option');
+                        option.innerText = diasDaSemana[i].dia;
+                        select.appendChild(option);
+                    }
                 }
 
         let divAbertura = document.createElement('div');
@@ -98,16 +108,17 @@ const clickAddFunc = () => {
     let inputAbertura = document.getElementById('inputAbertura').value;
     let inputFechamento = document.getElementById('inputFechamento').value;
 
-    if(diaEscolhido != '' && inputAbertura != '' && inputFechamento != ''){
+    if(diaEscolhido != '' ){
+        // && inputAbertura != '' && inputFechamento != ''
         diasAdicionados.push({
             dia: diaEscolhido,
             abertura: inputAbertura, 
             fechamento:inputFechamento 
         });
 
-        diasDaSemana = diasDaSemana.filter( (dia) => { 
-            return dia != diaEscolhido;
-        });
+        for(let valor of diasDaSemana){
+            valor.dia == diaEscolhido ? valor.on = 0 : null;
+        }
 
         view();
     }   
@@ -119,10 +130,10 @@ const clickDeleteFunc = (evt) => {
 
     let apagarDia = diasAdicionados[id].dia;
 
-    diasDaSemana.push(apagarDia);
-    console.log(diasDaSemana)
+    for(let valor of diasDaSemana){
+        valor.dia == apagarDia ? valor.on = 1 : null;
+    }
 
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
     diasAdicionados.splice(id, 1);
     console.log(diasAdicionados)
 
