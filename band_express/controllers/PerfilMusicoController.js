@@ -51,7 +51,7 @@ const perfilMusicoController = {
                     include: [{
                         model: Instrumento,
                         as: 'instrumentos',
-                        attributes: []
+                        attributes: [],
                     }]
                 }],
             });

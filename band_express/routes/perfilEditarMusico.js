@@ -133,4 +133,7 @@ router.post('/video', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEd
 router.get('/audio', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.post('/audio', multer(MulterAudio).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveAudioFile);
 
+// Excluir instrumento
+router.get('/deletarInstrumento/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteInstrument);
+
 module.exports = router;
