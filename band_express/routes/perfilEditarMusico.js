@@ -133,7 +133,14 @@ router.post('/video', multer(MulterVideo).any(), VerificaUsuarioLogado, perfilEd
 router.get('/audio', VerificaUsuarioLogado, perfilEditarMusicoController.show);
 router.post('/audio', multer(MulterAudio).any(), VerificaUsuarioLogado, perfilEditarMusicoController.saveAudioFile);
 
+// Excluir canto
+router.get('/deletarCanto', VerificaUsuarioLogado, perfilEditarMusicoController.deleteCanto);
+
 // Excluir instrumento
 router.get('/deletarInstrumento/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteInstrument);
+
+// Excluir habilidade técnica
+router.get('/deletarTecnico/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteTecnico);
+
 
 module.exports = router;
