@@ -21,8 +21,8 @@ const cadastroEstabController = {
 
 	saveEstab: async (req, res) => {
 
-		let { nome, senha, email, categoria, sobre, estado, cidade, site,
-			telefone, inputFuncionamento, inputAbertura, inputFechamento } = req.body;
+		let { nome, senha, email, categoria, sobre, estado, 
+			cidade, site, telefone,  horarioSemana, diaSemana } = req.body;
 
 		nome = nome.trim();
 		senha = senha.trim();
@@ -70,11 +70,11 @@ const cadastroEstabController = {
 		})
 
 		// Salvar o campo link_perfil
-        dadosUsuario.link_perfil = `localhost:3000/perfil/musico/${dadosUsuario.id_usuario}`;
+        dadosUsuario.link_perfil = `localhost:3000/perfil/estabelecimento/${dadosUsuario.id_usuario}`;
         await dadosUsuario.save({ fields: ['link_perfil'] });
 
 		let funcionamento = 0;
-		(inputAbertura != '' && inputFechamento != '') ? funcionamento = 1 : null;
+		(diaSemana != '') ? funcionamento = 1 : null;
 
 		// Inserindo dados complementares na tabela estab
 		const dadosEstab = await Estabelecimento.create({
@@ -87,13 +87,15 @@ const cadastroEstabController = {
 		});
 
 		if (funcionamento){
-			// Inserindo dados complementares na tabela músico
-			const dadosFuncionamento = await Funcionamento.create({
-				dia: inputFuncionamento,
-				horario_abertura: inputAbertura,
-				horario_fechamento: inputFechamento,
-				id_estab: dadosEstab.id_estab
-			});
+			for (let i = 0; i < diaSemana.length; i++){
+				horarioSemana[i].split(' ');
+				const dadosFuncionamento = await Funcionamento.create({
+					dia: diaSemana[i],
+					horario_abertura: horarioSemana[i].split(' ')[0],
+					horario_fechamento: horarioSemana[i].split(' ')[2],
+					id_estab: dadosEstab.id_estab
+				});
+			}
 		}
 
 		// Setar session do usuario
