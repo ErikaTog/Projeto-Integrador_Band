@@ -2,7 +2,6 @@
         Geral - Form Estab
 -------------------------------- */
 .form-banda {
-    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -130,7 +129,7 @@ h5 {
 #informacao {
     width: 90%;
     max-width: 550px;
-    padding: 1.5rem 3rem 2.5rem;
+    padding: 1.5rem 3rem 2.8rem;
     margin-top: 30px;
 }
 
@@ -199,6 +198,26 @@ h5 {
 #inputAbertura,
 #inputFechamento{
     padding: 1rem 0.5rem;
+}
+
+.itemFuncionamento{
+    margin-top: 8px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.diaSemana{
+    width: 85px;
+    border: none;
+    color: #282A36;
+}
+
+.horarioSemana{
+    width: 130px;
+    border: none;
+    color: #282A36;
 }
 
 /* --------------------fim_do_Grupo_Form_Dados--------------------- */
@@ -337,6 +356,10 @@ h5 {
 
     .add-funcionamento a {
         font-size: 2.5rem;
+    }
+
+    .diaSemana{
+        width: 65px;
     }
 }
 
