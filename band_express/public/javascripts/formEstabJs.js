@@ -79,15 +79,21 @@ const view = () => {
             itemFuncionamento.id = 'itemFuncionamento' + i;
             grupoSelecionado.appendChild(itemFuncionamento);
             
-                let textoDia = document.createElement('p');
+                let textoDia = document.createElement('input');
                 textoDia.className = 'diaSemana';
                 textoDia.id = 'diaSemana' + i;
+                textoDia.name = 'diaSemana';
+                textoDia.setAttribute('readonly', 'true');
+                textoDia.value = diasAdicionados[i].dia;
                 textoDia.innerText = diasAdicionados[i].dia;
                 itemFuncionamento.appendChild(textoDia);
 
-                let textoHorario = document.createElement('p');
+                let textoHorario = document.createElement('input');
                 textoHorario.className = 'horarioSemana';
                 textoHorario.id = 'horarioSemana' + i;
+                textoHorario.name = 'horarioSemana';
+                textoHorario.setAttribute('readonly', 'true');
+                textoHorario.value = diasAdicionados[i].abertura + " - " + diasAdicionados[i].fechamento;
                 textoHorario.innerText = diasAdicionados[i].abertura + " - " + diasAdicionados[i].fechamento;
                 itemFuncionamento.appendChild(textoHorario);
 
@@ -108,8 +114,7 @@ const clickAddFunc = () => {
     let inputAbertura = document.getElementById('inputAbertura').value;
     let inputFechamento = document.getElementById('inputFechamento').value;
 
-    if(diaEscolhido != '' ){
-        // && inputAbertura != '' && inputFechamento != ''
+    if(diaEscolhido != '' && inputAbertura != '' && inputFechamento != ''){
         diasAdicionados.push({
             dia: diaEscolhido,
             abertura: inputAbertura, 
