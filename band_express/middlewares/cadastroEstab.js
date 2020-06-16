@@ -2,11 +2,13 @@ const { validationResult } = require('express-validator');
 
 const Estabelecimento = {
     error: (req, res, next) => {
-        let listaDeErros = validationResult(req).array({onlyFirstError: true});
-        console.log(listaDeErros)
+        let errors = validationResult(req).array({onlyFirstError: true});
+        console.log(errors)
 
-        if (listaDeErros.length) {
-            return res.render('form-estab', {errors: listaDeErros})
+        if (errors.length) {
+            req.flash('errorValidator', errors);
+            res.redirect('/cadastro/estabelecimento');
+            return
         }
 
         next();

@@ -29,7 +29,7 @@
 
         <div class="cadastro-container container">
 
-            <% if (typeof errors != 'undefined') { %>
+            <% if (errors.length) { %>
                 <div class="alert alert-danger" role="alert">
                     <h5>Falta pouco para se tornar membro da Band+, realize alguns ajustes...</h5>
                     <hr>
@@ -131,8 +131,8 @@
                                     <div class="col-xl-6 col-lg-9">
                                         <select class="form-control" id="inputEstado" name="estado">
                                             <option value="" disabled selected hidden>Escolha um Estado</option>
-                                            <% listaEstados.forEach((estado)=>{ %>
-                                                <option><%= estado %></option>
+                                            <% estados.forEach((estado)=>{ %>
+                                                <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                             <% }) %>
                                         </select>
                                     </div>
@@ -140,8 +140,9 @@
                                 <div class="form-group row">
                                     <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
                                     <div class="col-xl-6 col-lg-9">
-                                        <input type="text" class="form-control" id="inputCidade" name="cidade"
-                                            placeholder="Digite a cidade">
+                                        <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                            <option value="" disabled selected hidden>Escolha uma Cidade</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -234,6 +235,11 @@
     </script>
 
     <script src="../javascripts/formEstabJs.js"></script>
+
+    </script>7<script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="../javascripts/filtrarCidade.js"></script>
 
 </body>
 
