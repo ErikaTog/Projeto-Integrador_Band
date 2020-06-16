@@ -3,26 +3,28 @@ const bcrypt = require('bcrypt');
 
 const cadastroEstabController = {
 	formEstab: async (req, res) => {
-		//fazendo a busca de todos os estados
-		const buscaEstados = await Estado.findAll({})
 
-		//criando uma variável que vai conter a lista de estados
-		listaEstados = []
-
-		//buscando os estados e incluindo na lista
-		buscaEstados.forEach((estado) => {
-			listaEstados.push(estado.dataValues.uf)
-		})
+		// Buscar todos os estados
+        const estados = await Estado.findAll({ 
+        	raw: true
+		});
+		
+        // Buscar todas as cidades
+        const cidades = await Cidade.findAll({ 
+        	raw: true
+        });
 
 		return res.render('form-estab', {
-			estados: listaEstados
+			estados,
+			cidades,
+			errors: req.flash('errorValidator')
 		});
 	},
 
 	saveEstab: async (req, res) => {
 
-		let { nome, senha, email, categoria, sobre, estado, 
-			cidade, site, telefone,  horarioSemana, diaSemana } = req.body;
+		let { nome, senha, email, categoria, sobre, estado: id_estado, 
+			cidade: id_cidade, site, telefone,  horarioSemana, diaSemana } = req.body;
 
 		nome = nome.trim();
 		senha = senha.trim();
@@ -34,28 +36,6 @@ const cadastroEstabController = {
 			telefone = telefone.replace("-","");
 			telefone = telefone.substr(0,9) + "-" + telefone.substr(9);
 		}
-
-		// Buscando o id_cidade e id_estado na tabela cidade
-		const findIdCidade = await Cidade.findAll({
-			//Inner join
-			include: [{
-				// com a tabela Estado
-				model: Estado,
-				// utilizando a chave estabelecida na associação do model Cidade com Estado, cujo alias é 'estado'
-				as: 'estado',
-				// com um filtro adicional do estado que o usuário digitou
-				where: {
-					uf: estado
-				}
-			}],
-			// e um último filtro da cidade que o usuário digitou
-			where: {
-				cidade: cidade
-			},
-		});
-
-		const idCidade = findIdCidade[0].dataValues.id_cidade;
-		const idEstado = findIdCidade[0].dataValues.id_estado;
 		
 		// Inserindo informação na tabela usuario   
 		const dadosUsuario = await Usuario.create({
@@ -63,8 +43,8 @@ const cadastroEstabController = {
 			email,
 			senha: bcrypt.hashSync(senha, 10),
 			data_cadastro: new Date(),
-			id_cidade: idCidade,
-			id_estado: idEstado,
+			id_cidade: id_cidade,
+			id_estado: id_estado,
 			link_perfil: nome,
 			id_tipos_perfil: 3
 		})
@@ -72,9 +52,9 @@ const cadastroEstabController = {
 		// Salvar o campo link_perfil
         dadosUsuario.link_perfil = `localhost:3000/perfil/estabelecimento/${dadosUsuario.id_usuario}`;
         await dadosUsuario.save({ fields: ['link_perfil'] });
-
+		
 		let funcionamento = 0;
-		(diaSemana != '') ? funcionamento = 1 : null;
+		(diaSemana != undefined) ? funcionamento = 1 : null;
 
 		// Inserindo dados complementares na tabela estab
 		const dadosEstab = await Estabelecimento.create({
@@ -86,13 +66,23 @@ const cadastroEstabController = {
 			id_usuario: dadosUsuario.id_usuario
 		});
 
+		
 		if (funcionamento){
-			for (let i = 0; i < diaSemana.length; i++){
-				horarioSemana[i].split(' ');
+			(horarioSemana[0] == 0) ? lengthDia = 1 : lengthDia = diaSemana.length;
+			for (let i = 0; i < lengthDia; i++){
+				if (horarioSemana[0] == 0) { 
+					dia = diaSemana
+					horario_abertura = horarioSemana.split(' ')[0]
+					horario_fechamento = horarioSemana.split(' ')[2]
+				} else { 
+					dia = diaSemana[i]
+					horario_abertura = horarioSemana[i].split(' ')[0]
+					horario_fechamento = horarioSemana[i].split(' ')[2]
+				}
 				const dadosFuncionamento = await Funcionamento.create({
-					dia: diaSemana[i],
-					horario_abertura: horarioSemana[i].split(' ')[0],
-					horario_fechamento: horarioSemana[i].split(' ')[2],
+					dia,
+					horario_abertura,
+					horario_fechamento,
 					id_estab: dadosEstab.id_estab
 				});
 			}
