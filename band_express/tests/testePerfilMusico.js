@@ -196,39 +196,55 @@ const query = async () => {
 
     // console.log(dadosMusico)
 
-    // Busca na tabela Usuario e Musico
-    const buscaMusico = await Usuario.findOne({ 
+    // // Busca na tabela Usuario e Musico
+    // const buscaMusico = await Usuario.findOne({ 
+    //     where: { id_usuario: 2 },
+    //     raw: true,
+    //     attributes: [ 'id_usuario', 'nome', 'email', 'avatar', 'wallpaper', 'musico.id_musico', 'musico.sobre', 'musico.site', 'musico.canal', 'musico.canto', 'musico.toco', 'musico.tecnico'],
+    //     include: [{
+    //         model: Musico,
+    //         as: 'musico',
+    //         attributes: [],
+    //     }]
+    // });
+
+    // // Busca cidade e UF
+    // const buscaLocal = await Usuario.findOne({ 
+    //     where: { id_usuario: 2 },
+    //     raw: true,
+    //     attributes: ['cidade.cidade', 'cidade.estado.uf'],
+    //     include: [{
+    //         model: Cidade,
+    //         as: 'cidade',
+    //         attributes: [],
+    //         include: [{
+    //             model: Estado,
+    //             as: 'estado',
+    //             attributes: [],
+    //         }],
+    //     }]
+    // });
+
+    // // Concatenar os objetos de busca
+    // let dadosMusico = Object.assign({}, buscaMusico, buscaLocal);
+
+    // console.log(dadosMusico);
+
+
+    /**
+     * Paginação
+     */
+
+    const audios = await Audio.findAll({
         where: { id_usuario: 2 },
         raw: true,
-        attributes: [ 'id_usuario', 'nome', 'email', 'avatar', 'wallpaper', 'musico.id_musico', 'musico.sobre', 'musico.site', 'musico.canal', 'musico.canto', 'musico.toco', 'musico.tecnico'],
-        include: [{
-            model: Musico,
-            as: 'musico',
-            attributes: [],
-        }]
+        attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+        order: [['id_audio', 'DESC']],
+        offset: 0,
+        limit: 4,
     });
 
-    // Busca cidade e UF
-    const buscaLocal = await Usuario.findOne({ 
-        where: { id_usuario: 2 },
-        raw: true,
-        attributes: ['cidade.cidade', 'cidade.estado.uf'],
-        include: [{
-            model: Cidade,
-            as: 'cidade',
-            attributes: [],
-            include: [{
-                model: Estado,
-                as: 'estado',
-                attributes: [],
-            }],
-        }]
-    });
-
-    // Concatenar os objetos de busca
-    let dadosMusico = Object.assign({}, buscaMusico, buscaLocal);
-
-    console.log(dadosMusico);
+    console.log(audios);
 }
 
 query();
