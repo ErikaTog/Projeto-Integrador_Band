@@ -86,15 +86,17 @@ const perfilMusicoController = {
         const audios = await Audio.findAll({
             where: { id_usuario: req.session.usuario.id_usuario },
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
-            limit: 4
+            attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+            order: [['id_audio', 'DESC']],
+            limit: 4,
         });
 
         // Buscar vídeos
         const videos = await Video.findAll({
             where: { id_usuario: req.session.usuario.id_usuario },
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
+            attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+            order: [['id_video', 'DESC']],
             limit: 4
         });
 
@@ -187,7 +189,8 @@ const perfilMusicoController = {
             const audios = await Audio.findAll({
                 where: { id_usuario: dadosMusico.id_usuario },
                 raw: true,
-                attributes: ['tipo', 'titulo', 'caminho'],
+                attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+                order: [['id_audio', 'DESC']],
                 limit: 4
             });
 
@@ -195,7 +198,8 @@ const perfilMusicoController = {
             const videos = await Video.findAll({
                 where: { id_usuario: dadosMusico.id_usuario },
                 raw: true,
-                attributes: ['tipo', 'titulo', 'caminho'],
+                attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+                order: [['id_video', 'DESC']],
                 limit: 4
             });
 
@@ -214,7 +218,7 @@ const perfilMusicoController = {
             
         } catch (error) {
             // Quando o usuário digita um id_musico (req_params) que não existe
-            return res.redirect('/home');
+            return res.status(404);
         }
 
     },

@@ -142,5 +142,11 @@ router.get('/deletarInstrumento/:id', VerificaUsuarioLogado, perfilEditarMusicoC
 // Excluir habilidade técnica
 router.get('/deletarTecnico/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteTecnico);
 
+// Excluir video
+router.get('/deletarVideo/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteVideo);
+
+// Excluir audio
+router.get('/deletarAudio/:id', VerificaUsuarioLogado, perfilEditarMusicoController.deleteAudio);
+
 
 module.exports = router;

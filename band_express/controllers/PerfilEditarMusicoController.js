@@ -78,15 +78,17 @@ const perfilEditarMusicoController = {
         const audios = await Audio.findAll({
             where: { id_usuario: req.session.usuario.id_usuario },
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
-            limit: 4
+            attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+            order: [['id_audio', 'DESC']],
+            limit: 4,
         });
 
         // Buscar vídeos
         const videos = await Video.findAll({
             where: { id_usuario: req.session.usuario.id_usuario },
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
+            attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+            order: [['id_video', 'DESC']],
             limit: 4
         });
 
@@ -478,6 +480,34 @@ const perfilEditarMusicoController = {
 
             await musicoDados.save({ fields: ['tecnico'] });
         }
+
+        res.redirect(`/perfil/editar/musico`);
+    },
+    deleteVideo: async (req, res) => {
+        
+        // Excluir a habilidade técnica da tabela intermediária
+        await Video.destroy({
+            where: {
+                [Op.and]: [
+                    { id_usuario: req.session.usuario.id_usuario },
+                    { id_video: req.params.id }
+                ]
+            }
+        });
+
+        res.redirect(`/perfil/editar/musico`);
+    },
+    deleteAudio: async (req, res) => {
+        
+        // Excluir a habilidade técnica da tabela intermediária
+        await Audio.destroy({
+            where: {
+                [Op.and]: [
+                    { id_usuario: req.session.usuario.id_usuario },
+                    { id_audio: req.params.id }
+                ]
+            }
+        });
 
         res.redirect(`/perfil/editar/musico`);
     },
