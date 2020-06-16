@@ -149,7 +149,8 @@ const perfilEstabController = {
             });
 
         } catch (error) {
-            return res.redirect('/home');
+            // Quando o usuário digita um id_musico (req_params) que não existe
+            return res.status(404);
         }
         
     },
