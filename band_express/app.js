@@ -82,8 +82,9 @@ app.use(function(req, res, next) {
   res.status(404).render('feedbackGeral', { 
     imagem: '/img/feedback_404.svg',
     titulo: 'Pagina não encontrada',
-    mensagem: 'Não encontramos essa página, tente mais tarde ou cliqe em voltar para a pagina inicial.',
-    botao: 'Voltar'
+    mensagem: 'Não encontramos essa página, tente mais tarde ou clique em voltar para a pagina inicial.',
+    botao: 'Voltar',
+    irPara: '/home'
   });
 });
 

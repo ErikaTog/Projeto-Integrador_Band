@@ -25,7 +25,8 @@ const removerController = {
             imagem: '/img/feedback_excluir.svg',
             titulo: 'Exclusão feita com sucesso',
             mensagem: 'Sua conta Band + e todos os seus dados foram excluídos do nosso banco de dados.',
-            botao: 'Band +'
+            botao: 'Band +',
+            irPara: '/'
         });
         
     },
