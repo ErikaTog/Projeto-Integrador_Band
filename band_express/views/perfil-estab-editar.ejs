@@ -129,23 +129,26 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                            <div class="form-group">
-                                <select class="custom-select" name="estado">
-                                    <% estados.forEach(estado => { %>
-                                        <% if (dadosUsuario.uf == estado.uf) { %>
-                                            <option selected><%= estado.uf %></option> 
-                                        <% } else { %>
-                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                        <% } %>
+                        <div class="form-group">
+                            <div id= "inputEstadoDiv" class="">
+                                <select class="form-control" id="inputEstado" name="estado">
+                                    <option value="" disabled selected hidden>Escolha o Estado</option>
+                                    <% estados.forEach((estado)=>{ %>
+                                        <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                     <% }) %>
                                 </select>
                             </div>
+                        </div>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                            <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
+                        <div class="form-group">
+                            <div class="">
+                                <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                    <option value="" disabled selected hidden>Escolha a Cidade</option>
+                                </select>
                             </div>
+                        </div>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
@@ -290,6 +293,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
     <script src="/javascripts/perfilEditarEstabJs.js"></script>
+
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
 
 </body>
 
