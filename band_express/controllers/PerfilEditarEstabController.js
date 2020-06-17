@@ -44,10 +44,14 @@ const perfilEditarEstabController = {
             attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
         });
 
-        // Buscar lista de Estados
+        // Buscar todos os estados
         const estados = await Estado.findAll({ 
-            raw: true,
-            attributes: ['uf'] 
+        	raw: true
+		});
+		
+		// Buscar todas as cidades
+		const cidades = await Cidade.findAll({ 
+        	raw: true
         });
 
         let dadosFuncionamento = [];
@@ -69,6 +73,7 @@ const perfilEditarEstabController = {
             dadosUsuario,
             dadosEstab, 
             estados,
+            cidades,
             tipoCategoria,
             dadosFuncionamento,
             totalSeguindo,
@@ -82,26 +87,13 @@ const perfilEditarEstabController = {
     change: async (req, res) => {
 
         let { nome, sobre, estado, cidade, site, categoria, telefone, horarioSemana, diaSemana } = req.body;
-    
+
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
         });
         
         const dadosEstab = await Estabelecimento.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario }, 
-        });
-        
-        // Buscar o id_cidade e id_estado na tabela cidade
-        const findIdLocal = await Cidade.findOne({
-            where: { cidade: cidade },
-            raw: true,
-            attributes: ['id_cidade', 'estado.id_estado'],
-            include: [{
-                model: Estado, 
-                as: 'estado',
-                attributes: [],
-                where: { uf: estado }
-            }]
         });
 
         if(telefone.length == 14){
@@ -140,8 +132,8 @@ const perfilEditarEstabController = {
         
         // Substituir valores
         dadosUsuario.nome = nome;
-        dadosUsuario.id_estado = findIdLocal.id_estado;
-        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosUsuario.id_estado = estado;
+        dadosUsuario.id_cidade = cidade;
         dadosEstab.sobre = sobre;
         dadosEstab.site = site;
         dadosEstab.categoria = categoria;
