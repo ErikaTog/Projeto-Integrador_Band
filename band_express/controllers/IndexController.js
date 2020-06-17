@@ -44,7 +44,7 @@ const indexController = {
 
         req.session.destroy();
         
-        res.redirect('/home');
+        res.redirect('/');
 
     }
 }
