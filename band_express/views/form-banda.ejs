@@ -158,7 +158,15 @@
                             </div>
                         </div>
 
-                        <h5>Integrantes</h5>
+                        <div class="primeiraLinha"> 
+                            <div id="hability-box">
+                                <label id="hability-label" for="group"><h5>Integrantes</h5></label>
+                                    <span class="d-inline-block" data-toggle="popover" data-placement="bottom" disabled title="Acesse seu perfil" data-content="Após o cadastro, acesse o perfil da banda e inclua os demais integrantes. Lá você também encontrará opções para deixar o perfil da banda ainda mais atrativo!">
+                                    <button class="btn btn-primary" style="pointer-events: none;" type="button" ></button>
+                                    </span>
+                            </div>
+                        </div>                       
+                       
                         <div class="campo-form card-cadastro">
                             <div>
                                 <div class="form-group row">
@@ -207,7 +215,16 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>7<script>
+     </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+                container: 'body'
+        })
+    </script>
+    
+    <script>
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
     <script src="/javascripts/filtrarCidade.js"></script>
