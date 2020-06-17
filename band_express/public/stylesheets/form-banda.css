@@ -188,6 +188,7 @@ label.remove{
 
 .d-inline-block{
     cursor: pointer; /* vai por o cursor como forma de mão ao passar por cima do botão */
+}
 
 /* --------------------fim_do_Grupo_Form_Dados--------------------- */
 
@@ -201,8 +202,7 @@ label.remove{
     }
     .form-group label {
         margin-right: 0;
-    }
-    
+    }    
 }
 
 @media screen and (max-width: 991px) {
@@ -228,8 +228,7 @@ label.remove{
     }
     #dados {
         padding: 1.5rem 2.5rem 2rem;
-    }
-   
+    }   
 }
 
 @media screen and (max-width: 767px) {
