@@ -187,6 +187,13 @@ router.post('/audio', multer(MulterAudio).any(), VerificaUsuarioLogado, perfilEd
 // Deletar integrante
 router.get('/deletarIntegrante/:id', VerificaUsuarioLogado, perfilEditarBandaController.deleteIntegrante);
 
+// Deletar video
+router.get('/deletarVideo/:id', VerificaUsuarioLogado, perfilEditarBandaController.deleteVideo);
+
+// Deletar audio
+router.get('/deletarAudio/:id', VerificaUsuarioLogado, perfilEditarBandaController.deleteAudio);
+
+
 
 module.exports = router;
        

@@ -235,16 +235,19 @@ const query = async () => {
      * Paginação
      */
 
-    const audios = await Audio.findAll({
+    const limit = 4;
+    const page = 2;
+
+    const videos = await Video.findAll({
         where: { id_usuario: 2 },
         raw: true,
-        attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
-        order: [['id_audio', 'DESC']],
-        offset: 0,
-        limit: 4,
+        attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+        order: [['id_video', 'DESC']],
+        offset: (limit * page),
+        limit,
     });
 
-    console.log(audios);
+    console.log(videos);
 }
 
 query();

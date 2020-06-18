@@ -306,7 +306,7 @@
                                 <% if (video.tipo == "arquivo") { %>
                                     <div class="musica-item col-xl-6 col-sm-12">
                                         <div class="icon-border-none">
-                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                            <a href="/perfil/editar/banda/deletarVideo/<%= video.id_video %>">
                                                 <i class="fas fa-trash fa-lg"></i>
                                             </a>
                                         </div>
@@ -322,7 +322,7 @@
                                 <% if (video.tipo == "link") { %>
                                     <div class="musica-item col-xl-6 col-sm-12">
                                         <div class="icon-border-none">
-                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                            <a href="/perfil/editar/banda/deletarVideo/<%= video.id_video %>">
                                                 <i class="fas fa-trash fa-lg"></i>
                                             </a>
                                         </div>
@@ -338,7 +338,7 @@
                                 <% if (audio.tipo == "arquivo") { %>
                                     <div class="musica-item col-xl-6 col-sm-12">
                                         <div class="icon-border-none">
-                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                            <a href="/perfil/editar/banda/deletarAudio/<%= audio.id_audio %>">
                                                 <i class="fas fa-trash fa-lg"></i>
                                             </a>
                                         </div>
@@ -357,7 +357,7 @@
                                 <% if (audio.tipo == "link") { %>
                                     <div class="musica-item col-xl-6 col-sm-12">
                                         <div class="icon-border-none">
-                                            <a data-toggle="modal" data-target="#confirmarExclusaoMusica" href="">
+                                            <a href="/perfil/editar/banda/deletarAudio/<%= audio.id_audio %>">
                                                 <i class="fas fa-trash fa-lg"></i>
                                             </a>
                                         </div>
