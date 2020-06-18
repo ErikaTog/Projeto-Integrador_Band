@@ -240,6 +240,31 @@ const perfilMusicoController = {
         });
 
         res.redirect(`/perfil/musico/${dadosMusico.id_musico}`);
+    },
+    loadVideo: async (req, res) => {
+        const { page } = req.params;
+
+        const limit = 4;
+
+        const videos = await Video.findAll({
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+            order: [['id_video', 'DESC']],
+            offset: (limit * page),
+            limit,
+        });
+        
+        // const audios = await Audio.findAll({
+        //     where: { id_usuario: req.session.usuario.id_usuario },
+        //     raw: true,
+        //     attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+        //     order: [['id_audio', 'DESC']],
+        //     offset: (limit * page),
+        //     limit,
+        // });
+
+        return res.send(videos);
     }
 }
 
