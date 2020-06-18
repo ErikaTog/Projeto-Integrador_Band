@@ -1,4 +1,3 @@
-
 let vagas = [];
 let valor = 0;
 let flag = 1;
@@ -30,7 +29,8 @@ const loadFeed = async () => {
             id_vagas: dadosBack.pagina[i].id_vagas,
             tipo_vaga: dadosBack.pagina[i].tipo_vaga,
             titulo: dadosBack.pagina[i].titulo,
-            nome: dadosBack.pagina[i].usuario.nome
+            nome: dadosBack.pagina[i].usuario.nome,
+            link_perfil: dadosBack.pagina[i].usuario.link_perfil
         });
     }
 
@@ -73,7 +73,8 @@ const loadMinhasVagas = async () => {
             id_vagas: dadosBack.pagina[i].id_vagas,
             tipo_vaga: dadosBack.pagina[i].tipo_vaga,
             titulo: dadosBack.pagina[i].titulo,
-            nome: dadosBack.pagina[i].usuario.nome
+            nome: dadosBack.pagina[i].usuario.nome,
+            link_perfil: dadosBack.pagina[i].usuario.link_perfil
         });
     }
 
@@ -87,6 +88,42 @@ const initMinhasVagas = async () => {
     valor = 0;
     flag = 0;
     loadMinhasVagas();
+}
+
+const clickDelete = async (evt) => {
+
+    evt.preventDefault();
+
+    let id = String(evt.target.id);
+    id = id.slice(7)
+
+    const data =  { 
+        apagarVaga: vagas[id].id_vagas
+     };
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    const response = await fetch('/vagas/dadosApagar', options);
+    const dadosBack = await response.json();
+
+    initMinhasVagas();
+}
+
+const clickEditar = (evt) => {
+
+    // evt.preventDefault();
+
+    // let id = String(evt.target.id);
+    // console.log(id)
+
+
+    // loadMinhasVagas();
 }
 
 const view = () => {
@@ -119,11 +156,31 @@ const view = () => {
             localVaga.innerText = vagas[i].cidade_vaga + ' / ' + vagas[i].estado_vaga;
             conteudoVaga.appendChild(localVaga);
 
-            let linkVaga = document.createElement('a');
-            linkVaga.innerText = vagas[i].nome;
-            linkVaga.href = '';
-            conteudoVaga.appendChild(linkVaga);
+            if(flag) {
+                let linkVaga = document.createElement('a');
+                linkVaga.innerText = vagas[i].nome;
+                linkVaga.href = vagas[i].link_perfil;
+                conteudoVaga.appendChild(linkVaga);
+                
+            } else {
+                let linksDiv = document.createElement('div');
+                linksDiv.id = 'linksDiv';
+                conteudoVaga.appendChild(linksDiv);
 
+                    let editarVaga = document.createElement('a');
+                    editarVaga.innerText = 'Editar';
+                    editarVaga.id = 'editar' + i;
+                    editarVaga.href = '';
+                    // editarVaga.addEventListener('click', clickEditar);
+                    linksDiv.appendChild(editarVaga);
+
+                    let excluirVaga = document.createElement('a');
+                    excluirVaga.innerText = 'Excluir';
+                    excluirVaga.id = 'excluir' + i;
+                    excluirVaga.href = '';
+                    excluirVaga.addEventListener('click', clickDelete);
+                    linksDiv.appendChild(excluirVaga);
+            }
     }
 
         let botaoVaga = document.createElement('div');
