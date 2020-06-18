@@ -63,7 +63,15 @@
                 </div>
             <% } %>
 
-                     
+            <!-- Mensagem de erro (flash - integrantes) -->
+            <% if ( errorDeleteInteg.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <p class="error">- <%=  errorDeleteInteg %></p>
+                </div>
+            <% } %>
+        
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
 
