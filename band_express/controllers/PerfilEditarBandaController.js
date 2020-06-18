@@ -30,7 +30,7 @@ const perfilEditarBandaController = {
         // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
+            attributes: ['avatar', 'wallpaper', 'id_estado', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 attributes: [],
                 model: Cidade,
@@ -46,7 +46,7 @@ const perfilEditarBandaController = {
             }
         })
       
-
+        
         // Selecionando o nome, função e avatar dos integrantes
         const integrantes = await BandaIntegrantes.findAll({
             raw: true,
@@ -101,8 +101,18 @@ const perfilEditarBandaController = {
         //Listando todos os Estados
         const estados = await Estado.findAll({ 
             raw: true,
-            attributes: ['uf'] 
         });
+
+        // Listando todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
+        });
+
+        // Listando todas as cidades do estado do usuário
+         const cidadesUsuarioBanda = await Cidade.findAll({
+            raw: true,
+            where: {id_estado: dadosUsuarioBanda.id_estado}
+        })
        
         return res.render('perfil-banda-editar', {
             usuario: req.session.usuario,
@@ -116,6 +126,8 @@ const perfilEditarBandaController = {
             videos,
             audios,
             estados,
+            cidades,
+            cidadesUsuarioBanda,
             errors: req.flash('errorValidator'),
             errorsImage: req.flash('errorImage'),
             errorsUpload: req.flash('errorUpload'),
@@ -181,8 +193,8 @@ const perfilEditarBandaController = {
         // Substituir valores
         dadosUsuario.nome = nome;
         dadosUsuario.email = email;
-        dadosUsuario.id_estado = findIdLocal.id_estado;
-        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosUsuario.id_estado = estado;
+        dadosUsuario.id_cidade = cidade;
         dadosBanda.sobre = sobre;
         dadosBanda.site = site;
         dadosBanda.canal = canal;

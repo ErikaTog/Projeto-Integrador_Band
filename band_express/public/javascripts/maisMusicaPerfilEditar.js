@@ -23,6 +23,20 @@ const elementosHtmlVideo = list => {
         let divVideo = document.createElement('div');
         divVideo.className = 'musica-item col-xl-6 col-sm-12';
 
+            let divLixo = document.createElement('div');
+            divLixo.className = 'icon-border-none';
+
+                let aLixo = document.createElement('a');
+                aLixo.href = `/perfil/editar/musico/deletarVideo/${item.id_video}`
+
+                    let iconeLixo = document.createElement('i');
+                    iconeLixo.className = 'fas fa-trash fa-lg';
+                    aLixo.appendChild(iconeLixo);
+                
+                divLixo.appendChild(aLixo);
+            
+            divVideo.appendChild(divLixo);
+
         if (item.tipo == 'arquivo') {
             let video = document.createElement('video');
             video.controls = true;
@@ -83,6 +97,20 @@ const elementosHtmlAudio = list => {
 
         let divAudio = document.createElement('div');
         divAudio.className = 'musica-item col-xl-6 col-sm-12';
+
+        let divLixo = document.createElement('div');
+            divLixo.className = 'icon-border-none';
+
+                let aLixo = document.createElement('a');
+                aLixo.href = `/perfil/editar/musico/deletarAudio/${item.id_audio}`;
+
+                    let iconeLixo = document.createElement('i');
+                    iconeLixo.className = 'fas fa-trash fa-lg';
+                    aLixo.appendChild(iconeLixo);
+                
+                divLixo.appendChild(aLixo);
+            
+            divAudio.appendChild(divLixo);
 
         if (item.tipo == 'arquivo') {
             let divAudioPlayer = document.createElement('div');

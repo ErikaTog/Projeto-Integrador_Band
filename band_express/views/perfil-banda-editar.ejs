@@ -174,7 +174,15 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="textareaInfos" name="cidade" rows="1"><%= dadosUsuarioBanda.cidade %></textarea>
+                                        <select class="custom-select" id="inputEstado" name="estado">
+                                            <% estados.forEach(estado => { %>
+                                            <% if (dadosUsuarioBanda.uf == estado.uf) { %>
+                                                <option value="<%= estado.id_estado %>" selected><%= estado.uf %></option> 
+                                                <% } else { %>
+                                                    <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                                                <% } %>
+                                            <% }) %>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -182,15 +190,15 @@
                                 <img src="/img/icones/pin-01.png" alt="Local">
                                 <div class="form">
                                     <div class="form-group">
-                                        <select class="custom-select" name="estado">
-                                            <% estados.forEach(estado => { %>
-                                            <% if (dadosUsuarioBanda.uf == estado.uf) { %>
-                                            <option selected><%= estado.uf %></option>
-                                            <% } else { %>
-                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                            <% } %>
+                                        <select class="custom-select" id="inputCidade" name="cidade">
+                                            <% cidadesUsuarioBanda.forEach(cidade => { %>
+                                                <% if (dadosUsuarioBanda.cidade == cidade.cidade) { %>
+                                                    <option value="<%= cidade.id_cidade %>" selected><%= cidade.cidade %></option> 
+                                                <% } else { %>
+                                                    <option value="<%= cidade.id_cidade %>"><%= cidade.cidade %></option>
+                                                <% } %>
                                             <% }) %>
-                                        </select>
+                                        </select>                                    
                                     </div>
                                 </div>
                             </div>
@@ -560,7 +568,7 @@
     </div>
 
     <!-- Confirmar Exclusão -->
-    <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -580,10 +588,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Confirmar Exclusão - Música -->
-    <div class="modal fade" id="confirmarExclusaoMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="confirmarExclusaoMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -606,7 +614,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -617,6 +625,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-</body>
+
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
+
+    </body>
 
 </html>

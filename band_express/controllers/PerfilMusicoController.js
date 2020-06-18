@@ -254,17 +254,24 @@ const perfilMusicoController = {
             offset: (limit * page),
             limit,
         });
-        
-        // const audios = await Audio.findAll({
-        //     where: { id_usuario: req.session.usuario.id_usuario },
-        //     raw: true,
-        //     attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
-        //     order: [['id_audio', 'DESC']],
-        //     offset: (limit * page),
-        //     limit,
-        // });
 
         return res.send(videos);
+    },
+    loadAudio: async (req, res) => {
+        const { page } = req.params;
+
+        const limit = 4;
+        
+        const audios = await Audio.findAll({
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+            order: [['id_audio', 'DESC']],
+            offset: (limit * page),
+            limit,
+        });
+
+        return res.send(audios);
     }
 }
 
