@@ -15,5 +15,6 @@ router.put('/editarVaga', VerificaUsuarioLogado, vagasController.editarVaga);
 
 router.post('/dadosFeed', VerificaUsuarioLogado, vagasController.dadosFeed);
 router.post('/dadosMinhasVagas', VerificaUsuarioLogado, vagasController.dadosMinhasVagas);
+router.post('/dadosApagar', VerificaUsuarioLogado, vagasController.dadosApagar);
 
 module.exports = router;
