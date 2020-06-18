@@ -327,7 +327,7 @@
 
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="groupMusic">
 
                         <% if (!videos.length && !audios.length) { %>
                             <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
@@ -403,8 +403,11 @@
                     </div>
                 </div>
 
+                <div id="msg">
+                </div>
+
                 <div class="carregar">
-                    <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
+                    <button type="button" class="btn btn-carregar" id="carregarMusica" value="1">Carregar + Músicas</button>
                 </div>
             </section>    
         </div>
@@ -630,57 +633,6 @@
         </div>
     </div>
 
-    <!-- Confirmar Exclusão -->
-    <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="danger">Tem certeza que quer excluir esta habilidade?</p>
-                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
-                </div>
-                <form action="" method="POST">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmar Exclusão - Música -->
-    <div class="modal fade" id="confirmarExclusaoMusica" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title danger" id="exampleModalLabel">Atenção!!</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><i class="fas fa-times"></i></span>
-
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="danger">Tem certeza que quer excluir a sua música?</p>
-                    <p>Depois de excluir, você não poderá desfazer esta ação.</p>
-                </div>
-                <form action="" method="POST">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -695,6 +647,7 @@
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
     <script src="/javascripts/filtrarCidade.js"></script>
+    <script src="/javascripts/maisMusicaPerfilEditar.js"></script>
 </body>
 
 </html>
