@@ -8,7 +8,7 @@ const perfilEditarMusicoController = {
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
             raw: true,
-            attributes: ['id_estado' ,'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
+            attributes: ['id_usuario', 'id_estado', 'avatar', 'wallpaper', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 model: Cidade,
                 as: 'cidade',
