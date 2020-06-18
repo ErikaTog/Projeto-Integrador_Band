@@ -136,7 +136,7 @@
     text-decoration: none;
 }
 
-.conteudo-minha-vaga div a:first-child{
+#linksDiv a{
     margin-right: 10px;
 }
 
