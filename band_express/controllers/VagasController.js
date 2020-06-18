@@ -124,7 +124,7 @@ const vagasController = {
         res.redirect(`/vagas`);
     },
     
-    dados: async (req, res) => {
+    dadosFeed: async (req, res) => {
 
         let limite = req.body;
         limite.valor = limite.valor + 4;
@@ -142,6 +142,31 @@ const vagasController = {
             pagina,
             limite: pagina.length
         });
+    },
+
+    dadosMinhasVagas: async (req, res) => {
+
+        let limite = req.body;
+        limite.valor = limite.valor + 4;
+
+        const pagina = await Vagas.findAll({
+            where: { 
+                id_usuario: req.session.usuario.id_usuario 
+            },
+            limit: limite.valor,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome'],
+            }]
+        });
+        console.log(pagina)
+
+        res.json({
+            pagina,
+            limite: pagina.length
+        });
+        
     }
 }
 
