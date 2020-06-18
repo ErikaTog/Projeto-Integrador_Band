@@ -134,7 +134,7 @@ const vagasController = {
             include: [{
                 model: Usuario,
                 as: 'usuario',
-                attributes: ['nome'],
+                attributes: ['nome', 'link_perfil'],
             }]
         });
 
@@ -157,16 +157,30 @@ const vagasController = {
             include: [{
                 model: Usuario,
                 as: 'usuario',
-                attributes: ['nome'],
+                attributes: ['nome', 'link_perfil'],
             }]
         });
-        console.log(pagina)
 
         res.json({
             pagina,
             limite: pagina.length
         });
         
+    },
+
+    dadosApagar: async (req, res) => {
+
+        let id = req.body;
+        
+        const dadosVagas = await Vagas.destroy({
+            where: {
+                id_vagas: id.apagarVaga
+            }
+        });
+        
+        res.json({
+            status: 'OK'
+        });
     }
 }
 
