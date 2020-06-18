@@ -63,6 +63,14 @@
                 </div>
             <% } %>
 
+            <!-- Mensagem de erro (flash - integrantes) -->
+            <% if ( errorDeleteInteg.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível fazer a alteração solicitada!</h5>
+                    <hr>
+                    <p class="error">- <%=  errorDeleteInteg %></p>
+                </div>
+            <% } %>
         
             <!-- Grupo Head -->
             <section id="head" class="card-perfil">
@@ -148,7 +156,7 @@
                                     </div>
 
                                     <div class="icon-border-none form-group col-1">
-                                        <a data-toggle="modal" data-target="#confirmarExclusao" href="">
+                                        <a href="/perfil/editar/banda/deletarIntegrante/<%= integrante.id_integrante %>">
                                             <i class="fas fa-trash fa-lg"></i>
                                         </a>
                                     </div>

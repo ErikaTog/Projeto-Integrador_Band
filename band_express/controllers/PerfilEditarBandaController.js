@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { Op } = require('sequelize');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
 
 const perfilEditarBandaController = {
@@ -49,7 +50,7 @@ const perfilEditarBandaController = {
         // Selecionando o nome, função e avatar dos integrantes
         const integrantes = await BandaIntegrantes.findAll({
             raw: true,
-            attributes: ['integrantesUsuario.nome', 'funcao', 'integrantesUsuario.avatar'],
+            attributes: ['id_integrante', 'integrantesUsuario.nome', 'funcao', 'integrantesUsuario.avatar'],
             include: [{
                 attributes: [],
                 model: Usuario,
@@ -117,7 +118,8 @@ const perfilEditarBandaController = {
             estados,
             errors: req.flash('errorValidator'),
             errorsImage: req.flash('errorImage'),
-            errorsUpload: req.flash('errorUpload')
+            errorsUpload: req.flash('errorUpload'),
+            errorDeleteInteg: req.flash('errorDeleteInteg')
         });
     },
 
@@ -147,11 +149,17 @@ const perfilEditarBandaController = {
             }
         });
         
-     
-        for (let i = 0; i < dadosIntegrantes.length; i++) {
-            dadosIntegrantes[i].funcao = funcao[i].trim();
-            await dadosIntegrantes[i].save({fields: ['funcao'] })            
-        }
+       
+        if(Array.isArray(funcao)){
+            for (let i = 0; i < dadosIntegrantes.length; i++) {
+                dadosIntegrantes[i].funcao = funcao[i].trim();
+                await dadosIntegrantes[i].save({fields: ['funcao'] })            
+            }
+        }else{
+            dadosIntegrantes[0].funcao = funcao.trim();
+            await dadosIntegrantes[0].save({fields: ['funcao'] })  
+        } 
+
 
         // Buscar o id_cidade e id_estado na tabela cidade
         const findIdLocal = await Cidade.findOne({
@@ -420,6 +428,46 @@ const perfilEditarBandaController = {
             caminho,
             id_usuario: req.session.usuario.id_usuario
         })
+
+        res.redirect(`/perfil/editar/banda`);
+    },
+
+    deleteIntegrante: async (req, res) => {
+
+        const bandaDados = await Banda.findOne({
+            where: { id_usuario: req.session.usuario.id_usuario }
+        });
+
+        console.log("info1:" + bandaDados.id_banda)
+        console.log("info2:" + req.params.id)
+
+
+        //Verificando a quantidade de integrantes
+        const integrantesQtd = await BandaIntegrantes.count({
+            where: {
+                id_banda: bandaDados.id_banda
+            }
+        })
+
+        
+        if(integrantesQtd > 1){
+            // Excluir o integrante da tabela banda_integrantes
+            await BandaIntegrantes.destroy({
+                where: {
+                    [Op.and]: [
+                        { id_banda: bandaDados.id_banda },
+                        { id_integrante: req.params.id }
+                    ]
+                }
+            });        
+           
+        }else{
+            //Não deixar exluir se houver somente 1
+            console.log("não é possível deletar")   
+            req.flash('errorDeleteInteg', 'Sua banda não pode existir sem nenhum músico. Caso precise excluir esse integrante, primeiro inclua outro!')
+            res.redirect('/perfil/editar/banda')
+            return     
+        }    
 
         res.redirect(`/perfil/editar/banda`);
     }
