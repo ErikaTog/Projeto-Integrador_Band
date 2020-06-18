@@ -1,7 +1,7 @@
 let buttonCarregar = document.getElementById('carregarMusica');
 let grupoMusic = document.getElementById('groupMusic');
 
-// Realizar a busca de mais video e audio
+// Realizar a busca de mais video
 async function buscarVideo() {
     try {
         let page = buttonCarregar.value;
@@ -49,7 +49,7 @@ const elementosHtmlVideo = list => {
             iframe.frameBorder = '0';
             iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
-            
+
             divVideo.appendChild(iframe);
         }
 
@@ -62,15 +62,109 @@ const elementosHtmlVideo = list => {
     
 }
 
+// Realizar a busca de mais áudio
+async function buscarAudio() {
+    try {
+        let page = buttonCarregar.value;
+        let musicasBuscadas = await fetch(`/perfil/musico/carregarAudio/${page}`);
+        let listaMusicas = await musicasBuscadas.json();
+
+        return listaMusicas;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Criar elementos
+const elementosHtmlAudio = list => {    
+
+    for (const item of list) {
+
+        let divAudio = document.createElement('div');
+        divAudio.className = 'musica-item col-xl-6 col-sm-12';
+
+        if (item.tipo == 'arquivo') {
+            let divAudioPlayer = document.createElement('div');
+            divAudioPlayer.className = 'player';
+
+                let audio = document.createElement('audio');
+                audio.controls = true;
+
+                    let sourceMp3 = document.createElement('source');
+                    sourceMp3.src = item.caminho;
+                    sourceMp3.type = 'video/mp3';
+                    audio.appendChild(sourceMp3);
+                    
+                    let sourceOgg = document.createElement('source');
+                    sourceOgg.src = item.caminho;
+                    sourceOgg.type = 'video/ogg';
+                    audio.appendChild(sourceOgg);
+
+                    let sourceAiff = document.createElement('source');
+                    sourceAiff.src = item.caminho;
+                    sourceAiff.type = 'video/aiff';
+                    audio.appendChild(sourceAiff);
+                    
+                    let sourceFlac = document.createElement('source');
+                    sourceFlac.src = item.caminho;
+                    sourceFlac.type = 'video/flac';
+                    audio.appendChild(sourceFlac);
+
+                    let aviso = document.createElement('p');
+                    aviso.innerText = 'Seu browser não suporta este recurso';
+                    audio.appendChild(aviso);
+                
+                divAudioPlayer.appendChild(audio);
+            
+            divAudio.appendChild(divAudioPlayer);
+
+        } else if (item.tipo == 'link') {
+            let iframe = document.createElement('iframe');
+            iframe.src = item.caminho;
+            iframe.frameBorder = 'no';
+            iframe.allow = 'autoplay';
+            iframe.scrolling = 'no';
+
+            divAudio.appendChild(iframe);
+        }
+
+        let tituloAudio = document.createElement('h5');
+        tituloAudio.innerText = item.titulo;
+        divAudio.appendChild(tituloAudio);
+
+        grupoMusic.appendChild(divAudio);
+    }
+    
+}
+
+
 // Realizar a busca e incrementar
 async function addMusicas() {
     try {
-        let musicasBuscadas = await buscarVideo();
-        elementosHtmlVideo(musicasBuscadas);
+        let videosBuscados = await buscarVideo();
+        let audiosBuscados = await buscarAudio();
+
+        elementosHtmlVideo(videosBuscados);
+        elementosHtmlAudio(audiosBuscados);
+        
+        if (videosBuscados.length < 4 && audiosBuscados.length < 4) {
+
+            let divMsg = document.getElementById('msg');
+
+            let msg = document.createElement('h5');
+            msg.className = 'msg-carregar-musica';
+            msg.innerText = 'Não tem mais música para carregar...';
+            divMsg.appendChild(msg);
+
+            buttonCarregar.classList.add('invisible');
+            return
+        }
 
         let cont = Number(buttonCarregar.value);
         cont += 1;
         buttonCarregar.value = cont;    
+        
     } catch (error) {
         console.log(error);        
     }
@@ -78,16 +172,3 @@ async function addMusicas() {
 
 
 buttonCarregar.addEventListener('click', addMusicas);
-// () => {
-//     console.log(buttonCarregar.value);
-
-//     // Requisição de mais video e audio
-    
-//     // Criar elementos com os dados
-
-
-//     // Incrementando value do button
-//     let cont = Number(buttonCarregar.value);
-//     cont += 1;
-//     buttonCarregar.value = cont;
-// }

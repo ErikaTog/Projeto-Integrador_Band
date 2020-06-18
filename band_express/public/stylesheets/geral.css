@@ -410,6 +410,10 @@ select.readonly {
     margin-bottom: 0;
 }
 
+.invisible {
+    display: none;
+}
+
 
 /* --------------------início_do_xxxxxxxxxxx -------------------- */
 

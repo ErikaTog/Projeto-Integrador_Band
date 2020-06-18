@@ -43,6 +43,12 @@ p.msg-incentivo {
     margin-bottom: 20px;
 }
 
+.msg-carregar-musica {
+    color: #999999;
+    font-weight: 700;
+    text-align: center;
+}
+
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
