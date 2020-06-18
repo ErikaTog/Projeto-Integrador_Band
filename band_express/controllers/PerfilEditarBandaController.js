@@ -82,7 +82,7 @@ const perfilEditarBandaController = {
         //Pegando os vídeos postados
         const videos = await Video.findAll({
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
+            attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
             where: {
                 id_usuario
             }
@@ -92,7 +92,7 @@ const perfilEditarBandaController = {
         //Pegando os áudios postados
         const audios = await Audio.findAll({
             raw: true,
-            attributes: ['tipo', 'titulo', 'caminho'],
+            attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
             where: {
                 id_usuario
             }
@@ -463,15 +463,41 @@ const perfilEditarBandaController = {
            
         }else{
             //Não deixar exluir se houver somente 1
-            console.log("não é possível deletar")   
             req.flash('errorDeleteInteg', 'Sua banda não pode existir sem nenhum músico. Caso precise excluir esse integrante, primeiro inclua outro!')
             res.redirect('/perfil/editar/banda')
             return     
         }    
 
         res.redirect(`/perfil/editar/banda`);
-    }
+    },
 
+    deleteVideo: async (req, res) => {
+        
+        await Video.destroy({
+            where: {
+                [Op.and]: [
+                    {id_usuario: req.session.usuario.id_usuario},
+                    {id_video: req.params.id}
+                ]
+            }
+        });
+
+        res.redirect(`/perfil/editar/banda`);
+    },
+
+    deleteAudio: async (req, res) => {
+                
+        await Audio.destroy({
+            where: {
+                [Op.and]: [
+                    {id_usuario: req.session.usuario.id_usuario},
+                    {id_audio: req.params.id}
+                ]
+            }
+        });
+
+        res.redirect(`/perfil/editar/banda`);
+    }
 }
 
 
