@@ -13,5 +13,6 @@ router.post('/novaVaga', VerificaUsuarioLogado, vagasController.novaVaga);
 router.get('/editarVaga', VerificaUsuarioLogado, vagasController.show);
 router.put('/editarVaga', VerificaUsuarioLogado, vagasController.editarVaga); 
 
+router.post('/dados', VerificaUsuarioLogado, vagasController.dados);
 
 module.exports = router;
