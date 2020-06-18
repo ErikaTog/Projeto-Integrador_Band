@@ -40,43 +40,24 @@
 
             <!-- Feed de Vagas -->
             <section class="feed-vagas"> 
-                <div class="feed-vagas-conteudo">
-                    <div class="radio-group">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio7" name="radioFeed" class="custom-control-input" checked>
-                            <label class="custom-control-label" for="customRadio7">Feed de Vagas</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadio8" name="radioFeed" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
-                        </div>
-                    </div>
-
-                    <% for( let i = 0; i < dadosVagas.length; i++ ) { %>
-                        <div class="conteudo-vaga">
-                            <h5><%= dadosVagas[i].titulo %></h5>
-                            <p><%= dadosVagas[i].descricao %></p>
-                            <p><%= dadosVagas[i].cidade_vaga %> / <%= dadosVagas[i].estado_vaga %></p>
-                            <a href=""><%= dadosVagas[i].nome %></a>
-                        </div>
-                    <% } %>
-
-                    <% for( let i = 0; i < dadosMinhasVagas.length; i++ ) { %>
-                        <div class="conteudo-minha-vaga">
-                            <h5><%= dadosMinhasVagas[i].titulo %></h5>
-                            <p><%= dadosMinhasVagas[i].descricao %></p>
-                            <p><%= dadosMinhasVagas[i].cidade_vaga %> / <%= dadosMinhasVagas[i].estado_vaga %></p>
-                            <div>
-                                <a data-toggle="modal" data-target="#editarVaga"href="">Editar</a>
-                                <a data-toggle="modal" data-target="#confirmarExclusao" href="">Excluir</a>
+                <div id="feedVagasDiv">
+                    <div class="feed-vagas-conteudo">
+                        <div class="radio-group">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadio7" name="radioFeed" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="customRadio7">Feed de Vagas</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadio8" name="radioFeed" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio8">Minhas Vagas</label>
                             </div>
                         </div>
-                    <% } %>
-                    
-                    <div class="botao">
-                        <button type="button" class="btn btn-mais">+ Vagas</button>
                     </div>
-                </div>
+                    <div class="feed-vagas-conteudo" id="vagasJS">
+                        <div class="botao">
+                            <button type="button" class="btn btn-mais">+ Vagas</button>
+                        </div>
+                    </div>
             </section>
         </div>
     </main>
@@ -110,16 +91,26 @@
                         <div class="form-group">
                             <input class="form-control" maxlength="50" id="tituloNovaVaga" name="tituloNovaVaga" placeholder="Título da vaga" required>
                         </div>
-                        <div class="form-group">
-                            <select class="form-control" id="inputEstado" name="estado" required>
-                                <option value="" disabled selected hidden>Escolha um Estado</option>
-                                <% estados.forEach((estado)=>{ %>
-                                    <option><%= estado.uf %></option>
-                                <% }) %>
-                            </select>
+                        <div class="infos-item media">
+                            <div id= "inputEstadoDiv" class="form-group">
+                                <div class="">
+                                    <select class="form-control" id="inputEstado" name="estado">
+                                        <option value="" disabled selected hidden>Escolha o Estado</option>
+                                        <% estados.forEach((estado)=>{ %>
+                                            <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" maxlength="120" id="inputCidade" name="cidade" placeholder="Cidade" required>
+                        <div class="infos-item media">
+                            <div id= "inputCidadeDiv" class="form-group">
+                                <div class="">
+                                    <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                        <option value="" disabled selected hidden>Escolha a Cidade</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <input class="form-control" maxlength="200" id="descricaoNovaVaga" name="descricaoNovaVaga" placeholder="Descrição da vaga" required>
@@ -185,5 +176,12 @@
             </div>
         </div>
     </div>
+
+    <script src="../javascripts/vagasJs.js"></script>
+
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="../javascripts/filtrarCidade.js"></script>
 
     <%- include('./partials/footer.ejs') %>
