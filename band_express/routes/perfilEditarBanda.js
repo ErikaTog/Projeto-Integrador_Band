@@ -82,15 +82,29 @@ router.put('/', [
     // validando o campo função       
     body('funcao')
     .custom(async (value, { req }) => {
-        for (let i = 0; i < value.length; i++){
-            if (!value[i]){
+        // console.log("valor: " + value)
+        // console.log(req.body.funcao.length)
+        // console.log(req.body.funcao)
+
+        if(Array.isArray(req.body.funcao)){
+            for (let i = 0; i < value.length; i++){
+                if (!value[i]){
+                    return Promise.reject('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
+                }                 
+                if (value[i].trim().length < 4  || value[i].trim().length > 100){
+                    return Promise.reject('A função do integrante deve ter pelo menos 4 caracteres.')
+                }        
+            }             
+        }else{
+            if (!value){
                 return Promise.reject('Estamos curiosos para saber qual a função deste integrante. Conte para nós!')
-            } 
-            if (value[i].trim().length < 4  || value[i].trim().length > 100){
+            }                 
+            if (value.trim().length < 4  || value.trim().length > 100){
                 return Promise.reject('A função do integrante deve ter pelo menos 4 caracteres.')
-            }        
-        }
+            } 
+        }        
     }),
+
 
     // Validando o campo de vídeo
     body('videoAdd')
