@@ -149,10 +149,17 @@ const perfilEditarBandaController = {
             }
         });
         
-        for (let i = 0; i < dadosIntegrantes.length; i++) {
-            dadosIntegrantes[i].funcao = funcao[i].trim();
-            await dadosIntegrantes[i].save({fields: ['funcao'] })            
-        }   
+       
+        if(Array.isArray(funcao)){
+            for (let i = 0; i < dadosIntegrantes.length; i++) {
+                dadosIntegrantes[i].funcao = funcao[i].trim();
+                await dadosIntegrantes[i].save({fields: ['funcao'] })            
+            }
+        }else{
+            dadosIntegrantes[0].funcao = funcao.trim();
+            await dadosIntegrantes[0].save({fields: ['funcao'] })  
+        } 
+
 
         // Buscar o id_cidade e id_estado na tabela cidade
         const findIdLocal = await Cidade.findOne({
