@@ -92,6 +92,13 @@
 /* --------------------------------
          Feed vagas
 -------------------------------- */
+#feedVagasDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .feed-vagas{
     font-size: 1.6rem;
     margin-bottom: 30px;
@@ -174,6 +181,17 @@
 
 .form-control#textareaDescricaoVaga{
     height: auto;
+}
+
+#inputCidadeDiv,
+#inputEstadoDiv{
+    width: 100%;
+}
+
+#inputCidade,
+#inputEstado{
+    color: #5E6380;
+    
 }
 
 /* --------------------------------
