@@ -1,11 +1,11 @@
 
 let vagas = [];
 let valor = 0;
+let flag = 1;
 
-const load = async () => {
+const loadFeed = async () => {
 
     vagas = [];
-
     const data =  { 
         valor
      };
@@ -18,9 +18,8 @@ const load = async () => {
         body: JSON.stringify(data)
     };
 
-    const response = await fetch('/vagas/dados', options);
+    const response = await fetch('/vagas/dadosFeed', options);
     const dadosBack = await response.json();
-    console.log(dadosBack)
 
     for (let i = 0 ; i < dadosBack.limite ; i++) {
         vagas.push({
@@ -34,13 +33,69 @@ const load = async () => {
             nome: dadosBack.pagina[i].usuario.nome
         });
     }
-    console.log(valor)
+
     valor = dadosBack.limite;
-    console.log(valor)
+
     view();
 }
 
+const initFeed = async () => {
+    vagas = [];
+    valor = 0;
+    flag = 1;
+    loadFeed();
+}
+
+const loadMinhasVagas = async () => {
+
+    vagas = [];
+    const data =  { 
+        valor
+     };
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    const response = await fetch('/vagas/dadosMinhasVagas', options);
+    const dadosBack = await response.json();
+
+    for (let i = 0 ; i < dadosBack.limite ; i++) {
+        vagas.push({
+            cidade_vaga: dadosBack.pagina[i].cidade_vaga,
+            descricao: dadosBack.pagina[i].descricao,
+            estado_vaga: dadosBack.pagina[i].estado_vaga,
+            id_usuario: dadosBack.pagina[i].id_usuario,
+            id_vagas: dadosBack.pagina[i].id_vagas,
+            tipo_vaga: dadosBack.pagina[i].tipo_vaga,
+            titulo: dadosBack.pagina[i].titulo,
+            nome: dadosBack.pagina[i].usuario.nome
+        });
+    }
+
+    valor = dadosBack.limite;
+
+    view();
+}
+
+const initMinhasVagas = async () => {
+    vagas = [];
+    valor = 0;
+    flag = 0;
+    loadMinhasVagas();
+}
+
 const view = () => {
+
+    let clickFeed = document.getElementById('customRadio7');
+    clickFeed.addEventListener('click', initFeed);
+
+    let clickMinhasVagas = document.getElementById('customRadio8');
+    clickMinhasVagas.addEventListener('click', initMinhasVagas);
 
     let vagasJS = document.getElementById('vagasJS');
     vagasJS.innerHTML = '';
@@ -75,13 +130,22 @@ const view = () => {
         botaoVaga.className = 'botao';
         vagasJS.appendChild(botaoVaga);
 
+    if(flag) {
             let botaoMaisVaga = document.createElement('button');
             botaoMaisVaga.className = 'btn btn-mais';
             botaoMaisVaga.innerText = '+ Vagas';
             botaoMaisVaga.type = 'button';
-            botaoMaisVaga.addEventListener('click', load);
+            botaoMaisVaga.addEventListener('click', loadFeed);
             botaoVaga.appendChild(botaoMaisVaga);
-    
+
+    } else {
+            let botaoMaisVaga = document.createElement('button');
+            botaoMaisVaga.className = 'btn btn-mais';
+            botaoMaisVaga.innerText = '+ Vagas';
+            botaoMaisVaga.type = 'button';
+            botaoMaisVaga.addEventListener('click', loadMinhasVagas);
+            botaoVaga.appendChild(botaoMaisVaga);
+    }
 }
 
-window.onload = load();
+window.onload = loadFeed();
