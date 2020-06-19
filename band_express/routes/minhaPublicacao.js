@@ -17,4 +17,7 @@ router.post('/',
 minhaPublicacaoMiddleware.errorComentario,
 VerificaUsuarioLogado, minhaPublicacaoController.saveComentario);
 
+// Excluir Post
+router.get('/excluirPost/:id', VerificaUsuarioLogado, minhaPublicacaoController.deletePost);
+
 module.exports = router;

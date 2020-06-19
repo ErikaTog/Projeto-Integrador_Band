@@ -93,6 +93,11 @@ const publicacaoController = {
 
         res.redirect('/minhaPublicacao');
     },
+    deletePost: async (req, res) => {
+        await Post.destroy({
+            where: { id_post: req.params.id }
+        });
+    }
 } 
 
 module.exports = publicacaoController;

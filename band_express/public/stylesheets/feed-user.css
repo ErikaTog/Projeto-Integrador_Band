@@ -12,8 +12,15 @@
 }
 
 #publicacao .media i {
-    color: #4C4F66;
+    color: #999999;
     font-size: 2rem;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+#publicacao .media i:hover {
+    font-size: 2.5rem;
+    opacity: 0.8;
 }
 
 .curtir {
@@ -84,6 +91,9 @@
 
     #publicacao .media i {
         font-size: 1.5rem;
+    }
+    #publicacao .media i:hover {
+        font-size: 2rem;
     }
 
     .curtir {

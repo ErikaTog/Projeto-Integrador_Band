@@ -81,15 +81,13 @@
      <!-- Grupo Publicacao --> 
                 <section id="publicacao">
                     <% posts.forEach(post => { %>
-                        <div class="card-feed">
+                        <div class="card-feed" id="<%= post.id_post %>">
                             <div class="media">
                                 <a href="<%= post.link_perfil %>">
                                     <img class="mini-avatar" src="<%= post.avatar %>" alt="<%= post.nome %>">
                                     <h5><%= post.nome %></h5>
                                 </a>
-                                <a href="">
-                                    <i class="fas fa-ellipsis-h"></i>
-                                </a>
+                                <i class="fas fa-trash fa-lg" id="excluir<%= post.id_post %>"></i>
                             </div>
                             <% if (post.imagem) { %>
                                 <img class="img-public" src="<%= post.imagem %>" alt="Publicação">
@@ -168,6 +166,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <script src="/javascripts/excluirPost.js"></script>
 </body>
 
 </html>
