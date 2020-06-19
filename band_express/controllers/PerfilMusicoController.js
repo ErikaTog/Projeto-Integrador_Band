@@ -290,6 +290,26 @@ const perfilMusicoController = {
 
         return res.send(audios);
     },
+    naoSeguir: async (req, res) => {
+        await Minha_rede.destroy({
+            where: {
+                [Op.and]: [
+                    { id_usuario: req.params.id },
+                    { id_usuario_seguido: req.session.usuario.id_usuario }
+                ]
+            }
+        });
+
+        return;
+    },
+    seguir: async (req, res) => {
+        await Minha_rede.create({
+            id_usuario: req.params.id,
+            id_usuario_seguido: req.session.usuario.id_usuario
+        });
+
+        return;
+    },
 }
 
 module.exports = perfilMusicoController;

@@ -48,4 +48,8 @@ router.get('/:id', VerificaUsuarioLogado, perfilMusicoController.show);
 router.get('/carregarVideo/:id/:page', VerificaUsuarioLogado, perfilMusicoController.loadVideo);
 router.get('/carregarAudio/:id/:page', VerificaUsuarioLogado, perfilMusicoController.loadAudio);
 
+// Button seguir
+router.get('/deixarDeSeguir/:id', VerificaUsuarioLogado, perfilMusicoController.naoSeguir);
+router.get('/seguir/:id', VerificaUsuarioLogado, perfilMusicoController.seguir);
+
 module.exports = router;
