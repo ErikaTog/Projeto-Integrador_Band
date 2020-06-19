@@ -1,4 +1,6 @@
-const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = require('../models'); 
+const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = require('../models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const vagasController = {
 
@@ -124,50 +126,6 @@ const vagasController = {
         res.redirect(`/vagas`);
     },
     
-    dadosFeed: async (req, res) => {
-
-        let limite = req.body;
-        limite.valor = limite.valor + 4;
-
-        const pagina = await Vagas.findAll({
-            limit: limite.valor,
-            include: [{
-                model: Usuario,
-                as: 'usuario',
-                attributes: ['nome', 'link_perfil'],
-            }]
-        });
-
-        res.json({
-            pagina,
-            limite: pagina.length
-        });
-    },
-
-    dadosMinhasVagas: async (req, res) => {
-
-        let limite = req.body;
-        limite.valor = limite.valor + 4;
-
-        const pagina = await Vagas.findAll({
-            where: { 
-                id_usuario: req.session.usuario.id_usuario 
-            },
-            limit: limite.valor,
-            include: [{
-                model: Usuario,
-                as: 'usuario',
-                attributes: ['nome', 'link_perfil'],
-            }]
-        });
-
-        res.json({
-            pagina,
-            limite: pagina.length
-        });
-        
-    },
-
     dadosApagar: async (req, res) => {
 
         let id = req.body;
@@ -180,6 +138,53 @@ const vagasController = {
         
         res.json({
             status: 'OK'
+        });
+    },
+
+    dadosBuscar: async (req, res) => {
+
+        let dados = req.body;
+        let tipo = dados.tipo;
+        let busca = dados.buscarVaga;
+
+        tipo == "Todas" ? tipo = "" : null;
+        
+        const buscaFeed = await Vagas.findAll({
+            where: { 
+                tipo_vaga: {[Op.like]:'%'+ tipo +'%'},
+                [Op.or]: {
+                    titulo: {[Op.like]:'%'+ busca +'%'},
+                    descricao: {[Op.like]:'%'+ busca +'%'} 
+                }
+            },
+            limit: dados.feedLimite,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        })
+
+        const buscaMinhasVagas = await Vagas.findAll({
+            where: { 
+                id_usuario: req.session.usuario.id_usuario,
+                tipo_vaga: {[Op.like]:'%'+ tipo +'%'},
+                [Op.or]: {
+                    titulo: {[Op.like]:'%'+ busca +'%'},
+                    descricao: {[Op.like]:'%'+ busca +'%'} 
+                }
+            },
+            limit: dados.minhasLimite,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        })
+
+        res.json({
+            buscaFeed,
+            buscaMinhasVagas,
         });
     }
 }
