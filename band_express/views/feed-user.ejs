@@ -65,6 +65,18 @@
             </div>
 
             <div class="col-md-8">
+
+            <% if (errors.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não foi possível enviar o comentário!</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
     
      <!-- Grupo Publicacao --> 
                 <section id="publicacao">
@@ -125,7 +137,7 @@
                                         <% } %>
                                     <% }) %>
                                 </div>
-                                <form action="/home" method="POST">
+                                <form action="/minhaPublicacao" method="POST">
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
                                             placeholder="Adicione um comentário..." name="comentario" required></textarea>

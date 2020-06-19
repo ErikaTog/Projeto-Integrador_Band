@@ -76,10 +76,23 @@ const publicacaoController = {
             novosUsuarios,
             posts,
             comentarios,
-            curtidas
+            curtidas,
+            errors: req.flash('errorValidator'),
         });
-        
-    }
+    },
+    saveComentario: async (req, res) => {
+        // console.log(req.body);
+        let { comentario, id_post } = req.body;
+
+        // Salvar no BD
+        await Comentario.create({
+            id_post,
+            id_usuario: req.session.usuario.id_usuario,
+            comentario,
+        })
+
+        res.redirect('/minhaPublicacao');
+    },
 } 
 
 module.exports = publicacaoController;
