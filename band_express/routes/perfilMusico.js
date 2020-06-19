@@ -45,7 +45,7 @@ perfilMusicoController.changePassword);
 router.get('/:id', VerificaUsuarioLogado, perfilMusicoController.show);
 
 // Carregar mais música
-router.get('/carregarVideo/:page', VerificaUsuarioLogado, perfilMusicoController.loadVideo);
-router.get('/carregarAudio/:page', VerificaUsuarioLogado, perfilMusicoController.loadAudio);
+router.get('/carregarVideo/:id/:page', VerificaUsuarioLogado, perfilMusicoController.loadVideo);
+router.get('/carregarAudio/:id/:page', VerificaUsuarioLogado, perfilMusicoController.loadAudio);
 
 module.exports = router;

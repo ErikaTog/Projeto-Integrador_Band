@@ -5,7 +5,7 @@ let grupoMusic = document.getElementById('groupMusic');
 async function buscarVideo() {
     try {
         let page = buttonCarregar.value;
-        let musicasBuscadas = await fetch(`/perfil/musico/carregarVideo/${page}`);
+        let musicasBuscadas = await fetch(`/perfil/musico/carregarVideo/${id_usuario}/${page}`);
         let listaMusicas = await musicasBuscadas.json();
 
         return listaMusicas;
@@ -66,7 +66,7 @@ const elementosHtmlVideo = list => {
 async function buscarAudio() {
     try {
         let page = buttonCarregar.value;
-        let musicasBuscadas = await fetch(`/perfil/musico/carregarAudio/${page}`);
+        let musicasBuscadas = await fetch(`/perfil/musico/carregarAudio/${id_usuario}/${page}`);
         let listaMusicas = await musicasBuscadas.json();
 
         return listaMusicas;
