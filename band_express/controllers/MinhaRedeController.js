@@ -176,7 +176,7 @@ const minhaRedeController = {
             where:{
                 id_usuario: idsEst
             },
-            limit: 20
+            // limit: 20
         });
         // console.log(geral)
         
@@ -193,21 +193,23 @@ const minhaRedeController = {
         })    
     }, 
 
-    busca: async (req, res) => {   
-        let {buscar} = req.body
-        console.log(buscar)
+    buscar: async (req, res) => {   
 
-        let encontrado = await Usuario.findAll({
-            raw: true,
-            attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
-            where:{
-                nome: {[Op.like]:'%'+buscar+'%'} 
-            }           
-        });
+        let resultado = req.body.texto
+        console.log(req.body)
+
+
+        // let encontrado = await Usuario.findAll({
+        //     raw: true,
+        //     attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
+        //     where:{
+        //         nome: {[Op.like]:'%'+resultado+'%'} 
+        //     }           
+        // });
         // console.log(encontrado)
         
 
-         //********************Seguidores********************
+        //********************Seguidores********************
         
         //Pessoas que estão seguindo o usuário da sessão
         let seguidoresEncontrados = await Minha_rede.findAll({
@@ -218,14 +220,14 @@ const minhaRedeController = {
                 model: Usuario,
                 as: 'usuario',
                 where:{
-                    nome: {[Op.like]:'%'+buscar+'%'}
+                    nome: {[Op.like]:'%'+resultado+'%'}
                 }
             }], 
             where: {
                 id_usuario_seguido: req.session.usuario.id_usuario
             }
         });
-        console.log(seguidoresEncontrados)
+        console.log("Seguidores: " + seguidoresEncontrados)
 
 
          //********************Seguindo********************
@@ -239,7 +241,7 @@ const minhaRedeController = {
                 model: Usuario,
                 as: 'usuario_seguido',
                 where:{
-                    nome: {[Op.like]:'%'+buscar+'%'}
+                    nome: {[Op.like]:'%'+resultado+'%'}
                 }
             }],             
             where: {
@@ -249,14 +251,14 @@ const minhaRedeController = {
         console.log(seguindoEncontrados)
 
 
-        //********************Geral********************
+        //********************Outros********************
 
         //Base de usuários
         let usuarios = await Usuario.findAll({
             raw: true,
             attributes: ['id_usuario', 'nome', 'avatar'],
             where:{
-                 nome: {[Op.like]:'%'+buscar+'%'}
+                 nome: {[Op.like]:'%'+resultado+'%'}
             }
         });
         console.log(usuarios)
@@ -272,11 +274,11 @@ const minhaRedeController = {
         //Criando lista de id_usuários seguindo
         let idSeguindo = []
         seguindoEncontrados.forEach(usuario => {
-            idSeguindo.push(usuario.id_usuario)
+            idSeguindo.push(usuario.id_usuario_seguido)
         });
         console.log(idSeguindo)
 
-
+        
         //Iterando sobre idSeguindo, comparando com idUsers e retirando ele mesmo e os que ele já segue
         idSeguindo.forEach(idseg => {
             if (idUsers.indexOf(idseg) != -1){
@@ -284,9 +286,12 @@ const minhaRedeController = {
                 console.log(idUsers)
             }
         });
-        // idUsers.splice(idUsers.indexOf(req.session.usuario.id_usuario), 1)
-        // console.log(idUsers)
 
+        if(idUsers.indexOf(req.session.usuario.id_usuario) != -1){
+            idUsers.splice(idUsers.indexOf(req.session.usuario.id_usuario), 1)
+            console.log(idUsers)
+        }
+       
 
         //Criando lista de id_usuários seguidores
         let idSeguidores = []
@@ -303,19 +308,24 @@ const minhaRedeController = {
             }
         });         
 
-        //Buscando somente os usuários com os ids que sobraram em idUsers para mostrar no geral
-        let geral = await Usuario.findAll({
+        //Buscando somente os usuários com os ids que sobraram em idUsers para mostrar no outros
+        let outrosEncontrados = await Usuario.findAll({
             raw: true,
             attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
             where:{
                 id_usuario: idUsers
             },
-            limit: 20
         });
-        console.log(geral)
+        console.log("outros: " + outrosEncontrados)
 
-        
-       
+
+        //Enviando os resultados pelo fetch    
+        res.json({
+            seguidoresEncontrados,
+            seguindoEncontrados,
+            outrosEncontrados
+            
+        });      
     }
     
 }
