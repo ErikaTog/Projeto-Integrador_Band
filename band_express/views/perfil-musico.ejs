@@ -52,8 +52,12 @@
                     </div>
                 </div>
             <% } else { %>
-                <div class="config">
-                    <button type="button" class="btn-config">
+                <div class="config" id="btnSeguir">
+                    <button type="button" class="btn-config 
+                    <% if (segue) { %>
+                        btn-seguindo
+                    <% } %>
+                    ">
                         <i class="fas fa-headphones-alt"></i>
                     </button>
                 </div>
@@ -299,6 +303,7 @@
         let id_usuario = '<%- dadosMusico.id_usuario %>';
     </script>
     <script src="/javascripts/maisMusica.js"></script>
+    <script src="/javascripts/btnSeguirPerfil.js"></script>
 </body>
 
 </html>

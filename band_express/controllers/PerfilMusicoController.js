@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const { Cidade, Estado, Usuario, Musico, MusicoInstrumentos, Instrumento, MusicoTecnicos, Tecnico, Minha_rede, Audio, Video } = require('../models');
+const { Op } = require('sequelize');
 
 const perfilMusicoController = {
     showUser: async (req, res) => {
@@ -185,6 +186,16 @@ const perfilMusicoController = {
             const seguidores = await Minha_rede.count({ where: { id_usuario: dadosMusico.id_usuario } });
             const seguindo = await Minha_rede.count({ where: { id_usuario_seguido: dadosMusico.id_usuario } });
 
+            // Verificar se o usuário já segue
+            const segue = await Minha_rede.count({ 
+                where: { 
+                    [Op.and]: [
+                        { id_usuario: dadosMusico.id_usuario },
+                        { id_usuario_seguido: req.session.usuario.id_usuario }
+                    ] 
+                } 
+            });
+
             // Buscar áudios
             const audios = await Audio.findAll({
                 where: { id_usuario: dadosMusico.id_usuario },
@@ -210,7 +221,8 @@ const perfilMusicoController = {
                 instrumentos, 
                 tecnicos, 
                 seguidores, 
-                seguindo, 
+                seguindo,
+                segue, 
                 audios, 
                 videos,
                 errors: req.flash('errorValidator')
@@ -218,7 +230,12 @@ const perfilMusicoController = {
             
         } catch (error) {
             // Quando o usuário digita um id_musico (req_params) que não existe
-            return res.status(404);
+            return res.status(404).render('feedbackGeral', { 
+                imagem: '/img/feedback_404.svg',
+                titulo: 'Pagina não encontrada',
+                mensagem: 'Não encontramos essa página, tente mais tarde ou cliqe em voltar para a pagina inicial.',
+                botao: 'Voltar'
+              });
         }
 
     },
@@ -272,7 +289,7 @@ const perfilMusicoController = {
         });
 
         return res.send(audios);
-    }
+    },
 }
 
 module.exports = perfilMusicoController;

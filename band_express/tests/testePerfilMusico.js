@@ -81,11 +81,11 @@ const query = async () => {
     // console.log(tecnicos);
 
     // Buscar a quantidade de seguidores e seguindo
-    // const seguidores = await Minha_rede.count({ where: { id_usuario: 2 } });
-    // console.log(seguidores);
+    const seguidores = await Minha_rede.count({ where: { id_usuario: 2 } });
+    console.log(seguidores);
 
-    // const seguindo = await Minha_rede.count({ where: { id_usuario_seguido: 2 } });
-    // console.log(seguindo);
+    const seguindo = await Minha_rede.count({ where: { id_usuario_seguido: 2 } });
+    console.log(seguindo);
 
     // Buscar áudios e vídeos
     // const buscarVideos = await Videos
@@ -235,19 +235,19 @@ const query = async () => {
      * Paginação
      */
 
-    const limit = 4;
-    const page = 2;
+    // const limit = 4;
+    // const page = 2;
 
-    const videos = await Video.findAll({
-        where: { id_usuario: 2 },
-        raw: true,
-        attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
-        order: [['id_video', 'DESC']],
-        offset: (limit * page),
-        limit,
-    });
+    // const videos = await Video.findAll({
+    //     where: { id_usuario: 2 },
+    //     raw: true,
+    //     attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+    //     order: [['id_video', 'DESC']],
+    //     offset: (limit * page),
+    //     limit,
+    // });
 
-    console.log(videos);
+    // console.log(videos);
 }
 
 query();
