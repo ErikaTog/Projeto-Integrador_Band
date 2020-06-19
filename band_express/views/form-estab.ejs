@@ -128,9 +128,9 @@
                             <div>
                                 <div class="form-group row">
                                     <label for="inputEstado" class="col-xl-2 col-lg-3 col-form-label">Estado</label>
-                                    <div class="col-xl-6 col-lg-9">
+                                    <div id= "inputEstadoDiv" class="col-xl-6 col-lg-9">
                                         <select class="form-control" id="inputEstado" name="estado">
-                                            <option value="" disabled selected hidden>Escolha um Estado</option>
+                                            <option value="" disabled selected hidden>Escolha o Estado</option>
                                             <% estados.forEach((estado)=>{ %>
                                                 <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                             <% }) %>
@@ -141,7 +141,7 @@
                                     <label for="inputCidade" class="col-xl-2 col-lg-3 col-form-label">Cidade</label>
                                     <div class="col-xl-6 col-lg-9">
                                         <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
-                                            <option value="" disabled selected hidden>Escolha uma Cidade</option>
+                                            <option value="" disabled selected hidden>Escolha a Cidade</option>
                                         </select>
                                     </div>
                                 </div>
@@ -234,12 +234,12 @@
         })
     </script>
 
-    <script src="../javascripts/formEstabJs.js"></script>
+    <script src="/javascripts/formEstabJs.js"></script>
 
-    </script>7<script>
+    <script>
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
-    <script src="../javascripts/filtrarCidade.js"></script>
+    <script src="/javascripts/filtrarCidade.js"></script>
 
 </body>
 

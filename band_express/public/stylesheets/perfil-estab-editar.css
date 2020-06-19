@@ -11,7 +11,8 @@
 }
 
 input.form-control {
-    height: 35px;
+    height: 40px;
+    margin-right: 2px;
 }
 
 #telefone{
@@ -29,6 +30,23 @@ input.form-control {
 
 .nav-item {
     margin-left: 20px;
+}
+
+.col-xl-2,
+.col-xl-6,
+.col-xl-8,
+.col-lg-3,
+.col-lg-5,
+.col-lg-3,
+.col-lg-9,
+.col-md-5,
+.col-md-6,
+.col-md-10,
+.col-sm-3,
+.col-sm-4,
+.col-sm-12{
+    padding: 0;
+    /* margin-left: 1.5%; */
 }
 
 /* --------------------início_do_Grupo_Head--------------------- */
@@ -148,6 +166,17 @@ div.icon-border-none i:hover {
 /* --------------------fim_do_Grupo_Bio--------------------- */
 
 /* --------------------início_do_Grupo_Infos--------------------- */
+
+.add-funcionamento a {
+    color: #999999;
+    font-size: 2rem;
+    transition-duration: 0.25s;
+}
+
+.add-funcionamento a:hover {
+    color: #FB3C00;
+}
+
 .infos-item.media {
     align-items: center;
     min-width: 48%;
@@ -188,12 +217,13 @@ div.icon-border-none i:hover {
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------início_do_Grupo_Funcionamento--------------------- */
+
 .itemFuncionamento{
-    padding-top: 15px;
-    margin-right: 25px;
+    margin-top: 8px;
+    padding-right: 0px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .itemFuncionamento .form-control {
@@ -210,6 +240,51 @@ div.icon-border-none i:hover {
     box-shadow: none;
     padding: 0px;
 }
+
+#grupoFuncionamento{
+    margin-top: 10px;
+}
+
+#grupoFuncionamento{
+    display: flex;
+    justify-content: space-around;
+}
+
+#grupoFuncionamento i{ 
+    margin-top: 10px;
+}
+
+#grupoSelecionado{
+    margin-top: 0px;
+}
+
+#inputFuncionamento,
+#inputAbertura,
+#inputFechamento{
+    display: flex;
+    text-align: center;
+    text-align-last: center; 
+    margin:0px 0px 0px;
+} 
+
+#inputAbertura,
+#inputFechamento{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.diaSemana{
+    width: 85px;
+    border: none;
+    color: #282A36;
+}
+
+.horarioSemana{
+    width: 130px;
+    border: none;
+    color: #282A36;
+}
+
 /* --------------------fim_do_Grupo_Infos--------------------- */
 
 /* --------------------------------

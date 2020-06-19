@@ -22,10 +22,13 @@ const vagasController = {
             attributes: ['id_estab'] 
         });
 
-        // Buscar lista de Estados
-        const estados = await Estado.findAll({ 
-            raw: true,
-            attributes: ['uf'] 
+        // Buscar todos os estados
+		const estados = await Estado.findAll({ 
+        	raw: true
+		});
+		// Buscar todas as cidades
+		const cidades = await Cidade.findAll({ 
+        	raw: true
         });
 
         const dadosVagas = await Vagas.findAll({ 
@@ -75,6 +78,7 @@ const vagasController = {
         res.render('vagas', { 
             title: 'Vagas',
             estados,
+            cidades,
             dadosMusico,
             dadosBanda,
             dadosEstab,
@@ -86,17 +90,29 @@ const vagasController = {
     },
 
     novaVaga: async (req, res) => {
-        let { tipoVaga, tituloNovaVaga, estado, cidade, descricaoNovaVaga } = req.body;
+        let { tipoVaga, tituloNovaVaga, estado: id_estado, 
+			cidade: id_cidade, descricaoNovaVaga } = req.body;
 
         tituloNovaVaga = tituloNovaVaga.trim();
         descricaoNovaVaga = descricaoNovaVaga.trim();
-        cidade = cidade.trim();
 
+        const cidade = await Cidade.findOne({ 
+            where: { id_cidade: id_cidade },
+            raw: true,
+            attributes: ['cidade'] 
+        });
+        console.log(cidade)
+        const estado = await Estado.findOne({ 
+            where: { id_estado: id_estado },
+            raw: true,
+            attributes: ['uf'] 
+        });
+        console.log(estado)
         const dadosNovaVaga = await Vagas.create({
 			titulo: tituloNovaVaga,
 			descricao: descricaoNovaVaga,
-            cidade_vaga: cidade, 
-            estado_vaga: estado,
+            cidade_vaga: cidade.cidade, 
+            estado_vaga: estado.uf,
             tipo_vaga: tipoVaga,
             id_usuario: req.session.usuario.id_usuario
 		})
@@ -106,6 +122,65 @@ const vagasController = {
 
     editarVaga: async (req, res) => {
         res.redirect(`/vagas`);
+    },
+    
+    dadosFeed: async (req, res) => {
+
+        let limite = req.body;
+        limite.valor = limite.valor + 4;
+
+        const pagina = await Vagas.findAll({
+            limit: limite.valor,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        });
+
+        res.json({
+            pagina,
+            limite: pagina.length
+        });
+    },
+
+    dadosMinhasVagas: async (req, res) => {
+
+        let limite = req.body;
+        limite.valor = limite.valor + 4;
+
+        const pagina = await Vagas.findAll({
+            where: { 
+                id_usuario: req.session.usuario.id_usuario 
+            },
+            limit: limite.valor,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        });
+
+        res.json({
+            pagina,
+            limite: pagina.length
+        });
+        
+    },
+
+    dadosApagar: async (req, res) => {
+
+        let id = req.body;
+        
+        const dadosVagas = await Vagas.destroy({
+            where: {
+                id_vagas: id.apagarVaga
+            }
+        });
+        
+        res.json({
+            status: 'OK'
+        });
     }
 }
 

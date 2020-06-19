@@ -22,12 +22,26 @@ const indexController = {
 
         // verificando se existe o usuário com o email informado
         if (!usuario) {
-            res.redirect("/?error=1");
+            // res.redirect("/?error=1");
+            return res.render('feedbackGeral', { 
+                imagem: '/img/feedback_login.svg',
+                titulo: 'Login ou senha inválidos!',
+                mensagem: 'Clique em voltar e tente novamente',
+                botao: 'Voltar',
+                irPara: '/'
+            });
         }
 
         // validando senha
         if (!bcrypt.compareSync(senha, usuario.senha)){
-            res.redirect("/?error=1");
+            // res.redirect("/?error=1");
+            return res.render('feedbackGeral', { 
+                imagem: '/img/feedback_login.svg',
+                titulo: 'Login ou senha inválidos!',
+                mensagem: 'Clique em voltar e tente novamente',
+                botao: 'Voltar',
+                irPara: '/'
+            });
         }
         
         req.session.usuario = usuario;

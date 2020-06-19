@@ -129,23 +129,26 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                            <div class="form-group">
-                                <select class="custom-select" name="estado">
-                                    <% estados.forEach(estado => { %>
-                                        <% if (dadosUsuario.uf == estado.uf) { %>
-                                            <option selected><%= estado.uf %></option> 
-                                        <% } else { %>
-                                            <option value="<%= estado.uf %>"><%= estado.uf %></option>
-                                        <% } %>
+                        <div class="form-group">
+                            <div id= "inputEstadoDiv" class="">
+                                <select class="form-control" id="inputEstado" name="estado">
+                                    <option value="" disabled selected hidden>Escolha o Estado</option>
+                                    <% estados.forEach((estado)=>{ %>
+                                        <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
                                     <% }) %>
                                 </select>
                             </div>
+                        </div>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                            <div class="form-group">
-                                <textarea class="form-control" id="textareaInfos4" rows="1" name="cidade"><%= dadosUsuario.cidade %></textarea>
+                        <div class="form-group">
+                            <div class="">
+                                <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
+                                    <option value="" disabled selected hidden>Escolha a Cidade</option>
+                                </select>
                             </div>
+                        </div>
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/site-01.png" alt="Site">
@@ -171,32 +174,11 @@
             <!-- Grupo Infos -->
             <div class="func col-lg-6 col-md-12">
                 <section id="infosFuncionamento" class="card-perfil">
-                    <h4><strong>Funcionamento</strong>
-                        <a href=""><i class="fas fa-plus-square"></i></a>
-                    </h4>
-                    
-                    <div class="infos-item">
-                        <div class="form">
-                            <div class="form-group">
-                                <% if (dadosEstab.funcionamento) { %>
-                                    <% for( let i = 0; i < dadosFuncionamento.length; i++ ) { %>
-                                        <div class="itemFuncionamento">
-                                            <input class="diaSemana" id="diaSemana<%= i %>" name="inputDia" value="<%= dadosFuncionamento[i].dia %>" readonly>
-                                            <input type="time" class="form-control" id="inputAbertura<%= i %>" value="<%= dadosFuncionamento[i].horario_abertura %>" name="inputAbertura"> 
-                                            <input type="time" class="form-control" id="inputFechamento<%= i %>" value="<%= dadosFuncionamento[i].horario_fechamento %>" name="inputFechamento">
-                                            <div class="icon-border-none">
-                                                <a data-toggle="modal" data-target="#confirmarExclusao" href="">
-                                                    <i class="fas fa-trash fa-lg"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    <% } %>
-                                <% } else { %>
-                                    <div class="funcionamento">
-                                        <p class="msg-incentivo"><%= mensagemNull %></p>
-                                    </div>
-                                <% } %>
-                            </div>
+                    <h4><strong>Funcionamento</strong></h4>
+                    <div class="campo-form card-cadastro">
+                        <div>
+                            <div class="form-group row" id="grupoFuncionamento"></div>
+                            <div class="infos-item" id="grupoSelecionado"></div>
                         </div>
                     </div>
                 </section>
@@ -301,14 +283,22 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <script src="/javascripts/perfilEditarEstabJs.js"></script>
+
+    <script>
+        let cidadesJSON = '<%- JSON.stringify(cidades) %>';
+    </script>
+    <script src="/javascripts/filtrarCidade.js"></script>
+
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 /* --------------------------------
         Geral - Form Estab
 -------------------------------- */
-.form-banda {
+.form-estab {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

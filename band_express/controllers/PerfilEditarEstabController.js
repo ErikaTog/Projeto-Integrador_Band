@@ -44,10 +44,14 @@ const perfilEditarEstabController = {
             attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
         });
 
-        // Buscar lista de Estados
+        // Buscar todos os estados
         const estados = await Estado.findAll({ 
-            raw: true,
-            attributes: ['uf'] 
+        	raw: true
+		});
+		
+		// Buscar todas as cidades
+		const cidades = await Cidade.findAll({ 
+        	raw: true
         });
 
         let dadosFuncionamento = [];
@@ -69,6 +73,7 @@ const perfilEditarEstabController = {
             dadosUsuario,
             dadosEstab, 
             estados,
+            cidades,
             tipoCategoria,
             dadosFuncionamento,
             totalSeguindo,
@@ -81,8 +86,8 @@ const perfilEditarEstabController = {
 
     change: async (req, res) => {
 
-        let { nome, sobre, estado, cidade, site, categoria, telefone, inputDia, inputAbertura, inputFechamento } = req.body;
-    
+        let { nome, sobre, estado, cidade, site, categoria, telefone, horarioSemana, diaSemana } = req.body;
+
         const dadosUsuario = await Usuario.findOne({ 
             where: { nome: req.session.usuario.nome },
         });
@@ -90,46 +95,45 @@ const perfilEditarEstabController = {
         const dadosEstab = await Estabelecimento.findOne({ 
             where: { id_usuario: req.session.usuario.id_usuario }, 
         });
-        
-        // Buscar o id_cidade e id_estado na tabela cidade
-        const findIdLocal = await Cidade.findOne({
-            where: { cidade: cidade },
-            raw: true,
-            attributes: ['id_cidade', 'estado.id_estado'],
-            include: [{
-                model: Estado, 
-                as: 'estado',
-                attributes: [],
-                where: { uf: estado }
-            }]
-        });
 
         if(telefone.length == 14){
 			telefone = telefone.replace("-","");
 			telefone = telefone.substr(0,9) + "-" + telefone.substr(9);
 		}
 
-        // Guardando os valores de funcionamento no banco de dados
-        if(dadosEstab.funcionamento){
-            for (let valor of inputDia){
-                const dadosFunc = await Funcionamento.findOne({
-                    where: {
-                        id_estab: dadosEstab.id_estab,
-                        dia: valor
-                    }
-                });
-                let index = inputDia.indexOf(valor);
-                dadosFunc.horario_abertura = inputAbertura[index];
-                dadosFunc.horario_fechamento = inputFechamento[index];
-                console.log(dadosFunc)
-                await dadosFunc.save({ fields: ['horario_abertura', 'horario_fechamento'] });
+        const apagaFuncionamento = await Funcionamento.destroy({
+            where: {
+                id_estab: dadosEstab.id_estab
             }
-        }
+        });
+
+        (horarioSemana == undefined) ? dadosEstab.funcionamento = 0 : dadosEstab.funcionamento = 1 ;
+
+		if (dadosEstab.funcionamento){
+			(horarioSemana[6] == '-') ? lengthDia = 1 : lengthDia = diaSemana.length;
+			for (let i = 0; i < lengthDia; i++){
+				if (horarioSemana[6] == '-') { 
+					dia = diaSemana
+					horario_abertura = horarioSemana.split(' ')[0]
+					horario_fechamento = horarioSemana.split(' ')[2]
+				} else { 
+					dia = diaSemana[i]
+					horario_abertura = horarioSemana[i].split(' ')[0]
+					horario_fechamento = horarioSemana[i].split(' ')[2]
+				}
+				const dadosFuncionamento = await Funcionamento.create({
+					dia,
+					horario_abertura,
+					horario_fechamento,
+					id_estab: dadosEstab.id_estab
+				});
+			}
+		}
         
         // Substituir valores
         dadosUsuario.nome = nome;
-        dadosUsuario.id_estado = findIdLocal.id_estado;
-        dadosUsuario.id_cidade = findIdLocal.id_cidade;
+        dadosUsuario.id_estado = estado;
+        dadosUsuario.id_cidade = cidade;
         dadosEstab.sobre = sobre;
         dadosEstab.site = site;
         dadosEstab.categoria = categoria;
@@ -137,7 +141,7 @@ const perfilEditarEstabController = {
 
         // Salvar no BD
         await dadosUsuario.save({ fields: ['nome', 'id_cidade', 'id_estado'] });
-        await dadosEstab.save({ fields: ['sobre', 'site', 'categoria', 'telefone'] });
+        await dadosEstab.save({ fields: ['sobre', 'site', 'categoria', 'telefone', 'funcionamento'] });
 
         // Setar session do usuario
         let usuario = { 
@@ -234,6 +238,31 @@ const perfilEditarEstabController = {
         await dadosUsuario.save({ fields: ['wallpaper'] });
 
         res.redirect(`/perfil/editar/estabelecimento`);
+    },
+
+    dados: async (req, res, next) => {
+
+        const dadosEstab = await Estabelecimento.findOne({
+			where: {
+                id_usuario:  req.session.usuario.id_usuario
+            },
+            raw: true,
+            attributes: ['funcionamento', 'id_estab'] 
+        });
+
+        let dadosFuncionamento = [];
+        if(dadosEstab.funcionamento){
+            dadosFuncionamento = await Funcionamento.findAll({
+                where: {
+                    id_estab: dadosEstab.id_estab
+                },
+                raw: true,
+                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+            });
+        };
+        res.json({
+            dados: dadosFuncionamento
+        });
     }
 }
 

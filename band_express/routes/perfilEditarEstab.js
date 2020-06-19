@@ -77,4 +77,6 @@ router.put('/avatar',  multer(MulterImage).any(), VerificaUsuarioLogado, perfilE
 router.get('/wallpaper', VerificaUsuarioLogado, perfilEditarEstabController.show);
 router.put('/wallpaper',  multer(MulterImage).any(), VerificaUsuarioLogado, perfilEditarEstabController.changeWallpaper), 
 
+router.post('/dados', perfilEditarEstabController.dados), 
+
 module.exports = router;
