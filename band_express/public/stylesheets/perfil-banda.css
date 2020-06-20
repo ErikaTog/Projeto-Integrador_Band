@@ -171,6 +171,10 @@ Imagem
     outline-style: none;
 }
 
+.btn-seguindo {
+    background: #fb3c00;
+}
+
 .config a.dropdown-item {
     font-size: 1.6rem;
     font-weight: 700;
