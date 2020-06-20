@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const {Usuario, Banda, BandaIntegrantes, Cidade, Estado, Minha_rede, Audio, Video} = require('../models')
-
+const { Op } = require('sequelize');
 
 
 const perfilBandaController = {
@@ -187,6 +187,16 @@ const perfilBandaController = {
             // console.log('Seguidores: '+ seguidores)
 
 
+             // Verificar se o usuário já segue
+             const segue = await Minha_rede.count({ 
+                where: { 
+                    [Op.and]: [
+                        { id_usuario: req.session.usuario.id_usuario  },
+                        { id_usuario_seguido: dadosBanda.id_usuario  }
+                    ] 
+                } 
+            });
+            
 
             //Pegando os vídeos postados
             const videos = await Video.findAll({
@@ -221,6 +231,7 @@ const perfilBandaController = {
                 integrantes,
                 seguindo,
                 seguidores,
+                segue,
                 videos,
                 audios,
                 errors: req.flash('errorValidator'),
@@ -297,6 +308,28 @@ const perfilBandaController = {
         return res.send(audios);
     },
 
+    seguir: async (req, res) => {
+        await Minha_rede.create({
+            id_usuario: req.session.usuario.id_usuario,
+            id_usuario_seguido: req.params.id
+        });
+        
+        return;
+    },
+
+    naoSeguir: async (req, res) => {
+        await Minha_rede.destroy({
+            where: {
+                [Op.and]: [
+                    { id_usuario: req.session.usuario.id_usuario },
+                    { id_usuario_seguido: req.params.id }
+                ]
+            }
+        });
+        
+
+        return;
+    }
 
 }
 
