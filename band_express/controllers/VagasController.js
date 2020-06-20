@@ -122,25 +122,6 @@ const vagasController = {
 		res.redirect(`/vagas`);
     },
 
-    editarVaga: async (req, res) => {
-        res.redirect(`/vagas`);
-    },
-    
-    dadosApagar: async (req, res) => {
-
-        let id = req.body;
-        
-        const dadosVagas = await Vagas.destroy({
-            where: {
-                id_vagas: id.apagarVaga
-            }
-        });
-        
-        res.json({
-            status: 'OK'
-        });
-    },
-
     dadosBuscar: async (req, res) => {
 
         let dados = req.body;
@@ -185,6 +166,55 @@ const vagasController = {
         res.json({
             buscaFeed,
             buscaMinhasVagas,
+        });
+    },
+
+    dadosApagar: async (req, res) => {
+
+        let id = req.body;
+        
+        const dadosVagas = await Vagas.destroy({
+            where: {
+                id_vagas: id.apagarVaga
+            }
+        });
+        
+        res.json({
+            status: 'OK'
+        });
+    },
+
+    dadosEditar: async (req, res) => {
+
+        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova} = req.body;
+        
+        const cidade = await Cidade.findOne({ 
+            where: { id_cidade: cidadeNova },
+            raw: true,
+            attributes: ['cidade'] 
+        });
+        const estado = await Estado.findOne({ 
+            where: { id_estado: estadoNovo },
+            raw: true,
+            attributes: ['uf'] 
+        });
+
+        const findVaga = await Vagas.findOne({
+            where: { 
+                id_vagas: id 
+            }, 
+        });
+ 
+        findVaga.titulo = tituloNovo;
+        findVaga.descricao = descricaoNova
+        findVaga.cidade_vaga = cidade.cidade
+        findVaga.estado_vaga = estado.uf
+        findVaga.tipo_vaga = "Banda"
+
+        await findVaga.save({ fields: ['titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga'] });
+        
+        res.json({
+            status: 'OK'
         });
     }
 }
