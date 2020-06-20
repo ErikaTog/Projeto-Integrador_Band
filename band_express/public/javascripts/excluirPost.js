@@ -20,6 +20,7 @@ const excluirPostBD = async (id) => {
 
 // Excluir post selecionado
 const excluirPost = (event) => {
+    // event.target.id porque há <i> sem id
     if (event.target.tagName == 'I' && event.target.id) {
         let idPost = event.target.id.slice(7);
         excluirPostHtml(idPost);

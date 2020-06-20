@@ -30,7 +30,7 @@ const perfilEditarBandaController = {
         // Selecionando o Estado, a Cidade, o Avatar e o Wallpaper da Banda na tabela usuario
         const dadosUsuarioBanda = await Usuario.findOne({
             raw: true,
-            attributes: ['avatar', 'wallpaper', 'id_estado', 'cidade.cidade', 'cidade.estado.uf'],
+            attributes: ['id_usuario', 'avatar', 'wallpaper', 'id_estado', 'cidade.cidade', 'cidade.estado.uf'],
             include: [{
                 attributes: [],
                 model: Cidade,
@@ -83,6 +83,8 @@ const perfilEditarBandaController = {
         const videos = await Video.findAll({
             raw: true,
             attributes: ['id_video', 'tipo', 'titulo', 'caminho'],
+            order: [['id_video', 'DESC']],
+            limit: 4,
             where: {
                 id_usuario
             }
@@ -93,6 +95,8 @@ const perfilEditarBandaController = {
         const audios = await Audio.findAll({
             raw: true,
             attributes: ['id_audio', 'tipo', 'titulo', 'caminho'],
+            order: [['id_audio', 'DESC']],
+            limit: 4,
             where: {
                 id_usuario
             }

@@ -40,4 +40,13 @@ router.put('/',
 // Perfil dos usuários (busca)
 router.get('/:id', VerificaUsuarioLogado, perfilBandaController.show);
 
+// Para carregar mais músicas
+router.get('/carregarVideo/:id/:page', VerificaUsuarioLogado, perfilBandaController.loadVideo);
+router.get('/carregarAudio/:id/:page', VerificaUsuarioLogado, perfilBandaController.loadAudio);
+
+// Botão seguir usuário
+router.get('/seguir/:id', VerificaUsuarioLogado, perfilBandaController.seguir);
+router.get('/deixarDeSeguir/:id', VerificaUsuarioLogado, perfilBandaController.naoSeguir);
+
+
 module.exports = router;

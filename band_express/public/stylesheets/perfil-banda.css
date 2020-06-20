@@ -38,6 +38,13 @@ p.msg-incentivo {
     margin-bottom: 20px;
 }
 
+.msg-carregar-musica {
+    color: #999999;
+    font-weight: 700;
+    text-align: center;
+}
+
+
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;
@@ -162,6 +169,10 @@ Imagem
 .btn-config:focus {
     background-color: #fb3c00;
     outline-style: none;
+}
+
+.btn-seguindo {
+    background: #fb3c00;
 }
 
 .config a.dropdown-item {

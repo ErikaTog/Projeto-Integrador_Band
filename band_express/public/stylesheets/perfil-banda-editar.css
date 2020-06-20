@@ -119,6 +119,7 @@ padding: 0;
 
 a.modal-link {
     color: #282a36;
+    text-decoration: underline;
 }
 
 a.modal-link:hover {
@@ -217,6 +218,7 @@ div.icon-border-none i:hover {
 
 #minhaMusica a.addMusic {
     color: #282a36;
+    text-decoration: underline;
 }
 
 #minhaMusica a.addMusic:hover {

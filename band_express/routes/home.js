@@ -41,4 +41,8 @@ multer(MulterPost).any(),
 HomeMiddleware.error,
 VerificaUsuarioLogado, homeController.savePublicar);
 
+// Button curtir
+router.get('/curtir/:id', VerificaUsuarioLogado, homeController.curtir);
+router.get('/deixarDeCurtir/:id', VerificaUsuarioLogado, homeController.naoCurtir);
+
 module.exports = router;

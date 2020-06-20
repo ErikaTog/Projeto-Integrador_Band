@@ -227,7 +227,9 @@
             </div>
 
             <div class="carregar">
-                <button type="button" class="btn btn-carregar" id="carregarMusica" value="1">Carregar + Músicas</button>
+                <button type="button" class="btn btn-carregar <% if (videos.length < 4 && audios.length < 4) { %>
+                    invisible
+                <% } %>" id="carregarMusica" value="1">Carregar + Músicas</button>
             </div>
         </section>
     </div>

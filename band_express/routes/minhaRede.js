@@ -6,6 +6,6 @@ const VerificaUsuarioLogado = require('../middlewares/verificaUsuarioLogado');
 /* GET pre-cadastro. */
 router.get('/', VerificaUsuarioLogado, minhaRedeController.show); 
 
-router.post('/', VerificaUsuarioLogado, minhaRedeController.busca); 
+router.post('/buscar', VerificaUsuarioLogado, minhaRedeController.buscar); 
 
 module.exports = router;

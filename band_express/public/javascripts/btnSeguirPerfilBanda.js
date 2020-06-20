@@ -19,7 +19,7 @@ const elementoButtonSegue = () => {
 // BD >> deixar de seguir
 async function deixarDeSeguir() {
     try {
-        await fetch(`/perfil/musico/deixarDeSeguir/${id_usuario}`);
+        await fetch(`/perfil/banda/deixarDeSeguir/${id_usuario}`);
         
         return;
     } catch (error) {
@@ -30,7 +30,7 @@ async function deixarDeSeguir() {
 // BD >> seguir
 async function seguir() {
     try {
-        await fetch(`/perfil/musico/seguir/${id_usuario}`);
+        await fetch(`/perfil/banda/seguir/${id_usuario}`);
         
         return;
     } catch (error) {

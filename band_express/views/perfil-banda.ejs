@@ -60,8 +60,14 @@
             </div>
         </div>
         <% } else { %>
-            <div class="config">
-                <button type="button" class="btn-config">
+            <div class="config" id="grupoBtnSeguir">
+                <button type="button" id="btnSeguir"
+                <% if (segue) { %>
+                    class="btn-config btn-seguindo" value="1"
+                <% } else { %>
+                    class="btn-config" value="0"
+                <% } %>
+                >
                     <i class="fas fa-headphones-alt"></i>
                 </button>
             </div>
@@ -150,7 +156,7 @@
     <!-- Grupo Minha Música -->
     <section id="minhaMusica" class="card-perfil">
         <h4><strong>Minha música</strong></h4>
-        <div class="row">
+        <div class="row" id="groupMusic">
             <% if (dadosBanda.id_usuario === usuario.id_usuario && !videos.length && !audios.length) { %>
             <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
             <% } else if (dadosBanda.id_usuario !== usuario.id_usuario && !videos.length && !audios.length) { %>
@@ -205,8 +211,13 @@
             <% } %>
         </div>
 
+        <div id="msg">
+        </div>         
+        
         <div class="carregar">
-            <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
+            <button type="button" class="btn btn-carregar <% if (audios.length < 4 && videos.length < 4 ) { %> 
+                invisible
+            <% } %>" id="carregarMusica" value="1">Carregar + Músicas</button>
         </div>
     </section>
 </div>
@@ -257,4 +268,39 @@
     </div>
 </div>
 
-<%- include('./partials/footer.ejs') %>
+<footer>
+    <ul class="list-unstyled mb-0">
+        <li><a href="">Políticas</a> | <a href="/faleConosco"><strong>Fale Conosco</strong></a></li>
+        <li>
+            <span class="copyright">Copyright &copy;
+                2020 -
+                <img src="/img/icone.png" width="20">
+                Band+ by Group 1
+            </span>
+        </li>
+    </ul>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+<script>
+    let id_usuario = '<%- dadosBanda.id_usuario %>';
+</script>
+<script>
+    let nome_usuario = '<%- dadosUsuarioBanda.nome %>';
+</script>
+
+<script src="/javascripts/maisMusicaBanda.js"></script>
+<script src="/javascripts/btnSeguirPerfilBanda.js"></script>
+
+</body>
+
+</html>
