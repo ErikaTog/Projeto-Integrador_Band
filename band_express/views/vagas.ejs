@@ -126,11 +126,11 @@
             </form>
         </div>
     </div>
-
+    
     <!-- Modal - Editar vaga -->
     <div class="modal fade" id="editarVaga" tabindex="-1" role="dialog" aria-labelledby="modalEditarVaga" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form class="modal-content" action="/vagas/editarVaga" method="POST">
+            <form class="modal-content" >
                 <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLabel">Editar vaga</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -138,20 +138,40 @@
                 </button>
                 </div>
                 <div class="modal-body" id="editarVaga2">
-                    <div action="" method="POST">
+                    <div id="grupoModal">
                         <div class="form-group" id="textareaTituloVagaDiv">
                             <textarea class="form-control" id="textareaTituloVaga" rows="1">Título da vaga</textarea>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
+
+                        <div class="infos-item media">
+                            <div id= "inputEstadoDiv" class="form-group">
+                                <div class="">
+                                    <select class="form-control" id="inputEstado2" name="estado">
+                                        <!-- <option value="" disabled selected hidden>Escolha o Estado</option> -->
+                                        <% estados.forEach((estado)=>{ %>
+                                            <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="textareaLocalVaga" rows="1">Local</textarea>
+                        <div class="infos-item media">
+                            <div id= "inputCidadeDiv" class="form-group">
+                                <div class="">
+                                    <select class="form-control" id="inputCidade2" name="cidade">
+                                        <!-- <option value="" >Escolha a Cidade</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="textareaDescricaoVagaDiv">
+                            <textarea class="form-control" id="textareaDescricaoVaga" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation...</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-Salvar">Salvar</button>
+                    <button type="submit" class="btn btn-Salvar" id="salvarEdicao">Salvar</button>
                 </div>
             </form>
         </div>
@@ -180,11 +200,15 @@
         </div>
     </div>
 
-    <script src="../javascripts/vagasJs.js"></script>
-
     <script>
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
     <script src="../javascripts/filtrarCidade.js"></script>
+
+    <script>
+        let cidadesJSON2 = '<%- JSON.stringify(cidades) %>';
+        let estadosJSON2 = '<%- JSON.stringify(estados) %>';
+    </script>
+    <script src="../javascripts/vagasJs.js"></script>
 
     <%- include('./partials/footer.ejs') %>

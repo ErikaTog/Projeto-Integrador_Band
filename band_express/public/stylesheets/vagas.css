@@ -89,6 +89,20 @@
     outline: none;
 }
 
+.msg-incentivoDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+p.msg-incentivo {
+    color: #999999;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 /* --------------------------------
          Feed vagas
 -------------------------------- */
