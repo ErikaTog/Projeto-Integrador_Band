@@ -207,6 +207,7 @@ img.avatar {
 .upload.link {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 #publicar .form {
