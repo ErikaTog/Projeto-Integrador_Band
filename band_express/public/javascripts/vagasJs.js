@@ -38,6 +38,16 @@ const clickEditarModal = (evt) => {
     let id = String(evt.target.id);
     id = id.slice(6)
 
+    let radioEditar = document.getElementsByName('tipoVagaEditar');
+    console.log(radioEditar)
+    
+    for (let i = 0; i < 3; i++) {
+        if( radioEditar[i].value == minhasVagas[id].tipo_vaga){
+            radioEditar[i].checked = true
+        }
+    }
+    console.log(radioEditar.value)
+
     let tituloVaga = document.getElementById('textareaTituloVaga');
     tituloVaga.innerText = minhasVagas[id].titulo;
 
@@ -57,7 +67,17 @@ const salvarEdicao = async (evt) => {
     let cidadeSelect = document.getElementById('inputCidade2');
     let descricaoVaga = document.getElementById('textareaDescricaoVaga');
 
+    let radioSalvar = document.getElementsByName('tipoVagaEditar');
+
+    let tipo = "";
+    for (var i = 0; i < 3; i++){
+        if(radioSalvar[i].checked){
+            tipo = radioSalvar[i].value
+        }
+    }
+
     const data =  { 
+        tipo: tipo,
         id: vagaEditadaId,
         tituloNovo: tituloVaga.value,
         estadoNovo: estado.value,
@@ -75,6 +95,7 @@ const salvarEdicao = async (evt) => {
 
     const response = await fetch('/vagas/dadosEditar', options);
     const dadosBack = await response.json();
+
     buscar();
 }
 
