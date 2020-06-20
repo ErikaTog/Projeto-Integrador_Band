@@ -183,15 +183,15 @@ const perfilMusicoController = {
             }
             
             // Buscar quantidade de seguidores e seguindo
-            const seguidores = await Minha_rede.count({ where: { id_usuario: dadosMusico.id_usuario } });
-            const seguindo = await Minha_rede.count({ where: { id_usuario_seguido: dadosMusico.id_usuario } });
+            const seguidores = await Minha_rede.count({ where: { id_usuario_seguido: dadosMusico.id_usuario } });
+            const seguindo = await Minha_rede.count({ where: { id_usuario: dadosMusico.id_usuario } });
 
             // Verificar se o usuário já segue
             const segue = await Minha_rede.count({ 
                 where: { 
                     [Op.and]: [
-                        { id_usuario: dadosMusico.id_usuario },
-                        { id_usuario_seguido: req.session.usuario.id_usuario }
+                        { id_usuario: req.session.usuario.id_usuario },
+                        { id_usuario_seguido: dadosMusico.id_usuario }
                     ] 
                 } 
             });
@@ -294,8 +294,8 @@ const perfilMusicoController = {
         await Minha_rede.destroy({
             where: {
                 [Op.and]: [
-                    { id_usuario: req.params.id },
-                    { id_usuario_seguido: req.session.usuario.id_usuario }
+                    { id_usuario: req.session.usuario.id_usuario },
+                    { id_usuario_seguido: req.params.id }
                 ]
             }
         });
@@ -304,8 +304,8 @@ const perfilMusicoController = {
     },
     seguir: async (req, res) => {
         await Minha_rede.create({
-            id_usuario: req.params.id,
-            id_usuario_seguido: req.session.usuario.id_usuario
+            id_usuario: req.session.usuario.id_usuario,
+            id_usuario_seguido: req.params.id,
         });
 
         return;
