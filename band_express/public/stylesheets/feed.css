@@ -321,16 +321,33 @@ img.avatar {
 .curtir {
     margin-top: 15px;
     margin-left: 50px;
+    display: flex;
 }
 
 .curtir a img {
     width: 35px;
-    margin-right: 20px;
     transition-duration: 0.2s;
 }
 
 .curtir a img:hover {
     filter: brightness(0.8);
+}
+
+.curtir button:hover,
+.curtir button:focus {
+    outline-style: none;
+}
+
+.curtir i {
+    color: #999999;
+    font-size: 3rem;
+    margin-right: 20px;
+}
+
+.curtir i.curtiu,
+.curtir i:hover {
+    color: #fb3c00;
+    cursor: pointer;
 }
 
 /* --------------------------------
@@ -496,6 +513,10 @@ button {
     }
     .curtir a img {
         width: 25px;
+    }
+    .curtir i {
+        font-size: 2.5rem;
+        margin-right: 2rem;
     }
 
     .comentarios {
@@ -708,6 +729,11 @@ button {
         width: 20px;
         margin-right: 1rem;
     }
+    .curtir i {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    
 
     .comentarios {
         margin: 1.5rem 1.5rem 0;

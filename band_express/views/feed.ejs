@@ -136,8 +136,15 @@
                                     allowfullscreen></iframe>
                             <% } %>
                             <p style="white-space: pre-wrap"><%= post.texto %></p>
-                            <div class="curtir">
-                                <a href=""><img src="/img/icones/icon_star_border_fa.svg" alt="Curtir"></a>
+                            <div class="curtir" id="grupoIconPost">
+                                <button type="button">
+                                    <i id="iconeCurtir<%= post.id_post %>" class="fas fa-star 
+                                        <% curtidas.forEach(curtida => { %>
+                                            <% if (post.id_post === curtida.id_post) { %>curtiu<% } %>
+                                        <% }) %>
+                                    "></i>
+                                </button>
+                                
                                 <a data-toggle="collapse" href="#collapseComentario<%= post.id_post %>" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="/img/icones/icon_comment.svg" alt="Comentar"></a>
                             </div>
                             <div class="collapse comentarios" id="collapseComentario<%= post.id_post %>">
@@ -194,6 +201,7 @@
     </script>
 
     <script src="/javascripts/inputLink.js"></script>
+    <script src="/javascripts/curtirPost.js"></script>
 </body>
 
 </html>

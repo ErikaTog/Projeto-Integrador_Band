@@ -28,17 +28,17 @@ const find = async () => {
 
     // console.log(novos);
 
-    // const posts = await Post.findAll({
-    //     raw: true,
-    //     attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
-    //     include: [{
-    //         model: Usuario,
-    //         as: 'postUsuario',
-    //         attributes: []
-    //     }],
-    //     limit: 10,
-    //     order: [['data_post', 'DESC']]
-    // })
+    const posts = await Post.findAll({
+        raw: true,
+        attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+        include: [{
+            model: Usuario,
+            as: 'postUsuario',
+            attributes: []
+        }],
+        limit: 10,
+        order: [['data_post', 'DESC']]
+    })
 
     // console.log(posts);
 
@@ -90,18 +90,18 @@ const find = async () => {
 
     // console.log(curtidas);
     
-    const curtidas = await Post.findAll({
-        raw: true,
-        attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('postCurtida.id_post')), 'curtidas']],
-        include: [{
-            model: Curtida,
-            as: 'postCurtida',
-            attributes: []
-        }],
-        group: ['id_post']
-    })
+    // const curtidas = await Post.findAll({
+    //     raw: true,
+    //     attributes: ['id_post', [Sequelize.fn('COUNT', Sequelize.col('postCurtida.id_post')), 'curtidas']],
+    //     include: [{
+    //         model: Curtida,
+    //         as: 'postCurtida',
+    //         attributes: []
+    //     }],
+    //     group: ['id_post']
+    // })
 
-    console.log(curtidas);
+    // console.log(curtidas);
 
 
     // Buscar curtidas somente dos posts carregados
@@ -138,7 +138,24 @@ const find = async () => {
 
     // console.log(curtidas);
 
+    // Buscar curtidas
+    const curtidas = await Curtida.findAll({
+        raw: true,
+        attributes: ['id_post', 'id_usuario'],
+        where: { id_usuario: 2 },
+    })
 
+    let curtiu = [];
+
+    posts.forEach(post => {
+        curtidas.forEach(curtida => {
+            if (post.id_post === curtida.id_post) {
+                curtiu.push({ id_post: post.id_post, curtiu: 1 });  
+            }
+        });
+    });
+
+    console.log(curtiu);
 };
 
 find();
