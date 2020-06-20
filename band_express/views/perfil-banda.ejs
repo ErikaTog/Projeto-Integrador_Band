@@ -60,8 +60,14 @@
             </div>
         </div>
         <% } else { %>
-            <div class="config">
-                <button type="button" class="btn-config">
+            <div class="config" id="grupoBtnSeguir">
+                <button type="button" id="btnSeguir"
+                <% if (segue) { %>
+                    class="btn-config btn-seguindo" value="1"
+                <% } else { %>
+                    class="btn-config" value="0"
+                <% } %>
+                >
                     <i class="fas fa-headphones-alt"></i>
                 </button>
             </div>
@@ -288,8 +294,12 @@ integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCm
 <script>
     let id_usuario = '<%- dadosBanda.id_usuario %>';
 </script>
+<script>
+    let nome_usuario = '<%- dadosUsuarioBanda.nome %>';
+</script>
 
 <script src="/javascripts/maisMusicaBanda.js"></script>
+<script src="/javascripts/btnSeguirPerfilBanda.js"></script>
 
 </body>
 
