@@ -20,4 +20,7 @@ VerificaUsuarioLogado, minhaPublicacaoController.saveComentario);
 // Excluir Post
 router.get('/excluirPost/:id', VerificaUsuarioLogado, minhaPublicacaoController.deletePost);
 
+// Carregar posts
+router.get('/carregarPost/:page', VerificaUsuarioLogado, minhaPublicacaoController.loadPost);
+
 module.exports = router;
