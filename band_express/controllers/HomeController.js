@@ -1,4 +1,4 @@
-const { Usuario, Minha_rede, Post, Comentario } = require('../models');
+const { Usuario, Minha_rede, Post, Comentario, Curtida } = require('../models');
 const { Op } = require('sequelize');
 const moment = require('moment');
 
@@ -55,6 +55,12 @@ const homeController = {
             order: [['id_post']]
         })
 
+        // Buscar curtidas
+        const curtidas = await Curtida.findAll({
+            raw: true,
+            attributes: ['id_post', 'id_usuario'],
+            where: { id_usuario: req.session.usuario.id_usuario },
+        })
 
         return res.render('feed', { 
             title: 'Band+', 
@@ -65,6 +71,7 @@ const homeController = {
             novosUsuarios,
             posts,
             comentarios,
+            curtidas,
             errors: req.flash('errorValidator'),
         });
     },
@@ -139,7 +146,27 @@ const homeController = {
         })
 
         res.redirect('/home');
-    }
+    },
+    naoCurtir: async (req, res) => {
+        await Curtida.destroy({
+            where: {
+                [Op.and]: [
+                    { id_post: req.params.id },
+                    { id_usuario: req.session.usuario.id_usuario }
+                ]
+            }
+        });
+
+        return;
+    },
+    curtir: async (req, res) => {
+        await Curtida.create({
+            id_post: req.params.id,
+            id_usuario: req.session.usuario.id_usuario
+        });
+
+        return;
+    },
 } 
 
 module.exports = homeController;
