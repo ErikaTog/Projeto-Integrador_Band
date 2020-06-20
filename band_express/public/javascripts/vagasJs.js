@@ -4,6 +4,7 @@ let flag = 1;
 let limite = 4;
 let feedLimite = limite;
 let minhasLimite = limite;
+let vagaEditadaId = 0;
 
 const clickDelete = async (evt) => {
 
@@ -13,7 +14,7 @@ const clickDelete = async (evt) => {
     id = id.slice(7)
 
     const data =  { 
-        apagarVaga: vagas[id].id_vagas
+        apagarVaga: minhasVagas[id].id_vagas
      };
 
     const options = {
@@ -30,15 +31,51 @@ const clickDelete = async (evt) => {
     buscar();
 }
 
-const clickEditar = (evt) => {
+const clickEditarModal = (evt) => {
 
     evt.preventDefault();
 
-    // let id = String(evt.target.id);
-    // console.log(id)
+    let id = String(evt.target.id);
+    id = id.slice(6)
 
+    let tituloVaga = document.getElementById('textareaTituloVaga');
+    tituloVaga.innerText = minhasVagas[id].titulo;
 
-    // loadMinhasVagas();
+    local(id);
+
+    let descricaoVaga = document.getElementById('textareaDescricaoVaga');
+    descricaoVaga.innerText = minhasVagas[id].descricao;
+
+    vagaEditadaId = minhasVagas[id].id_vagas;
+
+}
+
+const salvarEdicao = async (evt) => {
+
+    let tituloVaga = document.getElementById('textareaTituloVaga');
+    let estado = document.getElementById('inputEstado2');
+    let cidadeSelect = document.getElementById('inputCidade2');
+    let descricaoVaga = document.getElementById('textareaDescricaoVaga');
+
+    const data =  { 
+        id: vagaEditadaId,
+        tituloNovo: tituloVaga.value,
+        estadoNovo: estado.value,
+        cidadeNova: cidadeSelect.value,
+        descricaoNova: descricaoVaga.value
+     };
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    const response = await fetch('/vagas/dadosEditar', options);
+    const dadosBack = await response.json();
+    buscar();
 }
 
 const initFeed = () => {
@@ -151,8 +188,8 @@ const view = () => {
     let clickBuscar = document.getElementById('btnPesquisar');
     clickBuscar.addEventListener('click', buscarInit);
 
-    let clickBuscarForm = document.getElementById('buscarVagaForm');
-    clickBuscarForm.addEventListener('keypress', buscarInitEnter);
+    let salvar = document.getElementById('salvarEdicao');
+    salvar.addEventListener('click', salvarEdicao);
 
     let vagasJS = document.getElementById('vagasJS');
     vagasJS.innerHTML = '';
@@ -213,7 +250,9 @@ const view = () => {
                         editarVaga.innerText = 'Editar';
                         editarVaga.id = 'editar' + i;
                         editarVaga.href = '';
-                        // editarVaga.addEventListener('click', clickEditar);
+                        editarVaga.setAttribute("data-toggle", "modal");
+                        editarVaga.setAttribute("data-target", "#editarVaga");
+                        editarVaga.addEventListener('click', clickEditarModal);
                         linksDiv.appendChild(editarVaga);
 
                         let excluirVaga = document.createElement('a');
@@ -225,26 +264,88 @@ const view = () => {
         }
     }
 
-    let botaoVaga = document.createElement('div');
-    botaoVaga.className = 'botao';
-    vagasJS.appendChild(botaoVaga);
+    if(flag == 1 && feedVagas.length >= 4){ 
+        let botaoVaga = document.createElement('div');
+        botaoVaga.className = 'botao';
+        vagasJS.appendChild(botaoVaga);
 
-        if(flag) {
             let botaoMaisVaga = document.createElement('button');
             botaoMaisVaga.className = 'btn btn-mais';
             botaoMaisVaga.innerText = '+ Vagas';
             botaoMaisVaga.type = 'button';
             botaoMaisVaga.addEventListener('click', btnFeed);
             botaoVaga.appendChild(botaoMaisVaga);
+    }
 
-        } else {
-            let botaoMaisVaga = document.createElement('button');
-            botaoMaisVaga.className = 'btn btn-mais';
-            botaoMaisVaga.innerText = '+ Vagas';
-            botaoMaisVaga.type = 'button';
-            botaoMaisVaga.addEventListener('click', btnMinhasVagas);
-            botaoVaga.appendChild(botaoMaisVaga);
+    if(flag == 0 && minhasVagas.length >= 4){ 
+        let botaoVaga = document.createElement('div');
+        botaoVaga.className = 'botao';
+        vagasJS.appendChild(botaoVaga);
+
+                let botaoMaisVaga = document.createElement('button');
+                botaoMaisVaga.className = 'btn btn-mais';
+                botaoMaisVaga.innerText = '+ Vagas';
+                botaoMaisVaga.type = 'button';
+                botaoMaisVaga.addEventListener('click', btnMinhasVagas);
+                botaoVaga.appendChild(botaoMaisVaga);
+    }
+
+    if((flag == 1 && feedVagas.length == 0) || (flag == 0 && minhasVagas.length == 0)){ 
+        let mensagemdiv = document.createElement('div');
+        mensagemdiv.className = 'msg-incentivoDiv';
+        vagasJS.appendChild(mensagemdiv);
+
+            let mensagem = document.createElement('p');
+            mensagem.className = 'msg-incentivo';
+            mensagem.innerText = 'Não foi possível encontrar nenhuma vaga com o valor pesquisado';
+            mensagemdiv.appendChild(mensagem);
+    }    
+}
+
+const local = (id) => {
+
+    let cidadeJs2 = JSON.parse(cidadesJSON2);
+    let estadoJs2 = JSON.parse(estadosJSON2);
+    let estado2 = document.getElementById('inputEstado2');
+    let cidadeSelect2 = document.getElementById('inputCidade2');
+
+    let indexEstado = 0;
+    for(let i = 0; i < estadoJs2.length; i++){
+        if(estadoJs2[i].uf == minhasVagas[id].estado_vaga){
+            indexEstado = estadoJs2[i].id_estado;
         }
+    }
+    estado2.value = indexEstado;
+
+    let indexCidade = 0;
+    for(let i = 0; i < cidadeJs2.length; i++){
+        if(cidadeJs2[i].cidade == minhasVagas[id].cidade_vaga){
+            indexCidade = cidadeJs2[i].id_cidade;
+        }
+    }
+
+    cidadeJs2.forEach(cidade => {
+        if (indexEstado == cidade.id_estado) {
+            let cidadeOption2 = document.createElement("option");
+            cidadeOption2.value = cidade.id_cidade;
+            cidadeOption2.innerText = cidade.cidade;
+            cidadeSelect2.appendChild(cidadeOption2);
+        }
+    });
+    cidadeSelect2.value = indexCidade;
+
+    estado2.addEventListener('change', function(event) {
+        cidadeSelect2.innerHTML = '';
+        cidadeJs2.forEach(cidade => {
+            if (event.target.value == cidade.id_estado) {
+                console.log("entrou aqui!!!")
+                let cidadeOption2 = document.createElement("option");
+                cidadeOption2.value = cidade.id_cidade;
+                cidadeOption2.innerText = cidade.cidade;
+                cidadeSelect2.appendChild(cidadeOption2);
+            }
+        });
+    })
 }
 
 window.onload = buscar();
