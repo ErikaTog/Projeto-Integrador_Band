@@ -44,5 +44,9 @@ router.get('/:id', VerificaUsuarioLogado, perfilBandaController.show);
 router.get('/carregarVideo/:id/:page', VerificaUsuarioLogado, perfilBandaController.loadVideo);
 router.get('/carregarAudio/:id/:page', VerificaUsuarioLogado, perfilBandaController.loadAudio);
 
+// Botão seguir usuário
+router.get('/seguir/:id', VerificaUsuarioLogado, perfilBandaController.seguir);
+router.get('/deixarDeSeguir/:id', VerificaUsuarioLogado, perfilBandaController.naoSeguir);
+
 
 module.exports = router;
