@@ -38,7 +38,7 @@ const homeController = {
                 as: 'postUsuario',
                 attributes: []
             }],
-            limit: 10,
+            limit: 4,
             order: [['data_post', 'DESC']]
         })
 
@@ -52,8 +52,9 @@ const homeController = {
                 attributes:[],
                 order: [['id_comentario']]
             }],
-            order: [['id_post']]
         })
+
+        const listaComentarios = await JSON.stringify(comentarios);
 
         // Buscar curtidas
         const curtidas = await Curtida.findAll({
@@ -71,6 +72,7 @@ const homeController = {
             novosUsuarios,
             posts,
             comentarios,
+            listaComentarios,
             curtidas,
             errors: req.flash('errorValidator'),
         });
@@ -166,6 +168,26 @@ const homeController = {
         });
 
         return;
+    },
+    loadPost: async (req, res) => {
+        const { page } = req.params;
+
+        const limit = 4;
+
+        const posts = await Post.findAll({
+            raw: true,
+            attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+            include: [{
+                model: Usuario,
+                as: 'postUsuario',
+                attributes: []
+            }],
+            offset: (limit * page),
+            limit,
+            order: [['data_post', 'DESC']]
+        })
+
+        return res.send(posts);
     },
 } 
 
