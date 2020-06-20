@@ -176,7 +176,7 @@ p.msg-incentivo {
 }
 
 .form-control{
-    height: 50px;
+    height: 41px;
     font-size: 1.6rem; 
     font-weight: normal;
     font-family: sans-serif;
@@ -206,6 +206,16 @@ p.msg-incentivo {
 #inputEstado{
     color: #5E6380;
     
+}
+
+#textareaTituloVaga{
+    margin-top: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#textareaTituloVaga .scroll{
+    overflow-y: none;
 }
 
 /* --------------------------------
