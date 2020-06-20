@@ -186,8 +186,8 @@ const vagasController = {
 
     dadosEditar: async (req, res) => {
 
-        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova} = req.body;
-        
+        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova, tipo} = req.body;
+
         const cidade = await Cidade.findOne({ 
             where: { id_cidade: cidadeNova },
             raw: true,
@@ -209,7 +209,7 @@ const vagasController = {
         findVaga.descricao = descricaoNova
         findVaga.cidade_vaga = cidade.cidade
         findVaga.estado_vaga = estado.uf
-        findVaga.tipo_vaga = "Banda"
+        findVaga.tipo_vaga = tipo
 
         await findVaga.save({ fields: ['titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga'] });
         
