@@ -10,10 +10,8 @@ router.get('/', VerificaUsuarioLogado, vagasController.show);
 router.get('/novaVaga', VerificaUsuarioLogado, vagasController.show);
 router.post('/novaVaga', VerificaUsuarioLogado, vagasController.novaVaga);
 
-router.get('/editarVaga', VerificaUsuarioLogado, vagasController.show);
-router.put('/editarVaga', VerificaUsuarioLogado, vagasController.editarVaga); 
-
-router.post('/dadosApagar', VerificaUsuarioLogado, vagasController.dadosApagar);
 router.post('/dadosBuscar', VerificaUsuarioLogado, vagasController.dadosBuscar);
+router.post('/dadosApagar', VerificaUsuarioLogado, vagasController.dadosApagar);
+router.post('/dadosEditar', VerificaUsuarioLogado, vagasController.dadosEditar);
 
 module.exports = router;
