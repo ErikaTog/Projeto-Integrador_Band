@@ -117,7 +117,7 @@
     flex-direction: column;
 }
 
-.form-buscar-vaga{
+.form-buscar-contato{
     display: flex;
 }
 
@@ -250,7 +250,7 @@ button.btn:focus{
     box-shadow: none;
 }
 
-.form-buscar-vaga button{
+.btn.btn-Buscar{
     margin-top: 0px;
     margin-left: 10px
 }
@@ -262,6 +262,16 @@ button.btn:focus{
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+/* .btn.btn-Seguindo{
+    height: 25px;
+    font-size: 1.4rem;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #999999;
+    border: 2px solid #999999;
+} */
 
 .btn.btn-mais{
     width: 115px;
