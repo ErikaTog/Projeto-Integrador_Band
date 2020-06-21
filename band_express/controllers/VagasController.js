@@ -103,13 +103,13 @@ const vagasController = {
             raw: true,
             attributes: ['cidade'] 
         });
-        console.log(cidade)
+        
         const estado = await Estado.findOne({ 
             where: { id_estado: id_estado },
             raw: true,
             attributes: ['uf'] 
         });
-        console.log(estado)
+        
         const dadosNovaVaga = await Vagas.create({
 			titulo: tituloNovaVaga,
 			descricao: descricaoNovaVaga,

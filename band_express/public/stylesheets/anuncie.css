@@ -205,9 +205,17 @@
 /* --------------------------------
          Modal - Publicar
 -------------------------------- */
-#modalPublicar,
+/* #modalPublicar,
 #modalPublicarEditar{
     max-width: 70%;
+} */
+
+#escolherImg{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+    padding: 10px 20px 2px 20px;
 }
 
 /* --------------------------------
@@ -217,6 +225,12 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0px;
+    color: #5E6380;
+}
+
+#inputEstado,
+#inputCidade{
+    color: #5E6380;
 }
 
 .form-control{
@@ -241,7 +255,7 @@
     margin-top: 0px;
 }
 
-.form-group:nth-child(2){
+.form-group:nth-child(3){
     max-width: 58%;
     margin-right: 2%;
 }
@@ -290,13 +304,13 @@
     height: 230px;
 }
 
-#escolherImg,
+/* #escolherImg,
 #escolherImgEditar{
     padding: 20px 0px 0px 0px;
-}
+} */
 
-form#dadosProduto,
-form#dadosProdutoEditar{
+div#dadosProduto,
+div#dadosProdutoEditar{
     padding-right: 0px;
     display: flex;
     flex-wrap: wrap;
@@ -313,6 +327,11 @@ form#dadosProdutoEditar{
 #formControlFileImgEditar{
     box-shadow: none;
     padding: 8px 0px;
+    color: #5E6380;
+}
+
+#formControlFileImg button{
+    color: #5E6380;
 }
 
 /* --------------------------------
@@ -616,7 +635,7 @@ a:hover{
         min-width: 140px;
     }
 
-    .form-group:nth-child(2){
+    .form-group:nth-child(3){
         max-width: 100%;
         margin-right: 0px;
     }
