@@ -303,7 +303,7 @@
 
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="groupMusic">
 
                         <% if (!videos.length && !audios.length) { %>
                             <p class="msg-incentivo">Adicione sua música para que o seu perfil ganhe mais destaque.</p>
@@ -379,8 +379,13 @@
                     </div>
                 </div>
 
+                <div id="msg">
+                </div>
+
                 <div class="carregar">
-                    <button type="button" class="btn btn-carregar">Carregar + Músicas</button>
+                    <button type="button" class="btn btn-carregar <% if (videos.length < 4 && audios.length < 4) { %>
+                        invisible
+                    <% } %>" id="carregarMusica" value="1">Carregar + Músicas</button>
                 </div>
             </section>    
         </div>
@@ -629,7 +634,11 @@
     <script>
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
+    <script>
+        let id_usuario = '<%- dadosUsuarioBanda.id_usuario %>';
+    </script>
     <script src="/javascripts/filtrarCidade.js"></script>
+    <script src="/javascripts/maisMusicaPerfilEditarBanda.js"></script>
 
     </body>
 
