@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs', { active: "MinhaRede" , css: "minhaRede.css"}) %>
-
+ 
 
     <main class="container-minhaRede">
         <!-- Feed de Contatos Recomendados -->
@@ -13,7 +13,7 @@
                             <div class="nome-contato">
                                 <a href="<%= recomendado.link_perfil %>"><%= recomendado.nome %></a>
                             </div>
-                            <button type="button" class="btn btn-Seguir">Seguir</button>
+                            <!-- <button type="button" class="btn btn-Seguir"  value="<%= recomendado.id_usuario %>">Seguir</button> -->
                         </div>
                     <% }) %>
                     
@@ -25,15 +25,15 @@
             <!-- Buscar Contatos -->
             <section class="pesquisar-contatos"> 
                 <div class="formulario-pesquisar-contato">
-                    <form action="/minhaRede" method="POST">
-                        <div class="form-buscar-vaga form-group">
-                            <input type="buscarVaga" class="form-control" id="buscarContato" name="buscar" placeholder="Buscar contato">
+                    <form id="formBuscar">
+                        <div class="form-buscar-contato form-group">
+                            <input type="text" class="form-control" id="buscarContato" name="buscar" placeholder="Buscar contato">
                             <button type="submit" class="btn btn-Buscar">Buscar</button>
                         </div>
                     </form>
                 </div>
             </section>
-
+        
             <!-- Feed de Contatos -->
             <section class="feed-contatos"> 
                 <div class="feed-contatos-conteudo" id="divConteudo">
@@ -49,9 +49,9 @@
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Outro</label>
+                            <label class="custom-control-label" for="customRadio3">Outros</label>
                         </div>
-
+                        
                     </div> 
                     <div id="redeGroup">
                         <div class="card-contato" id="rede">
@@ -64,8 +64,9 @@
                     </div>                
               
                     <div class="botao">
-                        <button type="button" class="btn btn-mais">+ Contatos</button>
+                        <button type="button" class="btn btn-mais" id="carregarMais" value="5" style="visibility: hidden;">+ Contatos</button>
                     </div>
+                    
                 </div>
             </section>
         </div>
@@ -74,7 +75,8 @@
     <script>
         let seguindoJs = '<%- JSON.stringify(seguindo) %>';
         let seguidoresJs = '<%- JSON.stringify(seguidores) %>'; 
-        let geralJs = '<%- JSON.stringify(geral) %>';
+        let geralJs = '<%- JSON.stringify(geral) %>';    
+       
    </script>
    
    <script src="javascripts/minhaRedeJs.js"></script>
