@@ -5,12 +5,9 @@ let geral = JSON.parse(geralJs);
 
 let divRedeGroup = document.getElementById('redeGroup');
 let radios = document.getElementsByClassName('custom-control-input');
-let inputBusca = document.getElementById('buscarContato');
-let classeBtn = document.querySelector('.btn');
-let btnSeguir = document.getElementsByClassName('btn-Seguir');
-let btnBuscar = document.getElementById('btnBuscar');
 let formBuscar = document.getElementById('formBuscar');
-
+let btnMais = document.getElementById('carregarMais');
+let cont = 0;
 
 //Função para gerar cards com os valores das buscas
 function gerarCard (valor1, valor2, valor3){
@@ -24,7 +21,6 @@ function gerarCard (valor1, valor2, valor3){
 
     let imagem = document.createElement('img')
     imagem.className = 'contato-img'
-    imagem.id = 'avatar'
     imagem.src = valor1
     imagem.alt = 'Foto Contato'
 
@@ -38,17 +34,16 @@ function gerarCard (valor1, valor2, valor3){
 
     let nomeLink = document.createElement('a')
     nomeLink.href = valor2
-    nomeLink.id = 'nomeContato'
     nomeLink.innerHTML = valor3
 
     divNome.appendChild(nomeLink)
 
-    let seguir = document.createElement('button')
-    seguir.type = 'button' 
-    seguir.className = 'btn btn-Seguir'
-    seguir.innerHTML = 'Seguir'
+    // let seguir = document.createElement('button')
+    // seguir.type = 'button' 
+    // seguir.className = 'btn btn-Seguir btn2'
+    // seguir.innerHTML = 'Seguir'
 
-    divCard.appendChild(seguir)
+    // divCard.appendChild(seguir)
 }
 
 //Função para enviar mensagem nos cards
@@ -59,6 +54,39 @@ function msg(mensagem){
     divRedeGroup.appendChild(hResp)
 }
 
+//Função do botão carregar mais
+function carregarMais(radio){
+    let valorBtn = parseInt(btnMais.value);
+    let qtdCards = valorBtn;
+   
+    if(valorBtn < radio.length){
+        if(((valorBtn + 5) <= radio.length)){
+            qtdCards += 5; 
+        }else{
+            qtdCards += (radio.length - valorBtn);
+        }
+        
+        for (let index = valorBtn; index < qtdCards; index++) {
+            gerarCard(`${radio[index].avatar}`, `${radio[index].link_perfil}`, `${radio[index].nome}`) 
+        } 
+
+        btnMais.value = valorBtn + 5
+    }
+    
+    if(radio.length <= btnMais.value){
+        btnMais.style= 'visibility: hidden;'
+    }  
+}
+
+//Função para verificar a qtd de cards a serem criados na primeira visualização
+function contadorCards(radio){
+    if(radio.length > 5){
+        cont = 5
+    }else{
+        cont = radio.length
+    }
+}
+   
 
 //----------Ao carregar a página----------
 
@@ -68,6 +96,7 @@ window.onload = function () {
 
     //Incluindo mensagem de apoio
     msg("Selecione uma opção ou faça uma busca personalizada!")  
+    
 }
 
 //----------Trabalhando com o filtro de Seguindo, Seguidores e Outros----------
@@ -84,8 +113,25 @@ function clicado() {
             msg("Você ainda não segue ninguém!<br> Veja nossas recomendações ou procure um contato específico e inicie sua rede!")        
         }
 
-        //Mostrando o resultado do filtro ao usuário
-        for (let index = 0; index < seguindo.length; index++) {
+        //Inicializando o valor do bntMais
+        btnMais.value = 5;
+
+        //Verificando se o botão de +contatos deve ser exibido
+        if(seguindo.length > 5){
+            btnMais.style= 'visibility: visible;'
+        }else{
+            btnMais.style= 'visibility: hidden;'
+        }
+
+        // Ação do botão ao ser clicado
+         btnMais.onclick = function (){            
+            carregarMais(seguindo);            
+        }     
+       
+        //Gerando os primeiros cards (até 5)      
+        contadorCards(seguindo)
+         
+        for (let index = 0; index < cont; index++) {
             gerarCard(`${seguindo[index].avatar}`,`${seguindo[index].link_perfil}`, `${seguindo[index].nome}`)
         }
 
@@ -93,14 +139,31 @@ function clicado() {
 
         //Limpando o filtro para não haver duplicidade na busca
         divRedeGroup.innerText = "";
-
+        
         //Mostrando mensagem de incentivo 
         if (!(seguidores.length)) {
             msg("Você ainda não tem nenhum seguidor!<br> Aproveite para revisar o seu perfil e deixá-lo mais atrativo para os outros usuários!")          
         }
 
-        //Mostrando o resultado do filtro ao usuário
-        for (let index = 0; index < seguidores.length; index++) {
+        //Inicializando o valor do bntMais
+        btnMais.value = 5;
+
+        //Verificando se o botão de +contatos deve ser exibido
+         if(seguidores.length > 5){
+            btnMais.style= 'visibility: visible;'
+        }else{
+            btnMais.style= 'visibility: hidden;'
+        }
+        
+        // Ação do botão ao ser clicado
+           btnMais.onclick = function (){            
+            carregarMais(seguidores);            
+        }     
+       
+        //Gerando os primeiros cards (até 5)      
+        contadorCards(seguidores)
+      
+        for (let index = 0; index < cont; index++) {
             gerarCard(`${seguidores[index].avatar}`, `${seguidores[index].link_perfil}`, `${seguidores[index].nome}`)           
         }
 
@@ -108,14 +171,31 @@ function clicado() {
 
         //Limpando o filtro para não haver duplicidade na busca
         divRedeGroup.innerText = "";
-
+    
         //Mostrando mensagem de incentivo 
-        if (!(geral.length)) {
+        if(!(geral.length)) {
             msg("Ainda não temos sugestões nesta categoria.")            
         }
 
-        //Mostrando o resultado do filtro ao usuário
-        for (let index = 0; index < geral.length; index++) {
+        //Inicializando o valor do bntMais
+        btnMais.value = 5;
+         
+        //Verificando se o botão de +contatos deve ser exibido
+        if(geral.length > 5){
+            btnMais.style= 'visibility: visible;'
+        }else{
+            btnMais.style= 'visibility: hidden;'
+        }
+        
+        // Ação do botão ao ser clicado
+        btnMais.onclick = function (){            
+            carregarMais(geral);            
+        }     
+       
+        //Gerando os primeiros cards (até 5)      
+        contadorCards(geral)
+
+        for (let index = 0; index < cont; index++) {
             gerarCard(`${geral[index].avatar}`, `${geral[index].link_perfil}`, `${geral[index].nome}`)            
         }        
     }
@@ -133,7 +213,7 @@ for (let index = 0; index < radios.length; index++) {
 
 formBuscar.addEventListener('submit', async(evt) => {
     
-    //evitar o comportamento padrão do form
+    //Evitar o comportamento padrão do form
     evt.preventDefault();    
 
     //Pegando o que foi escrito no input
@@ -149,7 +229,7 @@ formBuscar.addEventListener('submit', async(evt) => {
         return        
     }
 
-    //Se tiver valor: fazendo a busca no BD e mostrando  resultado ao usuário
+    //Se tiver valor: fazendo a busca no BD e mostrando o resultado ao usuário
     const data = {texto}
     const options = {
         method: 'POST',
@@ -158,20 +238,15 @@ formBuscar.addEventListener('submit', async(evt) => {
     };
     const response = await fetch('/minhaRede/buscar', options);
     const json = await response.json();
-    console.log(json);
-
+    
     let seguindoEncontrados = json.seguindoEncontrados;
     let seguidoresEncontrados = json.seguidoresEncontrados;
     let outrosEncontrados = json.outrosEncontrados;
 
-    // console.log(seguindoEncontrados)
-    // console.log(seguidoresEncontrados)
-    // console.log(outrosEncontrados)
-
     
     //Limpando o filtro dos contatos
     divRedeGroup.innerText = "";
-
+    
     //Desabilitando os radios
     for (let index = 0; index < radios.length; index++) {
         radios[index].checked = false
@@ -194,10 +269,28 @@ formBuscar.addEventListener('submit', async(evt) => {
                 msg("Não foi possível encontrar nenhum contato com o valor pesquisado.")               
             }
     
-            //Mostrando o resultado do filtro ao usuário
-            for (let index = 0; index < seguindo.length; index++) {
+            //Inicializando o valor do bntMais
+            btnMais.value = 5;
+
+            //Verificando se o botão de +contatos deve ser exibido
+            if(seguindoEncontrados.length > 5){
+                btnMais.style= 'visibility: visible;'
+            }else{
+                btnMais.style= 'visibility: hidden;'
+            }
+
+            // Ação do botão ao ser clicado
+            btnMais.onclick = function (){            
+                carregarMais(seguindoEncontrados);            
+            } 
+            
+            //Gerando os primeiros cards (até 5)      
+            contadorCards(seguindoEncontrados)
+
+            for (let index = 0; index < cont; index++) {
                 gerarCard(`${seguindoEncontrados[index].avatar}`,`${seguindoEncontrados[index].link_perfil}`, `${seguindoEncontrados[index].nome}`)
             }
+
     
         } else if (document.getElementById('customRadio2').checked) {
     
@@ -207,13 +300,30 @@ formBuscar.addEventListener('submit', async(evt) => {
             //Mostrando mensagem de retorno 
             if (!(seguidoresEncontrados.length)) {
                 msg("Não foi possível encontrar nenhum contato com o valor pesquisado.")
+            }    
+            
+            //Inicializando o valor do bntMais
+            btnMais.value = 5;
+            
+            //Verificando se o botão de +contatos deve ser exibido
+            if(seguidoresEncontrados.length > 5){
+                btnMais.style= 'visibility: visible;'
+            }else{
+                btnMais.style= 'visibility: hidden;'
             }
-    
-            //Mostrando o resultado do filtro ao usuário
-            for (let index = 0; index < seguidores.length; index++) {    
+            
+            // Ação do botão ao ser clicado
+            btnMais.onclick = function (){            
+                carregarMais(seguidoresEncontrados);            
+            }     
+           
+            //Gerando os primeiros cards (até 5)      
+            contadorCards(seguidoresEncontrados) 
+
+            for (let index = 0; index < cont; index++) {    
                 gerarCard(`${seguidoresEncontrados[index].avatar}`, `${seguidoresEncontrados[index].link_perfil}`, `${seguidoresEncontrados[index].nome}`)           
             }
-    
+            
         } else {
     
             //Limpando o filtro para não haver duplicidade na busca
@@ -222,12 +332,29 @@ formBuscar.addEventListener('submit', async(evt) => {
             //Mostrando mensagem de retorno
             if (!(outrosEncontrados.length)) {
                 msg("Não foi possível encontrar nenhum contato com o valor pesquisado.")
+            }    
+            
+            //Inicializando o valor do bntMais
+            btnMais.value = 5;
+            
+            //Verificando se o botão de +contatos deve ser exibido
+            if(outrosEncontrados.length > 5){
+                btnMais.style= 'visibility: visible;'
+            }else{
+                btnMais.style= 'visibility: hidden;'
             }
-    
-            //Mostrando o resultado do filtro ao usuário
-            for (let index = 0; index < geral.length; index++) {    
+            
+            // Ação do botão ao ser clicado
+            btnMais.onclick = function (){            
+                carregarMais(outrosEncontrados);            
+            }     
+         
+            //Gerando os primeiros cards (até 5)      
+            contadorCards(outrosEncontrados) 
+
+            for (let index = 0; index < cont; index++) {    
                 gerarCard(`${outrosEncontrados[index].avatar}`, `${outrosEncontrados[index].link_perfil}`, `${outrosEncontrados[index].nome}`)            
-            }            
+            }  
         }
     }
     
@@ -236,7 +363,3 @@ formBuscar.addEventListener('submit', async(evt) => {
         radios[index].addEventListener('click', clicadoBuscar, false)
     }   
 });
-
-
-
-
