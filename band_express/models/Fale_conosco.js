@@ -23,7 +23,12 @@ const Fale_conosco = (sequelize, DataTypes) => {
             mensagem: {
                 type: DataTypes.STRING,
                 allowNull: false
-            } 
+            },
+            resolvido: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: '0',
+                allowNull: false
+            },
         }, {
             tableName: "fale_conosco",
             timestamps: false
