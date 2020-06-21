@@ -40,7 +40,6 @@ const minhaRedeController = {
                 model: Usuario,
                 as: 'usuario_seguido'
             }], 
-            
             where: {
                 id_usuario: req.session.usuario.id_usuario
             }
@@ -175,8 +174,7 @@ const minhaRedeController = {
             attributes: ['id_usuario', 'nome', 'avatar', 'link_perfil'],
             where:{
                 id_usuario: idsEst
-            },
-            // limit: 20
+            }           
         });
         // console.log(geral)
         
@@ -227,7 +225,7 @@ const minhaRedeController = {
                 id_usuario_seguido: req.session.usuario.id_usuario
             }
         });
-        console.log("Seguidores: " + seguidoresEncontrados)
+        // console.log("Seguidores: " + seguidoresEncontrados)
 
 
          //********************Seguindo********************
@@ -243,12 +241,12 @@ const minhaRedeController = {
                 where:{
                     nome: {[Op.like]:'%'+resultado+'%'}
                 }
-            }],             
+            }],         
             where: {
                 id_usuario: req.session.usuario.id_usuario
             }
         });
-        console.log(seguindoEncontrados)
+        // console.log(seguindoEncontrados)
 
 
         //********************Outros********************
@@ -261,14 +259,14 @@ const minhaRedeController = {
                  nome: {[Op.like]:'%'+resultado+'%'}
             }
         });
-        console.log(usuarios)
+        // console.log(usuarios)
 
         //Criando lista de id_usuários
         let idUsers = []
         usuarios.forEach(usuario => {
             idUsers.push(usuario.id_usuario)
         });
-        console.log(idUsers)
+        // console.log(idUsers)
 
 
         //Criando lista de id_usuários seguindo
@@ -276,20 +274,20 @@ const minhaRedeController = {
         seguindoEncontrados.forEach(usuario => {
             idSeguindo.push(usuario.id_usuario_seguido)
         });
-        console.log(idSeguindo)
+        // console.log(idSeguindo)
 
         
         //Iterando sobre idSeguindo, comparando com idUsers e retirando ele mesmo e os que ele já segue
         idSeguindo.forEach(idseg => {
             if (idUsers.indexOf(idseg) != -1){
                 idUsers.splice(idUsers.indexOf(idseg), 1)
-                console.log(idUsers)
+                // console.log(idUsers)
             }
         });
 
         if(idUsers.indexOf(req.session.usuario.id_usuario) != -1){
             idUsers.splice(idUsers.indexOf(req.session.usuario.id_usuario), 1)
-            console.log(idUsers)
+            // console.log(idUsers)
         }
        
 
@@ -298,13 +296,13 @@ const minhaRedeController = {
         seguidoresEncontrados.forEach(usuario => {
             idSeguidores.push(usuario.id_usuario)
         });
-        console.log(idSeguidores)
+        // console.log(idSeguidores)
 
         //Iterando sobre idSeguidores, comparando com o que sobrou em idUsers e retirando seus seguidores
          idSeguidores.forEach(idseg => {
             if (idUsers.indexOf(idseg) != -1){
                 idUsers.splice(idUsers.indexOf(idseg), 1)
-                console.log(idUsers)
+                // console.log(idUsers)
             }
         });         
 
@@ -316,7 +314,7 @@ const minhaRedeController = {
                 id_usuario: idUsers
             },
         });
-        console.log("outros: " + outrosEncontrados)
+        // console.log("outros: " + outrosEncontrados)
 
 
         //Enviando os resultados pelo fetch    
