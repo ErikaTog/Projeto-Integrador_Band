@@ -48,7 +48,7 @@ const indexController = {
 
         // Armazenar informações (cookie)
         if (logado) {
-            res.cookie('logado', usuario.email, { maxAge: 900000 });
+            res.cookie('logado', usuario.email, { maxAge: 24*60*60*1000 }); // 24 horas
         }
 
         res.redirect('/home');
