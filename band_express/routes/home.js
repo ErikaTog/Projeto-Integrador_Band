@@ -45,4 +45,7 @@ VerificaUsuarioLogado, homeController.savePublicar);
 router.get('/curtir/:id', VerificaUsuarioLogado, homeController.curtir);
 router.get('/deixarDeCurtir/:id', VerificaUsuarioLogado, homeController.naoCurtir);
 
+// Carregar posts
+router.get('/carregarPost/:page', VerificaUsuarioLogado, homeController.loadPost);
+
 module.exports = router;

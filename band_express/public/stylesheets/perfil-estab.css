@@ -30,15 +30,6 @@ p.msg-incentivo {
     font-weight: 700;
 }
 
-#habilidades p.msg-incentivo {
-    padding: 20px 0;
-    align-self: flex-start;
-}
-
-#minhaMusica p.msg-incentivo {
-    margin-bottom: 20px;
-}
-
 /* --------------------início_do_Grupo_Head--------------------- */
 #head {
     position: relative;

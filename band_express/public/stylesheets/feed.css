@@ -427,6 +427,33 @@ button {
     outline-style: none;
 }
 
+.carregar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-carregar {
+    color: #fff;
+    font-size: 1.8rem;
+    background-color: #fb3c00;
+    border: 2px solid #fb3c00;
+    margin-top: 30px;
+}
+
+.btn-carregar:hover {
+    color: #fff;
+    background-color: #fb754b;
+    border: 2px solid #fb3c00;
+}
+
+/* Mensagem - Não há informações */
+.msg-carregar-musica {
+    color: #999999;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
 
 /* --------------------------------

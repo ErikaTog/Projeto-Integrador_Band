@@ -46,7 +46,7 @@
                                     <img class="mini-avatar" src="<%= user.avatar %>" alt="Anne">
                                     <p><%= user.nome %></p>
                                 </a>
-                                <i class="fas fa-headphones-alt"></i>
+                                <!-- <i class="fas fa-headphones-alt"></i> -->
                             </div>
                         <% }) %>
                     </div>
@@ -165,7 +165,7 @@
                                         <% } %>
                                     <% }) %>
                                 </div>
-                                <form action="" method="POST">
+                                <form action="/home" method="POST">
                                     <div class="form-group">
                                         <textarea class="form-control" id="inputComentario" rows="1"
                                             placeholder="Adicione um comentário..." name="comentario" required></textarea>
@@ -178,17 +178,25 @@
                             </div>
                         </div>
                     <% }) %>
+
                 </section>
+                    
+                <div id="msg">
+                </div>
+                
+                <div class="carregar">
+                    <button type="button" class="btn btn-carregar" id="carregarPost" value="1">Carregar + Post</button>
+                </div>
             </div>
 
         </div>
     </div>
 
-    <div class="edit">
+    <!-- <div class="edit">
         <div class="circle">
             <a href=""><i class="fas fa-pencil-alt"></i></i></a>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -200,8 +208,17 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
+    <script>
+        let curtidasJSON = '<%- JSON.stringify(curtidas) %>';
+    </script>
+    
+    <script>
+        let comentariosJSON = '<%- listaComentarios %>';
+    </script>
+
     <script src="/javascripts/inputLink.js"></script>
     <script src="/javascripts/curtirPost.js"></script>
+    <script src="/javascripts/carregarPost.js"></script>
 </body>
 
 </html>

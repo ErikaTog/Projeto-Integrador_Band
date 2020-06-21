@@ -37,31 +37,45 @@
         </header>
     
         <div class="fale-container">
+
+            <% if (errors.length) { %>
+                <div class="alert alert-danger" role="alert">
+                    <h5>Não é possível enviar a mensagem...</h5>
+                    <hr>
+                    <ul class="error">
+                        <% for( let i = 0; i < errors.length; i++ ) { %>
+                            <li>- <%= errors[i].msg %>  </li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
+            
             <div class="fale-container-header">
                 <h4>Fale conosco</h4>
             </div>
-            <form action="" method="POST">
+            <form action="/faleConosco" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="nome-contato" placeholder="Nome completo">
+                    <input type="text" class="form-control" id="nome-contato" name="nome" placeholder="Nome completo" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="email-contato" placeholder="E-mail para contato">
+                    <input type="text" class="form-control" id="email-contato" name="email" placeholder="E-mail para contato" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="assunto-contato" placeholder="Assunto">
+                    <select class="form-control" id="selectAssunto" name="assunto" required>
+                        <option disabled selected>Escolha um Assunto</option>
+                        <option value="Problema com cadastro">Problema com cadastro</option>
+                        <option value="Alterar a senha">Alterar a senha</option>
+                        <option value="Problema com acesso à minha conta">Problema com acesso à minha conta</option>
+                        <option value="Problemas técnicos relacionado com envio de arquivo">Problemas técnicos relacionado com envio de arquivo</option>
+                        <option value="Denunciar uma publicação ou conteúdo indevido">Denunciar uma publicação ou conteúdo indevido</option>
+                        <option value="Outros">Outros</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="mensagem-contato" rows="5" placeholder="Mensagem"></textarea>
+                    <textarea class="form-control" id="mensagem-contato" rows="5" name="mensagem" placeholder="Mensagem" required></textarea>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <textarea class="form-control" id="captcha-contato" rows="5" placeholder="Captcha"></textarea>
-                        </div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-salvar">Enviar</button>
-                        </div>
-                    </div>
+                <div class="button-submit">
+                    <button type="submit" class="btn btn-salvar">Enviar</button>
                 </div>
             </form>
         </div>

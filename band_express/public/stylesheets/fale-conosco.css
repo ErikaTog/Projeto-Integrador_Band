@@ -41,6 +41,15 @@ input.form-control {
     padding: 1.5rem 3rem;
 }
 
+select.form-control {
+    height: 50px;
+    padding: 0 3rem;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 50px;
+}
+
 textarea.form-control {
     padding: 1.5rem 3rem;
 }
@@ -55,16 +64,10 @@ textarea.form-control {
     justify-content: space-between;
 }
 
-.col-sm-6,
-.col-sm-2 {
-    padding: 0;
-    margin: 0;
-}
-
-.col-sm-2 {
+.button-submit {
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
-    align-self: flex-end;
 }
 
 button.btn {
@@ -82,6 +85,13 @@ footer {
     }
     textarea.form-control {
         padding: 1rem 2rem;
+    }
+    select.form-control {
+        height: 40px;
+        padding: 0 2rem;
+    }
+    select.form-control:not([size]):not([multiple]) {
+        height: 40px;
     }
 }
 
@@ -114,9 +124,6 @@ footer {
     }
     .row {
         margin: 0;
-    }
-    .col-sm-2 {
-        margin-top: 15px;
     }
     button.btn {
         font-size: 1.2rem;

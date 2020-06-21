@@ -48,6 +48,18 @@
     margin: 0;
 }
 
+.curtir i {
+    color: #fb3c00;
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+.curtir i.curtiu,
+.curtir i:hover {
+    color: #fb3c00;
+    cursor: initial;
+}
+
 /* --------------------fim_do_Grupo_Publicacao--------------------- */
 
 

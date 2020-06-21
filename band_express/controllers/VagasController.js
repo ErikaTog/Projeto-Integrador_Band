@@ -1,4 +1,6 @@
-const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = require('../models'); 
+const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Vagas } = require('../models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const vagasController = {
 
@@ -120,52 +122,51 @@ const vagasController = {
 		res.redirect(`/vagas`);
     },
 
-    editarVaga: async (req, res) => {
-        res.redirect(`/vagas`);
-    },
-    
-    dadosFeed: async (req, res) => {
+    dadosBuscar: async (req, res) => {
 
-        let limite = req.body;
-        limite.valor = limite.valor + 4;
+        let dados = req.body;
+        let tipo = dados.tipo;
+        let busca = dados.buscarVaga;
 
-        const pagina = await Vagas.findAll({
-            limit: limite.valor,
-            include: [{
-                model: Usuario,
-                as: 'usuario',
-                attributes: ['nome', 'link_perfil'],
-            }]
-        });
-
-        res.json({
-            pagina,
-            limite: pagina.length
-        });
-    },
-
-    dadosMinhasVagas: async (req, res) => {
-
-        let limite = req.body;
-        limite.valor = limite.valor + 4;
-
-        const pagina = await Vagas.findAll({
-            where: { 
-                id_usuario: req.session.usuario.id_usuario 
-            },
-            limit: limite.valor,
-            include: [{
-                model: Usuario,
-                as: 'usuario',
-                attributes: ['nome', 'link_perfil'],
-            }]
-        });
-
-        res.json({
-            pagina,
-            limite: pagina.length
-        });
+        tipo == "Todas" ? tipo = "" : null;
         
+        const buscaFeed = await Vagas.findAll({
+            where: { 
+                tipo_vaga: {[Op.like]:'%'+ tipo +'%'},
+                [Op.or]: {
+                    titulo: {[Op.like]:'%'+ busca +'%'},
+                    descricao: {[Op.like]:'%'+ busca +'%'} 
+                }
+            },
+            limit: dados.feedLimite,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        })
+
+        const buscaMinhasVagas = await Vagas.findAll({
+            where: { 
+                id_usuario: req.session.usuario.id_usuario,
+                tipo_vaga: {[Op.like]:'%'+ tipo +'%'},
+                [Op.or]: {
+                    titulo: {[Op.like]:'%'+ busca +'%'},
+                    descricao: {[Op.like]:'%'+ busca +'%'} 
+                }
+            },
+            limit: dados.minhasLimite,
+            include: [{
+                model: Usuario,
+                as: 'usuario',
+                attributes: ['nome', 'link_perfil'],
+            }]
+        })
+
+        res.json({
+            buscaFeed,
+            buscaMinhasVagas,
+        });
     },
 
     dadosApagar: async (req, res) => {
@@ -177,6 +178,40 @@ const vagasController = {
                 id_vagas: id.apagarVaga
             }
         });
+        
+        res.json({
+            status: 'OK'
+        });
+    },
+
+    dadosEditar: async (req, res) => {
+
+        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova, tipo} = req.body;
+
+        const cidade = await Cidade.findOne({ 
+            where: { id_cidade: cidadeNova },
+            raw: true,
+            attributes: ['cidade'] 
+        });
+        const estado = await Estado.findOne({ 
+            where: { id_estado: estadoNovo },
+            raw: true,
+            attributes: ['uf'] 
+        });
+
+        const findVaga = await Vagas.findOne({
+            where: { 
+                id_vagas: id 
+            }, 
+        });
+ 
+        findVaga.titulo = tituloNovo;
+        findVaga.descricao = descricaoNova
+        findVaga.cidade_vaga = cidade.cidade
+        findVaga.estado_vaga = estado.uf
+        findVaga.tipo_vaga = tipo
+
+        await findVaga.save({ fields: ['titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'tipo_vaga'] });
         
         res.json({
             status: 'OK'

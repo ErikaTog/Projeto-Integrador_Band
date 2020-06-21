@@ -68,19 +68,19 @@ const find = async () => {
 
     // })
     
-    // let comentarios  = await Comentario.findAll({
-    //     raw: true,
-    //     attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
-    //     include: [{
-    //         model: Usuario,
-    //         as: 'comentarioUsuario',
-    //         attributes:[],
-    //         order: [['id_comentario']]
-    //     }],
-    //     order: [['id_post']]
-    // })
+    let comentarios  = await Comentario.findAll({
+        raw: true,
+        attributes: ['id_post', 'comentario', 'comentarioUsuario.nome', 'comentarioUsuario.avatar', 'comentarioUsuario.link_perfil'],
+        include: [{
+            model: Usuario,
+            as: 'comentarioUsuario',
+            attributes:[],
+            order: [['id_comentario']]
+        }],
+        // order: [['id_post']]
+    })
 
-    // console.log(comentarios);
+    console.log(comentarios);
 
     // const curtidas = await Curtida.findAll({
     //     raw: true,
@@ -139,23 +139,23 @@ const find = async () => {
     // console.log(curtidas);
 
     // Buscar curtidas
-    const curtidas = await Curtida.findAll({
-        raw: true,
-        attributes: ['id_post', 'id_usuario'],
-        where: { id_usuario: 2 },
-    })
+    // const curtidas = await Curtida.findAll({
+    //     raw: true,
+    //     attributes: ['id_post', 'id_usuario'],
+    //     where: { id_usuario: 2 },
+    // })
 
-    let curtiu = [];
+    // let curtiu = [];
 
-    posts.forEach(post => {
-        curtidas.forEach(curtida => {
-            if (post.id_post === curtida.id_post) {
-                curtiu.push({ id_post: post.id_post, curtiu: 1 });  
-            }
-        });
-    });
+    // posts.forEach(post => {
+    //     curtidas.forEach(curtida => {
+    //         if (post.id_post === curtida.id_post) {
+    //             curtiu.push({ id_post: post.id_post, curtiu: 1 });  
+    //         }
+    //     });
+    // });
 
-    console.log(curtiu);
+    // console.log(curtiu);
 };
 
 find();

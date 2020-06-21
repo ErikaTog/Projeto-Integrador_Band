@@ -38,7 +38,7 @@ const publicacaoController = {
                 as: 'postUsuario',
                 attributes: []
             }],
-            limit: 10,
+            limit: 4,
             order: [['data_post', 'DESC']]
         })
 
@@ -54,6 +54,8 @@ const publicacaoController = {
             }],
             order: [['id_post']]
         })
+
+        const listaComentarios = await JSON.stringify(comentarios);
 
         // Buscar curtidas
         const curtidas = await Post.findAll({
@@ -76,6 +78,7 @@ const publicacaoController = {
             novosUsuarios,
             posts,
             comentarios,
+            listaComentarios,
             curtidas,
             errors: req.flash('errorValidator'),
         });
@@ -97,7 +100,28 @@ const publicacaoController = {
         await Post.destroy({
             where: { id_post: req.params.id }
         });
-    }
+    },
+    loadPost: async (req, res) => {
+        const { page } = req.params;
+
+        const limit = 4;
+
+        const posts = await Post.findAll({
+            where: { id_usuario: req.session.usuario.id_usuario },
+            raw: true,
+            attributes: ['id_post', 'texto', 'imagem', 'video_arquivo', 'video_link', 'data_post', 'postUsuario.nome', 'postUsuario.avatar', 'postUsuario.link_perfil'],
+            include: [{
+                model: Usuario,
+                as: 'postUsuario',
+                attributes: []
+            }],
+            offset: (limit * page),
+            limit,
+            order: [['data_post', 'DESC']]
+        })
+
+        return res.send(posts);
+    },
 } 
 
 module.exports = publicacaoController;
