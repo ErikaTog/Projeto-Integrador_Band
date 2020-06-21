@@ -91,7 +91,7 @@ const cadastroMuicoController = {
         }
 
         // Setar session do usuario
-        let usuario = { id_usuario:dadosUsuario.id_usuario, nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 1};
+        let usuario = { id_usuario: dadosUsuario.id_usuario, nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 1, admin: dadosUsuario.admin};
 
         req.session.usuario = usuario;
 

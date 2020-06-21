@@ -213,7 +213,8 @@ const perfilEditarMusicoController = {
             senha: dadosUsuario.senha, 
             email: dadosUsuario.email,
             avatar: dadosUsuario.avatar,
-            id_tipos_perfil: 1
+            id_tipos_perfil: 1,
+            admin: dadosUsuario.admin
         };
 
         req.session.usuario = usuario;
