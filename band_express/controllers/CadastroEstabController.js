@@ -48,10 +48,6 @@ const cadastroEstabController = {
 			link_perfil: nome,
 			id_tipos_perfil: 3
 		})
-
-		// Salvar o campo link_perfil
-		dadosUsuario.link_perfil = `http://localhost:3000/perfil/estabelecimento/${dadosUsuario.id_usuario}`;
-        await dadosUsuario.save({ fields: ['link_perfil'] });
 		
 		let funcionamento = 0;
 		(diaSemana != undefined) ? funcionamento = 1 : null;
@@ -65,6 +61,10 @@ const cadastroEstabController = {
 			funcionamento,
 			id_usuario: dadosUsuario.id_usuario
 		});
+
+		// Salvar o campo link_perfil
+		dadosUsuario.link_perfil = `http://localhost:3000/perfil/estabelecimento/${dadosEstab.id_estab}`;
+        await dadosUsuario.save({ fields: ['link_perfil'] });
 
 		
 		if (funcionamento){
