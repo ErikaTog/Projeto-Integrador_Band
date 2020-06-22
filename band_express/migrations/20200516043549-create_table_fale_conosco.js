@@ -18,7 +18,7 @@ module.exports = {
           allowNull: false
       },
       assunto: {
-        type: Sequelize.STRING(50),
+        type: Sequelize.STRING(100),
         allowNull: false
       },
       mensagem: {
