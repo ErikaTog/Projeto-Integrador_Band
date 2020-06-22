@@ -62,7 +62,7 @@ const cadastroBandaController = {
         });
 
         // Salvar o campo link_perfil
-        dadosUsuario.link_perfil = `localhost:3000/perfil/banda/${dadosBanda.id_banda}`;
+        dadosUsuario.link_perfil = `http://localhost:3000/perfil/banda/${dadosBanda.id_banda}`;
         await dadosUsuario.save({ fields: ['link_perfil'] });
 
 
