@@ -15,7 +15,23 @@ module.exports = {
         {
           id_musico: 3,
           id_instrumento: 7,
-        }
+        },
+        {
+          id_musico: 7,
+          id_instrumento: 82,
+        },
+        {
+          id_musico: 7,
+          id_instrumento: 11,
+        },
+        {
+          id_musico: 7,
+          id_instrumento: 83,
+        },
+        {
+          id_musico: 7,
+          id_instrumento: 87,
+        },
       ], {});
   },
 

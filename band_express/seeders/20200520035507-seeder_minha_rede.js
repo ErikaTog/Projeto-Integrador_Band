@@ -95,7 +95,51 @@ module.exports = {
         {
           id_usuario: 9,
           id_usuario_seguido: 6
-        }
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 1
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 2
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 3
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 5
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 9
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 12
+        },
+        {
+          id_usuario: 13,
+          id_usuario_seguido: 18
+        },
+        {
+          id_usuario: 1,
+          id_usuario_seguido: 13
+        },
+        {
+          id_usuario: 2,
+          id_usuario_seguido: 13
+        },
+        {
+          id_usuario: 4,
+          id_usuario_seguido: 13
+        },
+        {
+          id_usuario: 6,
+          id_usuario_seguido: 13
+        },
       ], {});
   },
 

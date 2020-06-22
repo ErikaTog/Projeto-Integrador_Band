@@ -11,18 +11,6 @@ module.exports = {
           id_usuario: 1,
         },
         {
-          tipo: "link", 
-          titulo: "Secret Base (Kimi ga Kureta Mono)",
-          caminho: "https://soundcloud.com/rmadillah/ano-hana-secret-base-kimi-ga",
-          id_usuario: 2,
-        },
-        {
-          tipo: "link", 
-          titulo: "One and Only",
-          caminho: "https://soundcloud.com/no-or-862117602/adele-one-and-only",
-          id_usuario: 4,
-        },
-        {
           tipo: "arquivo", 
           titulo: "The Children's Song" ,
           caminho: "/audio/The Children's Song.mp3",
@@ -39,7 +27,19 @@ module.exports = {
           titulo: "Seven Nation Army - Vintage",
           caminho: "https://soundcloud.com/erayhalisdemir/seven-nation-army-vintage-new-orleans-dirge-white-stripes-cover-ft-haley-reinhart",
           id_usuario: 8,
-        }
+        },
+        {
+          tipo: "arquivo", 
+          titulo: "Master of Tides - Lindsey Stirling" ,
+          caminho:"/audio/audio13-1592853450456.mp3",
+          id_usuario: 13,
+        },
+        {
+          tipo: "arquivo", 
+          titulo: "Roundtable Rival - Lindsey Stirling" ,
+          caminho:"/audio/audio13-1592853473084.mp3",
+          id_usuario: 13,
+        },
       ], {});
   },
 

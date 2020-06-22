@@ -347,6 +347,10 @@ module.exports = {
         {
           id_instrumento: 86,
           instrumento: 'xilofone'
+        },
+        {
+          id_instrumento: 87,
+          instrumento: 'sanfona'
         }
       ], {});
   },

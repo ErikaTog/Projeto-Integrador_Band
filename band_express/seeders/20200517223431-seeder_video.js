@@ -45,7 +45,43 @@ module.exports = {
           titulo: "All About That Bass",
           caminho: "https://www.youtube.com/embed/aLnZ1NQm2uk",
           id_usuario: 8,
-        }
+        },
+        {
+          tipo: "link",
+          titulo: "METALLICA - Nothing Else Matters (cover by TRIBO)",
+          caminho: "https://www.youtube.com/embed/5_e-Hvg57cA",
+          id_usuario: 13,
+        },
+        {
+          tipo: "link",
+          titulo: "'Fix You' - Coldplay (Alex Goot, Adyla, Jade Pettyjohn)",
+          caminho: "https://www.youtube.com/embed/xrfyzkUc5fA",
+          id_usuario: 13,
+        },
+        {
+          tipo: "link",
+          titulo: "NANDO REIS - All Star (cover by TRIBO)",
+          caminho: "https://www.youtube.com/embed/Qj_gDJzyOHU",
+          id_usuario: 13,
+        },
+        {
+          tipo: "link",
+          titulo: "AEROSMITH - Dream On (cover by TRIBO)",
+          caminho: "https://www.youtube.com/embed/dI-6o63Nfhw",
+          id_usuario: 13,
+        },
+        {
+          tipo: "link",
+          titulo: "BRYAN ADAMS - Heaven (cover by TRIBO)",
+          caminho: "https://www.youtube.com/embed/XQwbzf4igNw",
+          id_usuario: 13,
+        },
+        {
+          tipo: "link",
+          titulo: "'The Scientist' - Coldplay [Alex Goot & Adyla]",
+          caminho: "https://www.youtube.com/embed/TalgHWd550w",
+          id_usuario: 13,
+        },
       ], {});
   },
 
