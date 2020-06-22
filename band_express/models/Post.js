@@ -31,11 +31,6 @@ const Post = (sequelize, DataTypes) => {
             data_post: {
                 type: DataTypes.DATE,
                 allowNull: false
-            },
-            curtido: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: '0',
-                allowNull: false
             }
         }, {
             tableName: "post",

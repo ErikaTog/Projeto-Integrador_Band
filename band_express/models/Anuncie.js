@@ -2,7 +2,7 @@ const Anuncie = (sequelize, DataTypes) => {
     let anuncie = sequelize.define(
         'Anuncie', 
         {
-            id_vagas: {
+            id_anuncie: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
@@ -16,7 +16,11 @@ const Anuncie = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            local: {
+            cidade_produto: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            estado_produto: {
                 type: DataTypes.STRING,
                 allowNull: false
             },

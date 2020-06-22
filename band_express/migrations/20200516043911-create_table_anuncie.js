@@ -19,8 +19,12 @@ module.exports = {
           type: Sequelize.STRING(200),
           allowNull: false
         },
-        local: {
-          type: Sequelize.STRING(50),
+        cidade_produto: {
+          type: Sequelize.STRING(120),
+          allowNull: false
+        },
+        estado_produto: {
+          type: Sequelize.STRING(2),
           allowNull: false
         },
         valor: {

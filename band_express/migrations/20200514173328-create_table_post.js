@@ -35,11 +35,6 @@ module.exports = {
       data_post: {
         type: Sequelize.DATE,
         allowNull: false
-      },
-      curtido: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: '0',
       }
     });
   },

@@ -7,7 +7,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 01',
           descricao: 'Descrição Anuncio 01 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 01',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 2,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 1
@@ -15,7 +16,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 02',
           descricao: 'Descrição Anuncio 02 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 02',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 10,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 2
@@ -23,7 +25,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 03',
           descricao: 'Descrição Anuncio 03 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 03',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 79.99,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 3
@@ -31,7 +34,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 04',
           descricao: 'Descrição Anuncio 04 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 04',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 100,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 4
@@ -39,7 +43,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 05',
           descricao: 'Descrição Anuncio 05 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 05',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 149.99,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 5
@@ -47,7 +52,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 06',
           descricao: 'Descrição Anuncio 06 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 06',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 200,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 6
@@ -55,7 +61,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 07',
           descricao: 'Descrição Anuncio 07 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 07',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 310.25,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 7
@@ -63,7 +70,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 08',
           descricao: 'Descrição Anuncio 08 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 08',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 420.8,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 8
@@ -71,7 +79,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 09',
           descricao: 'Descrição Anuncio 09 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 09',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 500,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 9
@@ -79,7 +88,8 @@ module.exports = {
         {
           titulo: 'Titulo Anuncio 10',
           descricao: 'Descrição Anuncio 10 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada.',
-          local: 'Local do Anuncio 10',
+          cidade_produto: 'Osasco',
+          estado_produto: 'SP',
           valor: 555.55,
           img_anuncio: '/img/imgEditar.png',
           id_usuario: 1

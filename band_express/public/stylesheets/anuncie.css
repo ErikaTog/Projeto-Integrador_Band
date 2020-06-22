@@ -88,6 +88,21 @@
     outline: none;
 }
 
+#feedProdutoDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#linksDiv a{
+    margin-right: 10px;
+}
+
+.avatar{
+    object-fit: cover;
+}
+
 /* --------------------------------
          Pesquisar produtos
 -------------------------------- */
@@ -104,6 +119,20 @@
 
 .formulario-novo-produto h4{
     padding-top: 6px;
+}
+
+.msg-incentivoDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+p.msg-incentivo {
+    color: #999999;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* --------------------------------
@@ -174,11 +203,6 @@
     margin-bottom: 10px;
 }
 
-.conteudo-produto h5,
-.conteudo-meu-produto h5{
-    margin-bottom: 5px;
-}
-
 .conteudo-produto-div,
 .conteudo-meu-produto-div{
     margin: 10px;
@@ -189,7 +213,7 @@
 
 .conteudo-produto-info,
 .conteudo-meu-produto-info{
-    margin: auto 5px;
+    /* margin: auto 5px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -202,12 +226,61 @@
     justify-content: space-around;
 }
 
+#conteudoProdutoDiv h5,
+#conteudoProdutoDiv p{
+    margin-bottom: 8px;
+}
+
+#dadosProduto2{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #5E6380;
+}
+
+#infosItem1{
+    width: 100%;
+}
+
+#infosItem2{
+    width: 58%;
+    margin-right: 2%;
+}
+
+#inputEstadoDiv2{
+    margin-top: 20px;
+}
+
+#inputCidade2{
+    margin-top: 20px;
+}
+
+#valorProduto2{
+    margin-top: 20px;
+    width: 40%;
+}
+
+#tituloNovoProduto2,
+#dinheiro2{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    overflow: none;
+    resize: none;
+}
+
+#descricaoNovoProduto2{
+    /* resize: vertical; */
+    min-height: 120px;
+}
 /* --------------------------------
          Modal - Publicar
 -------------------------------- */
-#modalPublicar,
-#modalPublicarEditar{
-    max-width: 70%;
+#escolherImg{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #999999;
+    border: 1px solid #ced4da;
+    padding: 10px 20px 2px 20px;
 }
 
 /* --------------------------------
@@ -217,6 +290,12 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0px;
+    color: #5E6380;
+}
+
+#inputEstado,
+#inputCidade{
+    color: #5E6380;
 }
 
 .form-control{
@@ -241,7 +320,7 @@
     margin-top: 0px;
 }
 
-.form-group:nth-child(2){
+.form-group:nth-child(3){
     max-width: 58%;
     margin-right: 2%;
 }
@@ -290,13 +369,8 @@
     height: 230px;
 }
 
-#escolherImg,
-#escolherImgEditar{
-    padding: 20px 0px 0px 0px;
-}
-
-form#dadosProduto,
-form#dadosProdutoEditar{
+div#dadosProduto,
+div#dadosProdutoEditar{
     padding-right: 0px;
     display: flex;
     flex-wrap: wrap;
@@ -310,9 +384,16 @@ form#dadosProdutoEditar{
 }
 
 #formControlFileImg,
+#formControlFileImg2,
 #formControlFileImgEditar{
     box-shadow: none;
     padding: 8px 0px;
+    color: #5E6380;
+}
+
+#formControlFileImg button,
+#formControlFileImg2 button{
+    color: #5E6380;
 }
 
 /* --------------------------------
@@ -616,7 +697,7 @@ a:hover{
         min-width: 140px;
     }
 
-    .form-group:nth-child(2){
+    .form-group:nth-child(3){
         max-width: 100%;
         margin-right: 0px;
     }
