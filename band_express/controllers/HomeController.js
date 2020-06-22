@@ -143,8 +143,7 @@ const homeController = {
             imagem: caminhoImagem,
             video_arquivo: caminhoVideo,
             video_link,
-            data_post: new Date(),
-            curtido: 0
+            data_post: new Date()
         })
 
         res.redirect('/home');

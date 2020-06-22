@@ -24,7 +24,12 @@ module.exports = {
       mensagem: {
         type: Sequelize.STRING(500),
         allowNull: false
-      } 
+      },
+      resolvido: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: '0',
+        allowNull: false
+      },
     });
   },
 
