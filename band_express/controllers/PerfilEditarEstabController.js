@@ -44,15 +44,21 @@ const perfilEditarEstabController = {
             attributes: ['id_estab', 'categoria', 'sobre', 'site', 'telefone', 'funcionamento'] 
         });
 
-        // Buscar todos os estados
+        // Buscar lista de Estados
         const estados = await Estado.findAll({ 
-        	raw: true
-		});
-		
-		// Buscar todas as cidades
-		const cidades = await Cidade.findAll({ 
-        	raw: true
+            raw: true
         });
+
+        // Buscar todas as cidades
+        const cidades = await Cidade.findAll({ 
+            raw: true
+        });
+
+        // Buscar as cidas do estado do Usuário
+        const cidadesUsuario = await Cidade.findAll({
+            raw: true,
+            where: { cidade: dadosUsuario.cidade }
+        })
 
         let dadosFuncionamento = [];
         if(dadosEstab.funcionamento){
@@ -74,6 +80,7 @@ const perfilEditarEstabController = {
             dadosEstab, 
             estados,
             cidades,
+            cidadesUsuario,
             tipoCategoria,
             dadosFuncionamento,
             totalSeguindo,

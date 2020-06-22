@@ -129,12 +129,15 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                        <div class="form-group">
-                            <div id= "inputEstadoDiv" class="">
-                                <select class="form-control" id="inputEstado" name="estado">
-                                    <option value="" disabled selected hidden>Escolha o Estado</option>
-                                    <% estados.forEach((estado)=>{ %>
-                                        <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                        <div class="form">
+                            <div class="form-group">
+                                <select class="custom-select" id="inputEstado" name="estado">
+                                    <% estados.forEach(estado => { %>
+                                        <% if (dadosUsuario.uf == estado.uf) { %>
+                                            <option value="<%= estado.id_estado %>" selected><%= estado.uf %></option> 
+                                        <% } else { %>
+                                            <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                                        <% } %>
                                     <% }) %>
                                 </select>
                             </div>
@@ -142,10 +145,16 @@
                     </div>
                     <div class="infos-item media">
                         <img src="/img/icones/pin-01.png" alt="Local">
-                        <div class="form-group">
-                            <div class="">
-                                <select class="form-control readonly" id="inputCidade" name="cidade" tabindex="-1" disabled>
-                                    <option value="" disabled selected hidden>Escolha a Cidade</option>
+                        <div class="form">
+                            <div class="form-group">
+                                <select class="custom-select" id="inputCidade" name="cidade">
+                                    <% cidadesUsuario.forEach(cidade => { %>
+                                        <% if (dadosUsuario.cidade == cidade.cidade) { %>
+                                            <option value="<%= cidade.id_cidade %>" selected><%= cidade.cidade %></option> 
+                                        <% } else { %>
+                                            <option value="<%= cidade.id_cidade %>"><%= cidade.cidade %></option>
+                                        <% } %>
+                                    <% }) %>
                                 </select>
                             </div>
                         </div>
@@ -297,6 +306,7 @@
     <script>
         let cidadesJSON = '<%- JSON.stringify(cidades) %>';
     </script>
+
     <script src="/javascripts/filtrarCidade.js"></script>
 
 </body>
