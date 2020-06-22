@@ -85,7 +85,7 @@ const cadastroBandaController = {
         });
 
         // Setar session do usuario
-        let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 2};
+        let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 2, admin: dadosUsuario.admin};
 
         req.session.usuario = usuario;
 

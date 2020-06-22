@@ -246,7 +246,8 @@ const perfilEditarBandaController = {
             senha: dadosUsuario.senha, 
             email: dadosUsuario.email,
             avatar: dadosUsuario.avatar,
-            id_tipos_perfil: 2
+            id_tipos_perfil: 2,
+            admin: dadosUsuario.admin
         };
 
         req.session.usuario = usuario;
