@@ -2,3 +2,6 @@
 .env
 /config/config.json
 /public/img/uploads
+/public/audio
+/public/video
+/public/uploadsPost
