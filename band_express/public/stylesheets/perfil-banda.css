@@ -408,11 +408,6 @@ select.form-control:not([size]):not([multiple]) {
     height: auto;
 }
 
-.form-group input,
-.form-group select {
-    height: 3rem;
-}
-
 
 .form-control {
     color: #282a36;
