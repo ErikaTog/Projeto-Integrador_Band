@@ -179,8 +179,29 @@ const perfilEstabController = {
         });
 
         res.redirect(`/perfil/estabelecimento/${dadosEstab.id_estab}`);
-    }
+    },
 
+    naoSeguir: async (req, res) => {
+        await Minha_rede.destroy({
+            where: {
+                [Op.and]: [
+                    { id_usuario: req.session.usuario.id_usuario },
+                    { id_usuario_seguido: req.params.id }
+                ]
+            }
+        });
+
+        return;
+    },
+
+    seguir: async (req, res) => {
+        await Minha_rede.create({
+            id_usuario: req.session.usuario.id_usuario,
+            id_usuario_seguido: req.params.id,
+        });
+
+        return;
+    }
 }
 
 module.exports = perfilEstabController;

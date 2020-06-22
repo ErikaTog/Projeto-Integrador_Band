@@ -39,4 +39,8 @@ perfilEstabController.changePassword);
 
 router.get('/:id', VerificaUsuarioLogado, perfilEstabController.show);
 
+// Button seguir
+router.get('/deixarDeSeguir/:id', VerificaUsuarioLogado, perfilEstabController.naoSeguir);
+router.get('/seguir/:id', VerificaUsuarioLogado, perfilEstabController.seguir);
+
 module.exports = router;
