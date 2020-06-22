@@ -44,8 +44,8 @@ const cadastroBandaController = {
             email,
             senha: bcrypt.hashSync(senha, 10),
             data_cadastro: new Date(),
-            id_cidade: idCidade,
-            id_estado: idEstado,
+            id_cidade: cidade,
+            id_estado: estado,
             link_perfil: nome,
             id_tipos_perfil: 2
         });
