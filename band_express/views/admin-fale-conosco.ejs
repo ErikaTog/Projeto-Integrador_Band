@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Admin</title>
+    <link rel="shortcut icon" href="/img/icone.png" type="image/x-icon">
+    <!-- estilo -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/geral.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+     integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+</head>
+
+<body class="admin">
+    <header class="fixed-top">
+        <div class="nav-container">
+            <nav class="navbar navbar-expand">
+                <a class="navbar-brand" href="/admin"><img src="/img/logo_5000x1500.png" alt="Band+"></a>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="/admin">
+                            <div class="nav-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <p>Usuários</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active"> 
+                        <a class="nav-link" href="/admin/faleConosco">
+                            <div class="nav-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <p>Fale Conosco</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="nav-icon-avatar dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                            <img src="<%= usuario.avatar %>" alt="Foto de Perfil" class="avatar-nav">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <p class="dropdown-item">Olá, <%= usuario.nome %> </p>
+                            <a class="dropdown-item" href="/home">Voltar</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="admin-container">
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Assunto</th>
+                <th scope="col">Mensagem</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="tableMsg">
+                <% faleConosco.forEach(item => { %>
+                    <tr id="<%= item.id_fale_conosco %>">
+                      <th scope="row"><%= item.nome %></th>
+                      <td><%= item.email %></td>
+                      <td><%= item.assunto %></td>
+                      <td><a data-toggle="modal" data-target="#verMensagem<%= item.id_fale_conosco %>" href="#">Visualizar</a></td>
+                      <td><i class="fas fa-check-square fa-lg<% if (item.resolvido) { %>
+                        check
+                      <% } %>
+                        " id="check<%= item.id_fale_conosco %>"></i></td>
+                      <td><i class="fas fa-trash fa-lg" id="excluir<%= item.id_fale_conosco %>"></i></td>
+                    </tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="verMensagem<%= item.id_fale_conosco %>" tabindex="-1" role="dialog" aria-labelledby="verMensagem<%= item.id_fale_conosco %>"
+                    aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modalMensagem">Mensagem - <%= item.nome %></h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5 class="info-user"><%= item.email %></h5>
+                                    <p><%= item.mensagem %></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                <% }) %>
+            </tbody>
+          </table>
+
+        <div class="carregar">
+            <button type="button" class="btn btn-carregar" id="carregarMensagem" value="1">Carregar +</button>
+        </div>
+
+        </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul class="list-unstyled">
+            <li>
+                <span class="copyright">Copyright &copy;
+                    2020 -
+                    <img src="/img/icone.png" width="20">
+                    Band+ by Group 1
+                </span>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="/javascripts/checkMensagem.js"></script>
+    <script src="/javascripts/excluirMensagem.js"></script>
+    <script src="/javascripts/carregarMensagem.js"></script>
+</body>
+
+</html>

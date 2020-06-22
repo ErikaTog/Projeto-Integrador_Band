@@ -15,9 +15,13 @@
                             </div>
                             <!-- <button type="button" class="btn btn-Seguir"  value="<%= recomendado.id_usuario %>">Seguir</button> -->
                         </div>
-                    <% }) %>
-                    
+                    <% }) %>       
                 </div>
+                <% if (!recomendados.length){ %>
+                    <div class="card-msg">
+                        <h5>Ainda não temos recomendações para você!</h5>
+                    </div>
+                <% } %>       
             </div>
         </section>
 

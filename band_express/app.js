@@ -29,6 +29,7 @@ var feedbackRouter = require('./routes/feedback');
 var feedbackExcluirRouter = require('./routes/feedbackExcluir');
 var ajudaRouter = require('./routes/ajuda');
 var removerRouter = require('./routes/remover');
+var adminRouter = require('./routes/admin');
 
 var cookieMiddleware = require('./middlewares/cookieLogin');
 
@@ -76,6 +77,7 @@ app.use('/feedback', feedbackRouter);
 app.use('/feedbackExcluir', feedbackExcluirRouter);
 app.use('/ajuda', ajudaRouter);
 app.use('/remover', removerRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
