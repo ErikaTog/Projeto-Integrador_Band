@@ -39,14 +39,12 @@ const clickEditarModal = (evt) => {
     id = id.slice(6)
 
     let radioEditar = document.getElementsByName('tipoVagaEditar');
-    console.log(radioEditar)
     
     for (let i = 0; i < 3; i++) {
         if( radioEditar[i].value == minhasVagas[id].tipo_vaga){
             radioEditar[i].checked = true
         }
     }
-    console.log(radioEditar.value)
 
     let tituloVaga = document.getElementById('textareaTituloVaga');
     tituloVaga.innerText = minhasVagas[id].titulo;
@@ -115,11 +113,6 @@ const buscarInit = () => {
     feedLimite = limite;
     minhasLimite = limite;
     buscar();
-}
-
-const buscarInitEnter = (evt) => {
-    evt.preventDefault();
-    buscarInit();
 }
 
 const btnFeed = () => {
@@ -359,7 +352,7 @@ const local = (id) => {
         cidadeSelect2.innerHTML = '';
         cidadeJs2.forEach(cidade => {
             if (event.target.value == cidade.id_estado) {
-                console.log("entrou aqui!!!")
+                
                 let cidadeOption2 = document.createElement("option");
                 cidadeOption2.value = cidade.id_cidade;
                 cidadeOption2.innerText = cidade.cidade;

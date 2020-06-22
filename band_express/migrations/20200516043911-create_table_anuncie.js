@@ -19,11 +19,11 @@ module.exports = {
           type: Sequelize.STRING(200),
           allowNull: false
         },
-        cidade_vaga: {
+        cidade_produto: {
           type: Sequelize.STRING(120),
           allowNull: false
         },
-        estado_vaga: {
+        estado_produto: {
           type: Sequelize.STRING(2),
           allowNull: false
         },

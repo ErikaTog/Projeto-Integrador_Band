@@ -89,7 +89,7 @@ const cadastroEstabController = {
 		}
 
 		// Setar session do usuario
-		let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 3};
+		let usuario = { id_usuario:dadosUsuario.id_usuario , nome, senha, email, avatar: dadosUsuario.avatar, id_tipos_perfil: 3, admin: dadosUsuario.admin};
 		req.session.usuario = usuario;
 
 		return res.redirect('/home')

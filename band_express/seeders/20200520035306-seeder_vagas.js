@@ -23,7 +23,7 @@ module.exports = {
         {
           titulo: 'Vaga de DJ',
           descricao: 'Atuar com música, produção, efeitos, discotecagem, sonorização, criação. Animar a pista de dança, performar, agitar a galera e apresentar as atrações.',
-          cidade_vaga: 'Carapcuíba',
+          cidade_vaga: 'Carapicuíba',
           estado_vaga: 'SP',
           tipo_vaga: 'Estabecimento',
           id_usuario: 3

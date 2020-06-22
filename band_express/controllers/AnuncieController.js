@@ -2,7 +2,6 @@ const { Usuario, Cidade, Estado, Musico, Banda, Estabelecimento, Anuncie } = req
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const fs = require("fs");
-// const { Console } = require('console');
 
 const anuncieController = {
     show: async (req, res) => {
@@ -69,8 +68,8 @@ const anuncieController = {
         const dadosNovoProduto = await Anuncie.create({
             titulo: tituloNovoProduto,
             descricao: descricaoNovoProduto,
-            cidade_vaga: cidade.cidade, 
-            estado_vaga: estado.uf,
+            cidade_produto: cidade.cidade, 
+            estado_produto: estado.uf,
             valor: dinheiro,
             img_anuncio: '/img/imgEditar.png',
             id_usuario: req.session.usuario.id_usuario
@@ -140,6 +139,77 @@ const anuncieController = {
         res.json({
             buscaFeed,
             buscaMeusProdutos
+        });
+    },
+
+    dadosApagar: async (req, res) => {
+        
+        let id = req.body;
+        
+        const dadosAnuncie = await Anuncie.destroy({
+            where: {
+                id_anuncie: id.apagarProduto
+            }
+        });
+        
+        res.json({
+            status: 'OK'
+        });
+    },
+
+    dadosEditar: async (req, res) => {
+        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova, valor, imgNova} = req.body;
+
+        const cidade = await Cidade.findOne({ 
+            where: { id_cidade: cidadeNova },
+            raw: true,
+            attributes: ['cidade'] 
+        });
+        const estado = await Estado.findOne({ 
+            where: { id_estado: estadoNovo },
+            raw: true,
+            attributes: ['uf'] 
+        });
+
+        const findProduto = await Vagas.findOne({
+            where: { 
+                id_produto: id 
+            }, 
+        });
+
+        if(imgNova != ""){
+            let file = req.files[0].filename;
+            if(file.includes(".jpg") || file.includes(".png") || 
+                file.includes(".gif") || file.includes(".tiff")){
+
+                // const imgBd = await Anuncie.findOne({
+                //     where: { id_anuncie: dadosNovoProduto.dataValues.id_anuncie }
+                // });
+
+                const cutPath = findProduto.img_anuncio.slice(13) 
+
+                if (findProduto.img_anuncio != '/img/imgEditar.png') {
+                    fs.unlinkSync(`./public/img/uploads/${cutPath}`);
+                }
+
+                const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+                findProduto.img_anuncio = pathFile;
+
+                // await findProduto.save({ fields: ['img_anuncio'] });
+
+            }
+        }
+        console.log(req.body)
+        findProduto.titulo = tituloNovo;
+        findProduto.descricao = descricaoNova
+        findProduto.cidade_vaga = cidade.cidade
+        findProduto.estado_vaga = estado.uf
+        findProduto.valor = valor
+
+        await findProduto.save({ fields: ['titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'valor'] });
+        
+        res.json({
+            status: 'OK'
         });
     }
 }

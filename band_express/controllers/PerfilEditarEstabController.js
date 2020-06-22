@@ -150,7 +150,8 @@ const perfilEditarEstabController = {
             senha: dadosUsuario.senha, 
             email: req.session.usuario.email,
             avatar: dadosUsuario.avatar,
-            id_tipos_perfil: 3
+            id_tipos_perfil: 3,
+            admin: dadosUsuario.admin
         };
 
         req.session.usuario = usuario;

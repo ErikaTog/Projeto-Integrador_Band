@@ -12,5 +12,7 @@ router.get('/novoProduto', VerificaUsuarioLogado, anuncieController.show);
 router.post('/novoProduto', multer(MulterImage).any(), VerificaUsuarioLogado, anuncieController.novoProduto);
 
 router.post('/dadosBuscar', VerificaUsuarioLogado, anuncieController.dadosBuscar);
+router.post('/dadosApagar', VerificaUsuarioLogado, anuncieController.dadosApagar);
+router.post('/dadosEditar', VerificaUsuarioLogado, anuncieController.dadosEditar);
 
 module.exports = router;

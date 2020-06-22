@@ -2,7 +2,7 @@
 
     <!-- Publicar Produto -->
     <main class="container-anuncie">   
-         <!-- Publicar Produtos -->
+        <!-- Publicar Produtos -->
         <button type="button" class="publicar-produto" data-toggle="modal" data-target="#publicarNovoProduto"> 
             <div class="formulario-novo-produto">
                 <h4>Publicar produto</h4>
@@ -17,14 +17,14 @@
                     <form action="">
                         <div class="form-buscar-produto form-group">
                             <input type="buscarProduto" class="form-control" id="buscarProduto" placeholder="Buscar produto">
-                            <button type="button" class="btn btn-Buscar">Buscar</button>
+                            <button type="button" id="btnPesquisar" class="btn btn-Buscar">Buscar</button>
                         </div>
                     </form>
                 </div>
             </section>
 
             <!-- Feed Produto -->
-            <section class="feed-produto"> 
+            <section class="feed-produto" id="feedProdutoDiv"> 
                 <div class="feed-produto-conteudo">
                     <div class="radio-group">
                         <div class="custom-control custom-radio custom-control-inline">
@@ -36,106 +36,14 @@
                             <label class="custom-control-label" for="customRadio8">Meus Produtos</label>
                         </div>
                     </div>
+                </div>
 
-                    <div class="conteudo-produto">
-                        <div class="conteudo-produto-div">
-                            <div class="conteudo-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-produto-info">
-                                <h5>Exemplo - Feed de Produtos</h5>
-                                <div class="conteudo-produto-info2">
-                                    <p>R$ .00</p>
-                                    <p>Local</p> 
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p>  
-                                <a href="">Link do usuário para contato</a>                          
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="conteudo-meu-produto" data-toggle="modal" data-target="#editarProduto">
-                        <div class="conteudo-meu-produto-div">
-                            <div class="conteudo-meu-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-meu-produto-info">
-                                <h5>Exemplo - Meus Produtos</h5>
-                                <div class="conteudo-meu-produto-info2">
-                                    <p>R$ .00</p> 
-                                    <p>Local</p>
-                                </div> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p> 
-                            </div>
-                        </div>
-                    </button>
-
-                    <div class="conteudo-produto">
-                        <div class="conteudo-produto-div">
-                            <div class="conteudo-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-produto-info">
-                                <h5>Exemplo - Feed de Produtos</h5>
-                                <div class="conteudo-produto-info2">
-                                    <p>R$ .00</p>
-                                    <p>Local</p> 
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p> 
-                                <a href="">Link do usuário para contato</a>                          
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="conteudo-meu-produto" data-toggle="modal" data-target="#editarProduto">
-                        <div class="conteudo-meu-produto-div">
-                            <div class="conteudo-meu-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-meu-produto-info">
-                                <h5>Exemplo - Meus Produtos</h5>
-                                <div class="conteudo-meu-produto-info2">
-                                    <p>R$ .00</p> 
-                                    <p>Local</p>
-                                </div> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p> 
-                            </div>
-                        </div>
-                    </button>
-
-                    <div class="conteudo-produto">
-                        <div class="conteudo-produto-div">
-                            <div class="conteudo-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-produto-info">
-                                <h5>Exemplo - Feed de Produtos</h5>
-                                <div class="conteudo-produto-info2">
-                                    <p>R$ .00</p>
-                                    <p>Local</p> 
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p> 
-                                <a href="">Link do usuário para contato</a>                          
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="conteudo-meu-produto" data-toggle="modal" data-target="#editarProduto">
-                        <div class="conteudo-meu-produto-div">
-                            <div class="conteudo-meu-produto-info-img">
-                                <img class="avatar" src="/img/icones/imgEditar.png" alt="Foto do Produto">
-                            </div>
-                            <div class="conteudo-meu-produto-info">
-                                <h5>Exemplo - Meus Produtos</h5>
-                                <div class="conteudo-meu-produto-info2">
-                                    <p>R$ .00</p> 
-                                    <p>Local</p>
-                                </div> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper malesuada nisl, vel cursus ipsum semper at. Cras tortor ante, rhoncus ut placerat in, mollis a odio. Suspendisse porttitor.</p> 
-                            </div>
-                        </div>
-                    </button>
+                <div class="feed-produto-conteudo" id="produtoJS">
 
                     <div class="botao">
                         <button type="button" class="btn btn-mais">+ Produtos</button>
                     </div>
+                    
                 </div>
             </section>
         </div>
@@ -144,7 +52,7 @@
     <!-- Modal - Publicar Produto -->
     <div class="modal fade" id="publicarNovoProduto" tabindex="-1" role="dialog" aria-labelledby="modalPublicarNovoProduto" aria-hidden="true">
         <div id="modalPublicar" class="modal-dialog" role="document">
-            <form class="modal-content" action="/anuncie/novoProduto?_method=POST" method="POST" enctype="multipart/form-data" >
+            <form class="modal-content" action="/anuncie/novoProduto?_method=POST" method="POST" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Publicar novo produto</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -188,9 +96,9 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">R$</span>
                                 </div>
-                                <input type="text" name="dinheiro" class="form-control" aria-label="Quantia" maxlength="5" required>
+                                <input type="text" name="dinheiro" class="form-control" aria-label="Quantia" maxlength="9" required>
                                 <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text"></span>
                                 </div>
                             </div>
                             <div class="form-group" id="descriçãoNovoProdutoDiv">
@@ -209,52 +117,67 @@
     <!-- Modal - Editar produto -->
     <div class="modal fade" id="editarProduto" tabindex="-1" role="dialog" aria-labelledby="modalEditarProduto" aria-hidden="true">
         <div id="modalPublicarEditar" class="modal-dialog" role="document">
-            <div class="modal-content">
+            <form class="modal-content" action="/anuncie/dadosEditar?_method=POST" method="POST" enctype="multipart/form-data">
                 <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Editar produto</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
-                </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Publicar novo produto</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
                 </div>
                 <div class="container">
-                    <div class="modal-body row" id="publicarNovoProduto2Editar">
-                        <form class="card col-lg-5 col-md-5 col-12" id="imgProdutoEditar" action="" method="POST">
-                            <img class="avatar" src="/img/icones/imgEditar.png" width="230" alt="Foto do Produto">
-                            <div id="escolherImgEditar" class="modal-body">
-                                <div class="form-group">
-                                    <label for="formControlFileImg">Escolha uma imagem</label>
-                                    <input type="file" class="form-control-file" id="formControlFileImgEditar" accept="image/*">
+                    <div class="modal-body row" id="publicarNovoProduto2">
+                        <div id="escolherImg" class="modal-body">
+                            <div class="form-group">
+                                <label for="formControlFileImg">Escolha uma imagem</label>
+                                <input type="file" class="form-control-file" id="formControlFileImg2" accept="image/*" name="produto">
+                            </div>
+                        </div>
+                        <div class="" id="dadosProduto2">
+                            <div class="form-group" id="tituloNovoProduto2Div">
+                                <textarea class="form-control" id="tituloNovoProduto2" name="tituloNovoProduto" maxlength="50" required></textarea>
+                            </div>
+
+                            <div class="infos-item media" id="infosItem1">
+                                <div id= "inputEstadoDiv2" class="form-group">
+                                    <div class="">
+                                        <select class="form-control" id="inputEstado2" name="estado">
+                                            <!-- <option value="" disabled selected hidden>Escolha o Estado</option> -->
+                                            <% estados.forEach((estado)=>{ %>
+                                                <option value="<%= estado.id_estado %>"><%= estado.uf %></option>
+                                            <% }) %>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-                        <form class="col-7 col-lg-7 col-md-7 col-12" id="dadosProdutoEditar" action="" method="POST">
-                            <div class="form-group" id="títuloNovoProdutoEditarDiv">
-                                <textarea class="form-control" id="títuloNovoProdutoEditar" rows="1">Título do produto editar</textarea>
+                            <div class="infos-item media" id="infosItem2">
+                                <div id= "inputCidadeDiv2" class="form-group">
+                                    <div class="">
+                                        <select class="form-control" id="inputCidade2" name="cidade">
+                                            <!-- <option value="" >Escolha a Cidade</option> -->
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="localNovoProdutoEditar" rows="1">Local editar</textarea>
-                            </div>
-                            <div id="dinheiroEditar" class="input-group">
+
+                            <div id="valorProduto2" class="input-group">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">R$</span>
                                 </div>
-                                <textarea type="text" class="form-control" aria-label="Quantia">100</textarea>
+                                <textarea type="text" name="dinheiro" id="dinheiro2" class="form-control" aria-label="Quantia" rows="5" maxlength="9" required></textarea>
                                 <div class="input-group-append">
-                                <span class="input-group-text">.00</span>
+                                <span class="input-group-text"></span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="descriçãoNovoProdutoEditar" rows="5">Descrição do produto editar</textarea>
-                            </div>
-                        </form>
+                            <div class="form-group" id="descriçãoNovoProdutoDiv2">
+                                <textarea class="form-control" id="descricaoNovoProduto2" name="descricaoNovoProduto" rows="5" maxlength="200" required></textarea>
+                            </div> 
+                        </div>
                     </div>
                 </div>
-                <form action="" method="POST">
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-Salvar">Salvar</button>
-                    </div>
-                </form>
-            </div>
+                <div class="modal-footer">
+                    <button type="submit" id="salvarEdicao" class="btn btn-Publicar">Publicar</button>
+                </div>
+            </form>
         </div>
     </div>
 

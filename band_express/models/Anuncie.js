@@ -16,11 +16,11 @@ const Anuncie = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            cidade_vaga: {
+            cidade_produto: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            estado_vaga: {
+            estado_produto: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
