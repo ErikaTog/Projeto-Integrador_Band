@@ -243,7 +243,8 @@ const perfilBandaController = {
                 imagem: '/img/feedback_404.svg',
                 titulo: 'Pagina não encontrada',
                 mensagem: 'Não encontramos essa página, tente mais tarde ou clique em voltar para a página inicial.',
-                botao: 'Voltar'
+                botao: 'Voltar',
+                irPara: '/home'
             });
         }
     },
