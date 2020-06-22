@@ -237,6 +237,7 @@ Imagem
     border-radius: 20px;
     display: flex;
     margin-right: 16px;
+    object-fit:cover;
 }
 
 .mr-3{
