@@ -24,7 +24,7 @@ module.exports = {
         },
         {
           titulo: 'Fone de ouvido',
-          descricao: 'Fone de ouvido novo com nota fiscal. Oferece uma experiência sonora de alta qualidade e bloqueia ativamente os ruídos externos, calibra o áudio em tempo real para preservar a nitidez, o alcance e toda a emoção do seu som.',
+          descricao: 'Fone que oferece uma experiência sonora de alta qualidade e bloqueia ativamente os ruídos externos, calibra o áudio em tempo real para preservar a nitidez, o alcance e toda a emoção do seu som',
           cidade_produto: 'Carapicuíba',
           estado_produto: 'SP',
           valor: 100.00,

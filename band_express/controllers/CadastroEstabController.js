@@ -68,9 +68,9 @@ const cadastroEstabController = {
 
 		
 		if (funcionamento){
-			(horarioSemana[0] == 0) ? lengthDia = 1 : lengthDia = diaSemana.length;
+			(horarioSemana[0] == 1) ? lengthDia = 1 : lengthDia = diaSemana.length;
 			for (let i = 0; i < lengthDia; i++){
-				if (horarioSemana[0] == 0) { 
+				if (lengthDia == 1) { 
 					dia = diaSemana
 					horario_abertura = horarioSemana.split(' ')[0]
 					horario_fechamento = horarioSemana.split(' ')[2]
@@ -79,6 +79,7 @@ const cadastroEstabController = {
 					horario_abertura = horarioSemana[i].split(' ')[0]
 					horario_fechamento = horarioSemana[i].split(' ')[2]
 				}
+
 				const dadosFuncionamento = await Funcionamento.create({
 					dia,
 					horario_abertura,
