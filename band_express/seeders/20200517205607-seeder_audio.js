@@ -5,12 +5,6 @@ module.exports = {
     return queryInterface.bulkInsert(
       'audio', [
         {
-          tipo: "link",
-          titulo: "I Say A Little Prayer",
-          caminho: "https://soundcloud.com/stephan7stephan/aretha-franklin-i-say-a-little",
-          id_usuario: 1,
-        },
-        {
           tipo: "arquivo", 
           titulo: "The Children's Song" ,
           caminho: "/audio/The Children's Song.mp3",
@@ -21,13 +15,7 @@ module.exports = {
           titulo: "Rude" ,
           caminho:"/audio/Rude.mp3",
           id_usuario: 6,
-        },
-        {
-          tipo: "link", 
-          titulo: "Seven Nation Army - Vintage",
-          caminho: "https://soundcloud.com/erayhalisdemir/seven-nation-army-vintage-new-orleans-dirge-white-stripes-cover-ft-haley-reinhart",
-          id_usuario: 8,
-        },
+        },       
         {
           tipo: "arquivo", 
           titulo: "Master of Tides - Lindsey Stirling" ,

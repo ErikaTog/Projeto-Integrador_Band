@@ -42,6 +42,18 @@ module.exports = {
         },
         {
           tipo: "link", 
+          titulo: "Rude",
+          caminho:"https://www.youtube.com/embed/PIh2xe4jnpk",
+          id_usuario: 6,
+        },
+        {
+          tipo: "link", 
+          titulo: "No Regrets",
+          caminho:"https://www.youtube.com/embed/_UAh245xaac",
+          id_usuario: 6,
+        },
+        {
+          tipo: "link", 
           titulo: "All About That Bass",
           caminho: "https://www.youtube.com/embed/aLnZ1NQm2uk",
           id_usuario: 8,
@@ -82,6 +94,12 @@ module.exports = {
           caminho: "https://www.youtube.com/embed/TalgHWd550w",
           id_usuario: 13,
         },
+        {
+          tipo: "link",
+          titulo: "The Scientist",
+          caminho: "https://www.youtube.com/embed/cd9xlYgqwBw",
+          id_usuario: 23,
+        }
       ], {});
   },
 
