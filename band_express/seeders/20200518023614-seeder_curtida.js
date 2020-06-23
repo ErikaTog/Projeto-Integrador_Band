@@ -96,6 +96,26 @@ module.exports = {
           id_post: 8,
           id_usuario: 5,
         }, 
+        {
+          id_post: 5,
+          id_usuario: 15,
+        },
+        {
+          id_post: 8,
+          id_usuario: 15,
+        },
+        {
+          id_post: 8,
+          id_usuario: 6,
+        },
+        {
+          id_post: 7,
+          id_usuario: 6,
+        },
+        {
+          id_post: 5,
+          id_usuario: 6,
+        }
       ], {});
   },
   

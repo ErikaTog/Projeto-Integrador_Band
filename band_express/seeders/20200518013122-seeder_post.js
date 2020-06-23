@@ -51,6 +51,12 @@ module.exports = {
           video_link: "https://www.youtube.com/embed/J61mtatKT1I",
           data_post: "2020-06-18 12:59:27",
         },
+        {
+          id_usuario: 6,
+          texto: "Confiram parte de nossa apresentação desse fim de semana no Andressa Pub!",
+          video_link: "https://www.youtube.com/embed/9xBOA9gTpvw",
+          data_post: "2020-06-23 00:02:01",
+        },
       ], {});
   },
   down: (queryInterface, Sequelize) => {
