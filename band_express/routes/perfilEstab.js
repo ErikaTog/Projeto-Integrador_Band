@@ -35,6 +35,7 @@ router.put('/',
         })
 ],
 EstabMiddleware.error, 
+VerificaUsuarioLogado,
 perfilEstabController.changePassword);
 
 router.get('/:id', VerificaUsuarioLogado, perfilEstabController.show);

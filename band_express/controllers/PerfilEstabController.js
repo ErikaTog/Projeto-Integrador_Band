@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const { Usuario, Cidade, Estado, Estabelecimento, Funcionamento, Minha_rede } = require('../models'); 
+const { Op } = require('sequelize');
 
 const perfilEstabController = {
     showUser: async (req, res) => {
@@ -60,15 +61,27 @@ const perfilEstabController = {
                 attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
             });
 
+            // Verificar se o usuário já segue
+            // const segue = await Minha_rede.count({ 
+            //     where: { 
+            //         [Op.and]: [
+            //             { id_usuario: req.session.usuario.id_usuario },
+            //             { id_usuario_seguido: dadosUsuario.id_usuario }
+            //         ] 
+            //     } 
+            // });
+
             res.render('perfil-estab', { 
                 title: 'Perfil', 
                 usuario: req.session.usuario, 
                 dadosUsuario,
                 dadosEstab, 
                 estados,
+                // segue,
                 dadosFuncionamento,
                 totalSeguindo,
                 totalSeguidores,
+                errors: req.flash('errorValidator'),
                 mensagemNull: 'Ops, você não informou este campo',
             });
 
@@ -141,7 +154,7 @@ const perfilEstabController = {
                 where: { 
                     [Op.and]: [
                         { id_usuario: req.session.usuario.id_usuario },
-                        { id_usuario_seguido: dadosEstab.id_usuario }
+                        { id_usuario_seguido: dadosUsuario.id_usuario }
                     ] 
                 } 
             });
@@ -157,6 +170,7 @@ const perfilEstabController = {
                 totalSeguindo,
                 totalSeguidores,
                 mensagemNull: 'Dados não preenchidos',
+                errors: req.flash('errorValidator')
             });
 
         } catch (error) {
