@@ -391,6 +391,7 @@ p.circle-prof { width: 210px; }
         justify-content: flex-end;
     }
     .navbar-collapse {
+        height: 180px;
         max-width: 250px;
         background-color: #fff;
         box-shadow: 0px 3px 3px #999999;
@@ -407,6 +408,7 @@ p.circle-prof { width: 210px; }
     }
 
     .form-inline {
+        margin-top: 60px;
         flex-direction: column;
         align-items: center;
     }
@@ -429,7 +431,7 @@ p.circle-prof { width: 210px; }
         flex-direction: column-reverse;
         position: absolute;
         left: 23%;
-        bottom: 25%;
+        bottom: 20%;
     }
     .nav-item a{
         margin-top: 5px;
@@ -609,6 +611,9 @@ p.circle-prof { width: 210px; }
     .navbar-collapse {
         max-width: 200px;
     }
+    .form-inline {
+        margin-top: 100px;
+    }
     .form-inline .form-control{
         width: 160px;
     }
@@ -625,7 +630,7 @@ p.circle-prof { width: 210px; }
     }
     .form-check-inline {
         left: 12%;
-        bottom: 23%;
+        bottom: 15%;
     }
 
     button.btn {
