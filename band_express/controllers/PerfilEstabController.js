@@ -52,13 +52,13 @@ const perfilEstabController = {
             });
 
             // Busca tabela de Funcionamento
-                dadosFuncionamento = await Funcionamento.findAll({
-                    where: {
-                        id_estab: dadosEstab.id_estab
-                    },
-                    raw: true,
-                    attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
-                });
+            dadosFuncionamento = await Funcionamento.findAll({
+                where: {
+                    id_estab: dadosEstab.id_estab
+                },
+                raw: true,
+                attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
+            });
 
             res.render('perfil-estab', { 
                 title: 'Perfil', 
@@ -136,12 +136,23 @@ const perfilEstabController = {
                     attributes: ['dia', 'horario_abertura', 'horario_fechamento'] 
                 });
 
+            // Verificar se o usuário já segue
+            const segue = await Minha_rede.count({ 
+                where: { 
+                    [Op.and]: [
+                        { id_usuario: req.session.usuario.id_usuario },
+                        { id_usuario_seguido: dadosEstab.id_usuario }
+                    ] 
+                } 
+            });
+
             res.render('perfil-estab', { 
                 title: 'Perfil', 
                 usuario: req.session.usuario, 
                 dadosUsuario,
                 dadosEstab, 
                 estados,
+                segue,
                 dadosFuncionamento,
                 totalSeguindo,
                 totalSeguidores,

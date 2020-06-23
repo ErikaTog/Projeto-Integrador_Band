@@ -12,6 +12,7 @@ const removerController = {
 
     excluirUsuario: async (req, res) => {
 
+        res.cookie('logado', req.session.usuario.email, { maxAge: 0 });
         // let { motivo, senhaExcluir } = req.body;
         const dadosUsuario = await Usuario.destroy({
             where: {

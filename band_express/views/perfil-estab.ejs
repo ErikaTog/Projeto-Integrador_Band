@@ -51,8 +51,14 @@
                     </div>
                 </div>
             <% } else { %>
-                <div class="config">
-                    <button type="button" class="btn-config">
+                <div class="config" id="grupoBtnSeguir">
+                    <button type="button" id="btnSeguir"
+                    <% if (segue) { %>
+                        class="btn-config btn-seguindo" value="1"
+                    <% } else { %>
+                        class="btn-config" value="0"
+                    <% } %>
+                    >
                         <i class="fas fa-headphones-alt"></i>
                     </button>
                 </div>
