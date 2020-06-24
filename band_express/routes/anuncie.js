@@ -13,6 +13,6 @@ router.post('/novoProduto', multer(MulterImage).any(), VerificaUsuarioLogado, an
 
 router.post('/dadosBuscar', VerificaUsuarioLogado, anuncieController.dadosBuscar);
 router.post('/dadosApagar', VerificaUsuarioLogado, anuncieController.dadosApagar);
-router.post('/dadosEditar', VerificaUsuarioLogado, anuncieController.dadosEditar);
+router.post('/dadosEditar', multer(MulterImage).any(), VerificaUsuarioLogado, anuncieController.dadosEditar);
 
 module.exports = router;

@@ -103,6 +103,12 @@
     object-fit: cover;
 }
 
+#labelId{
+    color: #282A36;
+    font: 700 2.2rem 'Open Sans', sans-serif;
+    border: none;
+}
+
 /* --------------------------------
          Pesquisar produtos
 -------------------------------- */

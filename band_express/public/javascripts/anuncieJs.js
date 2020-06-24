@@ -4,6 +4,7 @@ let flag = 1;
 let limite = 4;
 let feedLimite = limite;
 let meusLimite = limite;
+let produtoEditadoId = 0;
 
 const clickDelete = async (evt) => {
 
@@ -39,7 +40,7 @@ const clickEditarModal = (evt) => {
 
     let tituloProduto2 = document.getElementById('tituloNovoProduto2');
     tituloProduto2.innerText = meusProdutos[id].titulo;
-
+ 
     local(id);
 
     let valorProduto = document.getElementById('dinheiro2');
@@ -47,41 +48,18 @@ const clickEditarModal = (evt) => {
 
     let descricaoProduto2 = document.getElementById('descricaoNovoProduto2');
     descricaoProduto2.innerText = meusProdutos[id].descricao;
-
-    produtoEditadaId = meusProdutos[id].id_anuncie;
+   
+    let labelId = document.getElementById('labelId');
+    labelId.value = 'Editar produto ' + meusProdutos[id].id_anuncie;
+    
+    produtoEditadoId = meusProdutos[id].id_anuncie;
 }
 
 const salvarEdicao = async (evt) => {
 
-    let imgNova = document.getElementById('formControlFileImg2');
-    let tituloVaga = document.getElementById('tituloNovoProduto2');
-    let estado = document.getElementById('inputEstado2');
-    let cidadeSelect = document.getElementById('inputCidade2');
-    let valorProduto = document.getElementById('dinheiro2');
-    let descricaoVaga = document.getElementById('descricaoNovoProduto2');
-
-    const data =  { 
-        imgNova: imgNova.value,
-        id: produtoEditadaId,
-        tituloNovo: tituloVaga.value,
-        estadoNovo: estado.value,
-        cidadeNova: cidadeSelect.value,
-        valor: valorProduto.value,
-        descricaoNova: descricaoVaga.value
-     };
-
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    };
-
-    const response = await fetch('/anuncie/dadosEditar', options);
-    const dadosBack = await response.json();
-
-    buscar();
+    // let id = document.getElementById('idProduto');
+    // id.value = produtoEditadoId;
+    
 }
 
 const initFeed = () => {
@@ -182,8 +160,8 @@ const view = () => {
     let clickBuscar = document.getElementById('btnPesquisar');
     clickBuscar.addEventListener('click', buscarInit);
 
-    let salvar = document.getElementById('salvarEdicao');
-    salvar.addEventListener('click', salvarEdicao);
+    // let salvar = document.getElementById('salvarEdicao');
+    // salvar.addEventListener('click', salvarEdicao);
 
     let produtoJS = document.getElementById('produtoJS');
     produtoJS.innerHTML = '';
@@ -322,7 +300,7 @@ const view = () => {
 
             let botaoMaisProdutos = document.createElement('button');
             botaoMaisProdutos.className = 'btn btn-mais';
-            botaoMaisProdutos.innerText = '+ Vagas';
+            botaoMaisProdutos.innerText = '+ Produtos';
             botaoMaisProdutos.type = 'button';
             botaoMaisProdutos.addEventListener('click', btnFeed);
             botaoProduto.appendChild(botaoMaisProdutos);
@@ -335,7 +313,7 @@ const view = () => {
 
                 let botaoMaisProdutos = document.createElement('button');
                 botaoMaisProdutos.className = 'btn btn-mais';
-                botaoMaisProdutos.innerText = '+ Vagas';
+                botaoMaisProdutos.innerText = '+ Produtos';
                 botaoMaisProdutos.type = 'button';
                 botaoMaisProdutos.addEventListener('click', btnMeusProdutos);
                 botaoProduto.appendChild(botaoMaisProdutos);

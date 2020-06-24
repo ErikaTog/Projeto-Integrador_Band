@@ -158,59 +158,55 @@ const anuncieController = {
     },
 
     dadosEditar: async (req, res) => {
-        let {id, tituloNovo, estadoNovo, cidadeNova, descricaoNova, valor, imgNova} = req.body;
 
-        const cidade = await Cidade.findOne({ 
-            where: { id_cidade: cidadeNova },
+        let { labelId, tituloNovoProduto, estado, cidade, dinheiro, descricaoNovoProduto} = req.body;
+
+        let id = labelId.slice(15);
+
+        tituloNovoProduto = tituloNovoProduto.trim();
+        descricaoNovoProduto = descricaoNovoProduto.trim();
+
+        const cidadeNova = await Cidade.findOne({ 
+            where: { id_cidade: cidade },
             raw: true,
             attributes: ['cidade'] 
         });
-        const estado = await Estado.findOne({ 
-            where: { id_estado: estadoNovo },
+        
+        const estadoNovo = await Estado.findOne({ 
+            where: { id_estado: estado },
             raw: true,
             attributes: ['uf'] 
         });
 
-        const findProduto = await Vagas.findOne({
-            where: { 
-                id_produto: id 
-            }, 
-        });
-
-        if(imgNova != ""){
-            let file = req.files[0].filename;
-            if(file.includes(".jpg") || file.includes(".png") || 
-                file.includes(".gif") || file.includes(".tiff")){
-
-                // const imgBd = await Anuncie.findOne({
-                //     where: { id_anuncie: dadosNovoProduto.dataValues.id_anuncie }
-                // });
-
-                const cutPath = findProduto.img_anuncio.slice(13) 
-
-                if (findProduto.img_anuncio != '/img/imgEditar.png') {
-                    fs.unlinkSync(`./public/img/uploads/${cutPath}`);
-                }
-
-                const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
-                findProduto.img_anuncio = pathFile;
-
-                // await findProduto.save({ fields: ['img_anuncio'] });
-
-            }
+        if (!req.files.length) {
+            req.flash('errorImage', 'Para alterar a imagem do seu avatar precisamos que a imagem seja salva como arquivo JPG, PNG, GIF, ou TIFF')
+            res.redirect('/anuncie')
+            return
         }
-        console.log(req.body)
-        findProduto.titulo = tituloNovo;
-        findProduto.descricao = descricaoNova
-        findProduto.cidade_vaga = cidade.cidade
-        findProduto.estado_vaga = estado.uf
-        findProduto.valor = valor
 
-        await findProduto.save({ fields: ['titulo', 'descricao', 'cidade_vaga', 'estado_vaga', 'valor'] });
-        
-        res.json({
-            status: 'OK'
+        const imgProduto = await Anuncie.findOne({
+            where: { 
+                id_anuncie: id 
+            }
         });
+        
+        const cutPath = imgProduto.img_anuncio.slice(13)    
+        fs.unlinkSync(`./public/img/uploads/${cutPath}`);
+
+        const pathFile = req.files[0].destination.slice(8) + '/' + req.files[0].filename;
+
+        imgProduto.titulo = tituloNovoProduto;
+        imgProduto.descricao = descricaoNovoProduto;
+        imgProduto.cidade_produto = cidadeNova.cidade;
+        imgProduto.estado_produto = estadoNovo.uf;
+        imgProduto.valor = dinheiro;
+        imgProduto.img_anuncio = pathFile;
+
+        await imgProduto.save({ 
+            fields: ['titulo', 'descricao', 'cidade_produto', 'estado_produto', 'valor', 'img_anuncio'
+        ]});
+
+        res.redirect(`/anuncie`);
     }
 }
 
